@@ -10,8 +10,109 @@
   )
 %>
 
-<% begin_sec("Three models of spacetime",nil,'three-models-of-spacetime') %>
+<% begin_sec("Review: functions and the slope of a linear function",nil,'functions') %>
+Calculus is the study of rates of change, and of how change accumulates.
+For example, figure \figref{stock-market} shows the changes in the United States
+stock market over a period of 24 years. The $y$ axis of this graph is a certain
+weighted average of the prices of stock, and the $x$ axis is time, measured in
+years. This is an example of the concept of a mathematical \emph{function},\index{function}
+which you've learned about in a previous course. We say that the stock index is a function
+of time, meaning, that it depends on time. What makes this graph the graph of a function is that
+a vertical line only intersects it in one place. This means that at any given time, there is only
+one value of the index, not more than one.
 
-<% end_sec('three-models-of-spacetime') %>
+<% marg(0) %>
+<%
+  fig(
+    'stock-market',
+    %q{The S\&P 500 stock index is a function of time.}
+  )  
+%>
+<% end_marg %>
+I drew figure \figref{stock-market} by graphing yearly data, so it's made of line segments that
+connect one year to the next. Each of these line segments has a \emph{slope},\index{slope}
+defined as
+\begin{equation}
+  \text{slope} = \frac{y_2-y_1}{x_2-x_1} \qquad .
+\end{equation}
+The slope measures how fast the function is changing. A positive slope says the function is increasing,
+negative decreasing. If the slope is zero, the function is not changing at all.
+
+It's often convenient to express this kind of thing with the notation $\Delta$, the capital Greek
+letter delta, which is the equivalent of our Latin ``D.'' In terms of this notation,
+we have
+\begin{equation}
+  \text{slope} = \frac{\Delta y}{\Delta x} \qquad .
+\end{equation}
+Here a symbol like $\Delta y$ indicates the change in $y$, as defined by subtraction,
+$\Delta y=y_2-y_1$. It doesn't
+mean a number $\Delta$ multiplied by a number $y$.
+
+<% end_sec('functions') %>
+
+<% begin_sec("An informal definition of the derivative",4,'informal-derivative') %>
+In many real-world applications, it makes sense to think of change as occurring smoothly and
+continuously. For example, the level of water in a reservoir rises and falls with time.
+Although it's true that this change happens a molecule at a time, so that in theory
+there are abrupt jumps, these jumps are too tiny to matter in practice. Figure
+\figref{reservoir} shows data from the California Department of Water Resources for
+the amount of water in Trinity Lake for a certain period of time.
+
+
+<%
+  fig(
+    'reservoir',
+    %q{The water level in Trinity Lake, California, for the thirty-day period
+       beginning March 7, 2014.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+This government agency also wants to keep track of the net rate of flow into the reservoir. We would
+like to define this rate as the slope of the graph, but the graph isn't a line, so how do we
+do that? We could pick two points on the graph and connect them with a line segment, but that
+would only represent some kind of average rate of flow, not the actual rate of flow as it
+would be measured by a flow gauge at one particular time.
+
+To get around these difficulties, we imagine picking a point of interest on the graph
+and then zooming in on it more and more, as if through a microscope capable of unlimited
+magnification. As we zoom in, the curviness of the graph becomes less and less apparant.
+(Similarly, we don't notice in everyday life that the earth is a sphere.)
+In figure \figref{reservoir}, we zoom in by four times, and then another four times, and so on.
+After a series of these zooms, the graph appears indistinguishable from a line, and we can
+measure its slope just as we would for a line. This is an intuitive description of what we mean
+by the slope of a function that isn't a line. We call this slope the
+\emph{derivative}\index{derivative} of the function at the point of interest.
+This is admittedly not a mathematically rigorous definition, but it fixes our minds on the
+concept we want.
+<% end_sec('informal-derivative') %>
+
+<% begin_sec("Properties of the derivative",nil,'properties-of-the-derivative') %>
+The following properties of the derivative are intuitively reasonable
+based on our conceptual definition, and they will be enough to allow us to do quite a bit
+of interesting calculus before we come back and make a more rigorous definition.
+
+\begin{itemize}
+ \item[constant] The derivative of a constant function is zero.
+ \item[line] The derivative of a linear function is its slope.
+ \item[shift] Shifting a function y(x) horizontally or vertically to form a new function y(x+a) or y(x)+b
+                   gives a derivative at any newly shifted point that is the same as
+                   the derivative at the corresponding point on the unshifted graph.
+ \item[flip] Flipping the function y(x) horizontally or vertically to form a new function y(-x) or
+                   -y(x) negates its derivative at corresponding points.
+ \item[add] The derivative of the sum of two functions is the sum
+                   of their derivatives.
+ \item[stretch] Stretching a function y(x) vertically to form a new function ry(x) multiplies its
+                   derivative by r at the corresponding points, while stretching it horizontally
+                   to make y(x/s) divides its derivative by s.
+ \item[cut] Suppose that for a certain point P on the graph of a function, there is a unique linear
+                   function that passes through P but doesn't cut through the graph. Then
+                   the derivative of the function at P equals the slope of the line.
+\end{itemize}
+
+<% end_sec('properties-of-the-derivative') %>
 
 <% end_chapter %>
