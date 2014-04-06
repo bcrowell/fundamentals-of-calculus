@@ -1,7 +1,7 @@
 \pdfminorversion=4 % force pdf 1.4 output; http://tex.stackexchange.com/questions/95973/is-pdftex-1-40-13-outputting-malformed-pdfs
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sr}
+\ProvidesClass{fund}
 
 \LoadClass[11pt]{book}
 % Note that 11 pt does work with pdflatex, even though 11 pt is not one of the sizes

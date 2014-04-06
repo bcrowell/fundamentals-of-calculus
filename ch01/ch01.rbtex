@@ -1,0 +1,17 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '01',
+    %q{An informal introduction to the derivative},
+    'ch:derivative'
+  )
+%>
+
+<% begin_sec("Three models of spacetime",nil,'three-models-of-spacetime') %>
+
+<% end_sec('three-models-of-spacetime') %>
+
+<% end_chapter %>
