@@ -1,3 +1,4 @@
+%%chapter%% 01
 <%
   require "./scripts/eruby_util.rb"
 %>
@@ -29,6 +30,12 @@ one value of the index, not more than one.
   )  
 %>
 <% end_marg %>
+Figure \figref{stock-market} is shows a function that was determined by measurement and
+observation, but functions can also be defined by a formula. For example, we could define
+a function $y$ by stating that for any number $x$, the value of the function is given by $y(x)=x^2$.
+We sometimes state this kind of thing more casually by referring to ``the function $y=x^2$''
+or ``the function $x^2$.''
+
 I drew figure \figref{stock-market} by graphing yearly data, so it's made of line segments that
 connect one year to the next. Each of these line segments has a \emph{slope},\index{slope}
 defined as
@@ -50,20 +57,19 @@ mean a number $\Delta$ multiplied by a number $y$.
 
 <% end_sec('functions') %>
 
-<% begin_sec("An informal definition of the derivative",4,'informal-derivative') %>
+<% begin_sec("An informal definition of the derivative",nil,'informal-derivative') %>
 In many real-world applications, it makes sense to think of change as occurring smoothly and
 continuously. For example, the level of water in a reservoir rises and falls with time.
 Although it's true that this change happens a molecule at a time, so that in theory
-there are abrupt jumps, these jumps are too tiny to matter in practice. Figure
-\figref{reservoir} shows data from the California Department of Water Resources for
-the amount of water in Trinity Lake for a certain period of time.
-
+there are abrupt jumps, these jumps are too tiny to matter in practice.
 
 <%
   fig(
     'reservoir',
-    %q{The water level in Trinity Lake, California, for the thirty-day period
+    %q{The original graph, on the left, shows
+       the water level in Trinity Lake, California, for the thirty-day period
        beginning March 7, 2014.
+       Each successive magnification to the right is by a factor of four.
     },
     {
       'width'=>'fullpage'
@@ -71,7 +77,7 @@ the amount of water in Trinity Lake for a certain period of time.
   )
 %>
 
-This government agency also wants to keep track of the net rate of flow into the reservoir. We would
+We want to keep track of the net rate of flow into the reservoir. We would
 like to define this rate as the slope of the graph, but the graph isn't a line, so how do we
 do that? We could pick two points on the graph and connect them with a line segment, but that
 would only represent some kind of average rate of flow, not the actual rate of flow as it
@@ -88,6 +94,22 @@ by the slope of a function that isn't a line. We call this slope the
 \emph{derivative}\index{derivative} of the function at the point of interest.
 This is admittedly not a mathematically rigorous definition, but it fixes our minds on the
 concept we want.
+
+If we were only shown the ultra-magnified view in the rightmost part of figure \figref{reservoir},
+we wouldn't know that the graph was curved at all. We would think the whole thing was a line.
+This hypothetical line is called the \emph{tangent line}\index{tangent line}
+at the point marked with a dot. When you stand on the earth's surface and look at a point on
+the horizon, your line of sight is a tangent line to the surface. The derivative is the slope
+of the tangent line.
+<% marg(0) %>
+<%
+  fig(
+    'reservoir-tangent-line',
+    %q{The tangent line at a point on a curved graph.}
+  )  
+%>
+<% end_marg %>
+
 <% end_sec('informal-derivative') %>
 
 <% begin_sec("Properties of the derivative",nil,'properties-of-the-derivative') %>
@@ -98,21 +120,86 @@ of interesting calculus before we come back and make a more rigorous definition.
 \begin{itemize}
  \item[constant] The derivative of a constant function is zero.
  \item[line] The derivative of a linear function is its slope.
- \item[shift] Shifting a function y(x) horizontally or vertically to form a new function y(x+a) or y(x)+b
+ \item[shift] Shifting a function $y(x)$ horizontally or vertically to form a new function 
+                   $y(x+a)$ or $y(x)+b$
                    gives a derivative at any newly shifted point that is the same as
                    the derivative at the corresponding point on the unshifted graph.
- \item[flip] Flipping the function y(x) horizontally or vertically to form a new function y(-x) or
-                   -y(x) negates its derivative at corresponding points.
+ \item[flip] Flipping the function $y(x)$ horizontally or vertically to form a new function $y(-x)$ or
+                   $-y(x)$ negates its derivative at corresponding points.
  \item[add] The derivative of the sum of two functions is the sum
                    of their derivatives.
- \item[stretch] Stretching a function y(x) vertically to form a new function ry(x) multiplies its
-                   derivative by r at the corresponding points, while stretching it horizontally
-                   to make y(x/s) divides its derivative by s.
- \item[cut] Suppose that for a certain point P on the graph of a function, there is a unique linear
-                   function that passes through P but doesn't cut through the graph. Then
+ \item[stretch] Stretching a function $y(x)$ vertically to form a new function $ry(x)$ multiplies its
+                   derivative by $r$ at the corresponding points, while stretching it horizontally
+                   to make $y(x/s)$ divides its derivative by $s$.
+ \item[no-cut] Suppose that for a certain point P on the graph of a function, there is a unique linear function
+                   $\ell$ that passes through P but doesn't cut through the graph. Then the graph of this function is
+                   the tangent line, and
                    the derivative of the function at P equals the slope of the line.
 \end{itemize}
 
+By the way, these are just names I've given to these properties, and if you use them with other
+people, they won't know what you mean. Once we've learned more calculus, we'll see that several
+of these properties are actually special cases of a more general rule called the chain rule.
+
+There is usually, but not always, a line like the one described by the no-cut property.
+Sometimes there is a tangent line but it isn't a no-cut line. If this kind of mathematical
+puzzle interests you, try sketching the 
+graphs of the functions $x^3$ and $\sqrt{x}$. You should be able to convince yourself that
+their tangent lines at $x=0$ are not no-cut line.
 <% end_sec('properties-of-the-derivative') %>
+
+<% begin_sec("The derivative of the function $y=x^2$",4,'derivative-of-x-squared') %>
+
+%%graph%% x-squared func=x**2 format=eps xlo=-3 xhi=3 ylo=0 yhi=10 with=lines
+
+As our first example of a derivative, let's use the function $y=x^2$. Its graph is a parabola.
+The simplest point at which
+to find its derivative is $x=0$. Based on the graph, figure \figref{x-squared}, it looks like
+zooming in more and more on this point would give something that looked more and more like a
+horizontal line, and this suggests that the derivative at this point is zero. We can confirm this
+by using the flip rule. Flipping the graph horizontally doesn't change the graph. (Recall that
+a function with this symmetry is called an \emph{odd} function.)\index{odd function}
+Since the flip doesn't change the function, it can't change the derivative of the function, and
+yet the flip rule says that when we do this the derivative should flip its sign. Zero is the
+only number that remains the same when we flip its sign, so the derivative is zero.
+<% marg(0) %>
+<%
+  fig(
+    'x-squared',
+    %q{The function $y=x^2$.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'tangent-line',
+    %q{The line $2x-1$ intersects the function $x^2$ without cutting it.}
+  )  
+%>
+<% end_marg %>
+
+How about the derivative at the point $x=1$? Here we can apply the no-cut rule.
+By laying a ruler against this point, we find that the linear function $\ell(x)=2x-1$ seems
+to intersect the parabola without cutting across it. To prove that this is
+true, we can compute the difference between the two functions, $y(x)-\ell(x)=x^2-2x+1$.
+Completing the square allows us to rewite this as $(x-1)^2$, which is clearly positive for
+any value of $x$ other than 1. Therefore the function $\ell$ meets the conditions of the
+no-cut rule, and the derivative of $x^2$ at $x=1$ is 2.
+
+%%graph%% tangent-line func=x**2 format=eps xlo=0 xhi=2 ylo=0 yhi=2 with=lines x=t y=x samples=300 ytic_spacing=1 ; func=2*x-1.0 with=lines
+
+Having found the derivative of $x^2$ at $x=1$, we can now use the stretch rule to find it
+at any other point. For example, suppose we want to know the derivative at $x=3$. If we were to
+take the graph of the function $x^2$ and stretch it by a factor of $3$ horizontally and $9$ vertically, we would
+get the same graph again. These stretches take the point $(1,1)$, where we know the derivative,
+to the point $(3,9)$, where we want to know it.
+The stretch rule tells us that the horizontal stretch decreases the
+derivative to $1/3$ of its original value, but the vertical stretch increases it by $9$ times,
+so that over all, the derivative at $(3,9)$ is $(1/3)(9)=3$ times greater than its value
+at $(1,1)$. Thus the derivative at $x=3$ equals 6.
+
+Clearly the method that we applied to $x=3$ would work for any other number, not just for 3.
+
+<% end_sec('derivative-of-x-squared') %>
 
 <% end_chapter %>

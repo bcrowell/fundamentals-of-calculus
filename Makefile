@@ -102,6 +102,9 @@ preflight_figs:
 	scripts/preflight_figs.pl
 	@echo "...done"
 
+graphs:
+	./scripts/gen_graph.rb ch*/*tex
+
 all_figures:
 	# The following requires Inkscape 0.47 or later.
 	perl -e 'foreach my $$f(<ch*/figs/*.svg>) {system("scripts/render_one_figure.pl $$f")}'
