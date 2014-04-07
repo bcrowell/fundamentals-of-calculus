@@ -18,7 +18,7 @@ stock market over a period of 24 years. The $y$ axis of this graph is a certain
 weighted average of the prices of stock, and the $x$ axis is time, measured in
 years. This is an example of the concept of a mathematical \emph{function},\index{function}
 which you've learned about in a previous course. We say that the stock index is a function
-of time, meaning, that it depends on time. What makes this graph the graph of a function is that
+of time, meaning that it depends on time. What makes this graph the graph of a function is that
 a vertical line only intersects it in one place. This means that at any given time, there is only
 one value of the index, not more than one.
 
@@ -30,7 +30,7 @@ one value of the index, not more than one.
   )  
 %>
 <% end_marg %>
-Figure \figref{stock-market} is shows a function that was determined by measurement and
+Figure \figref{stock-market} shows a function that was determined by measurement and
 observation, but functions can also be defined by a formula. For example, we could define
 a function $y$ by stating that for any number $x$, the value of the function is given by $y(x)=x^2$.
 We sometimes state this kind of thing more casually by referring to ``the function $y=x^2$''
@@ -57,10 +57,11 @@ mean a number $\Delta$ multiplied by a number $y$.
 
 <% end_sec('functions') %>
 
+<% begin_sec("The derivative",nil,'derivative') %>
 <% begin_sec("An informal definition of the derivative",nil,'informal-derivative') %>
 In many real-world applications, it makes sense to think of change as occurring smoothly and
 continuously. For example, the level of water in a reservoir rises and falls with time.
-Although it's true that this change happens a molecule at a time, so that in theory
+Although it's true that this change happens one molecule at a time, so that in theory
 there are abrupt jumps, these jumps are too tiny to matter in practice.
 
 <%
@@ -80,27 +81,21 @@ there are abrupt jumps, these jumps are too tiny to matter in practice.
 We want to keep track of the net rate of flow into the reservoir. We would
 like to define this rate as the slope of the graph, but the graph isn't a line, so how do we
 do that? We could pick two points on the graph and connect them with a line segment, but that
-would only represent some kind of average rate of flow, not the actual rate of flow as it
+would only represent an average rate of flow, not the actual rate of flow as it
 would be measured by a flow gauge at one particular time.
 
 To get around these difficulties, we imagine picking a point of interest on the graph
 and then zooming in on it more and more, as if through a microscope capable of unlimited
-magnification. As we zoom in, the curviness of the graph becomes less and less apparant.
+magnification. As we zoom in, the curviness of the graph becomes less and less apparent.
 (Similarly, we don't notice in everyday life that the earth is a sphere.)
-In figure \figref{reservoir}, we zoom in by four times, and then another four times, and so on.
+In figure \figref{reservoir}, we zoom in by 400\%, and then again by 400\%, and so on.
 After a series of these zooms, the graph appears indistinguishable from a line, and we can
 measure its slope just as we would for a line. This is an intuitive description of what we mean
 by the slope of a function that isn't a line. We call this slope the
 \emph{derivative}\index{derivative} of the function at the point of interest.
 This is admittedly not a mathematically rigorous definition, but it fixes our minds on the
-concept we want.
-
-If we were only shown the ultra-magnified view in the rightmost part of figure \figref{reservoir},
-we wouldn't know that the graph was curved at all. We would think the whole thing was a line.
-This hypothetical line is called the \emph{tangent line}\index{tangent line}
-at the point marked with a dot. When you stand on the earth's surface and look at a point on
-the horizon, your line of sight is a tangent line to the surface. The derivative is the slope
-of the tangent line.
+concept we want. A useful example is that if we consider a car's odometer reading as a function of
+time in hours, then its speedometer reading is the derivative of the odometer reading.
 <% marg(0) %>
 <%
   fig(
@@ -109,6 +104,13 @@ of the tangent line.
   )  
 %>
 <% end_marg %>
+
+If we were only shown the ultra-magnified view in the rightmost part of figure \figref{reservoir},
+we wouldn't know that the graph was curved at all. We would think the whole thing was a line.
+This hypothetical line is called the \emph{tangent line}\index{tangent line}
+at the point marked with a dot. When you stand on the earth's surface and look at a point on
+the horizon, your line of sight is a tangent line to the surface. The derivative of a function is the slope
+of the tangent line.
 
 <% end_sec('informal-derivative') %>
 
@@ -126,43 +128,49 @@ of interesting calculus before we come back and make a more rigorous definition.
                    the derivative at the corresponding point on the unshifted graph.
  \item[flip] Flipping the function $y(x)$ horizontally or vertically to form a new function $y(-x)$ or
                    $-y(x)$ negates its derivative at corresponding points.
- \item[add] The derivative of the sum of two functions is the sum
+ \item[addition] The derivative of the sum of two functions is the sum
                    of their derivatives.
  \item[stretch] Stretching a function $y(x)$ vertically to form a new function $ry(x)$ multiplies its
                    derivative by $r$ at the corresponding points, while stretching it horizontally
                    to make $y(x/s)$ divides its derivative by $s$.
  \item[no-cut] Suppose that for a certain point P on the graph of a function, there is a unique linear function
-                   $\ell$ that passes through P but doesn't cut through the graph. Then the graph of this function is
-                   the tangent line, and
+                   $\ell$ that passes through P but doesn't cut through the graph. Then the graph of $\ell$
+                   is the tangent line, and
                    the derivative of the function at P equals the slope of the line.
 \end{itemize}
 
-By the way, these are just names I've given to these properties, and if you use them with other
-people, they won't know what you mean. Once we've learned more calculus, we'll see that several
-of these properties are actually special cases of a more general rule called the chain rule.
+As an example of the stretch rule, cars sold in the U.S.~have odometers that read out in units of miles,
+while those sold elsewhere are calibrated in kilometers, so their readings are greater by
+the conversion factor $r=1.6$. By the stretch property, cars outside the U.S.~also have speedometer
+readings that are greater by this factor: they read out in \emph{kilometers} per hour.
 
 There is usually, but not always, a line like the one described by the no-cut property.
 Sometimes there is a tangent line but it isn't a no-cut line. If this kind of mathematical
 puzzle interests you, try sketching the 
 graphs of the functions $x^3$ and $\sqrt{x}$. You should be able to convince yourself that
-their tangent lines at $x=0$ are not no-cut line.
+their tangent lines at $x=0$ can't be described by no-cut functions.
+
+By the way, these are just names I've given to these properties, and if you use them with other
+people, they won't know what you mean. Once we've done more calculus, we'll see that several
+of these properties are actually special cases of a more general rule called the chain rule.
+
 <% end_sec('properties-of-the-derivative') %>
 
-<% begin_sec("The derivative of the function $y=x^2$",4,'derivative-of-x-squared') %>
+<% begin_sec("The derivative of the function $y=x^2$",nil,'derivative-of-x-squared') %>
 
 %%graph%% x-squared func=x**2 format=eps xlo=-3 xhi=3 ylo=0 yhi=10 with=lines
 
 As our first example of a derivative, let's use the function $y=x^2$. Its graph is a parabola.
 The simplest point at which
-to find its derivative is $x=0$. Based on the graph, figure \figref{x-squared}, it looks like
+to find its derivative is $x=0$. Based on the graph, figure \figref{x-squared}, it seems like
 zooming in more and more on this point would give something that looked more and more like a
 horizontal line, and this suggests that the derivative at this point is zero. We can confirm this
-by using the flip rule. Flipping the graph horizontally doesn't change the graph. (Recall that
-a function with this symmetry is called an \emph{odd} function.)\index{odd function}
+by using the flip property. Flipping the graph horizontally doesn't change the graph. (Recall that
+a function with this symmetry is called an \emph{even} function.)\index{even function}
 Since the flip doesn't change the function, it can't change the derivative of the function, and
 yet the flip rule says that when we do this the derivative should flip its sign. Zero is the
 only number that remains the same when we flip its sign, so the derivative is zero.
-<% marg(0) %>
+<% marg(200) %>
 <%
   fig(
     'x-squared',
@@ -198,8 +206,66 @@ derivative to $1/3$ of its original value, but the vertical stretch increases it
 so that over all, the derivative at $(3,9)$ is $(1/3)(9)=3$ times greater than its value
 at $(1,1)$. Thus the derivative at $x=3$ equals 6.
 
-Clearly the method that we applied to $x=3$ would work for any other number, not just for 3.
+There is nothing special about the number 3. 
+The method that we applied to $x=3$ would work for any other number $x$, not just for 3.
+We find that the derivative of the function $x^2$ at any point $x$ equals $2x$. Taking stock of
+what we've done, we started with the function $x^2$, and found that at any point $x$, the derivative
+was $2x$. The expression $2x$ can be thought of as a function of $x$. So what we've really done
+is to take a function and construct a new function that gives the derivative of the original
+function at each point. One way of notating this new function is $y'$, read ``$y$ prime.'' We have
+\begin{align*}
+  y &= x^2 \\
+  y' &= 2x \qquad .
+\end{align*}
+The craft of finding this kind of derivative-function from the original function is called
+\emph{differentiation}. We have differentiated the function $x^2$ and gotten its derivative,
+the function $2x$.
+<% marg(200) %>
+<%
+  fig(
+    'derivative-as-a-function',
+    %q{The derivative of $x^2$ is itself a function. As we change $x$, the slope of the tangent line
+       changes.}
+  )  
+%>
+<% end_marg %>
 
 <% end_sec('derivative-of-x-squared') %>
+<% end_sec('derivative') %>
+
+<% begin_sec("Derivatives of powers and polynomials",nil,'deriv-polynomial') %>
+In section \ref{subsec:derivative-of-x-squared}, we found that the derivative of $x^2$ was $2x$.
+Straightforward application of the same technique to $x^3$ gives $3x^2$. We see a pattern:
+
+\begin{important}[Derivatives of powers]
+The derivative of $x^n$ equals $nx^{n-1}$, if $n$ is any integer greater than or equal to 1.
+\end{important}
+
+\noindent To prove this for all these values of $n$, rather than carrying out the proof for one value at
+a time, it will be more convenient to use techniques developed later in the book.
+
+If we combine this with the addition and stretch rules, we know enough to differentiate any polynomial.
+
+\begin{eg}{Differentiating a polynomial}
+\egquestion Find the derivative of $x^3-7x+1$.
+
+\egquestion The addition property of the derivative
+tells us that we can break this problem down into three parts,
+\begin{equation*}
+  (x^3-7x+1)' = (x^3)'+(-7x)'+(1)' \qquad ,
+\end{equation*}
+where the primes indicate ``derivative of \ldots'' The stretch property says that $(-7x)'$ is the same
+as $(-7)(x)'$, so the derivative of our polynomial becomes
+\begin{equation*}
+   (x^3)'+(-7)(x)'+(1)' \qquad .
+\end{equation*}
+We know how to differentiate powers: $(x^3)'=3x^2$, $(x')=1$, and $(1)'=0$. (We could have found the
+second term from the line property, and the final one from the constant property.) The result is
+\begin{equation*}
+   3x^2-7 \qquad .
+\end{equation*}
+\end{eg}
+
+<% end_sec('deriv-polynomial') %>
 
 <% end_chapter %>
