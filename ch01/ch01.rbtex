@@ -118,6 +118,15 @@ of the tangent line.
 The following properties of the derivative are intuitively reasonable
 based on our conceptual definition, and they will be enough to allow us to do quite a bit
 of interesting calculus before we come back and make a more rigorous definition.
+<% marg(0) %>
+<%
+  fig(
+    'properties-of-derivative',
+    %q{Some properties of the derivative.}
+  )  
+%>
+<% end_marg %>
+
 
 \begin{itemize}
  \item[constant] The derivative of a constant function is zero.
