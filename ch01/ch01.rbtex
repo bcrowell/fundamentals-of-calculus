@@ -254,9 +254,19 @@ The derivative of $x^n$ equals $nx^{n-1}$, if $n$ is any integer greater than or
 a time, it will be more convenient to use techniques developed later in the book.
 
 If we combine this with the addition and stretch rules, we know enough to differentiate any polynomial.
+<% marg(-50) %>
+<%
+  fig(
+    'derivative-of-a-polynomial',
+    %q{Example \ref{eg:derivative-of-a-polynomial}. The top graph shows the original function, the
+       bottom its derivative.
+       }
+  )  
+%>
+<% end_marg %>
 
-\begin{eg}{Differentiating a polynomial}
-\egquestion Find the derivative of $x^3-7x+1$.
+\begin{eg}{Differentiating a polynomial}\label{eg:derivative-of-a-polynomial}
+\egquestion Find the derivative of $y'=x^3-7x+1$.
 
 \egquestion The addition property of the derivative
 tells us that we can break this problem down into three parts,
@@ -273,7 +283,16 @@ second term from the line property, and the final one from the constant property
 \begin{equation*}
    3x^2-7 \qquad .
 \end{equation*}
+
+The functions $y$ and $y'$ are graphed in figure \figref{derivative-of-a-polynomial}, and
+five points are marked as examples of how the \emph{slope} of $y$ corresponds
+to the \emph{value} of $y'$. Reading across from left to right on the top graph, the slopes are
+positive, zero, negative, zero, and positive. On the bottom graph, the values of $y'$ are
+easily seen to be positive, zero, negative, zero, and positive.
 \end{eg}
+
+%%graph%% polynomial-to-differentiate func=x**3-7*x+1 format=svg xlo=-3 xhi=3 ylo=-10 yhi=10 xtic_spacing=1 ytic_spacing=5 with=lines
+%%graph%% deriv-of-polynomial func=3*x**2-7 format=svg xlo=-3 xhi=3 ylo=-10 yhi=10 xtic_spacing=1 ytic_spacing=5 with=lines
 
 <% end_sec('deriv-polynomial') %>
 
