@@ -128,7 +128,7 @@ of interesting calculus before we come back and make a more rigorous definition.
 <% end_marg %>
 
 
-\begin{itemize}
+\begin{description}
  \item[constant] The derivative of a constant function is zero.
  \item[line] The derivative of a linear function is its slope.
  \item[shift] Shifting a function $y(x)$ horizontally or vertically to form a new function 
@@ -146,7 +146,7 @@ of interesting calculus before we come back and make a more rigorous definition.
                    $\ell$ that passes through P but doesn't cut through the graph. Then the graph of $\ell$
                    is the tangent line, and
                    the derivative of the function at P equals the slope of the line.
-\end{itemize}
+\end{description}
 
 As an example of the stretch rule, cars sold in the U.S.~have odometers that read out in units of miles,
 while those sold elsewhere are calibrated in kilometers, so their readings are greater by
@@ -281,7 +281,7 @@ as $(-7)(x)'$, so the derivative of our polynomial becomes
 We know how to differentiate powers: $(x^3)'=3x^2$, $(x')=1$, and $(1)'=0$. (We could have found the
 second term from the line property, and the final one from the constant property.) The result is
 \begin{equation*}
-   3x^2-7 \qquad .
+   y' = 3x^2-7 \qquad .
 \end{equation*}
 
 The functions $y$ and $y'$ are graphed in figure \figref{derivative-of-a-polynomial}, and
