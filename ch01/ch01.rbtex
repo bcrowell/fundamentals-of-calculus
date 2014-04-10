@@ -46,7 +46,7 @@ The slope measures how fast the function is changing. A positive slope says the 
 negative decreasing. If the slope is zero, the function is not changing at all.
 
 It's often convenient to express this kind of thing with the notation $\Delta$, the capital Greek
-letter delta, which is the equivalent of our Latin ``D.'' In terms of this notation,
+letter delta, which is the equivalent of our Latin ``D'' and here stands for ``difference.'' In terms of this notation,
 we have
 \begin{equation}
   \text{slope} = \frac{\Delta y}{\Delta x} \qquad .
@@ -128,7 +128,7 @@ of interesting calculus before we come back and make a more rigorous definition.
 <% end_marg %>
 
 
-\begin{description}
+\begin{description}\label{properties-of-derivative}
  \item[constant] The derivative of a constant function is zero.
  \item[line] The derivative of a linear function is its slope.
  \item[shift] Shifting a function $y(x)$ horizontally or vertically to form a new function 
@@ -295,5 +295,200 @@ easily seen to be positive, zero, negative, zero, and positive.
 %%graph%% deriv-of-polynomial func=3*x**2-7 format=svg xlo=-3 xhi=3 ylo=-10 yhi=10 xtic_spacing=1 ytic_spacing=5 with=lines
 
 <% end_sec('deriv-polynomial') %>
+
+<% begin_sec("Applications",nil,'apps-of-derivative') %>
+<% begin_sec("Changing letters of the alphabet",nil,'changing-letters') %>
+The following point is relatively trivial, but nevertheless gives many students problems in applying calculus to real life. In a calculus
+textbook, we typically use the letters $x$ and $y$, with $y$ being a function of $x$. That is, $x$ is the independent variable,
+and $y$ is the dependent one. In real-life applications, however, the variables have definite meanings, and we want to
+use letters that make it easy to remember what they stand for. 
+
+For example, suppose that a social media company has a certain
+number of users, and they need to have enough computing power at their data center to be able to handle all of those users.
+This computing power will cost them a certain amount of money per month. In this
+example, it would be natural to use the notation $u$ for
+the number of users, and $c$ for the monthly cost in dollars. Then $c$ depends on $u$, and we have a function $c(u)$. Let's
+say the function is this:
+\begin{equation*}
+  c = u^2
+\end{equation*}
+This is not an unrealistic equation to imagine for this example, since the company has to keep track of every user's
+relationship to every other user. For example, user Andy may be able to mark himself
+as a ``fan'' or ``follower'' of user Betty, and then the company has to store a piece
+of information in a database to record this relationship.
+If there are
+a thousand users, there are $1000\times 1000$ or a million such possible
+relationships that may need to be stored in a database.
+
+Now if the company's user base is growing, it's of interest to them to know how much their costs will go up for each
+additional user (the marginal cost). This would be expressed by the derivative $c'(u)$. Although the letters of the alphabet are different
+than the ones we used in our earlier examples, that makes no difference in how we do the math. If differentiating
+$y=x^2$ with respect to $x$ gives $y'=2x$, then differentiating $c=u^2$ with respect to $u$ gives the same result but
+with the letters changed,
+\begin{equation*}
+  c' = 2u
+\end{equation*}
+<% end_sec('changing-letters') %>
+
+<% begin_sec("Velocity",nil,'velocity') %>
+<% begin_sec("Defining velocity",nil,'defining-velocity') %>
+One of our prototypical examples has been the odometer and speedometer on a car's dashboard. In fact, if we want to \emph{define}
+what velocity means, we have to define it as a derivative. Suppose an object (it could be a car, a galaxy, or a subatomic
+particle) is moving in a straight line. By choosing a unit of distance and a location that we define as zero, we can superimpose
+a number line onto this line. (In the example of the car, the unit of distance might be kilometers, and the zero
+position would be the point on the road at which we last pushed the button to zero the odometer.) Let the position
+defined in this way be $x$. Then $x$ is a function of time $t$ (such as the time measured on a clock), and we notate this
+function as $x(t)$. Note that although we typically use the letters $x$ and $y$ in a generic mathematical context, with
+$y$ being a function of $x$, in our present example it is more natural to use different letters, and now $x$ is the
+\emph{dependent} variable, not the independent one. That is, $x$ is a function of $t$, but $t$ may not be a function of
+$x$; for example, if a car stops and backs up, then it can visit the same position twice, so that a graph of $t$ versus
+$x$ would fail the vertical line test for a function. In this notation, the velocity $v$ is defined as the
+derivative 
+\begin{equation*}
+  v(t) = x'(t) \qquad .
+\end{equation*}
+<% end_sec('defining-velocity') %>
+<% begin_sec("Constant acceleration",nil,'constant-acceleration') %>
+An important special case is the one in which the position function is of
+the form
+\begin{equation*}
+  x(t) = \frac{1}{2}at^2 \qquad ,
+\end{equation*}
+where $a$ is a constant, and the factor of $1/2$ is conventional, and convenient for
+reasons that will become more apparent in a moment. Differentiating with respect to
+$t$, we have the velocity function
+\begin{equation*}
+  v(t) = at \qquad ,
+\end{equation*}
+where the symbolic constant $a$ has been treated like any other constant,
+and the $1/2$ in front has been canceled by the factor of 2 that comes down from the
+exponent. We see that the velocity is proportional to the amount of time that has passed.
+If $t$ is measured in seconds and $v$ in meters per second (m/s), then the constant $a$,
+called the \emph{acceleration},\index{acceleration} tells us how much speed the object
+gains with every second that goes by, in units of m/s/s, which can be written as $\munit/\sunit^2$.
+Falling objects have an acceleration of about $9.8\ \munit/\sunit^2$. This is a measure of
+the strength of the earth's gravity near its own surface.
+
+\begin{eg}{Dropping a rock down a well}
+\egquestion Looking down into a dark well, you can't see how deep it is. If you drop a rock
+in and hear it hit the bottom in 2 seconds, how deep is the well?
+
+\eganswer 
+\begin{equation*}
+  x(t) = \frac{1}{2}at^2 \approx 20\ \munit
+\end{equation*}
+\end{eg}
+
+\begin{eg}{The shift property applied to constant acceleration}
+The equations for constant acceleration were given above with the unstated assumption that
+both the position and the velocity would be zero at the time $t=0$. If we relax this assumption, then
+the position function can be of the more general form
+\begin{equation*}
+  x(t) = x_\zu{o}+\frac{1}{2}a(t-t_\zu{o})^2 \qquad ,
+\end{equation*}
+where $t_\zu{o}$ is some initial time, at which the position equals $x_\zu{o}$. By the shift property of the
+derivative (p.~\pageref{properties-of-derivative}), the velocity function is then
+\begin{equation*}
+  v(t) = a(t-t_\zu{o}) \qquad .
+\end{equation*}
+\end{eg}
+<% end_sec('constant-acceleration') %>
+<% end_sec('velocity') %>
+
+<% begin_sec("When do you need a derivative?",nil,'when-derivative-is-needed') %>
+In July 1999, Popular Mechanics carried out tests to
+find which car sold by a major auto maker could cover a
+quarter mile (402 meters) in the shortest time, starting
+from rest. Because the distance is so short, this type of
+test is designed mainly to favor the car with the greatest
+acceleration, not the greatest maximum speed (which is
+irrelevant to the average person). The winner was the Dodge
+Viper, with a time of 12.08 s. If we divide the distance by the time, we get
+\begin{equation*}
+  v = \frac{\Delta x}{\Delta t} = 33.3\ \munit/\sunit \qquad ,
+\end{equation*}
+which is about 74 miles per hour or 120 kilometers per hour. Not a very impressive
+speed, is it? That's because it's wrong. During those twelve seconds of acceleration,
+the car didn't have just one speed. It started at a velocity of zero and went up from
+there. The top speed was nearly double the one calculated above
+($53\ \munit/\sunit\approx 119\ \zu{mi}/\zu{hr}\approx 191\ \zu{km}/\zu{hr}$). The important
+point here is that when we measure a rate of change using an expression of the form
+\begin{equation*}
+  \frac{\Delta\ldots}{\Delta\ldots} \qquad ,
+\end{equation*}
+we only get the right answer if the rate of change is \emph{constant}. In this example
+the rate of change is the velocity, and the velocity is not constant. To find the correct velocity,
+we first need to decide at which time we want to know the velocity, and then evaluate the derivative
+at that time.
+<% end_sec('when-derivative-is-needed') %>
+<% end_sec('apps-of-derivative') %>
+
+<% begin_sec("Review: elementary properties of the real numbers",nil,'elementary-reals') %>
+
+I began this chapter by defining calculus as the study of rates of change, but
+it could equally well be described as the study of infinity. The intuition behind the derivative
+is that we zoom in on a selected point on a smooth curve, until the curve appears like a line
+and we can measure the slope of the line. But the curve won't appear perfectly
+straight until we've cranked up our microscope to an \emph{infinitely big} magnification, at which point
+we'll be seeing values of $\Delta x$ and $\Delta y$ that are \emph{infinitely small} (but not zero).
+Calculus was invented by Isaac Newton and
+Gottfried Wilhelm von Leibniz back in the era of powdered wigs and silk stockings, and
+in those days the concept of number hadn't been formalized. Newton and Leibniz simply assumed
+that it was all right to have infinitely big and infinitely small numbers. But modern
+mathematicians approach this kind of thing differently. They think in terms of specific,
+well-defined sets of numbers, such as:
+
+\begin{description}
+\item[the integers:] whole numbers such as $-1$, 0, and $1$
+\item[the rational numbers:] ratios of integers such as $2/1$ and $3/4$
+\item[the real numbers,] including quantities like $\pi$ and $\sqrt{2}$
+\item[the complex numbers,] such as $\sqrt{-1}$
+\end{description}
+
+Do these systems include infinitely big and infinitely small numbers? Can they? Should they?
+
+
+To answer these questions, we need to give a more definite account of how these number systems
+are defined. A good way to define them is with a list of their axioms.
+Here is a list of axioms for the system of real numbers. Except as otherwise stated,
+each of these properties holds for \emph{any} real-number values of the symbols $x$, $y$, \ldots
+
+\begin{description}
+\item[commutativity] $x+y=y+x$ and $xy=yx$
+\item[identities] There exist numbers 0 and 1 such that for any $x$, $x+0=x$ and $1x=x$.
+\item[inverses] For any $x$, there exists a number $-x$ such that $x+(-x)=0$. For any nonzero $x$,
+          there exists $1/x$ such that $(x)(1/x)=1$.
+\item[associativity] $x+(y+z)=(x+y)+z$ and $x(yz)=(xy)z$
+\item[distributivity] $x(y+z)=xy+xz$
+\item[ordering] We can define whether or not $x<y$, and this ordering relates to the addition and
+      multiplication operations in specific ways, which you've seen defined in a previous course
+      on algebra and which for brevity we will not explicitly give here.
+\end{description}
+
+This list of axioms holds for the real numbers, but it fails for the integers, since for example
+the integer 2 doesn't have an inverse that is an integer. It also fails for the complex numbers,
+which don't have a well-defined ordering. The list seems complete and precise, so it may come
+as a surprise that it does \emph{not} suffice to prove anything about whether or not infinite
+numbers exist. The list of axioms is in fact incomplete as a characterization of the real numbers.
+Later in this book we will add another axiom, called the completeness axiom,\index{completeness axiom}
+to the list. The completeness axiom holds for the reals but not the rationals, and it also
+rules out the existence of infinitely large or infinitely small real numbers.
+
+<% end_sec('elementary-reals') %>
+
+<% begin_sec("The Leibniz notation",nil,'leibniz-notation') %>
+For better or for worse, this kind of thing wasn't a concern in Leibniz's era.
+With what seems like kittenish na\"ivet\'e to a modern mathematician, he reasoned as follows.
+Let's just make $\Delta x$ and $\Delta y$ infinitely small (but not zero). In modern terminology,
+this means that they can't be real numbers. To make it clear that we're talking infinitely small
+differences in $x$ and $y$, we change the notation to $\der x$ and $\der y$. Recall that $\Delta$
+is the Greek version of capital ``D,'' so we're using a smaller version of the letter, ``$\der$,''
+to represent a change that is smaller (in fact, infinitely small). Dividing these two
+``numbers'' (whatever mysterious species of number they may turn out to be), we get the
+derivative,
+\begin{equation*}
+  \frac{\der y}{\der x}
+\end{equation*}
+<% end_sec('leibniz-notation') %>
 
 <% end_chapter %>

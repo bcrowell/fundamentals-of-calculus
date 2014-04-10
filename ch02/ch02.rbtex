@@ -11,58 +11,5 @@
   )
 %>
 
-I began chapter \ref{ch:derivative} by defining calculus as the study of rates of change, but
-it could equally well be described as the study of infinity. The intuition behind the derivative
-is that we zoom in on a selected point on a smooth curve, until the curve appears like a line
-and we can measure the slope of the line. But the curve won't appear perfectly
-straight until we've cranked up our microscope to an \emph{infinitely big} magnification, at which point
-we'll be seeing \emph{infinitely small} values of $\Delta x$ and $\Delta y$.
-Calculus was invented by Isaac Newton and
-Gottfried Wilhelm von Leibniz back in the era of powdered wigs and silk stockings, and
-in those days the concept of number hadn't been formalized. Newton and Leibniz simply assumed
-that it was all right to have infinitely big and infinitely small numbers. But modern
-mathematicians approach this kind of thing differently. They think in terms of specific,
-well-defined sets of numbers, such as:
-
-\begin{description}
-\item[the integers:] whole numbers such as $-1$, 0, and $1$
-\item[the rational numbers:] ratios of integers such as $2/1$ and $3/4$
-\item[the real numbers,] including quantities like $\pi$ and $\sqrt{2}$
-\item[the complex numbers,] such as $\sqrt{-1}$
-\end{description}
-
-Do these systems include infinitely big and infinitely small numbers? Can they? Should they?
-
-<% begin_sec("Review: elementary properties of the real numbers",nil,'elementary-reals') %>
-
-To answer these questions, we need to give a more definite account of how these number systems
-are really defined. A good way to define them is with a list of their axioms.
-Here is a list of axioms for the system of real numbers. Except as otherwise stated,
-each of these properties holds for \emph{any} real-number values of the symbols $x$, $y$, \ldots
-
-\begin{description}
-\item[commutativity] $x+y=y+x$ and $xy=yx$
-\item[identities] There exist numbers 0 and 1 such that for any $x$, $x+0=x$ and $1x=x$.
-\item[inverses] For any $x$, there exists a number $-x$ such that $x+(-x)=0$. For any nonzero $x$,
-          there exists $1/x$ such that $(x)(1/x)=1$.
-\item[associativity] $x+(y+z)=(x+y)+z$ and $x(yz)=(xy)z$
-\item[distributivity] $x(y+z)=xy+xz$
-\item[ordering] We can define whether or not $x<y$, and this ordering relates to the addition and
-      multiplication operations in specific ways, which you've seen defined in a previous course
-      on algebra and which for brevity we will not explicitly give here.
-\end{description}
-
-This list of axioms holds for the real numbers, but it fails for the integers, since for example
-the integer 2 doesn't have an inverse that is an integer. It also fails for the complex numbers,
-which don't have a well-defined ordering. The list seems complete and precise, so it may come
-as a surprise that it does \emph{not} suffice to prove anything about whether or not infinite
-numbers exist. The list of axioms is in fact incomplete as a characterization of the real numbers;
-we will return to this point later.
-<% end_sec('elementary-reals') %>
-
-<% begin_sec("The Leibniz notation",nil,'leibniz-notation') %>
-For better or for worse, this kind of thing wasn't a concern in Leibniz's era.
-With what seems like kittenish naivete to a modern mathematician, he reasoned as follows.
-<% end_sec('leibniz-notation') %>
 
 <% end_chapter %>
