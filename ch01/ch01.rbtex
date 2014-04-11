@@ -296,9 +296,10 @@ easily seen to be positive, zero, negative, zero, and positive.
 
 <% end_sec('deriv-polynomial') %>
 
-<% begin_sec("Applications",nil,'apps-of-derivative') %>
+<% begin_sec("Two trivial hangups",nil,'hangups') %>
 <% begin_sec("Changing letters of the alphabet",nil,'changing-letters') %>
-The following point is relatively trivial, but nevertheless gives many students problems in applying calculus to real life. In a calculus
+The following point is relatively trivial, but nevertheless hangs up many students
+in applying calculus to real life. In a calculus
 textbook, we typically use the letters $x$ and $y$, with $y$ being a function of $x$. That is, $x$ is the independent variable,
 and $y$ is the dependent one. In real-life applications, however, the variables have definite meanings, and we want to
 use letters that make it easy to remember what they stand for. 
@@ -329,6 +330,39 @@ with the letters changed,
   c' = 2u
 \end{equation*}
 <% end_sec('changing-letters') %>
+<% begin_sec("Symbolic constants",nil,'symbolic-constants') %>
+The vertical stretch property of the derivative tells us that if we know a derivative such as
+\begin{equation*}
+  (x^2)'=2x \qquad ,
+\end{equation*}
+then we can differentiate a function like $5x^2$
+by simply letting the factor of 5 ``come along for the ride,'' 
+\begin{align*}
+  (5x^2)' &= (5)(x^2)' \\
+          &= (5)(2x) \\
+          &= 10x \qquad .
+\end{align*}
+Now suppose that we want to differentiate
+$bx^2$, where $b$ is a constant, i.e., $b$ doesn't depend on $x$. To many students this looks like a much
+more difficult and abstract problem, but the procedure is the same:
+\begin{align*}
+  (bx^2)' &= (b)(x^2)' \\
+          &= (b)(2x) \\
+          &= 2bx \qquad .
+\end{align*}
+The same goes for a vertical shift. If we aren't intimidated by computing
+\begin{equation*}
+  (x^2+5)' = (x^2)' = 2x \qquad ,
+\end{equation*}
+then there is no reason to be scared of the similar computation (again with
+$b$ being a constant) of
+\begin{equation*}
+  (x^2+b)' = (x^2)' = 2x \qquad .
+\end{equation*}
+<% end_sec('symbolic-constants') %>
+<% end_sec('hangups') %>
+
+<% begin_sec("Applications",nil,'apps-of-derivative') %>
 
 <% begin_sec("Velocity",nil,'velocity') %>
 <% begin_sec("Defining velocity",nil,'defining-velocity') %>
@@ -396,6 +430,11 @@ derivative (p.~\pageref{properties-of-derivative}), the velocity function is the
 <% end_sec('velocity') %>
 
 <% begin_sec("When do you need a derivative?",nil,'when-derivative-is-needed') %>
+Finding velocity from position data is a classic application of calculus, and yet how
+do we know when we really need calculus for this application? After all, many people
+do simple computations involving velocity without knowing calculus.
+
+Here's an example where calculus really is required.
 In July 1999, Popular Mechanics carried out tests to
 find which car sold by a major auto maker could cover a
 quarter mile (402 meters) in the shortest time, starting
@@ -421,6 +460,60 @@ the rate of change is the velocity, and the velocity is not constant. To find th
 we first need to decide at which time we want to know the velocity, and then evaluate the derivative
 at that time.
 <% end_sec('when-derivative-is-needed') %>
+
+<% begin_sec("Optimization",nil,'optimization') %>
+An extremely important use of the derivative is in optimization. For example, suppose that
+the operators of a privately owned mountain tram in Switzerland want to optimize
+their profit from transporting sightseers to a mountain summit in the Alps. The cost of
+building the tram is a sunk cost, and operating it for one day costs the same amount of money regardless
+of the number of passengers. Therefore the only goal is to get the maximum number of Swiss
+francs in the cash registers at the end of each day. The operators can raise the fare $f$ in order
+to make more money, but if the fare is too high then not as many people will be willing to pay it.
+Suppose that the number of riders in a given day is given by $a-bf$, where $a$ and $b$ are constants.
+That is, if the ride was free, $a$ passengers would ride each day, but for every one-franc
+increase in the fare, $b$ people will decide not to go. The tram's daily revenue is then found
+by multiplying the number of riders by the fare, which gives
+the function
+\begin{equation}\label{eq:tram-revenue}
+  r(f) = (a-bf)f \qquad .
+\end{equation}
+
+For insight into what's going on, figure \figref{tram-fare-edited} shows this function in the case where $a=100$ and
+$b=1$. When the fare is zero, we get plenty of customers every day, but they don't pay anything,
+so our revenue is zero. When the fare is 100 francs, the number of paying passengers goes down
+to zero, so again we have no revenue. 
+<% marg(0) %>
+<%
+  fig(
+    'tram-fare-edited',
+    %q{Revenue from a tram as a function of the fare charged.}
+  )  
+%>
+<% end_marg %>
+
+Somewhere in between these extremes  we have the fare that would optimize our
+revenue: the \emph{maximum} of the function $r$. At this point on the graph, the derivative is zero,
+so to find it, we should differentiate $r$, set it equal to zero, and solve for $f$.
+
+We haven't yet learned enough of the techniques of calculus to
+know how to find the derivative of a function with the form of equation
+\eqref{eq:tram-revenue}, but by multiplying out the product, we can make it into a polynomial,
+which is a form that we do know how to differentiate:
+\begin{align*}
+  r(f) &= -bf^2+af \\
+  r'(f) &= -2bf+a
+\end{align*} 
+Setting $r'$ equal to zero, we have
+\begin{align*}
+  0 &= -2bf+a \\
+  f&=\frac{a}{2b} \qquad .
+\end{align*} 
+With the particular numerical values used to construct the graph, this gives an optimal
+fare of 50 francs, which looks about right from the graph.
+
+%%graph%% tram-fare func=(100.0-x)*x x=f y=r format=svg xlo=0 xhi=100 ylo=0 yhi=2500 xtic_spacing=20 ytic_spacing=1000 with=lines
+
+<% end_sec('optimization') %>
 <% end_sec('apps-of-derivative') %>
 
 <% begin_sec("Review: elementary properties of the real numbers",nil,'elementary-reals') %>
