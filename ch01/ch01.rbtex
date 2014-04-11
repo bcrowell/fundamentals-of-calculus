@@ -573,15 +573,46 @@ rules out the existence of infinitely large or infinitely small real numbers.
 For better or for worse, this kind of thing wasn't a concern in Leibniz's era.
 With what seems like kittenish na\"ivet\'e to a modern mathematician, he reasoned as follows.
 Let's just make $\Delta x$ and $\Delta y$ infinitely small (but not zero). In modern terminology,
-this means that they can't be real numbers. To make it clear that we're talking infinitely small
+this means that they can't be real numbers. To make it clear that we're talking about infinitely small
 differences in $x$ and $y$, we change the notation to $\der x$ and $\der y$. Recall that $\Delta$
 is the Greek version of capital ``D,'' so we're using a smaller version of the letter, ``$\der$,''
 to represent a change that is smaller (in fact, infinitely small). Dividing these two
 ``numbers'' (whatever mysterious species of number they may turn out to be), we get the
 derivative,
 \begin{equation*}
-  \frac{\der y}{\der x}
+  \frac{\der y}{\der x} \qquad .
 \end{equation*}
+Although the notation's original justification was not up to modern standards of
+rigor, it is one of the most expressive and well-designed mathematical notations ever devised,
+and has been the most commonly used notation for the derivative ever since Leibniz published it
+in 1686.
+<% marg(200) %>
+<%
+  fig(
+    'leibniz-portrait',
+    %q{Gottfried Wilhelm Leibniz (1646-1716).}
+  )  
+%>
+<% end_marg %>
+
+One of the good things about the Leibniz notation is that it states clearly what we're differentiating
+\emph{with respect to}. For example, $\der v/\der t$ could indicate how much a car was speeding up
+with each passing second of time, while $\der v/\der x$ would communicate the speed gained with
+each meter that it moved down the road.
+
+Another selling point is that the notation shows the units of the derivative. For example,
+the definition of velocity, expressed in Leibniz notation, is
+\begin{equation*}
+  v = \frac{\der x}{\der t} \qquad .
+\end{equation*}
+On the left-hand side we have velocity, whose units in the SI are meters per second. On the
+right we have a tiny change in position, which has units of meters, divided by a tiny change
+in time, which has units of seconds. In terms of units, then, the equation reads as
+\begin{equation*}
+  \zu{m/s} = \frac{\munit}{\sunit} \qquad ,
+\end{equation*}
+which works out correctly. In more complicated examples, checking the units like this is a powerful
+method for checking your answer to a calculus problem.
 <% end_sec('leibniz-notation') %>
 
 <% end_chapter %>
