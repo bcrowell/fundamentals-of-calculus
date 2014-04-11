@@ -497,7 +497,7 @@ so to find it, we should differentiate $r$, set it equal to zero, and solve for 
 
 We haven't yet learned enough of the techniques of calculus to
 know how to find the derivative of a function with the form of equation
-\eqref{eq:tram-revenue}, but by multiplying out the product, we can make it into a polynomial,
+\eqref{eq:tram-revenue}, but by multiplying out the product we can make it into a polynomial,
 which is a form that we do know how to differentiate:
 \begin{align*}
   r(f) &= -bf^2+af \\
@@ -510,6 +510,26 @@ Setting $r'$ equal to zero, we have
 \end{align*} 
 With the particular numerical values used to construct the graph, this gives an optimal
 fare of 50 francs, which looks about right from the graph.
+
+By searching for points where the derivative is zero we can often, but not always, find
+the the points where a function takes on its maximum and minimum values. The term extremum
+(plural extrema) is used to refer to these points. Figure \figref{cases-of-extrema} shows that
+quite a few different things can happen, and that searching for a zero derivative doesn't
+always tell us the whole story. We have a zero derivative at point G, but G is only a maximum
+compared to nearby points; we call G a local maximum, as opposed to the global maximum D.
+The zero-derivative test doesn't distinguish a local minimum like B from a local maximum.
+A zero derivative may not indicate a local extremum at all, as at C and H. We can have points
+such as E and F where the derivative is undefined. An extremum can occur at a point like A
+that is the endpoint of the function's domain.
+We will come back to these technical points in more detail later in the book.
+<% marg(0) %>
+<%
+  fig(
+    'cases-of-extrema',
+    %q{A zero derivative often, but not always, indicates a local extremum.}
+  )  
+%>
+<% end_marg %>
 
 %%graph%% tram-fare func=(100.0-x)*x x=f y=r format=svg xlo=0 xhi=100 ylo=0 yhi=2500 xtic_spacing=20 ytic_spacing=1000 with=lines
 
@@ -586,7 +606,7 @@ Although the notation's original justification was not up to modern standards of
 rigor, it is one of the most expressive and well-designed mathematical notations ever devised,
 and has been the most commonly used notation for the derivative ever since Leibniz published it
 in 1686.
-<% marg(200) %>
+<% marg(80) %>
 <%
   fig(
     'leibniz-portrait',
@@ -597,7 +617,7 @@ in 1686.
 
 One of the good things about the Leibniz notation is that it states clearly what we're differentiating
 \emph{with respect to}. For example, $\der v/\der t$ could indicate how much a car was speeding up
-with each passing second of time, while $\der v/\der x$ would communicate the speed gained with
+with each passing second of time, while $\der v/\der x$ would measure the speed gained with
 each meter that it moved down the road.
 
 Another selling point is that the notation shows the units of the derivative. For example,
@@ -614,5 +634,51 @@ in time, which has units of seconds. In terms of units, then, the equation reads
 which works out correctly. In more complicated examples, checking the units like this is a powerful
 method for checking your answer to a calculus problem.
 <% end_sec('leibniz-notation') %>
+
+<% begin_sec("Approximations",nil,'approximations') %>
+We saw in section \ref{subsec:when-derivative-is-needed} on p.~\pageref{subsec:when-derivative-is-needed}
+that the derivative can't be calculated as $\Delta y/\Delta x$ unless the derivative is constant, i.e., unless
+the function's graph is a line. In the Leibniz notation, this is
+\begin{equation*}
+  \frac{\der y}{\der x} \ne \frac{\Delta y}{\Delta x} \qquad .
+\end{equation*}
+But if we take two points very close together on a graph, then the curvature doesn't matter too much,
+and the line through those points is a good approximation to the tangent line, as in figure
+\figref{approximating-tangent-line}. When then have the approximation
+\begin{equation*}
+  \frac{\der y}{\der x} \approx \frac{\Delta y}{\Delta x} \qquad .
+\end{equation*}
+It may be of interest to use either side of this equation as an approximation to the other.
+<% marg(0) %>
+<%
+  fig(
+    'approximating-tangent-line',
+    %q{The dotted line through P and Q is a good approximation to the tangent line through P.}
+  )  
+%>
+<% end_marg %>
+
+<% begin_sec("Approximating the derivative",nil,'approximating-deriv') %>
+Suppose you can't remember that the derivative of $x^2$ is $2x$, but you need to find the
+value of the derivative at $x=1$. As in figure \figref{approximating-tangent-line}, let point P
+be
+\begin{equation*}
+  (1.0000,1.0000) \qquad ,
+\end{equation*}
+and let Q be the nearby point
+\begin{equation*}
+  (1.0100,1.0201) \qquad .
+\end{equation*}
+We then have:
+\begin{align*}
+  \frac{\der y}{\der x} & \approx \frac{\Delta y}{\Delta x} \\
+           &= \frac{1.0201-1.0000}{1.0100-1.0000} \\
+           &= \frac{0.0201}{0.0100} \\
+           &= 2.01
+\end{align*}
+This is quite a good approximation to the exact answer, 2. If we needed a better approximation,
+we could take Q even closer to P.
+<% end_sec('approximating-deriv') %>
+<% end_sec('approximations') %>
 
 <% end_chapter %>

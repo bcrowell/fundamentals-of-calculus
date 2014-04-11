@@ -13,8 +13,8 @@
    viewBox="0 0 600 480"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="tram-fare.svg">
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="tram-fare-edited.svg">
   <metadata
      id="metadata106">
     <rdf:RDF>
@@ -35,13 +35,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1440"
-     inkscape:window-height="872"
+     inkscape:window-width="1280"
+     inkscape:window-height="996"
      id="namedview104"
      showgrid="false"
-     inkscape:zoom="1.1158257"
-     inkscape:cx="80.127747"
-     inkscape:cy="107.25041"
+     inkscape:zoom="3.3954227"
+     inkscape:cx="85.586844"
+     inkscape:cy="87.827337"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -209,20 +209,20 @@
   <text
      xml:space="preserve"
      style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="-406.09174"
-     y="9.1277847"
+     x="-386.35928"
+     y="26.504118"
      id="text3117"
      sodipodi:linespacing="125%"
      transform="matrix(0,-1,1,0,0,0)"><tspan
        sodipodi:role="line"
        id="tspan3119"
-       x="-406.09174"
-       y="9.1277847">revenue, <tspan
+       x="-386.35928"
+       y="26.504118">revenue, <tspan
    style="font-style:italic;-inkscape-font-specification:Sans Italic"
    id="tspan3123">r</tspan></tspan><tspan
        sodipodi:role="line"
-       x="-406.09174"
-       y="21.627785"
+       x="-386.35928"
+       y="39.00412"
        id="tspan3121">(Swiss francs)</tspan></text>
   <text
      xml:space="preserve"
@@ -234,7 +234,9 @@
        sodipodi:role="line"
        id="tspan3127"
        x="101.07629"
-       y="456.23599">fare, f</tspan><tspan
+       y="456.23599">fare, <tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3030">f</tspan></tspan><tspan
        sodipodi:role="line"
        x="101.07629"
        y="468.73599"
@@ -264,23 +266,25 @@
   <text
      xml:space="preserve"
      style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="29.15053"
-     y="338.68329"
+     x="-347.80927"
+     y="55.072784"
      id="text3139"
-     sodipodi:linespacing="125%"><tspan
+     sodipodi:linespacing="125%"
+     transform="matrix(0,-1,1,0,0,0)"><tspan
        sodipodi:role="line"
        id="tspan3141"
-       x="29.15053"
-       y="338.68329">2000</tspan></text>
+       x="-347.80927"
+       y="55.072784">2000</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="29.150532"
-     y="383.35965"
+     x="-392.66873"
+     y="55.072784"
      id="text3143"
-     sodipodi:linespacing="125%"><tspan
+     sodipodi:linespacing="125%"
+     transform="matrix(0,-1,1,0,0,0)"><tspan
        sodipodi:role="line"
        id="tspan3145"
-       x="29.150532"
-       y="383.35965">1000</tspan></text>
+       x="-392.66873"
+       y="55.072784">1000</tspan></text>
 </svg>
