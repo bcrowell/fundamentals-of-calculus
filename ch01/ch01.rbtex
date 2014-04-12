@@ -706,7 +706,10 @@ We then have:
            &= 2.01
 \end{align*}
 This is quite a good approximation to the exact answer, 2. If we needed a better approximation,
-we could take Q even closer to P.
+we could take Q even closer to P. In reality we would use this technique in cases where we didn't
+know the exact answer, and we would then want to know how accurate our result was. To do this,
+we could redo the calculation with a smaller value of $\Delta x$, say 0.001, and look for the
+most significant decimal place that changed.
 <% marg(200) %>
 <%
   fig(
@@ -779,5 +782,22 @@ the worn end of the ruler as its zero, rather than letting the ruler hang over b
 and subtracting the two measurements?
 <% end_sec('approximating-changes') %>
 <% end_sec('approximations') %>
+
+\begin{hwsection}
+
+<% hw('diff-monomials',nil,{'solution'=>true}) %>
+<% hw('diff-polynomial',nil,{'solution'=>true}) %>
+<% hw('diff-symbolic-const',nil,{'solution'=>true}) %>
+<% hw('same-deriv',nil,{'solution'=>true}) %>
+
+<% hw('numerical-deriv-cos-x-cubed') %>
+<% hw('numerical-deriv-sin-sqrt-x') %>
+<% hw('numerical-deriv-e-to-cos-x') %>
+<% hw('numerical-deriv-woods-saxon') %>
+
+
+
+
+\end{hwsection}
 
 <% end_chapter %>

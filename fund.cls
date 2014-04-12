@@ -73,3 +73,7 @@
         \else
             \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
         \fi}
+%============================= homework ==================================================
+\newcommand{\givecredit}[1]{\hwaddtrailingstuff{\footnotesize{[#1]}}}
+\newcommand{\thompson}{\givecredit{Thompson, 1919}}
+\newcommand{\granville}{\hwaddtrailingstuff{\footnotesize{[Granville, 1911]}}}

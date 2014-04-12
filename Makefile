@@ -22,6 +22,7 @@ GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --titl
 default:
 	@make preflight
 	BK=$(BOOK) $(RUN_ERUBY)
+	fruby ch99/hwans.rbtex >ch99/hwanstemp.tex
 	# perl -e 'foreach $$f(<ch*>) {if (-d $$f) {$$f=~/ch(\d\d)/; $$n=$$1; $$c = "cd ch$$n && ../fruby ch$$n.rbtex >ch$${n}temp.tex && cd -"; print "$$c\n"; system $$c}}'
 	$(DO_PDFLATEX)
 	@scripts/translate_to_html.rb --util="learn_commands:$(BOOK).cmd"
@@ -58,6 +59,7 @@ clean:
 	@rm -f code_listing_* code_listings/* code_listings.zip
 	@rm -Rf code_listings
 	@rm -f temp.* temp_mathml.*
+	@rm -f ch99/hwanstemp.aux     ch99/hwanstemp.postm4  ch99/hwanstemp.tex
 	@# Sometimes we get into a state where LaTeX is unhappy, and erasing these cures it:
 	@rm -f *aux *idx *ilg *ind *log *toc
 	@rm -f ch*/*aux

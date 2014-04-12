@@ -1,0 +1,47 @@
+%%chapter%% 99
+\chapter{Answers and solutions}
+
+\hwanssection{Solutions to homework problems}
+
+<%
+
+def debug(s)
+  ########### $stderr.print s+"\n"
+end
+
+debug("processing solutions, cwd=#{Dir.pwd}\n")
+
+count = 0
+1.upto(98) {|ch|
+  nn = sprintf "%02d",ch
+  csv = "ch#{nn}_problems.csv"
+  if FileTest.exist?(csv) then
+    print "\\beginsolutions{#{ch}}\n\n"
+    File.open(csv,'r') { |f|
+      a = f.gets(nil) # nil means read whole file
+      if a.nil? then a='' end
+      a.each_line { |line|
+        line.scan(/(.*),(.*),(.*),(.*),(.*)/) { |book,same_ch,number,name,solution|
+          number = number.to_i
+          if solution=='1' then
+            solution_file = "public_solutions/ch#{nn}/#{name}.tex"
+            unless FileTest.exist?(solution_file) then
+              $stderr.print "warning: nonexistent file #{solution_file} for ch. #{ch}, number #{number}, #{name}, cwd=#{Dir.pwd}\n"
+            else
+              debug("doing ch. #{ch}, number #{number}, #{name}")
+              count = count+1
+              print "\\hwsolnhdr{#{name}}\\\\*\n"
+              File.open(solution_file,'r') { |g|
+                print g.gets(nil)+"\n\n" # nil means read whole file
+              }
+            end
+          end
+        } # end scan
+      } # end loop over lines
+    }
+  end
+}
+
+debug("processed #{count} solutions")
+
+%>

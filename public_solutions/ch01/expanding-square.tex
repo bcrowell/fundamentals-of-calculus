@@ -1,0 +1,21 @@
+The area is $a=\ell^2=(1+\alpha T)^2\ell_\zu{o}^2$. To make this into something we know how
+to differentiate, we need to square out the expression involving $T$, and make it into something
+that is expressed explicitly as a polynomial:
+\begin{equation*}
+  a=\ell_\zu{o}^2+2\ell_\zu{o}^2\alpha T+\ell_\zu{o}^2\alpha^2T^2
+\end{equation*}
+Now this is just like problem \ref{hw:diff-symbolic-const}, except that the constants superficially
+look more complicated. The result is
+\begin{align*}
+  \frac{\der a}{\der T} &=2\ell_\zu{o}^2\alpha +2\ell_\zu{o}^2\alpha^2T \\
+          &=2\ell_\zu{o}^2\left(\alpha +\alpha^2T\right) \qquad .
+\end{align*}
+
+We expect the units of the result to be area per unit temperature, e.g., degrees per square meter.
+This is a little tricky, because we have to figure out what units are implied for the constant
+$\alpha$. Since the question talks about $1+\alpha T$, apparently the quantity $\alpha T$ is unitless.
+(The 1 is unitless, and you can't add things that have different units.) Therefore the units
+of $\alpha$ must be ``per degree,'' or inverse degrees. It wouldn't make sense to add $\alpha$ and
+$\alpha^2T$ unless they had the same units (and you can check for yourself that they do), so
+the whole thing inside the parentheses must have units of inverse degrees. Multiplying by the
+$\ell_\zu{o}^2$ in front, we have units of area per degree, which is what we expected.
