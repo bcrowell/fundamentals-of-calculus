@@ -807,6 +807,8 @@ and subtracting the two measurements?
 <% hw('rancher-rick',{'solution'=>true}) %>
 <% hw('prove-n-extrema',{'solution'=>true}) %>
 <% hw('overtime') %>
+<% hw('cactus') %>
+<% hw('immerse-sphere') %>
 
 \pagebreak
 
@@ -822,15 +824,19 @@ and subtracting the two measurements?
   )
 %>
 
-
 <% hw('chain-rule-circle') %>
+\pagebreak
 <% hw('chain-rule-sphere') %>
 <% hw('chain-rule-triangle') %>
+
+\pagebreak
 
 <% hw('numerical-deriv-cos-x-cubed') %>
 <% hw('numerical-deriv-sin-sqrt-x') %>
 <% hw('numerical-deriv-e-to-cos-x') %>
 <% hw('numerical-deriv-woods-saxon') %>
+
+<% hw('error-propagation-powers',{'solution'=>true}) %>
 
 
 

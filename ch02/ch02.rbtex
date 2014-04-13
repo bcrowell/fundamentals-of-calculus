@@ -6,10 +6,310 @@
 <%
   chapter(
     '02',
-    %q{The Leibniz notation and approximations involving the derivative},
-    'ch:leibniz'
+    %q{Limits and the definition of the derivative},
+    'ch:limits'
   )
 %>
 
+In chapter \ref{ch:derivative} we started computing derivatives simply by appealing to
+a list of geometrically plausible properties (section \ref{subsec:properties-of-the-derivative},
+p.~\pageref{subsec:properties-of-the-derivative}). These properties are true, and by taking
+them as axioms we were able to prove rigorously that, for example, the derivative of $x^2$
+is $2x$ (section \ref{subsec:derivative-of-x-squared}, p.~\pageref{subsec:derivative-of-x-squared}).
+But there are many problems that are messy to solve by this limited toolbox of techniques, and 
+many others for which we need qualitatively different tools.
+
+Historically, the way Newton and\label{discard-dx-squared}
+Leibniz approached the problem was as follows. Suppose we want to take the derivative of
+$x^2$ at the point P where $x=1$. We already know that we can get a good numerical approximation to this
+derivative by taking a second point Q, close to P, and evaluating the slope of the line through P and
+Q. (See section \ref{subsec:approximating-deriv}, p.~\pageref{subsec:approximating-deriv}).
+Now instead of picking specific numbers, let's just take point Q to lie at $x=1+\der x$,
+where $\der x$ is very small. Then the slope of the line through P and Q is
+\begin{align*}
+  \text{slope} &= \frac{\Delta y}{\Delta x} \\
+               &= \frac{(1+\der x)^2-1}{(1+\der x)-1} \\
+               &= \frac{2\der x+\der x^2}{\der x} 
+\end{align*}
+Now comes the crucial leap of faith, which mathematicians of later centuries began to
+feel was a little too sketchy.
+The number $\der x$ is supposed to be small, and when you square a small number you get an even smaller number.
+Since $\der x$ is supposed to be infinitely small, $\der x^2$ should be so small that it's utterly
+unimportant, even compared to $\der x^2$. Therefore we throw away the $\der x^2$ term and find that the slope
+of the tangent line is 2.
+
+<% begin_sec("The definition of the limit",nil,'limit') %>
+Starting in the 19th century, the real number system was formally defined, and it became clear that although
+one could have a number system that obeyed the axioms given in section \ref{sec:elementary-reals}
+(p.~\pageref{sec:elementary-reals}) and that included infinitely small numbers, such a system would not
+be the same as the real numbers, and furthermore one would have a problem with the procedure of
+treating a $\der x^2$ as if it were zero; one can prove from those axioms that zero itself is the
+only number whose square is zero. For these reasons, mathematicians turned to a different way of
+defining the derivative, by using the new notion of a \emph{limit}.\index{limit}
+
+<% begin_sec("An informal definition",nil,'limit-informal') %>
+While it is easy to define precisely in a few words what a square root is
+($\sqrt{a}$ is the positive number whose square is $a$) the definition of
+the limit of a function runs over several terse lines, and most people
+don't find it very enlightening when they first see it.
+So we postpone this momentarily and start by building up our intuition.
+
+\begin{lessimportant}[Definition of limit (first attempt)]
+If $f$ is some function then
+\[
+\lim_{x\to a} f(x) = L
+\]
+is read ``the limit of $f(x)$ as $x$ approaches $a$ is $L$.''  It means
+that if you choose values of $x$ which are close \emph{but not equal} to
+$a$, then $f(x)$ will be close to the value $L$; moreover, $f(x)$ gets
+closer and closer to $L$ as $x$ gets closer and closer to $a$.
+\end{lessimportant}
+
+The following alternative notation is sometimes used
+\[
+f(x)\to L \quad\text{ as } \quad x\to a;
+\]
+(read ``$f(x)$ approaches $L$ as $x$ approaches $a$'' or ``$f(x)$ goes to
+$L$ is $x$ goes to $a$''.)
+
+\begin{eg}{}
+If $f(x) = x+3$ then
+\[
+\lim_{x\to 4} f(x) = 7,
+\]
+is true, because if you substitute numbers $x$ close to $4$ in $f(x) = x+3$
+the result will be close to $7$.
+\end{eg}
+
+\begin{eg}{Substituting numbers to guess a limit}\label{eg:limit-by-sub-good}
+What (if anything) is
+\[
+\lim_{x\to 2}\frac{x^2 -2x}{x^2-4}?
+\]
+Here $f(x) = (x^2 - 2x)/(x^2-4)$ and $a=2$.
+
+We first try to substitute $x=2$, but this leads to
+\[
+f(2) = \frac{2^2 - 2\cdot2}{2^2-4} = \frac 00
+\]
+which does not exist.  Next we try to substitute values of $x$ close but
+not equal to $2$.  The table suggests that $f(x)$
+approaches $0.5$.
+\end{eg}
+
+<% marg(80) %>
+\begin{tabular}{l|l}
+    \quad$x$ & \quad$f(x)$ \\
+    \hline
+    3.000000 & 0.600000\\
+    2.500000 & 0.555556\\
+    2.100000 & 0.512195\\
+    2.010000 & 0.501247\\
+    2.001000 & 0.500125\\
+  \end{tabular}
+\\\hspace{8mm}\formatlikecaption{Example \ref{eg:limit-by-sub-good}.}
+<% end_marg %>
+
+\begin{eg}{Substituting numbers can suggest the wrong answer.}\label{eg:limit-by-sub-bad}
+Our first definition of ``limit'' was not
+very precise, because it said ``$x$ close to $a$,'' but how close is close
+enough?  Suppose we had taken the function
+\[
+g(x) = \frac{101\,000x}{100\,000x+1}
+\]
+and we had asked for the limit $\lim_{x\to0}g(x)$.
+Then substitution of some ``small values of $x$,'' as shown in the table,
+could lead us to believe
+that the limit was $1$.  Only when you substitute even smaller
+values do you find that the limit is zero!
+\end{eg}
+
+<% marg(80) %>
+  \begin{tabular}{l|l}
+    \quad$x$ & \quad$g(x)$ \\
+    \hline
+    1.000000 & 1.009990\\
+    0.500000 & 1.009980\\
+    0.100000 & 1.009899\\
+    0.010000 & 1.008991\\
+    0.001000 & 1.000000\\
+  \end{tabular}
+\\\noindent\formatlikecaption{Example \ref{eg:limit-by-sub-bad}.}
+<% end_marg %>
+
+<% end_sec('limit-informal') %>
+
+<% begin_sec("The formal, authoritative definition of the limit",nil,'limit-formal') %>
+The informal description of the limit
+uses phrases like ``closer and closer'' and ``really very small.'' In the
+end we don't really know what they mean, although they are suggestive.
+Fortunately there is a better definition, i.e.~one which is unambiguous
+and can be used to settle any dispute about the question of whether or not
+$\lim_{x\to a} f(x)$ equals some number $L$. 
+
+\begin{important}[Definition of the limit]
+We say that $L$ is the limit of $f(x)$ as $x\to a$, if the following two conditions hold:
+\begin{enumerate}
+
+  \item The function $f(x)$ need not be defined at $x=a$, but it must be defined for all
+    other $x$ in some interval which contains $a$.
+
+  \item For every $\varepsilon>0$ one can find a $\delta>0$ such that 
+        for all values of $x$ in the domain of $f$ with $|x-a|<\delta$, we have
+      $|f(x) - L|<\varepsilon$ .
+\end{enumerate}
+\end{important}
+
+\emph{Why the absolute values?} The quantity $|x-y|$ is the distance
+between the points $x$ and $y$ on the number line, and one can measure how
+close $x$ is to $y$ by calculating $|x-y|$.  The inequality $|x-y|<\delta$
+says that ``the distance between $x$ and $y$ is less than $\delta$,'' or
+that ``$x$ and $y$ are closer than $\delta$.''
+
+\emph{What are $\varepsilon$ and $\delta$?} The quantity $\varepsilon$
+is how close you would like $f(x)$ to be to its limit $L$; the quantity
+$\delta$ is how close you have to choose $x$ to $a$ to achieve this.  To
+prove that $\lim_{x\to a} f(x) = L$ you must assume that someone has given
+you an unknown $\varepsilon>0$, and then find a positive $\delta$ for which
+$x$ values that close to $a$ result in values of $f$ that lie with the
+range the person has demanded.  The $\delta$ you find will depend on
+$\varepsilon$.
+<% marg(0) %>
+<%
+  fig(
+    'epsilon-delta',
+    %q{The value of $\varepsilon$ is imposed on us. We have succeeded in finding a value of $\delta$ 
+       small enough so that the outputs of the function do lie within the desired range. If we can
+       do this for \emph{every} value of $\varepsilon$, then the limit is $L$.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{}\label{eg:limit-of-linear-function}
+\egquestion Show that $\lim_{x\to5}2x+1=11$.
+
+\eganswer We have $f(x) = 2x+1$, $a=5$ and $L=11$, and the question we must answer is
+``how close should $x$ be to $5$ if want to be sure that $f(x)=2x+1$
+differs less than $\varepsilon$ from $L=11$?''
+
+To figure this out we try to get an idea of how big $|f(x)-L|$ is:
+\[
+|f(x)-L| = \bigl|(2x+1)-11\bigr| = |2x-10| = 2\cdot |x-5| = 2\cdot |x-a|.
+\]
+So, if $2|x-a|<\varepsilon$ then we have $|f(x)-L|<\varepsilon$, i.e.
+\[
+\text{if }|x-a|<\tfrac12\varepsilon \text{ then } |f(x)-L|<\varepsilon.
+\]
+We can therefore choose $\delta = \frac12\varepsilon$.  No matter what
+$\varepsilon>0$ we are given our $\delta$ will also be positive, and if
+$|x-5|<\delta$ then we can guarantee $|(2x+1) - 11|<\varepsilon$.  That
+shows that $\lim_{x\to 5}2x+1 = 11$.
+
+\end{eg}
+
+<% end_sec('limit-formal') %>
+
+<% end_sec('limit') %>
+
+<% begin_sec("The definition of the derivative",nil,'def-of-derivative') %>
+The single most important application of the limit is that it gives us a
+way to formalize the idea of a derivative, which we have so far been using
+on an informal basis. We start from the Newton-Leibniz approach described on
+p.~\pageref{discard-dx-squared}, but modify it by using a limit to get rid of the questionable
+procedure of discarding the square of an infinitesimally small number.
+
+\begin{important}[Definition of the derivative]\index{derivative!defined as a limit}
+The derivative of a function $f$ is
+\begin{equation*}
+  f'(x) = \lim_{\Delta x\rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} \qquad .
+\end{equation*}
+\end{important}
+
+\noindent If this limit is undefined at a certain $x$, then the derivative is undefined there, and we
+say that $f$ is not \emph{differentiable} at $x$.\index{differentiability}
+
+\begin{eg}{The derivative of $x^2$, using limits}\label{eg:x-squared-with-limits}
+Let's use the definition to find the derivative of $x^2$ at $x=1$. We have
+\begin{align*}
+  f'(1) &= \lim_{\Delta x\rightarrow 0} \frac{(1+\Delta x)^2-1}{\Delta x} \\
+        &= \lim_{\Delta x\rightarrow 0} \frac{2\Delta x+\Delta x^2}{\Delta x} \\
+        &= \lim_{\Delta x\rightarrow 0} (2+\Delta x) 
+\end{align*}
+We've already shown in example \ref{eg:limit-of-linear-function} on p.~\pageref{eg:limit-of-linear-function}
+that this sort of limit of a linear function is just what you would expect by plugging in to the
+equation of the line, and therefore we have $f'(1)=2$.
+\end{eg}
+<% marg(0) %>
+<%
+  fig(
+    'x-squared-geometrically',
+    %q{A geometrical interpretation of the expression $2\Delta x+\Delta x^2$ occurring in
+       the second line of example \ref{eg:x-squared-with-limits}. The area gained by increasing
+       the size of the square equals the area of the two thin strips plus the area of the small square.}
+  )  
+%>
+<% end_marg %>
+
+We seldom evaluate a derivative by directly applying its definition as a limit.
+Instead, we use a variety of other more convenient rules that follow from the
+definition. Some of these are the properties in section \ref{subsec:properties-of-the-derivative},
+p.~\pageref{subsec:properties-of-the-derivative}. In addition, we will learn two very
+important and useful rules, the product rule and the chain rule.
+<% end_sec('def-of-derivative') %>
+
+<% begin_sec("The product rule",nil,'product-rule') %>
+The idea behind the product rule is very similar to the geometrical intuition expressed by
+figure \figref{x-squared-geometrically} on p.~\pageref{fig:x-squared-geometrically} for
+the derivative of $x^2$. Suppose
+that instead of $x$ multiplied by $x$ to make $x^2$, we have some other
+function such as $(x^2+7)(x^3)$, which is also the product of two factors.
+Call these factors $u(x)$ and $v(x)$, so that the function we're differentiating
+is $f(x)=u(x)v(x)$. Then the expression we get by applying the definition of the
+derivative to $f$ can be written in terms of the rectangular areas in figure
+\figref{product-rule-geometrically} as
+\begin{equation*}
+  f'(x) = \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})+(\text{top strip})
+           +(\text{tiny box})}{\Delta x}
+\end{equation*}
+One can prove from the definition of the limit that the limit of a sum is equal to the sum
+of the limits, provided that the individual limits exist, so:
+\begin{align*}
+  f'(x) =&\quad \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})}{\Delta x} \\
+      &+\lim_{\Delta x\rightarrow0} \frac{(\text{top strip})}{\Delta x} \\
+      &+\lim_{\Delta x\rightarrow0} \frac{(\text{tiny box})}{\Delta x} 
+\end{align*}
+If the functions $u$ and $v$ are both well-behaved at $x$ (specifically, if both of them
+are differentiable), then the ``tiny box'' term will vanish upon application of the limit
+just as in example \ref{eg:x-squared-with-limits}. We then have
+\begin{align*}
+  f'(x) =&\quad \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})}{\Delta x} \\
+      &+\lim_{\Delta x\rightarrow0} \frac{(\text{top strip})}{\Delta x} \\
+     &= u'(x)v(x)+v'(x)u(x) \qquad .
+\end{align*}
+This is the extremely important \emph{product rule} for differentiation.\index{product rule}
+
+<% marg(0) %>
+<%
+  fig(
+    'product-rule-geometrically',
+    %q{A geometrical interpretation of the product rule.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{The product rule for $x^3$}
+So far we have never actually proved any derivatives of powers of $x$ other than $x^2$;
+although the proofs can be done by the methods of ch.~\ref{ch:derivative}, they are tedious.
+These results come out much more easily by applying the product rule. We have already proved
+that the derivative of $x^2$ was $2x$. To get the derivative of $x^3$, we can simply
+rewrite it as the product $(x^2)\cdot(x)$. Applying the product rule then gives
+\begin{align*}
+  (x^3)' &= [(x^2)\cdot(x)]' \\
+         &= (x^2)'\cdot(x) + (x^2)\cdot(x)' \\
+         &= 2x\cdot x + x^2\cdot 1 \\
+         &= 3x^2 \qquad .
+\end{align*}
+\end{eg}
+<% end_sec('product-rule') %>
 
 <% end_chapter %>
