@@ -798,12 +798,30 @@ and subtracting the two measurements?
 <% hw('observable-universe') %>
 <% hw('car-ke-and-power') %>
 
+\pagebreak
+
 <% hw('deriv-props-add-implies-stretch',{'solution'=>true}) %>
 <% hw('deriv-props-line-implies-constant') %>
 <% hw('deriv-props-add-and-constant-imply-shift') %>
 
 <% hw('rancher-rick',{'solution'=>true}) %>
 <% hw('prove-n-extrema',{'solution'=>true}) %>
+<% hw('overtime') %>
+
+\pagebreak
+
+<% hw('line-of-stability') %>
+
+<%
+  fig(
+    'hw-line-of-stability',
+    %q{Problem \ref{hw:line-of-stability}.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
 
 <% hw('chain-rule-circle') %>
 <% hw('chain-rule-sphere') %>

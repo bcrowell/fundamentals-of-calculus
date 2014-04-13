@@ -1,0 +1,38 @@
+An atomic nucleus is made out of protons and neutrons. The number of protons
+is called $Z$ and the number of neutrons $N$. Figure \figref{hw-line-of-stability}
+on p.~\pageref{fig:hw-line-of-stability} shows a chart of all of the nuclei that have
+been observed and studied to date. Most of these are unstable: they undergo radioactive
+decay in a certain amount of time, and therefore are not found in the earth's crust,
+so they can only be produced artificially.
+
+The stable nuclei are shown on the chart
+as black squares, and we can see that they follow a certain curve. Unstable nuclei
+that lie below and to the right of the line of stability have too many neutrons in
+proportion to their protons, and they undergo a decay process in which a neutron
+is converted to a proton, causing the nucleus to move one step diagonally on the
+chart, as in the game of checkers. Similarly, nuclei with too few neutrons move
+by diagonal steps down and to the right. Defining $A=N+Z$, these decay processes keep
+$A$ constant.
+
+In the \emph{liquid drop model}, the nucleus is treated as a continuous fluid with
+certain properties such as surface tension. Since the fluid is continuous, we can
+pretend that $N$ and $Z$ are capable of taking on any real-number values. (This is similar to
+the water molecules in the reservoir on p.~\pageref{fig:reservoir}.) In this model,
+a nucleus has a certain energy,
+\begin{equation*}
+  E = bZ^2A^{-1/3}+\frac{(A-2Z)^2}{A} \qquad ,
+\end{equation*}
+where $b\approx0.031$, and for simplicity we have left out
+an over-all constant of proportionality with units of energy.
+Let's consider $E$ as a function of $Z$, and $A$ as a constant.
+Since radioactive decay requires the release of energy, and our radioactive decay
+processes keep $A$ constant, a nucleus will be stable if it has the value
+of $Z$ that minimizes the function $E(Z)$.
+
+(a) Find this stable value of $Z$.\answercheck\hwendpart
+(b) For light nuclei, we observe that the stable nuclei have about half protons and
+half neutrons. Verify this from your answer to part a.\hwendpart
+(c) The heaviest nucleus shown as a black square on the chart is a uranium nucleus
+with $Z=92$ and $A=238$. Verify that your answer to part a passes close to this point.
+% calc -e "Z=92; N=146; A=N+Z; b=.031; A/(2+.5bA^(2/3))"
+%    91.7051812806395
