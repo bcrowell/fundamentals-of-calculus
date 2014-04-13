@@ -719,11 +719,11 @@ def read_whole_file(file)
 end
 
 
-def hw(name,difficulty=1,options={}) # used in Fundamentals of Calculus, which has all hw in chNN/hw
+def hw(name,options={},difficulty=1) # used in Fundamentals of Calculus, which has all hw in chNN/hw
   if difficulty==nil then difficulty=1 end
   begin_hw(name,difficulty,options)
   x = read_whole_file("ch#{$ch}/hw/#{name}.tex")
-  print x.sub(/\n+/,'')
+  print x.sub(/\n+$/,'')
   if options['solution'] then hw_solution() end
   end_hw
 end

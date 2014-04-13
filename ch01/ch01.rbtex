@@ -785,10 +785,29 @@ and subtracting the two measurements?
 
 \begin{hwsection}
 
-<% hw('diff-monomials',nil,{'solution'=>true}) %>
-<% hw('diff-polynomial',nil,{'solution'=>true}) %>
-<% hw('diff-symbolic-const',nil,{'solution'=>true}) %>
-<% hw('same-deriv',nil,{'solution'=>true}) %>
+<% hw('diff-monomials',{'solution'=>true}) %>
+<% hw('diff-polynomial',{'solution'=>true}) %>
+<% hw('diff-polynomial-2') %>
+<% hw('diff-polynomial-3') %>
+<% hw('diff-polynomial-4') %>
+<% hw('diff-polynomial-5') %>
+<% hw('same-deriv',{'solution'=>true}) %>
+
+<% hw('diff-symbolic-const',{'solution'=>true}) %>
+<% hw('human-cylinder') %>
+<% hw('observable-universe') %>
+<% hw('car-ke-and-power') %>
+
+<% hw('deriv-props-add-implies-stretch',{'solution'=>true}) %>
+<% hw('deriv-props-line-implies-constant') %>
+<% hw('deriv-props-add-and-constant-imply-shift') %>
+
+<% hw('rancher-rick',{'solution'=>true}) %>
+<% hw('prove-n-extrema',{'solution'=>true}) %>
+
+<% hw('chain-rule-circle') %>
+<% hw('chain-rule-sphere') %>
+<% hw('chain-rule-triangle') %>
 
 <% hw('numerical-deriv-cos-x-cubed') %>
 <% hw('numerical-deriv-sin-sqrt-x') %>
