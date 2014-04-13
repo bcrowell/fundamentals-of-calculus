@@ -1,0 +1,17 @@
+If the width and length of the rectangle are $t$ and $u$, and Rick is going to use up
+all his fencing material, then the perimeter of the rectangle, $2t+2u$, equals $L$, so for a given
+width, $t$, the length is $u=L/2-t$. The area is $a=tu=t(L/2-t)$. The function only means anything realistic
+for $0\le t\le L/2$, since for values of $t$ outside this region either the width or the height of the
+rectangle would be negative. The function $a(t)$ could therefore have a maximum either at a place
+where $\der a/\der t=0$, or at the endpoints of the function's domain. We can eliminate the latter possibility,
+because the area is zero at the endpoints.
+
+To evaluate the derivative, we first need to reexpress $a$ as a polynomial:
+\begin{equation*}
+  a=-t^2+\frac{L}{2}t \qquad .
+\end{equation*}
+The derivative is
+\begin{equation*}
+  \frac{\der a}{\der t}=-2t+\frac{L}{2} \qquad .
+\end{equation*}
+Setting this equal to zero, we find $t=L/4$, as claimed.
