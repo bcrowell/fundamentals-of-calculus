@@ -272,7 +272,9 @@ derivative to $f$ can be written in terms of the rectangular areas in figure
            +(\text{tiny box})}{\Delta x}
 \end{equation*}
 One can prove from the definition of the limit that the limit of a sum is equal to the sum
-of the limits, provided that the individual limits exist, so:
+of the limits, provided that the individual limits exist (see section
+\ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit},
+property $P_3$), so:
 \begin{align*}
   f'(x) =&\quad \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})}{\Delta x} \\
       &+\lim_{\Delta x\rightarrow0} \frac{(\text{top strip})}{\Delta x} \\
@@ -282,8 +284,8 @@ If the functions $u$ and $v$ are both well-behaved at $x$ (specifically, if both
 are differentiable), then the ``tiny box'' term will vanish upon application of the limit
 just as in example \ref{eg:x-squared-with-limits}. We then have
 \begin{align*}
-  f'(x) =&\quad \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})}{\Delta x} \\
-      &+\lim_{\Delta x\rightarrow0} \frac{(\text{top strip})}{\Delta x} \\
+  f'(x) &= \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})}{\Delta x} 
+           +\lim_{\Delta x\rightarrow0} \frac{(\text{top strip})}{\Delta x} \\
      &= u'(x)v(x)+v'(x)u(x) \qquad .
 \end{align*}
 This is the extremely important \emph{product rule} for differentiation.\index{product rule}
@@ -310,6 +312,119 @@ rewrite it as the product $(x^2)\cdot(x)$. Applying the product rule then gives
          &= 3x^2 \qquad .
 \end{align*}
 \end{eg}
+
+\begin{eg}{The derivative of a square root}
+Let's figure out the derivative of $\sqrt{x}$. We don't know what this derivative is yet, but let's
+give it a name. Call it $f$, i.e., $f(x)=(\sqrt{x})'$. Then
+\begin{align*}
+  1 &= x' \\
+    &= (\sqrt{x}\sqrt{x})' \\
+    &= f(x)\sqrt{x}+\sqrt{x}f(x) \\
+    &= 2f(x)\sqrt{x} \\
+  f(x) &= \frac{1}{2\sqrt{x}} \\
+       &= \frac{1}{2}x^{-1/2}
+\end{align*}
+This is exactly what we would have inferred from the power rule $(x^n)'=nx^{n-1}$, with $n=1/2$,
+but this is the first time we've seen any evidence that the rule works for values of $n$ 
+that aren't natural numbers.
+\end{eg}
 <% end_sec('product-rule') %>
 
+<% begin_sec("The chain rule",nil,'chain-rule') %>
+<% begin_sec("Constant rates of change",nil,'chain-rule-constant-rates') %>
+In addition to the chain rule, the other extremely important rule for differentiation is the chain
+rule. We start with two examples that illustrate the idea but don't require calculus.
+
+\begin{eg}{Burning calories}\label{eg:burning-calories}
+\egquestion Jane hikes 3 kilometers in an hour, and hiking burns 70 calories per kilometer. At what rate
+does she burn calories?
+
+\eganswer We let $x$ be the number of hours she's spent hiking so far, $y$ the distance covered,
+and $z$ the calories spent. Then
+\begin{align*}
+  \frac{\Delta z}{\Delta x}
+          &= \frac{\Delta z}{\Delta y} \cdot \frac{\Delta z}{\Delta y} \\
+          &= \left(\frac{70\ \zu{cal}}{1\ \cancel{\zu{km}}}\right)
+                                     \left(\frac{3\ \cancel{\zu{km}}}{1\ \zu{hr}}\right) \\
+          &= 210\ \zu{cal}/\zu{hr} \qquad .
+\end{align*}
+\end{eg}
+<% marg(-10) %>
+<%
+  fig(
+    'gear-ratio',
+    %q{Example \ref{eg:gear-ratio}.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{Gear ratios}\label{eg:gear-ratio}
+\egquestion Figure \ref{fig:gear-ratio} shows a piece of farm equipment containing a train of
+gears with 13, 21, and 42 teeth. If the smallest gear is driven by a motor, relate the rate of
+rotation of the biggest gear to the rate of rotation of the motor.
+
+\eganswer
+Let $x$, $y$, and $z$ be the angular positions of the three gears. Then
+\begin{align*}
+  \frac{\Delta z}{\Delta x} &= \frac{\Delta z}{\Delta y}  \cdot \frac{\Delta y}{\Delta x} \\
+                        &= \frac{13}{21} \cdot \frac{21}{42} \\
+                        &= \frac{13}{42} \qquad .
+\end{align*}
+
+\end{eg}
+
+These examples both used the following relationship among three rates of change:
+\begin{equation}\label{eq:chain-rule-deltas}
+  \frac{\Delta z}{\Delta x} = \frac{\Delta z}{\Delta y}  \cdot \frac{\Delta y}{\Delta x} 
+\end{equation}
+Because the rates of change were stated to be constant, it was valid to measure them with
+expressions of the form $\Delta\ldots/\Delta\ldots$, and because the deltas were real numbers,
+it was valid to use the normal rules of algebra
+and cancel the factors $\Delta y$.
+<% end_sec('chain-rule-constant-rates') %>
+<% begin_sec("Varying rates of change",nil,'chain-rule-varying-rates') %>
+The Leibniz notation makes it tempting to simply write down and
+believe the following analogous-looking expression involving derivatives:
+\begin{equation*}
+  \frac{\der z}{\der x} = \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x} 
+\end{equation*}
+In problems \ref{hw:chain-rule-circle}-\ref{hw:chain-rule-triangle} on p.~\pageref{hw:chain-rule-circle}
+we verified that this seemed to work. But how do we know that this really always works
+with derivatives? If we're really defining the Leibniz notation as standing for a limit, then
+we really need to show this:
+\begin{equation}\label{eg:chain-rule-limit-product}
+     \lim_{\Delta x\rightarrow0 }\frac{\Delta z}{\Delta x}
+   = \left(\lim_{\Delta y\rightarrow0 }\frac{\Delta z}{\Delta y}  \right)
+     \left(\lim_{\Delta x\rightarrow0 }\frac{\Delta y}{\Delta x} \right)
+\end{equation}
+If all three derivatives exist, then
+this essentially works because the limit of a product is the product of a limit (provided
+that the limits exist); this is property $P_5$ of the limit, to be discussed more formally
+in section
+\ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit}.
+
+There are two technical issues to worry about. (1) Equation \eqref{eq:chain-rule-deltas}
+is not true if $\Delta y=0$, because we can't divide by zero, and if the derivative of
+$y$ with respect to $x$ happens to be zero somewhere, then it's reasonable to worry that
+this might be forced upon us for a certain value of $\Delta x$. Although we won't prove it
+here, this issue doesn't actually cause the chain rule to fail. (2) In
+equation \eqref{eg:chain-rule-limit-product}, two of the limits involve $\Delta x\rightarrow 0$,
+but one has $\Delta y\rightarrow 0$. This turns out not to be a problem because, as discussed
+in ch.~\ref{ch:more-limits}, a differentiable function must be \emph{continuous} (i.e., there
+are no gaps in its graph), and therefore if, by assumption, $y$ is differentiable as
+a function of $x$, then
+$y$ is also continuous, and therefore taking $\Delta x\rightarrow 0$ also causes
+$\Delta y\rightarrow 0$.
+
+We therefore have:\index{chain rule}\\*
+\begin{important}[The chain rule]
+If $z$ is a function of $y$, and $y$ is a function of $x$, and if
+the derivatives $\der z/\der y$ and $\der y/\der x$ exist at a certain point,
+then at that point,
+\begin{equation*}
+  \frac{\der z}{\der x} = \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x}  \qquad .
+\end{equation*}
+\end{important}
+<% end_sec('chain-rule-varying-rates') %>
+<% end_sec('chain-rule') %>
 <% end_chapter %>
