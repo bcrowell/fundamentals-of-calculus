@@ -299,7 +299,7 @@ This is the extremely important \emph{product rule} for differentiation.\index{p
 %>
 <% end_marg %>
 
-\begin{eg}{The product rule for $x^3$}
+\begin{eg}{The product rule for $x^3$}\label{eg:derivative-of-x-cubed}
 So far we have never actually proved any derivatives of powers of $x$ other than $x^2$;
 although the proofs can be done by the methods of ch.~\ref{ch:derivative}, they are tedious.
 These results come out much more easily by applying the product rule. We have already proved
@@ -313,21 +313,6 @@ rewrite it as the product $(x^2)\cdot(x)$. Applying the product rule then gives
 \end{align*}
 \end{eg}
 
-\begin{eg}{The derivative of a square root}
-Let's figure out the derivative of $\sqrt{x}$. We don't know what this derivative is yet, but let's
-give it a name. Call it $f$, i.e., $f(x)=(\sqrt{x})'$. Then
-\begin{align*}
-  1 &= x' \\
-    &= (\sqrt{x}\sqrt{x})' \\
-    &= f(x)\sqrt{x}+\sqrt{x}f(x) \\
-    &= 2f(x)\sqrt{x} \\
-  f(x) &= \frac{1}{2\sqrt{x}} \\
-       &= \frac{1}{2}x^{-1/2}
-\end{align*}
-This is exactly what we would have inferred from the power rule $(x^n)'=nx^{n-1}$, with $n=1/2$,
-but this is the first time we've seen any evidence that the rule works for values of $n$ 
-that aren't natural numbers.
-\end{eg}
 <% end_sec('product-rule') %>
 
 <% begin_sec("The chain rule",nil,'chain-rule') %>
@@ -427,4 +412,85 @@ then at that point,
 \end{important}
 <% end_sec('chain-rule-varying-rates') %>
 <% end_sec('chain-rule') %>
+
+<% begin_sec("Proof of the power rule in general",nil,'power-rule-general') %>
+In section \ref{sec:deriv-polynomial}, p.~\pageref{sec:deriv-polynomial},
+I presented the rule $(x^n)'=nx^{n-1}$ for all natural numbers $n$,  but only explicitly proved it
+for $n=1$ and 2.
+A good application of the product and chain rules is to extend
+the proof to all nonzero integers $n$ and to show that it also holds for fractional exponents.
+
+Only $n=0$ requires special treatment. Since $x^0=1$, its derivative should be zero.
+Our rule sort of, but not quite, works here, since it gives $0x^{-1}$, or $0/x$. This is certainly
+zero if $x\ne0$, but in the case where $x=0$ it gives $0/0$, which is undefined.
+
+<% begin_sec("Exponents that are natural numbers",nil,'natural-powers') %>
+Example \ref{eg:derivative-of-x-cubed} on p.~\pageref{eg:derivative-of-x-cubed} showed that the product rule can be used
+to prove special cases of the power rule.
+Since we knew the derivative of $x^2$,
+we were able to find the derivative of $x^3$ by rewriting it as $(x^2)(x)$ and
+applying the power rule. In the same way, we can prove the rule for any exponent $n$
+if it has already been established for $n-1$. We rewrite $x^n$ as $(x^{n-1})(x)$,
+differentiate using the product rule, and find:
+\begin{align*}
+  (x^n)' &= (x^{n-1})'(x)+(x^{n-1})(x)' \\
+         &= (n-1)x^{n-2}x+x^{n-1} \\
+         &= nx^{n-1}
+\end{align*}
+By establishing the fact for $n=1$, and then proving that it must hold for $n$ if it
+holds for $n-1$, we establish that it holds for all natural numbers $n$. This is
+called \emph{proof by induction}.\index{induction}\index{proof!by induction}
+<% end_sec('natural-powers') %>
+<% begin_sec("Negative exponents",nil,'negative-powers') %>
+If we write $1=(x)(1/x)$, then we can differentiate on both sides, and we find that
+$(1/x)'=-1/x^2$. This is exactly what we would have expected from applying the
+power rule to the exponent $-1$. It is then straightforward to extend the result
+to all negative integers by applying the chain rule to $(x^n)^{-1}$.
+<% end_sec('negative-powers') %>
+<% begin_sec("Exponents that aren't natural numbers",nil,'unnatural') %>
+What about fractional exponents, such as $x^{1/2}$, i.e., the square root of $x$?
+We don't know what this derivative is yet, but let's
+give it a name. Call it $f$, i.e., $f(x)=(\sqrt{x})'$. Then
+\begin{align*}
+  1 &= x' \\
+    &= (\sqrt{x}\sqrt{x})' \\
+    &= f(x)\sqrt{x}+\sqrt{x}f(x) \\
+    &= 2f(x)\sqrt{x} \\
+  f(x) &= \frac{1}{2\sqrt{x}} \\
+       &= \frac{1}{2}x^{-1/2}
+\end{align*}
+This is exactly what we would have inferred from the power rule $(x^n)'=nx^{n-1}$, with $n=1/2$.
+A similar argument can be carried out for any fractional exponent.
+<% end_sec('unnatural') %>
+<% end_sec('power-rule-general') %>
+
+<% begin_sec("Quotients",nil,'quotients') %>
+Suppose that we want to differentiate the function
+\begin{equation*}
+  \frac{1}{x} \qquad .
+\end{equation*}
+The product rule tells us how to differentiate an expression involving multiplication,
+but this one uses division. However, division by a certain number is the same as multiplication by its
+multiplicative inverse, so we can rewrite this function in a form that we know how to differentiate.
+\begin{align*}
+  \left(\frac{1}{x}\right)' &= \left(x^{-1}\right)' \\
+          &= -x^{-2} \qquad \text{[power rule]}
+\end{align*}
+If the expression in the denominator is more complicated, we can do the same thing, but use
+the chain rule as well:
+\begin{align*}
+  \left(\frac{1}{1+x^2}\right)' &= \left((1+x^2)^{-1}\right)' \\
+          &= -(1+x^2)^{-2}(2x)
+\end{align*}
+If the numerator is not just 1, then we also have to use the product rule:
+\begin{align*}
+  \left(\frac{x^3}{1+x^2}\right)' &= \left(x^3(1+x^2)^{-1}\right)' \\
+          &= (x^3)'(1+x^2)^{-1}+x^3\left[(1+x^2)^{-1}\right]' \qquad \text{[product rule]} \\
+          &= 3x^2(1+x^2)^{-1}+x^3\left[-(1+x^2)^{-2}(2x)\right] \\
+          &= \frac{x^4+3x^2}{\left(1+x^2\right)^2} \qquad \text{[simplify]}
+\end{align*}
+% calc -e "x=3.7; y=x^3/(1+x^2); dx=.001; x=x+dx; y2=x^3/(1+x^2); (y2-y)/dx; (x^4+3x^2)/(1+x^2)^2"
+% ... verifies that it's right
+<% end_sec('quotients') %>
+
 <% end_chapter %>

@@ -259,7 +259,8 @@ The derivative of $x^n$ equals $nx^{n-1}$, if $n$ is any integer greater than or
 \end{important}
 
 \noindent To prove this for all these values of $n$, rather than carrying out the proof for one value at
-a time, it will be more convenient to use techniques developed later in the book.
+a time, it will be more convenient to use techniques developed later in the book
+(section \ref{sec:power-rule-general}, p.~\pageref{sec:power-rule-general}).
 
 If we combine this with the addition and stretch rules, we know enough to differentiate any polynomial.
 <% marg(-50) %>
