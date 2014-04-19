@@ -77,3 +77,13 @@
 \newcommand{\givecredit}[1]{\hwaddtrailingstuff{\footnotesize{[#1]}}}
 \newcommand{\thompson}{\givecredit{Thompson, 1919}}
 \newcommand{\granville}{\hwaddtrailingstuff{\footnotesize{[Granville, 1911]}}}
+%============
+% This is analogous to the lessimportant environment from lmenvironments.sty.
+\newenvironment{theorem}[1][Theorem]%      
+        {%
+          \setlength{\saveleftskip}{\leftskip}%
+          \addtolength{\leftskip}{10mm}%
+          \noindent\ifthenelse{\equal{#1}{}}{}{\textbf{#1}\\*}%
+        }{%
+          \par  \setlength{\leftskip}{\saveleftskip} \par%
+        }

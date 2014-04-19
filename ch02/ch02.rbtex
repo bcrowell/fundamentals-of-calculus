@@ -27,7 +27,7 @@ Q. (See section \ref{subsec:approximating-deriv}, p.~\pageref{subsec:approximati
 Now instead of picking specific numbers, let's just take point Q to lie at $x=1+\der x$,
 where $\der x$ is very small. Then the slope of the line through P and Q is
 \begin{align*}
-  \text{slope} &= \frac{\Delta y}{\Delta x} \\
+  \text{slope of line PQ} &= \frac{\Delta y}{\Delta x} \\
                &= \frac{(1+\der x)^2-1}{(1+\der x)-1} \\
                &= \frac{2\der x+\der x^2}{\der x} 
 \end{align*}
@@ -44,7 +44,8 @@ one could have a number system that obeyed the axioms given in section \ref{sec:
 (p.~\pageref{sec:elementary-reals}) and that included infinitely small numbers, such a system would not
 be the same as the real numbers, and furthermore one would have a problem with the procedure of
 treating a $\der x^2$ as if it were zero; one can prove from those axioms that zero itself is the
-only number whose square is zero. For these reasons, mathematicians turned to a different way of
+only number whose square is zero.\footnote{For more on this topic, see optional
+section \ref{sec:safe-handling-of-dx} on p.~\pageref{sec:safe-handling-of-dx}.} For these reasons, mathematicians turned to a different way of
 defining the derivative, by using the new notion of a \emph{limit}.\index{limit}
 
 <% begin_sec("An informal definition",nil,'limit-informal') %>
@@ -209,6 +210,14 @@ shows that $\lim_{x\to 5}2x+1 = 11$.
 
 <% end_sec('limit-formal') %>
 
+\startdq
+
+\begin{dq}
+Figure \figref{epsilon-delta} on p.~\pageref{fig:epsilon-delta} shows an example where $\delta$ is small enough for the given
+value of $\varepsilon$. What would the figure look like in a case where the value of $\delta$
+was \emph{not} small enough?
+\end{dq}
+
 <% end_sec('limit') %>
 
 <% begin_sec("The definition of the derivative",nil,'def-of-derivative') %>
@@ -219,7 +228,7 @@ p.~\pageref{discard-dx-squared}, but modify it by using a limit to get rid of th
 procedure of discarding the square of an infinitesimally small number.
 
 \begin{important}[Definition of the derivative]\index{derivative!defined as a limit}
-The derivative of a function $f$ is
+The derivative of a function $f$ at a point $x$ is
 \begin{equation*}
   f'(x) = \lim_{\Delta x\rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} \qquad .
 \end{equation*}
@@ -288,7 +297,15 @@ just as in example \ref{eg:x-squared-with-limits}. We then have
            +\lim_{\Delta x\rightarrow0} \frac{(\text{top strip})}{\Delta x} \\
      &= u'(x)v(x)+v'(x)u(x) \qquad .
 \end{align*}
-This is the extremely important \emph{product rule} for differentiation.\index{product rule}
+We have the following extremely important and useful rule for differentiation:
+
+\begin{important}[Product rule]\index{product rule}
+Let $f=uv$, where $f$, $u$, and $v$ are all functions. Then at any point where
+$u$ and $v$ are both differentiable,
+\begin{equation*}
+  f' = u'v+v'u \qquad .
+\end{equation*}
+\end{important}
 
 <% marg(0) %>
 <%
@@ -388,11 +405,11 @@ that the limits exist); this is property $P_5$ of the limit, to be discussed mor
 in section
 \ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit}.
 
-There are two technical issues to worry about. (1) Equation \eqref{eq:chain-rule-deltas}
+There are two technical issues to worry about. First, equation \eqref{eq:chain-rule-deltas}
 is not true if $\Delta y=0$, because we can't divide by zero, and if the derivative of
 $y$ with respect to $x$ happens to be zero somewhere, then it's reasonable to worry that
 this might be forced upon us for a certain value of $\Delta x$. Although we won't prove it
-here, this issue doesn't actually cause the chain rule to fail. (2) In
+here, this issue doesn't actually cause the chain rule to fail. The second issue is that in
 equation \eqref{eg:chain-rule-limit-product}, two of the limits involve $\Delta x\rightarrow 0$,
 but one has $\Delta y\rightarrow 0$. This turns out not to be a problem because, as discussed
 in ch.~\ref{ch:more-limits}, a differentiable function must be \emph{continuous} (i.e., there
@@ -447,7 +464,7 @@ $(1/x)'=-1/x^2$. This is exactly what we would have expected from applying the
 power rule to the exponent $-1$. It is then straightforward to extend the result
 to all negative integers by applying the chain rule to $(x^n)^{-1}$.
 <% end_sec('negative-powers') %>
-<% begin_sec("Exponents that aren't natural numbers",nil,'unnatural') %>
+<% begin_sec("Exponents that aren't integers",nil,'fractional-powers') %>
 What about fractional exponents, such as $x^{1/2}$, i.e., the square root of $x$?
 We don't know what this derivative is yet, but let's
 give it a name. Call it $f$, i.e., $f(x)=(\sqrt{x})'$. Then
@@ -461,7 +478,7 @@ give it a name. Call it $f$, i.e., $f(x)=(\sqrt{x})'$. Then
 \end{align*}
 This is exactly what we would have inferred from the power rule $(x^n)'=nx^{n-1}$, with $n=1/2$.
 A similar argument can be carried out for any fractional exponent.
-<% end_sec('unnatural') %>
+<% end_sec('fractional-powers') %>
 <% end_sec('power-rule-general') %>
 
 <% begin_sec("Quotients",nil,'quotients') %>
@@ -491,6 +508,115 @@ If the numerator is not just 1, then we also have to use the product rule:
 \end{align*}
 % calc -e "x=3.7; y=x^3/(1+x^2); dx=.001; x=x+dx; y2=x^3/(1+x^2); (y2-y)/dx; (x^4+3x^2)/(1+x^2)^2"
 % ... verifies that it's right
+
+The foregoing examples show a technique for differentiating quotients that works
+in all cases, and this is how I do that type of derivative. Some people, however,
+prefer to memorize the following rule, which can be proved by running through the steps
+above for a function $f=p/q$, where $p$ and $q$ can be any functions at all.
+
+\begin{lessimportant}[Quotient rule]
+Let $f=p/q$, where $f$, $p$, and $q$ are all functions. Then at any point where
+$p$ and $q$ are both differentiable and $q\ne0$,
+\begin{equation*}
+  f' = \frac{p'q-q'p}{q^2} \qquad .
+\end{equation*}
+\end{lessimportant}
+
 <% end_sec('quotients') %>
+<% begin_sec("Safe handling of $\\der y$ and $\\der x$ (optional)",nil,'safe-handling-of-dx',{'optional'=>true}) %>
+We've seen that although the real number system doesn't include infinitely big or infinitely small
+quantities, it can nevertheless be extremely useful to think of
+a notation like $\der y/\der x$ as the quotient of two infinitely small numbers.
+For example, it allows us to check our work in differentiation by checking the units
+of the result (example \ref{eg:pest}, p.~\pageref{eg:pest}), and it makes the chain rule
+look so obvious that there would never be any danger of forgetting it. 
+When the calculus was first invented, these infinitely small numbers were
+referred to as \emph{infinitesimal} numbers. The idea is that just as a decimal is
+one tenth, an infinitesimal is one ``infinitieth.''
+
+We now confront the
+question of when it's safe to treat $\der y$ and $\der x$ as if they were numbers.
+This kind of manipulation is like nuclear energy: it can be used for good and for evil,
+and if you want to use it safely, you have to know what you're doing.
+In this section we lay out some simple safety rules which, if followed, will prevent
+all nuclear meltdowns. Just as we enriched the set of natural numbers to make
+the rational numbers, and the rational numbers to make the reals, we continue the march of
+progress by making an even larger number system, called the hyperreal numbers,
+which includes infinitesimals.
+For a more detailed exposition of this kind of thing
+at the freshman-calculus level, see the excellent free online book by Keisler,
+\emph{Elementary Calculus: An Approach Using Infinitesimals}.
+
+We start with two preliminary definitions.
+
+Definition:
+Suppose that for a certain nonzero number $d$, we have $|d|<1$, $|d|<1/(1+1)$, $|d|<1/(1+1+1)$, \ldots
+and so on for all inequalities of this form. Then we say that $d$ is \emph{infinitesimal}.
+
+Definition: Let $H$ be a hyperreal number (which may or may not also be a real number).
+Suppose that there exists some real number $r$ such that $|H-r|$ is infinitesimal.
+Then we say that $r$ is the \emph{standard part} of $H$.
+
+\emph{Rule 1.} The hyperreal numbers obey all the same elementary axioms as the
+      real numbers (section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}).
+
+The hyperreals numbers include at least one infinitesimally small number, call it $d$.
+By the multiplicate inverse axiom, it follows that $1/d$ is also a well-defined hyperreal
+number, and clearly $1/d$ is bigger than $1$, bigger than $1+1$, and so on, so the hyperreal
+number system includes both infinitely big and infinitely small quantities.
+
+It can be proved from the elementary axioms that if $d$ is nonzero, then $2d\ne d$.
+Therefore the hyperreal number system includes a variety of sizes of infinitesimals.
+This is important, because if all infinitesimals were the same size, then $\der y/\der x$
+would always have to equal one!
+It also follows from the axioms that $1/d \ne 1/(2d)$, so infinite numbers come in different sizes as well.
+We therefore have:
+
+\emph{Rule 2.}  The symbol $\infty$ and the term ``infinity'' do not stand for any real number, and do
+      not stand for any specific hyperreal number. They are in fact not very useful in the context
+      of the hyperreals.\label{infinity-is-not-a-hyperreal}
+
+\begin{eg}{Breaking the rules gives a nuclear meltdown}
+Suppose that the universe is infinite, so that there are infinitely many animals in the universe
+that, like us, have two eyes. The number of left eyes is some infinite hyperreal number $H$, and $H$ is
+also the number of right eyes. The total number of eyes is then
+\begin{equation*}
+  H+H=2H \qquad .
+\end{equation*}
+Everything is all right, and $2H$ is an infinite number that happens to be twice as big as $H$.
+
+But now suppose we break rule 2 and use the symbol $\infty$ indiscriminately for any positive, infinite
+quantity. Then we have
+\begin{equation*}
+  \infty+\infty=\infty \qquad .
+\end{equation*}
+Applying the additive inverse axiom, we can cancel an $\infty$ from each side, giving
+\begin{equation*}
+  \infty=0 \qquad ,
+\end{equation*}
+which is absurd.
+
+The paradox didn't result from talking about infinite numbers. It came from
+breaking one of the rules for manipulating them correctly.
+\end{eg}
+
+Historically, one of the main sources of confusion about infinitesimals was the
+sketchy practice of discarding the square of an infinitesimal (p.~\pageref{discard-dx-squared}).
+This is resolved as follows:
+
+\emph{Rule 3.} The derivative of $y$ with respect to $x$ equals the standard part of
+  $\der y/\der x$.
+
+Redoing the example from p.~\pageref{discard-dx-squared} according to this rule, we
+have the following calculation of the derivative of $y=x^2$ at $x=1$:
+\begin{align*}
+  \frac{\der y}{\der x} &= \frac{(1+dx)^2-1}{(1+dx)-1} \\
+                        &= 2+dx \\
+  y' &= \text{standard part of}\ 2+dx \\
+     &= 2
+\end{align*}
+
+
+<% end_sec('safe-handling-of-dx') %>
 
 <% end_chapter %>

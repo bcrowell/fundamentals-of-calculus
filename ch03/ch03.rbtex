@@ -390,4 +390,340 @@ is continuous everywhere except at multiples of $\pi$, where the sine has zeroes
 
 <% end_sec('continuity') %>
 
+<% begin_sec("Variations on the theme of the limit",nil,'limit-variations') %>
+
+Not all limits are ``for $x\to a$''.  Here we describe some variations on the
+concept of limit.
+
+<% begin_sec("Left and right limits",nil,'one-sided-limits') %>
+When we let ``$x$ approach $a$'' we allow $x$ to be larger or smaller 
+than $a$, as long as $x$ ``gets close to $a$''.  If we explicitly want to study
+the behavior of $f(x)$ as $x$ approaches $a$ through values larger than
+$a$, then we write
+\[
+\lim_{x\searrow a} f(x)\text{ or } \lim_{x\to a+} f(x) \text{ or }
+\lim_{x\to a+0} f(x) \text{ or } \lim_{x\to a, x>a} f(x).
+\]
+All four notations are commonly used.  Similarly, to designate the value which  
+$f(x)$ approaches as $x$ approaches $a$ through values below $a$ one writes
+\[
+\lim_{x\nearrow a} f(x)\text{ or } \lim_{x\to a-} f(x) \text{ or }
+\lim_{x\to a-0} f(x) \text{ or } \lim_{x\to a, x<a} f(x).
+\]
+The precise definition of these ``one-sided'' limits goes like this:
+
+\begin{important}[Definition of right- and left-limits]
+Let $f$ be a function.  Then the right-limit notation
+\begin{equation}\label{eq:one-sided-lim-formulation}
+  \lim_{x\searrow a} f(x) = L \qquad .
+\end{equation}
+means that for every $\varepsilon>0$ one can find a $\delta>0$ such that
+\[
+a<x<a+\delta \implies |f(x)-L|<\varepsilon
+\]
+holds for all $x$ in the domain of $f$.
+
+The definition of a left-limit is exactly analogous.
+When we say
+\begin{equation}\label{eq:left-sided-lim-formulation}
+  \lim_{x\nearrow a} f(x) = L \qquad ,
+\end{equation}
+we mean that for every $\varepsilon>0$ one can find a $\delta>0$ such that
+\[
+a-\delta<x<a \implies |f(x)-L|<\varepsilon
+\]
+holds for all $x$ in the domain of $f$.
+\end{important}
+
+The following
+theorem tells you how to use one-sided limits to decide if a function
+$f(x)$ has a limit at $x=a$.
+
+\begin{theorem}
+The two-sided limit $\displaystyle \lim_{x\to a} f(x)$
+exists if and only if the two one-sided limits
+\[
+  \lim_{x\searrow a} f(x), \quad\text{and}\quad \lim_{x\nearrow a} f(x)
+\]
+exist and have the same value.
+\end{theorem}
+
+<% end_sec('one-sided-limits') %>
+
+<% begin_sec("Limits at infinity",nil,'limits-at-infinity') %>
+So far we have defined the limit of a function $f(x)$ as $x$ gets closer and closer to some
+finite value. It can also be of interest to let $x$ become
+``larger and larger'' and ask what happens to $f(x)$.  If there is a number
+$L$ such that $f(x)$ gets arbitrarily close to $L$ if one chooses $x$
+sufficiently large, then we write   
+\[
+\lim_{x\to \infty} f(x) = L
+\]
+(``The limit for $x$ going to infinity is $L$.'')
+We have an analogous definition for what happens to $f(x)$ as $x$ becomes very
+large and negative: we write
+\[
+\lim_{x\to -\infty} f(x) = L  
+\]
+(``The limit for $x$ going to negative infinity is $L$.'')
+
+Here are the precise definitions:
+
+\begin{important}[Definitions of limits at infinity]
+Let $f(x)$ be a function which is defined on an interval $x_0<x<\infty$.
+If there is a number $L$ such that for every $\varepsilon>0$ we can find
+an $A$ such that
+\[
+x>A \implies |f(x) - L| <\varepsilon
+\]
+for all $x$, then we say that the limit of $f(x)$ for $x\to\infty$ is $L$.
+
+Simmilarly, let $f(x)$ be a function which is defined on an interval $-\infty < x < x_0$.
+If there is a number $L$ such that for every $\varepsilon>0$ we can find
+an $A$ such that
+\[
+x<-A \implies |f(x) - L| <\varepsilon
+\]
+for all $x$, then we say that the limit of $f(x)$ for $x\to-\infty$ is $L$.
+\end{important}
+
+These definitions are very similar to the original definition of the limit
+in section \ref{sec:limit} on p.~\pageref{sec:limit}.
+Instead of $\delta$ which specifies how close $x$ should be to $a$, we now
+have a number $A$ that says how large $x$ should be, which is a way of
+saying ``how close $x$ should be to infinity'' (or to negative infinity).
+
+But although these definitions are similar to the original one, they are not
+quite the same.
+Note that there is no real number called $\infty$, and therefore we can't just
+take the definition of $\lim_{x\rightarrow a}$ and substitute
+$\infty$ for $a$. (Cf.~rule 2 on p.~\pageref{infinity-is-not-a-hyperreal}.)
+
+%%graph%% dying-vibration-raw func=cos(3.14*x)*(0.7)**(x/6) format=svg xlo=0.0 xhi=18 ylo=-1 yhi=1 with=lines samples=1000
+
+<%
+  fig(
+    'dying-vibration',
+    %q{The value of $A$ is large enough for the given $\varepsilon$. The graph could represent the
+       dying vibration of a gong as a function of time. Because we can find such an $A$ for every $\varepsilon$, the
+       vibration dies out to zero as time approaches infinity.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{The limit of $1/x$}
+The larger $x$ is, the smaller its reciprocal, so it seems natural that $1/x
+\to 0$ as $x\to \infty$.  To \emph{prove} that $\lim_{x\to\infty}1/x = 0$, we
+apply the definition to $f(x) = 1/x$, $L=0$.
+
+For a given $\varepsilon>0$, we need to show that
+\begin{equation}\label{eq:1overx-small-for-x-large}
+  \left|\frac1x - L\right|<\varepsilon \text{ for all } x>A
+\end{equation}
+provided we choose the right $A$.
+  
+How do we choose $A$?  $A$ is not allowed to depend on $x$, but it may
+depend on $\varepsilon$.
+
+Let's decide that we will always take $A>0$, so that we only need consider
+positive values of $x$.  Then \eqref{eq:1overx-small-for-x-large} simplifies to
+\[
+\frac 1x<\varepsilon
+\]
+which is equivalent to
+\[
+x>\frac1\varepsilon.
+\]
+This tells us how to choose $A$.  Given any positive $\varepsilon$, we will
+simply choose
+\[
+  A= \text{ the larger of } 0 \text{ and } \frac1\varepsilon
+\]
+Then we have $|\frac1x-0| = \frac1x <\varepsilon$ for all $x>A$, so we
+have proved that $\lim_{x\to\infty}1/x=0$.
+\end{eg}
+
+The properties of the limit given in section \ref{subsec:properties-of-the-limit},
+p.~\pageref{subsec:properties-of-the-limit}, also apply to limits at infinity.
+As with limits at finite $x$, it is usually more convenient to calculate limits
+by using these properties than by direct application of the definition.
+
+\begin{eg}{A rational function}\label{eg:rational-function-at-infinity}
+A rational function is the quotient of two polynomials:
+\begin{equation}
+  R(x) = \frac{a_nx^n+\cdots +a_1x+a_0}{b_mx^m+\cdots+b_1x+b_0}.
+\end{equation}
+The following trick allows us to evaluate the limit of any such function at infinity.
+
+For example, let's compute
+\[
+\lim_{x\to\infty}\frac{3x^2+3}{5x^2+7x-39}.
+\]
+The trick is to factor $x^2$ from top and bottom. You get
+\begin{align*}
+  \lim_{x\to\infty}\frac{3x^2+3}{5x^2+7x-39}
+  &= \lim_{x\to\infty}\frac{x^2}{x^2} \; \frac{3+3/x^2}{5+7/x-39/x^2}
+  & \text{(algebra)}\\
+  &= \lim_{x\to\infty}\frac{3+3/x^2}{5+7/x-39/x^2}& \text{(more algebra)}\\
+  &= \frac{\lim_{x\to\infty}(3+3/x^2)}{\lim_{x\to\infty}(5+7/x-39/x^2)}
+  &\text{(limit properties)}\\
+  &= \frac35.
+\end{align*}
+At the end of this computation, we used the limit properties
+$(P_\ast)$ to break the limit down into simpler pieces like
+$\lim_{x\to\infty}39/x^2$, which we can directly evaluate; for example, we have
+\[
+\lim_{x\to\infty} 39/x^2 =\lim_{x\to\infty} 39\cdot \left( \frac1x
+\right)^2 = \left( \lim_{x\to\infty}39\right)\cdot \left(
+  \lim_{x\to\infty}\frac1x \right)^2 = 39 \cdot 0^2 =0.
+\]
+  The other terms are similar.
+
+\end{eg}
+
+\begin{eg}{Another rational function}
+Compute
+\[
+\lim_{x\to\infty} \frac {2x}{4x^3+5}.
+\]
+We apply the same trick as in example \ref{eg:rational-function-at-infinity}
+and factor $x$ out of the numerator and $x^3$ out of the denominator.
+This leads to
+\begin{align*}
+  \lim_{x\to\infty} \frac {2x}{4x^3+5}
+  &=\lim_{x\to\infty} \Bigl(\frac{x}{x^3}\;\frac{2}{4+5/x^3}\Bigr)\\
+  &=\lim_{x\to\infty} \Bigl(\frac{1}{x^2}\;\frac{2}{4+5/x^3}\Bigr)\\
+  &=\lim_{x\to\infty} \Bigl(\frac{1}{x^2}\Bigr)\cdot \Bigl(\lim_{x\to\infty}\frac{2}{4+5/x^3}\Bigr)\\
+  &=0\cdot \tfrac24\\
+  &=0.
+\end{align*}
+
+\end{eg}
+
+<% end_sec('limits-at-infinity') %>
+
+<% begin_sec("Limits that equal infinity",nil,'limit-equals-infinity') %>
+Figure \figref{telephone-wire} shows a telephone wire strung between two poles, which sags
+by some amount $h$ in the middle. By increasing the tension $T$ in the wire, we can reduce
+the sag. That is, the necessary tension $T$ is some function $T(h)$. There is a story, almost certainly
+apocryphal, to the effect that a small-town mayor considered the sagging wires unsightly,
+and instructed the public works department to tighten them up enough so that they wouldn't
+sag at all.
+<% marg(30) %>
+<%
+  fig(
+    'telephone-wire',
+    %q{A telephone wire sags by an amount $h$.}
+  )  
+%>
+<% end_marg %>
+
+It can be shown that the function $T(h)$ is approximately given by the equation
+\begin{equation*}
+  T = \frac{k}{h} \qquad ,
+\end{equation*}
+where $k$ is a constant.\footnote{The value of $k$ is $WL/8$, where $W$ is the weight of the
+wire and $L$ is the horizontal length. The approximation is good if $h$ is small compared to $L$.}
+When I ask students what happens to this equation when we plug in $h=0$, I always get
+a chorus of ``undefined!'' This shows good mathematical training --- division by zero is
+indeed undefined --- but doesn't give any real insight into what will go wrong when the
+workers try to carry out the mayor's plan. If we make $h$ smaller and smaller $T$ will
+get bigger and bigger. By making $h$ sufficiently small, we can make $T$ arbitrarily large.
+The important insight here is that a quantity like $1/0$ isn't just undefined, it's undefined
+because it's infinity, and infinity isn't a real number. If the workers actually
+try to make $h=0$, they will simply have to tighten the wires so much that the wires break.
+
+Another way of putting this is that the limit $\lim_{h\rightarrow0} T(h)$ fails to exist.
+Although it's true that the limit doesn't exist, we can be more descriptive about the
+reason that it doesn't. It's a limit that doesn't exist because it equals infinity.
+
+Consider the limit
+\[
+\lim_{x\to 0} \frac{1} {x}.
+\]
+As $x$ decreases to $x=0$ through smaller and smaller positive values,
+its reciprocal $1/x$ becomes larger and larger.  We say that instead
+of going to some finite number, the quantity $1/x$ ``goes to
+infinity'' as $x\searrow0$.  In symbols:
+\begin{equation}
+  \lim_{x\searrow 0} \frac{1} {x} = \infty.
+  \label{eq:03limit-invx-is-infty}
+\end{equation}%
+%\marginpar{\input ../figures/221/03inverse-of-x.tex }%
+Likewise, as $x$ approaches $0$ through negative numbers, its
+reciprocal $1/x$ drops lower and lower, and we say that $1/x$ ``goes
+to $-\infty$'' as $x\nearrow 0$.  Symbolically,
+\begin{equation}
+  \label{eq:03limit-invx-is-neg-infty}
+    \lim_{x\nearrow 0} \frac{1} {x} = -\infty.
+\end{equation}
+The limits \eqref{eq:03limit-invx-is-infty} and
+\eqref{eq:03limit-invx-is-neg-infty} are not like the normal limits we
+have been dealing with so far.  Namely, when we write something like
+\[
+\lim_{x\to2} x^2 = 4
+\]
+we mean that the limit actually exists and that it is equal to $4$.
+On the other hand, since we have agreed that $\infty$
+is not a number (see p.~\pageref{infinity-is-not-a-hyperreal}),
+the meaning of \eqref{eq:03limit-invx-is-infty} cannot be to say that
+``the limit exists and its value is $\infty$.''
+
+%%graph%% limit-of-one-over-x-raw func=1/x format=svg xlo=0.1 xhi=10 ylo=0 yhi=10 with=lines samples=300
+<% marg(0) %>
+<%
+  fig(
+    'limit-of-one-over-x',
+    %q{The function $1/x$ behaves badly near $x=0$.}
+  )  
+%>
+<% end_marg %>
+
+Instead, when we write
+\begin{equation}
+  \lim_{x\to a} f(x) = \infty
+  \label{eq:03limit-of-f-infty}
+\end{equation}
+for some function $y=f(x)$, we mean, \emph{by definition,} that the
+limit of $f(x)$ does not exist, and that it fails to exist in a
+specific way: as $x\to a$, the value of $f(x)$ becomes ``larger and
+larger,'' and in fact eventually becomes larger than any finite
+number.
+
+The language in that last paragraph shows you that this is an
+intuitive definition, at the same level as the first definition of
+limit we gave in section \ref{subsec:limit-informal}, p.~\pageref{subsec:limit-informal}.  It contains the   
+usual suspect phrases such as ``larger and larger,'' or ``finite
+number'' (as if there were any other kind.)  A more precise definition
+involving epsilons can be given, but in this course we will not go
+into this much detail.  As a final comment on infinite limits, it is
+important to realize that, since \eqref{eq:03limit-of-f-infty} is not
+a normal limit \emph{you cannot apply the limit rules to infinite
+  limits. }  Here is an example of what goes wrong if you try anyway.
+
+\begin{eg}{Trouble with infinite limits}
+If you apply the limit properties to $\lim_{x\searrow0} 1/x = \infty$,
+then you could conclude
+\[
+1 = \lim_{x\searrow 0} x\cdot \frac{1} {x}
+ = \lim_{x\searrow 0} x \times \lim_{x\searrow 0}  \frac{1} {x}
+ = 0 \times \infty
+ = 0,
+\]
+because ``anything multiplied with zero is zero.''
+
+After using the limit properties in combination with this infinite
+limit we reach the absurd conclusion that $1=0$.  The moral of this
+story is that you can't use the limit properties when some of the
+limits are infinite.
+\end{eg}
+
+
+<% end_sec('limit-equals-infinity') %>
+
+<% end_sec('limit-variations') %>
+
 <% end_chapter %>
