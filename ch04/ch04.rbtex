@@ -845,6 +845,184 @@ is about equally good, but very large values could be a deadly mistake.
 
 
 <% end_sec('sketch-without-equation') %>
+<% begin_sec("Sketching $f'$ and $f''$ given the graph of $f$",nil,'sketch-derivatives') %>
+In figure \figref{beer-sketching} we revisit the example of fermenting beer
+(section \ref{sec:changing-change}, p.~\pageref{sec:changing-change}). (Feel free to mark
+your place in the book and make a trip to the fridge before continuing.)
+The top panel of the graph would probably have been the easiest to sketch starting from
+scratch. Clearly the amount of $\zu{CO}_2$ produced starts off at zero, it rises, and it must
+eventually flatten out and approach a horizontal asymptote, since the yeast use up all their
+food and can't produce any more. This kind of vaguely S-shaped curve is in fact encountered
+in many situations, and is often referred to as a ``yeast curve.''
+<% marg(40) %>
+<%
+  fig(
+    'beer-sketching',
+    %q{Sketching $y'$ and $y''$ given the graph of $y$.}
+  )  
+%>
+<% end_marg %>
+
+Now suppose we know $y$ and we want to find $y'$ and $y''$. The basic concept is that the \emph{slope}
+of each graph in the stack gives the \emph{value} of the graph below it. The slope of the tangent line
+to the $y$ graph
+at time A is small and positive, while the slope at B is larger and positive. Therefore the
+\emph{values} of $y'$ at these times must be small and positive, then larger and positive. At time
+C, the slope of the $y$ graph is as great as it will ever be. Therefore the $y'$ graph has
+a maximum there. The slope of $y$ gets smaller at D and still smaller at E, so the value of $y'$
+must taper off correspondingly.
+
+Now that we've sketched the graph of $y'$, we can continue the process and construct \emph{its}
+derivative, $y''$. At time C the slope of the $y'$ graph is zero, so the value of the $y''$ graph
+is zero; this is a point of inflection. At times earlier than C the slope of $y'$ is positive,
+while at times later than C it's negative. Therefore we must have $y''>0$ before C and
+$y''<0$ after.
+
+We can also relate the properties of the $y''$ graph directly to those of the $y$ graph.
+The second derivative is a measure of curvature, and its sign indicates concavity.
+The $y$ graph is concave up before C and concave down after. This matches up with the
+signs of $y''$.
+
+\pagebreak
+
+\startdq
+
+\begin{dq}\label{dq:inconsistent-graphs}
+Figure \figref{dq-inconsistent-graphs} shows three stacks of graphs, each of which
+is supposed to represent the position, velocity, and acceleration of an object.
+Explain how each set of graphs contains inconsistencies, and fix them.
+\end{dq}
+
+<% 
+  fig(
+    'dq-inconsistent-graphs',
+    'Discussion question \ref{dq:inconsistent-graphs}.',
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% end_sec('sketch-derivatives') %>
+<% begin_sec("Sketching a graph given its equation",nil,'sketch-given-equation') %>
+If we have an equation defining a function, then the following procedure is
+often a fairly efficient way of sketching its graph. Often we are especially
+interested in finding the function's local maxima and minima, including the \emph{absolute}
+or \emph{global} maxima and minima. That is, the absolute maximum is the greatest value ever attained
+by the function, and similarly for the absolute minimum.
+
+\begin{enumerate}
+\item Find all solutions of $f'(x)=0$ in the interval $[a,b]$: these are called
+  the \textit{critical} or \textit{stationary} points for $f$.
+\item Find the sign of $f'(x)$ at all other points.
+\item Each stationary point at which $f'(x)$ actually changes sign is a local
+  maximum or local minimum.  Compute the function value $f(x)$ at each
+  stationary point.
+\item Compute the function values at the endpoints of the interval, i.e.\
+  compute $f(a)$ and $f(b)$.
+\item The absolute maximum is attained at the stationary point or the boundary
+  point with the highest function value; the absolute minimum occurs at the
+  boundary or stationary point with the smallest function value.
+\end{enumerate}
+If the interval is unbounded, then instead of computing the values $f(a)$ or
+$f(b)$, but instead you should compute $\lim_{x\to\pm\infty}f(x)$.
+
+As an example, let's sketch the graph of the rational function
+\[
+f(x) = \frac{x(3-4x)}{1+x^2} \qquad .
+\]
+By looking at the signs of numerator and denominator we see that
+\begin{center}
+  $f(x)>0$ for $0<x<\frac{3}{4}$\\[2pt]
+  $f(x)<0$ for $x<0$ and also for $x>\frac{3}{4}$.
+\end{center}
+We compute the derivative of $f$:
+\[
+f'(x) = \frac{-3x^2-8x+3}{\left(1+x^2\right)^2}.
+\]
+Hence $f'(x) = 0$ holds if and only if
+\[
+-3x^2-8x+3 = 0 \qquad ,
+\]
+and the solutions to this quadratic equation are $-3$ and $1/3$.
+% Checked:
+%   calc -e "d=.001; x=-3; f1=[x(3-4x)]/(1+x^2); x=x+d; f2=[x(3-4x)]/(1+x^2); (f2-f1)/d"
+%   calc -e "d=.001; x=1/3; f1=[x(3-4x)]/(1+x^2); x=x+d; f2=[x(3-4x)]/(1+x^2); (f2-f1)/d"
+These two   
+roots will appear several times and it will shorten our formulas if we
+abbreviate
+\[
+  A= -3 \text{ and } B= 1/3 .
+\]
+
+To see if the derivative changes sign we factor the numerator and denominator.
+The denominator is always positive, and the numerator is
+\[
+-3x^2-8x+3 = -3\left(x^2+\frac{8}{3}x-1\right) =-3(x-A)(x-B).
+\]
+Therefore
+\[
+f'(x)
+\begin{cases}
+  <0 & \text{for }x<A \\
+  >0 &\text{for } A<x<B \\
+  <0 &\text{for } x>B
+\end{cases}
+\]
+It follows that $f$ is decreasing on the interval $(-\infty, A)$, increasing on
+the interval $(A, B)$ and decreasing again on the interval $(B, \infty)$
+(figure \figref{curve-sketching-signs-of-derivative}).
+Therefore
+\begin{center}
+  $A$ is a local minimum, and $B$ is a local maximum.
+\end{center}
+Are these global maxima and minima?
+
+<% marg(0) %>
+<%
+  fig(
+    'curve-sketching-signs-of-derivative',
+    %q{The sign of the derivative changes at A and B.}
+  )  
+%>
+<% end_marg %>
+
+Since we are dealing with an unbounded interval we must compute the limits of
+$f(x)$ as $x\to\pm\infty$.  We find
+\[
+\lim_{x\to\infty} f(x) = \lim_{x\to-\infty} f(x) = -4.
+\]
+Since $f$ is decreasing between $-\infty$ and $A$, it follows that
+\[
+f(A) \leq f(x) < - 4 \text{ for } -\infty<x\leq A.
+\]
+Similarly, $f$ is decreasing from $B$ to $+\infty$, so
+\[
+-4 < f(x) \leq f(B) \text{ for } B < x<\infty.
+\]
+Between the two stationary points the function is increasing, so
+\[
+f(A) \leq f(x) \leq f(B) \text{ for } A\leq x\leq B.
+\]
+From this it follows that $f(x)$ has a global minimum when $x=A=-3$
+and has a global maximum when $x=B=1/3$.
+
+%%graph%% curve-sketching-rational-raw func=(x*(3-4*x))/(1+x**2) format=svg xlo=-9 xhi=11 ylo=-5 yhi=1 with=lines samples=1000
+
+<%
+  fig(
+    'curve-sketching-rational',
+    %q{The graph of $f(x)=x(3-4x)/(1+x^2)$.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+<% end_sec('sketch-given-equation') %>
 <% end_sec('curve-sketching') %>
 
 <% end_chapter %>
