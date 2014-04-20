@@ -6,7 +6,7 @@
 <%
   chapter(
     '02',
-    %q{Limits and the definition of the derivative},
+    %q{Limits; techniques of differentiation},
     'ch:limits'
   )
 %>
@@ -523,6 +523,49 @@ $p$ and $q$ are both differentiable and $q\ne0$,
 \end{lessimportant}
 
 <% end_sec('quotients') %>
+
+<% begin_sec("Continuity",nil,'continuity') %>
+Intuitively, a continuous function is one whose graph
+has no sudden jumps in it; the graph is all a single connected piece. 
+Such a function can be drawn without picking the pen up off of the paper.
+Formally, continuity is defined as follows.
+
+\begin{important}
+A function $g$ is \emph{continuous} at $a$ if
+\begin{equation}\label{eq:continuity-def}
+  \lim_{x\to a} g(x) = g(a)
+\end{equation}
+A function is continuous if it is continuous at every $a$ in its
+domain.
+\end{important}
+
+If a function is discontinuous at a given point, then it is not differentiable at that point.
+On the other hand, the example $y=|x|$ shows that a function can be continuous without
+being differentiable.
+
+<% marg(0) %>
+<%
+  fig(
+    'discontinuous',
+    %q{A discontinuous function.}
+  )  
+%>
+<% end_marg %>
+
+In most cases, there is no need to invoke the definition explicitly in order to check whether
+a function is continuous. Most of the functions we work with are defined by putting together
+simpler functions as building blocks. For example, let's say we're already convinced that the
+functions defined by $g(x)=3x$ and $h(x)=\sin x$ are both continuous. Then if we encounter the
+function $f(x)=\sin(3x)$, we can tell that it's continuous because its definition corresponds
+to $f(x)=h(g(x))$. The functions $g$ and $h$ have been set up like a bucket brigade, so that
+$g$ takes the input, calculates the output, and then hands it off to $h$ for the final step
+of the calculation. This method of combining functions is called \emph{composition}.\index{composition}
+The composition of two continuous functions is also continuous. Just watch out for division.
+The function $f(x)=1/x$ is continuous everywhere except at $x=0$, so for example $1/\sin(x)$
+is continuous everywhere except at multiples of $\pi$, where the sine has zeroes.
+
+<% end_sec('continuity') %>
+
 <% begin_sec("Safe handling of $\\der y$ and $\\der x$ (optional)",nil,'safe-handling-of-dx',{'optional'=>true}) %>
 We've seen that although the real number system doesn't include infinitely big or infinitely small
 quantities, it can nevertheless be extremely useful to think of
