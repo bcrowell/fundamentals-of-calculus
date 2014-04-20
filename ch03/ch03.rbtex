@@ -11,5 +11,202 @@
   )
 %>
 
+<% begin_sec("The rate of change of a rate of change",nil,'changing-change') %>
+
+On p.~\pageref{subsubsec:constant-acceleration} in section \ref{subsec:velocity},
+we briefly encountered the idea of the \emph{acceleration} of an object.
+The acceleration is the rate of change of velocity, while the velocity is the rate
+of change of position. That is, the acceleration is the rate of change \ldots of a rate of change!
+If that seems like a strange concept to you, then you're in good company.  After
+Newton and Leibniz invented the calculus, George Berkeley, Bishop of Cloyne, published
+a brutal critique called ``The analyst: a discourse addressed to an infidel mathematician.''
+Berkeley wrote:
+
+\begin{quotation}
+Our modern analysts are not content to consider only the differences of finite quantities:
+they also consider the differences of those differences, and the differences of the differences
+of the first differences. And so on \emph{ad infinitum}.
+
+But the velocities of the velocities, the second, third, fourth, and fifth velocities,
+etc., exceed, if I mistake not, all human understanding. The further the mind analyseth
+and pursueth these fugitive ideas the more it is lost and bewildered.
+\end{quotation}
+
+Although some of Berkeley's critique was in fact valid, there are many situations where it's
+perfectly natural to want to talk about a change in the rate of change. Figure \figref{beer}
+shows beer fermenting energetically at the Timmermans brewery in Belgium.
+Anyone who has watched this delightful process has
+seen the same story play itself out. A small population of dormant yeast cells is dumped into a
+delicious broth of malted barley. They find themselves in an ideal environment in
+which to raise children. At first the signs of fermentation are modest: a few bubbles as
+the small group of colonists start to convert sugars to alcohol and carbon dioxide.
+But by the next morning the happy process is going like crazy. A flood of foam is gushing
+out of the fermentation vessel.
+
+<% marg(0) %>
+<%
+  fig(
+    'beer',
+    %q{Beer is a natural food that is high in vitamin E.}
+  )  
+%>
+<% end_marg %>
+
+In this example there is nothing more natural than to say: the fermentation is \emph{speeding
+up}. Let  $y$ be the amount of carbon dioxide that has been produced so far. (We could just as
+well have defined $y$ as the amount of alcohol, but the $\zu{CO}_2$ bubbles are what we see.)
+Then the derivative of $y$ with respect to time, $y'$, is the rate of change of $y$.
+When we say that fermentation has sped up, we're talking about $y''$. At the time
+shown in figure \figref{beer} with a dotted line, $y''$ is large and positive. One way to tell this
+is that the slope of the $y'$ graph is large and positive at this moment. In this stack
+of three graphs, the \emph{slope} on each graph corresponds to the \emph{value} of the
+one below at any given time.
+
+In modern terminology, $y''$ is referred to as the second derivative of $y$.
+
+<% end_sec('changing-change') %>
+
+<% begin_sec("Geometrical interpretation",nil,'second-deriv-geometrical') %>
+
+
+%%graph%% curvature func=x**2 format=eps xlo=-2 xhi=2 ylo=-1 yhi=8 with=lines x=t y=x samples=300 ytic_spacing=1 ; func=7*x**2 ; func=2*x
+
+The second derivative can be interpreted as a measure of the curvature of the graph,
+as shown in figure \figref{curvature}. The graph of the function $y=2x$ is a line,
+with no curvature. Its first derivative is 2, and its second derivative is zero.
+The function $x^2$ has a second derivative of $2$, and the more tightly curved
+function $7x^2$ has a bigger second derivative, $14$.
+<% marg(0) %>
+<%
+  fig(
+    'curvature',
+    %q{The functions $y=2x$, $x^2$ and $7x^2$.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'concavity',
+    %q{The functions $y=x^2$ and $3-x^2$.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'inflection',
+    %q{The functions $y=x^3$ has an inflection point at $x=0$.}
+  )  
+%>
+\spacebetweenfigs
+<% end_marg %>
+
+%%graph%% concavity func=x**2 format=eps xlo=-2 xhi=2 ylo=-1 yhi=4 with=lines x=t y=x samples=300 ytic_spacing=1 ; func=3-x**2
+
+Positive and negative signs of the second derivative indicate concavity.\index{concavity}
+In figure \figref{concavity},
+the function $x^2$ is like a cup with its mouth pointing up. We say that it's ``concave up,'' and this
+corresponds to its positive second derivative. The function $3-x^2$, with a second derivative less than
+zero, is concave down. Another way of saying it is that if you're driving along a road shaped like $x^2$,
+going in the direction of increasing $x$, then your steering wheel is turned to the left, whereas on
+a road shaped like $3-x^2$ it's turned to the right.
+
+%%graph%% inflection func=x**3 format=eps xlo=-2 xhi=2 ylo=-8 yhi=8 with=lines x=t y=x samples=300 ytic_spacing=2
+
+Figure \figref{inflection} shows a third possibility. The function $x^3$ has a derivative $3x^2$ and
+a second derivative $6x$, which equals
+zero at $x=0$. This is called a point of inflection. The concavity of the graph is down on the left side, up on the right.
+The inflection point is where it switches from one concavity to the other. In the alternative description in
+terms of the steering wheel, the inflection point is where your steering wheel is crossing from left to right.\index{inflection point}\label{inflection}
+
+\begin{eg}{A circle}\label{eg:semicircle}
+Consider the set of all points $(x,y)$ at a fixed distance $r$ from the origin. This is a circle of radius $r$.
+Using the Pythagorean theorem, we find that this set of points is defined by
+$x^2+y^2=r^2$.
+It is not the graph of a function, since it fails the vertical line test. If we solve
+for $y$, we get $y=\pm\sqrt{r^2-x^2}$, and since we have both a positive and a negative
+square root, there are two possible values of $y$. But if we arbitrarily choose the positive root,
+we have the function
+\begin{equation*}
+  y = \sqrt{r^2-x^2} \qquad ,
+\end{equation*}
+which is the equation of the semicircle lying above the $x$ axis, figure \figref{semicircle}.
+
+To find the derivative $y'$, we can rewrite $y$ as $(r^2-x^2)^{1/2}$ and apply the
+power rule and the chain rule. The result is
+\begin{equation*}
+  y' = -x(r^2-x^2)^{-1/2} \qquad .
+\end{equation*}
+The second derivative is
+\begin{equation*}
+  y'' = -(r^2-x^2)^{-1/2}-x^2(r^2-x^2)^{-3/2} \qquad .
+\end{equation*}
+
+Let's evaluate the second derivative at $x=0$. The result is $y''=-1/r$. The negative sign tells
+us that the graph is concave down. The absolute of the result is $1/r$, which is a measure
+of the curvature of the circle; a smaller radius indicates a stronger curvature.
+
+\end{eg}
+<% marg(50) %>
+<%
+  fig(
+    'semicircle',
+    %q{Example \ref{eg:semicircle}.}
+  )  
+%>
+<% end_marg %>
+
+<% end_sec('second-deriv-geometrical') %>
+
+
+<% begin_sec("Leibniz notation",nil,'second-derivative-leibniz') %>
+The Leibniz notation for $y''$ is
+\begin{equation*}
+  \frac{\der^2 y}{\der x^2} \qquad .
+\end{equation*}
+The seemingly inconsistent placement of the exponents on the top and bottom
+is actually exactly what we need if we want the units to make sense. To see this in a concrete
+example, consider the acceleration of an object expressed in terms of its position $x$:
+\begin{equation*}
+  a=\frac{\der^2 x}{\der t^2} \qquad .
+\end{equation*}
+The units of $x$ are meters, and the units of $t$ are seconds. The velocity $\der x/\der t$
+has units of meters per second, m/s. The rate at which the velocity changes has units
+of meters per second per second, m/s/s or $\munit/\sunit^2$. This is exactly what is suggested
+by the Leibniz notation.
+<% end_sec('second-derivative-leibniz') %>
+
+<% begin_sec("Application to extrema",nil,'second-derivative-for-extrema') %>
+When a function goes up and then smoothly turns around and comes back down again,
+it has zero slope at the top. A place where $y'=0$, then, could represent
+a place where $y$ was at a maximum. On the other hand, it could be concave up,
+in which case we'd have a minimum. \index{extremum of a function}
+
+\begin{eg}{A stock tip}
+\egquestion Fred receives a mysterious e-mail tip telling him that his investment in a certain stock will
+have a value given by $x=-2t^4+(6.4577\times10^{10})t$, where $t\ge 2005$ is the year. Should he sell at some point? If so, when?
+
+\eganswer If the value reaches a maximum at some time, then the derivative should be zero then. Taking the
+derivative and setting it equal to zero, we have
+\begin{align*}
+  0 &= -8t^3+6.4577\times10^{10}\\
+  t &= \left(\frac{6.4577\times10^{10}}{8}\right)^{1/3} \\
+  t &= \pm 2006.0 \qquad .
+\end{align*}
+Obviously the solution at $t=-2006.0$ is bogus, since the stock market didn't exist four thousand years ago, and
+the tip only claimed the function would be valid for $t\ge 2005$.
+
+Should Fred sell on New Year's eve of 2006?
+
+But this could be a maximum, a minimum, or an inflection point. Fred definitely does \emph{not} want to
+sell at $t=2006$ if it's a minimum! To check which of the three possibilities hold, Fred takes the
+second derivative:
+\begin{align*}
+ x'' &= -24t^2 \qquad .
+\end{align*}
+Plugging in $t=2006.0$, we find that the second derivative is negative at that time, so it is indeed a
+maximum.
+\end{eg}
+<% end_sec('second-derivative-for-extrema') %>
+
 
 <% end_chapter %>
