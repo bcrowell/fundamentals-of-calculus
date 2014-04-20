@@ -6,7 +6,7 @@
 <%
   chapter(
     '04',
-    %q{More about limits; curve-sketching},
+    %q{More about limits; curve sketching},
     'ch:more-limits'
   )
 %>
@@ -684,5 +684,49 @@ limits are infinite.
 <% end_sec('limit-equals-infinity') %>
 
 <% end_sec('limit-variations') %>
+
+<% begin_sec("Curve sketching",nil,'curve-sketching') %>
+Most people will end up borrowing money at some point in their lives, whether it's
+credit card debt, a mortage, a loan to buy a car, or a cash advance from a payday loan company.
+One of the warning signs that you may be walking into an exploitative situation is if the
+person trying to sell you the loan emphasizes the low monthly payment. Suppose that
+you're borrowing \$10,000 to buy a car, and the monthly interest rate is 1\%.
+Let $p$ be the monthly payment, and $T$ the time required in order to pay off
+the loan. To understand what's going on here, you want to be able to
+\emph{visualize} the graph of $T$ as a function of $p$. One fairly tedious way to do this would
+be to take a piece of graph paper and plot points. Another method would be to use
+an expensive graphing calculator. But your knowledge of calculus gives you a method
+that provides more insight.
+
+Clearly the smaller the payment, the longer it will take to pay off the loan.
+This tells us that $T(p)$ is a \emph{decreasing} function; its derivative will always
+be negative.
+
+If $p$ is large, then you will pay off the loan so quickly that no significant amount
+of interest accrues. Therefore at large values of $p$, we will have $T\approx(\$10,000)/p$.
+This tells us that $\lim_{p\rightarrow\infty} T=0$. The graph of $T$ will approach the
+horizontal axis more and more closely as $p$ gets bigger and bigger. We say that
+the function $T(p)$ has a \emph{horizontal asymptote} at zero.
+
+Finally, what happens if $p$ is small? Remember, interest on the loan is accruing
+at a rate of 1\% monthly, or \$100 every month. It may sound like a good deal if
+you're offered this loan with a low monthly payment of \$101, but if you take the
+loan and always make the minimum payment, then the principal on the loan will only
+go down by \$1 every month. You will die of old age before you pay off the car.
+We can therefore tell that $\lim_{p\searrow\$100} T=\infty$. This is a
+\emph{vertical asymptote} on the graph.
+
+Figure \figref{loan-period} shows what the graph must look like.
+<% marg(0) %>
+<%
+  fig(
+    'loan-period',
+    %q{The time required to pay off a loan, as a function of the monthly payment.}
+  )  
+%>
+<% end_marg %>
+
+
+<% end_sec('curve-sketching') %>
 
 <% end_chapter %>
