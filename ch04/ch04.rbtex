@@ -686,6 +686,15 @@ limits are infinite.
 <% end_sec('limit-variations') %>
 
 <% begin_sec("Curve sketching",nil,'curve-sketching') %>
+<% begin_sec("Sketching a graph without knowing its equation",nil,'sketch-without-equation') %>
+The concepts of calculus, such as derivatives, limits, curvature, and concavity, can
+guide us in analyzing the behavior of a function even when we don't know a formula for
+the function. In economics, for example, these concepts are used heavily even though
+real-world data can essentially never be described by a formula. This subsection
+presents four examples in which we can use these concepts to sketch a function based on
+our understanding of how the function should behave in real life.
+
+<% begin_sec("The time to pay off a loan",nil,'loan-period') %>
 Most people will end up borrowing money at some point in their lives, whether it's
 credit card debt, a mortage, a loan to buy a car, or a cash advance from a payday loan company.
 One of the warning signs that you may be walking into an exploitative situation is if the
@@ -694,9 +703,10 @@ you're borrowing \$10,000 to buy a car, and the monthly interest rate is 1\%.
 Let $p$ be the monthly payment, and $T$ the time required in order to pay off
 the loan. To understand what's going on here, you want to be able to
 \emph{visualize} the graph of $T$ as a function of $p$. One fairly tedious way to do this would
-be to take a piece of graph paper and plot points. Another method would be to use
+be to find the equation of the function,
+take a piece of graph paper and plot points. Another method would be to use
 an expensive graphing calculator. But your knowledge of calculus gives you a method
-that provides more insight.
+that provides more insight with less work.
 
 Clearly the smaller the payment, the longer it will take to pay off the loan.
 This tells us that $T(p)$ is a \emph{decreasing} function; its derivative will always
@@ -707,16 +717,6 @@ of interest accrues. Therefore at large values of $p$, we will have $T\approx(\$
 This tells us that $\lim_{p\rightarrow\infty} T=0$. The graph of $T$ will approach the
 horizontal axis more and more closely as $p$ gets bigger and bigger. We say that
 the function $T(p)$ has a \emph{horizontal asymptote} at zero.
-
-Finally, what happens if $p$ is small? Remember, interest on the loan is accruing
-at a rate of 1\% monthly, or \$100 every month. It may sound like a good deal if
-you're offered this loan with a low monthly payment of \$101, but if you take the
-loan and always make the minimum payment, then the principal on the loan will only
-go down by \$1 every month. You will die of old age before you pay off the car.
-We can therefore tell that $\lim_{p\searrow\$100} T=\infty$. This is a
-\emph{vertical asymptote} on the graph.
-
-Figure \figref{loan-period} shows what the graph must look like.
 <% marg(0) %>
 <%
   fig(
@@ -726,7 +726,125 @@ Figure \figref{loan-period} shows what the graph must look like.
 %>
 <% end_marg %>
 
+Finally, what happens if $p$ is small? Remember, interest on the loan is accruing
+at a rate of 1\% monthly, or \$100 every month. It may sound like a good deal if
+you're offered this loan with a low monthly payment of \$101, but if you take the
+loan and always make the minimum payment, then the principal on the loan will only
+go down by \$1 every month. You will die of old age before you pay off the car.
+We can therefore tell that $\lim_{p\searrow\$100} T=\infty$. This is a
+\emph{vertical asymptote} on the graph.
+<% end_sec('loan-period') %>
 
+Figure \figref{loan-period} shows what the graph must look like.
+
+<% begin_sec("The Laffer curve",nil,'laffer-curve') %>
+This example, a famous one, also has to do with money. In 1974, economist Arthur Laffer
+presented the following argument about taxes to politicians Dick Cheney and Donald Rumsfeld,
+sketching the resulting graph on a paper napkin. Consider the government's
+tax revenue as a function of the tax rate. Clearly if the tax rate is zero, the government
+gets zero revenue. Most people would assume that the function was a purely increasing one,
+since raising the tax rate would always garner the government more money.
+
+But, Laffer
+said, that isn't so. Imagine that the tax rate was 100\%, so that the government confiscated
+all of everyone's earnings. Nobody would have any incentive to work, so they would stop
+working, they would earn no taxable income, and revenue would drop to zero.
+Laffer sketched a graph like figure \figref{laffer-curve} on a paper napkin for
+Cheney and Rumsfeld. There should be some intermediate tax rate, he told them,
+that would produce the maximum revenue. Later, when Ronald Reagan became president,
+he cut taxes on the theory that the US was already on the right-hand side of the ``Laffer curve,''
+so that, counterintuitively, the lower taxes would produce \emph{higher} revenue.
+The results were not as Laffer had promised; the average annual budget deficit during the Reagan
+administration was \$240 billion, compared to \$57 billion during the preceding Carter administration.
+<% marg(0) %>
+<%
+  fig(
+    'laffer-curve',
+    %q{The Laffer curve.}
+  )  
+%>
+<% end_marg %>
+
+In calculus terms, our analysis of this function is an example of a result called Rolle's
+theorem. The idea is that if the function is smooth, then we expect its derivative to be
+continuous. If the derivative is positive on the left and negative on the right, then it
+must be zero at some intermediate point. This would be the point at which the function was
+maximized.
+<% end_sec('laffer-curve') %>
+
+<% begin_sec("Skydiving",nil,'skydiving') %>
+Figure \figref{skydiving} shows a skydiver's altitude as a function of time.
+Early in the motion, soon after the person jumps out of the plane, the only significant
+force is gravity, and the person falls with constant acceleration (section \ref{subsec:velocity},
+p.~\pageref{subsec:velocity}). The drop relative to the initial position
+equals $(1/2)at^2$, which is the equation of a parabola. 
+<% marg(50) %>
+<%
+  fig(
+    'skydiving',
+    %q{Altitude as a function of time for a skydiver.}
+  )  
+%>
+<% end_marg %>
+
+<% marg(-100) %>
+<%
+  fig(
+    'anchor',
+    %q{A rock-climbing anchor.}
+  )  
+%>
+<% end_marg %>
+
+But as the downward (negative) velocity increases,
+the upward force of air friction gets stronger and stronger. In the opposite
+limit of $t\rightarrow\infty$, the force of air friction gets closer and closer to
+being strong enough to cancel the force of gravity. In this limit, Newton's
+second law (section \ref{subsec:newton-second-law}, p.~\pageref{subsec:newton-second-law})
+predicts an acceleration of zero. An acceleration of zero corresponds to constant
+velocity, so that the graph asymptotically approaches a line whose slope is the velocity.
+
+This graph demonstrates two mathematical properties. It has a \emph{y-intercept},
+which is the initial altitude. It also has an oblique asymptote, i.e., an asymptotic line
+that is neither horizontal nor vertical.
+<% end_sec('skydiving') %>
+
+<% begin_sec("A rock-climbing anchor",nil,'anchor') %>
+For safety, rock climbers and mountaineers often
+wear a climbing harness and tie in to other climbers on a rope
+team or to anchors such as pitons or snow anchors. When using anchors, the climber usually wants to be
+protected by
+more than one, both for extra strength and for redundancy in case one fails.
+Figure \figref{anchor} shows such an arrangement, with the climber hanging from a pair of anchors forming a ``Y''
+at an angle $\theta$.  The usual advice is to make $\theta<90\degunit$; for large values of $\theta$,
+the stress placed on the anchors can be many times greater than the actual load $L$,
+so that two anchors are actually \emph{less} safe than one.
+
+Consider the stress on the anchor $S$ as a function of $\theta$. For physical
+reasons similar to those discussed in the example of the telephone wire
+(section \ref{subsec:limit-equals-infinity}, p.~\pageref{subsec:limit-equals-infinity}),
+$S$ must approach infinity as $\theta$ approaches 180 degrees; no matter how tight
+the anchor strands are made, the carabiner (hook) at the center will never be pulled up
+quite as high as the anchors.
+
+At $\theta=0$, we can see that each anchor strand will support half the load. The
+\emph{y-intercept} of the graph equals $L/2$.
+
+We can gain further insight by extending the range of possible values for $\theta$ to
+include negative angles. Physically, this corresponds to bringing the anchor strands
+past one another and swapping the roles of the two anchors. Since the physical setup is
+symmetrical, the function $S(\theta)$ must have the property $S(\theta)=S(-\theta)$,
+i.e., it is an \emph{even} function. It might seem pointless to discuss this symmetry,
+but it tells us something important. An argument identical to the one in
+section \ref{subsec:derivative-of-x-squared}, p.~\pageref{subsec:derivative-of-x-squared}, tells
+us that based on this symmetry, the derivative $S'$ must equal zero at $\theta=0$. This means
+that for small values of $\theta$, the strain on the anchor will be very nearly the same as
+for $\theta=0$, i.e., hardly any greater than half the load. Thus any small value of $\theta$
+is about equally good, but very large values could be a deadly mistake.
+<% end_sec('anchor') %>
+
+
+<% end_sec('sketch-without-equation') %>
 <% end_sec('curve-sketching') %>
 
 <% end_chapter %>
