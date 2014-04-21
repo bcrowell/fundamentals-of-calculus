@@ -1025,4 +1025,237 @@ and has a global maximum when $x=B=1/3$.
 <% end_sec('sketch-given-equation') %>
 <% end_sec('curve-sketching') %>
 
+<% begin_sec("Completeness",nil,'completeness') %>
+<% begin_sec("The completeness axiom of the real numbers",nil,'completeness-axiom') %>
+Calculus is the study of rates of change (differentiation) and how change
+accumulates (integration, which we haven't encountered yet).
+What changes is always a \emph{function}, and the function takes an input
+value that belongs to its domain and gives back an output that belongs to its
+range. The domain and range could in principle be sets of integers, rational
+numbers, real numbers, complex numbers, or hyperreal numbers
+(optional section \ref{sec:safe-handling-of-dx}, p.~\pageref{sec:safe-handling-of-dx}).
+These number systems all share many of the same properties, but 
+just as the ocean is the natural setting for a pirate story,
+there is a sense in which the real numbers are the natural setting in which to
+do calculus. Throughout this book, without specifically commenting on it so far,
+we've been considering only functions that take real-number inputs and give
+back real-number outputs: real functions.
+
+
+<% marg(0) %>
+<%
+  fig(
+    'cannonball-hits-water',
+    %q{A cannonball is fired horizontally, and hits the water at $y=0$.}
+  )  
+%>
+<% end_marg %>
+
+%%graph%% cannonball-hits-water func=2-x**2 format=eps xlo=0.0 xhi=2 ylo=-1 yhi=2 with=lines samples=100
+
+What's so special about real functions?
+We can define functions whose inputs and outputs are, say, integers, and
+such functions are of interest in many fields of mathematics. But real
+functions are especially well suited to describing rates of change.
+As an example, the graph in figure \figref{cannonball-hits-water} shows the function $f(x)=2-x^2$.
+Let's say this represents the arc of a cannon-ball shot off of a cliff
+into the ocean, where a $y$ coordinate of $0$ represents the surface of the water.
+Our geometrical intuition tells us that if the ball starts above the water,
+and later on ends up below it, then there must be
+some point at which it enters the water. In other words, if the graph
+of the function
+$f$ cuts across the line $y=0$, then there must be a point at which they
+coincide.
+
+But if we consider a set of numbers more restricted than the   
+real numbers, this may not happen. For example, suppose we take $f$ to be
+a rational function, i.e., a function whose inputs and outputs are rational
+numbers. Recall that a rational number is any number that can be expressed
+as an integer divided by another integer, e.g., the fraction 2/3. But the
+place where our cannonball crosses sea level has $x=\sqrt{2}$, which is 
+not a rational number. This example shows that the graphs of two rational
+functions can cut across one another without ever touching! This offends
+our intuition about rates of change, since we expect that if we change
+a variable smoothly from one value to another, it should visit every value
+in between.
+
+What is the special ingredient, the secret sauce that allows the real number
+system to avoid such paradoxical results as the one about the cannonball?
+It seems that the reals are somehow more \emph{densely packed} on the number line than the rationals, but how
+do we define this density property in mathematical terms? It can't be any
+of the elementary properties of the reals
+(section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}),
+since the rationals also satisfy all of those propeties. We need to add a new
+axiom, which is called the completeness axiom.
+
+One possible way of stating such an axiom
+is the following. 
+
+\begin{important}[Completeness axiom]
+Let P and Q be sets of positive numbers such that every number in P is smaller than every point in Q.
+Then there exists some positive number $z$ such that $z$ is greater than or equal to every number in P,
+but less than or equal to any number in Q.
+\end{important}\index{completeness}
+
+As an example, let P be the set of all numbers $x$ such that $x^2<2$,
+and Q the set of $x$ such that $x^2\ge2$.
+Then the number $z$ would have to be $\sqrt{2}$,
+which shows that the rationals are not complete. The reals are complete, and the completeness
+axiom can serve as one of the fundamental axioms of the real numbers.
+
+
+<% end_sec('completeness-axiom') %>
+<% begin_sec("The intermediate and extreme value theorems",nil,'intermediate-and-extreme') %>
+The following two theorems can be proved from the completeness property and
+the elementary properties of the reals, but we will not give the proof here.
+
+<% begin_sec("The intermediate value theorem",nil,'intermediate-value-theorem') %>
+Intuitively, the intermediate value theorem\index{intermediate value theorem}
+says that the real numbers aren't susceptible to
+paradoxes like the cannonball paradox described above. Or, we can say that
+if you are moving continuously along a road, 
+and you get from point A to point B, then you must also visit every other point
+along the road; only by teleporting (by moving discontinuously) could you
+avoid doing so. More formally, the theorem says this:
+<% marg(0) %>
+<%
+  fig(
+    'intermediate-value-theorem',
+    %q{The intermediate value theorem states that if the function is continuous, it must pass through $y_3$.}
+  )  
+%>
+<% end_marg %>
+
+\begin{theorem}[Intermediate value theorem]
+If $y$ is a continuous real-valued function on the real interval from $a$ to $b$,
+and if $y$ takes on values $y_1$ and $y_2$ at certain points within this interval, then for any $y_3$ between $y_1$ and
+$y_2$, there is some real $x$ in the interval for which $y(x)=y_3$.
+\end{theorem}
+
+\begin{eg}{}
+\egquestion Show that there is a solution to the equation $10^x+x=1000$.
+
+\eganswer We expect there to be a solution near $x=3$, where the function $f(x)=10^x+x=1003$ is just a little too big.
+On the other hand, $f(2)=102$ is much too small. Since $f$ has values above and below 1000 on the interval from
+2 to 3, and $f$ is continuous, the intermediate value theorem proves that a solution exists between 2 and 3.
+If we wanted to find a better numerical approximation to the solution, we could do it using Newton's
+method, which is introduced in section \ref{sec:newtons-method}.
+\end{eg}
+
+\begin{eg}{}\label{eg:x-minus-cos-x}
+\egquestion Show that there is at least one solution to the equation $\cos x=x$, and give bounds on its location.
+
+\eganswer This is what's known as
+a transcendental equation, and no amount of fiddling with algebra and trig identities will
+ever give a closed-form solution, i.e., one that can be written down with a finite number of arithmetic
+operations to give an exact result. However, we can easily prove that at least one solution exists, by
+applying the intermediate value theorem to the function $x-\cos x$. The cosine function is bounded between
+$-1$ and 1, so this function must be negative for $x<-1$ and positive for $x>1$. By the intermediate value
+theorem, there must be a solution in the interval $-1 \le x \le 1$. The graph, \figref{x-minus-cos-x}, verifies
+this, and shows that there is only one solution.
+\end{eg}
+
+
+%%graph%% x-minus-cos-x func=(x-cos(x)) format=eps xlo=-8 xhi=8 ylo=-8 yhi=8 xtic_spacing=4 ytic_spacing=4
+
+<% marg(50) %>
+<%
+  fig(
+    'x-minus-cos-x',
+    %q{The function $x-\cos x$ constructed in example \ref{eg:x-minus-cos-x}.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{}
+\egquestion Prove that every odd-order polynomial $P$ with real coefficients has at least one real root $x$, i.e., a
+point at which $P(x)=0$.
+
+\eganswer
+Example \ref{eg:x-minus-cos-x} might have given the impression that there was nothing
+to be learned from the intermediate value theorem that couldn't be determined by graphing,
+but this example clearly can't be solved by graphing, because we're trying to prove
+a general result for all polynomials.
+
+To see that the restriction to odd orders is necessary, consider the polynomial $x^2+1$, which has no real roots
+because $x^2>0$ for any real number $x$.
+
+To fix our minds on a concrete example for the odd case, consider the polynomial $P(x)=x^3-x+17$.
+For large values of $x$, the linear and constant terms will be negligible compared to the $x^3$ term,
+and since $x^3$ is positive for large values of $x$ and negative for large negative ones, it follows
+that $P$ is sometimes positive and sometimes negative. Therefore by the intermediate value theorem
+$P$ has at least one root.
+
+This argument didn't depend much on the specific polynomial $P$ chosen
+as an example. The fact that $P$ was positive for large $x$ and negative for large negative $x$
+followed merely from the fact that $P$ was of odd order. Therefore the result holds for all polynomials
+of odd order.
+\end{eg}
+
+\begin{eg}{}\label{eg:x-minus-sin-1-over-x}
+\egquestion Show that the equation $x=\sin 1/x$ has infinitely many solutions.
+
+\eganswer  This is another example that can't be solved by graphing; there is
+clearly no way to prove, just by looking at a graph like \figref{x-minus-sin-1-over-x}, that 
+the function $f(x)=x-\sin 1/x$ crosses the
+$x$ axis \emph{infinitely} many times. The graph does, however, help us to gain intuition for what's
+going on. As $x$ gets smaller and smaller, $1/x$ blows up, and $\sin 1/x$ oscillates more and more
+rapidly. The function $f$ is undefined at 0, but it's continuous everywhere else, so we can apply the
+intermediate value theorem to any interval that doesn't include 0.
+
+We want to prove that for any positive $u$, there exists an $x$ with $0<x<u$ for which $f(x)$ has
+either desired sign. Let $n$ be an even integer such that $n>10$ and also $\pi n>1/u$. Then clearly
+$f(x)$ is negative at $x=1/(\pi n+\pi/2)<u$, since $\sin 1/x=1$ and $x$ is small. Similarly,
+$f(x)$ is positive at $x=1/(\pi n+3\pi/2)<u$. This establishes the desired result.
+\end{eg}
+<% marg(70) %>
+<%
+  fig(
+    'x-minus-sin-1-over-x',
+    %q{The function $x-\sin 1/x$.}
+  )  
+%>
+<% end_marg %>
+
+%%graph%% x-minus-sin-1-over-x func=(x-sin(1/x)) format=eps xlo=-2 xhi=2 ylo=-2 yhi=2 xtic_spacing=1 ytic_spacing=1
+
+
+<% end_sec('intermediate-value-theorem') %>
+<% begin_sec("The extreme value theorem",nil,'extreme-value-theorem') %>
+
+We've seen that that locating maxima and minima of functions may in general
+be fairly difficult, because there are so many different ways in which a function can attain an extremum:
+e.g., at an endpoint, at a place where its derivative is zero, or at a nondifferentiable kink. The following
+theorem allows us to make a very general statement about all these possible cases, assuming only continuity.
+
+\begin{theorem}[Extreme value theorem]\label{extreme-value-theorem}
+If $f$ is a continuous real-valued function on the real-number
+interval defined by $a \le x \le b$, then $f$ has maximum and minimum values on that interval, which are
+attained at specific points in the interval.\index{extreme value theorem}
+\end{theorem}
+
+Let's first see why the assumptions are necessary. If we weren't confined to a finite interval, then
+$y=x$ would be a counterexample, because it's continuous and doesn't have any maximum or minimum value.
+If we didn't assume continuity, then we could have a function defined as $y=x$ for $x < 1$, and $y=0$ for
+$x \ge 1$; this function never gets bigger than 1, but it never attains a value of 1 for any specific value of $x$.
+
+\begin{eg}
+\egquestion Find the maximum value of the polynomial $P(x)=x^3+x^2+x+1$ for $-5 \le x \le 5$.
+
+\eganswer Polynomials are continuous, so the extreme value theorem guarantees that such a
+maximum exists. Suppose we try to find it by looking for a place where the derivative is zero.
+The derivative is $3x^2+2x+1$, and setting it equal to zero gives a quadratic equation, but application of the
+quadratic formula shows that it has no real solutions. It appears that the function doesn't have a maximum
+anywhere (even outside the interval of interest) that looks like a smooth peak. Since it doesn't have kinks or
+discontinuities, there is only one other type of maximum it could have, which is a maximum at one
+of its endpoints. Plugging in the limits, we find $P(-5)=-104$ and $P(5)=156$, so we conclude that
+the maximum value on this interval is 156.
+\end{eg}
+<% end_sec('extreme-value-theorem') %>
+
+<% end_sec('intermediate-and-extreme') %>
+<% end_sec('completeness') %>
+
+
+
 <% end_chapter %>
