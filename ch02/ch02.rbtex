@@ -594,7 +594,8 @@ We start with two preliminary definitions.
 
 Definition:
 Suppose that for a certain nonzero number $d$, we have $|d|<1$, $|d|<1/(1+1)$, $|d|<1/(1+1+1)$, \ldots
-and so on for all inequalities of this form. Then we say that $d$ is \emph{infinitesimal}.
+and so on for all inequalities of this form.\footnote{Cf.~example \ref{eg:archimedean}, p.~\pageref{eg:archimedean}.}
+Then we say that $d$ is  \emph{infinitesimal}.
 
 Definition: Let $H$ be a hyperreal number (which may or may not also be a real number).
 Suppose that there exists some real number $r$ such that $|H-r|$ is infinitesimal.

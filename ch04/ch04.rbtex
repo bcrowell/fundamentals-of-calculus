@@ -1103,6 +1103,39 @@ Then the number $z$ would have to be $\sqrt{2}$,
 which shows that the rationals are not complete. The reals are complete, and the completeness
 axiom can serve as one of the fundamental axioms of the real numbers.
 
+The completeness axiom is of a fundamentally different character than the elementary axioms.
+The elementary axioms make statements such as ``for any number $x$, \ldots'' or
+``for any numbers $x$ and $y$, \ldots'' The completeness axiom says ``for any \emph{sets}
+of numbers P and Q, \ldots''
+
+\begin{eg}{Every decimal is a real number}
+Consider the infinite decimal
+\begin{equation*}
+  3.141592\ldots \qquad ,
+\end{equation*}
+which is the decimal expansion of $\pi$. We can use the completeness axiom to prove that this is
+a real number. Let P be the set of rational numbers $\{3,\ 3.1,\ 3.14,\ 3.141,\ \ldots\}$.
+Let Q be the set of rational numbers that are larger than every number in P. Then the real
+number whose existence is asserted by the completeness axiom is exactly $\pi$. Similar reasoning
+shows that any decimal corresponds to some real number (which can be shown to be unique).
+(Note, however, that the same
+real number can have more than one decimal expansion. For example, the infinite repeating
+decimals $1.000\ldots$ and $0.999\ldots$ both equal 1.)
+\end{eg}
+
+\begin{eg}{The Archimedean property}\label{eg:archimedean}
+The Archimedean principle states that there is no positive real number that is less than $1/1$, less than
+$1/(1+1)$, less than $1/(1+1+1)$, and so on.\footnote{Cf. section \ref{sec:safe-handling-of-dx},
+p.~\pageref{sec:safe-handling-of-dx}.} In other words, it says that there are no real numbers
+that are infinitely small, but still greater than zero. The Archimedean property can be proved
+from the completeness property. For suppose, to the contrary, that we did have such a real number.
+Then it would be less than $1/10$, so its first decimal place would be 0. It would also be less
+than $1/100$, so its second decimal place would also be zero. Continuing in this way, we find that
+the decimal expansion of such a number must be $0.000\ldots$, with the zeroes repeating forever.
+But this is the decimal expansion of zero, and we already know that every decimal expansion corresponds
+to a unique real number. Therefore our number is zero, and this is a contradiction, since we
+assumed that it violated the Archimedean principle, which refers to a \emph{positive} real number.
+\end{eg}
 
 <% end_sec('completeness-axiom') %>
 <% begin_sec("The intermediate and extreme value theorems",nil,'intermediate-and-extreme') %>
