@@ -1,0 +1,54 @@
+%%chapter%% 05
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '05',
+    %q{More derivatives},
+    'ch:more-derivatives'
+  )
+%>
+
+<% begin_sec("Derivatives of transendental functions",nil,'derivatives-of-transcendental-functions') %>
+<% begin_sec("Transendental numbers",nil,'transcendental-numbers') %>
+Historically, the motivation for expanding the rational numbers to include the reals
+came from the desire to be able to discuss numbers like $\sqrt{2}$ or $\sqrt[3]{7}$.
+(The decision was not without controversy. Legend has it that
+Hippasus of Metapontum, who lived in the fifth century B.C., proved $\sqrt{2}$ to be
+irrational, and that the gods punished him by causing him to drown at sea.)
+We've already seen that the completeness property of the reals (section \ref{sec:completeness},
+p.~\pageref{sec:completeness}) guarantees that $\sqrt{2}$ is a real number, and more generally
+one can use the intermediate value theorem to prove that roots of polynomials are real.
+
+However, there are also numbers that cannot be defined as roots of polynomials having
+rational-number coefficients. The first number proved to be transcendental, by Liouville
+in 1844, was
+\begin{equation*}
+  0.1100010000000000000000010000\ldots \qquad ,
+\end{equation*}
+where the first one occurs in the 1st decimal place, the next in the 2nd decimal place,
+the next in the 6th, and so on, with the sequence of numbers being 1, $1\cdot2=2$,
+$1\cdot2\cdot3=6$, \ldots Without going into the formal proof, it's not hard to get an intuitive
+feel for why this number is transcendental. Since the list of numbers 1, 2, 6, \ldots
+grows extremely rapidly, we find that as we continue to write the decimal expansion,
+it gets extremely sparse. It's so sparse that if we try to cook up a polynomial such
+as $P(x)=x^2+9x-1$ with Liouville's number $x$ as a root, we are bound to fail; for $x^2$ and all higher
+powers of $x$ are also extremely sparse, and this makes it impossible to get them to cancel out
+and give $P(x)=0$.
+% calc -e "x=0.1100010000000000000000010000; x^2+9x-1"
+For a full proof, see the Wikipedia article ``Liouville number.''
+<% end_sec('transcendental-numbers') %>
+<% begin_sec("Transcendental functions",nil,'transcendental-functions') %>
+The numbers $\pi$ and $e$ turn out to be transcendental, so it should not be too surprising
+that functions like $\sin x$ and $e^x$ almost always have transcendental-number values, even
+if we put in rational-number values for $x$. These functions are called \emph{transcendental
+functions}.\footnote{A more formal definition is that a transcendental function is one that
+can't be expressed as the root of a polynomial equation.}
+<% end_sec('transcendental-functions') %>
+<% end_sec('derivatives-of-transcendental-functions') %>
+
+
+
+<% end_chapter %>
