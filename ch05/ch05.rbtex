@@ -39,13 +39,44 @@ powers of $x$ are also extremely sparse, and this makes it impossible to get the
 and give $P(x)=0$.
 % calc -e "x=0.1100010000000000000000010000; x^2+9x-1"
 For a full proof, see the Wikipedia article ``Liouville number.''
+
+The important mathematical constants $\pi$ and $e$ (the base of natural logarithms) are
+transcendental.
+
+An alternative characterization of transcendental numbers is that they can't be written
+using any finite number of symbols in terms of rational numbers and the basic operations of arithmetic:
+addition, subtraction, multiplication, division, and roots. For example, the number
+\begin{equation*}
+  \frac{-9+\sqrt{85}}{2} = 0.1098\ldots
+\end{equation*}
+% calc -e "x=(-9+sqrt(85))/2; x^2+9x-1"
+is \emph{not} transcendental, since it is written in terms of rational numbers and four of
+the basic operations. (It is a root of the polynomial $P$ given above.)
 <% end_sec('transcendental-numbers') %>
 <% begin_sec("Transcendental functions",nil,'transcendental-functions') %>
-The numbers $\pi$ and $e$ turn out to be transcendental, so it should not be too surprising
-that functions like $\sin x$ and $e^x$ almost always have transcendental-number values, even
-if we put in rational-number values for $x$. These functions are called \emph{transcendental
-functions}.\footnote{A more formal definition is that a transcendental function is one that
-can't be expressed as the root of a polynomial equation.}
+Similarly, we have \emph{functions} that are transcendental or not transcendental.
+For example, the function
+\begin{equation*}
+  f(x) = \frac{-9+\sqrt{x}}{2}
+\end{equation*}
+is not transcendental because it can be written using the same basic operations of
+arithmetic. The techniques developed in chapter \ref{ch:limits} are sufficient to differentiate
+any function that is not transcendental. The purpose of the present chapter is to see how
+to differentiate some functions that \emph{are} transcendental.
+
+Since the numbers $\pi$ and $e$ are transcendental, it is not surprising that the following
+closely related functions are transcendental:
+\begin{align*}
+  \sin x \\
+  \cos x \\
+  e^x \\
+  \ln x
+\end{align*}
+Although the distinction between transcendental and non-transcendental \emph{numbers} is
+of little practical significance (e.g., no real-world measurement will tell us whether a
+stick's length is transcendental or not), the distinction becomes an important one when
+we come to functions, because the methods we know so far will not suffice to differentiate
+a transcendental function.
 <% end_sec('transcendental-functions') %>
 <% end_sec('derivatives-of-transcendental-functions') %>
 
