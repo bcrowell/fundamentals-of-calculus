@@ -11,8 +11,8 @@
   )
 %>
 
-<% begin_sec("Derivatives of transendental functions",nil,'derivatives-of-transcendental-functions') %>
-<% begin_sec("Transendental numbers",nil,'transcendental-numbers') %>
+<% begin_sec("Transcendental numbers and functions",nil,'transcendental-numbers-and-functions') %>
+<% begin_sec("Transcendental numbers",nil,'transcendental-numbers') %>
 Historically, the motivation for expanding the rational numbers to include the reals
 came from the desire to be able to discuss numbers like $\sqrt{2}$ or $\sqrt[3]{7}$.
 (The decision was not without controversy. Legend has it that
@@ -76,10 +76,77 @@ Although the distinction between transcendental and non-transcendental \emph{num
 of little practical significance (e.g., no real-world measurement will tell us whether a
 stick's length is transcendental or not), the distinction becomes an important one when
 we come to functions, because the methods we know so far will not suffice to differentiate
-a transcendental function.
+a transcendental function. Most of this chapter will be concerned with how to extend
+our methods of differentiation to cover these functions.
 <% end_sec('transcendental-functions') %>
-<% end_sec('derivatives-of-transcendental-functions') %>
+<% end_sec('transcendental-numbers-and-functions') %>
 
+<% begin_sec("Review: the trigonometric functions",nil,'trig') %>
+<% begin_sec("Radian measure",nil,'radian-measure') %>
+The presence of numbers like 60 and 360 in our units of measurement for time and angles
+dates back to the ancient Babylonians. The reason for splitting larger quantities
+into these numbers of subdivisions is that 60 and 360 are divisible by many small integers, including
+2, 3, 5, 10, and 12. For practical purposes it's fine for a carpenter to define a right angle
+as $90\degunit$. But it turns out to be much less cumbersome when doing calculus to
+adopt the radian as our unit of angle, as defined in figure \figref{radian-measure}. A
+right angle is $\pi/2$ radians, a full circle $2\pi$. From the definition we observe that
+a number with ``units'' of radians is in fact the unitless ratio of two distances.
+<% marg(0) %>
+<%
+  fig(
+    'radian-measure',
+    %q{The radian measure of the angle $\theta$ is $s/r$.}
+  )  
+%>
+<% end_marg %>
+<% end_sec('radian-measure') %>
+
+<% begin_sec("Sine and cosine",nil,'sine-and-cosine') %>
+Figure \figref{sine-and-cosine} shows a right triangle. The sine and cosine of the angle $\theta$
+are defined as the ratios
+\begin{align*}
+  \sin\theta &= \frac{y}{r} \qquad \text{and}\\
+  \cos\theta &= \frac{x}{r} \qquad .
+\end{align*}
+Since these ratios are the same for any two similar triangles, the definitions
+depend only on $\theta$, not on the triangle.
+<% marg(100) %>
+<%
+  fig(
+    'sine-and-cosine',
+    %q{The sine of $\theta$ is $y/r$, the cosine $x/r$.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'unit-circle',
+    %q{The sine and cosine defined on the unit circle, for any angle $\theta$.}
+  )  
+%>
+<% end_marg %>
+<% end_sec('sine-and-cosine') %>
+
+<% begin_sec("Arbitrary angles",nil,'arbitrary-angles') %>
+Since the above definition assumes a right triangle, it is restricted to angles $\theta$ that are
+between 0 and $\pi/2$ (a right angle). Figure \figref{unit-circle} shows how to generalize this
+to an angle that is an arbitrary real number. The circle is the \emph{unit} circle, i.e., the
+circle centered on the origin and having radius 1. The angle is by convention measured counterclockwise
+from the $x$ axis; a negative angle would indicate a clockwise rotation. The $(x,y)$ coordinates
+of a point on the unit circle at angle $\theta$ are $(\cos\theta,\sin\theta)$.
+<% end_sec('arbitrary-angles') %>
+
+<% begin_sec("Other trigonometric functions",nil,'other-trig-functions') %>
+In terms of the same variables defined above, we have the following additional trigonometric functions:
+\begin{align*}
+  \tan \theta &= \frac{y}{x} \qquad \text{[important]}\\
+  \csc \theta &= 1/\sin\theta \qquad \text{[not as important]} \\
+  \sec \theta &= 1/\cos\theta \qquad \text{[not as important]} \\
+  \cot \theta &= 1/\tan\theta \qquad \text{[not as important]}
+\end{align*}
+<% end_sec('other-trig-functions') %>
+
+<% end_sec('trig') %>
 
 
 <% end_chapter %>
