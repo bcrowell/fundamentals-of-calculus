@@ -1092,7 +1092,7 @@ One possible way of stating such an axiom
 is the following. 
 
 \begin{important}[Completeness axiom]
-Let P and Q be sets of positive numbers such that every number in P is smaller than every point in Q.
+Let P and Q be sets of positive numbers such that every number in P is smaller than every number in Q.
 Then there exists some positive number $z$ such that $z$ is greater than or equal to every number in P,
 but less than or equal to any number in Q.
 \end{important}\index{completeness}
@@ -1114,7 +1114,7 @@ Consider the infinite decimal
   3.141592\ldots \qquad ,
 \end{equation*}
 which is the decimal expansion of $\pi$. We can use the completeness axiom to prove that this is
-a real number. Let P be the set of rational numbers $\{3,\ 3.1,\ 3.14,\ 3.141,\ \ldots\}$.
+a real number. Let P be the list of rational numbers given by $\{3,\ 3.1,\ 3.14,\ 3.141,\ \ldots\}$.
 Let Q be the set of rational numbers that are larger than every number in P. Then the real
 number whose existence is asserted by the completeness axiom is exactly $\pi$. Similar reasoning
 shows that any decimal corresponds to some real number (which can be shown to be unique).

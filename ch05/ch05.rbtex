@@ -13,7 +13,7 @@
 
 <% begin_sec("Transcendental numbers and functions",nil,'transcendental-numbers-and-functions') %>
 <% begin_sec("Transcendental numbers",nil,'transcendental-numbers') %>
-Historically, the motivation for expanding the rational numbers to include the reals
+Historically, the motivation for expanding the rational numbers to form the reals
 came from the desire to be able to discuss numbers like $\sqrt{2}$ or $\sqrt[3]{7}$.
 (The decision was not without controversy. Legend has it that
 Hippasus of Metapontum, who lived in the fifth century B.C., proved $\sqrt{2}$ to be
@@ -23,7 +23,8 @@ p.~\pageref{sec:completeness}) guarantees that $\sqrt{2}$ is a real number, and 
 one can use the intermediate value theorem to prove that roots of polynomials are real.
 
 However, there are also numbers that cannot be defined as roots of polynomials having
-rational-number coefficients. The first number proved to be transcendental, by Liouville
+rational-number coefficients. These are called \emph{transcendental} numbers.
+The first number proved to be transcendental, by Liouville
 in 1844, was
 \begin{equation*}
   0.1100010000000000000000010000\ldots \qquad ,
@@ -34,7 +35,7 @@ $1\cdot2\cdot3=6$, \ldots Without going into the formal proof, it's not hard to 
 feel for why this number is transcendental. Since the list of numbers 1, 2, 6, \ldots
 grows extremely rapidly, we find that as we continue to write the decimal expansion,
 it gets extremely sparse. It's so sparse that if we try to cook up a polynomial such
-as $P(x)=x^2+9x-1$ with Liouville's number $x$ as a root, we are bound to fail; for $x^2$ and all higher
+as $P(x)=x^2+9x-1$ with Liouville's number $x$ as a root, we are bound to fail; $x^2$ and all higher
 powers of $x$ are also extremely sparse, and this makes it impossible to get them to cancel out
 and give $P(x)=0$.
 % calc -e "x=0.1100010000000000000000010000; x^2+9x-1"
@@ -72,7 +73,7 @@ closely related functions are transcendental:
   e^x \\
   \ln x
 \end{align*}
-Although the distinction between transcendental and non-transcendental \emph{numbers} is
+Although the distinction between transcendental and non-transcend\-ental \emph{numbers} is
 of little practical significance (e.g., no real-world measurement will tell us whether a
 stick's length is transcendental or not), the distinction becomes an important one when
 we come to functions, because the methods we know so far will not suffice to differentiate
@@ -81,7 +82,56 @@ our methods of differentiation to cover these functions.
 <% end_sec('transcendental-functions') %>
 <% end_sec('transcendental-numbers-and-functions') %>
 
+<% begin_sec("Review: exponentials and logarithms",nil,'exp-and-log') %>
+Before we talk about how to differentiate logs and exponentials, here's an opportunity to refresh
+your memory on what these functions are in the first place.
+
+We can represent repeated multiplication
+\begin{equation*}
+  2\times2\times2 = 8 \qquad ,
+\end{equation*}
+using the notation for exponents,
+\begin{equation*}
+  2^3 = 8 \qquad .
+\end{equation*}
+Because multiplication is associative,
+\begin{equation*}
+  2\times2\times2\times2\times2\times2\times2 = 128
+\end{equation*}
+is the same as
+\begin{equation*}
+  (2\times2\times2)(2\times2\times2\times2) \qquad ,
+\end{equation*}
+so $2^7$ is the same as $(2^3)(2^4)$. In other words, multiplication is the same
+as adding exponents,
+\begin{equation*}
+  b^ub^v=b^{u+v} \qquad .
+\end{equation*}
+An important special case is scientific notation, which uses powers of 10.
+For example, $(10^2)(10^7)=10^9$.
+
+Just as subtraction undoes addition, and division undoes multiplication,
+the operation of exponentiation has an inverse operation, which is the
+logarithm. If
+\begin{equation*}
+  b^p = z \qquad ,
+\end{equation*}
+then 
+\begin{equation*}
+  \log_b z = p \qquad .
+\end{equation*}
+For example, $\log_2 8=3$, because $2^3=8$.
+
+The number 10 has appeared above as a base, and that's because humans have 10 fingers.
+There's clearly nothing all that special about 10. It's an accident of
+evolution. A number with more cosmic significance is $e\approx2.71818\ldots$ Exponents
+and logarithms with base $e$ have some nice properties, which we'll discuss later in
+more detail. The function $e^x$ is called the exponential function.
+<% end_sec('exp-and-log') %>
+
 <% begin_sec("Review: the trigonometric functions",nil,'trig') %>
+Before we talk about how to differentiate trig functions, here's an opportunity to refresh
+your memory on what trig functions are in the first place.
 <% begin_sec("Radian measure",nil,'radian-measure') %>
 The presence of numbers like 60 and 360 in our units of measurement for time and angles
 dates back to the ancient Babylonians. The reason for splitting larger quantities
@@ -125,6 +175,7 @@ depend only on $\theta$, not on the triangle.
   )  
 %>
 <% end_marg %>
+
 <% end_sec('sine-and-cosine') %>
 
 <% begin_sec("Arbitrary angles",nil,'arbitrary-angles') %>
@@ -134,6 +185,13 @@ to an angle that is an arbitrary real number. The circle is the \emph{unit} circ
 circle centered on the origin and having radius 1. The angle is by convention measured counterclockwise
 from the $x$ axis; a negative angle would indicate a clockwise rotation. The $(x,y)$ coordinates
 of a point on the unit circle at angle $\theta$ are $(\cos\theta,\sin\theta)$.
+
+It is handy to know these facts:
+\begin{align*}
+  \cos 0 &= 1 \\
+  \sin 0 &= 0
+\end{align*}
+These do not need to be memorized. They can be recovered instantly by visualizing the unit circle.
 <% end_sec('arbitrary-angles') %>
 
 <% begin_sec("Other trigonometric functions",nil,'other-trig-functions') %>
@@ -148,5 +206,15 @@ In terms of the same variables defined above, we have the following additional t
 
 <% end_sec('trig') %>
 
+<% begin_sec("Derivatives of trigonometric functions",nil,'derivatives-of-trig') %>
+How would we find the derivative of the sine function? Since it's transcendental, it can't be expressed in
+terms of simpler functions that we know how to differentiate. Let's start by \emph{sketching} its
+derivative in order to gain some insight. Using the techniques of section \ref{subsec:sketch-derivatives},
+p.~\pageref{subsec:sketch-derivatives}, we obtain figure ...
+
+--- graph ---
+
+
+<% end_sec('derivatives-of-trig') %>
 
 <% end_chapter %>

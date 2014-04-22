@@ -555,7 +555,8 @@ being differentiable.
 In most cases, there is no need to invoke the definition explicitly in order to check whether
 a function is continuous. Most of the functions we work with are defined by putting together
 simpler functions as building blocks. For example, let's say we're already convinced that the
-functions defined by $g(x)=3x$ and $h(x)=\sin x$ are both continuous. Then if we encounter the
+functions defined by $g(x)=3x$ and $h(x)=\sin x$ are both continuous.\footnote{The reader who
+has forgotten all of his/her trig is directed to the review in section \ref{sec:trig}.} Then if we encounter the
 function $f(x)=\sin(3x)$, we can tell that it's continuous because its definition corresponds
 to $f(x)=h(g(x))$. The functions $g$ and $h$ have been set up like a bucket brigade, so that
 $g$ takes the input, calculates the output, and then hands it off to $h$ for the final step

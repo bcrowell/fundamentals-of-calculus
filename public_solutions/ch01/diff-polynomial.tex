@@ -1,3 +1,16 @@
 One of the properties of the derivative is that the derivative of a sum is the sum of the derivatives,
 so we can get this by adding up the derivatives of $3z^7$, $-4z^2$, and 6. The derivatives of the
 three terms are $21z^6$, $-8z$, and 0, so the derivative of the whole thing is $21z^6-8z$.
+
+For the numerical check, let's use $z=1$ and $\Delta z=0.001$. Call the function $f$.
+\begin{align*}
+  \frac{\der f}{\der z} &= 13 \\
+  \frac{\Delta f}{\Delta z} &= \frac{5.0131-5.0000}{0.001} = 13.1
+\end{align*}
+These agree well enough that it's unlikely that we've made an error such as a wrong sign or getting
+the wrong integer for one of the coefficients.
+
+% $ calc -e "z=1; dz=.001; f1=3z^7-4z^2+6; z=z+dz; f2=3z^7-4z^2+6; (f2-f1)/dz"
+%    f1 = 5
+%    f2 = 5.01305910510506
+%    13.0591051050617
