@@ -126,8 +126,74 @@ The number 10 has appeared above as a base, and that's because humans have 10 fi
 There's clearly nothing all that special about 10. It's an accident of
 evolution. A number with more cosmic significance is $e\approx2.71818\ldots$ Exponents
 and logarithms with base $e$ have some nice properties, which we'll discuss later in
-more detail. The function $e^x$ is called the exponential function.
+more detail. Any expression with $x$ in the exponent is called an exponential,
+but $e^x$ is ``the'' exponential function. Sometimes when $x$
+is a complicated expression it gets awkward to write it as a superscript, and then we
+write $\exp(\ldots)$ instead of $e^{\ldots}$. The logarithm with the special base $e$
+is called the \emph{natural logarithm}, notated $\ln$.
+
+The following identities are useful. Exponentials and logs are inverse operations:
+\begin{subequations}
+\begin{align}
+  \log_b\left(b^x\right) &= x \label{eqn:log-of-exp} \\
+  b^{\log_b x} &= x \label{eqn:exp-of-log}
+\end{align}
+\end{subequations}
+Logs turn multiplication and division into addition and subtraction:
+\begin{subequations}
+\begin{align}
+  \log(xy) &= \log x+\log y \\
+  \log(x/y) &= \log x-\log y
+\end{align}
+\end{subequations}
+A log in one base can be changed into a log in another base:
+\begin{equation}\label{eqn:change-of-base}
+  \log_b x = \frac{\log_c x}{\log_c b}
+\end{equation}
+For example, $\log_{10} 10^6=6$, whereas $\log_{100} 10^6=3$.
+It may be convenient to convert a logarithm to a natural log, with $c=e$:
+\begin{equation}\label{eqn:convert-log-to-ln}
+  \log_b x = \frac{\ln x}{\ln b} \qquad .
+\end{equation}
+Similarly, an exponential with an arbitrary base $b$ can be converted
+to an exponential with base $e$.
+\begin{equation}\label{eqn:convert-exponential-to-ex}
+  b^x = e^{(\ln b)x}
+\end{equation}
 <% end_sec('exp-and-log') %>
+
+<% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>
+In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies} and
+example \ref{eg:exponential-with-limits} on p.~\pageref{eg:exponential-with-limits}
+we were found that the derivative of an exponential is an exponential: the more
+bunnies you have, the faster you produce baby bunnies; the more credit-card debt you have,
+the faster your debt grows. Furthermore, we were led to the conjecture that in the case of
+``the'' exponential function $e^x$, the constant of proportionality between the function and
+its derivative was simply one:
+\begin{equation}\label{eqn:derivative-of-ex-is-ex}
+  (e^x)' = e^x
+\end{equation}
+There is no way to prove this unless we adopt some \emph{definition} of $e$. In fact
+equation \eqref{eqn:derivative-of-ex-is-ex} serves as a perfectly good definition of $e$.
+Adopting this definition, application of equation \eqref{eqn:convert-exponential-to-ex} and the chain
+rule gives the more general rule
+\begin{equation*}
+  (b^x)' = (\ln b)b^x
+\end{equation*}
+for any base $b$.
+Some people like lagers better than ales, Chicago better than Paris, and the following better
+than \eqref{eqn:derivative-of-ex-is-ex} as a definition of $e$:
+\begin{equation}\label{eqn:define-e-as-limit}
+  e = \lim_{n\rightarrow\infty} \left(1+\frac{1}{n}\right)^{n}
+\end{equation}
+% calc -e "n=1000; (1+1/n)^n"
+The story-line behind \eqref{eqn:define-e-as-limit} is something like this. Suppose your bank account
+carries an interest rate of 100\%; the second 1 in the equation is 100/100. If the interest is compounded
+yearly, then your balance goes up every year by a factor of $(1+1/1)^1=2$. If it's compounded monthly
+at an interest rate of $100\%/12$, then the yearly increase is a factor of $(1+1/12)^{12}=2.6$. If we let
+the 12 become a variable $n$ that approaches infinity, then the 2.6 becomes $e$.
+
+<% end_sec('derivative-of-exp') %>
 
 <% begin_sec("Review: the trigonometric functions",nil,'trig') %>
 Before we talk about how to differentiate trig functions, here's an opportunity to refresh

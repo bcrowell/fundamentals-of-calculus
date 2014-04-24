@@ -259,6 +259,31 @@ equation of the line, and therefore we have $f'(1)=2$.
 %>
 <% end_marg %>
 
+\begin{eg}{The derivative of an exponential function, with limits}\label{eg:exponential-with-limits}
+In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies}, we inferred using a simple geometrical trick
+that the derivative of an exponential function like $f(x)=2^x$ must be proportional to $f$ itself,
+\begin{equation*}
+  f' = k f \qquad ,
+\end{equation*}
+where the constant of proportionality $k$ depends on the base 2. We can now prove the same
+fact using limits, and say something about the value of the constant. Since this fact is supposed
+to hold for all values of $x$, and $k$ is to be the same
+for any $x$, we can pick any convenient value for $x$, say $x=0$. For the derivative we have
+\begin{align*}
+  f'(0) &= \lim_{\Delta x\rightarrow 0} \frac{2^{0+\Delta x}-2^0}{\Delta x} \\
+        &= \lim_{\Delta x\rightarrow 0} \frac{2^{\Delta x}-1}{\Delta x} \qquad .
+\end{align*}
+Since $f(0)=1$, we have
+\begin{equation*}
+  k = \lim_{\Delta x\rightarrow 0} \frac{2^{\Delta x}-1}{\Delta x}
+\end{equation*}
+We can get as good an approximation to this limit as we like by plugging in small enough values
+of $\Delta x$. For example, $\Delta x=10^{-4}$ gives $k\approx0.69317$,
+which seems to be an approximation to $\ln 2=0.69314\ldots$ This naturally leads
+us to conjecture that the derivative of $b^x$ equals $(\ln b) b^x$, and in particular
+that the derivative of $e^x$ is simply $e^x$.
+\end{eg}
+
 We seldom evaluate a derivative by directly applying its definition as a limit.
 Instead, we use a variety of other more convenient rules that follow from the
 definition. Some of these are the properties in section \ref{subsec:properties-of-the-derivative},

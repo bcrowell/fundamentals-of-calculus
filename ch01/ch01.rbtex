@@ -247,6 +247,45 @@ the function $2x$.
 %>
 <% end_marg %>
 
+\begin{eg}{What if $x$ is in the exponent rather than the base?}\label{eg:bunnies}
+The method used above to differentiate $x^2$ was basically a trick, and it depended on a special
+property of the function $x^2$, which is that its graph can be stretched horizontally and vertically in
+such a way that it can be brought back on top of itself again. The reason that this subject is
+called ``calculus'' rather than ``trickery'' is that we will soon (in ch.~\ref{ch:limits})
+develop more systematic
+methods for \emph{calculating} rates of change --- methods that don't depend on tricks.
+
+It may nevertheless be of interest to note that a similar trick is capable of telling us
+something about a different type of function,
+one in which $x$ appears in the exponent rather than the base. What about the function $2^x$, for example?
+A pair of rabbits marches off of Noah's ark. Two bunnies become four, then 8, 16, 32, and so on.
+What is the derivative of this function, i.e., the rate of change of the rabbit population per
+generation? (Strictly speaking, the derivative is only meaningful if we fill in all the non-integer
+values of $x$, which isn't really meaningful in terms of rabbits, since you can't have a fraction of
+a rabbit.)
+
+It happens that the function $2^x$, like $x^2$, can be brought back on top of itself again in a simple
+geometrical way. Instead of a horizontal stretch and a vertical stretch, we use a horizontal shift
+and a vertical stretch. For example, if we shift the graph of $2^x$ to the right by 3 units, and then
+stretch it vertically by a factor of 8, we get back the same graph again. This has come about because of the
+more fundamental property of exponential functions $b^{c+d}=b^cb^d$. (In our example, the base $b$ is 2.)
+As a result, we find that after
+3 generations, when the rabbit population goes up by a factor of 8, its derivative \emph{also} goes
+up by a factor of 8. That is, the derivative of an exponential function $y=b^x$ is proportional
+to $y$, or
+\begin{equation*}
+  y'=(\ldots)y \qquad ,
+\end{equation*}
+where ``\ldots'' is a constant of proportionality that depends on the base $b$. What is the constant
+of proportionality? We'll return to this question in example \ref{eg:exponential-with-limits}
+on p.~\pageref{eg:exponential-with-limits}.
+
+A similar example is
+credit card debt. The more credit card debt you have, the faster your debt grows; in this example, the
+constant of proportionality relates to the interest rate.
+\end{eg}
+
+
 <% end_sec('derivative-of-x-squared') %>
 <% end_sec('derivative') %>
 
