@@ -493,7 +493,8 @@ which is indeed close to 1.
 <% end_sec('derivatives-of-sin-cos-at-zero') %>
 
 <% begin_sec("A preliminary sketch",nil,'sketch-derivatives-of-sin-cos') %>
-Next let's \emph{sketch} the derivative of $\sin\theta$
+What about the value of $\sin'$ at $\theta\ne0$?
+Let's \emph{sketch} the derivative of $\sin\theta$
 in order to gain some insight. Using the techniques of section \ref{subsec:sketch-derivatives},
 p.~\pageref{subsec:sketch-derivatives}, we obtain figure \figref{sketch-derivative-of-sine}.
 At $\theta=0$, the slope of the sine function is 1, which is as large and positive as it ever gets,
@@ -501,7 +502,7 @@ so the value of the derivative sketched
 in the bottom graph is large and positive. At $\pi/2$ (90 degrees), the sine has its maximum value of 1,
 and its derivative is 0. At $\pi$, the sine has its largest negative derivative. The graph we're
 led to draw for $\sin'\theta$ looks like the cosine function.
-<% marg(50) %>
+<% marg(35) %>
 <%
   fig(
     'sketch-derivative-of-sine',
@@ -522,35 +523,19 @@ leads us to the following conjectures:
 \end{align*}
 <% end_sec('sketch-derivatives-of-sin-cos') %>
 <% begin_sec("Proof of the derivatives of the sine and cosine",nil,'prove-derivatives-of-sin-cos') %>
-The following proof is included for completeness, but most readers will probably want to skip it.
-
-Let
-\begin{align*}
-  \sin' = f \qquad \text{and} \qquad
-  \cos' = g \qquad .
-\end{align*}
-We want to prove $f(x)=\cos x$ and $g(x)=-\sin x$. We have already established
-\begin{align*}
-  f(0) = 1 \qquad \text{and} \qquad
-  g(0) = 0 \qquad .
-\end{align*}
-The idea is to use 
-the identities $\sin(x+y) = \sin x\cos y + \cos x\sin y$ and
-$\cos(x+y) = \cos x\cos y - \sin x\sin y$ (p.~\pageref{eqn:sin-sum-of-angles}) to connect these special
-values of $f$ and $g$ to their values elsewhere. Using the first identity, and treating $y$ as a constant,
-we have
-\begin{align*}
-  \frac{\der}{\der x}\left[\sin(x+y)\right] 
-       &=   \frac{\der}{\der x}\left[\sin x\cos y + \cos x\sin y\right] \\
-       &= f(x) \cos y + g(x)\sin y
-\end{align*}
-Setting $x=0$, this becomes
+To prove this, let's apply the definition of the derivative to the sine function.
 \begin{equation*}
-  f(y) = \cos y \qquad ,
+  \sin' x = \lim_{h\rightarrow0} \frac{\sin(x+h)-\sin x}{h}
 \end{equation*}
-and a similar calculation for the cosine the desired result for $g$.
-%%% \label{eqn:sin-sum-of-angles} \\
-%%%  \label{eqn:cos-sum-of-angles}
+Making use of the identity $\sin(x+y) = \sin x\cos y + \cos x\sin y$
+(p.~\pageref{eqn:sin-sum-of-angles}), we find
+\begin{align*}
+  \sin' x &= \lim_{h\rightarrow0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} \\
+        &= \cos x \lim_{h\rightarrow0} \frac{\sin h}{h} + \sin x \lim_{h\rightarrow0} \frac{\cos h-1}{h} \qquad .
+\end{align*}
+We have already determined these two limits: they are 1 and 0, respectively,
+so $\sin'x = \cos x$ as claimed. The similar calculation for the derivative of $\cos x$ is left
+as an exercise.
 <% end_sec('prove-derivatives-of-sin-cos') %>
 
 <% end_sec('derivatives-of-sin-cos') %>
