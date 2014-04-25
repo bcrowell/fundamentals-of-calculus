@@ -108,6 +108,7 @@ our methods of differentiation to cover these functions.
 Before we talk about how to differentiate logs and exponentials, here's an opportunity to refresh
 your memory on what these functions are in the first place.
 
+<% begin_sec("Basic ideas",nil,'basic-ideas') %>
 We can represent repeated multiplication
 \begin{equation*}
   2\times2\times2 = 8 \qquad ,
@@ -126,12 +127,46 @@ is the same as
 \end{equation*}
 so $2^7$ is the same as $(2^3)(2^4)$. In other words, multiplication is the same
 as adding exponents,
-\begin{equation*}
+\begin{equation}\label{eqn:add-exponents}
   b^ub^v=b^{u+v} \qquad .
-\end{equation*}
+\end{equation}
 An important special case is scientific notation, which uses powers of 10.
 For example, $(10^2)(10^7)=10^9$.
+<% end_sec('basic-ideas') %>
 
+<% begin_sec("Exponents that aren't natural numbers",nil,'non-natural-exponents') %>
+
+<% begin_sec('Zero as an exponent',nil,'exponent-zero') %>
+Suppose we compute the list of decreasing powers of
+a given base, for example $2^3=8$, $2^2=4$, and $2^1=2$. Each result is half
+as big as the previous one. Therefore if we want to continue reducing the exponent,
+we should clearly have $2^0=1$ in order to continue the pattern. In general,
+$b^0=1$ for any nonzero base $b$. (The special case $0^0$ is undefined.)
+<% end_sec('exponent-zero') %>
+
+<% begin_sec('Negative exponents',nil,'negative-exponents') %>
+\emph{Negative exponents.} Continuing this pattern, we must have $2^{-1}=1/2$.
+In general, negative exponents indicate the inverse of the corresponding positive
+exponent.
+<% end_sec('negative-exponents') %>
+
+<% begin_sec('Fractional exponents',nil,'fractional-exponents') %>
+Our rules for zero and negative exponents were
+consistent with equation \eqref{eqn:add-exponents}. We can also define fractional
+exponents that obey this rule. For example, if $3^{1/2}$ is a number, then
+equation \eqref{eqn:add-exponents} requires that $(3^{1/2})(3^{1/2})=3$, so
+an exponent $1/2$ must mean the same thing as a square root.
+<% end_sec('fractional-exponents') %>
+
+<% begin_sec('Irrational exponents',nil,'irrational-exponents') %>
+If we want to define an expression such as $2^\pi$, we can take it to be
+the limit of the list of numbers
+$2^3$, $2^{3.1}$,  $2^{3.14}$,  $2^{3.141}$, \ldots
+<% end_sec('irrational-exponents') %>
+
+<% end_sec('non-natural-exponents') %>
+
+<% begin_sec("Logarithms",nil,'logs') %>
 Just as subtraction undoes addition, and division undoes multiplication,
 the operation of exponentiation has an inverse operation, which is the
 logarithm. If
@@ -153,7 +188,9 @@ but $e^x$ is ``the'' exponential function. Sometimes when $x$
 is a complicated expression it gets awkward to write it as a superscript, and then we
 write $\exp(\ldots)$ instead of $e^{\ldots}$. The logarithm with the special base $e$
 is called the \emph{natural logarithm}, notated $\ln$.
+<% end_sec('logs') %>
 
+<% begin_sec("Identities",nil,'log-and-exp-identities') %>
 The following identities are useful. Exponentials and logs are inverse operations:
 \begin{subequations}
 \begin{align}
@@ -182,6 +219,7 @@ to an exponential with base $e$.
 \begin{equation}\label{eqn:convert-exponential-to-ex}
   b^x = e^{(\ln b)x}
 \end{equation}
+<% end_sec('log-and-exp-identities') %>
 <% end_sec('exp-and-log') %>
 
 <% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>
@@ -269,6 +307,18 @@ it makes sense that the units are concentration divided by time, because the res
 represents the rate at which the concentration is changing.
 \end{eg}
 
+%%graph%% caffeine func=2*exp(-x/7) format=eps xlo=0 xhi=24 ylo=0 yhi=2.1 with=lines x=t y=c xtic_spacing=6 ytic_spacing=.5 more_space_below=5
+
+<% marg(200) %>
+<%
+  fig(
+    'caffeine',
+    %q{ A typical graph of the concentration of caffeine in the blood, in units of milligrams per
+        liter, as a function of time, in hours.}
+  )  
+%>
+<% end_marg %>
+
 \begin{eg}{A base-10 exponential}
 \egquestion Find the derivative of the function $y=10^x$, verifying equation
 \eqref{eqn:derivative-of-exponential-base-b} directly in the case $b=10$.
@@ -289,17 +339,6 @@ exponential, multiplied by the derivative of the inside stuff:
 \end{align*}
 \end{eg}
 
-%%graph%% caffeine func=2*exp(-x/7) format=eps xlo=0 xhi=24 ylo=0 yhi=2.1 with=lines x=t y=c xtic_spacing=6 ytic_spacing=.5 more_space_below=5
-
-<% marg(200) %>
-<%
-  fig(
-    'caffeine',
-    %q{ A typical graph of the concentration of caffeine in the blood, in units of milligrams per
-        liter, as a function of time, in hours.}
-  )  
-%>
-<% end_marg %>
 
 
 <% end_sec('derivative-of-exp') %>
@@ -323,19 +362,7 @@ a number with ``units'' of radians is in fact the unitless ratio of two distance
     %q{The radian measure of the angle $\theta$ is $s/r$.}
   )  
 %>
-<% end_marg %>
-<% end_sec('radian-measure') %>
-
-<% begin_sec("Sine and cosine",nil,'sine-and-cosine') %>
-Figure \figref{sine-and-cosine} shows a right triangle. The sine and cosine of the angle $\theta$
-are defined as the ratios
-\begin{align*}
-  \sin\theta &= \frac{y}{r} \qquad \text{and}\\
-  \cos\theta &= \frac{x}{r} \qquad .
-\end{align*}
-Since these ratios are the same for any two similar triangles, the definitions
-depend only on $\theta$, not on the triangle.
-<% marg(100) %>
+\spacebetweenfigs
 <%
   fig(
     'sine-and-cosine',
@@ -350,6 +377,17 @@ depend only on $\theta$, not on the triangle.
   )  
 %>
 <% end_marg %>
+<% end_sec('radian-measure') %>
+
+<% begin_sec("Sine and cosine",nil,'sine-and-cosine') %>
+Figure \figref{sine-and-cosine} shows a right triangle. The sine and cosine of the angle $\theta$
+are defined as the ratios
+\begin{align*}
+  \sin\theta &= \frac{y}{r} \qquad \text{and}\\
+  \cos\theta &= \frac{x}{r} \qquad .
+\end{align*}
+Since these ratios are the same for any two similar triangles, the definitions
+depend only on $\theta$, not on the triangle.
 
 <% end_sec('sine-and-cosine') %>
 
@@ -367,6 +405,17 @@ It is handy to know these facts:
   \sin 0 &= 0
 \end{align*}
 These do not need to be memorized. They can be recovered instantly by visualizing the unit circle.
+
+The following identities will be needed later in the chapter.
+\begin{subequations}
+\begin{align}
+  \sin(x+y) &= \sin x\cos y + \cos x\sin y \label{eqn:sin-sum-of-angles} \\
+  \cos(x+y) &= \cos x\cos y - \sin x\sin y \label{eqn:cos-sum-of-angles}
+\end{align}
+\end{subequations}
+% Checked:
+% calc -e "x=.3; y=.7; sin(x+y); sin x cos y + cos x sin y"
+% calc -e "x=.3; y=.7; cos(x+y); cos x cos y - sin x sin y"
 <% end_sec('arbitrary-angles') %>
 
 <% begin_sec("Other trigonometric functions",nil,'other-trig-functions') %>
@@ -382,14 +431,129 @@ In terms of the same variables defined above, we have the following additional t
 <% end_sec('trig') %>
 
 <% begin_sec("Derivatives of trigonometric functions",nil,'derivatives-of-trig') %>
-How would we find the derivative of the sine function? Since it's transcendental, it can't be expressed in
-terms of simpler functions that we know how to differentiate. Let's start by \emph{sketching} its
-derivative in order to gain some insight. Using the techniques of section \ref{subsec:sketch-derivatives},
-p.~\pageref{subsec:sketch-derivatives}, we obtain figure ...
+<% begin_sec("Derivatives of the sine and cosine",nil,'derivatives-of-sin-cos') %>
+Sometimes a variable oscillates back and forth. A weight hung from a rubber
+band will vibrate up and down. The temperature of Los Angeles goes down every winter
+and back up every summer. A sinusoidal wave is the most mathematically simple model
+of such an oscillation, and if we want to know the rate of change, we need to know
+how to differentiate such a function.
 
---- graph ---
+So would we find the derivative of a sine or cosine? Since
+they're transcendental, they can't be expressed in
+terms of simpler functions that we know how to differentiate. 
 
+<% begin_sec("Derivatives at $\\theta=0$",nil,'derivatives-of-sin-cos-at-zero') %>
+Let's start by finding the derivatives of these functions at zero, as shown in figure
+\figref{derivatives-of-sin-cos-at-zero}.
+<% marg(20) %>
+<%
+  fig(
+    'derivatives-of-sin-cos-at-zero',
+    %q{The derivatives of the cosine and sine functions at $\theta=0$.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'limit-of-sin-over-x',
+    %q{A geometrical method of finding $\sin'0$.}
+  )  
+%>
+<% end_marg %>
 
+Since the cosine is an even function, we have $\cos'0=0$.
+
+What about $\sin'0$?
+The definition of the derivative gives
+\begin{align*}
+  \sin'0 &= \lim_{\theta\rightarrow0} \frac{\sin\theta-\sin0}{\theta-0} \\
+         &= \lim_{\theta\rightarrow0} \frac{\sin\theta}{\theta} \qquad .
+\end{align*}
+In figure
+\figref{limit-of-sin-over-x}, the definition of radian measure gives $\theta=s$, while the definition
+of the sine function tells us that $\sin\theta = y$. Thus the limit above becomes
+\begin{equation*}
+  \sin'0 = \lim_{\theta\rightarrow0} \frac{y}{s} \qquad .
+\end{equation*}
+If $\theta$ is close to zero, then the lengths
+$y$ of the vertical line and $s$ of the arc should be nearly the same, so we have the small-angle
+approximation $\sin\theta\approx\theta$.
+Our limit is clearly\footnote{Strictly speaking, we should prove that for the approximation
+$\sin\theta\approx\theta$, the error $E=\theta-\sin\theta$ goes to zero fast enough so that
+$\lim_{\theta\rightarrow0}E/\theta=0$. In fact, one can show based on the \emph{areas}
+in figure \figref{limit-of-sin-over-x} that $|E|<|\theta^2|$ for $|\theta|<0.1$.}
+equal to 1, so we have $\sin'0=1$.
+
+As a check on our work, we can take a numerical approximation to the derivative at $\theta=0$,
+\begin{align*}
+  \sin'0 &\approx \frac{\sin0.001-\sin0}{0.001} \qquad [\text{angle in radians}] \\
+         &= 0.99999983 \qquad ,
+\end{align*}
+which is indeed close to 1.
+<% end_sec('derivatives-of-sin-cos-at-zero') %>
+
+<% begin_sec("A preliminary sketch",nil,'sketch-derivatives-of-sin-cos') %>
+Next let's \emph{sketch} the derivative of $\sin\theta$
+in order to gain some insight. Using the techniques of section \ref{subsec:sketch-derivatives},
+p.~\pageref{subsec:sketch-derivatives}, we obtain figure \figref{sketch-derivative-of-sine}.
+At $\theta=0$, the slope of the sine function is 1, which is as large and positive as it ever gets,
+so the value of the derivative sketched
+in the bottom graph is large and positive. At $\pi/2$ (90 degrees), the sine has its maximum value of 1,
+and its derivative is 0. At $\pi$, the sine has its largest negative derivative. The graph we're
+led to draw for $\sin'\theta$ looks like the cosine function.
+<% marg(50) %>
+<%
+  fig(
+    'sketch-derivative-of-sine',
+    %q{Sketching the derivative of the sine function.}
+  )  
+%>
+<% end_marg %>
+
+The graph of the cosine function is
+the same as the graph of the sine function except for a shift to the left by a quarter of a cycle.
+Therefore by the shift property of the derivative (p.~\pageref{properties-of-derivative}),
+if the derivative of $\sin$ is $\cos$, then the derivative of $\cos$ must be a cosine function
+shifted to the left by another quarter-cycle, which gives $-\sin$. Curve sketching therefore
+leads us to the following conjectures:
+\begin{align*}
+  \sin' &= \cos \\
+  \cos' &= -\sin
+\end{align*}
+<% end_sec('sketch-derivatives-of-sin-cos') %>
+<% begin_sec("Proof of the derivatives of the sine and cosine",nil,'prove-derivatives-of-sin-cos') %>
+The following proof is included for completeness, but most readers will probably want to skip it.
+
+Let
+\begin{align*}
+  \sin' = f \qquad \text{and} \qquad
+  \cos' = g \qquad .
+\end{align*}
+We want to prove $f(x)=\cos x$ and $g(x)=-\sin x$. We have already established
+\begin{align*}
+  f(0) = 1 \qquad \text{and} \qquad
+  g(0) = 0 \qquad .
+\end{align*}
+The idea is to use 
+the identities $\sin(x+y) = \sin x\cos y + \cos x\sin y$ and
+$\cos(x+y) = \cos x\cos y - \sin x\sin y$ (p.~\pageref{eqn:sin-sum-of-angles}) to connect these special
+values of $f$ and $g$ to their values elsewhere. Using the first identity, and treating $y$ as a constant,
+we have
+\begin{align*}
+  \frac{\der}{\der x}\left[\sin(x+y)\right] 
+       &=   \frac{\der}{\der x}\left[\sin x\cos y + \cos x\sin y\right] \\
+       &= f(x) \cos y + g(x)\sin y
+\end{align*}
+Setting $x=0$, this becomes
+\begin{equation*}
+  f(y) = \cos y \qquad ,
+\end{equation*}
+and a similar calculation for the cosine the desired result for $g$.
+%%% \label{eqn:sin-sum-of-angles} \\
+%%%  \label{eqn:cos-sum-of-angles}
+<% end_sec('prove-derivatives-of-sin-cos') %>
+
+<% end_sec('derivatives-of-sin-cos') %>
 <% end_sec('derivatives-of-trig') %>
 
 <% end_chapter %>
