@@ -22,14 +22,20 @@ We've already seen that the completeness property of the reals (section \ref{sec
 p.~\pageref{sec:completeness}) guarantees that $\sqrt{2}$ is a real number, and more generally
 one can use the intermediate value theorem to prove that roots of polynomials are real.
 
-However, there are also numbers that cannot be defined as roots of polynomials having
-rational-number coefficients. These are called \emph{transcendental} numbers.
+<% marg(0) %>
+<%
+  fig(
+    'liouville',
+    %q{A transcendental number},
+    {
+      'text'=>%q{
+\begin{shaded}
 The first number proved to be transcendental, by Liouville
-in 1844, was
+in 1844, was:
 \begin{equation*}
-  0.1100010000000000000000010000\ldots \qquad ,
+  0.110001000000000000000001\ldots
 \end{equation*}
-where the first one occurs in the 1st decimal place, the next in the 2nd decimal place,
+The first one occurs in the 1st decimal place, the next in the 2nd decimal place,
 the next in the 6th, and so on, with the sequence of numbers being 1, $1\cdot2=2$,
 $1\cdot2\cdot3=6$, \ldots Without going into the formal proof, it's not hard to get an intuitive
 feel for why this number is transcendental. Since the list of numbers 1, 2, 6, \ldots
@@ -39,10 +45,26 @@ as $P(x)=x^2+9x-1$ with Liouville's number $x$ as a root, we are bound to fail; 
 powers of $x$ are also extremely sparse, and this makes it impossible to get them to cancel out
 and give $P(x)=0$.
 % calc -e "x=0.1100010000000000000000010000; x^2+9x-1"
-For a full proof, see the Wikipedia article ``Liouville number.''
+For a proof, see the Wikipedia article ``Liouville number.''
+\end{shaded}
+      }
+    }
+  )  
+%>
+<% end_marg %>
 
+However, there are also numbers that cannot be defined as roots of polynomials having
+rational-number coefficients. These are called \emph{transcendental} numbers.
+In some sense nearly all real numbers are transcendental. For example, suppose we generate
+a random digit by some method such as rolling dice, and we let this be the first digit in
+a decimal. Continuing in this way, we keep on generating more and more decimal places. If we
+could continue generating the digits indefinitely, then there would be a 100\% probability
+that our number would be transcendental.
 The important mathematical constants $\pi$ and $e$ (the base of natural logarithms) are
-transcendental.
+transcendental. Although transcendental numbers are the most common kind of real number,
+\emph{proving} whether or not a particular number is transcendental can be difficult.
+Box \figref{liouville} describes the first number that was ever proved to be transcendental.
+It was not until 44 years later that $\pi$ was proved to be transcendental.
 
 An alternative characterization of transcendental numbers is that they can't be written
 using any finite number of symbols in terms of rational numbers and the basic operations of arithmetic:
@@ -52,7 +74,7 @@ addition, subtraction, multiplication, division, and roots. For example, the num
 \end{equation*}
 % calc -e "x=(-9+sqrt(85))/2; x^2+9x-1"
 is \emph{not} transcendental, since it is written in terms of rational numbers and four of
-the basic operations. (It is a root of the polynomial $P$ given above.)
+the basic operations. (It is a root of the polynomial $P$ given in box \figref{liouville}.)
 <% end_sec('transcendental-numbers') %>
 <% begin_sec("Transcendental functions",nil,'transcendental-functions') %>
 Similarly, we have \emph{functions} that are transcendental or not transcendental.
@@ -165,7 +187,7 @@ to an exponential with base $e$.
 <% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>
 In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies} and
 example \ref{eg:exponential-with-limits} on p.~\pageref{eg:exponential-with-limits}
-we were found that the derivative of an exponential is an exponential: the more
+we found that the derivative of an exponential is an exponential: the more
 bunnies you have, the faster you produce baby bunnies; the more credit-card debt you have,
 the faster your debt grows. Furthermore, we were led to the conjecture that in the case of
 ``the'' exponential function $e^x$, the constant of proportionality between the function and
@@ -175,14 +197,26 @@ its derivative was simply one:
 \end{equation}
 There is no way to prove this unless we adopt some \emph{definition} of $e$. In fact
 equation \eqref{eqn:derivative-of-ex-is-ex} serves as a perfectly good definition of $e$.
-Adopting this definition, application of equation \eqref{eqn:convert-exponential-to-ex} and the chain
+Box \figref{other-e-def} connects this to another popular definition.
+
+Adopting equation \eqref{eqn:derivative-of-ex-is-ex}
+as a definition, application of equation \eqref{eqn:convert-exponential-to-ex} and the chain
 rule gives the more general rule
-\begin{equation*}
+\begin{equation}\label{eqn:derivative-of-exponential-base-b}
   (b^x)' = (\ln b)b^x
-\end{equation*}
+\end{equation}
 for any base $b$.
+
+<% marg(200) %>
+<%
+  fig(
+    'other-e-def',
+    %q{A different definition of $e$},
+    {
+      'text'=>%q{
+\begin{shaded}
 Some people like lagers better than ales, Chicago better than Paris, and the following better
-than \eqref{eqn:derivative-of-ex-is-ex} as a definition of $e$:
+than equation \eqref{eqn:derivative-of-ex-is-ex} as a definition of $e$:
 \begin{equation}\label{eqn:define-e-as-limit}
   e = \lim_{n\rightarrow\infty} \left(1+\frac{1}{n}\right)^{n}
 \end{equation}
@@ -192,6 +226,81 @@ carries an interest rate of 100\%; the second 1 in the equation is 100/100. If t
 yearly, then your balance goes up every year by a factor of $(1+1/1)^1=2$. If it's compounded monthly
 at an interest rate of $100\%/12$, then the yearly increase is a factor of $(1+1/12)^{12}=2.6$. If we let
 the 12 become a variable $n$ that approaches infinity, then the 2.6 becomes $e$.
+
+Let's connect this to equation \eqref{eqn:derivative-of-ex-is-ex}. 
+Applying the approximation $\der y/\der x\approx \Delta y/\Delta x$ to $y=e^x$,
+we have
+\begin{equation*}
+  e^x\approx 1+x
+\end{equation*}
+for small values of $x$. Let $x=1/n$, where $n$ is large. Then $e^{1/n}\approx 1+1/n$,
+so $e\approx(1+1/n)^n$, which is consistent with equation \eqref{eqn:define-e-as-limit}.
+\end{shaded}
+      }
+    }
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{Caffeine}\label{eg:caffeine}
+\egquestion The concentration of a foreign substance in the bloodstream generally falls off exponentially
+with time as $c=c_{\zu{o}}e^{-t/a}$, where $c_{\zu{o}}$ is the initial concentration, and $a$ is a constant.
+For caffeine in adults, $a$ is typically about 7 hours. An example is shown in figure \figref{caffeine}. Differentiate the concentration with respect
+to time, and interpret the result. Check that the units of the result make sense.
+
+\eganswer Using the chain rule,
+\begin{align*}
+  \frac{\der c}{\der t} &= c_{\zu{o}}e^{-t/a}\cdot\left(-\frac{1}{a}\right) \\
+                        &= -\frac{c_{\zu{o}}}{a}e^{-t/a}
+\end{align*}
+
+This can be interpreted as the rate at which caffeine is being removed from the blood and
+broken down by the liver. It's
+negative because the concentration is decreasing.
+According to the original expression for $x$, a substance with a large $a$ will take a long time to reduce its concentration,
+since $t/a$ won't be very big unless we have large $t$ on top to compensate for the large $a$ on the bottom.
+In other words, larger values of $a$ represent substances that the body has a harder time getting rid of efficiently.
+The derivative has $a$ on the bottom, and the interpretation of this is that for a drug that is hard to eliminate,
+the rate at which it is removed from the blood is low.
+
+It makes sense that $a$ has units of time, because the exponential function has to have a unitless argument, so the units
+of $t/a$ have to cancel out. The units of the result come from the factor of $c_{\zu{o}}/a$, and
+it makes sense that the units are concentration divided by time, because the result
+represents the rate at which the concentration is changing.
+\end{eg}
+
+\begin{eg}{A base-10 exponential}
+\egquestion Find the derivative of the function $y=10^x$, verifying equation
+\eqref{eqn:derivative-of-exponential-base-b} directly in the case $b=10$.
+
+\eganswer In general, one of the tricks to doing calculus is to rewrite functions in forms that
+you know how to handle. This one can be rewritten as a base-$e$ exponent:
+\begin{align*}
+  y &= 10^x \\
+  \ln y &= \ln\left(10^x\right) \\
+  \ln y &= x \ln 10 \\
+  y &= e^{x\ln 10}
+\end{align*}
+Applying the chain rule, we have the derivative of the exponential, which is just the same
+exponential, multiplied by the derivative of the inside stuff:
+\begin{align*}
+  \frac{\der y}{\der x} &= e^{x\ln 10} \cdot \ln 10 \\
+                        &= (\ln10)10^x
+\end{align*}
+\end{eg}
+
+%%graph%% caffeine func=2*exp(-x/7) format=eps xlo=0 xhi=24 ylo=0 yhi=2.1 with=lines x=t y=c xtic_spacing=6 ytic_spacing=.5 more_space_below=5
+
+<% marg(200) %>
+<%
+  fig(
+    'caffeine',
+    %q{ A typical graph of the concentration of caffeine in the blood, in units of milligrams per
+        liter, as a function of time, in hours.}
+  )  
+%>
+<% end_marg %>
+
 
 <% end_sec('derivative-of-exp') %>
 
