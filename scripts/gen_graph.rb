@@ -136,6 +136,8 @@ class Graph
     @options['samples']=300 unless @options.has_key?('samples')
     @options['xtic_spacing']=1 unless @options.has_key?('xtic_spacing')
     @options['ytic_spacing']=1 unless @options.has_key?('ytic_spacing')
+    if @options.has_key?('xtic_lo') then @options['xtic_lo']=@options['xtic_lo'].to_f else @options['xtic_lo']=@xlo end
+    if @options.has_key?('ytic_lo') then @options['ytic_lo']=@options['ytic_lo'].to_f else @options['ytic_lo']=@ylo end
     @options['format']='svg' unless @options.has_key?('format')
     @format = @options['format']
     if (@options.has_key?('more_space_below'))
@@ -157,8 +159,8 @@ class Graph
       @style = 'pointtype 31' if @format=='eps'
       @style = 'pointtype 7' if @format=='svg'
     end
-    @xtic_list = tic_list(@xlo,@xhi,@options['xtic_spacing'].to_f)
-    @ytic_list = tic_list(@ylo,@yhi,@options['ytic_spacing'].to_f)
+    @xtic_list = tic_list(@options['xtic_lo'],@xhi,@options['xtic_spacing'].to_f)
+    @ytic_list = tic_list(@options['ytic_lo'],@yhi,@options['ytic_spacing'].to_f)
     xrange = @xhi-@xlo
     @preamble = <<-END
       set terminal #{@terminal}

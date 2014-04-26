@@ -453,7 +453,75 @@ then at that point,
 \end{equation*}
 \end{important}
 <% end_sec('chain-rule-varying-rates') %>
+<% begin_sec("Composition of functions",nil,'composition') %>
+The \emph{composition} of functions $f$ and $g$, $f\circ g$, means the function that takes an input $x$
+and gives back an output $f(g(x))$. The chain rule tells us how to differentiate a function built
+out of such a composition. That is, we take the input $x$, stick it into $g$, take $g$'s output, put
+it in $f$, and finally take $f$'s output.
+<% end_sec('composition') %>
 <% end_sec('chain-rule') %>
+
+<% begin_sec("Review: exponents that aren't natural numbers",nil,'non-natural-exponents') %>
+In section \ref{sec:power-rule-general} we will exploit the product and chain rules to
+prove the rule $(x^n)'=nx^{n-1}$ for all values of $n$ that are nonzero rational numbers.
+As preparation, we review in this section the basic idea of exponentiation, and then
+the interpretation of exponents that aren't natural numbers.
+
+<% begin_sec("Basic ideas",nil,'basic-ideas') %>
+We can represent repeated multiplication
+\begin{equation*}
+  2\times2\times2 = 8 \qquad ,
+\end{equation*}
+using the notation for exponents,
+\begin{equation*}
+  2^3 = 8 \qquad .
+\end{equation*}
+Because multiplication is associative,
+\begin{equation*}
+  2\times2\times2\times2\times2\times2\times2 = 128
+\end{equation*}
+is the same as
+\begin{equation*}
+  (2\times2\times2)(2\times2\times2\times2) \qquad ,
+\end{equation*}
+so $2^7$ is the same as $(2^3)(2^4)$. In other words, multiplication is the same
+as adding exponents,
+\begin{equation}\label{eqn:add-exponents}
+  b^ub^v=b^{u+v} \qquad .
+\end{equation}
+An important special case is scientific notation, which uses powers of 10.
+For example, $(10^2)(10^7)=10^9$.
+<% end_sec('basic-ideas') %>
+
+<% begin_sec('Zero as an exponent',nil,'exponent-zero') %>
+Suppose we compute the list of decreasing powers of
+a given base, for example $2^3=8$, $2^2=4$, and $2^1=2$. Each result is half
+as big as the previous one. Therefore if we want to continue reducing the exponent,
+we should clearly have $2^0=1$ in order to continue the pattern. In general,
+$b^0=1$ for any nonzero base $b$. (The special case $0^0$ is undefined.)
+<% end_sec('exponent-zero') %>
+
+<% begin_sec('Negative exponents',nil,'negative-exponents') %>
+Continuing this pattern, we must have $2^{-1}=1/2$.
+In general, negative exponents indicate the inverse of the corresponding positive
+exponent.
+<% end_sec('negative-exponents') %>
+
+<% begin_sec('Fractional exponents',nil,'fractional-exponents') %>
+Our rules for zero and negative exponents were
+consistent with equation \eqref{eqn:add-exponents}. We can also define fractional
+exponents that obey this rule. For example, if $3^{1/2}$ is a number, then
+equation \eqref{eqn:add-exponents} requires that $(3^{1/2})(3^{1/2})=3$, so
+an exponent $1/2$ must mean the same thing as a square root.
+<% end_sec('fractional-exponents') %>
+
+<% begin_sec('Irrational exponents',nil,'irrational-exponents') %>
+If we want to define an expression such as $2^\pi$, we can take it to be
+the limit of the list of numbers
+$2^3$, $2^{3.1}$,  $2^{3.14}$,  $2^{3.141}$, \ldots
+<% end_sec('irrational-exponents') %>
+
+<% end_sec('non-natural-exponents') %>
 
 <% begin_sec("Proof of the power rule in general",nil,'power-rule-general') %>
 In section \ref{sec:deriv-polynomial}, p.~\pageref{sec:deriv-polynomial},

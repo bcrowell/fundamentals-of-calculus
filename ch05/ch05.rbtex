@@ -66,15 +66,19 @@ transcendental. Although transcendental numbers are the most common kind of real
 Box \figref{liouville} describes the first number that was ever proved to be transcendental.
 It was not until 44 years later that $\pi$ was proved to be transcendental.
 
-An alternative characterization of transcendental numbers is that they can't be written
+An important property of transcendental numbers is that they can't be written
 using any finite number of symbols in terms of rational numbers and the basic operations of arithmetic:
-addition, subtraction, multiplication, division, and roots. For example, the number
+addition, subtraction, multiplication, division, and roots. This is the reason for the name;
+transcendental numbers ``transcend'' arithmetic. For example, the number
 \begin{equation*}
   \frac{-9+\sqrt{85}}{2} = 0.1098\ldots
 \end{equation*}
 % calc -e "x=(-9+sqrt(85))/2; x^2+9x-1"
 is \emph{not} transcendental, since it is written in terms of rational numbers and four of
 the basic operations. (It is a root of the polynomial $P$ given in box \figref{liouville}.)
+The converse is not true: not all non-transcendental numbers can be written
+using these operations. For example, the polynomial $x^5 - x + 1$ has a root
+$x\approx -1.17$, which cannot be expressed in terms of arithmetic.
 <% end_sec('transcendental-numbers') %>
 <% begin_sec("Transcendental functions",nil,'transcendental-functions') %>
 Similarly, we have \emph{functions} that are transcendental or not transcendental.
@@ -104,148 +108,7 @@ our methods of differentiation to cover these functions.
 <% end_sec('transcendental-functions') %>
 <% end_sec('transcendental-numbers-and-functions') %>
 
-<% begin_sec("Review: exponentials and logarithms",nil,'exp-and-log') %>
-Before we talk about how to differentiate logs and exponentials, here's an opportunity to refresh
-your memory on what these functions are in the first place.
-
-<% begin_sec("Basic ideas",nil,'basic-ideas') %>
-We can represent repeated multiplication
-\begin{equation*}
-  2\times2\times2 = 8 \qquad ,
-\end{equation*}
-using the notation for exponents,
-\begin{equation*}
-  2^3 = 8 \qquad .
-\end{equation*}
-Because multiplication is associative,
-\begin{equation*}
-  2\times2\times2\times2\times2\times2\times2 = 128
-\end{equation*}
-is the same as
-\begin{equation*}
-  (2\times2\times2)(2\times2\times2\times2) \qquad ,
-\end{equation*}
-so $2^7$ is the same as $(2^3)(2^4)$. In other words, multiplication is the same
-as adding exponents,
-\begin{equation}\label{eqn:add-exponents}
-  b^ub^v=b^{u+v} \qquad .
-\end{equation}
-An important special case is scientific notation, which uses powers of 10.
-For example, $(10^2)(10^7)=10^9$.
-<% end_sec('basic-ideas') %>
-
-<% begin_sec("Exponents that aren't natural numbers",nil,'non-natural-exponents') %>
-
-<% begin_sec('Zero as an exponent',nil,'exponent-zero') %>
-Suppose we compute the list of decreasing powers of
-a given base, for example $2^3=8$, $2^2=4$, and $2^1=2$. Each result is half
-as big as the previous one. Therefore if we want to continue reducing the exponent,
-we should clearly have $2^0=1$ in order to continue the pattern. In general,
-$b^0=1$ for any nonzero base $b$. (The special case $0^0$ is undefined.)
-<% end_sec('exponent-zero') %>
-
-<% begin_sec('Negative exponents',nil,'negative-exponents') %>
-\emph{Negative exponents.} Continuing this pattern, we must have $2^{-1}=1/2$.
-In general, negative exponents indicate the inverse of the corresponding positive
-exponent.
-<% end_sec('negative-exponents') %>
-
-<% begin_sec('Fractional exponents',nil,'fractional-exponents') %>
-Our rules for zero and negative exponents were
-consistent with equation \eqref{eqn:add-exponents}. We can also define fractional
-exponents that obey this rule. For example, if $3^{1/2}$ is a number, then
-equation \eqref{eqn:add-exponents} requires that $(3^{1/2})(3^{1/2})=3$, so
-an exponent $1/2$ must mean the same thing as a square root.
-<% end_sec('fractional-exponents') %>
-
-<% begin_sec('Irrational exponents',nil,'irrational-exponents') %>
-If we want to define an expression such as $2^\pi$, we can take it to be
-the limit of the list of numbers
-$2^3$, $2^{3.1}$,  $2^{3.14}$,  $2^{3.141}$, \ldots
-<% end_sec('irrational-exponents') %>
-
-<% end_sec('non-natural-exponents') %>
-
-<% begin_sec("Logarithms",nil,'logs') %>
-Just as subtraction undoes addition, and division undoes multiplication,
-the operation of exponentiation has an inverse operation, which is the
-logarithm. If
-\begin{equation*}
-  b^p = z \qquad ,
-\end{equation*}
-then 
-\begin{equation*}
-  \log_b z = p \qquad .
-\end{equation*}
-For example, $\log_2 8=3$, because $2^3=8$.
-
-The number 10 has appeared above as a base, and that's because humans have 10 fingers.
-There's clearly nothing all that special about 10. It's an accident of
-evolution. A number with more cosmic significance is $e\approx2.71818\ldots$ Exponents
-and logarithms with base $e$ have some nice properties, which we'll discuss later in
-more detail. Any expression with $x$ in the exponent is called an exponential,
-but $e^x$ is ``the'' exponential function. Sometimes when $x$
-is a complicated expression it gets awkward to write it as a superscript, and then we
-write $\exp(\ldots)$ instead of $e^{\ldots}$. The logarithm with the special base $e$
-is called the \emph{natural logarithm}, notated $\ln$.
-<% end_sec('logs') %>
-
-<% begin_sec("Identities",nil,'log-and-exp-identities') %>
-The following identities are useful. Exponentials and logs are inverse operations:
-\begin{subequations}
-\begin{align}
-  \log_b\left(b^x\right) &= x \label{eqn:log-of-exp} \\
-  b^{\log_b x} &= x \label{eqn:exp-of-log}
-\end{align}
-\end{subequations}
-Logs turn multiplication and division into addition and subtraction:
-\begin{subequations}
-\begin{align}
-  \log(xy) &= \log x+\log y \\
-  \log(x/y) &= \log x-\log y
-\end{align}
-\end{subequations}
-A log in one base can be changed into a log in another base:
-\begin{equation}\label{eqn:change-of-base}
-  \log_b x = \frac{\log_c x}{\log_c b}
-\end{equation}
-For example, $\log_{10} 10^6=6$, whereas $\log_{100} 10^6=3$.
-It may be convenient to convert a logarithm to a natural log, with $c=e$:
-\begin{equation}\label{eqn:convert-log-to-ln}
-  \log_b x = \frac{\ln x}{\ln b} \qquad .
-\end{equation}
-Similarly, an exponential with an arbitrary base $b$ can be converted
-to an exponential with base $e$.
-\begin{equation}\label{eqn:convert-exponential-to-ex}
-  b^x = e^{(\ln b)x}
-\end{equation}
-<% end_sec('log-and-exp-identities') %>
-<% end_sec('exp-and-log') %>
-
-<% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>
-In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies} and
-example \ref{eg:exponential-with-limits} on p.~\pageref{eg:exponential-with-limits}
-we found that the derivative of an exponential is an exponential: the more
-bunnies you have, the faster you produce baby bunnies; the more credit-card debt you have,
-the faster your debt grows. Furthermore, we were led to the conjecture that in the case of
-``the'' exponential function $e^x$, the constant of proportionality between the function and
-its derivative was simply one:
-\begin{equation}\label{eqn:derivative-of-ex-is-ex}
-  (e^x)' = e^x
-\end{equation}
-There is no way to prove this unless we adopt some \emph{definition} of $e$. In fact
-equation \eqref{eqn:derivative-of-ex-is-ex} serves as a perfectly good definition of $e$.
-Box \figref{other-e-def} connects this to another popular definition.
-
-Adopting equation \eqref{eqn:derivative-of-ex-is-ex}
-as a definition, application of equation \eqref{eqn:convert-exponential-to-ex} and the chain
-rule gives the more general rule
-\begin{equation}\label{eqn:derivative-of-exponential-base-b}
-  (b^x)' = (\ln b)b^x
-\end{equation}
-for any base $b$.
-
-<% marg(200) %>
+<% marg(0) %>
 <%
   fig(
     'other-e-def',
@@ -279,6 +142,29 @@ so $e\approx(1+1/n)^n$, which is consistent with equation \eqref{eqn:define-e-as
   )  
 %>
 <% end_marg %>
+
+<% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>
+In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies} and
+example \ref{eg:exponential-with-limits} on p.~\pageref{eg:exponential-with-limits}
+we found that the derivative of an exponential is an exponential: the more
+bunnies you have, the faster you produce baby bunnies; the more credit-card debt you have,
+the faster your debt grows. Furthermore, we were led to the conjecture that in the case of
+``the'' exponential function $e^x$, the constant of proportionality between the function and
+its derivative was simply one:
+\begin{equation}\label{eqn:derivative-of-ex-is-ex}
+  (e^x)' = e^x
+\end{equation}
+There is no way to prove this unless we adopt some \emph{definition} of $e$. In fact
+equation \eqref{eqn:derivative-of-ex-is-ex} serves as a perfectly good definition of $e$.
+Box \figref{other-e-def} connects this to another popular definition.
+
+Adopting equation \eqref{eqn:derivative-of-ex-is-ex}
+as a definition, application of equation \eqref{eqn:convert-exponential-to-ex} and the chain
+rule gives the more general rule
+\begin{equation}\label{eqn:derivative-of-exponential-base-b}
+  (b^x)' = (\ln b)b^x
+\end{equation}
+for any base $b$.
 
 \begin{eg}{Caffeine}\label{eg:caffeine}
 \egquestion The concentration of a foreign substance in the bloodstream generally falls off exponentially
@@ -540,5 +426,147 @@ as an exercise.
 
 <% end_sec('derivatives-of-sin-cos') %>
 <% end_sec('derivatives-of-trig') %>
+
+<% begin_sec("Review: the inverse of a function",nil,'inverse-of-function') %>
+Some operations can be undone. Others can't. Computer software often has an ``undo'' function.
+But what if the operation is mixing hot coffee with cold milk? There is no way to undo this
+operation, even in principle, because information has been lost. No matter how closely we inspect the
+mixture, we have no way of determining how hot the original coffee was, or how cold the original milk.
+
+We've defined a function as a graph that passes the vertical line test, so that every input $x$ corresponds
+to a single output $y$. A function may or may not be undoable. If every $y$ corresponds to a single $x$,
+i.e., if the function passes a \emph{horizontal} line test,
+then it's undoable, and we call the ``undo'' operation the inverse of the function. Geometrically,
+inverting the function means interchaning the roles of $x$ and $y$, which requires flipping it
+across the 45-degree diagonal defined by the line $y=x$.
+
+The inverse of a function $f$ is notated $f^{-1}$, where only context tells us that we mean the
+``undoing'' of $f$, rather than $1/f$. In terms of the composition of functions
+(section \ref{subsec:composition}, p.~\pageref{subsec:composition}), the function
+$f\circ f^{-1}$ is simply the identity function $y=x$. The same applies to $f^{-1}\circ f$.
+<% end_sec('inverse-of-function') %>
+
+<% begin_sec("Derivative of the inverse of a function",nil,'deriv-of-inverse') %>
+Suppose that  $x$ is how many gallons of gas I buy,
+and $y$ is how much money I pay. Then $y$ is a function of $x$, and the rate at which this
+function changes, i.e., the price per gallon of gas, in my area is currently about
+\begin{equation*}
+  \frac{\Delta y}{\Delta x} = 4\ \frac{\$}{\text{gallon}} \qquad .
+\end{equation*}
+It's valid to measure this rate of change with an expression of the form $\Delta\ldots/\Delta\ldots$,
+because the rate of change is constant. I might also want to know how much gas I can get for each
+additional dollar I'm willing to spend, and this is found by ordinary algebra to be
+\begin{equation*}
+  \frac{\Delta x}{\Delta y} = 0.25\ \frac{\text{gallon}{\$}} \qquad .
+\end{equation*}
+
+If $y$ is a function of $x$, and the function is invertible, then the Leibniz notation suggests
+that this should hold even for non-constant rates of change, i.e., that
+the derivative of the inverse function is
+\begin{equation*}
+  \frac{\der x}{\der y} = \frac{1}{\left(\frac{\der y}{\der x}\right)} \qquad .
+\end{equation*}
+This is in fact correct, with the caveat that when $\der y/\der x=0$, $\der x/\der y$ is
+undefined because it blows up to infinity.
+
+\begin{eg}{Derivative of a cube root}
+\egquestion Let $y=x^3$. Find $\der x/\der y$.
+
+\eganswer The function $y=x^3$, figure \figref{cube}, has a well-defined inverse $x=y^{1/3}$,
+which is the cube root, figure \figref{cube-root}. The derivative of the original function is
+\begin{equation*}
+  \frac{\der y}{\der x} = 3x^2 \qquad .
+\end{equation*}
+The derivative of the inverse function is
+\begin{align*}
+  \frac{\der x}{\der y} &= \frac{1}{\left(\frac{\der y}{\der x}\right)} \\
+                        &= \frac{1}{3x^2} \\
+                        &= \frac{1}{3}x^{-2} \qquad .
+\end{align*}
+If we prefer to express this in terms of $y$, we can substitute to get
+\begin{equation*}
+  \frac{\der x}{\der y} = \frac{1}{3}y^{-2/3} \qquad ,
+\end{equation*}
+which agrees with the power rule (section \ref{sec:power-rule-general},
+p.~\pageref{sec:power-rule-general}).
+
+This expression holds everywhere except $x=0$, $y=0$, where $\der x/\der y$ blows up to infinity.
+\end{eg}
+
+<% marg(200) %>
+<%
+  fig(
+    'cube',
+    %q{The function $y=x^3$.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'cube-root',
+    %q{The function $x=y^{1/3}$.}
+  )  
+%>
+<% end_marg %>
+%%graph%% cube func=x**3 format=eps xlo=-3 xhi=3 ylo=-30 yhi=30 with=lines xtic_spacing=2 xtic_lo=-2 ytic_spacing=10
+%%graph%% cube-root func=(abs(x)**0.333)*(x/abs(x)) format=eps xlo=-30 xhi=30 ylo=-3 yhi=3 x=y y=x with=lines xtic_spacing=10 ytic_spacing=2 ytic_lo=-2
+
+<% end_sec('deriv-of-inverse') %>
+
+<% begin_sec("Review: logarithms",nil,'exp-and-log') %>
+<% begin_sec("Logarithms",nil,'logs') %>
+The inverse of exponentiation is the logarithm.
+If
+\begin{equation*}
+  b^p = z \qquad ,
+\end{equation*}
+then 
+\begin{equation*}
+  \log_b z = p \qquad .
+\end{equation*}
+For example, $\log_2 8=3$, because $2^3=8$.
+
+The number 10 has appeared above as a base, and that's because humans have 10 fingers.
+There's clearly nothing all that special about 10. It's an accident of
+evolution. A number with more cosmic significance is $e\approx2.71818\ldots$ Exponents
+and logarithms with base $e$ have some nice properties, which we'll discuss later in
+more detail. Any expression with $x$ in the exponent is called an exponential,
+but $e^x$ is ``the'' exponential function. Sometimes when $x$
+is a complicated expression it gets awkward to write it as a superscript, and then we
+write $\exp(\ldots)$ instead of $e^{\ldots}$. The logarithm with the special base $e$
+is called the \emph{natural logarithm}, notated $\ln$.
+<% end_sec('logs') %>
+
+<% begin_sec("Identities",nil,'log-and-exp-identities') %>
+The following identities are useful. Exponentials and logs are inverse operations:
+\begin{subequations}
+\begin{align}
+  \log_b\left(b^x\right) &= x \label{eqn:log-of-exp} \\
+  b^{\log_b x} &= x \label{eqn:exp-of-log}
+\end{align}
+\end{subequations}
+Logs turn multiplication and division into addition and subtraction:
+\begin{subequations}
+\begin{align}
+  \log(xy) &= \log x+\log y \\
+  \log(x/y) &= \log x-\log y
+\end{align}
+\end{subequations}
+A log in one base can be changed into a log in another base:
+\begin{equation}\label{eqn:change-of-base}
+  \log_b x = \frac{\log_c x}{\log_c b}
+\end{equation}
+For example, $\log_{10} 10^6=6$, whereas $\log_{100} 10^6=3$.
+It may be convenient to convert a logarithm to a natural log, with $c=e$:
+\begin{equation}\label{eqn:convert-log-to-ln}
+  \log_b x = \frac{\ln x}{\ln b} \qquad .
+\end{equation}
+Similarly, an exponential with an arbitrary base $b$ can be converted
+to an exponential with base $e$.
+\begin{equation}\label{eqn:convert-exponential-to-ex}
+  b^x = e^{(\ln b)x}
+\end{equation}
+<% end_sec('log-and-exp-identities') %>
+<% end_sec('exp-and-log') %>
 
 <% end_chapter %>
