@@ -436,14 +436,56 @@ mixture, we have no way of determining how hot the original coffee was, or how c
 We've defined a function as a graph that passes the vertical line test, so that every input $x$ corresponds
 to a single output $y$. A function may or may not be undoable. If every $y$ corresponds to a single $x$,
 i.e., if the function passes a \emph{horizontal} line test,
-then it's undoable, and we call the ``undo'' operation the inverse of the function. Geometrically,
-inverting the function means interchaning the roles of $x$ and $y$, which requires flipping it
-across the 45-degree diagonal defined by the line $y=x$.
-
+then it's undoable, and we call the ``undo'' operation the inverse of the function.
 The inverse of a function $f$ is notated $f^{-1}$, where only context tells us that we mean the
-``undoing'' of $f$, rather than $1/f$. In terms of the composition of functions
+``undoing'' of $f$, rather than $1/f$.
+
+<%
+  fig(
+    'inverses-of-functions',
+    %q{Some functions and their inverses. In each case, the inverse function is found by
+       reflecting the graph across the line $y=x$.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+Geometrically,
+inverting the function means interchanging the roles of $x$ and $y$, which requires flipping it
+across the 45-degree diagonal defined by the line $y=x$, as in figure \figref{inverses-of-functions}.
+For example, figure \subfigref{inverses-of-functions}{1} shows the ``add-one'' function defined
+by $f(x)=x+1$, and the ``subtract-one'' function $f^{-1}(x)=x-1$ that undoes it.
+
+We define a function as a graph that passes the vertical-line test. The set of all $x$ values for which
+the graph contains an $(x,y)$ point is called the \emph{domain} of the function, while the
+set of such $y$ values is its \emph{range}. That is, the domain is the set of all legal inputs,
+while the range is the set of possible outputs. Sometimes we define a particular function using a
+formula, and this may implicitly restrict its domain. For example, if we define
+\begin{equation*}
+  y = \frac{1}{x-1} \qquad ,
+\end{equation*}
+then by implication the domain is the whole real line except for $x=1$, which would produce division
+by zero.
+
+Sometimes there are real-world reasons for restricting the domain of a function. For example,
+in section \ref{subsec:limit-equals-infinity}, p.~\pageref{subsec:limit-equals-infinity}, we discussed
+the amount of tension $T$ in a telephone wire that was necessary in order to make it sag by a height
+$h$ at the middle. This function was of the form $T=k/h$, where $k$ is a constant. Mathematically
+this function is well defined for $h<0$, but physically that would be meaningless, since a cable
+can only sustain tension ($T>0$) --- only a rigid object such as a rod can sustain compression ($T<0$).
+
+Sometimes by restricting the domain of a function we can make it invertible. For example, the
+function $y=x^2$ fails the horizontal-line test, so it doesn't have an inverse function. But
+if we restrict its domain to $x\ge 0$, as in figure
+\subfigref{inverses-of-functions}{4}, then we can define its inverse function, which is $x=\sqrt{y}$
+(using the positive root).
+
+ In terms of the composition of functions
 (section \ref{subsec:composition}, p.~\pageref{subsec:composition}), the function
-$f\circ f^{-1}$ is simply the identity function $y=x$. The same applies to $f^{-1}\circ f$.
+$f\circ f^{-1}$ is simply the identity function $y=x$ (perhaps with a restriction on
+its domain and range). The same applies to $f^{-1}\circ f$.
 <% end_sec('inverse-of-function') %>
 
 <% begin_sec("Derivative of the inverse of a function",nil,'deriv-of-inverse') %>
@@ -457,7 +499,7 @@ It's valid to measure this rate of change with an expression of the form $\Delta
 because the rate of change is constant. I might also want to know how much gas I can get for each
 additional dollar I'm willing to spend, and this is found by ordinary algebra to be
 \begin{equation*}
-  \frac{\Delta x}{\Delta y} = 0.25\ \frac{\text{gallon}{\$}} \qquad .
+  \frac{\Delta x}{\Delta y} = 0.25\ \frac{\text{gallon}}{\$} \qquad .
 \end{equation*}
 
 If $y$ is a function of $x$, and the function is invertible, then the Leibniz notation suggests
@@ -492,6 +534,7 @@ p.~\pageref{sec:power-rule-general}).
 
 This expression holds everywhere except $x=0$, $y=0$, where $\der x/\der y$ blows up to infinity.
 \end{eg}
+
 
 <% marg(200) %>
 <%
@@ -568,5 +611,100 @@ to an exponential with base $e$.
 \end{equation}
 <% end_sec('log-and-exp-identities') %>
 <% end_sec('exp-and-log') %>
+
+<% begin_sec("The derivative of a logarithm",nil,'deriv-of-log') %>
+We now know enough to differentiate a logarithm. The natural log has the
+nicest properties, so we'll start with it. Let
+\begin{equation*}
+  y = \ln x \qquad .
+\end{equation*}
+Then
+\begin{align*}
+  \frac{\der y}{\der x} &= \frac{1}{\left(\frac{\der x}{\der y}\right)} \qquad \text{[derivative of an inverse]} \\
+               &= \frac{1}{\left(\frac{\der e^y}{\der y}\right)} \qquad \text{[$x=e^y$]} \\
+               &= \frac{1}{e^y} \qquad \text{[derivative of the exponential is the exponential]} \\
+               &= \frac{1}{x} \qquad \text{[$x=e^y$ again]}
+\end{align*}
+The result is unexpectedly simple.
+
+\begin{important}[Derivative of the natural logarithm]
+\begin{equation*}
+  \frac{\der\:\ln x}{\der x} = \frac{1}{x}
+\end{equation*}
+\end{important}
+
+This is noteworthy because it shows that there must be an exception to the rule
+that we can always obtain a function that varies like $x^{n-1}$ by differentiating
+something like $x^n$. If we believed that this rule was
+always true, then we would think that we could obtain the function $x^{-1}$
+by differentiating some function of the form $(\text{constant})x^0$. But in fact this
+doesn't work, since $x^0$ is a constant, and the derivative of $x^0$ is therefore 0.
+Figure \figref{power-ladder-derivatives-only} shows the idea.
+
+<% marg(30) %>
+<%
+  fig(
+    'power-ladder-derivatives-only',
+    %q{A ``ladder'' of powers of $x$. Ignoring multiplicative constants, differentiation usually
+       just takes us one step down the ladder. The diagram shows the two exceptions.}
+  )  
+%>
+<% end_marg %>
+
+Derivatives of logs with other bases can be found by using equation \eqref{eqn:convert-log-to-ln}
+to convert to a natural log. The result is
+\begin{equation*}
+  \frac{\der\:\log_b x}{\der x} = \frac{1}{(\ln b)x}
+\end{equation*}
+
+\begin{eg}{The power rule for irrational exponents}\label{eg:power-any-exponent}
+In section \ref{sec:power-rule-general}, p.~\pageref{sec:power-rule-general}, we showed that the
+power rule $(x^n)'=nx^{n-1}$ held for any nonzero integer value of $n$, and also gave a sample
+of a proof for a fractional exponent. However, the methods used there were not capable of
+proving the result for irrational values of $n$, or of demonstrating it for all rational values
+in a single proof. We now have the ability to carry out the proof in an efficient way for
+any real, nonzero $n$.
+
+\begin{align*}
+  y &= x^n \\
+    &= e^{n \ln x} \\
+\intertext{By the chain rule,}
+  \frac{\der y}{\der x} &= e^{n \ln x} \cdot \frac{n}{x} \\
+                        &= x^n \cdot \frac{n}{x} \\
+                        &= nx^{n-1} \qquad .
+\end{align*}
+(For $n=0$, the result is zero.)
+
+\end{eg}
+
+<% end_sec('deriv-of-log') %>
+
+<% begin_sec("Derivatives of inverse trigonometric functions",nil,'deriv-of-inv-trig') %>
+The sine and cosine functions are not invertible, since they fail the horizontal line test --- in fact,
+any horizontal line that crosses these functions crosses them in infinitely many places.
+For example, if I tell you that I took the sine of some angle, and the sine was zero, then
+the angle could have been any number from the infinite set $\{\ldots -2\pi, -\pi, 0, \pi, 2\pi, \ldots\}$.
+But by restricting the domain of the sine function appropriately, e.g., to $-\pi/2\le x\le \pi/2$, we
+can make an invertible function and define an inverse sine, figure \figref{inverse-sine}.
+<% marg(200) %>
+<%
+  fig(
+    'inverse-sine',
+    %q{The sine and inverse sine functions.}
+  )  
+%>
+<% end_marg %>
+
+The derivative of the inverse sine can be found straightforwardly by using our knowledge of the
+derivatives of inverses of functions. Let $y=\sin^{-1} x$.
+Then:
+\begin{align*}
+  \frac{\der y}{\der x} &= \frac{1}{\left(\frac{\der x}{\der y}\right)} \\
+          &= \frac{1}{\cos y} \qquad \text{[because $x=\sin y$]}\\
+          &= \frac{1}{\sqrt{1-\sin^2 y}} \qquad \text{[because $(\cos y,\sin y)$ lies on the unit circle]} \\
+          &= \frac{1}{\sqrt{1-x^2}}
+\end{align*}
+A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-x^2}$.
+<% end_sec('deriv-of-inv-trig') %>
 
 <% end_chapter %>
