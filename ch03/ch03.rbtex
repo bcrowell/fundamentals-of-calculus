@@ -102,9 +102,11 @@ function $7x^2$ has a bigger second derivative, $14$.
 
 %%graph%% concavity func=x**2 format=eps xlo=-2 xhi=2 ylo=-1 yhi=4 with=lines x=t y=x samples=300 ytic_spacing=1 ; func=3-x**2
 
-Positive and negative signs of the second derivative indicate concavity.\index{concavity}
+A positive second derivative tells us that the function is like a cup: it holds water.
+A negative second derivative says that the function spills water, like a cup that's been turned
+upside-down. This distinction is referred to as the \emph{concavity} of the function.\index{concavity}
 In figure \figref{concavity},
-the function $x^2$ is like a cup with its mouth pointing up. We say that it's ``concave up,'' and this
+the function $x^2$ holds water. We say that it's ``concave up,'' and this
 corresponds to its positive second derivative. The function $3-x^2$, with a second derivative less than
 zero, is concave down. Another way of saying it is that if you're driving along a road shaped like $x^2$,
 going in the direction of increasing $x$, then your steering wheel is turned to the left, whereas on
