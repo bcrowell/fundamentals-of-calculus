@@ -181,38 +181,64 @@ by the Leibniz notation.
 <% begin_sec("Extrema",nil,'second-derivative-for-extrema') %>
 When a function goes up and then smoothly turns around and comes back down again,
 it has zero slope at the top. A place where $y'=0$, then, could represent
-a place where $y$ was at a maximum. On the other hand, it could be concave up,
-in which case we'd have a minimum. \index{extremum of a function}
+a place where $y$ was at a maximum. Or the function could be concave up,
+in which case we'd have a minimum.\index{extremum of a function}
+Figure \figref{cases-of-extrema-reprise} reprises some of the possibile types
+of extrema alluded to briefly in section \ref{subsec:optimization}, p.~\pageref{subsec:optimization}.
+By testing the second derivative, we can distinguish among cases B, D, and H, which
+represent, respectively, a minimum, a maximum, and a point of inflection. The test
+will not distinguish between D, which is a global maximum, and G, which is only a local maximum.
+<% marg(0) %>
+<%
+  fig(
+    'cases-of-extrema-reprise',
+    %q{A zero derivative often, but not always, indicates a local extremum. Sometimes we have
+       a zero derivative without a local extremum, and sometimes a local extremum with an
+       undefined or nonzero derivative.}
+  )  
+%>
+<% end_marg %>
 
-\begin{eg}{A stock tip}
-\egquestion Fred receives a mysterious e-mail tip telling him that his investment in a certain stock will
-have a value given by $x=-2t^4+(6.4577\times10^{10})t$, where $t\ge 2005$ is the year. Should he sell at some point? If so, when?
-
-\eganswer If the value reaches a maximum at some time, then the derivative should be zero then. Taking the
-derivative and setting it equal to zero, we have
-\begin{align*}
-  0 &= -8t^3+6.4577\times10^{10}\\
-  t &= \left(\frac{6.4577\times10^{10}}{8}\right)^{1/3} \\
-  t &= \pm 2006.0 \qquad .
-\end{align*}
-Obviously the solution at $t=-2006.0$ is bogus, since the stock market didn't exist four thousand years ago, and
-the tip only claimed the function would be valid for $t\ge 2005$.
-
-Should Fred sell on New Year's eve of 2006?
-
-But this could be a maximum, a minimum, or an inflection point. Fred definitely does \emph{not} want to
-sell at $t=2006$ if it's a minimum! To check which of the three possibilities hold, Fred takes the
-second derivative:
-\begin{align*}
- x'' &= -24t^2 \qquad .
-\end{align*}
-Plugging in $t=2006.0$, we find that the second derivative is negative at that time, so it is indeed a
-maximum.
+\begin{eg}{The second derivative test applied to order quantity}\label{eg:order-quantity-concavity}
+In example \ref{eg:order-quantity} on p.~\pageref{eg:order-quantity} we analyzed a situation
+in which a retailer, when it runs out of inventory, orders a quantity $q$ of widgets from the
+wholesale supplier. The result was that the retailer's yearly cost was given by a function of
+a certain form, of which an example is
+\begin{equation*}
+  C = 1+\frac{9}{q}+q \qquad .
+\end{equation*}
+By setting the first derivative
+\begin{equation*}
+  \frac{\der C}{\der q} = -9q^{-2}+1
+\end{equation*}
+equal to zero and solving for $q$, we find $q=3$. This could be a minimum (good), a maximum (bad),
+or an inflection point. One way to tell is by applying the second derivative test.
+The second derivative is
+\begin{equation*}
+  \frac{\der^2 C}{\der q^2} = 18q^{-3} \qquad .
+\end{equation*}
+Plugging in $q=3$, we find $\der^2 C/\der q^2=18/27$, which is positive. Therefore the function
+is concave up at $q=3$, and this is indeed a minimum. (In fact, this particular function happens to be
+concave up \emph{everywhere}. We only defined it for $q>0$, because a negative $q$ doesn't make
+sense in this context --- the retailer doesn't produce widgets, and can't sell them to the wholesaler.
+For any positive value of $q$, the second derivative is positive.)
 \end{eg}
+
+%%graph%% order-quantity-concavity func=1+9.0/x+x format=eps xlo=0 xhi=10 xtic_spacing=5 ylo=0 yhi=20 ytic_spacing=10 x=q y=C with=lines
+<% marg(100) %>
+<%
+  fig(
+    'order-quantity-concavity',
+    %q{Example \ref{eg:order-quantity-concavity}.}
+  )  
+%>
+<% end_marg %>
+
+
 <% end_sec('second-derivative-for-extrema') %>
 <% begin_sec("Newton's second law",nil,'newton-second-law') %>
 The ancient Greek philosopher Aristotle claimed that force was required in order to create motion,
-and this seemed reasonable to Europeans for a thousand years afterward, since it seemed in accord
+and this seemed reasonable to Europeans for a thousand years afterward, since it was in accord
 with everyday experience. Although Aristotle didn't use equations, we can imagine putting his theory
 into mathematical form like this:
 \begin{equation*}

@@ -573,6 +573,58 @@ This is exactly what we would have inferred from the power rule $(x^n)'=nx^{n-1}
 A similar argument can be carried out for any fractional exponent. The generalization to irrational
 exponents is deferred until example \ref{eg:power-any-exponent} on p.~\pageref{eg:power-any-exponent}.
 <% end_sec('fractional-powers') %>
+
+%%graph%% order-quantity func=1+9.0/x+x format=eps xlo=0 xhi=10 xtic_spacing=5 ylo=0 yhi=20 ytic_spacing=10 x=q y=C with=lines
+<% marg(0) %>
+<%
+  fig(
+    'order-quantity',
+    %q{Example \ref{eg:order-quantity}, with $c_1D=1$, $c_2D=9$, and $c_3=1$.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{Economic order quantity}\label{eg:order-quantity}
+Here is an extremely common problem in the business world. A retailer knows that there is
+a steady yearly demand $D$ for the widgets it sells; every year, customers buy $D$ widgets.
+They need to maintain an inventory of the product, and when they run out,
+they need to buy a quantity $q$ from their wholesaler. Ordering from the wholesaler
+costs a certain amount per widget plus a certain amount per order, and because of the per-order
+cost, the retailer would prefer that the quantity of widgets $q$ in each order be big.
+
+The retailer
+also has to pay a certain amount to store all the widgets in inventory. For example,
+if their inventory gets too big, they may have to buy or rent a new warehouse. This is
+a reason not to make $q$ too big.
+
+We have the following model of the retailer's yearly costs:
+\begin{align*}
+  C &= c_1 D \qquad \text{[wholesale cost of the widgets, including shipping]} \\
+    &= c_2\frac{D}{q} \qquad \text{[$D/q$=number of orders; $c_2$=fixed cost per order]} \\
+    &= c_3 q \qquad \text{[cost of storing an inventory of $q$ widgets]} 
+\end{align*}
+We want to minimize the function $C(q)$, taking $D$, $c_1$, $c_2$, and $c_3$ as constants.
+If $q$ is too small, the second term dominates and becomes large, while the same happens
+with the third term if $q$ is too big. Therefore we know that the minimum of $C$ must
+occur at some finite value of $q$. The function is smooth, so this minimum must occur at
+a point where the derivative $\der C/\der q$ is zero
+(section \ref{subsec:optimization}, p.~\pageref{subsec:optimization}).
+Writing $1/q$ as $q^{-1}$ and applying the power rule, the derivative is
+\begin{equation*}
+  \frac{\der C}{\der q} = -c_2 D q^{-2} 
+       + c_3  \qquad ,
+\end{equation*}
+and setting this equal to zero gives
+\begin{equation*}
+  q = \sqrt{\frac{c_2 D}{c_3}} \qquad ,
+\end{equation*}
+where only the positive square root has real-world significance. This answer makes sense because
+we respond to greater demand $D$ by making bigger orders, and likewise if the fixed cost per
+order $c_2$ is high, we will make bigger orders in order to reduce the number of orders.
+If the cost $c_3$ of warehousing a widget for a year is large (e.g., the widget is a jumbo
+jet), then we will order in smaller quantities.
+\end{eg}
+
 <% end_sec('power-rule-general') %>
 
 <% begin_sec("Quotients",nil,'quotients') %>

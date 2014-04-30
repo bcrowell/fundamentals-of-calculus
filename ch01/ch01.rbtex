@@ -115,7 +115,7 @@ time in hours, then its speedometer reading is the derivative of the odometer re
 
 If we were only shown the ultra-magnified view in the rightmost part of figure \figref{reservoir},
 we wouldn't know that the graph was curved at all. We would think the whole thing was a line.
-This hypothetical line is called the \emph{tangent line}\index{tangent line}
+This hypothetical line is called the \emph{tangent line}\index{tangent line}\label{tangent-line-informal}
 at the point marked with a dot. When you stand on the earth's surface and look at a point on
 the horizon, your line of sight is a tangent line to the surface. The derivative of a function is the slope
 of the tangent line.
@@ -153,7 +153,7 @@ of interesting calculus before we come back and make a more rigorous definition.
  \item[no-cut] Suppose that for a certain point P on the graph of a function, there is a unique linear function
                    $\ell$ that passes through P but doesn't cut through the graph at P. Then the graph of $\ell$
                    is the tangent line, and
-                   the derivative of the function at P equals the slope of the line.
+                   the derivative of the function at P equals the slope of the line.\label{no-cut}
 \end{description}
 
 As an example of the stretch rule, cars sold in the U.S.~have odometers that read out in units of miles,
@@ -852,13 +852,32 @@ and subtracting the two measurements?
 
 \begin{hwsection}
 
+\hfill
+
+<% hw('dummy-variable',{'solution'=>true}) %>
+
 <% hw('diff-monomials',{'solution'=>true}) %>
+
+\hfill
+
 <% hw('diff-polynomial',{'solution'=>true}) %>
 <% hw('diff-polynomial-2') %>
 <% hw('diff-polynomial-3') %>
 <% hw('diff-polynomial-4') %>
 <% hw('diff-polynomial-5') %>
+
+\hfill
+
 <% hw('same-deriv',{'solution'=>true}) %>
+
+\hfill
+
+<% hw('zoom-1') %>
+
+\pagebreak
+
+<% hw('zoom-2') %>
+<% hw('zoom-3') %>
 
 <% hw('diff-symbolic-const',{'solution'=>true}) %>
 
@@ -866,15 +885,22 @@ and subtracting the two measurements?
 <% hw('can-you-do-fractions-2') %>
 
 <% hw('human-cylinder') %>
+
+\pagebreak
+
 <% hw('observable-universe') %>
 <% hw('car-ke-and-power') %>
 
 <% hw('deriv-props-add-implies-stretch',{'solution'=>true}) %>
 <% hw('deriv-props-line-implies-constant') %>
 <% hw('deriv-props-add-and-constant-imply-shift') %>
+<% hw('deriv-props-odd-even') %>
 
 <% hw('rancher-rick',{'solution'=>true}) %>
 <% hw('prove-n-extrema',{'solution'=>true}) %>
+
+\pagebreak
+
 <% hw('overtime') %>
 <% hw('cactus') %>
 <% hw('immerse-sphere') %>
@@ -891,6 +917,8 @@ and subtracting the two measurements?
   )
 %>
 
+\pagebreak
+
 <% hw('chain-rule-circle') %>
 
 <% hw('chain-rule-sphere') %>
@@ -901,7 +929,10 @@ and subtracting the two measurements?
 <% hw('numerical-deriv-e-to-cos-x') %>
 <% hw('numerical-deriv-woods-saxon') %>
 
+\pagebreak
+
 <% hw('error-propagation-powers',{'solution'=>true}) %>
+<% hw('error-propagation-paper-squares') %>
 
 <% hw('tangent-to-parabola-through-point') %>
 <% hw('tangent-to-x3-through-point') %>
