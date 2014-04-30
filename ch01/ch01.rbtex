@@ -569,8 +569,9 @@ The zero-derivative test doesn't distinguish a local minimum like B from a local
 A zero derivative may not indicate a local extremum at all, as at C and H. We can have points
 such as E and F where the derivative is undefined. An extremum can occur at a point like A
 that is the endpoint of the function's domain.
-We will come back to these technical points in more detail later in the book.
-<% marg(0) %>
+We will come back to these technical points in more detail later in the book
+(section \ref{subsec:second-derivative-for-extrema}, p.~\pageref{subsec:second-derivative-for-extrema}).
+<% marg(80) %>
 <%
   fig(
     'cases-of-extrema',
@@ -599,7 +600,7 @@ Gottfried Wilhelm von Leibniz back in the era of powdered wigs and silk stocking
 in those days the concept of number hadn't been formalized. Newton and Leibniz simply assumed
 that it was all right to have infinitely big and infinitely small numbers. But modern
 mathematicians approach this kind of thing differently. They think in terms of specific,
-well-defined sets of numbers, such as:
+well-defined sets of numbers, including:
 
 \begin{description}
 \item[the integers:] whole numbers such as $-1$, 0, and $1$
@@ -924,6 +925,7 @@ and subtracting the two measurements?
 <% hw('chain-rule-sphere') %>
 <% hw('chain-rule-triangle') %>
 
+<% hw('numerical-deriv-geometric',{'solution'=>true}) %>
 <% hw('numerical-deriv-cos-x-cubed') %>
 <% hw('numerical-deriv-sin-sqrt-x') %>
 <% hw('numerical-deriv-e-to-cos-x') %>

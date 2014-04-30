@@ -281,7 +281,8 @@ We can get as good an approximation to this limit as we like by plugging in smal
 of $\Delta x$. For example, $\Delta x=10^{-4}$ gives $k\approx0.69317$,
 which seems to be an approximation to $\ln 2=0.69314\ldots$ This naturally leads
 us to conjecture that the derivative of $b^x$ equals $(\ln b) b^x$, and in particular
-that the derivative of $e^x$ is simply $e^x$.
+that the derivative of $e^x$ is simply $e^x$. This is investigated further in section
+\ref{sec:derivative-of-exp}, p.~\pageref{sec:derivative-of-exp}.
 \end{eg}
 
 We seldom evaluate a derivative by directly applying its definition as a limit.
@@ -360,7 +361,7 @@ rewrite it as the product $(x^2)\cdot(x)$. Applying the product rule then gives
 <% begin_sec("The chain rule",nil,'chain-rule') %>
 <% begin_sec("Constant rates of change",nil,'chain-rule-constant-rates') %>
 In addition to the chain rule, the other extremely important rule for differentiation is the chain
-rule. We start with two examples that illustrate the idea but don't require calculus.
+rule. We start with three examples that illustrate the idea but don't require calculus.
 
 \begin{eg}{Burning calories}\label{eg:burning-calories}
 \egquestion Jane hikes 3 kilometers in an hour, and hiking burns 70 calories per kilometer. At what rate
@@ -376,14 +377,29 @@ and $z$ the calories spent. Then
           &= 210\ \zu{cal}/\zu{hr} \qquad .
 \end{align*}
 \end{eg}
-<% marg(-10) %>
+
+\begin{eg}{Clowns on seesaws}\label{eg:clowns}
+In figure \figref{clowns}, the clown on the left drops by $\Delta x$, causing the middle clown
+to go up by $\Delta y$. The ratio between these appears to be about $-3/2$ based on the
+lengths of the two lever arms, as determined by the position of the fulcrum. This then
+causes the right-hand clown to drop by $\Delta z$, where $\Delta z/\Delta y$ is about
+$-2$. The result is
+\begin{align*}
+  \frac{\Delta z}{\Delta x} &= \frac{\Delta z}{\Delta y}  \cdot \frac{\Delta y}{\Delta x} \\
+                        &=  (-2)(-\frac{3}{2}) \\
+                        &= 3 \qquad .
+\end{align*}
+\end{eg}
 <%
   fig(
-    'gear-ratio',
-    %q{Example \ref{eg:gear-ratio}.}
-  )  
+    'clowns',
+    %q{Example \ref{eg:clowns}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
 %>
-<% end_marg %>
 
 \begin{eg}{Gear ratios}\label{eg:gear-ratio}
 \egquestion Figure \ref{fig:gear-ratio} shows a piece of farm equipment containing a train of
@@ -397,10 +413,18 @@ Let $x$, $y$, and $z$ be the angular positions of the three gears. Then
                         &= \frac{13}{21} \cdot \frac{21}{42} \\
                         &= \frac{13}{42} \qquad .
 \end{align*}
-
 \end{eg}
+<% marg(80) %>
+<%
+  fig(
+    'gear-ratio',
+    %q{Example \ref{eg:gear-ratio}.}
+  )  
+%>
+<% end_marg %>
 
-These examples both used the following relationship among three rates of change:
+
+These examples all used the following relationship among three rates of change:
 \begin{equation}\label{eq:chain-rule-deltas}
   \frac{\Delta z}{\Delta x} = \frac{\Delta z}{\Delta y}  \cdot \frac{\Delta y}{\Delta x} 
 \end{equation}
@@ -459,6 +483,28 @@ and gives back an output $f(g(x))$. The chain rule tells us how to differentiate
 out of such a composition. That is, we take the input $x$, stick it into $g$, take $g$'s output, put
 it in $f$, and finally take $f$'s output.
 <% end_sec('composition') %>
+
+\begin{eg}{}
+In problem \ref{hw:numerical-deriv-geometric} on p.~\pageref{hw:numerical-deriv-geometric}, we found
+by numerical approximation that the derivative of the function
+\begin{equation*}
+  \frac{1}{1-x} \qquad ,
+\end{equation*}
+evaluated at $x=0$, was about 1.000. We can view this function as the composition of two functions,
+each of which we already know how to differentiate:
+\begin{align*}
+  y &= 1-x \\
+  z &= 1/y
+\end{align*}
+The derivative is
+\begin{align*}
+  \frac{\der z}{\der x} &= \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x} \\
+           &= (-y^{-2})(-1) \\
+           &= y^{-2} \\
+           &= (1-x)^{-2} \qquad .
+\end{align*}
+Plugging in $x=0$, we verify that the derivative is exactly equal to 1.
+\end{eg}
 <% end_sec('chain-rule') %>
 
 <% begin_sec("Review: exponents that aren't natural numbers",nil,'non-natural-exponents') %>
@@ -721,7 +767,7 @@ For example, it allows us to check our work in differentiation by checking the u
 of the result (example \ref{eg:pest}, p.~\pageref{eg:pest}), and it makes the chain rule
 look so obvious that there would never be any danger of forgetting it. 
 When the calculus was first invented, these infinitely small numbers were
-referred to as \emph{infinitesimal} numbers. The idea is that just as a decimal is
+referred to as \emph{infinitesimal} numbers. The idea behind the word is that just as a decimal is
 one tenth, an infinitesimal is one ``infinitieth.''
 
 We now confront the
@@ -731,9 +777,9 @@ and if you want to use it safely, you have to know what you're doing.
 In this section we lay out some simple safety rules which, if followed, will prevent
 all nuclear meltdowns. Just as we enriched the set of natural numbers to make
 the rational numbers, and the rational numbers to make the reals, we continue the march of
-progress by making an even larger number system, called the hyperreal numbers,
+progress by making an even larger number system called the hyperreal numbers,
 which includes infinitesimals.
-For a more detailed exposition of this kind of thing
+For a more detailed exposition 
 at the freshman-calculus level, see the excellent free online book by Keisler,
 \emph{Elementary Calculus: An Approach Using Infinitesimals}.
 
@@ -752,7 +798,8 @@ Then we say that $r$ is the \emph{standard part} of $H$.
       real numbers (section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}).
 
 The hyperreals numbers include at least one infinitesimally small number, call it $d$.
-By the multiplicate inverse axiom, it follows that $1/d$ is also a well-defined hyperreal
+By rule 1, we can apply the multiplicative inverse axiom to $d$, so
+$1/d$ is also a well-defined hyperreal
 number, and clearly $1/d$ is bigger than $1$, bigger than $1+1$, and so on, so the hyperreal
 number system includes both infinitely big and infinitely small quantities.
 

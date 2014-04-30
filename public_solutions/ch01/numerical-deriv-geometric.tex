@@ -1,0 +1,19 @@
+The approximation we're going to use is
+\begin{equation*}
+  \frac{\der y}{\der x} \approx \frac{\Delta y}{\Delta x} \qquad .
+\end{equation*}
+Since we want an answer valid to three decimal places, it might
+be reasonable to try a $\Delta x$ value such as 0.0001, since that's
+a lot smaller than $10^{-3}$. We then have:
+\begin{equation*}
+  \frac{\Delta y}{\Delta x} = \frac{1/(1-0.0001)-1/(1-0)}{0.0001-0} = 1.00010
+\end{equation*}
+It looks like we're getting 1 as our answer. To see if the result is really
+valid to three decimal places, we can try making $\Delta x$ smaller, and see how
+much the result changes. With $\Delta x=10^{-5}$, we get  1.00001. The change
+is in the fifth decimal place, so it looks like the first three decimal places
+are correct.
+% calc -e "dx=.0001; (1/(1-dx)-1)/dx"
+%    1.00010001000017
+%calc -e "dx=.00001; (1/(1-dx)-1)/dx"
+%    1.0000100000962
