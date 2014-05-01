@@ -864,6 +864,12 @@ have the following calculation of the derivative of $y=x^2$ at $x=1$:
 
 \begin{hwsection}
 
+% product rule
+
+<% hw('product-rule-vertical-stretch',{'solution'=>true}) %>
+<% hw('product-rule-two-methods') %>
+<% hw('product-rule-xex') %>
+
 % chain rule
 
 <% hw('old-school',{'solution'=>true}) %>

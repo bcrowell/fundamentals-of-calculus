@@ -1016,13 +1016,17 @@ quite a good approximation for a range of speeds broad enough to encompass most 
 <% hw('chain-rule-sphere') %>
 <% hw('chain-rule-triangle') %>
 
+<% hw('tree') %>
+<% hw('tank') %>
+
 <% hw('numerical-deriv-geometric',{'solution'=>true}) %>
 <% hw('numerical-deriv-cos-x-cubed') %>
 <% hw('numerical-deriv-sin-sqrt-x') %>
 <% hw('numerical-deriv-e-to-cos-x') %>
-<% hw('numerical-deriv-woods-saxon') %>
 
 \pagebreak
+
+<% hw('numerical-deriv-woods-saxon') %>
 
 <% hw('error-propagation-powers',{'solution'=>true}) %>
 <% hw('error-propagation-paper-squares') %>
