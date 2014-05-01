@@ -848,6 +848,101 @@ Other sources of error will be more important. For example, is the book a unifor
 the worn end of the ruler as its zero, rather than letting the ruler hang over both sides of the book
 and subtracting the two measurements?
 <% end_sec('approximating-changes') %>
+<% begin_sec("Linear approximation to a curve",nil,'linear-approximation-to-a-curve') %>
+Many people who, like me, learned to drived in the United States
+were taught that when following another car, we should leave space equal to one car length for
+every 10 miles per hour of speed. For example, at a freeway speed of 60 mi/hr, we would follow no
+more closely than 6 car lengths. In a 2007 study, the Danish company Trafitec hired professional
+test drivers\footnote{Nonprofessional drivers were also
+tested, and took about 20-40\% more distance to stop, mainly because they didn't press as hard
+on the brake pedal.} and measured how much distance $x$ they needed in order to stop on a test track, starting
+from an initial velocity $v$. If we convert their speeds into U.S. units of mi/hr and the distances into units
+of car lengths,\footnote{I used the length of a Honda Accord, which is 4.8 meters.} some sample numbers
+are as follows:
+
+\begin{tabular}{ll}
+$v$ (mi/hr) & $x$ (car lengths) \\
+60          & \hspace{2mm}8.8 \\
+70          & 11.9
+\end{tabular}
+
+% calc -e "c=1000/3600; u=.0044; a=c^2/(2u)"
+% ... 8.77 m/s2
+% calc -e "v=96.6; .0044v^2+.0129v; ~/4.8"
+%    8.8135425
+% calc -e "v=112.7; .0044v^2+.0129v; ~/4.8"
+%    11.9457304166667
+
+The traditional rule does not allow enough distance to stop at either of these speeds.
+Furthermore, the stopping distance is increasing much faster with speed than the rule
+would have suggested: about 3 car lengths per 10 mi/hr.
+The study found that the stopping distances were well approximated by a polynomial
+of the following form:
+
+\begin{equation}\label{eqn:stopping-distance-with-t}
+  x = t v + k v^2
+\end{equation}
+
+The constant coefficient $t$ has units of time and can be
+interpreted as the reaction time of the professional drivers; because their reaction times were
+so short, the $t v$ term turns out to be negligible.
+The coefficient
+$k$ is related to the maximum acceleration (or in this case, deceleration) that the drivers
+could achieve, which is limited by the friction between the tires and the road. In the same
+units used in the table above, $k$ was about $2.4\times10^{-3}$. Neglecting the $tv$ term
+for simplicity, we have
+\begin{equation}\label{eqn:stopping-distance}
+  x = k v^2
+\end{equation}
+
+% calc -e ".0044(1/4.8)(1.61^2)"
+%    2.37609166666667*10^-3
+% calc -e "k=.0044(1/4.8)(1.61^2); k*60^2"
+%    8.6
+
+Realistically, drivers are not going to be able to calculate the result of the equation
+$x=kv^2$ in their heads while driving. The traditional rule, although not conservative enough
+at high speeds, had the advantage that it was easy to work out mentally.
+
+This is an example of a situation that occurs over and over again in real life, which is that
+we would like to approximate a complicated nonlinear function using a simple linear one.
+The derivative is the slope of the tangent line, and the tangent line is the \emph{best}
+possible line to approximate a given function near a particular point. As an example,
+let's find the best linear approximation to the stopping distance, for speeds near 60 mi/hr.
+The tangent line has slope
+\begin{equation*}
+  \frac{\der x}{\der v} = 2kv \qquad ,
+\end{equation*}
+and plugging in 60 mi/hr for $v$ produces a slope $m$ of 0.3, meaning that for every additional 1 mi/hr
+of speed, the stopping distance increases by about 0.3 car lengths. 
+% calc -e "k=.0044(1/4.8)(1.61^2); 2k*60"
+Writing down the definition of the slope of a line, we have
+\begin{equation}
+  \frac{x-x_\zu{0}}{v-v_\zu{0}} = m \qquad .
+\end{equation}
+where $(v_\zu{0},x_\zu{0})=(60,8.6)$ is the point at which we're taking the tangent line.
+This is the equation of the \emph{tangent line}, not the curve itself,
+which was equation \eqref{eqn:stopping-distance}. Solving this for $x$, we have
+\begin{equation}\label{eqn:stopping-distance-linear}
+  x = m(v-v_\zu{0})+x_\zu{0} \qquad .
+\end{equation}
+The result is shown in figure \figref{stopping-distance}, and we can see that it's
+quite a good approximation for a range of speeds broad enough to encompass most freeway driving.
+
+
+%%graph%% stopping-distance func=0.00238*x*x format=eps xlo=0 xhi=90 xtic_spacing=20 ylo=0 yhi=20 with=lines x=v y=x samples=100 ytic_spacing=5 ; func=0.29*(x-60)+8.6
+<% marg(80) %>
+<%
+  fig(
+    'stopping-distance',
+    %q{Stopping distance $x$, in car lengths, as a function of initial speed $v$, in mi/hr. The
+       linear approximation \eqref{eqn:stopping-distance-linear} is superimposed. }
+  )  
+%>
+<% end_marg %>
+
+
+<% end_sec('linear-approximation-to-a-curve') %>
 <% end_sec('approximations') %>
 
 
