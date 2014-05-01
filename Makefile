@@ -110,6 +110,7 @@ graphs:
 all_figures:
 	# The following requires Inkscape 0.47 or later.
 	perl -e 'foreach my $$f(<ch*/figs/*.svg>) {system("scripts/render_one_figure.pl $$f")}'
+	scripts/render_one_figure.pl cover/lmlogo.svg
 
 handheld:
 	# see meki/zzz_misc/publishing for notes on how far I've progressed with this
