@@ -1,0 +1,11 @@
+On a Linux machine, the following software is needed:
+  inkscape
+  gnuplot
+  latex
+  ruby 1.9
+  libxml-parser-perl
+  m4
+
+PATH=$PATH\:. ; export PATH
+
+make preflight && make all_figures && make graphs && make book

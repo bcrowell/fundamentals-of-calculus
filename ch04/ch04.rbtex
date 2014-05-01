@@ -1290,5 +1290,11 @@ the maximum value on this interval is 156.
 <% end_sec('completeness') %>
 
 
+\begin{hwsection}
+
+<% hw('difference-of-roots-at-infty',{'solution'=>true}) %>
+<% hw('parallel-resistance',{'solution'=>true}) %>
+
+\end{hwsection}
 
 <% end_chapter %>

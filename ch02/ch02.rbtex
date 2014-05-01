@@ -478,10 +478,15 @@ then at that point,
 \end{important}
 <% end_sec('chain-rule-varying-rates') %>
 <% begin_sec("Composition of functions",nil,'composition') %>
-The \emph{composition} of functions $f$ and $g$, $f\circ g$, means the function that takes an input $x$
-and gives back an output $f(g(x))$. The chain rule tells us how to differentiate a function built
-out of such a composition. That is, we take the input $x$, stick it into $g$, take $g$'s output, put
-it in $f$, and finally take $f$'s output.
+The \emph{composition} $g\circ h$ of functions $g$ and $h$ means the function that takes an input $x$
+and gives back an output $g(h(x))$. That is, we take the input $x$, stick it into $h$, take $h$'s output, put
+it in $g$, and finally take $g$'s output.
+
+The chain rule tells us how to differentiate a function built
+out of such a composition.
+In terms of this notation, suppose that $f(x)=g(h(x))$. Then the chain rule says that
+$f'(x)=g'(h(x))h'(x)$. Or, in a simpler but more abstract notation, we can write
+$(g\circ h)'=(g'\circ h)h'$.
 <% end_sec('composition') %>
 
 \begin{eg}{}
@@ -856,5 +861,22 @@ have the following calculation of the derivative of $y=x^2$ at $x=1$:
 
 
 <% end_sec('safe-handling-of-dx') %>
+
+\begin{hwsection}
+
+% chain rule
+
+<% hw('old-school',{'solution'=>true}) %>
+<% hw('hundredth',{'solution'=>true}) %>
+<% hw('one-and-two-hundred',{'solution'=>true}) %>
+<% hw('square-three-times',{'solution'=>true}) %>
+<% hw('chain-rule-units',{'solution'=>true}) %>
+
+% fractional exponents
+
+<% hw('cube-root',{'solution'=>true}) %>
+<% hw('thompson-sqrts',{'solution'=>true}) %>
+
+\end{hwsection}
 
 <% end_chapter %>

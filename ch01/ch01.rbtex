@@ -854,7 +854,7 @@ were taught that when following another car, we should leave space equal to one 
 every 10 miles per hour of speed. For example, at a freeway speed of 60 mi/hr, we would follow no
 more closely than 6 car lengths. In a 2007 study, the Danish company Trafitec hired professional
 test drivers\footnote{Nonprofessional drivers were also
-tested, and took about 20-40\% more distance to stop, mainly because they didn't press as hard
+tested, and took about 10-40\% more distance to stop, mainly because they didn't press as hard
 on the brake pedal.} and measured how much distance $x$ they needed in order to stop on a test track, starting
 from an initial velocity $v$. If we convert their speeds into U.S. units of mi/hr and the distances into units
 of car lengths,\footnote{I used the length of a Honda Accord, which is 4.8 meters.} some sample numbers
@@ -876,32 +876,25 @@ $v$ (mi/hr) & $x$ (car lengths) \\
 The traditional rule does not allow enough distance to stop at either of these speeds.
 Furthermore, the stopping distance is increasing much faster with speed than the rule
 would have suggested: about 3 car lengths per 10 mi/hr.
-The study found that the stopping distances were well approximated by a polynomial
-of the following form:
-
-\begin{equation}\label{eqn:stopping-distance-with-t}
-  x = t v + k v^2
-\end{equation}
-
-The constant coefficient $t$ has units of time and can be
-interpreted as the reaction time of the professional drivers; because their reaction times were
-so short, the $t v$ term turns out to be negligible.
-The coefficient
-$k$ is related to the maximum acceleration (or in this case, deceleration) that the drivers
-could achieve, which is limited by the friction between the tires and the road. In the same
-units used in the table above, $k$ was about $2.4\times10^{-3}$. Neglecting the $tv$ term
-for simplicity, we have
+The study found that the stopping distances were well approximated by a function
+of the following form:\footnote{They also included a linear term, which relates to the
+drivers' reaction times. This turns out to be negligible for our present purposes.}
 \begin{equation}\label{eqn:stopping-distance}
   x = k v^2
 \end{equation}
+
+The coefficient
+$k$ is related to the maximum acceleration (or in this case, deceleration) that the drivers
+could achieve, which is limited by the friction between the tires and the road. In the same
+units used in the table above, $k$ was about $2.4\times10^{-3}$.
 
 % calc -e ".0044(1/4.8)(1.61^2)"
 %    2.37609166666667*10^-3
 % calc -e "k=.0044(1/4.8)(1.61^2); k*60^2"
 %    8.6
 
-Realistically, drivers are not going to be able to calculate the result of the equation
-$x=kv^2$ in their heads while driving. The traditional rule, although not conservative enough
+Realistically, drivers are not going to be able to calculate the result of equation \eqref{eqn:stopping-distance}
+in their heads while driving. The traditional rule, although not conservative enough
 at high speeds, had the advantage that it was easy to work out mentally.
 
 This is an example of a situation that occurs over and over again in real life, which is that
@@ -913,8 +906,11 @@ The tangent line has slope
 \begin{equation*}
   \frac{\der x}{\der v} = 2kv \qquad ,
 \end{equation*}
-and plugging in 60 mi/hr for $v$ produces a slope $m$ of 0.3, meaning that for every additional 1 mi/hr
-of speed, the stopping distance increases by about 0.3 car lengths. 
+and plugging in 60 mi/hr for $v$ produces a slope $m$ of 0.3, meaning that 
+\emph{according to the tangent line}, for every additional 1 mi/hr
+of speed, the stopping distance increases by about 0.3 car lengths. If the speed is close enough
+to 60 mi/hr so that the tangent line is a good approximation, then this is also approximately
+true for the real stopping distance.
 % calc -e "k=.0044(1/4.8)(1.61^2); 2k*60"
 Writing down the definition of the slope of a line, we have
 \begin{equation}
@@ -1034,6 +1030,8 @@ quite a good approximation for a range of speeds broad enough to encompass most 
 <% hw('tangent-to-parabola-through-point') %>
 <% hw('tangent-to-x3-through-point') %>
 <% hw('tangent-x2-and-x4') %>
+
+<% hw('linear-approx-137th-power') %>
 
 \end{hwsection}
 
