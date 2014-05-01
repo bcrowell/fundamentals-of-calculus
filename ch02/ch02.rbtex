@@ -265,7 +265,7 @@ that the derivative of an exponential function like $f(x)=2^x$ must be proportio
 \begin{equation*}
   f' = k f \qquad ,
 \end{equation*}
-where the constant of proportionality $k$ depends on the base 2. We can now prove the same
+where the constant of proportionality $k$ depends on the base, such as 2. We can now prove the same
 fact using limits, and say something about the value of the constant. Since this fact is supposed
 to hold for all values of $x$, and $k$ is to be the same
 for any $x$, we can pick any convenient value for $x$, say $x=0$. For the derivative we have
