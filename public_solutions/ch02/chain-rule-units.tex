@@ -1,0 +1,17 @@
+Converting these into Leibniz notation, we find
+\begin{align*}
+  \frac{\der f}{\der x} &=   \frac{\der g}{\der h}
+\intertext{and}
+  \frac{\der f}{\der x} &=   \frac{\der g}{\der h}\cdot h  \qquad .
+\end{align*}
+To prove something is not true in general, it suffices to find one counterexample. Suppose
+that $g$ and $h$ are both unitless, and $x$ has units of seconds. The value of $f$ is defined by
+the output of $g$, so $f$ must also be unitless. Since $f$ is unitless, $\der f/\der x$ has units
+of inverse seconds (``per second''). But this doesn't match the units of either of the proposed expressions,
+because they're both unitless.
+The correct chain rule, however, works. In the equation
+\begin{equation*}
+  \frac{\der f}{\der x} =   \frac{\der g}{\der h}\cdot \frac{\der h}{\der x}  \qquad ,
+\end{equation*}
+the right-hand side consists of a unitless factor multiplied by a factor with units of
+inverse seconds, so its units are inverse seconds, matching the left-hand side.
