@@ -1,0 +1,22 @@
+Benjamin Gompertz (1779-1865) was a British mathematician and pioneering
+actuarial scientist, who overcame significant social barriers due to
+antisemitism. We would all like to live forever, and actuaries are in
+the business of telling us that we probably can't. Based on mortality
+data, Gompertz constructed a model in which an initial population $N_\zu{o}$
+of babies born at $t=0$ becomes at a later time $t$ a surviving population
+\begin{equation*}
+  N = N_\zu{o} e^{1-e^t} \qquad ,
+\end{equation*}
+where I've simplified the expression by leaving out some constants.
+If you've survived to age $t$, then your probability of dying in the coming
+year is
+\begin{equation*}
+  -\frac{\Delta N}{N} \qquad ,
+\end{equation*}
+where $-\Delta N$ is the number of deaths per year. Therefore the death rate is
+\begin{equation*}
+  -\frac{1}{N}\frac{\der N}{\der t} \qquad .
+\end{equation*}
+Show that in the Gompertz model, this death rate is proportional to
+$e^t$. This exponential rate of increase is demonstrated in figure
+\figref{hw-gompertz}.

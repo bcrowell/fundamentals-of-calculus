@@ -707,4 +707,20 @@ Then:
 A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-x^2}$.
 <% end_sec('deriv-of-inv-trig') %>
 
+\begin{hwsection}
+
+<% marg(200) %>
+<%
+  fig(
+    'hw-gompertz',
+    %q{Problem \ref{hw:gompertz}. Probability of death in the U.S. in the year 2003. Note the logarithmic scale
+       on the vertical axis. Between the ages of about 30 and 95, the death rate rises exponentially,
+       as shown by the linearity of the data on the logarithmic graph.}
+  )  
+%>
+<% end_marg %>
+<% hw('gompertz') %>
+
+\end{hwsection}
+
 <% end_chapter %>
