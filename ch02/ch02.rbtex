@@ -864,10 +864,35 @@ have the following calculation of the derivative of $y=x^2$ at $x=1$:
 
 \begin{hwsection}
 
+\emph{In example \ref{eg:x-squared-with-limits} on p.~\pageref{eg:x-squared-with-limits} we found
+the derivative of the function $y(x)=x^2$ by directly applying the definition of the derivative     
+as a limit. In problems \ref{hw:apply-deriv-limit-def-x3}-\ref{hw:apply-deriv-limit-def-sqrt}, apply
+the same brute-force technique to the given functions.}
+
+<% hw('apply-deriv-limit-def-x3') %>
+<% hw('apply-deriv-limit-def-inv-x') %>
+<% hw('apply-deriv-limit-def-inv-x2') %>
+<% hw('apply-deriv-limit-def-inv-x-offset') %>
+<% hw('apply-deriv-limit-def-sqrt') %>
+
+% fractional exponents
+
+<% hw('cube-root',{'solution'=>true}) %>
+<% hw('thompson-sqrts',{'solution'=>true}) %>
+
 % product rule
 
 <% hw('product-rule-vertical-stretch',{'solution'=>true}) %>
+
+\emph{In problems \ref{hw:product-rule-two-methods}-\ref{hw:product-rule-two-methods-3},
+compute each derivative by two different methods: (a) by multiplying out the given expression
+and then differentiating, and (b) by using the product rule. Make sure that you get the same
+answer by both methods.}
+
 <% hw('product-rule-two-methods') %>
+<% hw('product-rule-two-methods-2') %>
+<% hw('product-rule-two-methods-3') %> % also requires chain rule
+
 <% hw('product-rule-xex') %>
 
 % chain rule
@@ -878,10 +903,23 @@ have the following calculation of the derivative of $y=x^2$ at $x=1$:
 <% hw('square-three-times',{'solution'=>true}) %>
 <% hw('chain-rule-units',{'solution'=>true}) %>
 
-% fractional exponents
+%%graph%% resonance func=1/sqrt(3*(x**2-1)**2+x**2) xlo=0 xhi=3 ylo=0 yhi=1.1 with=lines xtic_spacing=1 ytic_spacing=.5 format=eps
+<% marg(0) %>
+<%
+  fig(
+    'resonance',
+    %q{The function of problem \ref{hw:resonance}, with $a=3$, $b=1$, and $f_\zu{o}=1$.}
+  )  
+%>
+<% end_marg %>
 
-<% hw('cube-root',{'solution'=>true}) %>
-<% hw('thompson-sqrts',{'solution'=>true}) %>
+<% hw('resonance',{'solution'=>true}) %>
+<% hw('car-aims-for-collision') %>
+<% hw('gamma-derivative') %>
+<% hw('doppler') %>
+<% hw('pie-minimize-perimeter') %>
+<% hw('lens-minimize-length') %>
+
 
 \end{hwsection}
 
