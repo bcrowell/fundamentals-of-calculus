@@ -84,8 +84,7 @@ very_clean:
 	make clean
 
 preflight:
-	@perl -e 'if (-d "scripts/custom") {system("chmod +x scripts/custom/*"); foreach $$f(<scripts/custom/*>) {system($$f)}}'
-	@perl -e 'foreach $$f(<scripts/custom/*>) {system($$f)}'
+	@perl -e 'if (-d "scripts/custom") {system("chmod +x scripts/custom/*"); foreach $$f(<scripts/custom/*.pl>) {system($$f)}}'
 	@chmod +x scripts/*.pl scripts/*.rb mv_silent fruby process_geom_file.pl
 	@perl -e 'foreach $$f("scripts/run_eruby.pl","scripts/equation_to_image.pl","scripts/latex_table_to_html.pl","scripts/harvest_aux_files.rb","scripts/check_for_colliding_figures.rb","scripts/translate_to_html.rb","mv_silent") {die "file $$f is not executable; fix this with chmod +x $$f" unless -e $$f && -x $$f}'
 

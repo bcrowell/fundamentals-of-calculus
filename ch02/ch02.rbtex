@@ -875,14 +875,20 @@ the same brute-force technique to the given functions.}
 <% hw('apply-deriv-limit-def-inv-x-offset') %>
 <% hw('apply-deriv-limit-def-sqrt') %>
 
+\vfill
+
 % fractional exponents
 
 <% hw('cube-root',{'solution'=>true}) %>
 <% hw('thompson-sqrts',{'solution'=>true}) %>
 
+<% hw('everest-temp') %>
+
 % product rule
 
 <% hw('product-rule-vertical-stretch',{'solution'=>true}) %>
+
+\pagebreak
 
 \emph{In problems \ref{hw:product-rule-two-methods}-\ref{hw:product-rule-two-methods-3},
 compute each derivative by two different methods: (a) by multiplying out the given expression
@@ -892,6 +898,8 @@ answer by both methods.}
 <% hw('product-rule-two-methods') %>
 <% hw('product-rule-two-methods-2') %>
 <% hw('product-rule-two-methods-3') %> % also requires chain rule
+
+\vfill
 
 <% hw('product-rule-xex') %>
 
@@ -903,8 +911,31 @@ answer by both methods.}
 <% hw('square-three-times',{'solution'=>true}) %>
 <% hw('chain-rule-units',{'solution'=>true}) %>
 
+\pagebreak
+
+\emph{In problems \ref{hw:derivative-practice-1}-\ref{hw:derivative-practice-7}, differentiate the
+given function, and try to simplify your answer as much as possible.}
+
+% Robbin p. 69, #4-10
+
+<% hw('derivative-practice-1') %>
+<% hw('derivative-practice-2') %>
+<% hw('derivative-practice-3') %>
+<% hw('derivative-practice-4') %>
+<% hw('derivative-practice-5') %>
+<% hw('derivative-practice-6') %>
+<% hw('derivative-practice-7') %>
+
+
+<% hw('gamma-derivative') %>
+<% hw('doppler') %>
+
+
+
+<% hw('resonance',{'solution'=>true}) %>
+
 %%graph%% resonance func=1/sqrt(3*(x**2-1)**2+x**2) xlo=0 xhi=3 ylo=0 yhi=1.1 with=lines xtic_spacing=1 ytic_spacing=.5 format=eps
-<% marg(0) %>
+<% marg(100) %>
 <%
   fig(
     'resonance',
@@ -913,10 +944,8 @@ answer by both methods.}
 %>
 <% end_marg %>
 
-<% hw('resonance',{'solution'=>true}) %>
 <% hw('car-aims-for-collision') %>
-<% hw('gamma-derivative') %>
-<% hw('doppler') %>
+<% hw('cobb-douglas') %>
 <% hw('pie-minimize-perimeter') %>
 <% hw('lens-minimize-length') %>
 
