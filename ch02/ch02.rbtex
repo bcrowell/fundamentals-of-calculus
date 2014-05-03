@@ -234,9 +234,6 @@ The derivative of a function $f$ at a point $x$ is
 \end{equation*}
 \end{important}
 
-\noindent If this limit is undefined at a certain $x$, then the derivative is undefined there, and we
-say that $f$ is not \emph{differentiable} at $x$.\index{differentiability}
-
 \begin{eg}{The derivative of $x^2$, using limits}\label{eg:x-squared-with-limits}
 Let's use the definition to find the derivative of $x^2$ at $x=1$. We have
 \begin{align*}
@@ -284,6 +281,12 @@ us to conjecture that the derivative of $b^x$ equals $(\ln b) b^x$, and in parti
 that the derivative of $e^x$ is simply $e^x$. This is investigated further in section
 \ref{sec:derivative-of-exp}, p.~\pageref{sec:derivative-of-exp}.
 \end{eg}
+
+If the limit referred to in the definition of the derivative
+is undefined at a certain $x$, then the derivative is undefined there, and we
+say that $f$ is not \emph{differentiable} at $x$.\index{differentiability}\label{differentiability-brief}
+Differentiability is discussed in more detail in section \ref{sec:continuity-and-differentiability},
+p.~\pageref{sec:continuity-and-differentiability}.
 
 We seldom evaluate a derivative by directly applying its definition as a limit.
 Instead, we use a variety of other more convenient rules that follow from the
@@ -721,6 +724,7 @@ $p$ and $q$ are both differentiable and $q\ne0$,
 
 <% end_sec('quotients') %>
 
+<% begin_sec("Continuity and differentiability",nil,'continuity-and-differentiability') %>
 <% begin_sec("Continuity",nil,'continuity') %>
 Intuitively, a continuous function is one whose graph
 has no sudden jumps in it; the graph is all a single connected piece. 
@@ -736,15 +740,29 @@ A function is continuous if it is continuous at every $a$ in its
 domain.
 \end{important}
 
-If a function is discontinuous at a given point, then it is not differentiable at that point.
-On the other hand, the example $y=|x|$ shows that a function can be continuous without
-being differentiable.
-
 <% marg(0) %>
 <%
   fig(
     'discontinuous',
     %q{A discontinuous function.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'not-differentiable',
+    %q{The function is not differentiable at $x_1$ because it has a kink there, and is not differentiable
+       at $x_2$ because it has a sudden jump.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'caustic',
+    %q{Reflected light forms a geometrical curve inside a teacup. The curve has a kink
+       similar to the one at $x_1$ in figure \figref{not-differentiable}. This
+       kink is of a special type called a \emph{cusp}, in which the two branches are parallel
+       where they meet.}
   )  
 %>
 <% end_marg %>
@@ -763,6 +781,114 @@ The function $f(x)=1/x$ is continuous everywhere except at $x=0$, so for example
 is continuous everywhere except at multiples of $\pi$, where the sine has zeroes.
 
 <% end_sec('continuity') %>
+
+<% begin_sec("More about differentiability",nil,'differentiability') %>\index{differentiability}
+We mentioned briefly on p.~\pageref{differentiability-brief} that a function is defined to be
+differentiable or nondifferentiable at a particular point
+depending on the existence of the limit referred to in the definition
+of the derivative,
+\begin{equation*}
+  f'(x) = \lim_{\Delta x\rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} \qquad .
+\end{equation*}
+Figure
+\figref{not-differentiable} shows two common reasons why a function would not be differentiable
+at a certain point:
+because it has a kink, or because it is discontinuous.
+If a function is discontinuous at a given point, then it is not differentiable at that point.
+
+Although differentiability implies continuity,
+a function can be continuous without
+being differentiable; see example \ref{eg:abs-not-differentiable}.
+
+We seldom have to resort to limits and epsilon-delta arguments in order to determine whether a
+function is differentiable at a particular point. 
+Here are three methods that, when they apply, are usually easier:
+
+\begin{enumerate}
+\item Graph the function and apply the informal definition of the derivative from
+      section \ref{subsec:informal-derivative}, p.~\pageref{subsec:informal-derivative}. That is,
+      imagine trying to zoom in on the point of interest until the curve appears straight, and then
+      measuring its slope. If something goes wrong in this process, then the function isn't 
+      differentiable.\label{differentiability-by-zooming}
+\item Often we deal with functions that have been defined by a formula, which means building it
+      out of other functions through arithmetic operations and composition. If all of these functions 
+      and operations are
+      differentiable at the point of interest, then the function 
+      is differentiable.\label{differentiability-by-composition}
+\item If the function $f$ has been defined by a formula, then it will usually be possible differentiate it
+      using the differentiation rules and write the result as a new formula for $f'$. Often there will be only
+      certain specific points where the formula for $f'$ is undefined, so these are the points where
+      $f$ wasn't differentiable.\label{differentiability-by-formula}
+\end{enumerate}
+
+%%graph%% absolute-value func=abs(x) format=eps xlo=-1 xhi=1 xtic_spacing=1 ylo=0 yhi=2 ytic_spacing=1 with=lines
+<% marg(0) %>
+<%
+  fig(
+    'absolute-value',
+    %q{Example \ref{eg:abs-not-differentiable}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'not-differentiable-at-pole',
+    %q{Example \ref{eg:not-differentiable-at-pole}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'differentiability-of-cube-root',
+    %q{Example \ref{eg:differentiability-of-cube-root}.}
+  )  
+%>
+<% end_marg %>
+\begin{eg}{The absolute value function}\label{eg:abs-not-differentiable}
+\egquestion Where is the function $y=|x|$ differentiable?
+
+\eganswer By visualizing the graph, figure \figref{absolute-value},
+and applying method \ref{differentiability-by-zooming}
+we can tell immediately that it's differentiable everywhere
+except at $x=0$. At $x=0$, there is a kink, and no matter how far we zoom in, the kink will never look
+like a line.
+\end{eg}
+
+%%graph%% not-differentiable-at-pole func=1/(x-1) format=eps xlo=-1 xhi=3 xtic_spacing=1 ylo=-10 yhi=10 ytic_spacing=5 with=lines
+\begin{eg}{Not differentiable when dividing by zero}\label{eg:not-differentiable-at-pole}
+\egquestion Where is the function $f(x)=1/(x-1)$ differentiable?
+
+\eganswer Let's use method \ref{differentiability-by-composition} above.
+This function can be built out of the composition of functions as $f(x)=g(h(x))$, where
+$g(x)=1/x$ and $h(x)=x-1$. Both of these functions are well-behaved everywhere, except that
+$g$ isn't differentiable where it blows up at $x=0$. Therefore the function $f$ is differentiable
+everywhere except at $x=1$, which is where $h(x)=0$ is the input to $g(x)$.
+\end{eg}
+
+%%graph%% differentiability-of-cube-root func=(abs(x)**0.333)*(x/abs(x)) format=eps xlo=-30 xhi=30 xtic_spacing=10 ylo=-3 yhi=3 ytic_spacing=1 with=lines
+
+\begin{eg}{Differentiability of the cube root}\label{eg:differentiability-of-cube-root}
+\egquestion Where is the function $y=x^{1/3}$ differentiable?
+
+\eganswer Let's use method \ref{differentiability-by-formula}.
+The power rule gives $y'=\frac{1}{3}x^{-2/3}$. This is well defined everywhere
+except at $x=0$, where it blows up to infinity. Therefore $y$ is differentiable everywhere
+except at $x=0$.
+\end{eg}
+
+\begin{eg}{Nondifferentiable ingredients, differentiable result}
+Method \ref{differentiability-by-composition} can prove that a function is
+differentiable, but cannot necessarily be used to prove it nondifferentiable.
+For example, consider the function $y=x^5(1+1/x)$. The second factor blows up
+to infinity at $x=0$, which makes us suspect that $y$ is not differentiable
+there. But in fact the formula can be rewritten as $y=x^5+x^4$, which is clearly
+differentiable everywhere. Although the second factor in the original form
+blows up at $x=0$, the first factor vanishes there so rapidly that the product
+also vanishes, and vanishes smoothly.
+\end{eg}
+
+<% end_sec('differentiability') %>
+<% end_sec('continuity-and-differentiability') %>
 
 <% begin_sec("Safe handling of $\\der y$ and $\\der x$ (optional)",nil,'safe-handling-of-dx',{'optional'=>true}) %>
 We've seen that although the real number system doesn't include infinitely big or infinitely small
@@ -930,8 +1056,6 @@ given function, and try to simplify your answer as much as possible.}
 <% hw('gamma-derivative') %>
 <% hw('doppler') %>
 
-
-
 <% hw('resonance',{'solution'=>true}) %>
 
 %%graph%% resonance func=1/sqrt(3*(x**2-1)**2+x**2) xlo=0 xhi=3 ylo=0 yhi=1.1 with=lines xtic_spacing=1 ytic_spacing=.5 format=eps
@@ -949,6 +1073,19 @@ given function, and try to simplify your answer as much as possible.}
 <% hw('pie-minimize-perimeter') %>
 <% hw('lens-minimize-length') %>
 
+\pagebreak
+
+\emph{Problems \ref{hw:differentiability-1}-\ref{hw:differentiability-3} can be done
+using methods \ref{differentiability-by-zooming}-\ref{differentiability-by-formula} 
+on p.~\pageref{differentiability-by-zooming}.}
+
+<% hw('differentiability-1',{'solution'=>true}) %>
+<% hw('differentiability-2',{'solution'=>true}) %>
+<% hw('differentiability-3',{'solution'=>true}) %>
+
+\vspace{10mm}
+
+<% hw('product-rule-three-factors',{'solution'=>true}) %>
 
 \end{hwsection}
 

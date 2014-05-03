@@ -1326,6 +1326,7 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 <% hw('asymptotes-1',{'solution'=>true}) %>
 <% hw('asymptotes-2',{'solution'=>true}) %>
 
+<% hw('bounty-hunters',{'solution'=>true}) %>
 <% hw('pendulum') %>
 <% marg(0) %>
 <%
