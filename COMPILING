@@ -7,5 +7,6 @@ On a Linux machine, the following software is needed:
   m4
 
 PATH=$PATH\:. ; export PATH
-
+git clone git://github.com/bcrowell/fundamentals-of-calculus.git
+cd fundamentals-of-calculus
 make preflight && make all_figures && make graphs && make book
