@@ -1029,6 +1029,7 @@ quite a good approximation for a range of speeds broad enough to encompass most 
 <% hw('numerical-deriv-woods-saxon') %>
 
 <% hw('error-propagation-powers',{'solution'=>true}) %>
+<% hw('error-propagation-rocket-height',{'solution'=>true}) %>
 <% hw('error-propagation-paper-squares') %>
 
 <% hw('tangent-to-parabola-through-point') %>

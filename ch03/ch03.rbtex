@@ -344,5 +344,105 @@ the backward frictional force.
 <% end_sec('newton-second-law') %>
 <% end_sec('second-derivative-applications') %>
 
+<% begin_sec("Higher derivatives",nil,'higher-derivatives') %>
+When we take the derivative of a function $f$, the derivative $f'$ is itself a function,
+so it made sense to apply the same operation again and find the second derivative $f''$.
+We can continue in this way. The
+derivative of the second derivative is called the third derivative, written
+$f'''$, and so on.
+
+The $n$th derivative of $f$ is denoted $f^{(n)}$.  Thus
+\[
+f^{(0)}=f,\qquad f^{(1)}=f',\qquad f^{(2)}=f'',\qquad
+f^{(3)}=f''',\ldots.
+\]
+Leibniz' notation for the $n$th derivative of $y=f(x)$ is
+\[
+\frac{\der^n y}{\der x^n}= f^{(n)}(x).
+\]
+
+\begin{eg}{Jerk and damage}
+Higher derivatives are often useful; for example, you will need them in your second-semester
+calculus course in order to compute Taylor series, which are often used in approximating functions.
+There are not many examples, however, in which $f^{(n)}$ has a direct, intuitive interpretation
+for $n>2$. The best example I know of is the following for $n=3$.
+
+It's very common for a mechanical system to be damaged by vibration. For example, when a human
+runs, the impact of the foot on the ground causes a shock wave to travel up the leg, and runners
+frequently suffer from injuries as a result. When a machine shop cuts metal, it's possible for
+the whole setup to start vibrating violently, and if the lathe or mill isn't shut down promptly,
+the result can be serious damage to the work or the machine.
+
+Mathematically, what is the variable that measures how likely damage is to occur in these examples?
+The motion of an object is described using its position as a function of time, $x(t)$.
+If $x$ is a constant, then the object is sitting still and clearly no damage can result, so this
+suggests taking a derivative. But if $x'$ is constant, we also expect no damage. This derivative
+measures the velocity, and velocity doesn't relate to force, acceleration $x''$ does
+(Newton's second law, section \ref{subsec:newton-second-law}, p.~\pageref{subsec:newton-second-law}).
+Even an acceleration, however, does not necessarily lead to damage. When your body is subject
+to a steady acceleration, it just feels like a steady pressure, or perhaps, depending on the
+direction of the acceleration, an increase in your weight. A steady acceleration will never cause
+an object to shake or vibrate. Such an effect can only happen if the \emph{third} derivative
+$x'''$ is nonzero. This quantity is sometimes called the ``jerk.''
+\end{eg}
+
+\begin{eg}{Two examples}
+If $f(x) = x^2-2x+3$ and $g(x) = x/(1-x)$ then
+\begin{align*}
+  f(x) &= x^2 - 2x + 3  & g(x)&= \frac{x} {1-x} \\
+  f'(x) &= 2x -2 & g'(x) &= \frac{1} {(1-x)^2} \\
+  f''(x) &= 2 & g''(x) &= \frac{2} {(1-x)^3} \\
+  f^{(3)}(x) &= 0 & g^{(3)}(x) &= \frac{2\cdot 3} {(1-x)^4}\\
+  f^{(4)}(x) &= 0 & g^{(4)}(x) &= \frac{2\cdot3\cdot4} {(1-x)^5}\\
+  &\vdots &&\vdots
+\end{align*}
+All further derivatives of $f$ are zero, but no matter how often we
+differentiate $g(x)$ we will never get zero.  Instead of multiplying the
+numbers in the numerator of the derivatives of $g$ we left them as
+``$2\cdot3\cdot4$.''  A good reason for doing this is that we can see
+a pattern in the derivatives, which would allow us to guess what (say) the
+$10$th derivative is, without actually computing ten derivatives:
+\[
+g^{(10)}(x) =
+\frac{2\cdot3\cdot4\cdot5\cdot6\cdot7\cdot8\cdot9\cdot10} {(1-x)^{11}}.
+\]
+\end{eg}
+
+In section \ref{sec:leibniz-notation} we introduced a variation on the Leibniz
+notation called the \emph{operator} notation, as in
+\[
+\frac{d(x^3-x)}{dx} = \frac{d}{dx} (x^3-x)= 3x^2-1.
+\]
+For higher derivatives one can write
+\[
+\frac{d^2y}{dx^2}
+= \frac{d} {dx} \frac{d} {dx}y
+= \left(\frac{d}{dx}\right)^2 y
+\]
+Be careful to distinguish the second derivative from the square of the first
+derivative. Usually
+\[
+\frac{d^2y}{dx^2}\ne\left(\frac{dy}{dx}\right)^2\text{!}
+\]
+
+<% end_sec('higher-derivatives') %>
+
+\begin{hwsection}
+
+<% hw('2nd-deriv-polynomial',{'solution'=>true}) %>
+<% hw('2nd-deriv-polynomial-2') %>
+<% hw('2nd-deriv-polynomial-3') %>
+<% hw('2nd-deriv-polynomial-4') %>
+<% hw('2nd-deriv-polynomial-5') %>
+
+<% hw('inflection',{'solution'=>true}) %>
+<% hw('max-min-of-sum',{'solution'=>true}) %>
+<% hw('exponents-with-2nd-deriv-smooth') %>
+<% hw('blimp') %>
+<% hw('odd-even-2nd-deriv') %>
+<% hw('average-minimizes-sum-of-squares') %>
+<% hw('resonance-overdamped') %>
+
+\end{hwsection}
 
 <% end_chapter %>

@@ -45,3 +45,5 @@ count = 0
 debug("processed #{count} solutions")
 
 %>
+
+%%graph%% soln-inflection func=x**3+x**2 format=eps xlo=-1 xhi=.5 ylo=0 yhi=0.5 x=t y=x ytic_spacing=.5 more_space_below=6 more_space_above=10
