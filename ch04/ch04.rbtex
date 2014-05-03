@@ -1295,6 +1295,39 @@ the maximum value on this interval is 156.
 <% hw('difference-of-roots-at-infty',{'solution'=>true}) %>
 <% hw('parallel-resistance',{'solution'=>true}) %>
 
+\emph{Use the $\epsilon$-$\delta$ definition to prove the limits
+in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.}
+% Robbin, p. 35, #4-14
+
+<% hw('limit-prove-eps-delta-01') %>
+<% hw('limit-prove-eps-delta-02') %>
+<% hw('limit-prove-eps-delta-03') %>
+<% hw('limit-prove-eps-delta-04') %>
+<% hw('limit-prove-eps-delta-05') %>
+<% hw('limit-prove-eps-delta-06') %>
+<% hw('limit-prove-eps-delta-07') %>
+<% hw('limit-prove-eps-delta-08') %>
+<% hw('limit-prove-eps-delta-09') %>
+<% hw('limit-prove-eps-delta-10') %>
+<% hw('limit-prove-eps-delta-11') %>
+
+% most of the following are from Robbin, p. 50
+<% hw('big-powers') %>
+<% hw('cancel-factor') %>
+<% hw('limits-at-infinity') %>
+<% hw('infinity-from-the-northeast') %>
+<% hw('no-limit-from-above') %>
+<% hw('limit-implies-continuity') %>
+
+% robbin, p. 51
+<% hw('spline-1') %>
+<% hw('spline-2') %>
+
+<% hw('asymptotes-1',{'solution'=>true}) %>
+<% hw('asymptotes-2',{'solution'=>true}) %>
+
+
+
 \end{hwsection}
 
 <% end_chapter %>
