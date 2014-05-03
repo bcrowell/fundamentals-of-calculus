@@ -443,6 +443,34 @@ derivative. Usually
 <% hw('average-minimizes-sum-of-squares') %>
 <% hw('resonance-overdamped') %>
 
+<% hw('partial-fractions-third-deriv') %>
+
+% Robbin p. 71, #2-5:
+\emph{In problems \ref{hw:first-three-derivatives-1}-\ref{hw:first-three-derivatives-4},
+compute the first, second, and third derivatives of the given functions.}
+
+<% hw('first-three-derivatives-1') %>
+<% hw('first-three-derivatives-2') %>
+<% hw('first-three-derivatives-3') %>
+<% hw('first-three-derivatives-4') %>
+
+% Robbin p. 71, #3:
+\emph{In problems \ref{hw:tenth-derivative-1}-\ref{hw:tenth-derivative-6},
+find the derivatives of $10^\text{th}$ order of the given
+function. (The problems have been chosen so that after doing the
+first few derivatives in each case, you should start seeing a pattern
+that will let you guess the $10^{\text{th}}$ derivative without
+actually computing $10$ derivatives.)}
+
+<% hw('tenth-derivative-1') %>
+<% hw('tenth-derivative-2') %>
+<% hw('tenth-derivative-3') %>
+<% hw('tenth-derivative-4') %>
+<% hw('tenth-derivative-5') %>
+<% hw('tenth-derivative-6') %>
+
+<% hw('sneak-in-taylor-of-ex') %>
+
 \end{hwsection}
 
 <% end_chapter %>
