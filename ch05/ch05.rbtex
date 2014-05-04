@@ -723,6 +723,8 @@ A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-
 <% end_marg %>
 <% hw('gompertz') %>
 
+<% hw('transcendental-credit-card-fraud') %>
+
 \end{hwsection}
 
 <% end_chapter %>

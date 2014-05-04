@@ -1054,6 +1054,7 @@ given function, and try to simplify your answer as much as possible.}
 
 
 <% hw('gamma-derivative') %>
+\pagebreak
 <% hw('doppler') %>
 
 <% hw('resonance',{'solution'=>true}) %>
@@ -1069,6 +1070,7 @@ given function, and try to simplify your answer as much as possible.}
 <% end_marg %>
 
 <% hw('car-aims-for-collision') %>
+\pagebreak
 <% hw('cobb-douglas') %>
 <% hw('pie-minimize-perimeter') %>
 <% hw('lens-minimize-length') %>

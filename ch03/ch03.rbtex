@@ -120,6 +120,10 @@ zero at $x=0$. This is called a point of inflection. The concavity of the graph 
 The inflection point is where it switches from one concavity to the other. In the alternative description in
 terms of the steering wheel, the inflection point is where your steering wheel is crossing from left to right.\index{inflection point}\label{inflection}
 
+\begin{lessimportant}[Definition]
+A point of inflection is one at which the second derivative changes sign.
+\end{lessimportant}
+
 \begin{eg}{A circle}\label{eg:semicircle}
 Consider the set of all points $(x,y)$ at a fixed distance $r$ from the origin. This is a circle of radius $r$.
 Using the Pythagorean theorem, we find that this set of points is defined by
@@ -156,6 +160,25 @@ of the curvature of the circle; a smaller radius indicates a stronger curvature.
   )  
 %>
 <% end_marg %>
+
+%%graph%% inflection-raw-1 func=x**3 format=svg xlo=-1 xhi=1 ylo=-1 yhi=1 with=lines samples=100
+%%graph%% inflection-raw-2 func=x**4 format=svg xlo=-1 xhi=1 ylo=-1 yhi=1 with=lines samples=100
+
+When both $f'=0$ and $f''=0$, the second derivative test is inconclusive. All three of
+       the functions in figure \figref{inconclusive-2nd-deriv-test} have $f'(0)=0$ and $f''(0)=0$, but we can't tell purely from this
+       information what is going on. In one case it's a point of inflection, in one it's
+       a local minimum, and in one it's a local maximum.
+<%
+  fig(
+    'inconclusive-2nd-deriv-test',
+    %q{When both $f'=0$ and $f''=0$, the second derivative test is inconclusive.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
 
 <% end_sec('second-deriv-geometrical') %>
 

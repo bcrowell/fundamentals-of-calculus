@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="480"
+   viewBox="0 0 600 480"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="inflection.svg">
+  <metadata
+     id="metadata96">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnuplot</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs94">
+    <defs
+       id="defs11">
+      <circle
+         stroke-width="0.5"
+         r="0.5"
+         id="gpDot" />
+      <path
+         d="M-1,0 h2 M0,-1 v2"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt0" />
+      <path
+         d="M-1,-1 L1,1 M1,-1 L-1,1"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt1" />
+      <path
+         d="M-1,0 L1,0 M0,-1 L0,1 M-1,-1 L1,1 M-1,1 L1,-1"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt2" />
+      <rect
+         height="2"
+         width="2"
+         y="-1"
+         x="-1"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt3" />
+      <rect
+         height="2"
+         width="2"
+         y="-1"
+         x="-1"
+         fill="currentColor"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt4" />
+      <circle
+         r="1"
+         cy="0"
+         cx="0"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt5" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt6"
+         xlink:href="#gpPt5" />
+      <path
+         d="M0,-1.33 L-1.33,0.67 L1.33,0.67 z"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt7" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt8"
+         xlink:href="#gpPt7" />
+      <use
+         transform="rotate(180)"
+         stroke="currentColor"
+         id="gpPt9"
+         xlink:href="#gpPt7" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt10"
+         xlink:href="#gpPt9" />
+      <use
+         transform="rotate(45)"
+         stroke="currentColor"
+         id="gpPt11"
+         xlink:href="#gpPt3" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt12"
+         xlink:href="#gpPt11" />
+    </defs>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="996"
+     id="namedview92"
+     showgrid="false"
+     inkscape:zoom="1.0943095"
+     inkscape:cx="248.47106"
+     inkscape:cy="214.57627"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title4">Gnuplot</title>
+  <desc
+     id="desc6">Produced by GNUPLOT 4.6 patchlevel 1 </desc>
+  <rect
+     style="fill:#dedede;fill-opacity:1;stroke:none"
+     id="rect3115-7"
+     width="129.76219"
+     height="150.78001"
+     x="172.25475"
+     y="157.6506" />
+  <rect
+     style="fill:#dedede;fill-opacity:1;stroke:none"
+     id="rect3115-70"
+     width="129.76219"
+     height="150.78001"
+     x="314.35352"
+     y="157.6506" />
+  <rect
+     style="fill:#dedede;fill-opacity:1;stroke:none"
+     id="rect3115"
+     width="129.76219"
+     height="150.78001"
+     x="30.156002"
+     y="157.6506" />
+  <g
+     style="color:#ffffff;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter"
+     id="g82"
+     transform="translate(-22.372885,-144.40678)" />
+  <g
+     style="color:#ffffff;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter"
+     id="g3153"
+     transform="translate(135.67106,-139.29268)" />
+  <g
+     id="g3885">
+    <g
+       transform="translate(14.621092,17.964249)"
+       id="g3110">
+      <path
+         style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter"
+         d="m 23.427115,224.59322 114.099995,0 m -56.999995,57 0,-114 h 0.01"
+         id="path57"
+         inkscape:connector-curvature="0" />
+      <g
+         style="color:#000000;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter"
+         id="g84"
+         transform="translate(-22.372885,-144.40678)">
+        <path
+           d="m 45.8,426 1.2,-3.4 1.1,-3.2 1.2,-3.1 1.1,-3 1.2,-2.9 1.1,-2.7 1.2,-2.6 1.1,-2.5 1.2,-2.4 1.1,-2.2 1.2,-2.2 1.1,-2 1.2,-1.9 1.1,-1.9 1.2,-1.7 1.1,-1.6 1.2,-1.6 1.1,-1.4 1.2,-1.4 1.2,-1.2 1.1,-1.2 1.2,-1.1 1.1,-1.1 1.2,-0.9 1.1,-0.9 1.2,-0.8 1.1,-0.7 1.2,-0.7 1.1,-0.7 1.2,-0.5 1.1,-0.5 1.2,-0.5 1.1,-0.4 1.2,-0.3 1.1,-0.4 1.2,-0.2 1.1,-0.3 1.2,-0.2 1.1,-0.2 1.2,-0.1 1.2,-0.1 1.1,-0.1 1.2,-0.1 1.1,0 1.2,-0.1 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,-0.1 1.1,0 1.2,-0.1 1.1,-0.1 1.2,-0.1 1.2,-0.1 1.1,-0.2 1.2,-0.2 1.1,-0.3 1.2,-0.2 1.1,-0.4 1.2,-0.3 1.1,-0.4 1.2,-0.5 1.1,-0.5 1.2,-0.5 1.1,-0.7 1.2,-0.7 1.1,-0.7 1.2,-0.8 1.1,-0.9 1.2,-0.9 1.1,-1.1 1.2,-1.1 1.1,-1.2 1.2,-1.2 1.2,-1.4 1.1,-1.4 1.2,-1.6 1.1,-1.6 1.2,-1.7 1.1,-1.9 1.2,-1.9 1.1,-2 1.2,-2.2 1.1,-2.2 1.2,-2.4 1.1,-2.5 1.2,-2.6 1.1,-2.7 1.2,-2.9 1.1,-3 1.2,-3.1 1.1,-3.2 1.2,-3.4 h 0.01"
+           id="path86"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3006"
+       y="175.34171"
+       x="85.417664"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       xml:space="preserve"><tspan
+         y="175.34171"
+         x="85.417664"
+         id="tspan3008"
+         sodipodi:role="line"><tspan
+   id="tspan3012"
+   style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">y</tspan>=<tspan
+   id="tspan3010"
+   style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">x</tspan><tspan
+   id="tspan3014"
+   style="font-size:8px;baseline-shift:super">3</tspan></tspan></text>
+  </g>
+  <g
+     id="g3896"
+     transform="translate(-1.8140717,0)">
+    <g
+       transform="translate(0,13.100149)"
+       id="g3105">
+      <path
+         style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter"
+         d="m 181.47106,229.70732 114.1,0 m -57,57 0,-114 h 0.01"
+         id="path3128"
+         inkscape:connector-curvature="0" />
+      <g
+         style="color:#000000;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter"
+         id="g3155"
+         transform="translate(135.67106,-139.29268)">
+        <path
+           d="m 45.8,312 1.2,4.5 1.1,4.2 1.2,3.9 1.1,3.7 1.2,3.5 1.1,3.2 1.2,3 1.1,2.8 1.2,2.7 1.1,2.4 1.2,2.2 1.1,2.1 1.2,1.9 1.1,1.8 1.2,1.6 1.1,1.5 1.2,1.4 1.1,1.3 1.2,1.1 1.2,1 1.1,0.9 1.2,0.9 1.1,0.7 1.2,0.7 1.1,0.6 1.2,0.5 1.1,0.5 1.2,0.4 1.1,0.3 1.2,0.3 1.1,0.3 1.2,0.2 1.1,0.2 1.2,0.2 1.1,0.1 1.2,0.1 1.1,0.1 1.2,0 1.1,0.1 1.2,0 1.2,0.1 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,-0.1 1.2,0 1.1,-0.1 1.2,0 1.1,-0.1 1.2,-0.1 1.1,-0.1 1.2,-0.2 1.1,-0.2 1.2,-0.2 1.1,-0.3 1.2,-0.3 1.1,-0.3 1.2,-0.4 1.1,-0.5 1.2,-0.5 1.1,-0.6 1.2,-0.7 1.1,-0.7 1.2,-0.9 1.1,-0.9 1.2,-1 1.2,-1.1 1.1,-1.3 1.2,-1.4 1.1,-1.5 1.2,-1.6 1.1,-1.8 1.2,-1.9 1.1,-2.1 1.2,-2.2 1.1,-2.4 1.2,-2.7 1.1,-2.8 1.2,-3 1.1,-3.2 1.2,-3.5 1.1,-3.7 1.2,-3.9 1.1,-4.2 1.2,-4.5 h 0.01"
+           id="path3157"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3006-7"
+       y="175.34171"
+       x="228.78192"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       xml:space="preserve"><tspan
+         y="175.34171"
+         x="228.78192"
+         id="tspan3008-6"
+         sodipodi:role="line"><tspan
+   id="tspan3012-4"
+   style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">y</tspan>=<tspan
+   id="tspan3010-4"
+   style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">x</tspan><tspan
+   id="tspan3014-9"
+   style="font-size:8px;baseline-shift:super">4</tspan></tspan></text>
+  </g>
+  <g
+     id="g3907">
+    <g
+       transform="matrix(1,0,0,-1,-21.01782,465.31763)"
+       id="g3070">
+      <path
+         style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter"
+         d="m 342.28358,223.01016 114.1,0 m -57,57 0,-114 h 0.01"
+         id="path3128-9"
+         inkscape:connector-curvature="0" />
+      <g
+         style="color:#000000;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter"
+         id="g3155-5"
+         transform="translate(296.48358,-145.98984)">
+        <path
+           d="m 45.8,312 1.2,4.5 1.1,4.2 1.2,3.9 1.1,3.7 1.2,3.5 1.1,3.2 1.2,3 1.1,2.8 1.2,2.7 1.1,2.4 1.2,2.2 1.1,2.1 1.2,1.9 1.1,1.8 1.2,1.6 1.1,1.5 1.2,1.4 1.1,1.3 1.2,1.1 1.2,1 1.1,0.9 1.2,0.9 1.1,0.7 1.2,0.7 1.1,0.6 1.2,0.5 1.1,0.5 1.2,0.4 1.1,0.3 1.2,0.3 1.1,0.3 1.2,0.2 1.1,0.2 1.2,0.2 1.1,0.1 1.2,0.1 1.1,0.1 1.2,0 1.1,0.1 1.2,0 1.2,0.1 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,0 1.1,0 1.2,-0.1 1.2,0 1.1,-0.1 1.2,0 1.1,-0.1 1.2,-0.1 1.1,-0.1 1.2,-0.2 1.1,-0.2 1.2,-0.2 1.1,-0.3 1.2,-0.3 1.1,-0.3 1.2,-0.4 1.1,-0.5 1.2,-0.5 1.1,-0.6 1.2,-0.7 1.1,-0.7 1.2,-0.9 1.1,-0.9 1.2,-1 1.2,-1.1 1.1,-1.3 1.2,-1.4 1.1,-1.5 1.2,-1.6 1.1,-1.8 1.2,-1.9 1.1,-2.1 1.2,-2.2 1.1,-2.4 1.2,-2.7 1.1,-2.8 1.2,-3 1.1,-3.2 1.2,-3.5 1.1,-3.7 1.2,-3.9 1.1,-4.2 1.2,-4.5 h 0.01"
+           id="path3157-2"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3006-7-8"
+       y="175.34171"
+       x="365.65671"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       xml:space="preserve"><tspan
+         y="175.34171"
+         x="365.65671"
+         id="tspan3008-6-8"
+         sodipodi:role="line"><tspan
+   id="tspan3012-4-8"
+   style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">y</tspan>=−<tspan
+   id="tspan3010-4-2"
+   style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">x</tspan><tspan
+   id="tspan3014-9-6"
+   style="font-size:8px;baseline-shift:super">4</tspan></tspan></text>
+  </g>
+</svg>

@@ -917,16 +917,15 @@ by the function, and similarly for the absolute minimum.
   the \textit{critical} or \textit{stationary} points for $f$.
 \item Find the sign of $f'(x)$ at all other points.
 \item Each stationary point at which $f'(x)$ actually changes sign is a local
-  maximum or local minimum.  Compute the function value $f(x)$ at each
+  maximum or local minimum.  Compute $f(x)$ at each
   stationary point.
-\item Compute the function values at the endpoints of the interval, i.e.\
-  compute $f(a)$ and $f(b)$.
+\item Compute the  values of the function $f(a)$ and $f(b)$ at the endpoints of the interval.
 \item The absolute maximum is attained at the stationary point or the boundary
-  point with the highest function value; the absolute minimum occurs at the
-  boundary or stationary point with the smallest function value.
+  point with the highest value of $f$; the absolute minimum occurs at the
+  boundary or stationary point with the smallest value.
 \end{enumerate}
 If the interval is unbounded, then instead of computing the values $f(a)$ or
-$f(b)$, but instead you should compute $\lim_{x\to\pm\infty}f(x)$.
+$f(b)$,  you should instead compute $\lim_{x\to\pm\infty}f(x)$.
 
 As an example, let's sketch the graph of the rational function
 \[
@@ -941,7 +940,7 @@ We compute the derivative of $f$:
 \[
 f'(x) = \frac{-3x^2-8x+3}{\left(1+x^2\right)^2}.
 \]
-Hence $f'(x) = 0$ holds if and only if
+Hence $f'(x) = 0$  if and only if
 \[
 -3x^2-8x+3 = 0 \qquad ,
 \]
@@ -950,16 +949,16 @@ and the solutions to this quadratic equation are $-3$ and $1/3$.
 %   calc -e "d=.001; x=-3; f1=[x(3-4x)]/(1+x^2); x=x+d; f2=[x(3-4x)]/(1+x^2); (f2-f1)/d"
 %   calc -e "d=.001; x=1/3; f1=[x(3-4x)]/(1+x^2); x=x+d; f2=[x(3-4x)]/(1+x^2); (f2-f1)/d"
 These two   
-roots will appear several times and it will shorten our formulas if we
+roots will appear several times, and it will shorten our formulas if we
 abbreviate
 \[
-  A= -3 \text{ and } B= 1/3 .
+  A= -3 \text{ and } B= 1/3 \qquad .
 \]
 
 To see if the derivative changes sign we factor the numerator and denominator.
 The denominator is always positive, and the numerator is
 \[
--3x^2-8x+3 = -3\left(x^2+\frac{8}{3}x-1\right) =-3(x-A)(x-B).
+-3x^2-8x+3 = -3\left(x^2+\frac{8}{3}x-1\right) =-3(x-A)(x-B) \qquad .
 \]
 Therefore
 \[
@@ -1328,15 +1327,28 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 
 <% hw('bounty-hunters',{'solution'=>true}) %>
 <% hw('pendulum') %>
-<% marg(0) %>
+<% marg(40) %>
 <%
   fig(
     'hw-rod-finger-string',
     %q{Problem \ref{hw:rod-finger-string}.}
   )  
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-x-graph-to-v-graph',
+    %q{Problem \ref{hw:x-graph-to-v-graph}.}
+  )  
+%>
 <% end_marg %>
 <% hw('rod-finger-string') %>
+
+<% hw('x-graph-to-v-graph',{'solution'=>true}) %>
+
+<% hw('curve-sketching-rational-function-1') %>
+
+<% hw('prove-inflection-has-zero-2nd-deriv',{'solution'=>true}) %>
 
 
 \end{hwsection}

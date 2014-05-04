@@ -1,0 +1,26 @@
+In problem \ref{hw:credit-card-fraud} on p.~\pageref{hw:credit-card-fraud},
+we minimized a function that looked like
+\begin{equation*}
+  y = x+ae^{-bx} \qquad ,
+\end{equation*}
+where $x$, $a$, and $b$ were all positive. Suppose instead that
+the function had been
+\begin{equation*}
+  y = x^2+ae^{-bx} \qquad ,
+\end{equation*}
+with the corresponding quantities still being positive.
+Using the same technique to find its minimum, we obtain an equation
+of a type called a transcendental equation, which cannot be solved
+exactly for $x$ in terms of elementary functions. Use the intermediate value
+theorem to prove that such a minimum nevertheless exists, as long as $a$ and
+$b$ are both greater than zero.
+% checked for a=1 and b=1:
+% calc -e "x=.352; 2x-e^(-x)"
+%    x = 0.352
+%    7.1987802365947*10^-4
+% calc -e "x=.352; x^2+e^(-x)"
+%    0.827184121976341
+% calc -e "x=.4; x^2+e^(-x)"
+%    0.830320046035639
+% calc -e "x=.3; x^2+e^(-x)"
+%    0.830818220681717
