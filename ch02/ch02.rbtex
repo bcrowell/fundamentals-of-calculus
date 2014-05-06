@@ -603,7 +603,7 @@ differentiate using the product rule, and find:
 \end{align*}
 By establishing the fact for $n=1$, and then proving that it must hold for $n$ if it
 holds for $n-1$, we establish that it holds for all natural numbers $n$. This is
-called \emph{proof by induction}.\index{induction}\index{proof!by induction}
+called \emph{proof by induction}.\index{induction}\index{proof!by induction}\label{induction}
 <% end_sec('natural-powers') %>
 <% begin_sec("Negative exponents",nil,'negative-powers') %>
 If we write $1=(x)(1/x)$, then we can differentiate on both sides, and we find that
@@ -721,6 +721,10 @@ $p$ and $q$ are both differentiable and $q\ne0$,
   f' = \frac{p'q-q'p}{q^2} \qquad .
 \end{equation*}
 \end{lessimportant}
+
+In the examples above, the functions $p$ and $q$ happened to be polynomials. A function
+formed in this way from the quotient of polynomials is 
+called a \emph{rational function}.\index{rational function}\label{rational-function-defined}
 
 <% end_sec('quotients') %>
 
@@ -1088,6 +1092,8 @@ on p.~\pageref{differentiability-by-zooming}.}
 \vspace{10mm}
 
 <% hw('product-rule-three-factors',{'solution'=>true}) %>
+<% hw('product-rule-n-factors') %>
+<% hw('nastiness') %>
 
 \end{hwsection}
 

@@ -1,0 +1,19 @@
+The function
+\begin{equation*}
+  f(x) = e^{-\frac{1}{2}x^2}
+\end{equation*}
+defines the standard ``bell curve'' of statistics.
+(Note that exponentiation is not associative,
+and that in exponentiation, $x^{y^z}$ means $x^{(y^z)}$, not $(x^y)^z$; an expression of
+the latter form is not very interesting, since it simply equals $x^{(yz)}$.)\\
+
+Proof by induction was introduced in section \ref{subsec:natural-powers}, p.~\pageref{induction}.
+Use induction to prove that the $n$th derivative of $f$ is of the form
+\begin{equation*}
+  f^{(n)}(x) = P_n(x)e^{-\frac{1}{2}x^2} \qquad ,
+\end{equation*}
+where $P_n$ is an $n$th order polynomial.
+To understand what's going on, you may wish to calculate the first few derivatives; however,
+doing this and observing the pattern does not constitute a proof.
+% checked:
+% maxima --batch-string="diff(exp(-(1/2)*x^2),x,7);"
