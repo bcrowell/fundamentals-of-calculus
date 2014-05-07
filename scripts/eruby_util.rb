@@ -10,8 +10,7 @@
 #
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-# This script is used in the freshman survey books (Light and Matter, ...) and in General Relativity.
-# It's not used in Calculus, which has a different layout.
+# This script is used in everything except for Brief Calculus, which has a different layout.
 
 # See INTERNALS for documentation on all the files: geom.pos, marg.pos, chNN.pos,
 # figfeedbackNN, all.pos.
@@ -20,9 +19,11 @@ require 'json'
 
 $n_code_listing = 0
 $hw_number = 0
+$hw_block = 0 # for style used in Fundamentals of Calculus
 $hw = []
 $hw_has_solution = []
 $hw_names_referred_to = []
+$hw_freeze = 0
 $tex_points_to_mm = (25.4)/(65536.*72.27)
 $n_marg = 0
 $in_marg = false
@@ -79,13 +80,15 @@ end
 config_file = 'book.config'
 if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
 $config = {
+  # In the following, nil means that there is no default and it's an error if it's not given explicitly.
   'titlecase_above'=>nil, # e.g., 1 means titlecase for chapters but not for sections or subsections
+  'hw_block_style'=>0 # 1 means hw numbered like a7, as in Fundamentals of Calculus
 }
 File.open(config_file,'r') { |f|
   c = f.gets(nil) # nil means read whole file
   c.scan(/(\w+),(.*)/) { |var,value|
     if ! $config.has_key?(var) then fatal_error("Error in config file #{config_file}, illegal variable '#{var}'") end
-    if {'titlecase_above'=>nil}.has_key?(var) then
+    if {'titlecase_above'=>nil,'hw_block_style'=>nil}.has_key?(var) then
       value = value.to_i
     end
     $config[var] = value
@@ -698,6 +701,7 @@ def spit(tex)
   $fig_handled = true
 end
 
+# use fatal_error if not directly related to a figure
 def die(name,message)
   $stderr.print "eruby_util: figure #{name}, #{message}\n"
   exit(-1)
@@ -718,12 +722,87 @@ def read_whole_file(file)
   return x
 end
 
+#--------------------------------------------------
+# code for numbering style used in Fundamentals of Calculus
+#--------------------------------------------------
 
-def hw(name,options={},difficulty=1) # used in Fundamentals of Calculus, which has all hw in chNN/hw
+def hw_block_style
+  return $config['hw_block_style']==1 # set in book.config
+end
+
+# first block is 0<->a
+def integer_to_base24(i)
+  if i<0 then fatal_error("negative i in integer_to_base24") end
+  if i<24 then return "abcdefghijkmnpqrstuvwxyz"[i] end
+  return integer_to_base24(i/24)+integer_to_base24(i%24)
+end
+
+def base24_to_integer(s)
+  if s.length==0 then fatal_error("null string in base24_to_integer") end
+  if s.length==1 then
+    i = "abcdefghijkmnpqrstuvwxyz".index(s)
+    if i.nil? then fatal_error("illegal character #{s} in base24_to_integer") end
+    return i
+  end
+  return base24_to_integer(s[0,s.length-1])*24+base24_to_integer(s[s.length-1])
+end
+
+# test integer_to_base24() and base24_to_integer()
+if false then
+  [[0,'a'],[1,'b'],[23,'z'],[24,'ba']].each { |x|
+    i = x[0]
+    s = x[1]
+    unless integer_to_base24(i)==s then 
+      $stderr.print "integer_to_base24("+i.to_s+") gives "+integer_to_base24(i)+", should have given "+s+"\n"
+      exit(-1)
+    end
+    unless base24_to_integer(s)==i then 
+      $stderr.print "base24_to_integer("+s+") gives "+base24_to_integer(s).to_s+", should have given "+i+"\n"
+      exit(-1)
+    end
+  }
+end
+
+def hw_freeze
+  if $hw_freeze<0 then fatal_error("hw_freeze invoked, and $hw_freeze already less than 0? ") end
+  $hw_freeze = $hw_freeze+1
+end
+
+def hw_end_freeze
+  $hw_freeze = $hw_freeze-1
+  if $hw_freeze<0 then fatal_error("hw_end_freeze invoked, and $hw_freeze already 0? ") end
+end
+
+def get_hw_block
+  return integer_to_base24($hw_block)
+end
+
+def hw_label
+  label = $hw_number.to_s
+  if hw_block_style() then label = get_hw_block+$hw_number.to_s end 
+  return label
+end
+
+# control of letter that labels block
+# hw_block ... bumps by 3
+# hw_block(1) ... bumps by 1
+# hw_block('b') ... sets it to 'b'
+def hw_block(*arg)
+  x = arg[0]
+  $hw_number = 0
+  if x.nil? then $hw_block = $hw_block+3; return end
+  if x.class() == Fixnum then $hw_block = $hw_block+x; return end
+  if x.class() == String then $hw_block = base24_to_integer(x); return end
+  fatal_error("error in hw_block, arg has class=#{x.class()}")
+end
+
+#--------------------------------------------------
+
+def hw(name,options={},difficulty=1) # used in Fundamentals of Calculus, which has all hw in chNN/hw; other books use begin_hw
   if difficulty==nil then difficulty=1 end
   begin_hw(name,difficulty,options)
   x = read_whole_file("ch#{$ch}/hw/#{name}.tex")
-  print x.sub(/\n+$/,'')+"\n" # exactly one newline at end before \end{homework}
+  print x.sub(/\n+\Z/,'')+"\n" # exactly one newline at end before \end{homework}
   if options['solution'] then hw_solution() end
   end_hw
 end
@@ -733,10 +812,11 @@ def begin_hw(name,difficulty=1,options={})
   if calc() then options['calc']=false end
   calc = ''
   if options['calc'] then calc='1' end
-  print "\\begin{homework}{#{name}}{#{difficulty}}{#{calc}}"
   $hw_number += 1
   $hw[$hw_number] = name
   $hw_has_solution[$hw_number] = false
+  label = hw_label()
+  print "\\begin{homeworkforcelabel}{#{name}}{#{difficulty}}{#{calc}}{#{label}}"
 end
 
 def hw_solution()
@@ -849,7 +929,7 @@ def hw_ref(name)
 end
 
 def end_hw()
-  print "\\end{homework}"
+  print "\\end{homeworkforcelabel}"
 end
 
 def hint_text(label,text=nil)

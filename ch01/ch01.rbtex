@@ -1062,11 +1062,15 @@ graph, and what real-world implications would this have?
 
 \hfill
 
-<% hw('dummy-variable',{'solution'=>true}) %>
-
 <% hw('diff-monomials',{'solution'=>true}) %>
 
+<% hw('dummy-variable',{'solution'=>true}) %>
+
+<% hw('zero-value-nonzero-derivative',{'solution'=>true}) %>
+
 \hfill
+
+  <% hw_block(2) %>
 
 <% hw('diff-polynomial',{'solution'=>true}) %>
 <% hw('diff-polynomial-2') %>
@@ -1080,17 +1084,20 @@ graph, and what real-world implications would this have?
 
 \hfill
 
+  <% hw_block(2) %>
+
 <% hw('zoom-1') %>
-
-\pagebreak
-
 <% hw('zoom-2') %>
 <% hw('zoom-3') %>
+
+  <% hw_block(2) %>
 
 <% hw('diff-symbolic-const',{'solution'=>true}) %>
 
 <% hw('can-you-do-fractions-1') %>
 <% hw('can-you-do-fractions-2') %>
+
+  <% hw_block(2) %>
 
 <% hw('human-cylinder') %>
 
@@ -1099,10 +1106,14 @@ graph, and what real-world implications would this have?
 <% hw('observable-universe') %>
 <% hw('car-ke-and-power') %>
 
+  <% hw_block(1) %>
+
 <% hw('deriv-props-add-implies-stretch',{'solution'=>true}) %>
 <% hw('deriv-props-line-implies-constant') %>
 <% hw('deriv-props-add-and-constant-imply-shift') %>
 <% hw('deriv-props-odd-even') %>
+
+  <% hw_block(1) %>
 
 <% hw('rancher-rick',{'solution'=>true}) %>
 <% hw('prove-n-extrema',{'solution'=>true}) %>
@@ -1127,13 +1138,19 @@ graph, and what real-world implications would this have?
 
 \pagebreak
 
+  <% hw_block(1) %>
+
 <% hw('chain-rule-circle') %>
 
 <% hw('chain-rule-sphere') %>
 <% hw('chain-rule-triangle') %>
 
+  <% hw_block(1) %>
+
 <% hw('tree') %>
 <% hw('tank') %>
+
+  <% hw_block(1) %>
 
 <% hw('numerical-deriv-geometric',{'solution'=>true}) %>
 <% hw('numerical-deriv-cos-x-cubed') %>
@@ -1144,13 +1161,19 @@ graph, and what real-world implications would this have?
 
 <% hw('numerical-deriv-woods-saxon') %>
 
+  <% hw_block(1) %>
+
 <% hw('error-propagation-powers',{'solution'=>true}) %>
 <% hw('error-propagation-rocket-height',{'solution'=>true}) %>
 <% hw('error-propagation-paper-squares') %>
 
+  <% hw_block(1) %>
+
 <% hw('tangent-to-parabola-through-point') %>
 <% hw('tangent-to-x3-through-point') %>
 <% hw('tangent-x2-and-x4') %>
+
+  <% hw_block(1) %>
 
 <% hw('linear-approx-137th-power') %>
 
