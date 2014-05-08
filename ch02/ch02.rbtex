@@ -436,6 +436,17 @@ expressions of the form $\Delta\ldots/\Delta\ldots$, and because the deltas were
 it was valid to use the normal rules of algebra
 and cancel the factors $\Delta y$.
 <% end_sec('chain-rule-constant-rates') %>
+
+<% marg(-80) %>
+<%
+  fig(
+    'russian-dolls',
+    %q{The chain rule allows us to differentiate expressions in which functions occur nested inside
+       other functions, like Russian dolls.}
+  )  
+%>
+<% end_marg %>
+
 <% begin_sec("Varying rates of change",nil,'chain-rule-varying-rates') %>
 The Leibniz notation makes it tempting to simply write down and
 believe the following analogous-looking expression involving derivatives:
@@ -471,7 +482,7 @@ by numerical approximation that the derivative of the function
 \begin{equation*}
   \frac{1}{1-x} \qquad ,
 \end{equation*}
-evaluated at $x=0$, was about 1.000. The chain rule lets us calculate this easily and exactly.
+evaluated at $x=0$, was about 1.000. The chain rule gives us an easy way to get an exact result for any $x$.
 The structure of our formula is like this:
 
 \begin{center}
@@ -1023,7 +1034,10 @@ have the following calculation of the derivative of $y=x^2$ at $x=1$:
   y' &= \text{standard part of}\ 2+dx \\
      &= 2
 \end{align*}
-
+Although this particular modern approach to calculus makes $\der y/\der x$ not
+a synonym for $y'$, the notational distinction is not assumed in a general context,
+since they were thought of as synonyms for hundreds of years, and the hyperreal
+number system is only one of several foundational approaches to the calculus.
 
 <% end_sec('safe-handling-of-dx') %>
 
