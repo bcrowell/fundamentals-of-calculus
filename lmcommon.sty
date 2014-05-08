@@ -128,11 +128,14 @@
 \newcounter{labctr}[chapter]
 \newcounter{labpartctr}[section]
 \newcounter{prelabctr}[section]
+\newcounter{textboxctr}[chapter]
 
 \renewcommand{\thedqctr}{\Alph{dqctr}}
 \renewcommand{\thefigctr}{\alphalph{\value{figctr}}}
 \renewcommand{\thelabctr}{\alph{labctr}}
 \renewcommand{\thelabpartctr}{\Alph{labpartctr}\quad}
+%\renewcommand{\thetextboxctr}{\arabic{thechapter}.\arabic{textboxctr}\quad}
+\renewcommand{\thetextboxctr}{\thechapter.\arabic{textboxctr}}
 
 %-------------------- numbered equations ----------------
 \newenvironment{numberedequations}{\setcounter{equation}{0}}{}

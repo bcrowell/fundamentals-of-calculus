@@ -292,6 +292,15 @@ def marg_print(delta_y)
     print "\\begin{textblock*}{\\marginfigwidth}(#{x}mm,\\paperheight-#{y}mm)%\n"
 end
 
+# options is normally {}
+def marginbox(delta_y,name,caption,options,text)
+  options['text'] = text
+  options['textbox'] = true
+  marg(delta_y)
+  fig(name,caption,options)
+  end_marg
+end
+
 def mm(x)
   if x==nil then return '' end
   return sprintf((x+0.5).to_i.to_s,"%d")
@@ -491,8 +500,8 @@ def fig(name,caption=nil,options={})
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
-                           #      marked below as "# bug ------------- not really correct"??
-    'raw'=>false           # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
+    'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
+    'textbox'=>false       # marginbox(), as used in Fund.
     # not yet implemeted: 
     #    translated=false
     #      or just have the script autodetect whether a translated version exists!
@@ -607,7 +616,11 @@ def fig_print(name,caption,options,dir)
   #============================================================================
   #----------------------- text ----------------------
   if options['text']!=nil then
-    spit("\\starttextfig{#{name}}#{options['text']}\n\\finishtextfig{#{name}}{%\n#{caption}}\n")
+    if options['textbox'] then
+      spit("\\starttextbox{#{name}}\\textboxbody{#{caption}}{#{options['text']}}\n\\finishtextbox{#{name}}\n")
+    else
+      spit("\\starttextfig{#{name}}#{options['text']}\n\\finishtextfig{#{name}}{%\n#{caption}}\n")
+    end
   end
   #----------------------- narrow ----------------------
   if width=='narrow' and options['text']==nil then

@@ -443,34 +443,17 @@ believe the following analogous-looking expression involving derivatives:
   \frac{\der z}{\der x} = \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x} 
 \end{equation*}
 In problems \ref{hw:chain-rule-circle}-\ref{hw:chain-rule-triangle} on p.~\pageref{hw:chain-rule-circle}
-we verified that this seemed to work. But how do we know that this really always works
-with derivatives? If we're really defining the Leibniz notation as standing for a limit, then
-we really need to show this:
+we verified that this seemed to work. But how do we know that this always works
+with derivatives? If we define the Leibniz notation as standing for a limit, then
+we need to show this:
 \begin{equation}\label{eg:chain-rule-limit-product}
      \lim_{\Delta x\rightarrow0 }\frac{\Delta z}{\Delta x}
    = \left(\lim_{\Delta y\rightarrow0 }\frac{\Delta z}{\Delta y}  \right)
      \left(\lim_{\Delta x\rightarrow0 }\frac{\Delta y}{\Delta x} \right)
 \end{equation}
-If all three derivatives exist, then
-this essentially works because the limit of a product is the product of a limit (provided
-that the limits exist); this is property $P_5$ of the limit, to be discussed more formally
-in section
-\ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit}.
-
-There are two technical issues to worry about. First, equation \eqref{eq:chain-rule-deltas}
-is not true if $\Delta y=0$, because we can't divide by zero, and if the derivative of
-$y$ with respect to $x$ happens to be zero somewhere, then it's reasonable to worry that
-this might be forced upon us for a certain value of $\Delta x$. Although we won't prove it
-here, this issue doesn't actually cause the chain rule to fail. The second issue is that in
-equation \eqref{eg:chain-rule-limit-product}, two of the limits involve $\Delta x\rightarrow 0$,
-but one has $\Delta y\rightarrow 0$. This turns out not to be a problem because, as discussed
-in ch.~\ref{ch:more-limits}, a differentiable function must be \emph{continuous} (i.e., there
-are no gaps in its graph), and therefore if, by assumption, $y$ is differentiable as
-a function of $x$, then
-$y$ is also continuous, and therefore taking $\Delta x\rightarrow 0$ also causes
-$\Delta y\rightarrow 0$.
-
-We therefore have:\index{chain rule}\\*
+Rather than giving a formal proof, I've briefly sketched in Box \figref{chain-rule-technical}
+the technical issues involved. These work out as our intuition suggests, and
+we therefore have:\index{chain rule}\\*
 \begin{important}[The chain rule]
 If $z$ is a function of $y$, and $y$ is a function of $x$, and if
 the derivatives $\der z/\der y$ and $\der y/\der x$ exist at a certain point,
@@ -479,9 +462,81 @@ then at that point,
   \frac{\der z}{\der x} = \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x}  \qquad .
 \end{equation*}
 \end{important}
+
+The chain rule is extremely useful in evaluating derivatives, because many of the
+expressions we want to differentiate have a structure in which a big formula is
+built out of smaller ones. For example, 
+in problem \ref{hw:numerical-deriv-geometric} on p.~\pageref{hw:numerical-deriv-geometric}, we found
+by numerical approximation that the derivative of the function
+\begin{equation*}
+  \frac{1}{1-x} \qquad ,
+\end{equation*}
+evaluated at $x=0$, was about 1.000. The chain rule lets us calculate this easily and exactly.
+The structure of our formula is like this:
+
+\begin{center}
+\anonymousinlinefig{nested-expressions}
+\end{center}
+
+\noindent In silly notation, the chain rule says:
+
+\begin{center}
+\anonymousinlinefig{dbox-dbox}
+\end{center}
+<% marginbox(200,'chain-rule-technical',%q{A sketch of the technical issues behind the chain rule},{},
+%q@
+If all three derivatives in equation \eqref{eg:chain-rule-limit-product} exist, then
+the equation essentially works because the limit of a product is the product of a limit (provided
+that the limits exist); this is property $P_5$ of the limit, to be discussed more formally
+in section
+\ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit}.
+There are two other technical issues to worry about.
+
+First, equation \eqref{eq:chain-rule-deltas}
+is not true if $\Delta y=0$, because we can't divide by zero, and if the derivative of
+$y$ with respect to $x$ happens to be zero somewhere, then it's reasonable to worry that
+this might be forced upon us for a certain value of $\Delta x$. Although we won't prove it
+here, this issue doesn't actually cause the chain rule to fail.
+
+The second issue is that in
+equation \eqref{eg:chain-rule-limit-product}, two of the limits involve $\Delta x\rightarrow 0$,
+but one has $\Delta y\rightarrow 0$. This turns out not to be a problem because, as discussed
+in ch.~\ref{ch:more-limits}, a differentiable function must be \emph{continuous} (i.e., there
+are no gaps in its graph), and therefore if, by assumption, $y$ is differentiable as
+a function of $x$, then
+$y$ is also continuous, and therefore taking $\Delta x\rightarrow 0$ also causes
+$\Delta y\rightarrow 0$.
+      @
+   )
+%>
+
+Writing the boxes inside the equations is cumbersome, so let's call the big box $z$ and the
+small one $y$. Then
+\begin{align*}
+  z &= 1/y \qquad \text{and} \\
+  y &= 1-x \qquad ,
+\end{align*}
+which are both equations we know how to differentiate. In life, sometimes 
+our big goals (get married and raise a family) break down into smaller sub-goals
+(buy a ring, find a priest, placate the mother of the bride). The chain rule
+lets us apply this divide-and-conquer strategy to differentiation. Since we
+know how to differentiate $z$ with respect to $y$ and $y$ with respect to $x$,
+the chain rule lets us solve the larger problem of differentiating $z$ with
+respect to $x$:
+\begin{align*}
+  \frac{\der z}{\der x} &= \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x} \\
+           &= (-y^{-2})(-1) \\
+           &= y^{-2} \\
+           &= (1-x)^{-2} \qquad .
+\end{align*}
+Plugging in $x=0$, we verify that the derivative is exactly equal to 1, in agreement
+with the earlier numerical calculation.
+
 <% end_sec('chain-rule-varying-rates') %>
 <% begin_sec("Composition of functions",nil,'composition') %>
-The \emph{composition} $g\circ h$ of functions $g$ and $h$ means the function that takes an input $x$
+A little more formally, we can view the chain rule as a rule for
+doing calculus on functions that are built by \emph{composition} of other functions.
+The composition $g\circ h$ of functions $g$ and $h$ means the function that takes an input $x$
 and gives back an output $g(h(x))$. That is, we take the input $x$, stick it into $h$, take $h$'s output, put
 it in $g$, and finally take $g$'s output.
 
@@ -492,27 +547,7 @@ $f'(x)=g'(h(x))h'(x)$. Or, in a simpler but more abstract notation, we can write
 $(g\circ h)'=(g'\circ h)h'$.
 <% end_sec('composition') %>
 
-\begin{eg}{}
-In problem \ref{hw:numerical-deriv-geometric} on p.~\pageref{hw:numerical-deriv-geometric}, we found
-by numerical approximation that the derivative of the function
-\begin{equation*}
-  \frac{1}{1-x} \qquad ,
-\end{equation*}
-evaluated at $x=0$, was about 1.000. We can view this function as the composition of two functions,
-each of which we already know how to differentiate:
-\begin{align*}
-  y &= 1-x \\
-  z &= 1/y
-\end{align*}
-The derivative is
-\begin{align*}
-  \frac{\der z}{\der x} &= \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x} \\
-           &= (-y^{-2})(-1) \\
-           &= y^{-2} \\
-           &= (1-x)^{-2} \qquad .
-\end{align*}
-Plugging in $x=0$, we verify that the derivative is exactly equal to 1.
-\end{eg}
+
 <% end_sec('chain-rule') %>
 
 <% begin_sec("Review: exponents that aren't natural numbers",nil,'non-natural-exponents') %>

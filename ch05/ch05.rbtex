@@ -22,14 +22,8 @@ We've already seen that the completeness property of the reals (section \ref{sec
 p.~\pageref{sec:completeness}) guarantees that $\sqrt{2}$ is a real number, and more generally
 one can use the intermediate value theorem to prove that roots of polynomials are real.
 
-<% marg(0) %>
-<%
-  fig(
-    'liouville',
-    %q{A transcendental number},
-    {
-      'text'=>%q{
-\begin{shaded}
+<% marginbox(0,'liouville',%q{A transcendental number},{},
+%q~
 The first number proved to be transcendental, by Liouville
 in 1844, was:
 \begin{equation*}
@@ -46,12 +40,9 @@ powers of $x$ are also extremely sparse, and this makes it impossible to get the
 and give $P(x)=0$.
 % calc -e "x=0.1100010000000000000000010000; x^2+9x-1"
 For a proof, see the Wikipedia article ``Liouville number.''
-\end{shaded}
-      }
-    }
+   ~
   )  
 %>
-<% end_marg %>
 
 However, there are also numbers that cannot be defined as roots of polynomials having
 rational-number coefficients. These are called \emph{transcendental} numbers.
@@ -108,14 +99,8 @@ our methods of differentiation to cover these functions.
 <% end_sec('transcendental-functions') %>
 <% end_sec('transcendental-numbers-and-functions') %>
 
-<% marg(0) %>
-<%
-  fig(
-    'other-e-def',
-    %q{A different definition of $e$},
-    {
-      'text'=>%q{
-\begin{shaded}
+<% marginbox(0,'other-e-def',%q{A different definition of $e$},{},
+%q~
 Some people like lagers better than ales, Chicago better than Paris, and the following better
 than equation \eqref{eqn:derivative-of-ex-is-ex} as a definition of $e$:
 \begin{equation}\label{eqn:define-e-as-limit}
@@ -136,12 +121,9 @@ we have
 \end{equation*}
 for small values of $x$. Let $x=1/n$, where $n$ is large. Then $e^{1/n}\approx 1+1/n$,
 so $e\approx(1+1/n)^n$, which is consistent with equation \eqref{eqn:define-e-as-limit}.
-\end{shaded}
-      }
-    }
-  )  
+      ~
+   )
 %>
-<% end_marg %>
 
 <% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>
 In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies} and
