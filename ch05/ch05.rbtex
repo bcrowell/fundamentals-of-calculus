@@ -470,6 +470,20 @@ $f\circ f^{-1}$ is simply the identity function $y=x$ (perhaps with a restrictio
 its domain and range). The same applies to $f^{-1}\circ f$.
 <% end_sec('inverse-of-function') %>
 
+\startdq
+
+\begin{dq}
+Which of the following four statements are true, and which are false?
+
+1. For all real numbers $x$, $\sin(\sin^{-1}x)=x$.
+
+2. For all real numbers $x$, $\sin^{-1}(\sin x)=x$.
+
+3. For all real numbers $x$, $\tan(\tan^{-1}x)=x$.
+
+4. For all real numbers $x$, $\tan^{-1}(\tan x)=x$.
+\end{dq}
+
 <% begin_sec("Derivative of the inverse of a function",nil,'deriv-of-inverse') %>
 Suppose that  $x$ is how many gallons of gas I buy,
 and $y$ is how much money I pay. Then $y$ is a function of $x$, and the rate at which this
@@ -689,7 +703,69 @@ Then:
 A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-x^2}$.
 <% end_sec('deriv-of-inv-trig') %>
 
+<% begin_sec("Summary of derivatives of transcendental functions",nil,'transcendental-summary') %>
+Given the derivatives of trig and inverse trig functions from sections 
+\ref{sec:derivatives-of-trig} and \ref{sec:deriv-of-inv-trig}, it is straightforward to extend the list
+of trig functions to include the other familiar trig functions. There are also the \emph{hyperbolic}
+trig functions defined by\label{def-hyperbolic}
+\begin{align*}
+  \sinh x &= \frac{1}{2}\left(e^x-e^{-x}\right) \\
+  \cosh x &= \frac{1}{2}\left(e^x+e^{-x}\right) \qquad \text{and} \\  
+  \tanh x &= \frac{\sinh x}{\cosh x} \qquad ,
+\end{align*}
+as well as their associated inverses which can be calculated using the following relations:
+\begin{align*}
+  \sinh^{-1} x &= \ln\left(x+\sqrt{x^2+1}\right) \\
+  \cosh^{-1} x &= \ln\left(x+\sqrt{x^2-1}\right) \\
+  \tanh^{-1} x &= \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)
+\end{align*}
+ In this section we provide a summary for reference
+purposes of all of the derivatives of the transcendental functions encountered so far.
+
+\noindent\begin{tabular}{ll}\label{transcendental-table}
+$(e^x)'=e^x$          &       $(\ln x)'=1/x$ \\
+$(\sin x)'=\cos x$    &       $(\sin^{-1} x)'=(1-x^2)^{-1/2}$ \\
+$(\cos x)'=-\sin x$    &      $(\cos^{-1} x)'=-(1-x^2)^{-1/2}$ \\
+$(\tan x)'=(\cos x)^{-2}$ &   $(\tan^{-1} x)'=(1+x^2)^{-1}$ \\
+$(\sinh x)'=\cosh x$      &   $(\sinh^{-1} x)'=(x^2+1)^{-1/2}$ \\
+$(\cosh x)'=\sinh x$      &   $(\cosh^{-1} x)'=(x^2-1)^{-1/2}$ \\
+$(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$ 
+\end{tabular}
+<% end_sec('transcendental-summary') %>
+
 \begin{hwsection}
+
+<% hw('logarithmy',{'solution'=>true}) %>
+<% hw('sinusoidal',{'solution'=>true}) %>
+<% hw('ex-chain',{'solution'=>true}) %>
+<% hw('max-range',{'solution'=>true}) %>
+<% hw('cosh-extrema',{'solution'=>true}) %>
+<% hw('derivative-of-tan',{'solution'=>true}) %>
+<% hw('sin-sin-sin',{'solution'=>true}) %>
+
+  <% hw_block(2) %>
+
+<% hw('find-ranges-of-functions') %> % Robbin, p. 20, # 18
+
+\emph{In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given functions.}
+
+<% hw('sin-cos-tan') %>
+<% hw('ln-cos-ex') %>
+<% hw('e-sin-ln') %>
+<% hw('atan-sqrt-ln') %>
+
+  <% hw_block(1) %>
+
+
+\pagebreak
+
+<% hw('parachute') %>
+<% hw('damped') %>
+<% hw('door-closer') %>
+
+\pagebreak
+
+  <% hw_block(1) %>
 
 <% hw('credit-card-fraud') %>
 
@@ -705,9 +781,11 @@ A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-
 <% end_marg %>
 <% hw('gompertz') %>
 
+\pagebreak
+
 <% hw('transcendental-credit-card-fraud') %>
 
-  <% hw_block(2) %>
+  <% hw_block(4) %>
 
 <% hw('induction-nth-deriv-of-exponential') %>
 <% hw('induction-nth-deriv-of-gaussian') %>

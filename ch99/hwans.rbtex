@@ -46,3 +46,5 @@ debug("processed #{count} solutions")
 %>
 
 %%graph%% soln-inflection func=x**3+x**2 format=eps xlo=-1 xhi=.5 ylo=0 yhi=0.5 x=t y=x ytic_spacing=.5 more_space_below=6 more_space_above=10
+
+%%graph%% soln-sin-sin-sin func=sin(sin(sin(x))) format=eps xlo=-10 xhi=10 ylo=-1 yhi=1 ytic_spacing=1 xtic_spacing=10

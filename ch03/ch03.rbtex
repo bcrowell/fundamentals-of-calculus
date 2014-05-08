@@ -211,7 +211,7 @@ of extrema alluded to briefly in section \ref{subsec:optimization}, p.~\pageref{
 By testing the second derivative, we can distinguish among cases B, D, and H, which
 represent, respectively, a minimum, a maximum, and a point of inflection. The test
 will not distinguish between D, which is a global maximum, and G, which is only a local maximum.
-<% marg(0) %>
+<% marg(100) %>
 <%
   fig(
     'cases-of-extrema-reprise',

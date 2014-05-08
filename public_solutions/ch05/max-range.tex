@@ -1,0 +1,17 @@
+To find a maximum, we take the derivative and set it equal to zero. The whole factor
+of $2v^2/g$ in front is just one big constant, so it comes along for the ride. To differentiate
+the factor of $\sin\theta\:\cos\theta$, we need to use the chain rule, plus the fact that
+the derivative of sin is cos, and the derivative of cos is $-\sin$.
+\begin{gather*}
+  0 = \frac{2v^2}{g} (\cos\theta\:\cos\theta+\sin\theta(-\sin\theta)) \\
+  0 = \cos^2\theta-\sin^2\theta \\
+  \cos\theta = \pm \sin\theta \\
+\intertext{We're interested in angles between, 0 and 90 degrees, for which both the sine and
+the cosine are positive, so}
+  \cos\theta = \sin\theta \\
+  \tan\theta = 1\\
+  \theta = 45\degunit \qquad .
+\end{gather*}
+To check that this is really a maximum, not a minimum or an inflection point, we could resort
+to the second derivative test, but we know the graph of $R(\theta)$ is zero at $\theta=0$
+and $\theta=90\degunit$, and positive in between, so this must be a maximum.
