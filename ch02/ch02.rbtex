@@ -1040,6 +1040,8 @@ the same brute-force technique to the given functions.}
 <% hw('apply-deriv-limit-def-inv-x-offset') %>
 <% hw('apply-deriv-limit-def-sqrt') %>
 
+  <% hw_block(2) %>
+
 \vfill
 
 % fractional exponents
@@ -1055,6 +1057,8 @@ the same brute-force technique to the given functions.}
 
 \pagebreak
 
+  <% hw_block(2) %>
+
 \emph{In problems \ref{hw:product-rule-two-methods}-\ref{hw:product-rule-two-methods-3},
 compute each derivative by two different methods: (a) by multiplying out the given expression
 and then differentiating, and (b) by using the product rule. Make sure that you get the same
@@ -1065,6 +1069,8 @@ answer by both methods.}
 <% hw('product-rule-two-methods-3') %> % also requires chain rule
 
 \vfill
+
+  <% hw_block(2) %>
 
 <% hw('product-rule-xex') %>
 
@@ -1077,6 +1083,8 @@ answer by both methods.}
 <% hw('chain-rule-units',{'solution'=>true}) %>
 
 \pagebreak
+
+  <% hw_block(2) %>
 
 \emph{In problems \ref{hw:derivative-practice-1}-\ref{hw:derivative-practice-7}, differentiate the
 given function, and try to simplify your answer as much as possible.}
@@ -1091,6 +1099,7 @@ given function, and try to simplify your answer as much as possible.}
 <% hw('derivative-practice-6') %>
 <% hw('derivative-practice-7') %>
 
+  <% hw_block(2) %>
 
 <% hw('gamma-derivative') %>
 \pagebreak
@@ -1108,6 +1117,8 @@ given function, and try to simplify your answer as much as possible.}
 %>
 <% end_marg %>
 
+  <% hw_block(2) %>
+
 <% hw('car-aims-for-collision') %>
 \pagebreak
 <% hw('cobb-douglas') %>
@@ -1115,6 +1126,8 @@ given function, and try to simplify your answer as much as possible.}
 <% hw('lens-minimize-length') %>
 
 \pagebreak
+
+  <% hw_block(2) %>
 
 \emph{Problems \ref{hw:differentiability-1}-\ref{hw:differentiability-3} can be done
 using methods \ref{differentiability-by-zooming}-\ref{differentiability-by-formula} 
@@ -1125,6 +1138,8 @@ on p.~\pageref{differentiability-by-zooming}.}
 <% hw('differentiability-3',{'solution'=>true}) %>
 
 \vspace{10mm}
+
+  <% hw_block(2) %>
 
 <% hw('product-rule-three-factors',{'solution'=>true}) %>
 <% hw('product-rule-n-factors') %>

@@ -19,6 +19,8 @@ require 'json'
 
 $n_code_listing = 0
 $hw_number = 0
+$hw_number_in_block = 0
+$store_hw_label = []
 $hw_block = 0 # for style used in Fundamentals of Calculus
 $hw = []
 $hw_has_solution = []
@@ -792,7 +794,7 @@ end
 
 def hw_label
   label = $hw_number.to_s
-  if hw_block_style() then label = get_hw_block+$hw_number.to_s end 
+  if hw_block_style() then label = get_hw_block+$hw_number_in_block.to_s end 
   return label
 end
 
@@ -802,7 +804,7 @@ end
 # hw_block('b') ... sets it to 'b'
 def hw_block(*arg)
   x = arg[0]
-  $hw_number = 0
+  $hw_number_in_block = 0
   if x.nil? then $hw_block = $hw_block+3; return end
   if x.class() == Fixnum then $hw_block = $hw_block+x; return end
   if x.class() == String then $hw_block = base24_to_integer(x); return end
@@ -826,9 +828,11 @@ def begin_hw(name,difficulty=1,options={})
   calc = ''
   if options['calc'] then calc='1' end
   $hw_number += 1
+  $hw_number_in_block += 1
   $hw[$hw_number] = name
   $hw_has_solution[$hw_number] = false
   label = hw_label()
+  $store_hw_label[$hw_number] = label
   print "\\begin{homeworkforcelabel}{#{name}}{#{difficulty}}{#{calc}}{#{label}}"
 end
 
@@ -1199,7 +1203,7 @@ def end_chapter
     if $ch=='002' then chnum=0 end
     1.upto($hw_number) { |i|
       name = $hw[i]
-      f.print "#{book},#{chnum},#{i},#{name},#{$hw_has_solution[i]?'1':'0'}\n"
+      f.print "#{book},#{chnum},#{$store_hw_label[i]},#{name},#{$hw_has_solution[i]?'1':'0'}\n"
     }
   }
   mv = whichever_file_exists(['mv_silent','../mv_silent'])

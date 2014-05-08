@@ -22,7 +22,6 @@ count = 0
       if a.nil? then a='' end
       a.each_line { |line|
         line.scan(/(.*),(.*),(.*),(.*),(.*)/) { |book,same_ch,number,name,solution|
-          number = number.to_i
           if solution=='1' then
             solution_file = "public_solutions/ch#{nn}/#{name}.tex"
             unless FileTest.exist?(solution_file) then

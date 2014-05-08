@@ -707,6 +707,8 @@ A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-
 
 <% hw('transcendental-credit-card-fraud') %>
 
+  <% hw_block(2) %>
+
 <% hw('induction-nth-deriv-of-exponential') %>
 <% hw('induction-nth-deriv-of-gaussian') %>
 

@@ -478,6 +478,8 @@ derivative. Usually
 <% hw('2nd-deriv-polynomial-4') %>
 <% hw('2nd-deriv-polynomial-5') %>
 
+  <% hw_block(2) %>
+
 <% hw('inflection',{'solution'=>true}) %>
 <% hw('max-min-of-sum',{'solution'=>true}) %>
 <% hw('exponents-with-2nd-deriv-smooth') %>
@@ -488,6 +490,8 @@ derivative. Usually
 
 <% hw('partial-fractions-third-deriv') %>
 
+  <% hw_block(2) %>
+
 % Robbin p. 71, #2-5:
 \emph{In problems \ref{hw:first-three-derivatives-1}-\ref{hw:first-three-derivatives-4},
 compute the first, second, and third derivatives of the given functions.}
@@ -496,6 +500,8 @@ compute the first, second, and third derivatives of the given functions.}
 <% hw('first-three-derivatives-2') %>
 <% hw('first-three-derivatives-3') %>
 <% hw('first-three-derivatives-4') %>
+
+  <% hw_block(2) %>
 
 % Robbin p. 71, #3:
 \emph{In problems \ref{hw:tenth-derivative-1}-\ref{hw:tenth-derivative-6},

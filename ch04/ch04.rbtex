@@ -1294,6 +1294,8 @@ the maximum value on this interval is 156.
 <% hw('difference-of-roots-at-infty',{'solution'=>true}) %>
 <% hw('parallel-resistance',{'solution'=>true}) %>
 
+  <% hw_block(2) %>
+
 \emph{Use the $\epsilon$-$\delta$ definition to prove the limits
 in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.}
 % Robbin, p. 35, #4-14
@@ -1310,6 +1312,8 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 <% hw('limit-prove-eps-delta-10') %>
 <% hw('limit-prove-eps-delta-11') %>
 
+  <% hw_block(2) %>
+
 % most of the following are from Robbin, p. 50
 <% hw('big-powers') %>
 <% hw('cancel-factor') %>
@@ -1324,6 +1328,8 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 
 <% hw('asymptotes-1',{'solution'=>true}) %>
 <% hw('asymptotes-2',{'solution'=>true}) %>
+
+  <% hw_block(2) %>
 
 <% hw('bounty-hunters',{'solution'=>true}) %>
 <% hw('pendulum') %>
@@ -1344,9 +1350,15 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 <% end_marg %>
 <% hw('rod-finger-string') %>
 
+  <% hw_block(2) %>
+
 <% hw('x-graph-to-v-graph',{'solution'=>true}) %>
 
+  <% hw_block(2) %>
+
 <% hw('curve-sketching-rational-function-1') %>
+
+  <% hw_block(2) %>
 
 <% hw('prove-inflection-has-zero-2nd-deriv',{'solution'=>true}) %>
 
