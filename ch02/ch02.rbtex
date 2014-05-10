@@ -155,7 +155,7 @@ We say that $L$ is the limit of $f(x)$ as $x\to a$, if the following two conditi
   \item The function $f(x)$ need not be defined at $x=a$, but it must be defined for all
     other $x$ in some interval which contains $a$.
 
-  \item For every $\varepsilon>0$ one can find a $\delta>0$ such that 
+  \item For every $\varepsilon>0$ there exists a $\delta>0$ such that 
         for all values of $x$ in the domain of $f$ with $|x-a|<\delta$, we have
       $|f(x) - L|<\varepsilon$ .
 \end{enumerate}

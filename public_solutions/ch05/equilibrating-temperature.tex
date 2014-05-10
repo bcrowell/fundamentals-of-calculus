@@ -1,0 +1,19 @@
+(a) Since $T$ has units of degrees, both terms on the right-hand side must also have
+units of degrees. The first term on the right is $a$, so $a$ has units of degrees.
+The second term consists of $b$ multiplied by an exponential. The exponential is
+unitless, so $b$ must have units of degrees. The input to the exponential must be
+unitless as well, so $c$ must have units of inverse seconds ($\sunit^{-1}$).\\
+(b) $\der T/\der t=bce^{-ct}$\\
+On the left side, the units are what is implied by the original interpretation of
+the Leibniz notation: we have a small change in temperature divided by a small change
+in time, so the units are degrees per second ($\degunit/\sunit$). On the right, the
+units come from the factor $bc$, since the exponential is unitless. The units of
+$bc$ are degrees multiplied by inverse seconds, $(\degunit)(\sunit^{-1})$, and this
+matches what we had on the left-hand side.
+(c) In this limit, the the temperature approaches $a$, and the derivative approaches zero.
+It makes sense that the derivative goes to zero, since eventually the beer will be
+in thermal equilibrium with the air.\\
+(d) Physically, $a$ is the temperature of the air, $b$ is the difference in
+temperature at $t=0$ between the air and the beer, and $c$ measures how good
+the thermal contact is between the air and the beer --- e.g., if the beer is in
+a styrofoam container, $c$ will be small.

@@ -754,20 +754,34 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 <% hw('e-sin-ln') %>
 <% hw('atan-sqrt-ln') %>
 
+<% hw('derivative-of-x-to-the-x') %>
+
+\pagebreak
+
+<% marg(100) %>
+<%
+  fig(
+    'hw-mercator',
+    %q{A Mercator projection, problem \ref{hw:mercator}. Note the extremely exaggerated scale at the poles.}
+  )  
+%>
+<% end_marg %>
+
+<% hw('mercator') %>
+
   <% hw_block(1) %>
 
-
-\pagebreak
-
+<% hw('equilibrating-temperature',{'solution'=>true}) %>
 <% hw('parachute') %>
 <% hw('damped') %>
-<% hw('door-closer') %>
-
 \pagebreak
+<% hw('door-closer') %>
 
   <% hw_block(1) %>
 
 <% hw('credit-card-fraud') %>
+
+\pagebreak
 
 <% marg(10) %>
 <%
@@ -781,13 +795,14 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 <% end_marg %>
 <% hw('gompertz') %>
 
-\pagebreak
-
 <% hw('transcendental-credit-card-fraud') %>
 
   <% hw_block(4) %>
 
 <% hw('induction-nth-deriv-of-exponential') %>
+
+\pagebreak
+
 <% hw('induction-nth-deriv-of-gaussian') %>
 
 \end{hwsection}
