@@ -301,7 +301,11 @@ There is nothing special about the number 3.
 The method that we applied to $x=3$ would work for any other number $x$, not just for 3.
 We find that the derivative of the function $x^2$ at any point $x$ equals $2x$. Taking stock of
 what we've done, we started with the function $x^2$, and found that at any point $x$, the derivative
-was $2x$. The expression $2x$ can be thought of as a function of $x$. So what we've really done
+was $2x$.
+<% end_sec('derivative-of-x-squared') %>
+<% begin_sec("The derivative of a function is a function itself.",4,'derivative-is-a-function') %>
+We've found that the derivative of the function $x^2$ at a point $x$ equals $2x$.
+The expression $2x$ can be thought of as a function of $x$. So what we've really done
 is to take a function and construct a new function that gives the derivative of the original
 function at each point. One way of notating this new function is $y'$, read ``$y$ prime.'' We have
 \begin{align*}
@@ -319,7 +323,52 @@ the function $2x$.
        changes.}
   )  
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'baldy-elevation-graph',
+    %q{Example \ref{eg:baldy}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'indifference-curve',
+    %q{Example \ref{eg:indifference-curve}.}
+  )  
+%>
 <% end_marg %>
+
+\begin{eg}{Hiking}\label{eg:baldy}
+Figure \figref{baldy-elevation-graph} shows a graph of my favorite route for climbing a mountain
+near where I live. (My wife rolls her eyes when I tell her the dog and I are doing this hike yet
+again.) How steep is the hike? There is no generic answer to this question, since the derivative
+of this function is itself a function. The derivative depends on $x$, so it has different values in
+different places. The slope of the graph at point P appears to be the steepest, with
+$y'\approx 0.80$. At other points, $y'$ has smaller values. At Q, it's slightly negative.
+The derivative $y'$ is a \emph{function} of $x$; it depends on which part of the hike you're presently
+climbing.
+\end{eg}
+
+\begin{eg}{An indifference curve}\label{eg:indifference-curve}
+Let's say you enjoy beer, and you also enjoy sushi. How much would you prefer to have of each?
+Economists define a graph, figure \figref{indifference-curve}, called an \emph{indifference curve}.
+For a particular person, any two points on the curve are supposed to be equal in preference;
+the person is indifferent as to which one they get. For example, the person whose indifference
+curve is drawn in figure \figref{indifference-curve} is equally happy having one piece of sushi
+and five beers, or having three pieces of sushi and two beers. 
+
+There is a quantity called the marginal rate of substitution (MRS), which is defined as minus the slope
+of the indifference curve, $-y'$. At point P in figure \figref{indifference-curve}, the MRS is
+high, which means that the person would have been just as happy to have another piece of
+sushi and a \emph{lot} less beer. The MRS, $-y'$, is a \emph{function} of where you are on the
+curve. If the person is at point Q on the graph, they have a moderate amount of beer and a moderate
+amount of sushi, so they consider them of more comparable value.
+Indifference curves are discussed further in section \ref{subsec:indifference-curves},
+p.~\pageref{subsec:indifference-curves}.
+\end{eg}
+
+\pagebreak
 
 \begin{eg}{What if $x$ is in the exponent rather than the base?}\label{eg:bunnies}
 The method used above to differentiate $x^2$ was basically a trick, and it depended on a special
@@ -358,7 +407,7 @@ A similar example is
 credit card debt. The more credit card debt you have, the faster your debt grows; in this example, the
 constant of proportionality relates to the interest rate.
 \end{eg}
-<% end_sec('derivative-of-x-squared') %>
+<% end_sec('derivative-is-a-function') %>
 <% end_sec('derivative') %>
 
 <% begin_sec("Derivatives of powers and polynomials",4,'deriv-polynomial') %>
@@ -1073,15 +1122,17 @@ graph, and what real-world implications would this have?
 
 <% hw('same-deriv',{'solution'=>true}) %>
 
-\hfill
-
   <% hw_block(2) %>
+
+\pagebreak
 
 <% hw('zoom-1') %>
 <% hw('zoom-2') %>
 <% hw('zoom-3') %>
 
   <% hw_block(2) %>
+
+\pagebreak
 
 <% hw('diff-symbolic-const',{'solution'=>true}) %>
 
@@ -1091,9 +1142,6 @@ graph, and what real-world implications would this have?
   <% hw_block(2) %>
 
 <% hw('human-cylinder') %>
-
-\pagebreak
-
 <% hw('observable-universe') %>
 <% hw('car-ke-and-power') %>
 
@@ -1106,14 +1154,14 @@ graph, and what real-world implications would this have?
 
   <% hw_block(1) %>
 
+
 <% hw('rancher-rick',{'solution'=>true}) %>
 <% hw('prove-n-extrema',{'solution'=>true}) %>
-
-\pagebreak
-
 <% hw('overtime') %>
 <% hw('cactus') %>
 <% hw('immerse-sphere') %>
+
+\pagebreak
 
 <% hw('line-of-stability') %>
 
@@ -1127,16 +1175,18 @@ graph, and what real-world implications would this have?
   )
 %>
 
-\pagebreak
-
   <% hw_block(1) %>
 
 <% hw('chain-rule-circle') %>
+
+\pagebreak
 
 <% hw('chain-rule-sphere') %>
 <% hw('chain-rule-triangle') %>
 
   <% hw_block(1) %>
+
+\pagebreak
 
 <% hw('tree') %>
 <% hw('tank') %>
@@ -1147,9 +1197,6 @@ graph, and what real-world implications would this have?
 <% hw('numerical-deriv-cos-x-cubed') %>
 <% hw('numerical-deriv-sin-sqrt-x') %>
 <% hw('numerical-deriv-e-to-cos-x') %>
-
-\pagebreak
-
 <% hw('numerical-deriv-woods-saxon') %>
 
   <% hw_block(1) %>
