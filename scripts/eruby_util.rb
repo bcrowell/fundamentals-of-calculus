@@ -532,6 +532,9 @@ def fig(name,caption=nil,options={})
     end
   }
   width=options['width']
+  if options['narrowfigwidecaption'] then
+    options['width']='wide'; options['sidecaption']=true; options['float']=false; options['anonymous']=false
+  end
   if options['float']=='default' then
     options['float']=(width=='wide' or width=='fullpage')
   end

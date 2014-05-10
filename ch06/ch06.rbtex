@@ -65,9 +65,9 @@ is an example of the indeterminate form $\infty-\infty$. It equals zero.
 When we try to evaluate a limit, usually our first attempt is simply to plug in and see if
 a number comes out. For example, if we want to evaluate
 \begin{equation*}
-  \lim_{x\rightarrow0}\frac{1+x}{2+x} \qquad ,
+  \lim_{x\rightarrow0}\frac{1+x}{3+x} \qquad ,
 \end{equation*}
-we will naturally try plugging in $x=0$, get the result $1/2$, and we're done. This is not an
+we will naturally try plugging in $x=0$, get the result $1/3$, and we're done. This is not an
 indeterminate form. But, for example, suppose that $f(x)=x^2$ and we want to evaluate $f'(1)$.
 The definition of the derivative in terms of a limit gives
 \begin{equation*}
@@ -109,22 +109,27 @@ which equals
 \end{equation*}
 We have proved the following.
 
-<% marg(0) %>
 <%
   fig(
     'lhospital-portrait',
-    %q~Guillaume de L'H\^{o}pital (1661-1704) was a French marquis. Born into a military family, he
+    %q~
+Guillaume de L'H\^{o}pital (1661-1704) was a French marquis. Born into a military family, he
        eventually became a mathematician because of bad eyesight. He wrote the first
        calculus textbook. As acknowledged in the preface, the results given in the book
        originated with Leibniz and the Bernoulli brothers, but L'H\^{o}pital's own name has become attached
        to the theorem known as L'H\^{o}pital's rule.
-
-By the way, the housetop accent on the ``\^{o}'' in l'H\^{o}pital means that in Old 
-French it used to be spelled ``l'Hospital,'' but the ``s'' later became silent, so they stopped writing it. So yes, it is the
-same word as ``hospital.'' The ``H'' is silent.~
+When students meet the Marquis, they always wonder about his name, which looks like the English
+word ``hospital.'' Actually, he spelled it with an ``s,'' and it is the same word in French.
+The ``H'' is silent, and the accent is on the ``a.''
+As French people gradually stopped pronouncing the ``s,'' they stopped writing it, but put
+the housetop accent on the ``\^{o}'' to show what they were leaving out.
+The family name probably comes from an early association with a ``hospital,'' a word that in
+medieval times had a broader meaning, encompassing institutions such as guest-houses for
+pilgrims and what we would today call subsidized public housing.
+~,
+    {'narrowfigwidecaption'=>true}
   )  
 %>
-<% end_marg %>
 
 \begin{theorem}[Theorem: L'H\^{o}pital's rule (simplest form)]
 If $u$ and $v$ are functions with $u(a)=0$ and $v(a)=0$,
@@ -207,7 +212,7 @@ then
 require $v'(a)\ne0$, and the right-hand side has a limit. In cases where $v'(a)\ne0$,
 the original form would have been good enough, but the general form also works, since
 the limit on the right-hand side can be evaluated simply by
-plugging in.
+plugging in. We will prove this more general form of the rule later in the book.
 
 <% end_sec('lhospital-multiple') %>
 <% begin_sec("The indeterminate form $\\infty/\\infty$",nil,'lhospital-infty-over-infty') %>
@@ -219,7 +224,8 @@ This is an indeterminate form like $\infty/\infty$ rather than the $0/0$ form fo
 proved l'H\^{o}pital's rule. L'H\^{o}pital's rule applies to examples like this as
 well. This can be proved by rewriting an expression like $\lim u/v$, where both $u$ and $v$
 blow up, in terms of new variables $U=1/u$ and $V=1/v$. The result is to reduce the $\infty/\infty$
-form to the $0/0$ form.
+form to the $0/0$ form. The proof is carried through in section \ref{subsec:lhospital-proofs},
+p.~\pageref{subsec:lhospital-proofs}.
 
 \begin{eg}{}
 \egquestion Evaluate
@@ -243,6 +249,7 @@ as $(x+1)/(x+2)$.
 It is straightforward to prove a variant of l'H\^{o}pital's rule that allows us to
 do limits at infinity. We use a change of variable to change a limit like $\lim_{x\rightarrow\infty} u(x)/v(x)$
 to a new limit stated in terms of a variable $X=1/x$.
+The proof is left as an exercise (problem \ref{hw:lhospital-at-infty}, p.~\pageref{hw:lhospital-at-infty}).
 The result is that l'H\^{o}pital's rule is equally valid when the limit is at $\pm\infty$ rather than at some
 real number $a$.
 
@@ -258,6 +265,88 @@ Differentiation of the top and bottom produces
   \lim_{x\rightarrow \infty} \frac{2x+7}{x+8686} = \frac{2}{1} = 1 \qquad .
 \end{equation*}
 \end{eg}
+<% begin_sec("Proofs",nil,'lhospital-proofs') %>
+<% begin_sec("Change of variable",nil,'lhospital-change-of-variable') %>
+As described briefly in sections \ref{subsec:lhospital-infty-over-infty} and
+\ref{subsec:lhospital-at-infty}, two of the added features of the generalized
+l'H\^{o}pital's rule (the form $\infty/\infty$ and limits at infinity) can be proved by a change of variable.
+To demonstrate
+how this works, let's imagine that we were starting from an even more stripped-down
+version of l'H\^{o}pital's rule
+than the one in section
+\ref{sec:lhospital-simple}, p.~\pageref{sec:lhospital-simple}. Say
+we only knew how to do limits of the form $x\rightarrow0$ rather than
+$x\rightarrow a$ for an arbitrary real number $a$. We could then evaluate $\lim_{x\rightarrow a} u/v$ simply
+by defining $t=x-a$ and reexpressing $u$ and $v$ in terms of $t$.
+
+\begin{eg}
+\egquestion
+Reduce
+\begin{equation*}
+  \lim_{x\rightarrow \pi}\frac{\sin x}{x-\pi}
+\end{equation*}
+to a form involving a limit at 0.
+
+\eganswer
+Define $t=x-\pi$. Solving for $x$ gives $x=t+\pi$. We substitute into the above expression
+to find
+\begin{equation*}
+  \lim_{x\rightarrow \pi}\frac{\sin x}{x-\pi} =   \lim_{t\rightarrow 0}\frac{\sin (t+\pi)}{t} \qquad .
+\end{equation*}
+If all we knew was the $\rightarrow0$ form of l'H\^{o}pital's rule, then this would suffice
+to reduce the problem to one we knew how to solve. In fact, this kind of change of variable works in
+all cases, not just for a limit at $\pi$, so rather then going through a laborious change of variable
+every time, we could simply establish the more general form in section
+\ref{sec:lhospital-simple}, p.~\pageref{sec:lhospital-simple}, with
+$\rightarrow a$.
+\end{eg}
+<% end_sec('lhospital-change-of-variable') %>
+<% begin_sec("The form $\\infty/\\infty$",nil,'lhospital-proofs-infty-over-infty') %>
+To prove that l'H\^{o}pital's rule works in general for $\infty/\infty$ forms, 
+we do a change of variable on the \emph{outputs} of the functions $u$ and $v$
+rather than their inputs. Suppose that our original problem is of the form
+\begin{equation*}
+  \lim \frac{u}{v} \qquad ,
+\end{equation*}
+where both functions blow up.\footnote{Think about what happens when only $u$ blows up,
+or only $v$.} We then define $U=1/u$ and $V=1/v$. We now have
+\begin{equation*}
+  \lim \frac{u}{v} = \lim \frac{1/U}{1/V} =\lim \frac{V}{U} \qquad ,
+\end{equation*}
+and since $U$ and $V$ both approach zero, we have reduced the problem to one that can be solved
+using the version of l'H\^{o}pital's rule already proved
+for the indeterminate form $0/0$:
+\begin{equation*}
+  \lim \frac{u}{v} = \lim \frac{V'}{U'}
+\end{equation*}
+Differentiating and applying the chain rule, we have
+\begin{equation*}
+  \lim \frac{u}{v} = \lim \frac{-v^{-2}v'}{-u^{-2}u'} \qquad .
+\end{equation*}
+Since $\lim ab=\lim a \lim b$ provided that $\lim a$ and $\lim b$ are both defined
+(property $\zu{P}_5$, p.~\pageref{subsubsec:limits-of-sum-prod-quot}), we can rearrange
+factors to produce the desired result.
+<% end_sec('lhospital-proofs-infty-over-infty') %>
+<% begin_sec("Limits at infinity",nil,'lhospital-proofs-at-infinity') %>
+As briefly outlined in section \ref{subsec:lhospital-at-infty}, this proof can be done
+by using a change of variables of the form $X=1/x$.
+The proof is left as an exercise (problem \ref{hw:lhospital-at-infty}, p.~\pageref{hw:lhospital-at-infty}).
+<% end_sec('lhospital-proofs-at-infinity') %>
+<% end_sec('lhospital-proofs') %>
 <% end_sec('lhospital-fancy') %>
+
+\begin{hwsection}
+
+<% hw('granville-lhospital',{'solution'=>true}) %>
+<% hw('lhospital-cos-exp',{'solution'=>true}) %>
+<% hw('lhospital-applied-incorrectly',{'solution'=>true}) %>
+<% hw('lhospital-twice',{'solution'=>true}) %>
+<% hw('lhospital-not-at-zero',{'solution'=>true}) %>
+
+  <% hw_block('z') %>
+
+<% hw('lhospital-at-infty') %>
+
+\end{hwsection}
 
 <% end_chapter %>

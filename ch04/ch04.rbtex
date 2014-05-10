@@ -1314,6 +1314,7 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 
   <% hw_block(2) %>
 
+<% hw('limits-of-e-to-minus-1-over-x',{'solution'=>true}) %>
 % most of the following are from Robbin, p. 50
 <% hw('big-powers') %>
 <% hw('cancel-factor') %>
