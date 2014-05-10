@@ -343,6 +343,16 @@ The proof is left as an exercise (problem \ref{hw:lhospital-at-infty}, p.~\pager
 <% hw('lhospital-twice',{'solution'=>true}) %>
 <% hw('lhospital-not-at-zero',{'solution'=>true}) %>
 
+\pagebreak
+
+  <% hw_block() %>
+% Most of the following are from Robbin.
+<% hw('lhospital-simple-computation') %>
+<% hw('lhospital-find-the-integer') %>
+<% hw('lhospital-not-finite') %>
+<% hw('lhospital-bogus-converse') %>
+<% hw('lhospital-no-help-on-derivatives') %>
+
   <% hw_block('z') %>
 
 <% hw('lhospital-at-infty') %>
