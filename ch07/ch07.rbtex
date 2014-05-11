@@ -6,17 +6,17 @@
 <%
   chapter(
     '07',
-    %q{A limited amount of reality},
-    'ch:limited-reality'
+    %q{From functions to variables},
+    'ch:from-functions-to-variables'
   )
 %>
 
 <% begin_sec("Some unrealistic features of our view of computation so far",nil,'unrealistic-computation') %>
 Calculus was invented by Newton and Leibniz, who lived in an era when the best tool for calculation
-was a freshly sharpened quill. They had in mind a certain \emph{model of computation}.
-Chapters \ref{ch:derivative}-\ref{ch:indeterminate-forms} of this book have introduced you to a 
-related but somewhat different, modern model, based on \emph{functions},
-which you've probably absorbed unconsciously.
+was a freshly sharpened quill, used for writing down formulas.
+They had in mind a certain \emph{model of computation}.
+I've introduced you to a 
+related but somewhat different, modern model, based on \emph{functions}.
 This model doesn't always relate well to reality.
 
 <%
@@ -32,11 +32,11 @@ This model doesn't always relate well to reality.
 
 
 We defined a function geometrically, as a graph that passes the vertical line test.
-This doesn't work too well in an example like figure \figref{rotate-cusp}. It's should be completely
-arbitrary whether we take the photo from one angle or another, but if we insist on
+This doesn't work well in an example like figure \figref{rotate-cusp}. It shouldn't
+matter whether we take the photo from one angle or another, but if we insist on
 describing this shape as a function, then rotating it makes a huge difference --- the
 difference between being able to describe the shape and not being able to. In
-\subfigref{rotate-cusp}{2}, $y$ is a god-fearing function of $x$. In \subfigref{rotate-cusp}{3},
+\subfigref{rotate-cusp}{2}, $y$ function of $x$. In \subfigref{rotate-cusp}{3},
 $y$ isn't a function of $x$; it fails the vertical line test. In
 \subfigref{rotate-cusp}{4}, $x$ is a function of $y$, but $y$ isn't a function of $x$.
 These distinctions are silly in this context. The $x$ and $y$ coordinates are arbitrary,
@@ -60,7 +60,7 @@ it hops across the internet from you to amazon.com. These algorithms depend on t
 that it is computationally cheap to multiply large numbers, but prohibitively expensive
 to factor a large number into its prime factors.}
 
-Newton however, invented a method that allows us to at least partially overcome
+Newton, however, invented a method that allows us to at least partially overcome
 this uninvertibility problem. Newton's method lets us find a good approximation to
 $x$ for a given $y$, provided that we know
 how to evaluate both $y$ and $\der y/\der x$ for a given $x$.
@@ -140,5 +140,55 @@ with precision better than about that level.)
 \end{eg}
 
 <% end_sec('newtons-method') %>
+
+
+<% begin_sec("Related rates",4,'related-rates') %>
+Figure \figref{archimedes} is old and fanciful, but it exemplifies an idea that we use
+every day. We have some machine or mechanical linkage, which could be as simple as the corkscrew used to open
+a bottle of wine, or as complicated as the suspension on a fancy sports car. The motion
+of one part of the machine is not independent of the other parts. In the simple example of
+a lever, suppose that the heights\footnote{Since the lever rotates, these heights should
+actually be measured along circular arcs.} of the two ends relative to the fulcrum are $A$ on
+the left and $B$ on the right.
+Then we have a \emph{constraint} of the form
+\begin{equation*}
+  \frac{B}{A} = -k \qquad ,
+\end{equation*}
+where $k$ is the ratio of the lengths of the arms, and the minus sign is because if one end
+goes up, the other has to come down. In figure \figref{archimedes}, $k\approx 11$;
+of course Archimedes was imagining $k$ as some very large number, but the cartoonist had to
+fit everything in the picture. Notice that we have no natural reason to call $B$ a function of
+$A$ or $A$ a function of $B$. If the arm of the lever is perfectly rigid, then all we can say
+is that whatever forces act on the ends, the outcome will satisfy the constraint. We don't
+have to consider one variable as causing the other. In the constraint equation, I picked one
+variable to be on top and the other on the bottom, but instead of $B/A=-11$, I could just as
+easily have written $A/B=-1/11$.
+
+<% marg(100) %>
+<%
+  fig(
+    'archimedes',
+    %q{``Give me a lever and a place to stand, and I will move the world.'' -- Archimedes}
+  )  
+%>
+<% end_marg %>
+
+In examples like this one, we naturally want to know the speed of the motion. How fast will
+the cork come out of the wine bottle? How fast will my bike go up a hill if I'm in a certain gear?
+Based on your training so far, you are likely to come up with the following answer. The position $A$
+of the load on the left side of the lever is a function of the position $B$ of the right end,
+while $B$ is a function of time $t$. The chain rule therefore gives
+\begin{equation}\label{eqn:}
+  \frac{\der A}{\der t} = \frac{\der A}{\der B}\cdot\frac{\der B}{\der t} \qquad .
+\end{equation}
+We know $\der A/\der B$, which, based on the constraint, is simply $-1/k$. Next we write
+down a formula for the function $B(t)$, differentiate it, and plug it in to the
+
+
+optical
+
+<% end_sec('related-rates') %>
+
+
 
 <% end_chapter %>
