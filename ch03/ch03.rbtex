@@ -385,6 +385,10 @@ $y''>0$. This means that once you have a lot of something, you value it less.
 The large, negative slope at point P in figure \figref{indifference-curve-concavity} means that
 this person already has plenty of beer, and would trade a lot of beer for a small amount of
 sushi. The small negative slope at Q indicates the opposite.
+
+When an indifference curve has $y''=0$, it's a line. This indicates that each of the two commodities
+is a perfect substitute for the other. For example, most people don't care whether they buy an
+airline ticket from one airline or another.
 <% end_sec('indifference-curves') %>
 
 \pagebreak

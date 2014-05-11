@@ -1,0 +1,144 @@
+%%chapter%% 07
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '07',
+    %q{A limited amount of reality},
+    'ch:limited-reality'
+  )
+%>
+
+<% begin_sec("Some unrealistic features of our view of computation so far",nil,'unrealistic-computation') %>
+Calculus was invented by Newton and Leibniz, who lived in an era when the best tool for calculation
+was a freshly sharpened quill. They had in mind a certain \emph{model of computation}.
+Chapters \ref{ch:derivative}-\ref{ch:indeterminate-forms} of this book have introduced you to a 
+related but somewhat different, modern model, based on \emph{functions},
+which you've probably absorbed unconsciously.
+This model doesn't always relate well to reality.
+
+<%
+  fig(
+    'rotate-cusp',
+    %q{Light inside a teacup makes a cusp. Rotating the graph should be irrelevant.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+We defined a function geometrically, as a graph that passes the vertical line test.
+This doesn't work too well in an example like figure \figref{rotate-cusp}. It's should be completely
+arbitrary whether we take the photo from one angle or another, but if we insist on
+describing this shape as a function, then rotating it makes a huge difference --- the
+difference between being able to describe the shape and not being able to. In
+\subfigref{rotate-cusp}{2}, $y$ is a god-fearing function of $x$. In \subfigref{rotate-cusp}{3},
+$y$ isn't a function of $x$; it fails the vertical line test. In
+\subfigref{rotate-cusp}{4}, $x$ is a function of $y$, but $y$ isn't a function of $x$.
+These distinctions are silly in this context. The $x$ and $y$ coordinates are arbitrary,
+and we shouldn't treat them asymmetrically. We can think of the teacup as a little computer
+that knows how to compute this particular graph. The teacup doesn't know or care what's $x$
+or what's $y$; neither $x$ nor $y$ is its ``input'' or ``output.''
+<% end_sec('unrealistic-computation') %>
+
+<% begin_sec("Newton's method",nil,'newtons-method') %>
+In the teacup-computer's personal utopia, there is no distinction between input and output.
+But if we want to join the teacup in computational nirvana, we have a problem, because
+we, unlike the teacup, find some functions easier to compute than their inverses.
+For example, every sixth-grade kid in California is supposed to know how to
+take the cube of a decimal number such as 4.43. That is, given $x$, they can
+compute $y=x^3$. But how many people do you know who can invert the function and
+efficiently obtain $x=\sqrt[3]{y}$ with paper and pencil? Some functions are computationally
+cheap to evaluate, but computationally expensive to evaluate in reverse.\footnote{An extreme
+example is embedded in the cryptography systems that allow you to buy something online
+without worrying that your credit card number is being exposed to random people as
+it hops across the internet from you to amazon.com. These algorithms depend on the fact
+that it is computationally cheap to multiply large numbers, but prohibitively expensive
+to factor a large number into its prime factors.}
+
+Newton however, invented a method that allows us to at least partially overcome
+this uninvertibility problem. Newton's method lets us find a good approximation to
+$x$ for a given $y$, provided that we know
+how to evaluate both $y$ and $\der y/\der x$ for a given $x$.
+
+Suppose that we want to find the cube root of 87.
+We start with a rough mental guess:
+since $4^3=64$ is a little too small, and $5^3=125$ is much too big,
+we guess $x\approx 4.3$. Testing our guess, we have
+$4.3^3=79.5$. We want $y$ to get bigger by $7.5$, and we can use
+calculus to find approximately how much bigger $x$ needs to get
+in order to accomplish that:
+\begin{align*}
+  \Delta x &= \frac{\Delta x}{\Delta y} \Delta y \\
+           &\approx \frac{\der x}{\der y} \Delta y \\
+           &= \frac{\Delta y}{\der y/\der x} \\
+           &= \frac{\Delta y}{3x^2} \\
+           &= \frac{\Delta y}{3x^2} \\
+           &= 0.14
+\end{align*}
+Increasing our value of $x$ to $4.3+0.14=4.44$, we find that 
+$4.44^3=87.5$ is a pretty good approximation to 87. If we need higher
+precision, we can go through the process again with $\Delta y=-0.5$,
+giving
+\begin{align*}
+  \Delta x &\approx \frac{\Delta y}{3x^2} \\
+           &= 0.14 \\
+  x &= 4.43 \\
+  x^3 &= 86.9 \qquad .
+\end{align*}
+This second iteration gives an excellent approximation.
+
+\pagebreak
+
+\begin{eg}{The orbit of Mercury}\label{eg:keplerian}
+\egquestion Figure \ref{eg:keplerian} shows the astronomer Johannes Kepler's\index{Kepler, Johannes}\index{planets, motion of} analysis
+of the motion of the planets. The ellipse is the orbit of the planet around
+the sun. At $t=0$, the planet is at its closest approach to the sun, A. At some
+later time, the planet is at point B. The angle $x$ (measured in radians) is defined with reference
+to the imaginary circle encompassing the orbit. Kepler found the equation
+\begin{equation*}
+  2\pi \frac{t}{T} = x-e\sin x \qquad ,
+\end{equation*}
+where the period, $T$, is the time required for the planet to complete a full orbit, and
+the eccentricity of the ellipse, $e$, is a number that measures how much it
+differs from a circle. The relationship is complicated because the planet
+speeds up as it falls inward toward the sun, and slows down again as it swings
+back away from it.
+
+The planet Mercury has $e=0.206$. Find the angle $x$
+when Mercury has completed $1/4$ of a period.
+<% marg(100) %>
+<%
+  fig(
+    'keplerian',
+    %q{Example \ref{eg:keplerian}.}
+  )  
+%>
+<% end_marg %>
+
+\eganswer We have
+\begin{equation*}
+  y = x-(0.206)\sin x \qquad ,
+\end{equation*}
+and we want to find $x$ when $y=2\pi/4=1.57$. As a first guess, we try $x=\pi/2$ (90 degrees), since the eccentricity of Mercury's
+orbit is actually much smaller than the example shown in the figure, and
+therefore the planet's speed doesn't vary all that much as it goes around the sun.
+For this value of $x$ we have $y=1.36$, which is too small by $0.21$.
+\begin{align*}
+  \Delta x &\approx \frac{\Delta y}{\der y/\der x} \\
+           &= \frac{0.21}{1-(0.206)\cos x} \\
+           &= 0.21
+\end{align*}
+(The derivative $\der y/\der x$ happens to be 1 at $x=\pi/2$.) This gives a new value of $x$, 1.57+.21=1.78.
+Testing it, we have $y=1.58$, which is correct to within rounding errors after only one iteration.
+(We were only supplied with a value of $e$ accurate to three significant figures, so we can't get a result
+with precision better than about that level.)
+\end{eg}
+
+<% end_sec('newtons-method') %>
+
+<% end_chapter %>

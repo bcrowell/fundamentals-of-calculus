@@ -706,20 +706,8 @@ A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-
 <% begin_sec("Summary of derivatives of transcendental functions",nil,'transcendental-summary') %>
 Given the derivatives of trig and inverse trig functions from sections 
 \ref{sec:derivatives-of-trig} and \ref{sec:deriv-of-inv-trig}, it is straightforward to extend the list
-of trig functions to include the other familiar trig functions. There are also the \emph{hyperbolic}
-trig functions defined by\label{def-hyperbolic}
-\begin{align*}
-  \sinh x &= \frac{1}{2}\left(e^x-e^{-x}\right) \\
-  \cosh x &= \frac{1}{2}\left(e^x+e^{-x}\right) \qquad \text{and} \\  
-  \tanh x &= \frac{\sinh x}{\cosh x} \qquad ,
-\end{align*}
-as well as their associated inverses which can be calculated using the following relations:
-\begin{align*}
-  \sinh^{-1} x &= \ln\left(x+\sqrt{x^2+1}\right) \\
-  \cosh^{-1} x &= \ln\left(x+\sqrt{x^2-1}\right) \\
-  \tanh^{-1} x &= \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)
-\end{align*}
- In this section we provide a summary for reference
+of derivatives to include the other familiar trig functions.
+In this section we provide a summary for reference
 purposes of all of the derivatives of the transcendental functions encountered so far.
 
 \noindent\begin{tabular}{ll}\label{transcendental-table}
@@ -727,11 +715,29 @@ $(e^x)'=e^x$          &       $(\ln x)'=1/x$ \\
 $(\sin x)'=\cos x$    &       $(\sin^{-1} x)'=(1-x^2)^{-1/2}$ \\
 $(\cos x)'=-\sin x$    &      $(\cos^{-1} x)'=-(1-x^2)^{-1/2}$ \\
 $(\tan x)'=(\cos x)^{-2}$ &   $(\tan^{-1} x)'=(1+x^2)^{-1}$ \\
+\end{tabular}
+<% end_sec('transcendental-summary') %>
+<% begin_sec("Hyperbolic functions",nil,'hyperbolic-functions') %>
+The hyperbolic trig functions are defined as follows.\label{def-hyperbolic}
+\begin{align*}
+  \sinh x &= \frac{1}{2}\left(e^x-e^{-x}\right) \\
+  \cosh x &= \frac{1}{2}\left(e^x+e^{-x}\right) \qquad \text{and} \\  
+  \tanh x &= \frac{\sinh x}{\cosh x} \qquad .
+\end{align*}
+Their inverses can be calculated using the following relations:
+\begin{align*}
+  \sinh^{-1} x &= \ln\left(x+\sqrt{x^2+1}\right) \\
+  \cosh^{-1} x &= \ln\left(x+\sqrt{x^2-1}\right) \\
+  \tanh^{-1} x &= \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)
+\end{align*}
+The derivatives are as follows:
+
+\noindent\begin{tabular}{ll}\label{transcendental-table}
 $(\sinh x)'=\cosh x$      &   $(\sinh^{-1} x)'=(x^2+1)^{-1/2}$ \\
 $(\cosh x)'=\sinh x$      &   $(\cosh^{-1} x)'=(x^2-1)^{-1/2}$ \\
 $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$ 
 \end{tabular}
-<% end_sec('transcendental-summary') %>
+<% end_sec('hyperbolic-functions') %>
 
 \begin{hwsection}
 
@@ -739,9 +745,9 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 <% hw('sinusoidal',{'solution'=>true}) %>
 <% hw('ex-chain',{'solution'=>true}) %>
 <% hw('max-range',{'solution'=>true}) %>
-<% hw('cosh-extrema',{'solution'=>true}) %>
 <% hw('derivative-of-tan',{'solution'=>true}) %>
 <% hw('sin-sin-sin',{'solution'=>true}) %>
+<% hw('cosh-extrema',{'solution'=>true}) %>
 
   <% hw_block(2) %>
 

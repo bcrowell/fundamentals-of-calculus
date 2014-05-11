@@ -26,7 +26,9 @@
 \ref{ch:more-limits} & More about limits; curve sketching\quad \pageref{ch:more-limits}\\
 \ref{ch:more-derivatives} & More derivatives\quad \pageref{ch:more-derivatives}\\
 \ref{ch:indeterminate-forms} & Indeterminate forms and L'H\^{o}pital's rule 
-                  \quad \pageref{ch:indeterminate-forms}
+                  \quad \pageref{ch:indeterminate-forms} \\
+\ref{ch:limited-reality} & A limited amount of reality
+                  \quad \pageref{ch:limited-reality}
 \end{tabular}
 \mynormaltype
 
@@ -43,7 +45,7 @@
 \mainmatter
 %-- I want the whole book numbered sequentially, arabic:
   \pagenumbering{arabic} 
-  \addtocounter{page}{6} 
+  \addtocounter{page}{8} 
 \parafmt
 \myeqnspacing % Do this early and often, since it gets reset by \normalsize
 %========================= chapters =========================
@@ -52,8 +54,9 @@
 	\renewcommand{\chapdir}{ch03}\include{ch03/ch03temp}
 	\renewcommand{\chapdir}{ch04}\include{ch04/ch04temp}
 	\renewcommand{\chapdir}{ch05}\include{ch05/ch05temp}
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
 	\renewcommand{\chapdir}{ch06}\include{ch06/ch06temp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+	\renewcommand{\chapdir}{ch07}\include{ch07/ch07temp}
 
 %=================================================================================================================================
 
@@ -84,6 +87,7 @@
 \cred{newton-portrait}{Isaac Newton}{Godfrey Kneller, 1702}
 \cred{hw-mercator}{Mercator projection}{Wikimedia Commons user Strebe, CC-BY-SA}%http://en.wikipedia.org/wiki/File:Mercator_projection_SW.jpg
 \cred{hw-gompertz}{Mortality graph}{Wikipedia user Uscitizenjason, CC-BY-SA}% http://en.wikipedia.org/wiki/File:USGompertzCurve.svg
+\cred{rotate-cusp}{Cusp (caustic) in a teacup}{Wikipedia user Paul Venter, CC-BY-SA}% http://en.wikipedia.org/wiki/File:Caustic00.jpg
 
 \renewcommand{\chapdir}{ch99}\include{ch99/hwanstemp}%
 
