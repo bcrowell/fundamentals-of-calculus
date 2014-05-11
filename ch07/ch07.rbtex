@@ -147,20 +147,21 @@ Figure \figref{archimedes} is old and fanciful, but it exemplifies an idea that 
 every day. We have some machine or mechanical linkage, which could be as simple as the corkscrew used to open
 a bottle of wine, or as complicated as the suspension on a fancy sports car. The motion
 of one part of the machine is not independent of the other parts. In the simple example of
-a lever, suppose that the heights\footnote{Since the lever rotates, these heights should
+a lever, suppose that the heights\footnote{These heights should
 actually be measured along circular arcs.} of the two ends relative to the fulcrum are $A$ on
 the left and $B$ on the right.
 Then we have a \emph{constraint} of the form
-\begin{equation*}
+\begin{equation}\label{eqn:constraint-related-rates}
   \frac{B}{A} = -k \qquad ,
-\end{equation*}
+\end{equation}
 where $k$ is the ratio of the lengths of the arms, and the minus sign is because if one end
 goes up, the other has to come down. In figure \figref{archimedes}, $k\approx 11$;
 of course Archimedes was imagining $k$ as some very large number, but the cartoonist had to
-fit everything in the picture. Notice that we have no natural reason to call $B$ a function of
+fit everything. Notice that we have no natural reason to call $B$ a function of
 $A$ or $A$ a function of $B$. If the arm of the lever is perfectly rigid, then all we can say
 is that whatever forces act on the ends, the outcome will satisfy the constraint. We don't
-have to consider one variable as causing the other. In the constraint equation, I picked one
+have to consider one variable as causing the other. (The earth looks more
+likely to move Archimedes than Archimedes is to move the earth.) In \eqref{eqn:constraint-related-rates}, I picked one
 variable to be on top and the other on the bottom, but instead of $B/A=-11$, I could just as
 easily have written $A/B=-1/11$.
 
@@ -175,17 +176,92 @@ easily have written $A/B=-1/11$.
 
 In examples like this one, we naturally want to know the speed of the motion. How fast will
 the cork come out of the wine bottle? How fast will my bike go up a hill if I'm in a certain gear?
-Based on your training so far, you are likely to come up with the following answer. The position $A$
+Based on your training so far, you are likely to come up with the following answer for
+the lever. The position $A$
 of the load on the left side of the lever is a function of the position $B$ of the right end,
-while $B$ is a function of time $t$. The chain rule therefore gives
-\begin{equation}\label{eqn:}
+while $B$ is in turn a function of time $t$. The chain rule therefore gives
+\begin{equation}\label{eqn:lever-related-rates}
   \frac{\der A}{\der t} = \frac{\der A}{\der B}\cdot\frac{\der B}{\der t} \qquad .
 \end{equation}
 We know $\der A/\der B$, which, based on the constraint, is simply $-1/k$. Next we write
-down a formula for the function $B(t)$, differentiate it, and plug it in to the
+down a formula for the function $B(t)$, differentiate it, and plug the result in
+to equation \eqref{eqn:lever-related-rates}. Done. A triumph of calculus.
 
+Oops. There is no mathematical formula for $B(t)$. The motion of the right end of the lever in figure
+\figref{archimedes} comes from an old Greek guy grunting and muttering curses into his
+white beard.
 
-optical
+The term ``related rates'' is used in calculus to refer to the fact that we don't necessarily
+\emph{care} whether the function $B(t)$ is known. Often it may be of interest simply to know
+that \emph{if} $B$ changes at a given rate, \emph{then} $A$ will change at some other rate.
+These two rates are related to each other by the constraint
+equation \eqref{eqn:constraint-related-rates}.
+
+% calc -xe "g=9.8 m/s2; rho=1000 kg/m3; atm=10^5 Pa; rhog/atm"
+%    0.0979999999999998 m-1
+
+\begin{eg}{Scuba diving}
+When scuba divers ascend or descend, they have to control how fast they go, or else
+the changes in pressure will be too rapid, and they can be killed. 
+Let $P$ be the pressure in units of atmospheres, $y$ the depth in meters, and $t$ the
+time in minutes. We then have
+\begin{equation*}
+  \frac{\der P}{\der t} = \frac{\der P}{\der y} \cdot \frac{\der y}{\der t}
+\end{equation*}
+Given the density of water and the strength of the earth's gravity, 
+$\der P/\der y= 0.1\ \zu{atm}/\munit$.
+The standard advice is not to ascend faster than $\der y/\der t\approx -10\ \munit/\zu{min}$.
+This implies that a diver's body can safely withstand decompression
+at a rate $\der P/\der t \approx -1\ \zu{atm}/\zu{min}$.
+\end{eg}
+
+<% marg(-8) %>
+<%
+  fig(
+    'cams',
+    %q{Example \ref{eg:cams}. Top: a racing camshaft from a car. Middle: two cams
+       with specific mathematical shapes. Bottom: Graphs of $h(\theta)$ and its first
+       and second derivatives.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{Cams}\label{eg:cams}
+Cams, like the ones shown in figure \figref{cams}, can be thought of as the mechanical
+realization of the mathematical notion of a function. As the cam rotates, the follower
+rides up and down above it.
+
+The crankshaft of an engine has its angle $\varphi$ determined by mechanical linkages
+(the piston rods) to the pistons. 
+In a four-stroke engine such as the ones in cars, the crankshaft is geared to the camshaft so that
+the camshaft's angle $\theta$ is constrained by $\theta=\varphi/2$. The camshaft
+then drives each follower, whose height $h$ is controlled by a function $h(\theta)$. This
+function is determined by the shape of the cam. The followers
+open and close the valves, which perform functions such as letting fuel into the cylinders.
+The velocity of the follower is given by
+\begin{equation*}
+  \frac{\der h}{\der t} = \frac{\der h}{\der\theta}\cdot\frac{\der \theta}{\der\varphi}
+            \cdot\frac{\der \varphi}{\der t} \qquad ,
+\end{equation*}
+where $\der \varphi/\der t$ is what we measure on a tachometer.
+
+Cam 1 in the figure is shaped so that the follower falls at constant velocity and rises at constant
+velocity. This has the disadvantage that $\der^2h/\der \theta^2$ is infinite,
+which would theoretically cause infinite acceleration $\der^2h/\der t^2$ in the follower at the turn-around
+points. In reality the result would be that the follower would leave contact with the cam, and there
+would be undesirable vibration.
+
+Cam 2 is shaped according to
+\begin{equation*}
+  h(\theta)= 1+\frac{1}{\pi}\left(|\theta|-\frac{1}{2}\sin(2|\theta|)\right)
+\end{equation*}
+for $\theta\in [-\pi,\pi]$. This is known as a cycloid cam. It has the desirable property that all of its
+derivatives up to the third, $\der^3 h/\der\theta^3$, are finite, and furthermore that
+the cycloidal segments of the graph can be joined smoothly onto constant (``dwell'') segments without
+losing these properties. For the reasons
+discussed in example \ref{eg:jerk}, p.~\pageref{eg:jerk}, it is desirable not to have a large
+third derivative.
+\end{eg}
 
 <% end_sec('related-rates') %>
 

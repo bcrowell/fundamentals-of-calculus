@@ -432,7 +432,7 @@ Leibniz' notation for the $n$th derivative of $y=f(x)$ is
 \frac{\der^n y}{\der x^n}= f^{(n)}(x).
 \]
 
-\begin{eg}{Jerk and damage}
+\begin{eg}{Jerk and damage}\label{eg:jerk}
 Higher derivatives are often useful; for example, you will need them in your second-semester
 calculus course in order to compute Taylor series, which are often used in approximating functions.
 There are not many examples, however, in which $f^{(n)}$ has a direct, intuitive interpretation
@@ -455,6 +455,7 @@ to a steady acceleration, it just feels like a steady pressure, or perhaps, depe
 direction of the acceleration, an increase in your weight. A steady acceleration will never cause
 an object to shake or vibrate. Such an effect can only happen if the \emph{third} derivative
 $x'''$ is nonzero. This quantity is sometimes called the ``jerk.''
+Cf.~example \ref{eg:cams}, p.~\pageref{eg:cams}.
 \end{eg}
 
 \begin{eg}{Two examples}
