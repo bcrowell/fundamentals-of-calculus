@@ -373,7 +373,7 @@ The precise definition of these ``one-sided'' limits goes like this:
 
 \begin{important}[Definition of right- and left-limits]
 Let $f$ be a function.  Then the right-limit notation
-\begin{equation}\label{eq:one-sided-lim-formulation}
+\begin{equation}\label{eqn:one-sided-lim-formulation}
   \lim_{x\searrow a} f(x) = L \qquad .
 \end{equation}
 means that for every $\varepsilon>0$ one can find a $\delta>0$ such that
@@ -384,7 +384,7 @@ holds for all $x$ in the domain of $f$.
 
 The definition of a left-limit is exactly analogous.
 When we say
-\begin{equation}\label{eq:left-sided-lim-formulation}
+\begin{equation}\label{eqn:left-sided-lim-formulation}
   \lim_{x\nearrow a} f(x) = L \qquad ,
 \end{equation}
 we mean that for every $\varepsilon>0$ one can find a $\delta>0$ such that
@@ -479,7 +479,7 @@ The larger $x$ is, the smaller its reciprocal, so it seems natural that $1/x
 apply the definition to $f(x) = 1/x$, $L=0$.
 
 For a given $\varepsilon>0$, we need to show that
-\begin{equation}\label{eq:1overx-small-for-x-large}
+\begin{equation}\label{eqn:1overx-small-for-x-large}
   \left|\frac1x - L\right|<\varepsilon \text{ for all } x>A
 \end{equation}
 provided we choose the right $A$.
@@ -488,7 +488,7 @@ How do we choose $A$?  $A$ is not allowed to depend on $x$, but it may
 depend on $\varepsilon$.
 
 Let's decide that we will always take $A>0$, so that we only need consider
-positive values of $x$.  Then \eqref{eq:1overx-small-for-x-large} simplifies to
+positive values of $x$.  Then \eqref{eqn:1overx-small-for-x-large} simplifies to
 \[
 \frac 1x<\varepsilon
 \]
@@ -609,18 +609,18 @@ of going to some finite number, the quantity $1/x$ ``goes to
 infinity'' as $x\searrow0$.  In symbols:
 \begin{equation}
   \lim_{x\searrow 0} \frac{1} {x} = \infty.
-  \label{eq:03limit-invx-is-infty}
+  \label{eqn:03limit-invx-is-infty}
 \end{equation}%
 %\marginpar{\input ../figures/221/03inverse-of-x.tex }%
 Likewise, as $x$ approaches $0$ through negative numbers, its
 reciprocal $1/x$ drops lower and lower, and we say that $1/x$ ``goes
 to $-\infty$'' as $x\nearrow 0$.  Symbolically,
 \begin{equation}
-  \label{eq:03limit-invx-is-neg-infty}
+  \label{eqn:03limit-invx-is-neg-infty}
     \lim_{x\nearrow 0} \frac{1} {x} = -\infty.
 \end{equation}
-The limits \eqref{eq:03limit-invx-is-infty} and
-\eqref{eq:03limit-invx-is-neg-infty} are not like the normal limits we
+The limits \eqref{eqn:03limit-invx-is-infty} and
+\eqref{eqn:03limit-invx-is-neg-infty} are not like the normal limits we
 have been dealing with so far.  Namely, when we write something like
 \[
 \lim_{x\to2} x^2 = 4
@@ -628,7 +628,7 @@ have been dealing with so far.  Namely, when we write something like
 we mean that the limit actually exists and that it is equal to $4$.
 On the other hand, since we have agreed that $\infty$
 is not a number (see p.~\pageref{infinity-is-not-a-hyperreal}),
-the meaning of \eqref{eq:03limit-invx-is-infty} cannot be to say that
+the meaning of \eqref{eqn:03limit-invx-is-infty} cannot be to say that
 ``the limit exists and its value is $\infty$.''
 
 %%graph%% limit-of-one-over-x-raw func=1/x format=svg xlo=0.1 xhi=10 ylo=0 yhi=10 with=lines samples=300
@@ -644,7 +644,7 @@ the meaning of \eqref{eq:03limit-invx-is-infty} cannot be to say that
 Instead, when we write
 \begin{equation}
   \lim_{x\to a} f(x) = \infty
-  \label{eq:03limit-of-f-infty}
+  \label{eqn:03limit-of-f-infty}
 \end{equation}
 for some function $y=f(x)$, we mean, \emph{by definition,} that the
 limit of $f(x)$ does not exist, and that it fails to exist in a
@@ -659,7 +659,7 @@ usual suspect phrases such as ``larger and larger,'' or ``finite
 number'' (as if there were any other kind.)  A more precise definition
 involving epsilons can be given, but in this course we will not go
 into this much detail.  As a final comment on infinite limits, it is
-important to realize that, since \eqref{eq:03limit-of-f-infty} is not
+important to realize that, since \eqref{eqn:03limit-of-f-infty} is not
 a normal limit \emph{you cannot apply the limit rules to infinite
   limits. }  Here is an example of what goes wrong if you try anyway.
 

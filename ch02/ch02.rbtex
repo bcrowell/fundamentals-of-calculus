@@ -428,7 +428,7 @@ Let $x$, $y$, and $z$ be the angular positions of the three gears. Then
 
 
 These examples all used the following relationship among three rates of change:
-\begin{equation}\label{eq:chain-rule-deltas}
+\begin{equation}\label{eqn:chain-rule-deltas}
   \frac{\Delta z}{\Delta x} = \frac{\Delta z}{\Delta y}  \cdot \frac{\Delta y}{\Delta x} 
 \end{equation}
 Because the rates of change were stated to be constant, it was valid to measure them with
@@ -503,7 +503,7 @@ in section
 \ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit}.
 There are two other technical issues to worry about.
 
-First, equation \eqref{eq:chain-rule-deltas}
+First, equation \eqref{eqn:chain-rule-deltas}
 is not true if $\Delta y=0$, because we can't divide by zero, and if the derivative of
 $y$ with respect to $x$ happens to be zero somewhere, then it's reasonable to worry that
 this might be forced upon us for a certain value of $\Delta x$. Although we won't prove it
@@ -783,7 +783,7 @@ Formally, continuity is defined as follows.
 
 \begin{important}
 A function $g$ is \emph{continuous} at $a$ if
-\begin{equation}\label{eq:continuity-def}
+\begin{equation}\label{eqn:continuity-def}
   \lim_{x\to a} g(x) = g(a)
 \end{equation}
 A function is continuous if it is continuous at every $a$ in its

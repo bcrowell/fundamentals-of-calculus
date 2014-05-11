@@ -643,7 +643,7 @@ That is, if the ride was free, $a$ passengers would ride each day, but for every
 increase in the fare, $b$ people will decide not to go. The tram's daily revenue is then found
 by multiplying the number of riders by the fare, which gives
 the function
-\begin{equation}\label{eq:tram-revenue}
+\begin{equation}\label{eqn:tram-revenue}
   r(f) = (a-bf)f \qquad .
 \end{equation}
 
@@ -666,7 +666,7 @@ so to find it, we should differentiate $r$, set it equal to zero, and solve for 
 
 We haven't yet learned enough of the techniques of calculus to
 know how to find the derivative of a function with the form of equation
-\eqref{eq:tram-revenue}, but by multiplying out the product we can make it into a polynomial,
+\eqref{eqn:tram-revenue}, but by multiplying out the product we can make it into a polynomial,
 which is a form that we do know how to differentiate:
 \begin{align*}
   r(f) &= -bf^2+af \\
