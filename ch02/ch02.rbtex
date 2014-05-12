@@ -904,6 +904,8 @@ except at $x=0$. At $x=0$, there is a kink, and no matter how far we zoom in, th
 like a line.
 \end{eg}
 
+\pagebreak
+
 %%graph%% not-differentiable-at-pole func=1/(x-1) format=eps xlo=-1 xhi=3 xtic_spacing=1 ylo=-10 yhi=10 ytic_spacing=5 with=lines
 \begin{eg}{Not differentiable when dividing by zero}\label{eg:not-differentiable-at-pole}
 \egquestion Where is the function $f(x)=1/(x-1)$ differentiable?
