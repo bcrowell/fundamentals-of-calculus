@@ -44,7 +44,7 @@ one could have a number system that obeyed the axioms given in section \ref{sec:
 (p.~\pageref{sec:elementary-reals}) and that included infinitely small numbers, such a system would not
 be the same as the real numbers, and furthermore one would have a problem with the procedure of
 treating a $\der x^2$ as if it were zero; one can prove from those axioms that zero itself is the
-only number whose square is zero.\footnote{For more on this topic, see optional
+only number whose square is zero.\footnote{For more on this topic, see 
 section \ref{sec:safe-handling-of-dx} on p.~\pageref{sec:safe-handling-of-dx}.} For these reasons, mathematicians turned to a different way of
 defining the derivative, by using the new notion of a \emph{limit}.\index{limit}
 
@@ -942,7 +942,7 @@ also vanishes, and vanishes smoothly.
 <% end_sec('differentiability') %>
 <% end_sec('continuity-and-differentiability') %>
 
-<% begin_sec("Safe handling of $\\der y$ and $\\der x$ (optional)",nil,'safe-handling-of-dx',{'optional'=>true}) %>
+<% begin_sec("Safe handling of $\\der y$ and $\\der x$",nil,'safe-handling-of-dx') %>
 We've seen that although the real number system doesn't include infinitely big or infinitely small
 quantities, it can nevertheless be extremely useful to think of
 a notation like $\der y/\der x$ as the quotient of two infinitely small numbers.

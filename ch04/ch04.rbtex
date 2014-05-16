@@ -1032,7 +1032,7 @@ What changes is always a \emph{function}, and the function takes an input
 value that belongs to its domain and gives back an output that belongs to its
 range. The domain and range could in principle be sets of integers, rational
 numbers, real numbers, complex numbers, or hyperreal numbers
-(optional section \ref{sec:safe-handling-of-dx}, p.~\pageref{sec:safe-handling-of-dx}).
+(section \ref{sec:safe-handling-of-dx}, p.~\pageref{sec:safe-handling-of-dx}).
 These number systems all share many of the same properties, but 
 just as the ocean is the natural setting for a pirate story,
 there is a sense in which the real numbers are the natural setting in which to

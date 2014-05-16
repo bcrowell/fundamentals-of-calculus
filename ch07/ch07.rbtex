@@ -266,5 +266,320 @@ third derivative.
 <% end_sec('related-rates') %>
 
 
+<% begin_sec("Implicit functions",4,'implicit-functions') %>
+As you read this, the world is turning, and you are moving in a circle. Let this circle be
+centered on the origin, with radius $r$. Physical forces constrain you to stay on this circle,
+rather than flying up into the sky or sinking down into the earth's core. The Pythagorean theorem
+allows us to write this constraint as the equation
+\begin{equation}\label{eqn:circle-implicit-function}
+  x^2 + y^2 = r^2 \qquad ,
+\end{equation}
+whose solutions are graphed in figure \figref{circle-implicit-function}. This graph fails the
+vertical line test, so $y$ isn't a function of $x$, and it also fails the horizontal line tets,
+so $x$ isn't a function of $y$. Usually by restricting it to a small enough region, we can make
+it into a function. If we restrict to region 1, 2, 3, or 5, $y$ is a function of $x$, and
+similarly for $x$ as a function of $y$ in regions 1, 2, 3, and 4. The largest piece of the graph
+on which equation \eqref{eqn:circle-implicit-function} defines a function is a semicircle. For example,
+we could solve for $x$ and find the function
+\begin{equation}\label{eqn:circle-explicit-function}
+  x(y) = -\sqrt{r^2-y^2} \qquad ,
+\end{equation}
+where the choice of the negative square root gives the left-hand half of the circle. Equation
+\eqref{eqn:circle-implicit-function} is said to define an \emph{implicit} function,\index{implicit function}
+while \eqref{eqn:circle-explicit-function} defines an \emph{explicit} one. In an example such as
+this one, it would be inconvenient to try to work with explicit functions. For example, if we insisted
+on having explicit functions, we would run into
+hassles because any calculation would have to be broken down into special cases covering different
+regions.
+
+<% marg(100) %>
+<%
+  fig(
+    'circle-implicit-function',
+    %q{The equation $x^2 + y^2 = r^2$ does not define a function unless we restrict it to
+       an appropriate region.}
+  )  
+%>
+<% end_marg %>
+
+<% marg(-15) %>
+<%
+  fig(
+    'watt-linkage',
+    %q{Example \ref{eg:watt-linkage}.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{Watt's linkage}\label{eg:watt-linkage}
+Figure \figref{watt-linkage} shows a mechanical linkage patented by James Watt in 1784,
+and still used in applications such as automobile suspensions. It consists of a chain of three
+linked rods that are free to rotate about bearings at their ends. The ends of the chain are
+fixed. The purpose of the arrangement is to constrain some object, attached to the center of
+the middle rod, to move along the figure-eight curve shown as a dotted line.
+In this example, the
+proportions of the three arms are $1:\sqrt{2}:1$, so that when the central point is at the center
+of the curve, they outline a square. This choice of proportions, along with an appropriate
+choice of scale for the coordinates, can be shown to produce a curve
+with the  equation
+\begin{equation}\label{eqn:lemniscate-of-bernoulli}
+  (x^2+y^2)^2 = 2(x^2-y^2) \qquad .
+\end{equation}
+
+In a typical application of a Watt linkage, the central point is attached to the chassis of
+a car, and the ends are attached to the wheels. The linkage is rotated so that the
+darkened segment of the curve is approximately vertical, and the car's chassis is
+then constrained so that its motion is nearly vertical. When the car goes around corners,
+the body can't move sideways.
+
+Equation \eqref{eqn:lemniscate-of-bernoulli} constrains $x$ and $y$ relative to one another,
+and makes either variable an implicit function of the other. The linkage can be thought of
+as a type of computer (an analog computer rather than a digital one) that computes the
+implicit function \eqref{eqn:lemniscate-of-bernoulli}. 
+\end{eg}
+
+<% end_sec('implicit-functions') %>
+
+<% begin_sec("Implicit differentiation",nil,'implicit-differentiation') %>
+We would like to be able to do calculus on implicit functions. As a typical application,
+consider example \ref{eg:watt-linkage}. If vertical motion is desired for small displacements
+from the center, then we want to rotate the linkage by the correct angle
+so that the dark portion of the lemniscate is vertical near its center. That is,
+we want to know the slope of the tangent line at this point, so that we can rotate the
+tangent line and make it vertical. The slope of the tangent line is the derivative, so
+essentially we need to differentiate a graph that represents an implicit rather than explicit function.
+
+<% marg(0) %>
+<%
+  fig(
+    'pulley',
+    %q{1.~Farmer Bill pulls a stump.
+       The pulley is a simple machine, like the lever of section
+       \ref{sec:related-rates}.
+       Just like the lever, it increases the applied force by some factor,
+       while decreasing the motion by the same factor. 
+       2.~In our mathematical model, the fixed post is assumed to be immovable and perfectly rigid, and
+       the ropes perfectly unstretchable, so that their lengths $\ell_1$ and $\ell_2$ are constant.
+       For simplicity, we neglect the radius of the pulley.}
+  )  
+%>
+<% end_marg %>
+
+<% begin_sec("Some simple examples",nil,'implicit-differentiation-examples') %>
+<% begin_sec("An example involving addition",nil,'implicit-differentiation-addition') %>
+But let's start with a simpler example. In figure \figref{pulley}, 
+we want to find a proportion between the motion of the tractor and stump.
+With some arithmetic, we find
+\begin{equation}\label{eqn:pulley}
+  A+2B-2\ell_2 -\ell_1 = 0 \qquad ,
+\end{equation}
+which is an implicit relation between $A$ and $B$. Any change $\Delta A$ in the
+position of the tractor will correspond to some change $\Delta B$ in the position of the stump.
+Setting the change in the left-hand side of equation \eqref{eqn:pulley} equal to 0, we have
+\begin{equation*}
+  \Delta(A+2B-2\ell_2 -\ell_1) = 0 \qquad .
+\end{equation*}
+The change in a sum is the same as the sum of the changes, so
+$\Delta A+2 \Delta B-2\Delta \ell_2-\Delta \ell_1 = 0$.
+But the constants don't change, so 
+\begin{subequations}
+\begin{gather}\label{eqn:tractor-finite-differences}
+  \Delta A+2 \Delta B = 0 \qquad .
+\end{gather}
+The tractor moves twice as much as the stump, and the motion is such that as $A$ increases, $B$ decreases.
+All of the following are just different ways of expressing the same thought.
+\begin{align}
+  & \frac{\der A}{\der B} +2 = 0 \label{eqn:eg-tractor-deriv-1}\\
+  & 1+2\frac{\der B}{\der A} = 0 \\
+  & \frac{\der A}{\der t} + 2\frac{\der B}{\der t} = 0 \label{eqn:eg-tractor-deriv-3} \\
+  & \der A +  2\der B = 0\label{eqn:tractor-infl-differences}
+\end{align}
+\end{subequations}
+Equation \eqref{eqn:tractor-infl-differences} says that if
+\eqref{eqn:tractor-finite-differences} works for ordinary numbers like 2 meters and $-1$ meter,
+then it should also work for infinitely small numbers (section
+\ref{sec:safe-handling-of-dx}, p.~\pageref{sec:safe-handling-of-dx}). Alternatively, some people
+like to think of an equation like \eqref{eqn:tractor-infl-differences} as nothing more than
+an informal shorthand for equations involving derivatives such 
+as \ref{eqn:eg-tractor-deriv-1}-\ref{eqn:eg-tractor-deriv-3}.
+<% end_sec('implicit-differentiation-addition') %>
+
+<% begin_sec("An example with multiplication",nil,'implicit-differentiation-multiplication') %>
+Boyle's law states that at a fixed temperature, a sample of an ideal gas has its pressure and
+volume related by
+\begin{equation}\label{eqn:boyle}
+  pv = k \qquad ,
+\end{equation}
+where $k$ is a constant. For example, compressing the gas to a smaller volume makes its pressure
+increase.
+<% marg(0) %>
+<%
+  fig(
+    'boyle-geometrical',
+    %q{A geometrical interpretation of equation \eqref{eqn:boyle-diff}. Boyle's law says that
+       the areas of the initial, dark rectangle and the final, dashed rectangle are the same. 
+       The area $v\der p$ lost in the top strip equals the area $p\der v$ gained in the 
+       side strip.}
+  )  
+%>
+<% end_marg %>
+
+Suppose that the pressure changes from $p$ to $p+\Delta p$, and the volume from
+$v$ to $v+\Delta v$. Then:
+\begin{align*}
+  & \Delta(pv) = 0 
+                             && \text{[change in each side of \eqref{eqn:boyle}; $\Delta k=0$]} \\
+  & (p+\Delta p)(v+\Delta v)-pv = 0 
+                                         && \text{[subtract initial $pv$ from final]}\\
+  & p\Delta v+v \Delta p + \Delta p\Delta v = 0 
+                                         &&  \text{[distribute and cancel $pv$ terms]}
+\end{align*}
+This messy expression can be cleaned up in the case where $\Delta p$ and $\Delta v$ are small.
+The product of two small numbers is even smaller, and if we make them small enough, their product will
+always be negligibly small compared to them. (Cf.~p.~\pageref{discard-dx-squared}.)
+To show that we're now talking about very small numbers,
+we notate the changes as differentials $\der p$ and $\der v$. We then have:
+\begin{subequations}
+\begin{equation}\label{eqn:boyle-diff}
+  p\der v + v \der p = 0 \qquad .
+\end{equation}
+This looks just like the product rule. The process of taking differentials is no different than
+the process of taking a derivative. As in the example of the pulley on p.~\pageref{subsubsec:implicit-differentiation-addition},
+there are multiple equivalent ways of expressing this statement:
+\begin{align}
+  & p \frac{\der v}{\der p}+v = 0 \\
+  & p + v \frac{\der p}{\der v} = 0 \\
+  & p\frac{\der v}{\der t} + v \frac{\der p}{\der t} = 0 
+\end{align}
+Some people think of \ref{eqn:boyle-diff} as just a shorthand for the other three forms.
+\end{subequations}
+
+<% end_sec('implicit-differentiation-multiplication') %>
+
+<% end_sec('implicit-differentiation-examples') %>
+
+<% begin_sec("Implicit differentiation reduced to differentiation of functions",nil,'implicit-differentiation-rules') %>
+The examples in section \ref{subsec:implicit-differentiation-examples} show that no new techniques
+are needed for implicit differentiation. Every fact about differentiating a function corresponds
+directly to a similar fact about implicit differentiation. In fact, we can perform
+implicit differentiation according to the following recipe, which reduces it to differentiation of
+a function:
+\begin{enumerate}
+\item Take the equation that defines the implicit function and differentiate both sides
+      with respect to something. It doesn't matter what we differentiate with respect to; it
+      can be one of the two variables in the equation, or it can be some other variable such as time.
+\item (Optional.) If desired, clear all the factors of $1/\der something$.
+\end{enumerate}
+
+\begin{eg}{A circle}\label{eg:circle-implicit-differentiation}
+\egquestion The equation $x^2+y^2=r^2$ defines a circle. Implicitly differentiate it.
+
+\eganswer It doesn't matter what we differentiate with respect to, so
+          let's differentiate with respect to $t$, which lets us imagine that the point $(x,y)$ is
+          moving around the circle as time passes. Since $r$ is a constant, the derivative of the
+          right-hand side is zero.
+\begin{equation*}
+  \frac{\der(x^2)}{\der t}+\frac{\der(y^2)}{\der t} = 0
+\end{equation*}
+Since the expressions $x^2$ and $y^2$ aren't written in terms of $t$, we need to use the chain rule.
+\begin{align*}
+  & \frac{\der(x^2)}{\der x}\frac{\der x}{\der t}+\frac{\der(y^2)}{\der y}\frac{\der y}{\der t} = 0 \\
+  & 2x\frac{\der x}{\der t}+2y\frac{\der y}{\der t} = 0 \\
+  & x\frac{\der x}{\der t}+y\frac{\der y}{\der t} = 0 
+\end{align*}
+We could stop here if we wished, but the factors of $1/\der t$ are messy, and $t$ wasn't even a variable
+in the original statement of the problem, so it's nicer to multiply by $\der t$ on both sides.
+We have
+\begin{equation}\label{eqn:circle-implicit-form-1}
+  x\der x+y\der y = 0
+\end{equation}
+or, equivalently,
+\begin{equation}\label{eqn:circle-implicit-form-2}
+  \frac{\der y}{\der x} = -\frac{x}{y} \qquad .
+\end{equation}
+The form \eqref{eqn:circle-implicit-form-1} has the advantage that it holds anywhere on the circle,
+whose graph isn't a function. Some people would prefer \eqref{eqn:circle-implicit-form-2} because
+they don't believe in Santa Claus or infinitesimals, but it has the disadvantage that it
+breaks the symmetry between $x$ and $y$, and it doesn't hold at the two points on the circle
+where $y=0$.
+\end{eg}
+
+<% marg(100) %>
+<%
+  fig(
+    'circle-implicit',
+    %q{Examples \ref{eg:circle-implicit-differentiation} and \ref{eg:circle-approx}.
+       The reason for the unexpectedly simple result $\der y/\der x=-x/y$ becomes apparent
+       here because the slope of the radius is $y/x$, and the tangent line must be
+       perpendicular to the radius.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{An approximation on the circle}\label{eg:circle-approx}
+\egquestion The following are two nearby points on the unit circle:
+\begin{align*}
+  (0.400000,0.916515) \qquad , \qquad
+  (0.401000,0.916078)
+\end{align*}
+% calc -e "x=0.4000; y=sqrt(1-x^2)"
+%    x = 0.4
+%    y = 0.916515138991168
+%  calc -e "x=0.401; y=sqrt(1-x^2)"
+%    x = 0.401
+%    y = 0.916078053443046
+Verify that equation \eqref{eqn:circle-implicit-form-1} is a good approximation.
+
+\eganswer Since $\Delta x$ and $\Delta y$ are small, it makes sense to expect that \eqref{eqn:circle-implicit-form-1}
+will be approximately correct if we substitute deltas for the differentials. Let's see if that's true.
+\begin{align*}
+  x \Delta x+y \Delta y &= (0.400000)(0.001000)+(0.916515)(-0.000437) \\
+        &= -0.000001
+\end{align*}
+The approximation is so good that when we round off to six decimal places, the result almost rounds to zero.
+% calc -e "0.916078-0.916515"
+%    -4.37000000000021*10^-4
+% calc -e "(0.400000)(0.001000)+(0.916515)(-0.000437)"
+%    -5.17054999999952*10^-7
+\end{eg}
+
+\begin{eg}{Implicit differentiation applied to Watt's linkage}\label{eg:watt-linkage-rotation}
+As remarked on p.~\pageref{sec:implicit-differentiation}, there is a strong practical motivation
+for finding the slope of the curve
+\begin{equation}
+  (x^2+y^2)^2 = 2(x^2-y^2)
+\end{equation}
+where it passes through the origin. Applying implicit differentiation, we have
+\begin{align*}
+  & 2(x^2+y^2)(2x\:\der x+2y\:\der y)=2(2x\:\der x-2y\:\der y) \\
+  & (1-x^2-y^2)x\:\der x = (1+x^2+y^2)y\:\der y \\
+  & \frac{\der y}{\der x} = \frac{(1-x^2-y^2)x}{(1+x^2+y^2)y}
+\end{align*}
+Directly plugging in $x=0$ and $y=0$ doesn't work, since this gives $0/0$, which is an
+indeterminate form (ch.~\ref{ch:indeterminate-forms}).
+For small values of $x$ and $y$, the squares $x^2$ and $y^2$ become negligible compared to 1,
+and $\der y/\der x\approx y/x$, so this becomes
+\begin{align*}
+  & \frac{y}{x} \approx \frac{x}{y} \\
+  & x^2 \approx y^2 \\
+  & y \approx \pm x \qquad .
+\end{align*}
+Therefore this curve has a slope of $\pm 1$ on its two segments crossing the origin.
+To make Watt's linkage (with arms in the proportions previously described) constrain
+its central point to nearly vertical motion, we need to rotate it by 45 degrees.
+\end{eg}
+<% marg(120) %>
+<%
+  fig(
+    'watt-linkage-rotation',
+    %q{Example \ref{eg:watt-linkage-rotation}.}
+  )  
+%>
+<% end_marg %>
+
+
+<% end_sec('implicit-differentiation-rules') %>
+
+<% end_sec('implicit-differentiation') %>
 
 <% end_chapter %>
