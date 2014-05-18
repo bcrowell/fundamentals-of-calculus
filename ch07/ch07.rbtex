@@ -568,18 +568,61 @@ This power law is exactly analogous to the one for a function $u(t)$, which, if 
 Obviously neither one of these needs to be memorized separately from the other.
 Expressions like $\der u$ and $\der(u^2)$ are known as \emph{differentials}.
 
-%%graph%% keplerish-raw func=2*x+sin(x) format=svg xlo=0 xhi=6.28 ylo=0 yhi=9.42 with=lines xtic_spacing=3.1416 ytic_spacing=3.1416
+\begin{eg}{Differential of a polynomial}
+\egquestion Find the differential of $s^2+s$, and use it to approximate the change in this
+expression as $s$ changes from $1.000$ to $1.001$.
 
-<% marg(-10) %>
-<%
-  fig(
-    'keplerish',
-    %q{Example \ref{eg:keplerish}.}
-  )  
-%>
-<% end_marg %>
+\eganswer For differentiation we have a rule that the derivative of the sum of two functions is
+the sum of the derivatives. The analogous rule for differentials is that the differential of a sum
+is the sum of the differentials. Therefore
+\begin{equation*}
+  \der(s^2+s) = \der(s^2)+\der s \qquad .
+\end{equation*}
+Likewise we have a power rule for differentials that corresponds to the power rule for derivatives,
+and the case of the second power was discussed in detail above. We therefore find
+\begin{equation*}
+  \der(s^2+s) = 2s\der s+\der s \qquad .
+\end{equation*}
+The numerical approximation is
+\begin{equation*}
+  \Delta(s^2+s) \approx = (2s+s)\Delta s = (3)(0.001) = 0.003\qquad .
+\end{equation*}
+\end{eg}
+% calc -e "q=1.000; dq=0.001; y1=q^2+q; q=q+dq; y2=q^2+q; y2-y1"
+%    3.00099999999937*10^-3
 
-\begin{eg}{An example with differentials}\label{eg:keplerish}
+
+\begin{eg}{The power law for fractional exponents}\label{eg:power-law-frac-with-implicit-diff}
+In section \ref{subsec:fractional-powers}, p.~\pageref{subsec:fractional-powers}, we gave a proof,
+using only the elementary rules of calculus, that the derivative of $x^{1/2}$ was $\frac{1}{2}x^{-1/2}$,
+as expected from the power rule. We remarked that although it was clear that such an argument could
+be constructed for any fractional exponent, that was not the same as giving a general proof.
+We can write such a proof using implicit differentiation. (We have already proved this fact for
+any real exponent, using the exponential function, in
+example \ref{eg:power-any-exponent} on p.~\pageref{eg:power-any-exponent}.)
+
+Let $n=p/q$ where $p$ and $q$ are integers and let
+\begin{equation*}
+  y=x^{p/q} \qquad .
+\end{equation*}
+By raising both sides to the power $p$, we can make this into an implicit function that uses
+only integer exponents.
+\begin{equation*}
+  y^q=x^p \qquad .
+\end{equation*}
+Implicit differentiation gives
+\begin{equation*}
+  qy^{q-1}\der y=px^{p-1}\der x \qquad .
+\end{equation*}
+We then have
+\begin{align*}
+  \frac{\der y}{\der x} &= \frac{p x^{p-1}}{q y^{q-1}} \\
+           &= \frac{p}{q} x^{p-1}x^{-(p/q)(q-1)} \\
+           &= \frac{p}{q} x^{p/q-1} \\
+\end{align*}
+\end{eg}
+
+\begin{eg}{}\label{eg:keplerish}
 Let $y=f(x)$ be a function defined by
 \[
 2y+\sin y - x=0 \qquad .
@@ -617,6 +660,70 @@ could answer
 f'(2\pi) = \frac1{2+\cos \pi} = \frac1{2-1} = 1 \qquad .
 \]
 
+Implicit differentiation was not strictly necessary here,
+since we could have expressed $x$ as a function of $y$, found $\der x/\der y$,
+and inverted this to get $\der y/\der x$. Our next example is one in which there is no
+option other than implicit differentiation.
+
+\end{eg}
+
+%%graph%% keplerish-raw func=2*x+sin(x) format=svg xlo=0 xhi=6.28 ylo=0 yhi=9.42 with=lines xtic_spacing=3.1416 ytic_spacing=3.1416
+
+<% marg(100) %>
+<%
+  fig(
+    'keplerish',
+    %q{Example \ref{eg:keplerish}. The graph of $x=2y+\sin y$
+       contains the point $(2\pi,\pi)$.  What is the slope of the
+       tangent at that point?}
+  )  
+%>
+<% end_marg %>
+
+<% marg(-50) %>
+<%
+  fig(
+    'wiggly-log',
+    %q{Example \ref{eg:wiggly-log}. The graph of $x+\cos x=y+e^y$
+       passes through the origin.  Its slope there is $1/2$.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{}\label{eg:wiggly-log}
+\egquestion Let $x+\cos x=y+e^y$. The graph of this relation passes through the origin. What is its
+slope there? Check your result numerically with small values of $x$ and $y$.
+
+\eganswer We differentiate implicitly.
+\begin{align*}
+  & \der x -\sin x\der x = \der y + e^y\der y \\
+  & \frac{\der y}{\der x} = \frac{1-\sin x}{1+e^y} 
+\end{align*}
+Plugging in $x=0$ and $y=0$ gives $\der y/\der x=1/2$.
+
+To check this result, we use the approximation $(y-0)/(x-0)\approx \der y/\der x$, which should
+be valid for small values of $x$ and $y$. Let's use $x=0.010$ and $y=0.005$, which are small
+and have $y/x=1/2$, as they approximately should according to the result of our implicit differentiation.
+If we didn't make a mistake in our calculus, then these values of $x$ and $y$ should be nearly, but
+not exactly, solutions of the original equation that defined the relation between the variables.
+Plugging in, we have
+\begin{align*}
+  & x+\cos x \stackrel{?}{\approx} y+e^y \\
+  & 1.00995 \approx 1.01001
+\end{align*}
+These are indeed nearly equal, but in fact they were guaranteed to be nearly equal simply because
+$(x,y)$ was close to the origin, and we knew that the origin was a point on the graph.
+What we need to check is that the discrepancy between the two sides is small compared to $x$
+and $y$ themselves; if $y=(1/2)x$ is the best linear approximation to the graph near the origin,
+then the error should be on the order of the \emph{squares} of the variables, i.e., something
+like $10^{-4}$. Subtracting, we find that
+the difference between the two sides of the equation is
+about $6\times10^{-5}$, which is indeed small enough to confirm the result of the implicit
+differentiation.
+% calc -e "x=.01; y=.005; x+cos x; y+e^y"
+%    1.00995000041667
+%    1.0100125208594
+
 \end{eg}
 
 \begin{eg}{Implicit differentiation applied to Watt's linkage}\label{eg:watt-linkage-rotation}
@@ -644,7 +751,7 @@ Therefore this curve has a slope of $\pm 1$ on its two segments crossing the ori
 To make Watt's linkage (with arms in the proportions previously described) constrain
 its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 \end{eg}
-<% marg(120) %>
+<% marg(300) %>
 <%
   fig(
     'watt-linkage-rotation',

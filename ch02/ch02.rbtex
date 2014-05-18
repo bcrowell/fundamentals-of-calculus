@@ -670,7 +670,10 @@ give it a name. Call it $f$, i.e., $f(x)=(\sqrt{x})'$. Then
        &= \frac{1}{2}x^{-1/2}
 \end{align*}
 This is exactly what we would have inferred from the power rule $(x^n)'=nx^{n-1}$, with $n=1/2$.
-A similar argument can be carried out for any fractional exponent. The generalization to irrational
+A similar argument can be carried out for any fractional exponent, although recognizing this is not
+quite the same as writing a general proof; a general proof is given in
+example \ref{eg:power-law-frac-with-implicit-diff}, p.~\pageref{eg:power-law-frac-with-implicit-diff}.
+The generalization to irrational
 exponents is deferred until example \ref{eg:power-any-exponent} on p.~\pageref{eg:power-any-exponent}.
 <% end_sec('fractional-powers') %>
 
