@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="480"
+   viewBox="0 0 600 480"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="keplerish-raw.svg">
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnuplot</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs88">
+    <defs
+       id="defs11">
+      <circle
+         stroke-width="0.5"
+         r="0.5"
+         id="gpDot" />
+      <path
+         d="M-1,0 h2 M0,-1 v2"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt0" />
+      <path
+         d="M-1,-1 L1,1 M1,-1 L-1,1"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt1" />
+      <path
+         d="M-1,0 L1,0 M0,-1 L0,1 M-1,-1 L1,1 M-1,1 L1,-1"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt2" />
+      <rect
+         height="2"
+         width="2"
+         y="-1"
+         x="-1"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt3" />
+      <rect
+         height="2"
+         width="2"
+         y="-1"
+         x="-1"
+         fill="currentColor"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt4" />
+      <circle
+         r="1"
+         cy="0"
+         cx="0"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt5" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt6"
+         xlink:href="#gpPt5" />
+      <path
+         d="M0,-1.33 L-1.33,0.67 L1.33,0.67 z"
+         stroke="currentColor"
+         stroke-width="0.222"
+         id="gpPt7" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt8"
+         xlink:href="#gpPt7" />
+      <use
+         transform="rotate(180)"
+         stroke="currentColor"
+         id="gpPt9"
+         xlink:href="#gpPt7" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt10"
+         xlink:href="#gpPt9" />
+      <use
+         transform="rotate(45)"
+         stroke="currentColor"
+         id="gpPt11"
+         xlink:href="#gpPt3" />
+      <use
+         stroke="none"
+         fill="currentColor"
+         id="gpPt12"
+         xlink:href="#gpPt11" />
+    </defs>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="996"
+     id="namedview86"
+     showgrid="false"
+     inkscape:zoom="2.3264597"
+     inkscape:cx="138.38036"
+     inkscape:cy="368.53546"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title4">Gnuplot</title>
+  <desc
+     id="desc6">Produced by GNUPLOT 4.6 patchlevel 1 </desc>
+  <rect
+     style="fill:#dedede;fill-opacity:1;stroke:none"
+     id="rect3982"
+     width="184.25197"
+     height="122.93357"
+     x="31.378149"
+     y="52.311531" />
+  <g
+     id="g27"
+     style="color:#ffffff;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter" />
+  <g
+     id="g29"
+     style="color:#ffffff;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter" />
+  <path
+     style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter"
+     d="m 101.22641,141.96218 0,9 m 0,-9 0,-9 0,-0.01"
+     id="path33"
+     inkscape:connector-curvature="0" />
+  <path
+     style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter"
+     d="m 136.62641,141.96218 0,9 m 0,-9 0,-9 0,-0.01"
+     id="path39"
+     inkscape:connector-curvature="0" />
+  <path
+     style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.40805012;stroke-linecap:butt;stroke-linejoin:miter"
+     d="m 65.748428,106.82861 -9.014367,0 m 9.014367,0 9.014367,0 0,-0.007"
+     id="path45"
+     inkscape:connector-curvature="0" />
+  <path
+     style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter"
+     d="m 65.82641,141.96218 0,-61.926722 m 0,61.926722 106.2,0 0,-0.01"
+     id="path51"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <g
+     style="color:#000000;fill:none;stroke:none"
+     id="g61"
+     transform="matrix(0,-1,-1,0,487.92641,262.45643)">
+    <polygon
+       points="188.2,422.1 178.8,425.5 178.8,422.1 178.8,422.1 178.8,418.7 "
+       id="polygon63"
+       style="fill:currentColor" />
+  </g>
+  <g
+     style="color:#000000;fill:none;stroke:none"
+     id="g67"
+     transform="matrix(0,-1,-1,0,487.92641,220.76218)">
+    <polygon
+       points="75.4,314.7 78.8,305.3 82.2,314.7 78.8,314.7 78.8,314.7 "
+       id="polygon69"
+       style="fill:currentColor" />
+  </g>
+  <path
+     style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter"
+     d="m 173.22641,141.96218 0,3.4 9.4,-3.4 -9.4,-3.4 0,3.4 m -107.4,0 107.4,0 0,-0.01"
+     id="path71"
+     inkscape:connector-curvature="0" />
+  <g
+     style="color:#ffffff;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter"
+     id="g76"
+     transform="matrix(0,-1,-1,0,487.92641,220.76218)" />
+  <g
+     style="color:#000000;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter"
+     id="g78"
+     transform="matrix(0,-0.66495814,-1.0015964,0,488.52225,194.53659)">
+    <path
+       d="m 78.8,422.1 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.3,-0.8 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.4,-0.7 0.3,-0.6 0.4,-0.7 0.3,-0.7 0.4,-0.7 0.3,-0.7 0.4,-0.6 0.3,-0.7 0.4,-0.7 0.4,-0.7 0.3,-0.6 0.4,-0.7 0.3,-0.6 0.4,-0.7 0.3,-0.6 0.4,-0.7 0.3,-0.6 0.4,-0.7 0.4,-0.6 0.3,-0.6 0.4,-0.7 0.3,-0.6 0.4,-0.6 0.3,-0.6 0.4,-0.6 0.3,-0.7 0.4,-0.6 0.3,-0.6 0.4,-0.6 0.4,-0.6 0.3,-0.5 0.4,-0.6 0.3,-0.6 0.4,-0.6 0.3,-0.6 0.4,-0.5 0.3,-0.6 0.4,-0.5 0.4,-0.6 0.3,-0.5 0.4,-0.6 0.3,-0.5 0.4,-0.6 0.3,-0.5 0.4,-0.5 0.3,-0.5 0.4,-0.6 0.4,-0.5 0.3,-0.5 0.4,-0.5 0.3,-0.5 0.4,-0.5 0.3,-0.4 0.4,-0.5 0.3,-0.5 0.4,-0.5 0.3,-0.4 0.4,-0.5 0.4,-0.4 0.3,-0.5 0.4,-0.4 0.3,-0.5 0.4,-0.4 0.3,-0.4 0.4,-0.5 0.3,-0.4 0.4,-0.4 0.4,-0.4 0.3,-0.4 0.4,-0.4 0.3,-0.4 0.4,-0.4 0.3,-0.4 0.4,-0.4 0.3,-0.4 0.4,-0.3 0.4,-0.4 0.3,-0.4 0.4,-0.3 0.3,-0.4 0.4,-0.3 0.3,-0.4 0.4,-0.3 0.3,-0.4 0.4,-0.3 0.3,-0.3 0.4,-0.4 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.2 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.4,-0.2 0.3,-0.2 0.4,-0.3 0.3,-0.2 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.2 0.4,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.2 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.3,-0.2 0.4,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.2 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.3 0.3,-0.3 0.4,-0.4 0.4,-0.3 0.3,-0.3 0.4,-0.4 0.3,-0.3 0.4,-0.3 0.3,-0.4 0.4,-0.3 0.3,-0.4 0.4,-0.3 0.3,-0.4 0.4,-0.4 0.4,-0.4 0.3,-0.3 0.4,-0.4 0.3,-0.4 0.4,-0.4 0.3,-0.4 0.4,-0.4 0.3,-0.4 0.4,-0.4 0.4,-0.4 0.3,-0.4 0.4,-0.5 0.3,-0.4 0.4,-0.4 0.3,-0.5 0.4,-0.4 0.3,-0.5 0.4,-0.4 0.4,-0.5 0.3,-0.4 0.4,-0.5 0.3,-0.5 0.4,-0.5 0.3,-0.4 0.4,-0.5 0.3,-0.5 0.4,-0.5 0.3,-0.5 0.4,-0.5 0.4,-0.6 0.3,-0.5 0.4,-0.5 0.3,-0.5 0.4,-0.6 0.3,-0.5 0.4,-0.5 0.3,-0.6 0.4,-0.5 0.4,-0.6 0.3,-0.6 0.4,-0.5 0.3,-0.6 0.3,-0.4 h 0.01"
+       id="path80"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     id="g82"
+     style="color:#ffffff;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter" />
+  <g
+     id="g84"
+     style="color:#000000;fill:none;stroke:currentColor;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter" />
+  <text
+     xml:space="preserve"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+     x="191.36876"
+     y="147.29352"
+     id="text3190"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3192"
+       x="191.36876"
+       y="147.29352"
+       style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">x</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+     x="62.889309"
+     y="69.577377"
+     id="text3194"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3196"
+       x="62.889309"
+       y="69.577377"
+       style="font-style:italic;-inkscape-font-specification:Liberation Sans Italic">y</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+     x="96.309776"
+     y="161.67746"
+     id="text3198"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3200"
+       x="96.309776"
+       y="161.67746">π</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+     x="46.317856"
+     y="109.19089"
+     id="text3202"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3204"
+       x="46.317856"
+       y="109.19089">π</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+     x="131.3315"
+     y="161.67746"
+     id="text3206"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3208"
+       x="131.3315"
+       y="161.67746">2π</tspan></text>
+  <path
+     sodipodi:type="arc"
+     style="fill:#000000;fill-opacity:1;stroke:none"
+     id="path3210"
+     sodipodi:cx="167.29132"
+     sodipodi:cy="91.946671"
+     sodipodi:rx="4.0650229"
+     sodipodi:ry="4.0650229"
+     d="m 171.35634,91.946671 a 4.0650229,4.0650229 0 1 1 -8.13004,0 4.0650229,4.0650229 0 1 1 8.13004,0 z"
+     transform="matrix(0.69341288,0,0,0.69053348,20.932432,43.034742)" />
+  <path
+     style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 2;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     d="M 165.30123,78.075909 112.93415,130.44299"
+     id="path3980"
+     inkscape:connector-curvature="0" />
+</svg>

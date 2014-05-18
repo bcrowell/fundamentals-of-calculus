@@ -447,21 +447,23 @@ This looks just like the product rule. The process of taking differentials is no
 the process of taking a derivative. As in the example of the pulley on p.~\pageref{subsubsec:implicit-differentiation-addition},
 there are multiple equivalent ways of expressing this statement:
 \begin{align}
-  & p \frac{\der v}{\der p}+v = 0 \\
+  & p \frac{\der v}{\der p}+v = 0 \label{eqn:boyle-alternative-1}\\
   & p + v \frac{\der p}{\der v} = 0 \\
-  & p\frac{\der v}{\der t} + v \frac{\der p}{\der t} = 0 
+  & p\frac{\der v}{\der t} + v \frac{\der p}{\der t} = 0   \label{eqn:boyle-alternative-3}
 \end{align}
-Some people think of \ref{eqn:boyle-diff} as just a shorthand for the other three forms.
+Some people think of \ref{eqn:boyle-diff} as just a shorthand 
+for  \eqref{eqn:boyle-alternative-1}-\eqref{eqn:boyle-alternative-3}.
 \end{subequations}
 
 <% end_sec('implicit-differentiation-multiplication') %>
 
 <% end_sec('implicit-differentiation-examples') %>
 
-<% begin_sec("Implicit differentiation reduced to differentiation of functions",nil,'implicit-differentiation-rules') %>
+<% begin_sec("Implicit differentiation in general",nil,'implicit-differentiation-general') %>
+<% begin_sec("Reduced to differentiation of functions",nil,'implicit-differentiation-reduced') %>
 The examples in section \ref{subsec:implicit-differentiation-examples} show that no new techniques
 are needed for implicit differentiation. Every fact about differentiating a function corresponds
-directly to a similar fact about implicit differentiation. In fact, we can perform
+to a similar fact about implicit differentiation. If we wish, we can do
 implicit differentiation according to the following recipe, which reduces it to differentiation of
 a function:
 \begin{enumerate}
@@ -543,6 +545,80 @@ The approximation is so good that when we round off to six decimal places, the r
 %    -5.17054999999952*10^-7
 \end{eg}
 
+<% end_sec('implicit-differentiation-reduced') %>
+
+<% begin_sec("A little bit of \\ldots",nil,'implicit-differentiation-no-func') %>
+Although we saw above that
+implicit differentiation can be reduced to differentiation of functions, this
+is not necessary in general. People who are proficient in calculus don't go around
+making up additional variables like the $t$ in example \ref{eg:circle-implicit-differentiation}.
+For example, say that a square has sides of length $u$. We can think of $\der$ as meaning
+``a little bit of \ldots,''\footnote{The phrase is due to the direct and
+unpretentious Silvanus Thompson, author of a best-selling 1910 calculus textbook.}
+so that $\der u$ is a little bit of a change in the length of the square's sides.
+Now $u^2$ is the area of the square, and $\der(u^2)$ is a little bit of a change in its
+area. We have a power law that says
+\begin{equation*}
+  \der(u^k)=ku^{k-1}\der u \qquad .
+\end{equation*}
+This power law is exactly analogous to the one for a function $u(t)$, which, if we apply the chain rule, is
+\begin{equation*}
+  \frac{\der(u^k)}{\der t}=ku^{k-1}\frac{\der u}{\der t} \qquad .
+\end{equation*}
+Obviously neither one of these needs to be memorized separately from the other.
+Expressions like $\der u$ and $\der(u^2)$ are known as \emph{differentials}.
+
+%%graph%% keplerish-raw func=2*x+sin(x) format=svg xlo=0 xhi=6.28 ylo=0 yhi=9.42 with=lines xtic_spacing=3.1416 ytic_spacing=3.1416
+
+<% marg(-10) %>
+<%
+  fig(
+    'keplerish',
+    %q{Example \ref{eg:keplerish}.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{An example with differentials}\label{eg:keplerish}
+Let $y=f(x)$ be a function defined by
+\[
+2y+\sin y - x=0 \qquad .
+\]
+(We encountered a function of this form in a real-world application
+in example \ref{eg:keplerian}, p.~\pageref{eg:keplerian}.)
+It turns out to be impossible to find a formula that tells you what
+$f(x)$ is for any given $x$ (i.e., there's no formula for the solution
+$y$ of the equation $2y+\sin y =x$.)  But you can find many points on
+the graph by picking some $y$ value and computing the corresponding
+$x$.
+
+For instance, if $y=\pi$ then $x=2\pi$, so that $f(2\pi) = \pi$:  the
+point $(2\pi, \pi)$ lies on the graph of $f$.
+Let's find how small changes in $x$ and $y$ relate to one another near
+this point.
+
+Taking differentials on both sides of the defining equation, we have
+\begin{equation*}
+  2 \der y + \cos y \der y - \der x = 0
+\end{equation*}
+or
+\begin{equation*}
+  (2 + \cos y) \der y - \der x = 0 \qquad .
+\end{equation*}
+
+We were thinking of $y$ as a function of $x$. If we wish, we can now find
+the derivative of this function.
+\begin{equation*}
+  \frac{\der y}{\der x} = \frac{1}{2+\cos y}
+\end{equation*}
+If we were asked to find $f'(2\pi)$ then, since we know $f(2\pi) = \pi$, we
+could answer
+\[
+f'(2\pi) = \frac1{2+\cos \pi} = \frac1{2-1} = 1 \qquad .
+\]
+
+\end{eg}
+
 \begin{eg}{Implicit differentiation applied to Watt's linkage}\label{eg:watt-linkage-rotation}
 As remarked on p.~\pageref{sec:implicit-differentiation}, there is a strong practical motivation
 for finding the slope of the curve
@@ -577,8 +653,9 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 %>
 <% end_marg %>
 
+<% end_sec('implicit-differentiation-no-func') %>
 
-<% end_sec('implicit-differentiation-rules') %>
+<% end_sec('implicit-differentiation-general') %>
 
 <% end_sec('implicit-differentiation') %>
 
