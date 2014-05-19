@@ -781,6 +781,28 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 
   <% hw_block(2) %>
 
+\vfill
+
+\emph{In problems \ref{hw:implicit-to-simplify-00}-\ref{hw:implicit-to-simplify-08},
+a function $y(x)$ is defined explicitly. Find an implicit
+definition that does not involve taking roots.  Then use this description to
+find the derivative $\der y/\der x$.}
+
+% mostly from Robbin...
+<% hw('implicit-to-simplify-00',{'solution'=>true}) %>
+<% hw('implicit-to-simplify-01') %>
+<% hw('implicit-to-simplify-02') %>
+<% hw('implicit-to-simplify-03') %>
+<% hw('implicit-to-simplify-04') %>
+<% hw('implicit-to-simplify-05') %>
+<% hw('implicit-to-simplify-06') %>
+<% hw('implicit-to-simplify-07') %>
+<% hw('implicit-to-simplify-08') %>
+
+\vfill
+
+  <% hw_block(2) %>
+
 \emph{In each of the problems \ref{hw:implicit-at-origin-01}-\ref{hw:implicit-at-origin-04}, an
 implicit relation is defined between $x$ and $y$, and the graph passes through the origin.
 Find the slope of the graph at the origin.}
@@ -789,6 +811,30 @@ Find the slope of the graph at the origin.}
 <% hw('implicit-at-origin-02') %>
 <% hw('implicit-at-origin-03') %>
 <% hw('implicit-at-origin-04') %>
+
+\pagebreak
+
+  <% hw_block(2) %>
+
+<% marg(-10) %>
+<%
+  fig(
+    'hw-astroid',
+    %q{An astroid, problem \ref{hw:astroid}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-sergels-torg',
+    %q{Problem \ref{hw:sergels-torg}.}
+  )  
+%>
+<% end_marg %>
+<% hw('astroid') %>
+<% hw('sergels-torg') %>
+<% hw('implicit-x-to-the-y') %>
+
 
 \end{hwsection}
 
