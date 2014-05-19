@@ -565,7 +565,7 @@ This power law is exactly analogous to the one for a function $u(t)$, which, if 
 \begin{equation*}
   \frac{\der(u^k)}{\der t}=ku^{k-1}\frac{\der u}{\der t} \qquad .
 \end{equation*}
-Obviously neither one of these needs to be memorized separately from the other.
+Obviously neither these needs to be memorized separately from the other.
 Expressions like $\der u$ and $\der(u^2)$ are known as \emph{differentials}.
 
 \begin{eg}{Differential of a polynomial}
@@ -765,5 +765,32 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 <% end_sec('implicit-differentiation-general') %>
 
 <% end_sec('implicit-differentiation') %>
+
+\begin{hwsection}
+
+\emph{In problems \ref{hw:differential-01}-\ref{hw:differential-08}, evaluate the differentials.}
+
+<% hw('differential-01',{'solution'=>true}) %>
+<% hw('differential-02',{'solution'=>true}) %>
+<% hw('differential-03',{'solution'=>true}) %>
+<% hw('differential-04',{'solution'=>true}) %>
+<% hw('differential-05') %>
+<% hw('differential-06') %>
+<% hw('differential-07') %>
+<% hw('differential-08') %>
+
+  <% hw_block(2) %>
+
+\emph{In each of the problems \ref{hw:implicit-at-origin-01}-\ref{hw:implicit-at-origin-04}, an
+implicit relation is defined between $x$ and $y$, and the graph passes through the origin.
+Find the slope of the graph at the origin.}
+
+<% hw('implicit-at-origin-01',{'solution'=>true}) %>
+<% hw('implicit-at-origin-02') %>
+<% hw('implicit-at-origin-03') %>
+<% hw('implicit-at-origin-04') %>
+
+\end{hwsection}
+
 
 <% end_chapter %>

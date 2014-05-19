@@ -13,9 +13,14 @@
 %
 %================================ math ================================
 %-------------------- differentials, vectors not in italics, units -------------------
-\newcommand{\der}{\operatorname{d\!}}
+\newcommand{\der}{\operatorname{d\!}{}}
+%       http://tex.stackexchange.com/questions/178946/better-automatic-spacing-of-differential-d
+%\newcommand{\der}{\operatorname{d\!}}
 %   ... the \! is a negative thin space to keep the d close to the variable that comes after it
 %       http://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator
+%\newcommand{\derx}{\operatorname{d}}
+%   ... without the negative thin space, because sometimes that makes it too close
+%       http://tex.stackexchange.com/questions/178946/better-automatic-spacing-of-differential-d
 \newcommand{\divg}{\textup{div}\:}
 \newcommand{\curl}{\textup{curl}\:}
 \newcommand{\grad}{\textup{grad}\:}
