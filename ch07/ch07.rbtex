@@ -768,6 +768,28 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 
 \begin{hwsection}
 
+<% marg(300) %>
+<%
+  fig(
+    'hw-spaghetti',
+    %q{Problem \ref{hw:spaghetti}.}
+  )  
+%>
+<% end_marg %>
+
+<% hw('spaghetti') %>
+
+\vfill
+  <% hw_block(2) %>
+
+% robbin, p. 85
+<% hw('crystal') %>
+<% hw('tank') %>
+<% hw('tumor') %>
+
+\vfill
+  <% hw_block(2) %>
+
 \emph{In problems \ref{hw:differential-01}-\ref{hw:differential-08}, evaluate the differentials.}
 
 <% hw('differential-01',{'solution'=>true}) %>
@@ -781,7 +803,7 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 
   <% hw_block(2) %>
 
-\vfill
+\pagebreak
 
 \emph{In problems \ref{hw:implicit-to-simplify-00}-\ref{hw:implicit-to-simplify-08},
 a function $y(x)$ is defined explicitly. Find an implicit
@@ -799,8 +821,6 @@ find the derivative $\der y/\der x$.}
 <% hw('implicit-to-simplify-07') %>
 <% hw('implicit-to-simplify-08') %>
 
-\vfill
-
   <% hw_block(2) %>
 
 \emph{In each of the problems \ref{hw:implicit-at-origin-01}-\ref{hw:implicit-at-origin-04}, an
@@ -811,8 +831,6 @@ Find the slope of the graph at the origin.}
 <% hw('implicit-at-origin-02') %>
 <% hw('implicit-at-origin-03') %>
 <% hw('implicit-at-origin-04') %>
-
-\pagebreak
 
   <% hw_block(2) %>
 

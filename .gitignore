@@ -1,6 +1,7 @@
 NOTES
 instructor/
 scripts/custom
+solns/
 
 *.pdf
 !share/misc/blank_page.pdf
