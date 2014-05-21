@@ -31,6 +31,17 @@ This model doesn't always relate well to reality.
 %>
 
 
+<% marg(-17) %>
+<%
+  fig(
+    'slide-rule',
+    %q{This archaic computing device is called a slide rule. Like the teacup in figure \figref{rotate-cusp},
+       it's an analog computer, and it doesn't have inputs or outputs. Let $A$ be a number on the scale marked
+       ``A,'' and $B$ the number below it on the ``B'' scale. Then $A=4B$.}
+  )  
+%>
+<% end_marg %>
+
 We defined a function geometrically, as a graph that passes the vertical line test.
 This doesn't work well in an example like figure \figref{rotate-cusp}. It shouldn't
 matter whether we take the photo from one angle or another, but if we insist on

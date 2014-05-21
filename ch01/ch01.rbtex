@@ -159,7 +159,8 @@ Because S, T, and U have the same members, they are equal, $\zu{S}=\zu{T}=\zu{U}
 
 Often it is useful to define a set of all the real numbers that lie within a certain range, between
 numbers $a$ and $b$. This is called
-an interval. We can define intervals that contain or don't contain their endpoints.
+an interval.\label{interval-notation}
+We can define intervals that contain or don't contain their endpoints.
 
 \begin{lessimportant}[Definition]
 \begin{tabular}{lll}

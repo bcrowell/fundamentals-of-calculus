@@ -1,0 +1,204 @@
+%%chapter%% 08
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '08',
+    %q{The integral},
+    'ch:integral'
+  )
+%>
+
+<% begin_sec("The accumulation of change",nil,'accumulation') %>
+<% begin_sec("Change that accumulates in discrete steps",nil,'discrete-sums') %>
+<% begin_sec("A schoolboy plays a trick",nil,'schoolboy-trick') %>
+Toward the end of the eighteenth century, a German elementary school teacher
+decided to keep his pupils busy by assigning them a long, boring arithmetic
+problem: to add up all the numbers
+from one to a hundred.\footnote{I'm giving my own retelling of a hoary legend. We don't really know the exact problem, just that it was
+supposed to have been something of this flavor.}
+% http://www.americanscientist.org/issues/pub/gausss-day-of-reckoning#
+ The children set to work on their slates, and the teacher
+lit his pipe, confident of a long break. But almost immediately, a boy named
+Carl Friedrich Gauss brought up his answer: 5,050.\label{gauss-story}\index{Gauss, Carl Friedrich}
+
+<% marg(-17) %>
+<%
+  fig(
+    'gauss-square',
+    %q{Adding the numbers from 1 to 7.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'gauss-solution',
+    %q{A trick for finding the sum.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'gauss',
+    %q{Carl Friedrich Gauss (1777-1855), a long time after graduating from elementary school.}
+  )  
+%>
+<% end_marg %>
+
+Figure \figref{gauss-square} suggests one way of solving this type of problem.
+The filled-in columns of the graph represent the numbers from 1 to 7, and
+adding them up means finding the area of the shaded region. Roughly half the
+square is shaded in, so if we want only an approximate solution, we can
+simply calculate $7^2/2=24.5$.
+
+But, as suggested in figure \figref{gauss-solution}, it's not much more work to
+get an exact result. There are seven sawteeth sticking out out above the diagonal,
+with a total area of $7/2$, so the total shaded area is $(7^2+7)/2=28$.
+In general, the sum of the first $n$ numbers will be $(n^2+n)/2$, which explains
+Gauss's result: $(100^2+100)/2=5,050$.
+
+There is a tantalizing hint here of a link with differential calculus, because the
+derivative of a real function $f(n)=(n^2+n)/2$ is almost, but not quite, equal to $n$.
+<% end_sec('schoolboy-trick') %>
+
+<% begin_sec("Accumulation of change in discrete steps",nil,'discrete-accumulation') %>
+
+Problems like this come up frequently. Imagine that each household in a certain
+small town sends a total of one ton of garbage to the dump every year. Over
+time, the garbage accumulates in the dump, taking up more and more space.
+If the population is constant, then
+garbage accumulates at a constant rate.
+But maybe the town's population is growing. If the population starts out
+as 1 household in year 1, and then grows to 2 in year 2, and so on, then
+we have the same kind of problem that the young Gauss solved. After 100
+years, the accumulated amount of garbage will be 5,050 tons. The pile of
+refuse grows more quickly every year.
+<% end_sec('discrete-accumulation') %>
+
+<% begin_sec("Sigma notation",nil,'sigma-notation') %>
+There is a convenient way of notating sums like the ones we've been doing,
+which involves $\Sigma$, called ``sigma,'' the capital Greek letter ``S.''
+Here the ``S'' stands for ``sum.'' The sigma notation looks like this:
+\begin{equation}\label{eqn:sigma-notation}
+  \sum_{i=1}^{100} \; i = 5,050
+\end{equation}
+This is read as ``the sum of $i$ for $i$ from 1 to 100 equals 5,050.''
+The version without the sigma notation is much more cumbersome to write:
+\begin{equation}\label{eqn:no-sigma-notation}
+  1+2+3+\ldots+100 = 5,050
+\end{equation}
+In equation \eqref{eqn:sigma-notation}, $i$ is a dummy variable. We could have written
+\begin{equation*}
+  \sum_{j=1}^{100} \; j = 5,050
+\end{equation*}
+and it would have meant exactly the same thing.
+We've already seen some examples of dummy variables. In set notation (box \figref{sets}, p.~\pageref{fig:sets}),
+\begin{equation*}
+ \zu{S}=\{x|x^2>0\} \quad \text{and} \quad \zu{T}=\{y|y^2>0\}
+\end{equation*}
+describe exactly the same set, and S=T. Similarly, the function $f$ defined by $f(u)=u^2$ and the function
+$g$ defined by $g(v)=v^2$ are the same function, $f=g$.
+<% end_sec('sigma-notation') %>
+<% end_sec('discrete-sums') %>
+
+<% begin_sec("The area under a graph",nil,'area-under-a-graph') %>
+The examples in section \ref{subsec:discrete-sums} involved change that occurred in discrete
+steps. Calculus is concerned with \emph{continuous} change. The continuous analog of
+a discrete sum is the area under a graph.
+Let $f$ be a function which is defined on an interval\footnote{For
+interval notation, see p.~\pageref{interval-notation}.} $[a,b]$
+and assume the value of $f$ is always positive (so that its graph lies above
+the $x$ axis). \emph{How large is the area of the region caught
+  between the $x$ axis, the graph of $y=f(x)$ and the vertical lines
+  $y=a$ and $y=b$?}
+<% marg(0) %>
+<%
+  fig(
+    'riemann-portrait',
+    %q{Bernhard Riemann (1826-1866).}
+  )  
+%>
+<% end_marg %>
+
+We can try to compute this area (on the left here) by approximating
+the region with many thin rectangles (on the right).  The idea is that
+even though we don't know how to compute the area of a region bounded
+by arbitrary curves, we do know how to find the area of one or more
+rectangles. In this example, we've subdivided the interval from $a$ to $b$
+into $n=20$ equal subintervals, each of width $\Delta x=(b-a)/n$.
+Let's write $x_1$ for the $x$ value that lies in the center of the first
+subinterval, etc.
+We've chosen the height of each rectangle so that its top intersects the
+graph at this midpoint, so that, e.g., the height of the first rectangle
+is $f(x_1)$.
+The area of the $k^{\textrm{th}}$ rectangle is the product of its
+height and width, which is $f(x_k)\Delta x$.  Adding up all the rectangles'
+areas yields
+\begin{equation}
+  R = \sum_{k=1}^n f(x_k)\Delta x \qquad .
+\end{equation}
+This is an example of what is called a \emph{Riemann sum}, meaning an approximation
+to the area under a curve using rectangles. This particular type of Riemann sum
+is one in which (a) the interval is subdivided into equal parts, and (b) the value
+of the function is sampled at the center of each subinterval.
+
+If the rectangles are all sufficiently narrow then we would expect that the total
+area of all the rectangles should be a good approximation of the area of the region
+under the graph.  
+This leads to the following definition.
+
+\begin{important}[Definition of the integral]
+  If $f$ is a function defined on an interval $[a, b]$, then
+  the integral of $f(x)$ from $x=a$ to $b$ is defined as
+  \begin{equation*}
+    \lim_{\Delta x\rightarrow 0} R \qquad ,
+  \end{equation*}
+  where $R$ is the type of Riemann sum defined above, using equal subintervals
+  sampled at their centers.
+\end{important}
+
+In general, a Riemann sum need
+not have equal subdivisions (the rectangles could be of unequal widths
+$\Delta x_k$), and the
+points $x_k$ at which we sample the function need not be at the center of each
+interval.
+For essentially all functions encountered in practical applications, this makes
+no difference. As long as we force all the widths to get smaller, and sample
+the function somewhere within each interval, we get the same answer. But for
+some functions that  spectacularly badly behaved, it does matter. This is addressed
+in box \figref{riemann-integral}.
+
+<% marginbox(500,'riemann-integral','The Riemann integral',{},
+%q~
+Let $f$ be the real function defined such that $f(x)=0$ if $x$ is rational, and
+$f(x)=1$ otherwise. Such a function can never, for example, be a result of any
+physical process or any measurement, since measurements can't distinguish rational
+numbers from irrational ones. If we integrate this function
+from $0$ to $1$, 
+using Riemann sums with equal subintervals, sampled at their centers, we get $0$
+because all the $x_k$'s are rational. But this is in some sense the wrong answer,
+since ``most'' real numbers are irrational, so $f$ is ``usually'' equal to 1, not 0.
+
+For these reasons, Riemann defined an integral, now known as the Riemann integral,
+as follows. Suppose we have a number $I$ such that
+for every $\varepsilon >0$, there exists a $\delta>0$ such that
+$|R -I|<\varepsilon$ for \emph{every} Riemann sum all of whose intervals have width $\Delta
+  x_k<\delta$ with any arbitrary choice of sample points $x_1$, \dots , $x_n$.
+Then $I$ is the Riemann integral of the function. For the function $f$ defined
+above, the Riemann integral is undefined, as it should be.
+      ~
+   )
+%>
+
+
+
+
+
+<% end_sec('area-under-a-graph') %>
+<% end_sec('accumulation') %>
+
+
+
+<% end_chapter %>
