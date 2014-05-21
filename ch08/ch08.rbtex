@@ -188,7 +188,17 @@ This leads to the following definition.
 \end{important}
 
 
---- need a figure showing n getting bigger ---
+<%
+  fig(
+    'visualize-riemann-integral',
+    %q{Three Riemann sums for the same function on the same interval. The total approaches
+       the Riemann integral.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
 
 Up until now we've been doing differential calculus. The other half of calculus,
 integral calculus, consists of the study of integrals. The type of integral defined
