@@ -122,8 +122,20 @@ the $x$ axis). \emph{How large is the area of the region caught
 %>
 <% end_marg %>
 
-We can try to compute this area (on the left here) by approximating
-the region with many thin rectangles (on the right).  The idea is that
+<%
+  fig(
+    'area-under-graph',
+    %q{1.~The area under the graph of the function $f$. 2.~Approximating this area using 20 thin rectangles.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+
+We can try to compute this area, figure \figref{area-under-graph}{1}, by approximating
+the region with many thin rectangles, \figref{area-under-graph}{2}.  The idea is that
 even though we don't know how to compute the area of a region bounded
 by arbitrary curves, we do know how to find the area of one or more
 rectangles. In this example, we've subdivided the interval from $a$ to $b$
