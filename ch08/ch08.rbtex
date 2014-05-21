@@ -12,8 +12,8 @@
 %>
 
 <% begin_sec("The accumulation of change",nil,'accumulation') %>
-<% begin_sec("Change that accumulates in discrete steps",nil,'discrete-sums') %>
-<% begin_sec("A schoolboy plays a trick",nil,'schoolboy-trick') %>
+  <% begin_sec("Change that accumulates in discrete steps",nil,'discrete-sums') %>
+    <% begin_sec("A schoolboy plays a trick",nil,'schoolboy-trick') %>
 Toward the end of the eighteenth century, a German elementary school teacher
 decided to keep his pupils busy by assigning them a long, boring arithmetic
 problem: to add up all the numbers
@@ -61,9 +61,9 @@ Gauss's result: $(100^2+100)/2=5,050$.
 
 There is a tantalizing hint here of a link with differential calculus, because the
 derivative of a real function $f(n)=(n^2+n)/2$ is almost, but not quite, equal to $n$.
-<% end_sec('schoolboy-trick') %>
+    <% end_sec('schoolboy-trick') %>
 
-<% begin_sec("Accumulation of change in discrete steps",nil,'discrete-accumulation') %>
+    <% begin_sec("Accumulation of change in discrete steps",nil,'discrete-accumulation') %>
 
 Problems like this come up frequently. Imagine that each household in a certain
 small town sends a total of one ton of garbage to the dump every year. Over
@@ -75,9 +75,9 @@ as 1 household in year 1, and then grows to 2 in year 2, and so on, then
 we have the same kind of problem that the young Gauss solved. After 100
 years, the accumulated amount of garbage will be 5,050 tons. The pile of
 refuse grows more quickly every year.
-<% end_sec('discrete-accumulation') %>
+    <% end_sec('discrete-accumulation') %>
 
-<% begin_sec("Sigma notation",nil,'sigma-notation') %>
+    <% begin_sec("Sigma notation",nil,'sigma-notation') %>
 There is a convenient way of notating sums like the ones we've been doing,
 which involves $\Sigma$, called ``sigma,'' the capital Greek letter ``S.''
 Here the ``S'' stands for ``sum.'' The sigma notation looks like this:
@@ -100,19 +100,22 @@ We've already seen some examples of dummy variables. In set notation (box \figre
 \end{equation*}
 describe exactly the same set, and S=T. Similarly, the function $f$ defined by $f(u)=u^2$ and the function
 $g$ defined by $g(v)=v^2$ are the same function, $f=g$.
-<% end_sec('sigma-notation') %>
-<% end_sec('discrete-sums') %>
+    <% end_sec('sigma-notation') %>
+  <% end_sec('discrete-sums') %>
 
-<% begin_sec("The area under a graph",nil,'area-under-a-graph') %>
+  <% begin_sec("The area under a graph",nil,'area-under-a-graph') %>
+    <% begin_sec("The geometrical problem",nil,'area-under-a-graph-geom') %>
 The examples in section \ref{subsec:discrete-sums} involved change that occurred in discrete
 steps. Calculus is concerned with \emph{continuous} change. The continuous analog of
 a discrete sum is the area under a graph.
-Let $f$ be a function which is defined on an interval\footnote{For
+Let $f$ be a function that is defined on an interval\footnote{For
 interval notation, see p.~\pageref{interval-notation}.} $[a,b]$
 and assume the value of $f$ is always positive (so that its graph lies above
 the $x$ axis). \emph{How large is the area of the region caught
   between the $x$ axis, the graph of $y=f(x)$ and the vertical lines
   $y=a$ and $y=b$?}
+    <% end_sec('area-under-a-graph-geom') %>
+  <% end_sec('area-under-a-graph') %>
 <% marg(0) %>
 <%
   fig(
@@ -133,6 +136,7 @@ the $x$ axis). \emph{How large is the area of the region caught
   )
 %>
 
+  <% begin_sec("Approximation using a Riemann sum",nil,'riemann-sum') %>
 
 We can try to compute this area, figure \figref{area-under-graph}{1}, by approximating
 the region with many thin rectangles, \figref{area-under-graph}{2}.  The idea is that
@@ -148,7 +152,7 @@ is $f(x_1)$.
 The area of the $k^{\textrm{th}}$ rectangle is the product of its
 height and width, which is $f(x_k)\Delta x$.  Adding up all the rectangles'
 areas yields
-\begin{equation}
+\begin{equation}\label{eqn:riemann-sum}
   R = \sum_{k=1}^n f(x_k)\Delta x \qquad .
 \end{equation}
 This is an example of what is called a \emph{Riemann sum}, meaning an approximation
@@ -156,9 +160,21 @@ to the area under a curve using rectangles. This particular type of Riemann sum
 is one in which (a) the interval is subdivided into equal parts, and (b) the value
 of the function is sampled at the center of each subinterval.
 
-If the rectangles are all sufficiently narrow then we would expect that the total
-area of all the rectangles should be a good approximation of the area of the region
-under the graph.  
+If $f$ is negative in certain places, then
+we will hit certain values of $k$ for which the product $f(x_k)\Delta x$ is negative.
+We will simply \emph{define} areas below the $x$ axis to be negative. We think of
+the rectangle as having positive width $\Delta x$ but negative height $f(x_k)$. A similar
+geometrical example is the use of negative numbers for angles that are directed contrary
+to a standard direction of rotation.
+
+If our rectangles are all sufficiently narrow then we expect the total
+area of all the rectangles to be a good approximation of the area of the region
+under the graph.
+  <% end_sec('riemann-sum') %>
+<% end_sec('accumulation') %>
+
+<% begin_sec("The definite integral",nil,'definite-integral') %>
+  <% begin_sec("Definition of the integral",nil,'integral') %>
 This leads to the following definition.
 
 \begin{important}[Definition of the integral]
@@ -171,6 +187,14 @@ This leads to the following definition.
   sampled at their centers.
 \end{important}
 
+
+--- need a figure showing n getting bigger ---
+
+Up until now we've been doing differential calculus. The other half of calculus,
+integral calculus, consists of the study of integrals. The type of integral defined
+here is called a definite integral. We'll see later that there is another type, called
+the indefinite integral.
+
 In general, a Riemann sum need
 not have equal subdivisions (the rectangles could be of unequal widths
 $\Delta x_k$), and the
@@ -179,8 +203,10 @@ interval.
 For essentially all functions encountered in practical applications, this makes
 no difference. As long as we force all the widths to get smaller, and sample
 the function somewhere within each interval, we get the same answer. But for
-some functions that  spectacularly badly behaved, it does matter. This is addressed
-in box \figref{riemann-integral}.
+some functions that are spectacularly badly behaved, it does matter. This is addressed
+in box \figref{riemann-integral}. Unless a function is discontinuous at infinitely
+many points within the interval $[a,b]$, we are free, for example, to sample the
+function at the left or right side of each subinterval rather than at the center.
 
 <% marginbox(500,'riemann-integral','The Riemann integral',{},
 %q~
@@ -204,12 +230,143 @@ above, the Riemann integral is undefined, as it should be.
    )
 %>
 
+\begin{eg}{A triangle}\label{eg:riemann-triangle-area}
+Let $f(x)=x$. Then the integral of $f$ from $0$ to $1$ represents the area of a triangle
+with height 1 and a base of width 1. We know from elementary geometry that this shape has
+an area of $\frac{1}{2}(\text{base})(\text{height})=\frac{1}{2}$, so we don't need
+integral calculus to determine it. But let's see how this works
+out if we do it as an integral, in order to get comfortable with the tool and try it out
+in a case where we know the answer.
 
+I claimed above that for well-behaved functions, it didn't matter whether we sampled
+the function at the center of each subinterval, on the left, or on the right. Let's
+take advantage of this to make the calculation more convenient. If we divide the interval
+$[0,1]$ into $n$ subintervals, and sample the function at the right side of each of these,
+then we get a staircase that looks exactly like figure \figref{gauss-square} on
+p.~\pageref{gauss-square}. The only difference between the 
+``staircase'' problem and our Riemann sum is that in the former, the graph covered a
+region of graph paper $n$ squares wide and $n$ squares tall, whereas the graph of our
+Riemann sum is scaled down to a square with a width of 1 and a height of 1. We can therefore
+reduce the present problem to the previous one, by simply scaling the result down by a factor
+of $1/n^2$. The result is
+\begin{align*}
+  R &= \frac{1}{n^2}\left(\frac{n^2+n}{2}\right) \\
+    &= \frac{1}{2}+\frac{1}{2n} \qquad .
+\end{align*}
+Since $\Delta x=(b-a)/n=1/n$, the limit as $\Delta x\rightarrow 0$ is the same as
+the limit as $n\rightarrow\infty$. The integral equals
+\begin{equation*}
+  \lim_{n\rightarrow\infty} R = \frac{1}{2} \qquad ,
+\end{equation*}
+as expected geometrically.
 
+It is also possible here to apply the definition of the integral directly,
+using Riemann sums that sample the function at the
+center of each subinterval. Amusingly, the result is that $R=1/2$ exactly for all values of
+$n$. For example, with $n=3$ the Riemann sum is 
+$\frac{1}{6}\Delta x+\frac{1}{2}\Delta x+\frac{5}{6}\Delta x=\frac{9}{6}\Delta x=\frac{1}{2}$.
+\end{eg}
+  <% end_sec('integral') %>
 
+  <% begin_sec("Leibniz notation",nil,'integral-leibniz') %>
+If we substitute equation \eqref{eqn:riemann-sum}
+into the definition of the integral $\lim_{\Delta x\rightarrow 0} R$, the result looks
+like this:
+\begin{equation*}
+  \lim_{\Delta x\rightarrow 0} \sum_{k=1}^n f(x_k)\Delta x
+\end{equation*}
+Leibniz invented the following expressive, versatile, and useful notation for this limit:
+\begin{equation*}
+  \int_a^b f(x) \der x
+\end{equation*}
+The symbol $\int$ is an ``S'' that's been stretched like taffy.
+It stands for ``sum,'' just as the sigma, $\Sigma$
+stands for ``sum.'' But we think of $\int$ as meaning a \emph{smooth} sum, whose graphical
+representation is the area under a smooth curve rather than under a staircase. Notice how the shape
+of $\int$ is smooth. Like the $k$ in the sigma notation, the $x$ in this example is a dummy variable.
+Therefore $\int_a^b f(x) \der x$ means exactly the same thing as $\int_a^b f(s) \der s$. The
+dummy variable inside an integral is referred to as a variable of integration, and has no
+meaning outside the integral. One of the reasons for writing the
+$\der x$ is that it states what we're integrating with respect to.
 
-<% end_sec('area-under-a-graph') %>
-<% end_sec('accumulation') %>
+\begin{eg}{Leibniz notation for the area of a triangle}\label{eg:leibniz-triangle-area}
+In example \ref{eg:riemann-triangle-area}, we integrated the function $f(x)=x$ from $x=0$ to 1, and
+found that it was 1/2. In Leibniz notation, the result is written like this:
+\begin{equation*}
+  \int_0^1 x\:\der x = \frac{1}{2}
+\end{equation*}
+It makes no difference if we notate this instead with $s$ as the variable of integration:
+\begin{equation*}
+  \int_0^1 s\:\der s = \frac{1}{2}
+\end{equation*}
+\end{eg}
+
+We defined the Leibniz notation as simply a notation for a certain limit, but we can think of
+it conceptually as a sum with infinitely many terms. That is, we make a Riemann sum with
+infinitely many rectangles. Normally if you added up an infinite
+number of things, you would expect to get an infinite result. But remember, each of these rectangles
+is infinitely skinny. We think of $\der x$ as being the infinitely small width, so that the area
+$f(x)\der x$ is infinitely small. We're therefore adding an infinite number of things, each of which
+is infinitely small, so that the result can be finite. Recall that, as discussed in section
+\ref{sec:safe-handling-of-dx}, p.~\pageref{sec:safe-handling-of-dx}, the real number system doesn't
+have infinitely big or infinitely small numbers; however, if we handle our infinities
+according to the simple rules given
+in that section, nothing bad happens. Historically, these rules weren't clear, and practitioners just
+knew that if they did their work according to certain methods, the Leibniz notation never led
+to the wrong result. This confusion was definitively cleared up around 1965, but many mathematicians
+have been influenced by the historical uneasiness about the Leibniz notation, so they prefer to think
+of $\int\ldots\der x$ purely as a shorthand notation for a limit. This is a matter of taste. Those who prefer
+to think of it only as a shorthand will consider the $\der x$ inside the integral to nothing
+more than punctuation, like the period at the end of a sentence. From this point of view, its
+only job is to tell us what the dummy variable is, i.e., what we're integrating with respect to.
+None of these doubts about the Leibniz notation were ever influential among scientists and engineers;
+they picked up the notation enthusiastically in the 1680's and continue using it, exclusively and
+unmodified, to this day.
+
+\begin{eg}{Moving the $\der x$ around}
+One of the rules in section \ref{sec:safe-handling-of-dx} was that we were allowed to manipulate
+differentials such as $\der x$ using any of the elementary axioms of the real numbers
+(section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}). One of these axioms is
+that multiplication is commutative, $uv=vu$. Therefore the integral in example
+\ref{eg:leibniz-triangle-area} on p.~\pageref{eg:leibniz-triangle-area} can be written in either
+of the following equivalent ways:
+\begin{equation*}
+  \int_0^1 x\:\der x = \frac{1}{2}   \qquad    \int_0^1 \der x \: x = \frac{1}{2}
+\end{equation*}
+Similarly, all of the following are the same integral:
+\begin{equation*}
+  \int_1^2 \frac{1}{x}\:\der x = \int_1^2 \der x\:\frac{1}{x} = \int_1^2 \frac{\der x}{x}
+\end{equation*}
+Most people would write it with the $\der x$ on top, which makes it more compact.
+\end{eg}
+
+Another nice feature of the Leibniz notation is that it makes the units come out right.
+Consider our earlier example of the town dump. Suppose that the rate of garbage
+production is given by a function $p(t)$, where $t$ is in units of years
+and $p$ in tons per year. Then the amount of garbage accumulated at the town dump
+from year $a$ to year $b$ is given by
+\begin{equation*}
+  \int_a^b p(t)\:\der t \qquad .
+\end{equation*}
+The integral sign $\int$ is a kind of sum, and the units of a sum are the same
+as the units of each term. Since $\der$ means ``a little bit of \ldots,''
+$\der t$ stands for a little bit of time, and it therefore also has units of years.
+The units of the terms in the sum are
+\begin{equation*}
+  \frac{\text{tons}}{\text{year}} \times \text{years} = \text{tons} \qquad ,
+\end{equation*}
+which makes sense.
+
+We can now see three independent reasons why it would be wrong to write an integral
+like $\int_0^1 x^2$ rather than $\int_0^1 x^2\:\der x$, with the $\der x$:
+\begin{enumerate}
+  \item If $x$ has units, then the expression without the $\der x$ has the wrong units.
+  \item It would be a sum of infinitely many numbers, each of them finite, so it would probably be infinite.
+  \item If we don't write the $\der x$, we haven't stated what we're integrating with respect to.
+\end{enumerate}
+  <% end_sec('integral-leibniz') %>
+
+<% end_sec('definite-integral') %>
 
 
 
