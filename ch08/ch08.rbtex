@@ -212,11 +212,13 @@ points $x_k$ at which we sample the function need not be at the center of each
 interval.
 For essentially all functions encountered in practical applications, this makes
 no difference. As long as we force all the widths to get smaller, and sample
-the function somewhere within each interval, we get the same answer. But for
-some functions that are spectacularly badly behaved, it does matter. This is addressed
-in box \figref{riemann-integral}. Unless a function is discontinuous at infinitely
-many points within the interval $[a,b]$, we are free, for example, to sample the
+the function somewhere within each interval, we get the same answer. 
+We are free, for example, to sample the
 function at the left or right side of each subinterval rather than at the center.
+The only case where this choice would matter would be for a function that was
+spectacularly badly behaved: one that was discontinuous at infinitely
+many points within the interval $[a,b]$. This is addressed
+in box \figref{riemann-integral}.
 
 <% marginbox(500,'riemann-integral','The Riemann integral',{},
 %q~
@@ -378,14 +380,63 @@ like $\int_0^1 x^2$ rather than $\int_0^1 x^2\:\der x$, with the $\der x$:
 
 <% end_sec('definite-integral') %>
 
-<% marg(-17) %>
+<% begin_sec("The fundamental theorem of calculus",nil,'fundamental-theorem') %>
+We've already seen some clear indications of a link between derivatives and integrals.
+A derivative is a rate of change, and an integral measures the accumulation of change.
+Let's say for concreteness that we're talking about functions of time.
+If a function $A$ tells us the rate at which function $B$ changes, then $B$ tells us
+how the rate of change measured by $A$ has accumulated over time. That is, it seems
+clear conceptually that the integral and the derivative are inverse operations: operations
+that undo each other, in the same way that subtraction undoes addition, or a square
+root undoes a square.
+<% marg(0) %>
 <%
   fig(
     'garbage-spreadsheet-bitmap',
-    %q{foo.}
+    %q{Columns A and B in the spreadsheet relate to each other approximately as integral and derivative.}
   )  
 %>
 <% end_marg %>
+
+Figure \figref{garbage-spreadsheet-bitmap} shows this in the context of discrete rather than
+continuous functions. Column A shows how many tons of garbage are sent to the town dump per year.
+It is the rate of change of the pile at the dump, which is given in column B. The population
+is growing, so column A is not constant. Presumably one of these columns was typed into the
+spreadsheet from data collected by the town, but we can't tell from looking at the spreadsheet
+which one it was. It's possible that the raw data was column A, in which case column B would
+have been constructed by telling the spreadsheet software to calculate a running sum based on A.
+The running sum of a discrete function is conceptually similar to the integral of a continuous
+one, so we can say that in some loose sense that B is the integral of A. On the other hand,
+it's possible that the raw data was column B: a municipal employee has been going out to the dump at yearly
+intervals and measuring how big the pile of trash was. Column A would then have been calculated from B
+by taking differences of successive years. This is conceptually similar to saying that A is the
+derivative of B.
+
+\begin{theorem}[The fundamental theorem of calculus]
+  Let $f$ be a function defined on the interval $[a,b]$, which is also differentiable
+  on that interval. Then
+  \begin{equation}
+    \label{eqn:fundamental-theorem}
+    \int_a^b \frac{\der f}{\der x} dx = f(b) - f(a) \qquad .
+  \end{equation}
+\end{theorem}
+
+On the left-hand side, we have taken a function, differentiated it, and
+then integrated it. The right-hand side is a simple expression involving the
+original function, i.e., in some sense the integration has undone the
+differentation, and we are left with the same function we started with.
+
+Because of this theorem the expression on the right appears so often
+that various abbreviations have been invented.  We will abbreviate
+\[
+f(b)-f(a) \stackrel{\text{def}}{=} \bigl. f(x)\bigr]_{x=a}^b =
+\bigl.f(x)\bigr]_a^b .
+\]
+
+To see why the right-hand side contains a difference of two values of
+$f$, imagine
+
+<% end_sec('fundamental-theorem') %>
 
 
 <% end_chapter %>
