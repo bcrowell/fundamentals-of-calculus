@@ -380,7 +380,8 @@ like $\int_0^1 x^2$ rather than $\int_0^1 x^2\:\der x$, with the $\der x$:
 
 <% end_sec('definite-integral') %>
 
-<% begin_sec("The fundamental theorem of calculus",nil,'fundamental-theorem') %>
+<% begin_sec("The fundamental theorem of calculus",4,'fundamental-theorem') %>
+  <% begin_sec("A connection between the derivative and the integral",nil,'connect-derivative-and-integral') %>
 We've already seen some clear indications of a link between derivatives and integrals.
 A derivative is a rate of change, and an integral measures the accumulation of change.
 Let's say for concreteness that we're talking about functions of time.
@@ -393,7 +394,7 @@ root undoes a square.
 <%
   fig(
     'garbage-spreadsheet-bitmap',
-    %q{Columns A and B in the spreadsheet relate to each other approximately as integral and derivative.}
+    %q{Columns A and B in the spreadsheet relate to each other approximately as derivative and integral.}
   )  
 %>
 <% end_marg %>
@@ -411,6 +412,8 @@ it's possible that the raw data was column B: a municipal employee has been goin
 intervals and measuring how big the pile of trash was. Column A would then have been calculated from B
 by taking differences of successive years. This is conceptually similar to saying that A is the
 derivative of B.
+  <% end_sec('connect-derivative-and-integral') %>
+  <% begin_sec("What the fundamental theorem says",nil,'fundamental-theorem-statement') %>
 
 \begin{theorem}[The fundamental theorem of calculus]
   Let $f$ be a function defined on the interval $[a,b]$, which is also differentiable
@@ -425,6 +428,18 @@ On the left-hand side, we have taken a function, differentiated it, and
 then integrated it. The right-hand side is a simple expression involving the
 original function, i.e., in some sense the integration has undone the
 differentation, and we are left with the same function we started with.
+<% marg(0) %>
+<%
+  fig(
+    'garbage-spreadsheet-different-initial-conditions',
+    %q{The initial amount of garbage is 1000 tons rather than zero.}
+  )  
+%>
+<% end_marg %>
+
+To see why the right-hand side contains a difference of two values of
+$f$, consider figure \figref{garbage-spreadsheet-different-initial-conditions},
+which is a modified version of \figref{garbage-spreadsheet-bitmap}.
 
 Because of this theorem the expression on the right appears so often
 that various abbreviations have been invented.  We will abbreviate
@@ -433,8 +448,7 @@ f(b)-f(a) \stackrel{\text{def}}{=} \bigl. f(x)\bigr]_{x=a}^b =
 \bigl.f(x)\bigr]_a^b .
 \]
 
-To see why the right-hand side contains a difference of two values of
-$f$, imagine
+  <% end_sec('fundamental-theorem-statement') %>
 
 <% end_sec('fundamental-theorem') %>
 
