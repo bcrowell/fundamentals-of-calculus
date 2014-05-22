@@ -253,7 +253,7 @@ the function at the center of each subinterval, on the left, or on the right. Le
 take advantage of this to make the calculation more convenient. If we divide the interval
 $[0,1]$ into $n$ subintervals, and sample the function at the right side of each of these,
 then we get a staircase that looks exactly like figure \figref{gauss-square} on
-p.~\pageref{gauss-square}. The only difference between the 
+p.~\pageref{fig:gauss-square}. The only difference between the 
 ``staircase'' problem and our Riemann sum is that in the former, the graph covered a
 region of graph paper $n$ squares wide and $n$ squares tall, whereas the graph of our
 Riemann sum is scaled down to a square with a width of 1 and a height of 1. We can therefore
@@ -378,6 +378,14 @@ like $\int_0^1 x^2$ rather than $\int_0^1 x^2\:\der x$, with the $\der x$:
 
 <% end_sec('definite-integral') %>
 
+<% marg(-17) %>
+<%
+  fig(
+    'garbage-spreadsheet-bitmap',
+    %q{foo.}
+  )  
+%>
+<% end_marg %>
 
 
 <% end_chapter %>
