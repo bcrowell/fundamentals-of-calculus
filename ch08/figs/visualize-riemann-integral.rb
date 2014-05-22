@@ -1,13 +1,16 @@
 #!/usr/bin/ruby
 
-n=10
+n=50
 a=0.0
 b=1.0
 sample = 'm' # can be l for left, m for middle, r for right
 
 def f(x)
- u = (x-0.3)*4.0
- return Math::exp(-u*u/2.0)+0.3
+ # figure visualize-riemann-integral:
+ #   u = (x-0.3)*4.0
+ #   return Math::exp(-u*u/2.0)+0.3
+ # figure riemann-triangle-area; use with sample = 'r'
+  return x
 end
 
 def svg(s)

@@ -1028,7 +1028,7 @@ Historically, one of the main sources of confusion about infinitesimals was the
 sketchy practice of discarding the square of an infinitesimal (p.~\pageref{discard-dx-squared}).
 This is resolved as follows:
 
-\emph{Rule 3.} The derivative of $y$ with respect to $x$ equals the standard part of
+\emph{Rule 3.} The derivative of $y$ with respect to $x$ is defined as the standard part of
   $\der y/\der x$.
 
 Redoing the example from p.~\pageref{discard-dx-squared} according to this rule, we
@@ -1043,6 +1043,17 @@ Although this particular modern approach to calculus makes $\der y/\der x$ not
 a synonym for $y'$, the notational distinction is not assumed in a general context,
 since they were thought of as synonyms for hundreds of years, and the hyperreal
 number system is only one of several foundational approaches to the calculus.
+
+\begin{eg}{A not-quite proof of the chain rule}\label{eg:chain-rule-not-quite-proof}
+The Leibniz notation for the chain rule
+\begin{equation*}
+  \frac{\der z}{\der x} = \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x}
+\end{equation*}
+makes it look as though its proof were a matter of trivial algebra: just cancel the
+factors of $\der y$.
+This isn't quite valid, however, as a rigorous proof, because the derivative is
+really not the quotient of two infinitesimals but the \emph{standard part} of that quotient.
+\end{eg}
 
 <% end_sec('safe-handling-of-dx') %>
 
