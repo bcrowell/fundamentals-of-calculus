@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="mean-value.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.9532061"
+     inkscape:cx="104.43922"
+     inkscape:cy="871.76404"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#dedede;fill-opacity:1;stroke-width:0.625;stroke-miterlimit:4;stroke-dasharray:2.5, 1.25;stroke-dashoffset:0"
+       id="rect2985"
+       width="184.25197"
+       height="143.3309"
+       x="22.857143"
+       y="83.317001" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.875;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 45.35281,192.97596 c 19.801931,-65.9743 64.33657,-75.46444 77.93018,-74.03633 36.09062,3.79159 62.91904,23.09102 62.91904,23.09102"
+       id="path2987"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M 40.91558,195.02673 191.27804,140.29927"
+       id="path2993"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.5, 2.5;stroke-dashoffset:0"
+       d="m 45.033424,123.98696 0,81.44343"
+       id="path2995"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.5, 2.5;stroke-dashoffset:0"
+       d="m 185.88264,123.98696 0,81.44343"
+       id="path2995-8"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:italic;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Italic"
+       x="41.52018"
+       y="217.16782"
+       id="text3783"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3785"
+         x="41.52018"
+         y="217.16782">a</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:italic;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Italic"
+       x="182.68878"
+       y="217.16782"
+       id="text3787"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3789"
+         x="182.68878"
+         y="217.16782">b</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M 72.156555,133.30509 136.08311,110.03773"
+       id="path2993-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="15.046171"
+       y="144.48787"
+       id="text3821"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.93969262,-0.34202014,0.34202014,0.93969262,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3823"
+         x="15.046171"
+         y="144.48787"><tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3827">f</tspan>'(<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3825">x</tspan>)=[<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3005">f</tspan>(<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3007">b</tspan>)-<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3009">f</tspan>(<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3011">a</tspan>)]/(<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3013">b</tspan>-<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3015">a</tspan>)</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.5, 2.5;stroke-dashoffset:0"
+       d="m 102.5229,123.10865 0,83.67913"
+       id="path2995-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:italic;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Italic"
+       x="99.329048"
+       y="217.16782"
+       id="text3847"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3849"
+         x="99.329048"
+         y="217.16782">x</tspan></text>
+    <rect
+       style="fill:#dedede;fill-opacity:1;stroke-width:0.625;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3830"
+       width="7.242969"
+       height="14.934882"
+       x="99.366348"
+       y="174.22702" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="0.10750589"
+       y="209.35182"
+       id="text3821-5"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.93969262,-0.34202014,0.34202014,0.93969262,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3823-5"
+         x="0.10750589"
+         y="209.35182">slope=[<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3005-5">f</tspan>(<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3007-2">b</tspan>)-<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3009-4">f</tspan>(<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3011-2">a</tspan>)]/(<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3013-8">b</tspan>-<tspan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="tspan3015-9">a</tspan>)</tspan></text>
+  </g>
+</svg>

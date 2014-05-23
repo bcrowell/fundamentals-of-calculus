@@ -177,7 +177,7 @@ under the graph.
   <% begin_sec("Definition of the integral",nil,'integral') %>
 This leads to the following definition.
 
-\begin{important}[Definition of the integral]
+\begin{important}[Definition of the integral]\label{integral-defined}
   If $f$ is a function defined on an interval $[a, b]$, then
   the integral of $f(x)$ from $x=a$ to $b$ is defined as
   \begin{equation*}
@@ -471,7 +471,7 @@ derivative of B.
   on that interval. Then
   \begin{equation}
     \label{eqn:fundamental-theorem}
-    \int_a^b \frac{\der f}{\der x} dx = f(b) - f(a) \qquad .
+    \int_a^b \frac{\der f}{\der x} \der x = f(b) - f(a) \qquad .
   \end{equation}
 \end{theorem}
 
@@ -536,10 +536,12 @@ The pseudo-proof helps
 us to understand why the result makes sense, and it can, if we wish, serve as the backbone of a more
 rigorous proof.
 
-There is a pretty simple pseudo-proof of the fundamental theorem. We start with a statement of the
+We will give a real proof of the fundamental theorem in section
+\ref{subsec:fundamental-theorem-proof}, p.~\pageref{subsec:fundamental-theorem-proof},
+but let's warm up with the pseudo-proof, which is pretty simple. We start with a statement of the
 result,
 \begin{equation}
-    \int_a^b \frac{\der f}{\der x} dx \stackrel{?}{=} f(b) - f(a) \qquad ,
+    \int_a^b \frac{\der f}{\der x} \der x \stackrel{?}{=} f(b) - f(a) \qquad ,
 \end{equation}
 with the question mark above the equals sign to show that this is what we are hoping to prove.
 For the same reasons as in example \ref{eg:chain-rule-not-quite-proof}
@@ -568,10 +570,43 @@ As in that example, this integral represents the area of a rectangle. The rectan
 $f(b)-f(a)$ and height 1, so its area is $f(b)-f(a)$, and the equation holds.
 
   <% end_sec('fundamental-theorem-pseudo-proof') %>
+
+  <% begin_sec("A real proof",nil,'fundamental-theorem-proof') %>
+In proving the fundamental theorem of calculus,
+  \begin{equation}
+    \int_a^b f'(x) \der x = f(b) - f(a) \qquad ,
+  \end{equation}
+we use the definition of the integral in terms of a Riemann sum, in which
+the interval $[a,b]$ into $n$ equal subintervals $[x_i,x_{i+1}]$, where $i=1$, 2, \ldots $n-1$.
+However, rather than restricting ourselves to sampling at the center of each subinterval,
+we assume that we have the freedom to choose any sample
+point $s_i$ within each subinterval. This is equivalent to
+assuming that the functions $f$ and $f'$ are not horribly badly behaved, so that our definition of the integral
+on p.~\pageref{integral-defined}
+is equivalent to the Riemann integral defined in box \figref{riemann-integral}.
+We now apply the mean value theorem to each subinterval, and choose $s_i$ to be the point for which
+\begin{equation*}
+  f'(s_i) = \frac{\Delta f_i}{\Delta x} \qquad ,
+\end{equation*}
+where $\Delta f_i=f(x_{i+1})-f(x_i)$ and $\Delta x=x_{i+1}-x_i$.
+This can be rearranged to give
+\begin{equation*}
+  \Delta f_i = f'(s_i)\Delta x \qquad .
+\end{equation*}
+Adding these up, we have
+\begin{equation*}
+  f(b)-f(a) = \sum_{i=1}^n f'(s_i)\Delta x \qquad .
+\end{equation*}
+This tells us that by an appropriate choice of the sample points, we can make \emph{every} Riemann
+sum, for \emph{every} $n$ produce the result claimed by the fundamental theorem. It therefore
+follows that the limit that defines the integral has the value claimed by the theorem.\myqed
+
+  <% end_sec('fundamental-theorem-proof') %>
+
   <% begin_sec("Using the fundamental theorem to integrate",nil,'using-fundamental-theorem') %>
 The fundamental theorem says this:
 \begin{equation*}
-  \int_a^b f'(x) dx = f(b) - f(a) \qquad .
+  \int_a^b f'(x) \der x = f(b) - f(a) \qquad .
 \end{equation*}
 In some examples, this gives us a tricky way to evaluate an integral exactly without having to muck
 around with Riemann sums. Consider the integral
@@ -605,7 +640,7 @@ halving our guess:
 The function $\frac{1}{2}x^2$ is an antiderivative of $x$. Therefore by the fundamental
 theorem we have
 \begin{align*}
-  \int_0^1 x\: dx &= f(1) - f(0) \\ 
+  \int_0^1 x\: \der x &= f(1) - f(0) \\ 
          &= \frac{1}{2}1^2-\frac{1}{2}0^2 \\
          &= \frac{1}{2} \qquad .
 \end{align*}
@@ -619,12 +654,28 @@ f(b)-f(a) \stackrel{\text{def}}{=} \bigl. f(x)\bigr]_{x=a}^b =
 \bigl.f(x)\bigr]_a^b \qquad .
 \]
 
-Any time an antiderivative exists, we can produce other antiderivatives by adding a constant.
-For example, all of the following are antiderivatives of the constant function 7:
+Any time we have an antiderivative, we can produce other antiderivatives by adding a constant.
+For example, all of the following are antiderivatives of the constant function 7 with respect to $x$:
 \begin{equation*}
   7x \qquad 7x+1 \qquad 7x-42
 \end{equation*}
-Differentiating any one of these gives 7. 
+Differentiating any one of these with respect to $x$ gives 7. 
+
+An antiderivative is more commonly referred to as an indefinite integral --- as opposed to the kind
+of integral we've been talking about up until now, which is called a definite integral.
+The Leibniz notation for an indefinite integral is an integral sign without any upper or lower
+limits of integration. For example,
+\begin{equation*}
+  \int x\:\der x = \frac{1}{2}x^2 + c \qquad ,
+\end{equation*}
+where $c$ is any constant. One way of understanding this notation is that both sides of this equals
+sign represent a certain \emph{solution set} --- the set of all functions whose derivative equals $x$.
+Similarly, when we write
+\begin{equation*}
+  \sqrt{4} = \pm 2 \qquad ,
+\end{equation*}
+we could say that both sides of the equation represent the solution set $\{-2,2\}$ of the equation
+$x^2=4$.
 
 antiderivative of symbolic const
 
@@ -633,6 +684,10 @@ example using Newton's second law with constant force
 square root analogy
 
 Leibniz notation
+
+show proof of fund thm in figure, upper and lower saw teeth canceling term by term
+
+figure showing multiple antiderivatives as vertical shifts
 
   <% end_sec('using-fundamental-theorem') %>
 

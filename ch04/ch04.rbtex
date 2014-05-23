@@ -766,7 +766,7 @@ administration was \$240 billion, compared to \$57 billion during the preceding 
 <% end_marg %>
 
 In calculus terms, our analysis of this function is an example of a result called Rolle's
-theorem. The idea is that if the function is smooth, then we expect its derivative to be
+theorem, p.~\pageref{subsec:rolle}. The idea is that if the function is smooth, then we expect its derivative to be
 continuous. If the derivative is positive on the left and negative on the right, then it
 must be zero at some intermediate point. This would be the point at which the function was
 maximized.
@@ -1270,6 +1270,9 @@ Let's first see why the assumptions are necessary. If we weren't confined to a f
 $y=x$ would be a counterexample, because it's continuous and doesn't have any maximum or minimum value.
 If we didn't assume continuity, then we could have a function defined as $y=x$ for $x < 1$, and $y=0$ for
 $x \ge 1$; this function never gets bigger than 1, but it never attains a value of 1 for any specific value of $x$.
+If we didn't assume a real function, then we could have, for example, the function $f(x)=(x^2-2)^2$ defined on 
+the rational numbers, which would never attain the minimum value of 0 because $\sqrt{2}$ isn't
+a rational number.
 
 \begin{eg}
 \egquestion Find the maximum value of the polynomial $P(x)=x^3+x^2+x+1$ for $-5 \le x \le 5$.
@@ -1286,6 +1289,64 @@ the maximum value on this interval is 156.
 <% end_sec('extreme-value-theorem') %>
 
 <% end_sec('intermediate-and-extreme') %>
+<% begin_sec("Rolle's theorem and the mean-value theorem",nil,'rolle') %>
+On p.~\pageref{subsubsec:laffer-curve}, in the example of the Laffer curve from economics, we
+got a preview of the following intuitively appealing theorem.
+
+<% marg(0) %>
+<%
+  fig(
+    'rolle',
+    %q{Rolle's theorem.}
+  )  
+%>
+<% end_marg %>
+
+\begin{theorem}[Rolle's theorem]
+Let $f$ be a function that is continuous on the interval $[a,b]$ and differentiable on $(a,b)$,
+and let $f(a)=f(b)$. There there exists a point $x\in(a,b)$ such that $f'(x)=0$.
+\end{theorem}
+
+Proof: By the extreme value theorem, $f$ attains its maximum and minimum values in $[a,b]$.
+If both of these are at endpoints, then $f$ is a constant function, and the theorem holds
+trivially. Suppose instead that at least one of these extrema is on the interior of the interval.
+Then by the theorem given in section \ref{subsec:zero-deriv-at-extremum}, $f'$ is zero at that
+point, and the theorem also holds.\myqed
+
+Rolle's theorem can be straightforwardly generalized to the following.
+
+<% marg(0) %>
+<%
+  fig(
+    'mean-value',
+    %q{The mean value theorem.}
+  )  
+%>
+<% end_marg %>
+
+\begin{theorem}[Mean value theorem]
+Let $f$ be a function that is continuous on the interval $[a,b]$ and differentiable on $(a,b)$.
+There there exists a point $x\in(a,b)$ such that
+\begin{equation*}
+  f'(x) = \frac{f(b)-f(a)}{b-a}   \qquad ,
+\end{equation*}
+meaning that the derivative equals the average (mean) rate of change of the function between the
+endpoints of the interval.
+\end{theorem}
+
+\noindent ``Mean'' is just a fancy word for ``average.'' In general, it's a mistake to try to calculate
+a rate of change without calculus, using $\Delta y/\Delta x$, unless the rate of change is
+constant. The mean value theorem says that just as a broken clock is right twice a day, there
+is at least one point where $\Delta y/\Delta x$ gives the right answer.
+
+Proof: Define the function
+\begin{equation*}
+  \ell(x)=a+\frac{f(b)-f(a)}{b-a}(x-a) \qquad ,
+\end{equation*}
+which is the point-slope form of the line passing through the endpoints of the graph of $f$.
+Define a new function $g(x)=f(x)-\ell(x)$, so that $g(a)=g(b)=0$. Applying Rolle's theorem to $g$,
+we find that there is some point where $f'(x)=\ell'(x)$, which is the desired result.\myqed
+<% end_sec('rolle') %>
 <% end_sec('completeness') %>
 
 

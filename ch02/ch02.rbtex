@@ -943,6 +943,65 @@ also vanishes, and vanishes smoothly.
 \end{eg}
 
 <% end_sec('differentiability') %>
+<% begin_sec("Zero derivative at the extremum of a differentiable function",nil,'zero-deriv-at-extremum') %>
+We saw in section \ref{subsec:optimization}, p.~\pageref{subsec:optimization}, that although a searching
+for a zero derivative may be a good way to find an extremum, it doesn't always work. Looking at the
+zoo of possibilities in figure \figref{cases-of-extrema-first-reprise}, we see that both of the following
+statements are false:
+
+<% marg(0) %>
+<%
+  fig(
+    'cases-of-extrema-first-reprise',
+    %q{If point D is a maximum over the interval $[a,b]$, then $f'$ equals zero at D.}
+  )  
+%>
+<% end_marg %>
+\begin{enumerate}
+\item If a function has a local extremum, it must have a zero derivative there. (False:
+fails at A, E, and F.)
+\item If a function has a zero derivative somewhere, that must be a local extremum. (False:
+fails at H.)
+\end{enumerate}
+
+\noindent In mathematical jargon, we say that a zero derivative is neither a necessary (1) nor a sufficient (2)
+condition for a local extremum.
+
+We can, however, make a more restricted statement of 1 that is true.
+
+\begin{theorem}
+If a function $f$ is continuous on an interval $[a,b]$ and differentiable on $(a,b)$, and if
+there is a point $c\in(a,b)$ for which $f(c)$ is a maximum or minimum in the interval,
+then $f'(c)=0$.
+\end{theorem}
+
+Let's see why all the conditions are necessary. The assumption of continuity is needed because of
+points like E. We need differentiability because of F. We also needed to assume that $c$ was on the
+interior of the interval, since otherwise it would have been possible to choose $b$ so that
+point E lay at $x=b$.
+
+Proof: We prove the case where $f(c)$ is a maximum, as in figure \figref{cases-of-extrema-first-reprise};
+the other case is exactly analogous.
+Since $f$ is assumed to be differentiable, it's differentiable at $c$, and since $c$
+is on the interior of the interval, differentiability means that the derivative must have
+the same value regardless of whether we approach $c$ from the right or from the left. 
+(At a nondifferentiable point such as F, the two limits could be unequal.)
+Let's
+look at both of these limits. The limit from the left is
+\begin{equation*}
+  \lim_{h\nearrow0} \frac{f(c+h)-f(c)}{h} \qquad .
+\end{equation*}
+But since we assumed $f(c)$ to be the greatest value on $[a,b]$, the quantity inside the limit
+is guaranteed to be greater than or equal to zero. The limit exists, since we assumed
+differentiability, so the limit must also be greater than or equal to zero. Similarly, the
+limit from the right
+\begin{equation*}
+  \lim_{h\searrow0} \frac{f(c+h)-f(c)}{h}
+\end{equation*}
+must exist and be \emph{less than} or equal to zero. Since the two limits are equal, they
+equal zero.\myqed
+
+<% end_sec('zero-deriv-at-extremum') %>
 <% end_sec('continuity-and-differentiability') %>
 
 <% begin_sec("Safe handling of $\\der y$ and $\\der x$",nil,'safe-handling-of-dx') %>

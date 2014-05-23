@@ -87,3 +87,4 @@
         }{%
           \par  \setlength{\leftskip}{\saveleftskip} \par%
         }
+\newcommand{\myqed}{$\square$}
