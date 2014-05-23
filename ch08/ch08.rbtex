@@ -603,7 +603,7 @@ follows that the limit that defines the integral has the value claimed by the th
 
   <% end_sec('fundamental-theorem-proof') %>
 
-  <% begin_sec("Using the fundamental theorem to integrate",nil,'using-fundamental-theorem') %>
+  <% begin_sec("Using the fundamental theorem to integrate; the indefinite integral",nil,'using-fundamental-theorem') %>
 The fundamental theorem says this:
 \begin{equation*}
   \int_a^b f'(x) \der x = f(b) - f(a) \qquad .
