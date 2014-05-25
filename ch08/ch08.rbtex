@@ -174,11 +174,11 @@ under the graph.
 <% end_sec('accumulation') %>
 
 <% begin_sec("The definite integral",nil,'definite-integral') %>
-  <% begin_sec("Definition of the integral",nil,'integral') %>
-This leads to the following definition.
+  <% begin_sec("Definition of the integral of a continuous function",nil,'integral') %>
+This suggests the following definition.
 
-\begin{important}[Definition of the integral]\label{integral-defined}
-  If $f$ is a function defined on an interval $[a, b]$, then
+\begin{important}[Definition of the integral of a continuous function]
+  If $f$ is a continuous function defined on an interval $[a, b]$, then
   the integral of $f(x)$ from $x=a$ to $b$ is defined as
   \begin{equation*}
     \lim_{\Delta x\rightarrow 0} R \qquad ,
@@ -187,11 +187,11 @@ This leads to the following definition.
   sampled at their centers.
 \end{important}
 
-
 <%
   fig(
     'visualize-riemann-integral',
-    %q{Three Riemann sums for the same function on the same interval. The total area approaches
+    %q{Three Riemann sums for the same function on the same interval. As $\Delta x$ approaches zero,
+       the total area approaches
        the Riemann integral.},
     {
       'width'=>'wide',
@@ -205,48 +205,10 @@ integral calculus, consists of the study of integrals. The type of integral defi
 here is called a definite integral. We'll see later that there is another type, called
 the indefinite integral.
 
-In general, a Riemann sum need
-not have equal subdivisions (the rectangles could be of unequal widths
-$\Delta x_k$), and the
-points $x_k$ at which we sample the function need not be at the center of each
-interval.
-For essentially all functions encountered in practical applications, this makes
-no difference. As long as we force all the widths to get smaller, and sample
-the function somewhere within each interval, we get the same answer. 
-We are free, for example, to sample the
-function at the left or right side of each subinterval rather than at the center.
-The only case where this choice would matter would be for a function that was
-spectacularly badly behaved: one that was discontinuous at infinitely
-many points within the interval $[a,b]$. This is addressed
-in box \figref{riemann-integral}.
-
-<% marginbox(500,'riemann-integral','The Riemann integral',{},
-%q~
-Let $f$ be the real function defined such that $f(x)=0$ if $x$ is rational, and
-$f(x)=1$ otherwise. Such a function can never, for example, be a result of any
-physical process or any measurement, since measurements can't distinguish rational
-numbers from irrational ones. If we integrate this function
-from $0$ to $1$, 
-using Riemann sums with equal subintervals, sampled at their centers, we get $0$
-because all the $x_k$'s are rational. But this is in some sense the wrong answer,
-since ``most'' real numbers are irrational, so $f$ is ``usually'' equal to 1, not 0.
-
-For these reasons, Riemann defined an integral, now known as the Riemann integral,
-as follows. Suppose we have a number $I$ such that
-for every $\varepsilon >0$, there exists a $\delta>0$ such that
-$|R -I|<\varepsilon$ for \emph{every} Riemann sum all of whose intervals have width $\Delta
-  x_k<\delta$ with any arbitrary choice of sample points $x_1$, \dots , $x_n$.
-Then $I$ is the Riemann integral of the function. For the function $f$ defined
-above, the Riemann integral is undefined, as it should be.
-      ~
-   )
-%>
-
 <%
   fig(
     'riemann-triangle-area',
-    %q{Example \ref{eg:riemann-triangle-area}. The value of the function is sampled at the right
-       side of each interval rather than at the center.},
+    %q{Example \ref{eg:riemann-triangle-area}.},
     {
       'width'=>'wide',
       'sidecaption'=>false
@@ -262,48 +224,45 @@ integral calculus to determine it. But let's see how this works
 out if we do it as an integral, in order to get comfortable with the tool and see if it
 works in a case where we already know the answer.
 
-I claimed above that for well-behaved functions, it didn't matter whether we sampled
-the function at the center of each subinterval, on the left, or on the right. Let's
-take advantage of this to make the calculation more convenient. If we divide the interval
-$[0,1]$ into $n$ subintervals, and sample the function at the right side of each of these,
-then we get a staircase that looks exactly like figure \figref{gauss-square} on
-p.~\pageref{fig:gauss-square}. The only difference between the 
-``staircase'' problem and our Riemann sum is that in the former, the graph covered a
+When we split up the interval $[0,1]$ into $n$ parts, we have $\Delta x=1/n$.
+The first subinterval is $[0,\Delta x$], and its center is
+the first sample point, $x_0=(1/2)\Delta k$. Continuing in this way, we have
+$x_k=(k-1/2)\Delta x$, for $k$ running from 1 to $n$. Since our function is just
+$f(x)=x$, we also have $f(x_k)=(k-1/2)\Delta x$. 
+The Riemann sum $R$ is shown in figure \figref{riemann-triangle-area}. It looks
+almost exactly like the staircase in \figref{gauss-square} on
+p.~\pageref{fig:gauss-square}. There are two differences: (1) in the
+original staircase problem, the graph covered a
 region of graph paper $n$ squares wide and $n$ squares tall, whereas the graph of our
 Riemann sum is scaled down so that it fits inside  a single
- square with a width of 1 and a height of 1. We can therefore
-reduce the present problem to the previous one, by simply scaling the result down by a factor
-of $1/n^2$. The result is
+ square with a width of 1 and a height of 1; (2) all of the steps have been lowered by
+half a step.
+
+When we evaluate the Riemann sum, we find that the fates have been kind to us, and
+its value in this example always seems to be $1/2$, for every $n$. For example, with $n=3$ the Riemann sum is 
+$\frac{1}{6}\Delta x+\frac{1}{2}\Delta x+\frac{5}{6}\Delta x=\frac{9}{6}\Delta x=\frac{1}{2}$.
+
+To see that this is always true in this example, let's go ahead and compute the Riemann sum
+for an arbitrary $n$.
 \begin{align*}
-  R &= \frac{1}{n^2}\left(\frac{n^2+n}{2}\right) \\
-    &= \frac{1}{2}+\frac{1}{2n} \qquad .
+  R &= \sum_{k=1}^n f(x_k)\Delta x \\
+    &= \sum_{k=1}^n [(k-\frac{1}{2})\Delta x]\Delta x \\
+    &= (\Delta x)^2 \sum_{k=1}^n \left(k-\frac{1}{2}\right) \\
+    &= (\Delta x)^2 \left\{\left[\sum_{k=1}^n k\right] -\left[\sum_{k=1}^n \frac{1}{2}\right]\right\} \\
+    &= (\Delta x)^2 \left\{\left[\sum_{k=1}^n k\right] -\frac{n}{2}\right\}
 \end{align*}
-Since $\Delta x=(b-a)/n=1/n$, the limit as $\Delta x\rightarrow 0$ is the same as
-the limit as $n\rightarrow\infty$. The integral equals
+The sum inside the square brackets is the same one that we encountered in our previous study of the
+``staircase'' sum; it equals $(n^2+n)/2$. The result is:
+\begin{align*}
+  R &= (\Delta x)^2 \left\{\left[\frac{n^2+n}{2}\right] -\frac{n}{2}\right\} \\
+    &= (\Delta x)^2 \frac{n^2}{2}
+\end{align*}
+But $\Delta x=1/n$, so $R=1/2$ exactly for every $n$, and
+the integral equals
 \begin{equation*}
   \lim_{n\rightarrow\infty} R = \frac{1}{2} \qquad ,
 \end{equation*}
 as expected geometrically.
-
-It is also possible here to apply the unmodified definition of the integral,
-using Riemann sums that sample the function at the
-center of each subinterval. Amusingly, the result is that $R=1/2$ exactly for all values of
-$n$. For example, with $n=3$ the Riemann sum is 
-$\frac{1}{6}\Delta x+\frac{1}{2}\Delta x+\frac{5}{6}\Delta x=\frac{9}{6}\Delta x=\frac{1}{2}$.
-\end{eg}
-
-\begin{eg}{A rectangle}\label{eg:riemann-rectangle-area}
-\egquestion Evaluate
-\begin{equation*}
-  \int_0^4 1\:\der x \qquad .
-\end{equation*}
-
-\eganswer The graph of this function is a rectangle with height 1 and width 4.
-A rectangle is a shape that can be sliced up into thin, vertical slices that are
-also rectangles, and this is what any Riemann-sum approximation to this integral
-will look like. The approximations aren't really approximations at all. Every
-Riemann sum has an area of 4, so the limit occurring in the definition of the
-integral is 4. This is of course the correct result for the area of this rectangle.
 \end{eg}
   <% end_sec('integral') %>
 
@@ -327,6 +286,21 @@ Therefore $\int_a^b f(x) \der x$ means exactly the same thing as $\int_a^b f(s) 
 dummy variable inside an integral is referred to as a variable of integration, and has no
 meaning outside the integral. One of the reasons for writing the
 $\der x$ is that it states what we're integrating with respect to.
+
+
+\begin{eg}{A rectangle}\label{eg:riemann-rectangle-area}
+\egquestion Evaluate
+\begin{equation*}
+  \int_0^4 1\:\der x \qquad .
+\end{equation*}
+
+\eganswer The graph of this function is a rectangle with height 1 and width 4.
+A rectangle is a shape that can be sliced up into thin, vertical slices that are
+also rectangles, and this is what any Riemann-sum approximation to this integral
+will look like. The approximations aren't really approximations at all. Every
+Riemann sum has an area of 4, so the limit occurring in the definition of the
+integral is 4. This is of course the correct result for the area of this rectangle.
+\end{eg}
 
 \begin{eg}{Leibniz notation for the area of a triangle}\label{eg:leibniz-triangle-area}
 In example \ref{eg:riemann-triangle-area}, we integrated the function $f(x)=x$ from $x=0$ to 1, and
@@ -428,6 +402,45 @@ like $\int_0^1 x^2$ rather than $\int_0^1 x^2\:\der x$, with the $\der x$:
   \item If we don't write the $\der x$, we haven't stated what we're integrating with respect to.
 \end{enumerate}
   <% end_sec('integral-leibniz') %>
+  <% begin_sec("Integrating discontinuous functions",nil,'integral-discontinuous') %>
+
+
+riemann-triangle-sample-right
+
+
+In general, a Riemann sum need
+not have equal subdivisions (the rectangles could be of unequal widths
+$\Delta x_k$), and the
+points $x_k$ at which we sample the function need not be at the center of each
+interval.
+For essentially all functions encountered in practical applications, this makes
+no difference. As long as we force all the widths to get smaller, and sample
+the function somewhere within each interval, we get the same answer. 
+We are free, for example, to sample the
+function at the left or right side of each subinterval rather than at the center.
+The only case where this choice would matter would be for a function that was
+spectacularly badly behaved: one that was discontinuous at infinitely
+many points within the interval $[a,b]$. This is addressed
+in box \figref{riemann-integral}.
+
+
+Let $f$ be the real function defined such that $f(x)=0$ if $x$ is rational, and
+$f(x)=1$ otherwise. Such a function can never, for example, be a result of any
+physical process or any measurement, since measurements can't distinguish rational
+numbers from irrational ones. If we integrate this function
+from $0$ to $1$, 
+using Riemann sums with equal subintervals, sampled at their centers, we get $0$
+because all the $x_k$'s are rational. But this is in some sense the wrong answer,
+since ``most'' real numbers are irrational, so $f$ is ``usually'' equal to 1, not 0.
+
+For these reasons, Riemann defined an integral, now known as the Riemann integral,
+as follows. Suppose we have a number $I$ such that
+for every $\varepsilon >0$, there exists a $\delta>0$ such that
+$|R -I|<\varepsilon$ for \emph{every} Riemann sum all of whose intervals have width $\Delta
+  x_k<\delta$ with any arbitrary choice of sample points $x_1$, \dots , $x_n$.
+Then $I$ is the Riemann integral of the function. For the function $f$ defined
+above, the Riemann integral is undefined, as it should be.
+  <% end_sec('integral-discontinuous') %>
 
 <% end_sec('definite-integral') %>
 
