@@ -200,6 +200,11 @@ This suggests the following definition.
   )
 %>
 
+Finding the integral of a function referred to as integrating it. The idea behind the
+words is that one meaning of ``integrate'' in ordinary speech
+is to assemble a whole out of smaller parts. For example, you could integrate
+sit-ups into your routine at the gym.
+
 Up until now we've been doing differential calculus. The other half of calculus,
 integral calculus, consists of the study of integrals. The type of integral defined
 here is called a definite integral. We'll see later that there is another type, called
@@ -246,12 +251,12 @@ To see that this is always true in this example, let's go ahead and compute the 
 for an arbitrary $n$.
 \begin{align*}
   R &= \sum_{k=1}^n f(x_k)\Delta x \\
-    &= \sum_{k=1}^n [(k-\frac{1}{2})\Delta x]\Delta x \\
+    &= \sum_{k=1}^n \left[\left(k-\frac{1}{2}\right)\Delta x\right]\Delta x \\
     &= (\Delta x)^2 \sum_{k=1}^n \left(k-\frac{1}{2}\right) \\
-    &= (\Delta x)^2 \left\{\left[\sum_{k=1}^n k\right] -\left[\sum_{k=1}^n \frac{1}{2}\right]\right\} \\
-    &= (\Delta x)^2 \left\{\left[\sum_{k=1}^n k\right] -\frac{n}{2}\right\}
+    &= (\Delta x)^2 \left[\left(\sum_{k=1}^n k\right) -\left(\sum_{k=1}^n \frac{1}{2}\right)\right] \\
+    &= (\Delta x)^2 \left[\left(\sum_{k=1}^n k\right) -\frac{n}{2}\right]
 \end{align*}
-The sum inside the square brackets is the same one that we encountered in our previous study of the
+The sum over $k$ is the same one that we encountered in our previous study of the
 ``staircase'' sum; it equals $(n^2+n)/2$. The result is:
 \begin{align*}
   R &= (\Delta x)^2 \left\{\left[\frac{n^2+n}{2}\right] -\frac{n}{2}\right\} \\
@@ -266,8 +271,8 @@ as expected geometrically.
 \end{eg}
   <% end_sec('integral') %>
 
-  <% begin_sec("Leibniz notation",nil,'integral-leibniz') %>
-If we substitute equation \eqref{eqn:riemann-sum}
+  <% begin_sec("Leibniz notation",4,'integral-leibniz') %>
+If we take equation \eqref{eqn:riemann-sum} that defines the Riemann sum $R$, and substitute it
 into the definition of the integral $\lim_{\Delta x\rightarrow 0} R$, the result looks
 like this:
 \begin{equation*}
@@ -288,6 +293,18 @@ meaning outside the integral. One of the reasons for writing the
 $\der x$ is that it states what we're integrating with respect to.
 
 
+\begin{eg}{Leibniz notation for the area of a triangle}\label{eg:leibniz-triangle-area}
+In example \ref{eg:riemann-triangle-area}, we integrated the function $f(x)=x$ from $x=0$ to 1, and
+found that it was 1/2. In Leibniz notation, the result is written like this:
+\begin{equation*}
+  \int_0^1 x\:\der x = \frac{1}{2}
+\end{equation*}
+It makes no difference if we notate this instead with $s$ as the variable of integration:
+\begin{equation*}
+  \int_0^1 s\:\der s = \frac{1}{2}
+\end{equation*}
+\end{eg}
+
 \begin{eg}{A rectangle}\label{eg:riemann-rectangle-area}
 \egquestion Evaluate
 \begin{equation*}
@@ -302,17 +319,6 @@ Riemann sum has an area of 4, so the limit occurring in the definition of the
 integral is 4. This is of course the correct result for the area of this rectangle.
 \end{eg}
 
-\begin{eg}{Leibniz notation for the area of a triangle}\label{eg:leibniz-triangle-area}
-In example \ref{eg:riemann-triangle-area}, we integrated the function $f(x)=x$ from $x=0$ to 1, and
-found that it was 1/2. In Leibniz notation, the result is written like this:
-\begin{equation*}
-  \int_0^1 x\:\der x = \frac{1}{2}
-\end{equation*}
-It makes no difference if we notate this instead with $s$ as the variable of integration:
-\begin{equation*}
-  \int_0^1 s\:\der s = \frac{1}{2}
-\end{equation*}
-\end{eg}
 
 We defined the Leibniz notation as simply a notation for a certain limit, but we can think of
 it conceptually as a sum with infinitely many terms. That is, we make a Riemann sum with
@@ -324,7 +330,7 @@ is infinitely small, so that the result can be finite. Recall that, as discussed
 \ref{sec:safe-handling-of-dx}, p.~\pageref{sec:safe-handling-of-dx}, the real number system doesn't
 have infinitely big or infinitely small numbers; however, if we handle our infinities
 according to the simple rules given
-in that section, nothing bad happens. Historically, these rules weren't clear, and practitioners just
+in that section, nothing bad happens. Historically, these rules weren't formalized, and practitioners just
 knew that if they did their work according to certain methods, the Leibniz notation never led
 to the wrong result. This confusion was definitively cleared up around 1965, but many mathematicians
 have been influenced by the historical uneasiness about the Leibniz notation, so they prefer to think
@@ -332,9 +338,6 @@ of $\int\ldots\der x$ purely as a shorthand notation for a limit. This is a matt
 to think of it only as a shorthand will consider the $\der x$ inside the integral to nothing
 more than punctuation, like the period at the end of a sentence. From this point of view, its
 only job is to tell us what the dummy variable is, i.e., what we're integrating with respect to.
-None of these doubts about the Leibniz notation were ever influential among scientists and engineers;
-they picked up the notation enthusiastically in the 1680's and continue using it, exclusively and
-unmodified, to this day.
 
 \begin{eg}{Moving the $\der x$ around}
 One of the rules in section \ref{sec:safe-handling-of-dx} was that we were allowed to manipulate
@@ -394,53 +397,14 @@ The units of the terms in the sum are
 \end{equation*}
 which makes sense.
 
-We can now see three independent reasons why it would be wrong to write an integral
-like $\int_0^1 x^2$ rather than $\int_0^1 x^2\:\der x$, with the $\der x$:
+We can now see three independent reasons why an integral such as $\int_0^1 x^2\:\der x$
+can't be written like $\int_0^1 x^2$, without the $\der x$:
 \begin{enumerate}
   \item If $x$ has units, then the expression without the $\der x$ has the wrong units.
   \item It would be a sum of infinitely many numbers, each of them finite, so it would probably be infinite.
   \item If we don't write the $\der x$, we haven't stated what we're integrating with respect to.
 \end{enumerate}
   <% end_sec('integral-leibniz') %>
-  <% begin_sec("Integrating discontinuous functions",nil,'integral-discontinuous') %>
-
-
-riemann-triangle-sample-right
-
-
-In general, a Riemann sum need
-not have equal subdivisions (the rectangles could be of unequal widths
-$\Delta x_k$), and the
-points $x_k$ at which we sample the function need not be at the center of each
-interval.
-For essentially all functions encountered in practical applications, this makes
-no difference. As long as we force all the widths to get smaller, and sample
-the function somewhere within each interval, we get the same answer. 
-We are free, for example, to sample the
-function at the left or right side of each subinterval rather than at the center.
-The only case where this choice would matter would be for a function that was
-spectacularly badly behaved: one that was discontinuous at infinitely
-many points within the interval $[a,b]$. This is addressed
-in box \figref{riemann-integral}.
-
-
-Let $f$ be the real function defined such that $f(x)=0$ if $x$ is rational, and
-$f(x)=1$ otherwise. Such a function can never, for example, be a result of any
-physical process or any measurement, since measurements can't distinguish rational
-numbers from irrational ones. If we integrate this function
-from $0$ to $1$, 
-using Riemann sums with equal subintervals, sampled at their centers, we get $0$
-because all the $x_k$'s are rational. But this is in some sense the wrong answer,
-since ``most'' real numbers are irrational, so $f$ is ``usually'' equal to 1, not 0.
-
-For these reasons, Riemann defined an integral, now known as the Riemann integral,
-as follows. Suppose we have a number $I$ such that
-for every $\varepsilon >0$, there exists a $\delta>0$ such that
-$|R -I|<\varepsilon$ for \emph{every} Riemann sum all of whose intervals have width $\Delta
-  x_k<\delta$ with any arbitrary choice of sample points $x_1$, \dots , $x_n$.
-Then $I$ is the Riemann integral of the function. For the function $f$ defined
-above, the Riemann integral is undefined, as it should be.
-  <% end_sec('integral-discontinuous') %>
 
 <% end_sec('definite-integral') %>
 
@@ -584,37 +548,6 @@ $f(b)-f(a)$ and height 1, so its area is $f(b)-f(a)$, and the equation holds.
 
   <% end_sec('fundamental-theorem-pseudo-proof') %>
 
-  <% begin_sec("A real proof",nil,'fundamental-theorem-proof') %>
-In proving the fundamental theorem of calculus,
-  \begin{equation}
-    \int_a^b f'(x) \der x = f(b) - f(a) \qquad ,
-  \end{equation}
-we use the definition of the integral in terms of a Riemann sum, in which
-the interval $[a,b]$ into $n$ equal subintervals $[x_i,x_{i+1}]$, where $i=1$, 2, \ldots $n-1$.
-However, rather than restricting ourselves to sampling at the center of each subinterval,
-we assume that we have the freedom to choose any sample
-point $s_i$ within each subinterval. This is equivalent to
-assuming that the functions $f$ and $f'$ are not horribly badly behaved, so that our definition of the integral
-on p.~\pageref{integral-defined}
-is equivalent to the Riemann integral defined in box \figref{riemann-integral}.
-We now apply the mean value theorem to each subinterval, and choose $s_i$ to be the point for which
-\begin{equation*}
-  f'(s_i) = \frac{\Delta f_i}{\Delta x} \qquad ,
-\end{equation*}
-where $\Delta f_i=f(x_{i+1})-f(x_i)$ and $\Delta x=x_{i+1}-x_i$.
-This can be rearranged to give
-\begin{equation*}
-  \Delta f_i = f'(s_i)\Delta x \qquad .
-\end{equation*}
-Adding these up, we have
-\begin{equation*}
-  f(b)-f(a) = \sum_{i=1}^n f'(s_i)\Delta x \qquad .
-\end{equation*}
-This tells us that by an appropriate choice of the sample points, we can make \emph{every} Riemann
-sum, for \emph{every} $n$ produce the result claimed by the fundamental theorem. It therefore
-follows that the limit that defines the integral has the value claimed by the theorem.\myqed
-
-  <% end_sec('fundamental-theorem-proof') %>
 
   <% begin_sec("Using the fundamental theorem to integrate; the indefinite integral",nil,'using-fundamental-theorem') %>
 The fundamental theorem says this:
@@ -667,12 +600,21 @@ f(b)-f(a) \stackrel{\text{def}}{=} \bigl. f(x)\bigr]_{x=a}^b =
 \bigl.f(x)\bigr]_a^b \qquad .
 \]
 
+<% marg(0) %>
+<%
+  fig(
+    'slopes-are-one-over-seven',
+    %q{All three functions are antiderivatives of the constant function $1/7$. Shifting the graph
+       vertically doesn't change its derivative.}
+  )  
+%>
+<% end_marg %>
 Any time we have an antiderivative, we can produce other antiderivatives by adding a constant.
-For example, all of the following are antiderivatives of the constant function 7 with respect to $x$:
+For example, all of the following are antiderivatives of the constant function $1/7$ with respect to $x$:
 \begin{equation*}
-  7x \qquad 7x+1 \qquad 7x-42
+  \frac{1}{7}x \qquad \frac{1}{7}x+1 \qquad \frac{1}{7}x-2
 \end{equation*}
-Differentiating any one of these with respect to $x$ gives 7. 
+Differentiating any one of these with respect to $x$ gives $1/7$. 
 
 An antiderivative is more commonly referred to as an indefinite integral --- as opposed to the kind
 of integral we've been talking about up until now, which is called a definite integral.
@@ -690,21 +632,187 @@ Similarly, when we write
 we could say that both sides of the equation represent the solution set $\{-2,2\}$ of the equation
 $x^2=4$.
 
+\begin{eg}{}
+\egquestion Evaluate
+\begin{equation*}
+  \int x^6\:\der x
+\end{equation*}
+
+\eganswer Differentiation of a power will reduce the exponent by one, so we want something like $x^7$.
+The derivative of $x^7$ would be $7x^6$, which is too big by a factor of $7$, so we want
+$x^7/7$. Including an arbitrary constant of integration, we have
+\begin{equation*}
+  \int x^6\:\der x = \frac{1}{7}x^7 + c \qquad .
+\end{equation*}
+\end{eg}
+
+%%graph%% hyperbola-area-raw func=1/x format=svg xlo=0 xhi=3 ylo=0 yhi=1.5 with=lines x=t y=x xtic_spacing=1 ytic_spacing=1
+
+\begin{eg}{Area under the graph of $1/x$}\label{eg:hyperbola}
+\egquestion Interpret the definite integral
+\begin{equation*}
+  \int_{1}^{2} \frac{\der x}{x} \qquad .
+\end{equation*}
+graphically; then evaluate it .
+
+\eganswer 
+Figure \figref{hyperbola-area} shows the graphical interpretation.
+
+Normally if we wanted to find the antiderivative of $x$ to some power, we would increase the
+exponent by 1.
+But the derivative of $x^0$ is simply zero, so that doesn't work here. We recall that
+the ladder of powers is interrupted at this place, figure \figref{power-ladder}.
+The indefinite integral we want is $\ln x$.
+Using the fundamental theorem of calculus, the area
+is $\ln 2-\ln 1\approx 0.693147180559945$.
+
+Judging from the graph, it looks plausible that the shaded area is about 0.7.
+\end{eg}
+<% marg(200) %>
+<%
+  fig(
+    'hyperbola-area',
+    %q{Example \ref{eg:hyperbola}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'power-ladder',
+    %q{Differentiation moves us down the ladder of powers of $x$. Integration climbs the ladder.}
+  )  
+%>
+<% end_marg %>
+
+
 antiderivative of symbolic const
 
 example using Newton's second law with constant force
 
-square root analogy
-
-Leibniz notation
-
 show proof of fund thm in figure, upper and lower saw teeth canceling term by term
-
-figure showing multiple antiderivatives as vertical shifts
 
   <% end_sec('using-fundamental-theorem') %>
 
 <% end_sec('fundamental-theorem') %>
+
+<% begin_sec("Some technical points",nil,'integrals-technical') %>
+  <% begin_sec("Integrating discontinuous functions",nil,'integral-discontinuous') %>
+
+The definition of the integral given in section \ref{subsec:integral}, for continuous functions, has some
+technical shortcomings if we try to apply it to badly behaved discontinuous functions.
+Most people who use calculus neither know nor care about these issues, and it's all right
+to skip this subsection on a first reading.
+
+To show what can go wrong, we define two functions, one naughty and the other even naughtier.
+
+\begin{itemize}
+\item Let $f(x)$ be defined as $f(x)=1/x$, except at $x=0$, where we set $f(0)=0$.
+\item Let $g(x)$ be the function such that if $x$ is a rational number, $g(x)=0$, but if
+$x$ is irrational, $g(x)=1$.
+\end{itemize}
+
+The definition of the integral in section \ref{subsec:integral} involved Riemann sums
+using equal subintervals, sampled at their centers. It carried a warning label saying that
+it only applied to continuous functions. Let's ignore the warning and see what goes wrong
+when we apply it to functions $f$ and $g$.
+
+The function $f$ is discontinuous  at only one point, and the discontinuity is one where
+it blows up to $+\infty$ on one side and $-\infty$ on the other. If we evaluate
+$\int_{-1}^1 f(x)\:\der x$ using equal subintervals sampled at their centers, then because
+$f$ is odd, every Riemann sum is exactly zero. The Riemann sums for odd $n$ use $x=0$ as
+a sample point, but these sums still vanish, because $f(0)=0$. This integral, as defined
+in section \ref{subsec:integral}, comes out to be zero.
+
+The function $g$ is what's known as a ``pathological'' example, meaning that it's so weird that
+we don't expect to encounter such a thing in any real-world application. For example, we could
+never determine a function like $g$ from physical measurements, because measurements can't
+distinguish a rational number from an irrational one. If we evaluate
+$\int_0^1 g(x)\:\der x$ using equal subintervals, sampled at their centers, then every sample
+point is a rational number, so the integral comes out to be zero according to
+the definition in section \ref{subsec:integral}.
+
+The worrisome thing about both of these examples is that they both gave zero, but zero is
+either misleading or wrong in both cases. The result for the integral of $f$ depended
+on a perfect cancellation of very large negative and very large positive terms in each Riemann sum.
+As $n$ grew, these terms grew without bound, but they still canceled. In any real-world
+application, it's unlikely that this would happen. For example, if $f$ represented the reading
+on a meter measuring the flow of water through a pipe (positive and negative indicating two different directions
+of flow), then the extreme positive and negative flows near $x=0$ would have destroyed the meter!
+
+The zero result for $g$ is even more morally wrong. There are in some sense \emph{more}
+irrational numbers than rational ones, so if this integral were to have some value, then
+clearly it would be 1, not 0.
+
+riemann-triangle-sample-right
+
+
+In general, a Riemann sum need
+not have equal subdivisions (the rectangles could be of unequal widths
+$\Delta x_k$), and the
+points $x_k$ at which we sample the function need not be at the center of each
+interval.
+For essentially all functions encountered in practical applications, this makes
+no difference. As long as we force all the widths to get smaller, and sample
+the function somewhere within each interval, we get the same answer. 
+We are free, for example, to sample the
+function at the left or right side of each subinterval rather than at the center.
+The only case where this choice would matter would be for a function that was
+spectacularly badly behaved: one that was discontinuous at infinitely
+many points within the interval $[a,b]$. This is addressed
+in box \figref{riemann-integral}.
+
+
+Let $f$ be the real function defined such that $f(x)=0$ if $x$ is rational, and
+$f(x)=1$ otherwise. Such a function can never, for example, be a result of any
+physical process or any measurement, since measurements can't distinguish rational
+numbers from irrational ones. If we integrate this function
+from $0$ to $1$, 
+using Riemann sums with equal subintervals, sampled at their centers, we get $0$
+because all the $x_k$'s are rational. But this is in some sense the wrong answer,
+since ``most'' real numbers are irrational, so $f$ is ``usually'' equal to 1, not 0.
+
+For these reasons, Riemann defined an integral, now known as the Riemann integral,
+as follows. Suppose we have a number $I$ such that
+for every $\varepsilon >0$, there exists a $\delta>0$ such that
+$|R -I|<\varepsilon$ for \emph{every} Riemann sum all of whose intervals have width $\Delta
+  x_k<\delta$ with any arbitrary choice of sample points $x_1$, \dots , $x_n$.
+Then $I$ is the Riemann integral of the function. For the function $f$ defined
+above, the Riemann integral is undefined, as it should be.
+  <% end_sec('integral-discontinuous') %>
+
+  <% begin_sec("Proof of the fundamental theorem",nil,'fundamental-theorem-proof') %>
+In proving the fundamental theorem of calculus,
+  \begin{equation}
+    \int_a^b f'(x) \der x = f(b) - f(a) \qquad ,
+  \end{equation}
+we use the definition of the integral in terms of a Riemann sum, in which
+the interval $[a,b]$ into $n$ equal subintervals $[x_i,x_{i+1}]$, where $i=1$, 2, \ldots $n-1$.
+However, rather than restricting ourselves to sampling at the center of each subinterval,
+we assume that we have the freedom to choose any sample
+point $s_i$ within each subinterval. This is equivalent to
+assuming that the functions $f$ and $f'$ are not horribly badly behaved, so that our definition of the integral
+on p.~\pageref{integral-defined}
+is equivalent to the Riemann integral defined in box \figref{riemann-integral}.
+We now apply the mean value theorem to each subinterval, and choose $s_i$ to be the point for which
+\begin{equation*}
+  f'(s_i) = \frac{\Delta f_i}{\Delta x} \qquad ,
+\end{equation*}
+where $\Delta f_i=f(x_{i+1})-f(x_i)$ and $\Delta x=x_{i+1}-x_i$.
+This can be rearranged to give
+\begin{equation*}
+  \Delta f_i = f'(s_i)\Delta x \qquad .
+\end{equation*}
+Adding these up, we have
+\begin{equation*}
+  f(b)-f(a) = \sum_{i=1}^n f'(s_i)\Delta x \qquad .
+\end{equation*}
+This tells us that by an appropriate choice of the sample points, we can make \emph{every} Riemann
+sum, for \emph{every} $n$ produce the result claimed by the fundamental theorem. It therefore
+follows that the limit that defines the integral has the value claimed by the theorem.\myqed
+
+  <% end_sec('fundamental-theorem-proof') %>
+
+<% end_sec('integrals-technical') %>
 
 
 <% end_chapter %>
