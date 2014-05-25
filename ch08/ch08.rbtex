@@ -648,6 +648,8 @@ $x^7/7$. Including an arbitrary constant of integration, we have
 
 %%graph%% hyperbola-area-raw func=1/x format=svg xlo=0 xhi=3 ylo=0 yhi=1.5 with=lines x=t y=x xtic_spacing=1 ytic_spacing=1
 
+% \protect\sansmath\sf{#1}\lmserifmath
+
 \begin{eg}{Area under the graph of $1/x$}\label{eg:hyperbola}
 \egquestion Interpret the definite integral
 \begin{equation*}
@@ -694,6 +696,39 @@ show proof of fund thm in figure, upper and lower saw teeth canceling term by te
   <% end_sec('using-fundamental-theorem') %>
 
 <% end_sec('fundamental-theorem') %>
+
+<%
+  fig(
+    'tree-rings',
+    %q{Each tree ring adds $\Delta r$ to the radius of the tree. The $\Delta r$ values are not all the same.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+<% begin_sec("Riemann sums in general",nil,'riemann-sums-in-general') %>
+As a tree grows, its radius increases continuously. When a tree is cut down, as in
+figure \figref{tree-rings}, we can see that the growth in each year is not the same.
+For example, in most of California, where the weather tends to be dry, a tree will usually
+show markedly increased growth in a wet year. In this example, it's natural to think
+of the radius of the tree as an integral of the form $\int_{\ldots}^{\ldots} \der r$. Of course it would be
+silly to try to explicitly calculate this integral, when we could simply measure the radius
+with a ruler! We don't really need calculus here, but, as is often the case, calculus guides
+us in thinking about the concepts even when we aren't going to use the techniques of calculus.
+If we were to approximate this integral 
+using a Riemann sum, it would seem most natural to break the sum down into \emph{unequal}
+intervals $\Delta r$. This is allowed by the definition of a Riemann sum, and the kind
+of Riemann sum that we defined on p.~\pageref{eqn:riemann-sum}, with equal subintervals,
+was a more specific type.
+
+If we were to stick pins in this tree stump to mark the calendar years, we could also choose
+our own convention for where to put them. Maybe we would put each pin in the darkest part of
+the band, or maybe we could make it a rule to use the lightest part. In the type of Riemann sum
+we originally defined
+
+<% end_sec('riemann-sums-in-general') %>
 
 <% begin_sec("Some technical points",nil,'integrals-technical') %>
   <% begin_sec("Integrating discontinuous functions",nil,'integral-discontinuous') %>

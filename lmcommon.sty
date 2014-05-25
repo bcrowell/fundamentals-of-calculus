@@ -197,9 +197,9 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 \titlespacing{\subsection}{0mm}{1mm}{-0.5mm}
 \titlespacing{\subsubsection}{0mm}{1mm}{-0.5mm}
 
-\newcommand{\formatlikechapter}[1]{\huge{\bfseries{\sffamily{#1}}}\normalsize\normalfont}
-\newcommand{\formatlikesection}[1]{\vspace{2.5mm}\Large{\bfseries{\sffamily{#1}}}\normalsize\normalfont}
-\newcommand{\formatlikesubsection}[1]{\bfseries{\sffamily{#1}}\normalsize\normalfont}
+\newcommand{\formatlikechapter}[1]{\huge{\bfseries{\protect\sansmath\sffamily{#1}}}\normalsize\normalfont}
+\newcommand{\formatlikesection}[1]{\vspace{2.5mm}\Large{\bfseries{\protect\sansmath\sffamily{#1}}}\normalsize\normalfont}
+\newcommand{\formatlikesubsection}[1]{\bfseries{\protect\sansmath\sffamily{#1}}\normalsize\normalfont}
 \newcommand{\formatlikesubsubsection}[1]{\textsl{#1}\normalsize\normalfont}
 
 \newcommand{\startscanswers}[1]{\pagebreak[4]\noindent\formatlikesection{\langscansch{} \ref{#1}}\nopagebreak\par}

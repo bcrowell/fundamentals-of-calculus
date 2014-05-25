@@ -27,11 +27,11 @@
 
 % titlesec stuff:
 \titleformat{\chapter}[display]
-    {\normalfont\huge\bfseries\sffamily\raggedright}{Chapter \thechapter}{0mm}
+    {\normalfont\huge\bfseries\sffamily\sansmath\raggedright}{Chapter \thechapter}{0mm}
     {\Huge}
 \newcommand{\normalsectiontitleformat}{
   \titleformat{\section}
-    {\normalfont\Large\bfseries\sffamily\raggedright}{\showsecnum{\thesection}}{0.6em}{}
+    {\normalfont\Large\bfseries\sffamily\sansmath\raggedright}{\showsecnum{\thesection}}{0.6em}{}
 }
 \normalsectiontitleformat
 \titleformat{\subsection}
