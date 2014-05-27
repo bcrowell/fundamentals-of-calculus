@@ -808,6 +808,8 @@ end
 def hw_block(*arg)
   x = arg[0]
   $hw_number_in_block = 0
+  print %q~\vspace{\stretch{2}}~
+     # ... twice as big as what's at the end of homeworkforcelabel in lmcommon.sty
   if x.nil? then $hw_block = $hw_block+3; return end
   if x.class() == Fixnum then $hw_block = $hw_block+x; return end
   if x.class() == String then $hw_block = base24_to_integer(x); return end
