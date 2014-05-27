@@ -1101,15 +1101,15 @@ graph, and what real-world implications would this have?
 
 \begin{hwsection}
 
-\hfill
-
 <% hw('diff-monomials',{'solution'=>true}) %>
 
 <% hw('dummy-variable',{'solution'=>true}) %>
 
 <% hw('zero-value-nonzero-derivative',{'solution'=>true}) %>
 
-\hfill
+<% hw('perfectly-inelastic-demand') %>
+
+\pagebreak
 
   <% hw_block(2) %>
 
@@ -1124,8 +1124,6 @@ graph, and what real-world implications would this have?
 <% hw('same-deriv',{'solution'=>true}) %>
 
   <% hw_block(2) %>
-
-\pagebreak
 
 <% hw('zoom-1') %>
 <% hw('zoom-2') %>

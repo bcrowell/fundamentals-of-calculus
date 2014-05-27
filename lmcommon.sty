@@ -381,8 +381,13 @@ me permission to use it, but that doesn't mean you have permission to use it.}
                                          % this. Using section* messes up footers & toc. 
     \setlength{\parindent}{0mm}%undone by normalparafmt
     %\hwtopboilerplate\par% not used in genrel
+    \begingroup% so that setlength gets undone by endgroup
+    % The following is so that spaces between problems fill up, rather than spaces around displayed equations.
+    \setlength{\abovedisplayskip}{0pt plus 0pt minus 0pt}
+    \setlength{\belowdisplayskip}{0pt plus 0pt minus 0pt}
 }%
 {%
+  \endgroup
   \vfill
   \normalparafmt
 }
@@ -416,6 +421,7 @@ me permission to use it, but that doesn't mean you have permission to use it.}
                                 \displayhwdifficulty{\hwdifficulty}
                             }%
              \hwflushtrailingstuff\par%
+             \vfill%put any available extra whitespace between problems
         }
 %
 \newcommand{\hwendpart}[1][3]{\hwflushtrailingstuff[#1]\\}
