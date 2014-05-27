@@ -1107,6 +1107,8 @@ The elementary axioms make statements such as ``for any number $x$, \ldots'' or
 ``for any numbers $x$ and $y$, \ldots'' The completeness axiom says ``for any \emph{sets}
 of numbers P and Q, \ldots''
 
+\pagebreak
+
 \begin{eg}{Every decimal is a real number}
 Consider the infinite decimal
 \begin{equation*}
@@ -1181,8 +1183,8 @@ method, which is introduced in section \ref{sec:newtons-method}.
 a transcendental equation, and no amount of fiddling with algebra and trig identities will
 ever give a closed-form solution, i.e., one that can be written down with a finite number of arithmetic
 operations to give an exact result. However, we can easily prove that at least one solution exists, by
-applying the intermediate value theorem to the function $x-\cos x$. The cosine function is bounded between
-$-1$ and 1, so this function must be negative for $x<-1$ and positive for $x>1$. By the intermediate value
+applying the intermediate value theorem to the function $f(x)=x-\cos x$. The cosine function is bounded between
+$-1$ and 1, so $f$ must be negative for $x<-1$ and positive for $x>1$. By the intermediate value
 theorem, there must be a solution in the interval $-1 \le x \le 1$. The graph, \figref{x-minus-cos-x}, verifies
 this, and shows that there is only one solution.
 \end{eg}
@@ -1190,14 +1192,47 @@ this, and shows that there is only one solution.
 
 %%graph%% x-minus-cos-x func=(x-cos(x)) format=eps xlo=-8 xhi=8 ylo=-8 yhi=8 xtic_spacing=4 ytic_spacing=4
 
-<% marg(50) %>
+<% marg(0) %>
 <%
   fig(
     'x-minus-cos-x',
     %q{The function $x-\cos x$ constructed in example \ref{eg:x-minus-cos-x}.}
   )  
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'eg-supply-and-demand',
+    %q{Example \ref{eg:supply-and-demand}.}
+  )  
+%>
 <% end_marg %>
+
+\begin{eg}{Supply and demand}\label{eg:supply-and-demand}
+Figure \figref{eg-supply-and-demand} shows two graphs representing the supply and demand of some good
+on a free market. The function $D(Q)$ shows the unit price that would have to be offered so that buyers
+would willingly buy a quantity $Q$ of the good. Normally the variables $D$ is a decreasing
+function: if the price goes up, people don't buy as much. (But cf.~problem \ref{hw:perfectly-inelastic-demand},
+p.~\pageref{hw:perfectly-inelastic-demand}.) The function $S(Q)$ shows the unit price that the seller
+would willingly offer if they could sell a quantity $Q$. Often $S$ is an increasing function.
+For example, Boeing might only be able to produce more passenger jets by paying their
+workers overtime, which would create a cost that they would pass on to their customers.
+
+Suppose that, as in the example shown in the figure, $D$ starts out higher than $S$ on the left, but ends
+up lower than $S$ on the right. Then we expect geometically that if the curves are continuous,
+they must cross at some point. This can be proved using the same technique as in example
+\ref{eg:x-minus-cos-x}. We construct a function $f(Q)=S(Q)-D(Q)$, which goes from negative to positive.
+By the intermediate value theorem, there must be some point where $f=0$, meaning that $S=D$. This
+crossing point is the free-market equilibrium.
+
+The intermediate value theorem holds for real numbers, but in fact neither the price nor the quantity
+is free to have any real-number value. For example, Boeing can't sell half an airplane.
+In some cases this might mean that the free-market equilibrium defined by $S=D$ would not exist.
+An example might be the Concorde, a supersonic passenger jet, which flew from 1969 to 2003.
+The nonexistence of the market for this plane today may indicate that the supply and demand curves
+now cross at $Q<1$, which is not possible because $Q$ has to be an integer.
+\end{eg}
+
 
 \begin{eg}{}
 \egquestion Prove that every odd-order polynomial $P$ with real coefficients has at least one real root $x$, i.e., a
