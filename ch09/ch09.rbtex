@@ -1,0 +1,340 @@
+%%chapter%% 09
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '09',
+    %q{Basic techniques of integration},
+    'ch:integration-techniques'
+  )
+%>
+
+<% begin_sec("Doing integrals symbolically on a computer",nil,'cas-for-integration') %>
+The quaint little town of Carmel, California, has a touristy business district that specializes
+in quaint little shops. I once went into a yarn store there with my mother,
+who picked out two skeins of yarn for a sweater.
+The business ran on paper and pen, which was arguably sensible, since
+there was little room on the cramped counter for a cash register. The following math
+problem resulted:
+\begin{align*}
+  \$5.60 & \\
+  \times \quad 2 &
+\end{align*}
+The proprietor pulled out a calculator and typed $0\times2=$. The answer was 0, which she
+wrote down. Then $6\times2=$, and so on.
+
+The point of this anecdote is that there are
+right ways and wrong ways to use tools. Computers are a good tool for doing integrals, but we should be able to do simple
+integrals by hand.
+
+The computer programs used for doing integrals are called computer algebra systems (CAS).
+I recommend a free and open-source CAS called
+Maxima.\footnote{\url{maxima.sourceforge.net}} The following example shows how to use Maxima to do an
+easy indefinite integral --- analogous to using the calculator to find $6\times 2$.
+The typewriter font shows what I typed in, and the italicized text is the answer printed out by the
+program. Note the mandatory semicolon at the end of the input line.
+
+\restartLineNumbers
+\begin{eg}{Integrating on a computer}
+\startcodeeg
+\begin{Code}
+  \ii integrate(cos(x),x);
+  \oo{sin(x)}
+\end{Code}
+\finishcodeeg
+\end{eg}
+
+It's also worth knowing about a browser-based system provided by a company called Wolfram
+as a come-on for its expensive, proprietary CAS, Mathematica.
+There are browser interfaces at \url{integrals.wolfram.com}
+and the more easily remembered \url{integrals.com}.
+
+<% end_sec('cas-for-integration') %>
+
+
+<% begin_sec("Substitution",nil,'substitution') %>
+Here's an example of an integral that introduces a useful technique of integration, and that also
+demonstrates what can go wrong if you become completely dependent on computers to do integrals that
+you should be able to do by hand.
+\begin{equation*}
+ \int_1^2 (x-1)^{1000000}\:\der x \qquad 
+\end{equation*}
+I tested this on three CAS programs, and although two were able to do it, one froze up indefinitely.
+My point is not that a certain CAS is better than some other one.\footnote{For the record, the two
+that could handle it were Maxima and \url{integrals.com}. The one that failed was another open-source
+program called Yacas.} The point is that computers, unlike humans, can't step back and say, ``Hey, what
+I'm doing isn't working so well. Maybe I should try something else.'' The one that failed presumably
+started grinding away to multiply out the polynomial --- all million and one terms of it: 
+$x^{1000000}-1000000x^{999999}+\ldots$ This is certainly a strategy that would work, in theory, because
+it would reduce the problem to one that we already know how to solve: integrating a polynomial.
+
+<% marg(0) %>
+<%
+  fig(
+    'millionth-power',
+    %q{Integrating $(x-1)^{1000000}$ by using a change of variable. The function is not drawn
+       realistically; the rounded edge has been exaggerated in order to make the shaded area under
+       the curve visible.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'millionth-power-renaming',
+    %q{The change of variables just renames the points on the horizontal axis.}
+  )  
+%>
+<% end_marg %>
+
+But there's a better way to approach this, as suggested in figure \figref{millionth-power}.
+Geometrically, what we're trying to calculate is the very small area that is only visible at the corner of the
+figure. (Although the limits of integration run from 1 to 2, the value of the integrand is
+too small to matter except when $x$ gets very close to 2.)
+Let's shift the graph to the left by one unit, as shown in the figure, and
+define a new variable $u=x-1$. The shift to the left doesn't change the amount of area under the curve;
+it simply \emph{relocates} that area to a new place. In terms of this variable,
+the integrand is $u^{1000000}$, which is a function that we know how to integrate.
+Expressed as an integral with respect to $u$, the limits of integration are from $u=1-1=0$ to
+$u=2-1=1$. Do we need to do anything to the $\der x$ other than change it to a $\der u$? Not
+in this case; implicit differentiation of $u=x-1$ gives $\der u=\der x$. The result is that we can
+calculate the same area using the following easier integral.
+\begin{equation*}
+ \int_0^1 u^{1000000}\:\der u \qquad 
+\end{equation*}
+This is easily found to equal $1/1000001$.
+
+Figure \figref{millionth-power-renaming} shows a nice way of thinking about this. Rather than imagining
+that the graph itself has shifted horizontally, we can say that the graph stayed in the same place, but
+we slid the axis over. This is just like renaming the points on the horizontal axis. The renaming
+is like sliding a ruler over without shrinking or expanding the ruler. If we think of $\der x$ as
+a small \emph{change} in $x$, and similarly for $\der u$, then it makes sense that $\der u=\der x$;
+the distance or \emph{difference} between two points on a ruler is the same regardless of whether
+we slide the ruler around.
+
+The procedure demonstrated above is called a change of variable, substitution, or sometimes
+``$u$-substitution,'' since it seems to be common for calculus textbooks to use the letter $u$ in this
+context. In general, $u$ can be defined as any function of $x$ that you think will help to massage the
+integral into a more workable form. Substitution can be used on both definite and indefinite integrals.
+
+\begin{eg}{Substitution with rescaling}
+A common rate of return on ultra-safe, ten-year bonds has historically been
+about 5\%, which means that money
+invested in these bonds grows by a factor of $e$ in about $1/\ln1.05\approx 20$ years. Therefore we
+expect such an investment to grow exponentially over time in proportion to the function $e^{t/20}$,
+where $t$ is in years. Bonds often pay dividends, and although the dividend payments actually occur
+at discrete time intervals, it can be convenient to model them mathematically as if they were paid
+continuously, so that the total dividend payment is
+\begin{equation*}
+  D = k \int_0^{10} e^{t/20}\:\der t \qquad ,
+\end{equation*}
+where $k$ is a constant. Let's evaluate this integral.
+
+Since the derivative of $e^x$ is $e^x$,
+we know how to integrate $e^x$, and it's natural to look for a substitution that makes the integrand
+into this form. The substition clearly has to be
+\begin{equation}\label{eqn:bond-dividends-1}
+  u = \frac{t}{20} \qquad .
+\end{equation}
+If we think of the time axis as a ``time-line'' like the ones in history books, then this substitution
+is like expanding the time-line's scale by a factor of 20. Solving for $t=20u$ and applying implicit
+differentiation gives
+\begin{equation}
+  \der t = 20\:\der u \qquad .
+\end{equation}
+The limits of integration change when expressed in terms of $u$.
+\begin{equation}
+  t = 0 \qquad \Leftrightarrow \qquad u=0
+\end{equation}
+\begin{equation}\label{eqn:bond-dividends-4}
+  t = 10 \qquad \Leftrightarrow \qquad u=\frac{1}{2}
+\end{equation}
+We have to make use of all four of the equations 
+\eqref{eqn:bond-dividends-1}-\eqref{eqn:bond-dividends-4} in order to rewrite the integral in terms
+of the new variable $u$:
+\begin{align*}
+  D &= k \int_0^{1/2}  e^{u}\:(20\der u) \\
+    &= 20 k \left. e^u \right]_0^{1/2} \\
+    &= 20 k \left(e^{1/2}-1\right)
+\end{align*}
+\end{eg}
+
+\begin{eg}{A nonlinear substitution}\label{eg:nonlinear-substitution}
+\egquestion Evaluate
+\begin{equation*}
+  \int 2x \sin(x^2+3)\:\der x \qquad .
+\end{equation*}
+
+\eganswer Here the only substitution that has any hope of working is $u=x^2+3$.
+Implicit differentiation gives $\der u=2x\der x$, which happens to be exactly the combination
+of factors that occurs in the integrand. The integral therefore equals:
+\begin{align*}
+  \int \sin u\:\der u &= -\cos u+c \\
+                      &= -\cos(x^2+3)+c
+\end{align*}
+To check that this indefinite integral is correct, we can differentiate it, which involves
+using the chain rule:
+\begin{align*}
+  \frac{\der}{\der x} \left(-\cos(x^2+3)+c\right) &= \sin(x^2+3)\cdot 2x
+\end{align*}
+\end{eg}
+
+The method used to check example \ref{eg:nonlinear-substitution} shows that we should be able to
+interpret what's going on in these substitutions in terms of the chain rule.
+The chain rule says that
+\[
+\frac{\der F(G(x))}{\der x } = F'(G(x))\cdot G'(x),
+\]
+so that
+\[
+\int F'(G(x))\cdot G'(x) \,\der x = F(G(x)) + c \qquad .
+\]
+In example \ref{eg:nonlinear-substitution}, we had
+$2x =
+\frac{\der }{\der x} (x^2+3)$. So let's call $G(x)=x^2+3$, and $F(u) = -\cos
+u$. Then
+\[
+F(G(x)) = -\cos (x^2+3)
+\]
+and
+\[
+\frac{\der F(G(x))}{\der x} = \underbrace{\sin (x^2+3)}_{F'(G(x))}\cdot
+\underbrace{\vphantom{(}2x}_{G'(x)} = f(x),
+\]
+so that
+\begin{equation*}
+  \label{eq:substitution-example1}
+  \int 2x\sin (x^2+3)\,\der  x = -\cos (x^2+3)+c \qquad .
+\end{equation*}
+
+
+<% end_sec('substitution') %>
+
+  <% begin_sec("Integrals that can't be done in closed form",4,'impossible-integrals') %>
+Integral calculus was invented in the age of powdered wigs and harpsichords, so the original emphasis
+was on expressing integrals in a form that would allow numbers to be plugged in for easy numerical evaluation
+by scribbling on scraps of parchment with a quill pen. This was an era when you might have to travel to a large
+city to get access to a table of logarithms. 
+
+In this computationally impoverished environment, one always
+wanted to get answers in what's known as \emph{closed form} and in terms of \emph{elementary functions}.
+
+A closed form expression means one written using a finite number of operations, as opposed to something
+like the geometric series $1+x+x^2+x^3+\ldots$, which goes on forever.
+
+Elementary functions are usually taken to be addition,
+subtraction, multiplication, division, logs, and exponentials, as well as other functions derivable from
+these. For example, a cube root is allowed, since $\sqrt[3]x=e^{(1/3)\ln x}$, and so are trig functions and their inverses,
+because they can be expressed in terms of logs and exponentials by using Euler's formula.
+
+In theory, ``closed form'' doesn't mean anything unless we state the elementary functions that are allowed.
+In practice, when people refer to closed form, they usually have in mind the particular set of elementary functions described above.
+
+A traditional freshman calculus course spends such a vast amount of time teaching you how to do integrals
+in closed form that it may be easy to miss the fact that this is impossible for the vast majority of
+integrands that you might randomly write down. Here are some examples of impossible integrals:
+
+\begin{align*}
+  & \int e^{-x^2} \der x \\
+  & \int x^x \der x \\
+  & \int \frac{\sin x}{x} \der x \\
+  & \int e^x \tan x \der x
+\end{align*}
+
+\noindent The first of these is a form that is extremely important in statistics (it describes the area under the
+standard ``bell curve''), so you can see that
+impossible integrals aren't just obscure things that don't pop up in real life.
+
+People who are proficient at doing integrals in closed form generally seem to work by a process of pattern
+matching. They recognize certain integrals as being of a form that can't be done, so they know not to try.
+
+\begin{eg}
+\egquestion Students! Stand at attention! You will now evaluate $\int e^{-x^2+7x} \der x$ in closed form.
+
+\eganswer
+No sir, I can't do that. By a change of variables of the form $u=x+c$, where $c$ is a constant,
+we could clearly put this into the form $\int e^{-x^2} \der x$, which we know is impossible.
+\end{eg}
+
+Sometimes an integral such as $\int e^{-x^2} \der x$ is important enough that we want to give it a name,
+tabulate it, and write computer subroutines that can evaluate it numerically. For example, statisticians
+define the ``error function'' $\operatorname{erf}(x)=(2/\sqrt{\pi}) \int e^{-x^2} dx$. Sometimes if you're not sure whether
+an integral can be done in closed form, you can put it into computer software, which will tell you that it
+reduces to one of these functions. You then know that it can't be done in closed form. For example, if you ask 
+\url{integrals.com} to do $\int e^{-x^2+7x} \der x$, it spits back $(1/2)e^{49/4}\sqrt{\pi}\operatorname{erf}(x-7/2)$.
+This tells you both that you shouldn't be wasting your time trying to do the integral in closed form and that
+if you need to evaluate it numerically, you can do that using the erf function.
+
+As shown in the following example, just because an indefinite integral can't be done, that doesn't mean that we can never do
+a related definite integral.
+
+\begin{eg}
+\egquestion Evaluate $\int_0^{\pi/2} e^{-\tan^2 x}(\tan^2x+1)\der x$.
+
+\eganswer The obvious substitution to try is $u=\tan x$, and this reduces the integrand to $e^{-x^2}$.
+This proves that the corresponding indefinite integral is impossible to express in closed form. However,
+the definite integral \emph{can} be expressed in closed form; it turns out to be $\sqrt{\pi}/2$.
+\end{eg}
+
+Sometimes computer software can't say anything about a particular integral at all. That doesn't mean that the integral
+can't be done. Computers are stupid, and they may try brute-force techniques that fail because the
+computer runs out of memory or CPU time. For example, the integral $\int \der x/(x^{10000}-1)$ 
+can be
+done in closed form, and it's not too hard for
+a proficient human to figure out how to attack it, but every computer program I've tried it on has
+failed silently.
+  <% end_sec('impossible-integrals') %>
+
+  <% begin_sec("Doing an integral using symmetry or geometry",4,'integral-cheats') %>
+Often we can figure out the value of an integral either by symmetry or by using simple geometry.
+
+%%graph%% impossible-zero-integral func=sin(x)/(1+exp(x*x)) format=eps xlo=-1 xhi=1 ylo=-0.3 yhi=0.3 with=lines xtic_spacing=1 ytic_spacing=0.6
+
+<% marg(100) %>
+<%
+  fig(
+    'impossible-zero-integral',
+    %q{The integrand of example \ref{eg:impossible-zero-integral}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'sin-squared-integral',
+    %q{The integrand of example \ref{eg:sin-squared-integral}.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{An integral that vanishes by symmetry}\label{eg:impossible-zero-integral}
+\egquestion Evaluate
+\begin{equation*}
+  \int_{-1}^1 \frac{\sin x\der x}{1+e^{x^2}} \qquad .
+\end{equation*}
+
+\egquestion I doubt that this can be done by finding the indefinite integral and plugging in the
+limits of integration. I tried it using the open-source program Maxima, and also using the web interface
+to a proprietary program called Mathematica, and neither could do it. However, the function is odd because
+the numerator is odd and the denominator is even. Since the function is odd, and the limits of
+integration are symmetrically placed on either side of the origin, the definite integral is
+guaranteed to be zero; any negative contribution to the integral on the left is guaranteed to be
+canceled by a matching positive contribution on the right.
+\end{eg}
+
+
+%%graph%% sin-squared-integral-raw func=(sin(x))**2 format=svg xlo=0 xhi=6.282 ylo=0 yhi=1 with=lines xtic_spacing=1 ytic_spacing=1
+
+\begin{eg}{An integral that can be done by geometry}\label{eg:sin-squared-integral}
+\egquestion Evaluate
+\begin{equation*}
+  \int_0^{2\pi} \sin^2\theta\:\der\theta \qquad .
+\end{equation*}
+
+\egquestion The hard way to do this integral is to dig up the appropriate
+trig identity, which allows $\sin^2\theta$ to be reexpressed in terms of $\sin\theta$.
+The easy way is to look at the graph, figure \figref{sin-squared-integral}.
+The rectangle is exactly half filled by the area under the graph. Since the
+rectangle has area $2\pi$, the integral equals $\pi$.
+\end{eg}
+  <% end_sec('integral-cheats') %>

@@ -15,8 +15,9 @@
 %====================== packages =====================================================
 \RequirePackage{amsmath}
 \def\maketag@@@#1{\hbox{\m@th#1}} % workaround for bug in amsmath; see http://tex.stackexchange.com/a/155719/6853
-\RequirePackage{url,learn-cmd-syntax,enumerate}
+\RequirePackage{url,learn-cmd-syntax,enumerate,fancyvrb}
 % enumerate is for lc roman numerals, which I sometimes want so items don't look like equation numbers
+% fancyvrb is for code listings
 \StartSaveCommands % for learn-cmd-syntax
 %====================== pull in sub-packages =====================================================
 \RequirePackage{lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments}
@@ -88,3 +89,19 @@
           \par  \setlength{\leftskip}{\saveleftskip} \par%
         }
 \newcommand{\myqed}{$\square$}
+%============================= code listings ==================================================
+\newcounter{listingline}
+\setcounter{listingline}{1}
+\newcommand{\formatline}[1]{{\footnotesize #1\ }}
+% ii = input line
+% nn = numbered input line
+% cc = continuation of an input line
+% oo = output line
+\newcommand{\ii}{\ }
+\newcommand{\nn}{\formatline{\arabic{listingline}}\addtocounter{listingline}{1}}
+\newcommand{\cc}{\formatline{\ \ \ \ \ \ }}
+\newcommand{\oo}[1]{\formatline{\ \ \ \ }\textit{#1}}
+\DefineVerbatimEnvironment{Code}{Verbatim}{commandchars=\\\{\},gobble=2}
+\newcommand{\restartLineNumbers}{\setcounter{listingline}{1}}
+\newcommand{\startcodeeg}{\nolinebreak[4]\vspace{-7mm}\nolinebreak[4]}
+\newcommand{\finishcodeeg}{\vspace{-2mm}}

@@ -593,7 +593,7 @@ halving our guess:
   f(x)=\frac{1}{2}x^2 \implies f'(x)=x
 \end{equation*}
 The function $\frac{1}{2}x^2$ is an antiderivative of $x$. Therefore by the fundamental
-theorem we have
+theorem we have\label{area-of-triangle-by-fundamental-theorem}
 \begin{align*}
   \int_0^1 x\: \der x &= f(1) - f(0) \\ 
          &= \frac{1}{2}1^2-\frac{1}{2}0^2 \\
@@ -724,7 +724,7 @@ Judging from the graph, it looks plausible that the shaded area is about 0.7.
 
 <% end_sec('fundamental-theorem') %>
 
-<% begin_sec("Some applications, examples, and shortcuts",nil,'integral-applications') %>
+<% begin_sec("Using the tool correctly",nil,'using-integral-correctly') %>
   <% begin_sec("When do you need an integral?",nil,'integral-generalizes-multiplication') %>
 In section \ref{subsec:when-derivative-is-needed}, p.~\pageref{subsec:when-derivative-is-needed},
 we asked the question, ``When do you need a derivative?'' It's natural to ask the same question
@@ -892,79 +892,96 @@ We finish by checking the units of our final result, equation \eqref{eqn:falling
 \end{equation*}
 \end{eg}
   <% end_sec('checking-an-integral') %>
+  <% begin_sec("Do I differentiate this, or do I integrate it?",nil,'to-differentiate-or-to-integrate') %>
+In an end-of-chapter problem in a calculus textbook, you're usually commanded either to integrate
+or to differentiate. In real-world contexts, however, the question can arise of which one is the
+right thing to do. Often we have a pair of variables, and we know that one is the integral of the other,
+and one is the derivative of the other. But which one is which? Memorization would be the wrong
+way to approach this. The following is a list of possible ways of telling which is is which.
 
-  <% begin_sec("Doing an integral using symmetry or geometry",nil,'integral-cheats') %>
-Often we can figure out the value of an integral either by symmetry or by using simple geometry.
+\begin{enumerate}
+  \item A derivative often represents a rate of change, an integral the accumulation of change.
+  \item Real-world quantities usually have units, and only one way of setting up the calculus
+        relationship causes the units to make sense.
+  \item The integral often occurs as a generalization of multiplication, the derivative as a
+        generalization of the slope of a line.
+\end{enumerate}
 
-%%graph%% impossible-zero-integral func=sin(x)/(1+exp(x*x)) format=eps xlo=-1 xhi=1 ylo=-0.3 yhi=0.3 with=lines xtic_spacing=1 ytic_spacing=0.6
+\begin{eg}{A chemical reaction}
+\egquestion Chemicals P and Q react to produce R. There is a reaction rate $r$ and
+a concentration $C$ of the product. Which would be the derivative of which, and which would
+be the integral of which?
 
-<% marg(-10) %>
+\eganswer A derivative represents a rate of change, so $r=\der C/\der t$. An integral
+represents the accumulation of change, so $C=\int r\:\der t$.
+\end{eg}
+
+\begin{eg}{An epidemic}
+\egquestion During an epidemic, there is some number of people $I$ who have the disease,
+and some number $w$ of new cases per day being reported. How would the calculus relationships
+between these two variables be set up?
+
+\eganswer The variable $I$ is unitless; it is just a \emph{count} of the number of infected people.
+The variable $w$ has units of cases per day, but ``cases'' is really a count, not a unit, so
+the units of $w$ are really $\zu{day}^{-1}$ (inverse days). Conceptually, it's clear that these
+two quantities should be related as integral and derivative, and if we were unsure of which
+way around to write the relationship, the units would tell us.
+\begin{align*}
+  \underbrace{w}_{\zu{day}^{-1}} &= \underbrace{\frac{\der I}{\der t}}_{\frac{\text{unitless}}{\zu{days}}} \\
+  \underbrace{I}_{\text{unitless}} &= \int \underbrace{w}_{\zu{day}^{-1}}\:\underbrace{\der t}_{\zu{days}}
+\end{align*}
+\end{eg}
+
+An example of the third method was given in example \ref{eg:tractor-doing-work},
+p.~\pageref{eg:tractor-doing-work}, where the definition of mechanical work was generalized to
+cases where the force varies.
+  <% end_sec('to-differentiate-or-to-integrate') %>
+
+
+<% end_sec('using-integral-correctly') %>
+
+<% begin_sec("Linearity",nil,'linearity-of-integral') %>
+The most important and basic properties of the derivative (p.~\pageref{properties-of-derivative}) are that
+it adds, $(f+g)'=f'+g'$, and scales vertically, $(cf)'=cf'$, where $c$ is a constant. When an operation
+has these properties, we say that it is \emph{linear}.\index{linearity}
+Since the indefinite integral is defined as the antiderivative, it
+follows that the 
+indefinite integral is also linear,
+\begin{align*}
+  & \int [f(x)+g(x)]\:\der x = \int f(x)\:\der x + \int g(x)\:\der x \\
+  & \int c f(x)\:\der x = c \int f(x)\:\der x
+\end{align*}
+and by the fundamental theorem the same is true for the definite
+integral.
+
+<% marg(0) %>
 <%
   fig(
-    'impossible-zero-integral',
-    %q{The integrand of example \ref{eg:impossible-zero-integral}.}
+    'square-plus-triangle',
+    %q{Example \ref{eg:square-plus-triangle}. The total area is the area of the square base plus the
+       area of the triangle on top.}
   )  
 %>
 <% end_marg %>
-
-\begin{eg}{An integral that vanishes by symmetry}\label{eg:impossible-zero-integral}
-\egquestion Evaluate
+\begin{eg}{}\label{eg:square-plus-triangle}
+\egquestion Evaluate the definite integral
 \begin{equation*}
-  \int_{-1}^1 \frac{\sin x\der x}{1+e^{x^2}} \qquad .
+  \int_0^1 (1+x)\:\der x
 \end{equation*}
+and give a geometrical interpretation.
 
-\egquestion I doubt that this can be done by finding the indefinite integral and plugging in the
-limits of integration. I tried it using the open-source program Maxima, and also using the web interface
-to a proprietary program called Mathematica, and neither could do it. However, the function is odd because
-the numerator is odd and the denominator is even. Since the function is odd, and the limits of
-integration are symmetrically placed on either side of the origin, the definite integral is
-guaranteed to be zero; any negative contribution to the integral on the left is guaranteed to be
-canceled by a matching positive contribution on the right.
+\eganswer The linearity of the definite integral gives
+\begin{equation*}
+  \int_0^1 (1+x)\:\der x = \int_0^1 1\:\der x + \int_0^1 x\:\der x = 1+\frac{1}{2} = \frac{3}{2} \qquad .
+\end{equation*}
+Figure \figref{square-plus-triangle} gives a geometrical interpretation.
 \end{eg}
 
+<% end_sec('linearity-of-integral') %>
 
-%%graph%% sin-squared-integral-raw func=(sin(x))**2 format=svg xlo=0 xhi=6.282 ylo=0 yhi=1 with=lines xtic_spacing=1 ytic_spacing=1
+\vfill
 
-
-\pagebreak
-
-\begin{eg}{An integral that can be done by geometry}\label{eg:sin-squared-integral}
-\egquestion Evaluate
-\begin{equation*}
-  \int_0^{2\pi} \sin^2\theta\:\der\theta \qquad .
-\end{equation*}
-
-\egquestion The hard way to do this integral is to dig up the appropriate
-trig identity, which allows $\sin^2\theta$ to be reexpressed in terms of $\sin\theta$.
-The easy way is to look at the graph, figure \figref{sin-squared-integral}.
-The rectangle is exactly half filled by the area under the graph. Since the
-rectangle has area $2\pi$, the integral equals $\pi$.
-\end{eg}
-<% marg(100) %>
-<%
-  fig(
-    'sin-squared-integral',
-    %q{The integrand of example \ref{eg:sin-squared-integral}.}
-  )  
-%>
-<% end_marg %>
-  <% end_sec('integral-cheats') %>
-
-<% end_sec('integral-applications') %>
-
-<%
-  fig(
-    'tree-rings',
-    %q{Each tree ring adds $\Delta r$ to the radius of the tree. The $\Delta r$ values are not all the same.},
-    {
-      'width'=>'wide',
-      'sidecaption'=>false
-    }
-  )
-%>
-
-
-<% begin_sec("Some technical points",nil,'integrals-technical') %>
+<% begin_sec("Some technical points",4,'integrals-technical') %>
 <% begin_sec("Riemann sums in general",nil,'riemann-sums-in-general') %>
 As a tree grows, its radius increases continuously. When a tree is cut down, as in
 figure \figref{tree-rings}, we can see that the growth in each year is not the same.
@@ -979,6 +996,17 @@ using a Riemann sum, it would seem most natural to break the sum down into \emph
 intervals $\Delta r$. This is allowed by the definition of a Riemann sum, and the kind
 of Riemann sum that we defined on p.~\pageref{eqn:riemann-sum}, with equal subintervals,
 was a more specific type.
+
+<%
+  fig(
+    'tree-rings',
+    %q{Each tree ring adds $\Delta r$ to the radius of the tree. The $\Delta r$ values are not all the same.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
 
 A Riemann sum can also sample the value of the function at some other place than the center
 of each subinterval. The sample point can be at the left side, at the right, and it doesn't
@@ -1091,5 +1119,11 @@ follows that the limit that defines the integral has the value claimed by the th
 
 <% end_sec('integrals-technical') %>
 
+
+\begin{hwsection}
+
+<% hw('barometric-altimeter',{'solution'=>true}) %>
+
+\end{hwsection}
 
 <% end_chapter %>

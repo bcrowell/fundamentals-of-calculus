@@ -1172,6 +1172,7 @@ def remove_titlecase(title)
   foo.gsub!(/k=/,"K=") # Mechanics 12.4; in case I switch from KE to K
   foo.gsub!(/l'h/,"L'H") # L'Hopital; software isn't smart enough to handle apostrophe and housetop accent
   foo.gsub!(/L'h/,"L'H")
+  foo.gsub!(/ i /," I ")
   # logic above can't handle multi-word patterns
   proper_nouns()["multiword"].each { |proper| # e.g., proper="Big Bang"
     foo.gsub!(/#{Regexp::quote(proper.downcase)}/) {proper} 

@@ -1210,18 +1210,18 @@ this, and shows that there is only one solution.
 
 \begin{eg}{Supply and demand}\label{eg:supply-and-demand}
 Figure \figref{eg-supply-and-demand} shows two graphs representing the supply and demand of some good
-on a free market. The function $D(Q)$ shows the unit price that would have to be offered so that buyers
-would willingly buy a quantity $Q$ of the good. Normally the variables $D$ is a decreasing
+on a free market. The function $D(p)$ shows the quantity that buyers would willingly buy at unit price
+$p$. Normally $D$ is a decreasing
 function: if the price goes up, people don't buy as much. (But cf.~problem \ref{hw:perfectly-inelastic-demand},
-p.~\pageref{hw:perfectly-inelastic-demand}.) The function $S(Q)$ shows the unit price that the seller
-would willingly offer if they could sell a quantity $Q$. Often $S$ is an increasing function.
+p.~\pageref{hw:perfectly-inelastic-demand}.) The function $S(p)$ shows the quantity that the seller
+would willingly offer if the unit price was $p$. Often $S$ is an increasing function.
 For example, Boeing might only be able to produce more passenger jets by paying their
 workers overtime, which would create a cost that they would pass on to their customers.
 
 Suppose that, as in the example shown in the figure, $D$ starts out higher than $S$ on the left, but ends
 up lower than $S$ on the right. Then we expect geometically that if the curves are continuous,
 they must cross at some point. This can be proved using the same technique as in example
-\ref{eg:x-minus-cos-x}. We construct a function $f(Q)=S(Q)-D(Q)$, which goes from negative to positive.
+\ref{eg:x-minus-cos-x}. We construct a function $f(p)=S(p)-D(p)$, which goes from negative to positive.
 By the intermediate value theorem, there must be some point where $f=0$, meaning that $S=D$. This
 crossing point is the free-market equilibrium.
 
@@ -1230,7 +1230,8 @@ is free to have any real-number value. For example, Boeing can't sell half an ai
 In some cases this might mean that the free-market equilibrium defined by $S=D$ would not exist.
 An example might be the Concorde, a supersonic passenger jet, which flew from 1969 to 2003.
 The nonexistence of the market for this plane today may indicate that the supply and demand curves
-now cross at $Q<1$, which is not possible because $Q$ has to be an integer.
+now cross at a quantity that is greater than 0 and less than 1,
+which is not a possible free-market equilibrium because the planes can only be sold in whole numbers.
 \end{eg}
 
 
