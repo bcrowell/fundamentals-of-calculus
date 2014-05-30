@@ -1,0 +1,186 @@
+%%chapter%% 10
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '10',
+    %q{Applications of the integral},
+    'ch:integration-applications'
+  )
+%>
+
+<% begin_sec("Probability",nil,'probability') %>
+  <% begin_sec("Introduction to probability",nil,'probability-intro') %>
+    <% begin_sec("Measurement of probabilities",nil,'probability-meas') %>
+Defining randomness is a difficult problem, tied up with classical philosophical
+issues such as determinism and free will. Mathematicians sidestep this question
+by simply using numbers between 0 and 1 to represent probabilities. A zero probability represents
+an event that can't happen, a probability of 1 an event than is guaranteed to happen.
+In between we have things that might or might not happen. A
+flipped coin comes up heads with probability 1/2.
+    <% end_sec('probability-meas') %>
+    <% begin_sec("Statistical independence",nil,'independence') %>
+<% marg(30) %>
+<%
+  fig(
+    'slot-machine',
+    %q{%
+      The probability that one wheel on the slot machine will give a cherry is 1/10. If the three
+      probabilities are independent, then the
+      probability that all three wheels will give cherries is $1/10\times1/10\times1/10$.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'globe',
+    %q{%
+      The earth's surface is 30\% land and 70\% water. If we spin a globe and pick a random point,
+      the probabilities of hitting land and water are 0.3 and 0.7. Normalization requires that these
+      two probabilities add up to 1.
+    }
+  )
+%>
+<% end_marg %>
+
+When ordinary people say that an event is ``random,'' they usually mean not just
+that it has a probability greater than 0 and less than 1, but also that it can't be
+predicted, because there is no way of finding a connection with another event that caused it.
+This lack of connection is considered by mathematicians to be separate from randomness itself,
+and is defined as follows.
+
+\begin{lessimportant}[Definition of statistical independence]
+Events A and B are said to be statistically independent if
+the probability that they will both happen is given by the product of
+the two probabilities.
+\end{lessimportant}
+
+Events can be random but not independent. It might or might not rain tomorrow, and there might or
+might not be a forest fire. These events are both random, but they are not independent, since rain
+makes fire less likely.
+
+    <% end_sec('independence') %>
+    <% begin_sec("Normalization",nil,'normalization') %>
+
+Suppose that we are able to exhaustively list all of the possible outcomes A, B, C, \ldots of some
+situation, and that these outcomes are mutually exclusive. Then exactly one of these outcomes must
+occur, so the probabilities must add up to one. For example, suppose that we flip a coin, and A is
+the event that the coin comes up heads, B tails. Then $P_A+P_B=\frac{1}{2}+\frac{1}{2}=1$. This
+property is called \emph{normalization}.\index{normalization}
+
+    <% end_sec('normalization') %>
+
+
+  <% end_sec('probability-intro') %>
+  <% begin_sec("Continuous random variables",nil,'continuous-random-variables') %>
+When numerical values are assigned to outcomes, the result is called a \emph{random variable}.
+The sum of the rolls of two dice is a random variable, and we can assign probabilities to
+the different results. For example, the probability of rolling 2 is $1/36$, since the probability
+of getting a 1 on the first die is $1/6$, and similarly for the second die. All of the relevant
+information about probabilities can be summarized by the discrete function shown in figure \figref{two-dice}.
+<% marg(300) %>
+<%
+  fig(
+    'dice',
+    %q{%
+      The sum of the two dice is a random variable with possible values running from 2 to 12.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'two-dice',
+    %q{%
+      The histogram shows the probabilities of the various outcomes when rolling two dice.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'human-height',
+    %q{%
+      A probability distribution for height of human adults. (Not real data.)
+    }
+  )
+%>
+<% end_marg %>
+
+But when a random variable is continuous rather than discrete, we usually cannot make
+a useful graph of the probabilities, because the probability of any particular real number
+is typically zero. For example, there is zero probability that a person's height $h$ will be
+160 cm, since there are
+infinitely many possible results that are close to that value, such as
+159.999999999999996876876587658465436 cm. What \emph{is} useful to talk about is
+the probability that $h$ will be \emph{less than} a certain value. The probability of
+$h<160\ \zu{cm}$ is about 0.5. In general, we define the \emph{cumulative probability distribution}
+$P(x)$ of a random variable to be the probability that the variable is less than or equal to $x$.
+We can then define the \emph{probability distribution} of the variable to be
+\begin{equation}
+  D(x) = P'(x) \qquad .
+\end{equation}
+Figure \figref{human-height} shows an approximate probability distribution for human height.
+Suppose we want to know the probability that our random variable lies within the range from $a$ to
+$b$. This is $P(b)-P(a)$. By the fundamental theorem of calculus, this can be calculated from
+the definite integral of the distribution,
+\begin{equation}
+  P(b)-P(a) = \int_a^b D(x)\:\der x \qquad .
+\end{equation}
+That is, areas under the probability distribution correspond to probabilities. If the random
+variable has some units, say centimeters, then the units of the probability distribution $D$ are the
+inverse of those units, e.g., $\zu{cm}^{-1}$ in our example. In this example, $D$ can be
+interpreted as the probability \emph{per centimeter}. A \emph{uniform} distribution is one
+for which $D$ is a constant throughout the range of possible values of $x$.
+
+If there are definite lower and upper limits $L$ and $U$ for the possible values of the random
+variable, then normalization requires that
+\begin{equation}
+  1 = \int_L^U D(x)\:\der x \qquad .
+\end{equation}
+
+The average $\bar{x}$ of a variable that takes on one of two discrete values with equal probability is
+$(x_1+x_2)/2$, which is the same as $x_1P_1+x_2P_2$. Generalizing this to a continuous random
+variable, we have
+\begin{equation}
+  \bar{x} = \int_L^U x D(x)\:\der x \qquad .
+\end{equation}
+The average is also known as the \emph{mean}.
+
+The standard deviation $\sigma_x$ of a random variable $x$ is a measure of how much it varies around
+its average value. The symbol $\sigma$ is the lowercase Greek ``sigma.'' (Recall that uppercase
+sigma is $\Sigma$.) The standard deviation of a continuous random variable is defined by
+\begin{equation}
+  \sigma_x = \sqrt{\int_L^U (x-\bar{x})^2 D(x)\:\der x} \qquad .
+\end{equation}
+
+It often happens that one random variable $y$ is defined by some function of some other
+random variable $x$. In an experiment, for example, one may measure $x$ directly, and the
+value of $x$ is a random variable because of the finite precision of the measurement. If one
+calculates the result of the experiment using some function $y(x)$, then the result is also
+a random variable. Let the corresponding probability distributions and
+cumulative probability distributions be $D_x$, $D_y$, and let $P$ be the cumulative probability
+for a given $x$ or $y$. Then $D_y$ can be
+determined from $D_x$ by the chain rule:
+\begin{align*}
+  D_y &= \frac{\der P}{\der y} \qquad \text{[definition of $D$]} \\
+      &= \frac{\der P}{\der x} \cdot \frac{\der x}{\der y} \qquad \text{[chain rule]} \\
+      &= D_x \cdot \frac{\der x}{\der y} \qquad \text{[definition of $D$]} \\
+      &= \frac{D_x}{y'(x)} \qquad \text{[derivative of the inverse of a function]}
+\end{align*}
+
+\begin{eg}{A random goblin}
+Often in computer simulations or games one wants to produce a random number with some
+desired distribution. For example, in a fantasy adventure game, we might wish to generate
+an opponent such as a goblin whose strength statistic $y$ is distributed according to some
+bell-shaped curve $D_y$ with a given mean and standard deviation. The random number generators
+supplied in computer programming libraries usually output a number $x$ with a uniform distribution
+from 0 to 1, so that $D_x=1$. We then have $y'(x)=1/D_y$. Integrating both sides of this equation
+allows us to find a function $y(x)$ that determines the strength of the goblin.
+\end{eg}
+
+  <% end_sec('continuous-random-variables') %>
+<% end_sec('probability') %>
