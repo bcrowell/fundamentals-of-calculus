@@ -184,3 +184,22 @@ allows us to find a function $y(x)$ that determines the strength of the goblin.
 
   <% end_sec('continuous-random-variables') %>
 <% end_sec('probability') %>
+
+<% begin_sec("Economics",4,'economics') %>
+<% marginbox(0,'sets','Applications to economics',{},
+%q~
+The following is an index of applications of calculus to economics
+that occur throughout this book.
+
+\noindent\begin{tabular}{lp{16mm}p{15mm}}
+\emph{p.} & \emph{application} & \\\\
+\pageref{eg:indifference-curve} & marginal rate of substitution & derivative \\\\
+\pageref{eg:order-quantity} & economic order quantity & extrema \\\\
+\pageref{subsubsec:laffer-curve} & the Laffer curve & Rolle's theorem \\\\
+\pageref{eg:supply-and-demand} & supply and demand & intermediate value theorem 
+\end{tabular}
+      ~
+   )
+%>
+
+<% end_sec('economics') %>

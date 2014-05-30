@@ -128,7 +128,7 @@ of a function at a certain point should depend only on the behavior of the funct
 far away. To state this idea precisely, we need to use some notation referring to sets,
 reviewed in box \figref{sets}, and intervals.
 
-<% marginbox(0,'sets','Sets',{},
+<% marginbox(300,'sets','Sets',{},
 %q~
 A \emph{set} is a collection of things. The things can, for example, be numbers. They can even be other sets.
 A set can be defined by listing the things it holds, which are called its elements or members.

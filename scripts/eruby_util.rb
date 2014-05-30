@@ -622,7 +622,7 @@ def fig_print(name,caption,options,dir)
   #----------------------- text ----------------------
   if options['text']!=nil then
     if options['textbox'] then
-      spit("\\starttextbox{#{name}}\\textboxbody{#{caption}}{#{options['text']}}\n\\finishtextbox{#{name}}\n")
+      spit("\\begin{textbox}{#{name}}{#{caption}}\n#{options['text']}\n\\end{textbox}\n")
     else
       spit("\\starttextfig{#{name}}#{options['text']}\n\\finishtextfig{#{name}}{%\n#{caption}}\n")
     end
