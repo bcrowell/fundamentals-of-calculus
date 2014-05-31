@@ -213,26 +213,28 @@ definitions of these ideas, but in the process the word ``happiness'' changed to
 and the concepts morphed into forms that were very different from their original meanings.
 They are central to modern economics.
 
-A 1947 paper by John von Neumann and Oskar Morgenstern (VNM) introduced four axioms describing
+A 1947 paper by John von Neumann and Oskar Morgenstern (VNM) introduces four axioms defining
 rationality, which I'll describe here in English rather than equations:
-\begin{enumerate}
+\begin{enumerate}\label{vnm-axioms}
 \item Preferences are consistent.
 \item Preferences are transitive: if you like outcome A more than B, and B more than C, then you like
        A more than C.
 \item No outcome is infinitely good or bad. For example, if Jevons had believed that death was infinitely
-       bad, he might have been unwilling to accept \emph{any} risk of drowning.
+       bad, he might have been unwilling to accept \emph{any} risk of drowning. 
+       (Cf. example \ref{eg:archimedean}, p.~\pageref{eg:archimedean}.)
 \item A preference for A over B holds regardless of whether some other outcome exists. For example,
        if you like Bach more than bebop, this is true regardless of whether it rains.
 \end{enumerate}
-VNM were able to prove that if these axioms hold, it is possible to assign
+VNM prove that if these axioms hold, it is possible to assign
 a real number $u(x)$, called the utility function,
 to any outcome $x$ such that a rational actor always maximizes the expected
 value of $u$ as defined by equation \eqref{eqn:average-defined}, p.~\pageref{eqn:average-defined}.
+The utility function can be rescaled or have a constant added to it, but is otherwise unique.
 
 Although I've described this in terms of human preferences, the axioms may fail for humans or hold
 for non-humans. It only matters if the actor behaves \emph{as if} it were acting rationally, as defined
-by the axioms. For example,  Milton Friedman writes:\footnote{``Essays
-in positive economics,'' University of Chicago Press (1953), 1970, p.~3}
+by the axioms. Milton Friedman writes:
+%``Essays in positive economics,'' University of Chicago Press (1953), 1970, p.~3
 
 \begin{quote}
 I suggest the hypothesis that the leaves [on a tree] are positioned as if each leaf deliberately sought
@@ -241,8 +243,8 @@ I suggest the hypothesis that the leaves [on a tree] are positioned as if each l
  could move rapidly or instantaneously from any one position to any other desired and unoccupied position.
 \end{quote}
 
-\noindent Economist Daniel Kahneman, on the other hand, won the Nobel prize for his work showing
-that human beings often violate the VNM definition of rationality, but
+\noindent Daniel Kahneman, on the other hand, won the Nobel prize for his work showing
+that humans often violate the VNM definition of rationality, but
 in ways that can be described scientifically. For instance, he showed in experiments that subjects
 were willing to pay one price for a trinket such as a mug, but that if they were
 given the mug, they demanded a different and systematically higher price to sell it. This violates axiom 1.
@@ -271,9 +273,8 @@ by
 \end{equation*}
 where $x$ is in some appropriate units such as thousands of dollars. The shape of this function is
 shown in figure \figref{lottery}. It is concave down, which is a feature that is almost always
-realistic for a utility function that depends on how much money someone has. The idea is that the more
-money you have, the less you care about getting more money. If
-Joe is broke and gains \$10, he's really happy, whereas if Bill Gates saw a \$10 bill on the sidewalk,
+realistic for a utility function that depends on how much money someone has. 
+If Joe is broke and gains \$10, he's really happy, whereas if Bill Gates saw a \$10 bill on the sidewalk,
 he probably wouldn't bother to bend over and pick it up.
 
 Joe knows of a lottery in which each player receives a random amount of money
@@ -293,7 +294,7 @@ his expected utility.
 Joe's current utility function is $u(0)=0$, so it is rational for him to pay any amount $L$
 that gives him $\bar{u}>0$. The result is
 \begin{equation*}
-  L = -\ln\left(1-e^{-1}\right) \approx 0.46 \qquad .
+  L < -\ln\left(1-e^{-1}\right) \approx 0.46 \qquad .
 \end{equation*}
 If Joe's utility function had been $u(x)=x$, then he should have been willing to pay 0.5 units
 of money for a chance to win between 0 and 1 units. But because his utility function is nonlinear,
@@ -301,3 +302,95 @@ he is willing to pay less than that; he is risk-averse.
 \end{eg}
 
 <% end_sec('economics') %>
+
+<% begin_sec("Physics",nil,'physics') %>
+A \emph{conservation law}\index{conservation law} is a physical law stating that the total amount of a certain quantity
+stays constant. (This usage of ``conservation'' doesn't have the usual connotation of not
+using something up. In this context, the word implies that you \emph{couldn't} use it up
+if you tried, because the total amount can't go down!) Some important examples of conserved
+quantities are mass, energy,\footnote{According to
+Einstein's famous $E=mc^2$, mass and energy are equivalent or interconvertible, so they
+aren't separately conserved. Their separate conservation is however a good approximation
+in ordinary life, where relativitistic effects are negligible.} momentum, electric charge,
+and angular momentum (a measure of rotational motion).
+Conservation laws  play a central role in physics. They are more fundamental
+than Newton's laws of motion. For example, a ray of light can be described by conservation
+of energy, but we get nonsense if we try to apply Newton's laws to it ($m=0$, so we can't
+compute $a=F/m$).
+
+<% marginbox(300,'physics-applications','Applications to physics',{},
+%q~
+The following is an index of applications of calculus to physics
+that occur throughout this book.
+
+\noindent\begin{tabular}{lp{17mm}p{17mm}}
+\emph{p.} & \emph{application} & \\\\
+\pageref{subsubsec:defining-velocity} & velocity  &  derivative \\\\
+\pageref{hw:line-of-stability} & nuclear stability  &  extrema \\\\
+\pageref{sec:changing-change} & acceleration  &  2nd derivative \\\\
+\pageref{subsec:newton-second-law} & Newton's 2nd law  &  2nd derivative \\\\
+\pageref{eg:jerk} & jerk and damage  &  3rd derivative \\\\
+\pageref{sec:related-rates} & lever  &  related rates \\\\
+\pageref{sec:implicit-differentiation} & pulley  &  implicit differentiation \\\\
+\pageref{eg:tractor-doing-work} & work  &  definite integral \\\\
+\pageref{eg:falling-rock-integral-symbolic} & constant-acceleration motion  &  indefinite integral \\\\
+\end{tabular}
+      ~
+   )
+%>
+
+Calculus deals with rates of change and the accumulation of change, so it would seem to have
+no application to variables that are guaranteed never to change! But conserved quantities can
+be transferred or transformed at some rate. For example, we estimated in example
+\ref{eg:burning-calories}, p.~\pageref{eg:burning-calories}, that hiking burns about 200
+calories per hour. The calorie is a unit of energy.\footnote{Food calories 
+are actually \emph{kilo}calories, 1 kcal=1000 cal. The SI unit is not the calorie but the
+joule.} This number represents the rate at which food energy is being transformed into
+other forms of energy such as body heat. For each conserved quantity, it's of interest to
+define a name, symbol, and unit for its rate of transfer or transformation. We then have
+two variables, which are related to one another as integral and derivative with
+respect to time. In the following
+table, the conserved quantity is given on top along with its symbol and SI unit.
+Its derivative is the variable below.
+
+\noindent\begin{tabular}{lllll}
+\hline
+     &        &          & angular & electric \\
+mass & energy & momentum & momentum & charge \\
+$m$  & $E$    & $p$      & $L$      & $q$ \\
+kg   & joule, J & $\kgunit\unitdot\munit/\sunit$ & $\nunit\unitdot\munit\unitdot\sunit$ & coulomb, C \\
+\hline
+     & power  & force    & torque   & current \\
+     & $P$    & $F$      & $\tau$   & $I$ \\
+\kgunit/\sunit & watt, W & newton, N & $\nunit\unitdot\munit$ & ampere, A\\
+\hline
+\end{tabular}
+
+\begin{eg}{Energy of an accelerating car}
+\egquestion A car of mass $m$ starts moving from rest with a constant acceleration $a$. If the speed
+is small enough, then air resistance is negligible, and the power required from the engine
+at time $t$ is
+\begin{equation*}
+  P = kma^2 t \qquad ,
+\end{equation*}
+where the unitless fudge factor $k$ accounts for inefficiency of the engine and frictional heating in the tires,
+and is assumed to be constant. Find the energy expended by burning gas as a function of time.
+
+\eganswer Because the power isn't constant, we can't simply multiply ``the'' power by the time $t$.
+The integral is needed here as the correct generalization of multiplication 
+(section \ref{subsec:integral-generalizes-multiplication}, 
+p.~\pageref{subsec:integral-generalizes-multiplication}).
+\begin{align*}
+  E &= \int P\:\der t \qquad \text{[integral-derivative relationship of $E$ and $P$]} \\
+    &= \int kma^2 t\:\der t \\
+    &= kma^2 \int t\:\der t \\
+    &= \frac{1}{2}kma^2 t^2 \qquad \text{[let initial energy consumption=0]} 
+\end{align*}
+For motion with constant acceleration, $v=at+v_\zu{o}$, where $v_\zu{o}=0$ here because the car
+starts from rest. The result can therefore be rewritten as
+$(1/2)kmv^2$. The factor $(1/2)mv^2$ is called the kinetic energy of the car. If the car
+was perfectly efficient, we would have $k=1$, and all the energy expended would go into
+kinetic energy, rather than frictional heating.
+\end{eg}
+
+<% end_sec('physics') %>

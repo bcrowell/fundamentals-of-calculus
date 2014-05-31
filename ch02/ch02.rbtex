@@ -367,7 +367,9 @@ In addition to the chain rule, the other extremely important rule for differenti
 rule. We start with three examples that illustrate the idea but don't require calculus.
 
 \begin{eg}{Burning calories}\label{eg:burning-calories}
-\egquestion Jane hikes 3 kilometers in an hour, and hiking burns 70 calories per kilometer. At what rate
+\egquestion Jane hikes 3 kilometers in an hour, and hiking burns 70 calories\footnote{Food calories
+are actually \emph{kilo}calories, 1 kcal=1000 cal.}
+per kilometer. At what rate
 does she burn calories?
 
 \eganswer We let $x$ be the number of hours she's spent hiking so far, $y$ the distance covered,
@@ -1032,8 +1034,10 @@ We start with two preliminary definitions.
 
 Definition:
 Suppose that for a certain nonzero number $d$, we have $|d|<1$, $|d|<1/(1+1)$, $|d|<1/(1+1+1)$, \ldots
-and so on for all inequalities of this form.\footnote{Cf.~example \ref{eg:archimedean}, p.~\pageref{eg:archimedean}.}
-Then we say that $d$ is  \emph{infinitesimal}.
+and so on for all inequalities of this 
+form.\footnote{Cf.~example \ref{eg:archimedean}, p.~\pageref{eg:archimedean}. For an application
+to economics, see rule 3, p.~\pageref{vnm-axioms}.}
+Then we say that $d$ is  \emph{infinitesimal}.\label{definition-of-infinitesimal}
 
 Definition: Let $H$ be a hyperreal number (which may or may not also be a real number).
 Suppose that there exists some real number $r$ such that $|H-r|$ is infinitesimal.
@@ -1113,6 +1117,27 @@ factors of $\der y$.
 This isn't quite valid, however, as a rigorous proof, because the derivative is
 really not the quotient of two infinitesimals but the \emph{standard part} of that quotient.
 \end{eg}
+
+\restartLineNumbers
+\begin{eg}{A calculator for infinite and infinitesimal numbers}
+A web-based calculator at \url{lightandmatter.com/calc/inf} lets you play with
+infinite and infinitesimal numbers. 
+It provides one built-in infinitesimal number $d$ that satisfies the definition on
+p.~\pageref{definition-of-infinitesimal}. The following example shows some sample calculations.
+
+\begin{Code}
+  \ii 2+2
+  \oo{4}
+  \ii d+d
+  \oo{2d}
+  \ii d<1/1000
+  \oo{true}
+  \ii d>0
+  \oo{true}
+\end{Code}
+\finishcodeeg
+\end{eg}
+
 
 <% end_sec('safe-handling-of-dx') %>
 

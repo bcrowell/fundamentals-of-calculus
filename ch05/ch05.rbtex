@@ -22,7 +22,7 @@ We've already seen that the completeness property of the reals (section \ref{sec
 p.~\pageref{sec:completeness}) guarantees that $\sqrt{2}$ is a real number, and more generally
 one can use the intermediate value theorem to prove that roots of polynomials are real.
 
-<% marginbox(0,'liouville',%q{A transcendental number},{},
+<% marginbox(300,'liouville',%q{A transcendental number},{},
 %q~
 The first number proved to be transcendental, by Liouville
 in 1844, was:
@@ -99,7 +99,7 @@ our methods of differentiation to cover these functions.
 <% end_sec('transcendental-functions') %>
 <% end_sec('transcendental-numbers-and-functions') %>
 
-<% marginbox(0,'other-e-def',%q{A different definition of $e$},{},
+<% marginbox(300,'other-e-def',%q{A different definition of $e$},{},
 %q~
 Some people like lagers better than ales, Chicago better than Paris, and the following better
 than equation \eqref{eqn:derivative-of-ex-is-ex} as a definition of $e$:

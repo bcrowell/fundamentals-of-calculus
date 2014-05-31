@@ -1127,7 +1127,8 @@ decimals $1.000\ldots$ and $0.999\ldots$ both equal 1.)
 \begin{eg}{The Archimedean property}\label{eg:archimedean}
 The Archimedean principle states that there is no positive real number that is less than $1/1$, less than
 $1/(1+1)$, less than $1/(1+1+1)$, and so on.\footnote{Cf. section \ref{sec:safe-handling-of-dx},
-p.~\pageref{sec:safe-handling-of-dx}.} In other words, it says that there are no real numbers
+p.~\pageref{sec:safe-handling-of-dx}. For an application 
+to economics, see rule 3, p.~\pageref{vnm-axioms}.} In other words, it says that there are no real numbers
 that are infinitely small, but still greater than zero. The Archimedean property can be proved
 from the completeness property. For suppose, to the contrary, that we did have such a real number.
 Then it would be less than $1/10$, so its first decimal place would be 0. It would also be less
