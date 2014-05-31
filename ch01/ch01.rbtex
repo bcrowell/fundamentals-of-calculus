@@ -12,7 +12,7 @@
 %>
 
 <% begin_sec("Review: functions and the slope of a linear function",nil,'functions') %>
-Calculus is the study of rates of change, and of how change accumulates.
+Calculus\index{calculus!defined} is the study of rates of change, and of how change accumulates.
 For example, figure \figref{stock-market} shows the changes in the United States
 stock market over a period of 24 years. The $y$ axis of this graph is a certain
 weighted average of the prices of stock, and the $x$ axis is time, measured in

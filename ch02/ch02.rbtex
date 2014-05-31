@@ -406,6 +406,14 @@ $-2$. The result is
   )
 %>
 
+<% marg(0) %>
+<%
+  fig(
+    'gear-ratio',
+    %q{Example \ref{eg:gear-ratio}.}
+  )  
+%>
+<% end_marg %>
 \begin{eg}{Gear ratios}\label{eg:gear-ratio}
 \egquestion Figure \ref{fig:gear-ratio} shows a piece of farm equipment containing a train of
 gears with 13, 21, and 42 teeth. If the smallest gear is driven by a motor, relate the rate of
@@ -419,14 +427,6 @@ Let $x$, $y$, and $z$ be the angular positions of the three gears. Then
                         &= \frac{13}{42} \qquad .
 \end{align*}
 \end{eg}
-<% marg(80) %>
-<%
-  fig(
-    'gear-ratio',
-    %q{Example \ref{eg:gear-ratio}.}
-  )  
-%>
-<% end_marg %>
 
 
 These examples all used the following relationship among three rates of change:

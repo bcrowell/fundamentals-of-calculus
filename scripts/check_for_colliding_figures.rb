@@ -12,7 +12,7 @@ def overlap(a,b,c,d)
 end
 
 def mm(x)
-  return sprintf((x+0.5).to_s,"%d")
+  return sprintf((x+0.5).to_i.to_s,"%d")
 end
 
 found_some = false
@@ -33,7 +33,11 @@ Dir["*.pos"].each { |filename|
         fig,pg,x,y = $1,$2.to_i,$3.to_i,$4.to_i
         x = x*$tex_points_to_mm
         y = y*$tex_points_to_mm
-        if page.has_key?(fig) then
+        if fig=="" then 
+          $stderr.print "******\n****** Error on p. #{pg}, file #{filename}, figure with name 'fig:', i.e., null string for name\n******\n"
+          exit(-1)
+        end
+        if page.has_key?(fig) then # already encountered this figure and recorded its page number
           if page[fig]!=pg then print "figure #{fig} occurs on both page #{page[fig]} and page #{pg} -- maybe the second one needs a suffix\n" end
           if x<lo_x[fig] then lo_x[fig]=x end
           if x>hi_x[fig] then hi_x[fig]=x end
@@ -59,9 +63,8 @@ Dir["*.pos"].each { |filename|
         figs.keys.each { |f|
           figs.keys.each { |g|
             if f<g and overlap(lo_y[f],hi_y[f],lo_y[g],hi_y[g]) and overlap(lo_x[f],hi_x[f],lo_x[g],hi_x[g]) then
-              print "***** colliding figures, ch. #{ch}, p. #{pg}, #{f} and #{g}\n"
-              print "    #{f} extends from #{mm(lo_y[f])} to #{mm(hi_y[f])} mm, #{g} from #{mm(lo_y[g])} to #{mm(hi_y[g])} mm \n"
-              print "    overlapping by #{mm(overlap(lo_x[f],hi_x[f],lo_x[g],hi_x[g]))} mm horizontally and #{mm(overlap(lo_y[f],hi_y[f],lo_y[g],hi_y[g]))} mm vertically\n"
+              print "***** colliding figs, ch. #{ch}, p. #{pg}, #{f} and #{g}, overlapping by #{mm(overlap(lo_x[f],hi_x[f],lo_x[g],hi_x[g]))} mm horiz, #{mm(overlap(lo_y[f],hi_y[f],lo_y[g],hi_y[g]))} mm vert\n"
+              #print "    #{f} extends from #{mm(lo_y[f])} to #{mm(hi_y[f])} mm, #{g} from #{mm(lo_y[g])} to #{mm(hi_y[g])} mm \n"
             end
           }
         }
