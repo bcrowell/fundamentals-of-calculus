@@ -458,7 +458,7 @@ derivative of B.
 On the left-hand side, we have taken a function, differentiated it, and
 then integrated it. The right-hand side is a simple expression involving the
 original function, i.e., in some sense the integration has undone the
-differentation, and we are left with the same function we started with.
+differentiation, and we are left with the same function we started with.
 <% marg(0) %>
 <%
   fig(

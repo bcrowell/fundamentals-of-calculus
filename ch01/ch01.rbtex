@@ -282,7 +282,7 @@ How about the derivative at the point $x=1$? Here we can apply the no-cut rule.
 By laying a ruler against this point, we find that the linear function $\ell(x)=2x-1$ seems
 to intersect the parabola without cutting across it. To prove that this is
 true, we can compute the difference between the two functions, $y(x)-\ell(x)=x^2-2x+1$.
-Completing the square allows us to rewite this as $(x-1)^2$, which is clearly positive for
+Completing the square allows us to rewrite this as $(x-1)^2$, which is clearly positive for
 any value of $x$ other than 1. Therefore the function $\ell$ meets the conditions of the
 no-cut rule, and the derivative of $x^2$ at $x=1$ is 2.
 
@@ -973,7 +973,7 @@ the worn end of the ruler as its zero, rather than letting the ruler hang over b
 and subtracting the two measurements?
 <% end_sec('approximating-changes') %>
 <% begin_sec("Linear approximation to a curve",nil,'linear-approximation-to-a-curve') %>
-Many people who, like me, learned to drived in the United States
+Many people who, like me, learned to drive in the United States
 were taught that when following another car, we should leave space equal to one car length for
 every 10 miles per hour of speed. For example, at a freeway speed of 60 mi/hr, we would follow no
 more closely than 6 car lengths. In a 2007 study, the Danish company Trafitec hired professional

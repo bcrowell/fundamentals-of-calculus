@@ -133,7 +133,7 @@ where $k$ is a constant. Let's evaluate this integral.
 
 Since the derivative of $e^x$ is $e^x$,
 we know how to integrate $e^x$, and it's natural to look for a substitution that makes the integrand
-into this form. The substition clearly has to be
+into this form. The substitution clearly has to be
 \begin{equation}\label{eqn:bond-dividends-1}
   u = \frac{t}{20} \qquad .
 \end{equation}

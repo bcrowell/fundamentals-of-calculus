@@ -40,7 +40,7 @@ that $\delta\leq 1$.}  If we do that, then we will always have
 \[
 |x-1|<\delta\leq 1, \text{i.e. }|x-1|<1,
 \]
-and $x$ will always be beween $0$ and $2$. Therefore
+and $x$ will always be between $0$ and $2$. Therefore
 \[
 |x^2-1| = |x+1|\cdot|x-1|<3|x-1|.
 \]
@@ -87,7 +87,7 @@ We see that if we never choose $\delta>1$, we will always have
 \[
 |f(x) - \tfrac14|\leq \tfrac1{12}|x-4| \quad\text{for}\quad |x-4|<\delta.
 \]
-To guarantee that $|f(x)-\frac14|<\varepsilon$ we could threfore require
+To guarantee that $|f(x)-\frac14|<\varepsilon$ we could therefore require
 \[
 \tfrac1{12} |x-4|<\varepsilon, \quad\text{i.e.}\quad |x-4| <12\varepsilon.
 \]
@@ -197,7 +197,7 @@ L^2 = \bigl(\lim_{x\to2}\sqrt x\bigr)\cdot\bigl(\lim_{x\to2}\sqrt x\bigr) =
 \lim_{x\to2} \sqrt x\cdot \sqrt x =\lim_{x\to2}x =2.
 \]
 In other words, $L^2=2$, and hence $L$ must be either $\sqrt 2$ or $-\sqrt
-2$.  We can reject the latter because whatever $x$ does, its squareroot is
+2$.  We can reject the latter because whatever $x$ does, its square root is
 always a positive number, and hence it can never ``get close to'' a
 negative number like $-\sqrt 2$.
 
@@ -437,7 +437,7 @@ x>A \implies |f(x) - L| <\varepsilon
 \]
 for all $x$, then we say that the limit of $f(x)$ for $x\to\infty$ is $L$.
 
-Simmilarly, let $f(x)$ be a function which is defined on an interval $-\infty < x < x_0$.
+Similarly, let $f(x)$ be a function which is defined on an interval $-\infty < x < x_0$.
 If there is a number $L$ such that for every $\varepsilon>0$ we can find
 an $A$ such that
 \[
@@ -696,7 +696,7 @@ our understanding of how the function should behave in real life.
 
 <% begin_sec("The time to pay off a loan",nil,'loan-period') %>
 Most people will end up borrowing money at some point in their lives, whether it's
-credit card debt, a mortage, a loan to buy a car, or a cash advance from a payday loan company.
+credit card debt, a mortgage, a loan to buy a car, or a cash advance from a payday loan company.
 One of the warning signs that you may be walking into an exploitative situation is if the
 person trying to sell you the loan emphasizes the low monthly payment. Suppose that
 you're borrowing \$10,000 to buy a car, and the monthly interest rate is 1\%.
@@ -1084,7 +1084,7 @@ It seems that the reals are somehow more \emph{densely packed} on the number lin
 do we define this density property in mathematical terms? It can't be any
 of the elementary properties of the reals
 (section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}),
-since the rationals also satisfy all of those propeties. We need to add a new
+since the rationals also satisfy all of those properties. We need to add a new
 axiom, which is called the completeness axiom.
 
 One possible way of stating such an axiom
@@ -1220,7 +1220,7 @@ For example, Boeing might only be able to produce more passenger jets by paying 
 workers overtime, which would create a cost that they would pass on to their customers.
 
 Suppose that, as in the example shown in the figure, $D$ starts out higher than $S$ on the left, but ends
-up lower than $S$ on the right. Then we expect geometically that if the curves are continuous,
+up lower than $S$ on the right. Then we expect geometrically that if the curves are continuous,
 they must cross at some point. This can be proved using the same technique as in example
 \ref{eg:x-minus-cos-x}. We construct a function $f(p)=S(p)-D(p)$, which goes from negative to positive.
 By the intermediate value theorem, there must be some point where $f=0$, meaning that $S=D$. This

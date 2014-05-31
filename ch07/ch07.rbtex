@@ -286,7 +286,7 @@ allows us to write this constraint as the equation
   x^2 + y^2 = r^2 \qquad ,
 \end{equation}
 whose solutions are graphed in figure \figref{circle-implicit-function}. This graph fails the
-vertical line test, so $y$ isn't a function of $x$, and it also fails the horizontal line tets,
+vertical line test, so $y$ isn't a function of $x$, and it also fails the horizontal line test,
 so $x$ isn't a function of $y$. Usually by restricting it to a small enough region, we can make
 it into a function. If we restrict to region 1, 2, 3, or 5, $y$ is a function of $x$, and
 similarly for $x$ as a function of $y$ in regions 1, 2, 3, and 4. The largest piece of the graph

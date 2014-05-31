@@ -159,7 +159,7 @@ The limit
 \[
 \lim_{x\to 1} \frac{3x^2-x-2} {x^2-1}
 \]
-is of the form $\frac{0} {0}$, so we can try to apply l'Hopital's rule.  We
+is of the form $\frac{0} {0}$, so we can try to apply l'H\^{o}pital's rule.  We
 get
 \begin{equation*}
 \lim_{x\to 1} \frac{3x^2-x-2} {x^2-1}

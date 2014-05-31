@@ -206,7 +206,7 @@ When a function goes up and then smoothly turns around and comes back down again
 it has zero slope at the top. A place where $y'=0$, then, could represent
 a place where $y$ was at a maximum. Or the function could be concave up,
 in which case we'd have a minimum.\index{extremum of a function}
-Figure \figref{cases-of-extrema-reprise} reprises some of the possibile types
+Figure \figref{cases-of-extrema-reprise} reprises some of the possible types
 of extrema alluded to briefly in section \ref{subsec:optimization}, p.~\pageref{subsec:optimization}.
 By testing the second derivative, we can distinguish among cases B, D, and H, which
 represent, respectively, a minimum, a maximum, and a point of inflection. The test
