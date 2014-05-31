@@ -145,10 +145,10 @@ variable, then normalization requires that
 The average $\bar{x}$ of a variable that takes on one of two discrete values with equal probability is
 $(x_1+x_2)/2$, which is the same as $x_1P_1+x_2P_2$. Generalizing this to a continuous random
 variable, we have
-\begin{equation}
+\begin{equation}\label{eqn:average-defined}
   \bar{x} = \int_L^U x D(x)\:\der x \qquad .
 \end{equation}
-The average is also known as the \emph{mean}.
+The average is also known as the \emph{mean}, \emph{expectation}, or the \emph{expected value} of $x$.
 
 The standard deviation $\sigma_x$ of a random variable $x$ is a measure of how much it varies around
 its average value. The symbol $\sigma$ is the lowercase Greek ``sigma.'' (Recall that uppercase
@@ -186,7 +186,7 @@ allows us to find a function $y(x)$ that determines the strength of the goblin.
 <% end_sec('probability') %>
 
 <% begin_sec("Economics",4,'economics') %>
-<% marginbox(0,'sets','Applications to economics',{},
+<% marginbox(0,'economics-applications','Applications to economics',{},
 %q~
 The following is an index of applications of calculus to economics
 that occur throughout this book.
@@ -201,5 +201,103 @@ that occur throughout this book.
       ~
    )
 %>
+In 1882, at the age of 46, William Stanley Jevons went swimming in the ocean and drowned.
+As a pioneer of classical economics,
+Jevons developed mathematical models that treated
+humans as rational actors seeking to maximize their happiness.
+His choice to go swimming that day was presumably based on the fact that swimming would
+cause him to be happy, and on the conscious or unconscious expectation that his risk of death would be low.
+But how do we define ``rational'' and ``happiness'' mathematically? 
+Believe it or not, economists did produce 
+definitions of these ideas, but in the process the word ``happiness'' changed to ``utility,''
+and the concepts morphed into forms that were very different from their original meanings.
+They are central to modern economics.
+
+A 1947 paper by John von Neumann and Oskar Morgenstern (VNM) introduced four axioms describing
+rationality, which I'll describe here in English rather than equations:
+\begin{enumerate}
+\item Preferences are consistent.
+\item Preferences are transitive: if you like outcome A more than B, and B more than C, then you like
+       A more than C.
+\item No outcome is infinitely good or bad. For example, if Jevons had believed that death was infinitely
+       bad, he might have been unwilling to accept \emph{any} risk of drowning.
+\item A preference for A over B holds regardless of whether some other outcome exists. For example,
+       if you like Bach more than bebop, this is true regardless of whether it rains.
+\end{enumerate}
+VNM were able to prove that if these axioms hold, it is possible to assign
+a real number $u(x)$, called the utility function,
+to any outcome $x$ such that a rational actor always maximizes the expected
+value of $u$ as defined by equation \eqref{eqn:average-defined}, p.~\pageref{eqn:average-defined}.
+
+Although I've described this in terms of human preferences, the axioms may fail for humans or hold
+for non-humans. It only matters if the actor behaves \emph{as if} it were acting rationally, as defined
+by the axioms. For example,  Milton Friedman writes:\footnote{``Essays
+in positive economics,'' University of Chicago Press (1953), 1970, p.~3}
+
+\begin{quote}
+I suggest the hypothesis that the leaves [on a tree] are positioned as if each leaf deliberately sought
+ to maximize the amount of sunlight it receives, given the position of its neighbors, as if it
+ knew the physical laws determining the amount of sunlight that would be received in various positions and
+ could move rapidly or instantaneously from any one position to any other desired and unoccupied position.
+\end{quote}
+
+\noindent Economist Daniel Kahneman, on the other hand, won the Nobel prize for his work showing
+that human beings often violate the VNM definition of rationality, but
+in ways that can be described scientifically. For instance, he showed in experiments that subjects
+were willing to pay one price for a trinket such as a mug, but that if they were
+given the mug, they demanded a different and systematically higher price to sell it. This violates axiom 1.
+Axiom 1 was implicitly assumed in the description of the indifference curve in example
+\ref{eg:indifference-curve}, p.~\pageref{eg:indifference-curve}.
+
+%%graph%% lottery func=1-exp(-x) format=eps xlo=-1 xhi=1 ylo=-2 yhi=1 y=u ytic_spacing=1
+
+<% marg(-20) %>
+<%
+  fig(
+    'lottery',
+    %q{%
+      The utility function of example \ref{eg:lottery}.
+    }
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{Playing the lottery}\label{eg:lottery}
+Joe is broke and homeless. He currently has an amount of money $x=0$. Joe's utility function is given
+by
+\begin{equation*}
+  1-e^{-x} \qquad ,
+\end{equation*}
+where $x$ is in some appropriate units such as thousands of dollars. The shape of this function is
+shown in figure \figref{lottery}. It is concave down, which is a feature that is almost always
+realistic for a utility function that depends on how much money someone has. The idea is that the more
+money you have, the less you care about getting more money. If
+Joe is broke and gains \$10, he's really happy, whereas if Bill Gates saw a \$10 bill on the sidewalk,
+he probably wouldn't bother to bend over and pick it up.
+
+Joe knows of a lottery in which each player receives a random amount of money
+uniformly distributed on the interval from 0 to 1. What price $L$ should Joe be willing to pay for
+the lottery ticket, if he has the opportunity to borrow the price from his mother?
+
+If Joe enters and receives the minimum payout of 0, he will have $x=-L$, i.e., he will
+be in debt to his mother for the price of the ticket and have nothing to show for it. If he
+gets the maximum reward of 1, he will have $x=1-L$. Since this interval has width 1,
+and the result is uniformly distributed, normalization requires that $D(x)=1$ within the interval.
+We find
+his expected utility.
+\begin{align*}
+  \bar{u} &= \int_{-L}^{1-L} u(x)D(x)\:\der x = \int_{-L}^{1-L} (1-e^{-x})\:\der x \\
+          &= \left.x+e^{-x}\right]_{-L}^{1-L} = 1-\left(1-e^{-1}\right)e^L
+\end{align*}
+Joe's current utility function is $u(0)=0$, so it is rational for him to pay any amount $L$
+that gives him $\bar{u}>0$. The result is
+\begin{equation*}
+  L = -\ln\left(1-e^{-1}\right) \approx 0.46 \qquad .
+\end{equation*}
+If Joe's utility function had been $u(x)=x$, then he should have been willing to pay 0.5 units
+of money for a chance to win between 0 and 1 units. But because his utility function is nonlinear,
+he is willing to pay less than that; he is risk-averse.
+\end{eg}
 
 <% end_sec('economics') %>
