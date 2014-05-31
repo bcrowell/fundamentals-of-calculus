@@ -53,7 +53,8 @@ defined as
 The slope measures how fast the function is changing. A positive slope says the function is increasing,
 negative decreasing. If the slope is zero, the function is not changing at all.
 
-It's often convenient to express this kind of thing with the notation $\Delta$, the capital Greek
+It's often convenient to express this kind of thing with the notation $\Delta$,\index{delta notation}
+the capital Greek
 letter delta, which is the equivalent of our Latin ``D'' and here stands for ``difference.'' In terms of this notation,
 we have
 \begin{equation}
@@ -100,7 +101,7 @@ In figure \figref{reservoir}, we zoom in by 400\%, and then again by 400\%, and 
 After a series of these zooms, the graph appears indistinguishable from a line, and we can
 measure its slope just as we would for a line. This is an intuitive description of what we mean
 by the slope of a function that isn't a line. We call this slope the
-\emph{derivative}\index{derivative} of the function at the point of interest.
+\emph{derivative}\index{derivative!informal definition} of the function at the point of interest.
 This is admittedly not a mathematically rigorous definition, but it fixes our minds on the
 concept we want. A useful example is that if we consider a car's odometer reading as a function of
 time in hours, then its speedometer reading is the derivative of the odometer reading.
@@ -118,7 +119,7 @@ we wouldn't know that the graph was curved at all. We would think the whole thin
 This hypothetical line is called the \emph{tangent line}\index{tangent line}\label{tangent-line-informal}
 at the point marked with a dot. When you stand on the earth's surface and look at a point on
 the horizon, your line of sight is a tangent line to the surface. The derivative of a function is the slope
-of the tangent line.
+of the tangent line.\index{derivative!informal definition}
 
 <% end_sec('informal-derivative') %>
 
@@ -126,7 +127,7 @@ of the tangent line.
 From this informal definition it seems that the derivative
 of a function at a certain point should depend only on the behavior of the function near that point, not
 far away. To state this idea precisely, we need to use some notation referring to sets,
-reviewed in box \figref{sets}, and intervals.
+reviewed in box \figref{sets}, and intervals.\label{set}
 
 <% marginbox(300,'sets','Sets',{},
 %q~
@@ -159,7 +160,7 @@ Because S, T, and U have the same members, they are equal, $\zu{S}=\zu{T}=\zu{U}
 
 Often it is useful to define a set of all the real numbers that lie within a certain range, between
 numbers $a$ and $b$. This is called
-an interval.\label{interval-notation}
+an interval.\label{interval-notation}\index{interval}
 We can define intervals that contain or don't contain their endpoints.
 
 \begin{lessimportant}[Definition]
@@ -171,7 +172,7 @@ open    & $\{x|x> a\ \text{and}\ x< b\}$  & $(a,b)$
 \end{lessimportant}
 We can also have intervals like $[a,b)$ and $(a,b]$, which are defined in the obvious way.
 
-\begin{lessimportant}[Locality of the derivative]
+\begin{lessimportant}[Locality of the derivative]\index{derivative!locality}
 The derivative is \emph{local}, in the following sense. Suppose there is
 an interval $\zu{I}=(a,b)$ on
 which the functions $f$ and $g$ are equal. That is, for any $x\in \zu{I}$, $f(x)=g(x)$.
@@ -211,7 +212,7 @@ of interesting calculus before we come back and make a more rigorous definition.
 <% end_marg %>
 
 
-\begin{description}\label{properties-of-derivative}
+\begin{description}\label{properties-of-derivative}\index{derivative!properties}
  \item[constant] The derivative of a constant function is zero.
  \item[line] The derivative of a linear function is its slope.
  \item[shift] Shifting a function $y(x)$ horizontally or vertically to form a new function 
@@ -228,7 +229,8 @@ of interesting calculus before we come back and make a more rigorous definition.
  \item[no-cut] Suppose that for a certain point P on the graph of a function, there is a unique linear function
                    $\ell$ that passes through P but doesn't cut through the graph at P. Then the graph of $\ell$
                    is the tangent line, and
-                   the derivative of the function at P equals the slope of the line.\label{no-cut}
+                   the derivative of the function at P equals 
+                   the slope of the line.\label{no-cut}\index{tangent line!that is also a no-cut line}
 \end{description}
 
 As an example of the stretch rule, cars sold in the U.S.~have odometers that read out in units of miles,
@@ -304,7 +306,7 @@ We find that the derivative of the function $x^2$ at any point $x$ equals $2x$. 
 what we've done, we started with the function $x^2$, and found that at any point $x$, the derivative
 was $2x$.
 <% end_sec('derivative-of-x-squared') %>
-<% begin_sec("The derivative of a function is a function itself.",4,'derivative-is-a-function') %>
+<% begin_sec("The derivative of a function is a function itself.",4,'derivative-is-a-function') %>\index{derivative!is a function}
 We've found that the derivative of the function $x^2$ at a point $x$ equals $2x$.
 The expression $2x$ can be thought of as a function of $x$. So what we've really done
 is to take a function and construct a new function that gives the derivative of the original
@@ -314,7 +316,8 @@ function at each point. One way of notating this new function is $y'$, read ``$y
   y' &= 2x \qquad .
 \end{align*}
 The craft of finding this kind of derivative-function from the original function is called
-\emph{differentiation}. We have differentiated the function $x^2$ and gotten its derivative,
+\emph{differentiation}.\index{differentiation|see{derivative}}
+We have differentiated the function $x^2$ and gotten its derivative,
 the function $2x$.
 <% marg(200) %>
 <%
@@ -351,7 +354,7 @@ The derivative $y'$ is a \emph{function} of $x$; it depends on which part of the
 climbing.
 \end{eg}
 
-\begin{eg}{An indifference curve}\label{eg:indifference-curve}
+\begin{eg}{An indifference curve}\label{eg:indifference-curve}\index{indifference curve}
 Let's say you enjoy beer, and you also enjoy sushi. How much would you prefer to have of each?
 Economists define a graph, figure \figref{indifference-curve}, called an \emph{indifference curve}.
 For a particular person, any two points on the curve are supposed to be equal in preference;
@@ -359,7 +362,8 @@ the person is indifferent as to which one they get. For example, the person whos
 curve is drawn in figure \figref{indifference-curve} is equally happy having one piece of sushi
 and five beers, or having three pieces of sushi and two beers. 
 
-There is a quantity called the marginal rate of substitution (MRS), which is defined as minus the slope
+There is a quantity called the marginal rate of substitution (MRS),\index{marginal rate of substitution}
+which is defined as minus the slope
 of the indifference curve, $-y'$. At point P in figure \figref{indifference-curve}, the MRS is
 high, which means that the person would have been just as happy to have another piece of
 sushi and a \emph{lot} less beer. The MRS, $-y'$, is a \emph{function} of where you are on the
@@ -411,7 +415,7 @@ constant of proportionality relates to the interest rate.
 <% end_sec('derivative-is-a-function') %>
 <% end_sec('derivative') %>
 
-<% begin_sec("Derivatives of powers and polynomials",4,'deriv-polynomial') %>
+<% begin_sec("Derivatives of powers and polynomials",4,'deriv-polynomial') %>\index{derivative!of powers}\index{derivative!of polynomials}
 In section \ref{subsec:derivative-of-x-squared}, we found that the derivative of $x^2$ was $2x$.
 Straightforward application of the same technique to $x^3$ gives $3x^2$. We see a pattern:
 
@@ -500,7 +504,7 @@ with the letters changed,
   c' = 2u
 \end{equation*}
 <% end_sec('changing-letters') %>
-<% begin_sec("Symbolic constants",nil,'symbolic-constants') %>
+<% begin_sec("Symbolic constants",nil,'symbolic-constants') %>\index{constant!symbolic}
 The vertical stretch property of the derivative tells us that if we know a derivative such as
 \begin{equation*}
   (x^2)'=2x \qquad ,
@@ -535,7 +539,7 @@ $b$ being a constant) of
 <% begin_sec("Applications",nil,'apps-of-derivative') %>
 
 <% begin_sec("Velocity",nil,'velocity') %>
-<% begin_sec("Defining velocity",nil,'defining-velocity') %>
+<% begin_sec("Defining velocity",nil,'defining-velocity') %>\index{velocity}
 One of our prototypical examples has been the odometer and speedometer on a car's dashboard. In fact, if we want to \emph{define}
 what velocity means, we have to define it as a derivative. Suppose an object (it could be a car, a galaxy, or a subatomic
 particle) is moving in a straight line. By choosing a unit of distance and a location that we define as zero, we can superimpose
@@ -552,7 +556,7 @@ derivative
   v(t) = x'(t) \qquad .
 \end{equation*}
 <% end_sec('defining-velocity') %>
-<% begin_sec("Constant acceleration",nil,'constant-acceleration') %>
+<% begin_sec("Constant acceleration",nil,'constant-acceleration') %>\index{acceleration!constant}
 An important special case is the one in which the position function is of
 the form
 \begin{equation*}
@@ -599,7 +603,7 @@ derivative (p.~\pageref{properties-of-derivative}), the velocity function is the
 <% end_sec('constant-acceleration') %>
 <% end_sec('velocity') %>
 
-<% begin_sec("When do you need a derivative?",nil,'when-derivative-is-needed') %>
+<% begin_sec("When do you need a derivative?",nil,'when-derivative-is-needed') %>\index{derivative!when needed}
 Finding velocity from position data is a classic application of calculus, and yet how
 do we know when we really need calculus for this application? After all, many people
 do simple computations involving velocity without knowing calculus.
@@ -663,7 +667,8 @@ to zero, so again we have no revenue.
 
 Somewhere in between these extremes  we have the fare that would optimize our
 revenue: the \emph{maximum} of the function $r$. At this point on the graph, the derivative is zero,
-so to find it, we should differentiate $r$, set it equal to zero, and solve for $f$.
+so to find it, we should differentiate $r$, set it equal to zero, 
+and solve for $f$.\index{extrema}\index{maximum|see{extrema}}\index{minimum|see{extrema}}\index{optimization|see{extrema}}
 
 We haven't yet learned enough of the techniques of calculus to
 know how to find the derivative of a function with the form of equation
@@ -711,7 +716,7 @@ p.~\pageref{subsec:second-derivative-for-extrema}}
 <% end_sec('optimization') %>
 <% end_sec('apps-of-derivative') %>
 
-<% begin_sec("Review: elementary properties of the real numbers",nil,'elementary-reals') %>
+<% begin_sec("Review: elementary properties of the real numbers",nil,'elementary-reals') %>\index{real numbers!elementary properties}
 
 I began this chapter by defining calculus as the study of rates of change, but
 it could equally well be described as the study of infinity. The intuition behind the derivative
@@ -719,27 +724,33 @@ is that we zoom in on a selected point on a smooth curve, until the curve appear
 and we can measure the slope of the line. But the curve won't appear perfectly
 straight until we've cranked up our microscope to an \emph{infinitely big} magnification, at which point
 we'll be seeing values of $\Delta x$ and $\Delta y$ that are \emph{infinitely small} (but not zero).
-Calculus was invented by Isaac Newton and
-Gottfried Wilhelm von Leibniz back in the era of powdered wigs and silk stockings, and
+Calculus was invented by Isaac Newton\index{Newton, Isaac} and
+Gottfried Wilhelm von Leibniz\index{Leibniz, Gottfried Wilhelm von}
+back in the era of powdered wigs and silk stockings, and
 in those days the concept of number hadn't been formalized. Newton and Leibniz simply assumed
 that it was all right to have infinitely big and infinitely small numbers. But modern
 mathematicians approach this kind of thing differently. They think in terms of specific,
 well-defined sets of numbers, including:
 
 \begin{description}
-\item[the integers:] whole numbers such as $-1$, 0, and $1$
-\item[the rational numbers:] ratios of integers such as $2/1$ and $3/4$
+\item[the integers:] whole numbers such as $-1$, 0, and $1$                 \index{integers}
+\item[the rational numbers:] ratios of integers such as $2/1$ and $3/4$     \index{rational numbers}
 \item[the real numbers,] including quantities like $\pi$ and $\sqrt{2}$
-\item[the complex numbers,] such as $\sqrt{-1}$
+\item[the complex numbers,] such as $\sqrt{-1}$                            \index{complex numbers}
 \end{description}
 
-Do these systems include infinitely big and infinitely small numbers? Can they? Should they?
-
+Do these systems include infinitely big and infinitely small 
+numbers? Can they? 
+Should they?\index{infinite and infinitesimal quantities}
+\index{infinity|see{infinite and infinitesimal quantities}}
+\index{infinitesimal|see{infinite and infinitesimal quantities}}
 
 To answer these questions, we need to give a more definite account of how these number systems
 are defined. A good way to define them is with a list of their axioms.
 Here is a list of axioms for the system of real numbers. Except as otherwise stated,
 each of these properties holds for \emph{any} real-number values of the symbols $x$, $y$, \ldots
+
+\index{commutativity}\index{identity}\index{associativity}\index{distributivity}\index{ordering property of the real numbers}
 
 \begin{description}
 \item[commutativity] $x+y=y+x$ and $xy=yx$
@@ -764,7 +775,7 @@ rules out the existence of infinitely large or infinitely small real numbers.
 
 <% end_sec('elementary-reals') %>
 
-<% begin_sec("The Leibniz notation",nil,'leibniz-notation') %>
+<% begin_sec("The Leibniz notation",nil,'leibniz-notation') %>\index{Leibniz notation!derivative}
 For better or for worse, this kind of thing wasn't a concern in Leibniz's era.
 With what seems like kittenish na\"ivet\'e to a modern mathematician, he reasoned as follows.
 Let's just make $\Delta x$ and $\Delta y$ infinitely small (but not zero). In modern terminology,
@@ -795,7 +806,8 @@ One of the good things about the Leibniz notation is that it states clearly what
 with each passing second of time, while $\der v/\der x$ would measure the speed gained with
 each meter that it moved down the road.
 
-Another selling point of the notation is that it shows the units of the derivative. For example,
+Another selling point of the notation is that it shows the units of the derivative.\index{Leibniz notation!units}
+For example,
 the definition of velocity, expressed in Leibniz notation, is
 \begin{equation*}
   v = \frac{\der x}{\der t} \qquad .
@@ -838,7 +850,7 @@ done to reduce $s$ would be very helpful. For instance, a measure that cut
 $s$ in half would reduce $\der a/\der t$ by a factor of four.
 \end{eg}
 
-Sometimes the Leibniz notation gives an unwieldy, top-heavy tower of symbols:
+Sometimes the Leibniz notation gives an unwieldy, top-heavy tower of symbols:\index{Leibniz notation!derivative!operator interpretation}
 \begin{equation*}
   \frac{\der\left(\frac{x^2}{2}+\frac{1}{7}\right)}{\der x} = x
 \end{equation*}
@@ -863,7 +875,7 @@ e.g., by making it impossible to do the kind of reasoning shown in example \ref{
 
 <% end_sec('leibniz-notation') %>
 
-<% begin_sec("Approximations",nil,'approximations') %>
+<% begin_sec("Approximations",nil,'approximations') %>\index{approximation!using the derivative}
 We saw in section \ref{subsec:when-derivative-is-needed} on p.~\pageref{subsec:when-derivative-is-needed}
 that the derivative can't be calculated as $\Delta y/\Delta x$ unless the derivative is constant, i.e., unless
 the function's graph is a line. In the Leibniz notation, this is
@@ -886,7 +898,7 @@ It may be of interest to use either side of this as an approximation to the othe
 %>
 <% end_marg %>
 
-<% begin_sec("Approximating the derivative",nil,'approximating-deriv') %>
+<% begin_sec("Approximating the derivative",nil,'approximating-deriv') %>\index{approximation!to derivative}
 Suppose you can't remember that the derivative of $x^2$ is $2x$, but you need to find the
 value of the derivative at $x=1$. As in figure \figref{approximating-tangent-line}, let point P
 be
@@ -910,7 +922,7 @@ know the exact answer, and we would then want to know how accurate our result wa
 we could redo the calculation with a smaller value of $\Delta x$, say 0.001, and look for the
 most significant decimal place that changed.
 <% end_sec('approximating-deriv') %>
-<% begin_sec("Approximating finite changes",nil,'approximating-changes') %>
+<% begin_sec("Approximating finite changes",nil,'approximating-changes') %>\index{approximation!finite changes}\index{propagation of errors}
 Sometimes we know the derivative and want to use it as an approximation to find out about
 finite changes in the variables. 
 For example,
@@ -972,7 +984,7 @@ Other sources of error will be more important. For example, is the book a unifor
 the worn end of the ruler as its zero, rather than letting the ruler hang over both sides of the book
 and subtracting the two measurements?
 <% end_sec('approximating-changes') %>
-<% begin_sec("Linear approximation to a curve",nil,'linear-approximation-to-a-curve') %>
+<% begin_sec("Linear approximation to a curve",nil,'linear-approximation-to-a-curve') %>\index{approximation!best linear}
 Many people who, like me, learned to drive in the United States
 were taught that when following another car, we should leave space equal to one car length for
 every 10 miles per hour of speed. For example, at a freeway speed of 60 mi/hr, we would follow no

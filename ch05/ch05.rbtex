@@ -45,7 +45,7 @@ For a proof, see the Wikipedia article ``Liouville number.''
 %>
 
 However, there are also numbers that cannot be defined as roots of polynomials having
-rational-number coefficients. These are called \emph{transcendental} numbers.
+rational-number coefficients. These are called \emph{transcendental} numbers.\index{transcendental!number}
 In some sense nearly all real numbers are transcendental. For example, suppose we generate
 a random digit by some method such as rolling dice, and we let this be the first digit in
 a decimal. Continuing in this way, we keep on generating more and more decimal places. If we
@@ -71,7 +71,7 @@ The converse is not true: not all non-transcendental numbers can be written
 using these operations. For example, the polynomial $x^5 - x + 1$ has a root
 $x\approx -1.17$, which cannot be expressed in terms of arithmetic.
 <% end_sec('transcendental-numbers') %>
-<% begin_sec("Transcendental functions",nil,'transcendental-functions') %>
+<% begin_sec("Transcendental functions",nil,'transcendental-functions') %>\index{transcendental!function}
 Similarly, we have \emph{functions} that are transcendental or not transcendental.
 For example, the function
 \begin{equation*}
@@ -125,7 +125,7 @@ so $e\approx(1+1/n)^n$, which is consistent with equation \eqref{eqn:define-e-as
    )
 %>
 
-<% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>
+<% begin_sec("Derivatives of exponentials",nil,'derivative-of-exp') %>\index{exponential!derivative of}\index{derivative!of exponential}
 In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies} and
 example \ref{eg:exponential-with-limits} on p.~\pageref{eg:exponential-with-limits}
 we found that the derivative of an exponential is an exponential: the more
@@ -211,7 +211,7 @@ exponential, multiplied by the derivative of the inside stuff:
 
 <% end_sec('derivative-of-exp') %>
 
-<% begin_sec("Review: the trigonometric functions",nil,'trig') %>
+<% begin_sec("Review: the trigonometric functions",nil,'trig') %>\index{trigonomety}
 Before we talk about how to differentiate trig functions, here's an opportunity to refresh
 your memory on what trig functions are in the first place.
 <% begin_sec("Radian measure",nil,'radian-measure') %>
@@ -298,7 +298,7 @@ In terms of the same variables defined above, we have the following additional t
 
 <% end_sec('trig') %>
 
-<% begin_sec("Derivatives of trigonometric functions",nil,'derivatives-of-trig') %>
+<% begin_sec("Derivatives of trigonometric functions",nil,'derivatives-of-trig') %>\index{trigonometry!derivatives!trig functions}
 <% begin_sec("Derivatives of the sine and cosine",nil,'derivatives-of-sin-cos') %>
 Sometimes a variable oscillates back and forth. A weight hung from a rubber
 band will vibrate up and down. The temperature of Los Angeles goes down every winter
@@ -409,7 +409,7 @@ as an exercise.
 <% end_sec('derivatives-of-sin-cos') %>
 <% end_sec('derivatives-of-trig') %>
 
-<% begin_sec("Review: the inverse of a function",nil,'inverse-of-function') %>
+<% begin_sec("Review: the inverse of a function",nil,'inverse-of-function') %>\index{function!inverse}
 Some operations can be undone. Others can't. Computer software often has an ``undo'' function.
 But what if the operation is mixing hot coffee with cold milk? There is no way to undo this
 operation, even in principle, because information has been lost. No matter how closely we inspect the
@@ -484,7 +484,7 @@ Which of the following four statements are true, and which are false?
 4. For all real numbers $x$, $\tan^{-1}(\tan x)=x$.
 \end{dq}
 
-<% begin_sec("Derivative of the inverse of a function",nil,'deriv-of-inverse') %>
+<% begin_sec("Derivative of the inverse of a function",nil,'deriv-of-inverse') %>\index{function!inverse!derivative of}
 Suppose that  $x$ is how many gallons of gas I buy,
 and $y$ is how much money I pay. Then $y$ is a function of $x$, and the rate at which this
 function changes, i.e., the price per gallon of gas, in my area is currently about
@@ -553,7 +553,7 @@ This expression holds everywhere except $x=0$, $y=0$, where $\der x/\der y$ blow
 <% end_sec('deriv-of-inverse') %>
 
 <% begin_sec("Review: logarithms",nil,'exp-and-log') %>
-<% begin_sec("Logarithms",nil,'logs') %>
+<% begin_sec("Logarithms",nil,'logs') %>\index{logarithm}
 The inverse of exponentiation is the logarithm.
 If
 \begin{equation*}
@@ -576,7 +576,7 @@ write $\exp(\ldots)$ instead of $e^{\ldots}$. The logarithm with the special bas
 is called the \emph{natural logarithm}, notated $\ln$.
 <% end_sec('logs') %>
 
-<% begin_sec("Identities",nil,'log-and-exp-identities') %>
+<% begin_sec("Identities",nil,'log-and-exp-identities') %>\index{logarithm!identities}
 The following identities are useful. Exponentials and logs are inverse operations:
 \begin{subequations}
 \begin{align}
@@ -608,7 +608,7 @@ to an exponential with base $e$.
 <% end_sec('log-and-exp-identities') %>
 <% end_sec('exp-and-log') %>
 
-<% begin_sec("The derivative of a logarithm",nil,'deriv-of-log') %>
+<% begin_sec("The derivative of a logarithm",nil,'deriv-of-log') %>\index{logarithm!derivative of}
 We now know enough to differentiate a logarithm. The natural log has the
 nicest properties, so we'll start with it. Let
 \begin{equation*}
@@ -675,7 +675,7 @@ any real, nonzero $n$.
 
 <% end_sec('deriv-of-log') %>
 
-<% begin_sec("Derivatives of inverse trigonometric functions",nil,'deriv-of-inv-trig') %>
+<% begin_sec("Derivatives of inverse trigonometric functions",nil,'deriv-of-inv-trig') %>\index{trigonometry!derivatives!inverse trig functions}
 The sine and cosine functions are not invertible, since they fail the horizontal line test --- in fact,
 any horizontal line that crosses these functions crosses them in infinitely many places.
 For example, if I tell you that I took the sine of some angle, and the sine was zero, then

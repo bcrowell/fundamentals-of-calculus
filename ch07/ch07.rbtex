@@ -53,10 +53,10 @@ $y$ isn't a function of $x$; it fails the vertical line test. In
 These distinctions are silly in this context. The $x$ and $y$ coordinates are arbitrary,
 and we shouldn't treat them asymmetrically. We can think of the teacup as a little computer
 that knows how to compute this particular graph. The teacup doesn't know or care what's $x$
-or what's $y$; neither $x$ nor $y$ is its ``input'' or ``output.''
+or what's $y$; neither $x$ nor $y$ is its ``input'' or ``output.''\index{computation!analog}
 <% end_sec('unrealistic-computation') %>
 
-<% begin_sec("Newton's method",nil,'newtons-method') %>
+<% begin_sec("Newton's method",nil,'newtons-method') %>\index{Newton's method}
 In the teacup-computer's personal utopia, there is no distinction between input and output.
 But if we want to join the teacup in computational nirvana, we have a problem, because
 we, unlike the teacup, find some functions easier to compute than their inverses.
@@ -153,7 +153,7 @@ with precision better than about that level.)
 <% end_sec('newtons-method') %>
 
 
-<% begin_sec("Related rates",4,'related-rates') %>
+<% begin_sec("Related rates",4,'related-rates') %>\index{related rates}\index{lever}
 Figure \figref{archimedes} is old and fanciful, but it exemplifies an idea that we use
 every day. We have some machine or mechanical linkage, which could be as simple as the corkscrew used to open
 a bottle of wine, or as complicated as the suspension on a fancy sports car. The motion
@@ -237,7 +237,7 @@ at a rate $\der P/\der t \approx -1\ \zu{atm}/\zu{min}$.
 %>
 <% end_marg %>
 
-\begin{eg}{Cams}\label{eg:cams}
+\begin{eg}{Cams}\label{eg:cams}\index{cam}
 Cams, like the ones shown in figure \figref{cams}, can be thought of as the mechanical
 realization of the mathematical notion of a function. As the cam rotates, the follower
 rides up and down above it.
@@ -277,7 +277,7 @@ third derivative.
 <% end_sec('related-rates') %>
 
 
-<% begin_sec("Implicit functions",4,'implicit-functions') %>
+<% begin_sec("Implicit functions",4,'implicit-functions') %>\index{implicit function}
 As you read this, the world is turning, and you are moving in a circle. Let this circle be
 centered on the origin, with radius $r$. Physical forces constrain you to stay on this circle,
 rather than flying up into the sky or sinking down into the earth's core. The Pythagorean theorem
@@ -322,7 +322,7 @@ regions.
 %>
 <% end_marg %>
 
-\begin{eg}{Watt's linkage}\label{eg:watt-linkage}
+\begin{eg}{Watt's linkage}\label{eg:watt-linkage}\index{Watt's linkage}\index{lemniscate of Bernoulli}
 Figure \figref{watt-linkage} shows a mechanical linkage patented by James Watt in 1784,
 and still used in applications such as automobile suspensions. It consists of a chain of three
 linked rods that are free to rotate about bearings at their ends. The ends of the chain are
@@ -351,7 +351,7 @@ implicit function \eqref{eqn:lemniscate-of-bernoulli}.
 
 <% end_sec('implicit-functions') %>
 
-<% begin_sec("Implicit differentiation",nil,'implicit-differentiation') %>
+<% begin_sec("Implicit differentiation",nil,'implicit-differentiation') %>\index{implicit differentiation}\index{derivative!implicit|see{implicit differentiation}}
 We would like to be able to do calculus on implicit functions. As a typical application,
 consider example \ref{eg:watt-linkage}. If vertical motion is desired for small displacements
 from the center, then we want to rotate the linkage by the correct angle
@@ -577,7 +577,7 @@ This power law is exactly analogous to the one for a function $u(t)$, which, if 
   \frac{\der(u^k)}{\der t}=ku^{k-1}\frac{\der u}{\der t} \qquad .
 \end{equation*}
 Obviously neither these needs to be memorized separately from the other.
-Expressions like $\der u$ and $\der(u^2)$ are known as \emph{differentials}.
+Expressions like $\der u$ and $\der(u^2)$ are known as \emph{differentials}.\index{differential}
 
 \begin{eg}{Differential of a polynomial}
 \egquestion Find the differential of $s^2+s$, and use it to approximate the change in this

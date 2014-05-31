@@ -101,7 +101,7 @@ our agreement never to choose $\delta>1$, so our choice of $\delta$ is
 \end{eg}
 
 <% end_sec('dont-choose') %>
-<% begin_sec("Properties of the limit",nil,'properties-of-the-limit') %>
+<% begin_sec("Properties of the limit",nil,'properties-of-the-limit') %>\index{limit!properties}
 Epsilon-delta proofs are hard work, and by building up a more sophisticated
 set of tools we can usually avoid having to apply the epsilon-delta definition directly.
 
@@ -212,7 +212,7 @@ close to $\sqrt 2$.
 <% end_sec('limits-of-sum-prod-quot') %>
 
 <% end_sec('properties-of-the-limit') %>
-<% begin_sec("When limits fail to exist",nil,'when-limits-fail-to-exist') %>
+<% begin_sec("When limits fail to exist",nil,'when-limits-fail-to-exist') %>\index{limit!failure to exist}
 In the last couple of examples we worried about the possibility that a
 limit $\lim_{x\to a}g(x)$ actually might not exist.  This can actually
 happen, and in this section we'll see a few examples of what failed limits
@@ -354,7 +354,7 @@ would also have to exist, and we know $\lim_{x\to 0}\frac1x$ doesn't exist.
 Not all limits are ``for $x\to a$''.  Here we describe some variations on the
 concept of limit.
 
-<% begin_sec("Left and right limits",nil,'one-sided-limits') %>
+<% begin_sec("Left and right limits",nil,'one-sided-limits') %>\index{limit!left and right}
 When we let ``$x$ approach $a$'' we allow $x$ to be larger or smaller 
 than $a$, as long as $x$ ``gets close to $a$''.  If we explicitly want to study
 the behavior of $f(x)$ as $x$ approaches $a$ through values larger than
@@ -409,7 +409,7 @@ exist and have the same value.
 
 <% end_sec('one-sided-limits') %>
 
-<% begin_sec("Limits at infinity",nil,'limits-at-infinity') %>
+<% begin_sec("Limits at infinity",nil,'limits-at-infinity') %>\index{limit!at infinity}
 So far we have defined the limit of a function $f(x)$ as $x$ gets closer and closer to some
 finite value. It can also be of interest to let $x$ become
 ``larger and larger'' and ask what happens to $f(x)$.  If there is a number
@@ -428,7 +428,7 @@ large and negative: we write
 
 Here are the precise definitions:
 
-\begin{important}[Definitions of limits at infinity]
+\begin{important}[Definitions of limits at infinity]\index{infinite and infinitesimal quantities!limits at infinity}
 Let $f(x)$ be a function which is defined on an interval $x_0<x<\infty$.
 If there is a number $L$ such that for every $\varepsilon>0$ we can find
 an $A$ such that
@@ -564,7 +564,7 @@ This leads to
 
 <% end_sec('limits-at-infinity') %>
 
-<% begin_sec("Limits that equal infinity",nil,'limit-equals-infinity') %>
+<% begin_sec("Limits that equal infinity",nil,'limit-equals-infinity') %>\index{limit!that equals infinity}
 Figure \figref{telephone-wire} shows a telephone wire strung between two poles, which sags
 by some amount $h$ in the middle. By increasing the tension $T$ in the wire, we can reduce
 the sag. That is, the necessary tension $T$ is some function $T(h)$. There is a story, almost certainly
@@ -685,7 +685,7 @@ limits are infinite.
 
 <% end_sec('limit-variations') %>
 
-<% begin_sec("Curve sketching",nil,'curve-sketching') %>
+<% begin_sec("Curve sketching",nil,'curve-sketching') %>\index{curve sketching}
 <% begin_sec("Sketching a graph without knowing its equation",nil,'sketch-without-equation') %>
 The concepts of calculus, such as derivatives, limits, curvature, and concavity, can
 guide us in analyzing the behavior of a function even when we don't know a formula for
@@ -1024,7 +1024,7 @@ and has a global maximum when $x=B=1/3$.
 <% end_sec('sketch-given-equation') %>
 <% end_sec('curve-sketching') %>
 
-<% begin_sec("Completeness",nil,'completeness') %>
+<% begin_sec("Completeness",nil,'completeness') %>\index{real numbers!completeness property}
 <% begin_sec("The completeness axiom of the real numbers",nil,'completeness-axiom') %>
 Calculus is the study of rates of change (differentiation) and how change
 accumulates (integration, which we haven't encountered yet).
@@ -1094,7 +1094,7 @@ is the following.
 Let P and Q be sets of positive numbers such that every number in P is smaller than every number in Q.
 Then there exists some positive number $z$ such that $z$ is greater than or equal to every number in P,
 but less than or equal to any number in Q.
-\end{important}\index{completeness}
+\end{important}\index{completeness|see{real numbers}}
 
 As an example, let P be the set of all numbers $x$ such that $x^2<2$,
 and Q the set of $x$ such that $x^2\ge2$.
@@ -1124,7 +1124,7 @@ real number can have more than one decimal expansion. For example, the infinite 
 decimals $1.000\ldots$ and $0.999\ldots$ both equal 1.)
 \end{eg}
 
-\begin{eg}{The Archimedean property}\label{eg:archimedean}
+\begin{eg}{The Archimedean property}\label{eg:archimedean}\index{real numbers!Archimedean property}
 The Archimedean principle states that there is no positive real number that is less than $1/1$, less than
 $1/(1+1)$, less than $1/(1+1+1)$, and so on.\footnote{Cf. section \ref{sec:safe-handling-of-dx},
 p.~\pageref{sec:safe-handling-of-dx}. For an application 
@@ -1209,7 +1209,7 @@ this, and shows that there is only one solution.
 %>
 <% end_marg %>
 
-\begin{eg}{Supply and demand}\label{eg:supply-and-demand}
+\begin{eg}{Supply and demand}\label{eg:supply-and-demand}\index{supply and demand}\index{market equilibrium}
 Figure \figref{eg-supply-and-demand} shows two graphs representing the supply and demand of some good
 on a free market. The function $D(p)$ shows the quantity that buyers would willingly buy at unit price
 $p$. Normally $D$ is a decreasing
@@ -1339,7 +1339,7 @@ got a preview of the following intuitively appealing theorem.
 %>
 <% end_marg %>
 
-\begin{theorem}[Rolle's theorem]
+\begin{theorem}[Rolle's theorem]\index{Rolle's theorem}
 Let $f$ be a function that is continuous on the interval $[a,b]$ and differentiable on $(a,b)$,
 and let $f(a)=f(b)$. There there exists a point $x\in(a,b)$ such that $f'(x)=0$.
 \end{theorem}
@@ -1361,7 +1361,7 @@ Rolle's theorem can be straightforwardly generalized to the following.
 %>
 <% end_marg %>
 
-\begin{theorem}[Mean value theorem]
+\begin{theorem}[Mean value theorem]\index{mean value theorem}
 Let $f$ be a function that is continuous on the interval $[a,b]$ and differentiable on $(a,b)$.
 There there exists a point $x\in(a,b)$ such that
 \begin{equation*}

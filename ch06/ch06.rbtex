@@ -11,7 +11,7 @@
   )
 %>
 
-<% begin_sec("Indeterminate forms",nil,'indeterminate-forms') %>
+<% begin_sec("Indeterminate forms",nil,'indeterminate-forms') %>\index{indeterminate form}
 <% begin_sec("Why 1/0 and 0/0 are not morally equivalent",nil,'0-over-0-vs-1-over-0') %>
 If you enter $1/0$ and $0/0$ into your calculator, it probably flashes the same error message
 in both cases. You learned in grade school that division by zero is ``undefined.'' But there
@@ -131,7 +131,7 @@ pilgrims and what we would today call subsidized public housing.
   )  
 %>
 
-\begin{theorem}[Theorem: L'H\^{o}pital's rule (simplest form)]
+\begin{theorem}[Theorem: L'H\^{o}pital's rule (simplest form)]\index{L'H\^{o}pital's rule!simplest form}
 If $u$ and $v$ are functions with $u(a)=0$ and $v(a)=0$,
 the derivatives $u'(a)$ and $v'(a)$ are defined,
 and the derivative $v'(a)\ne 0$,
@@ -179,7 +179,7 @@ than the stripped-down model described in section \ref{sec:lhospital-simple}.
 The price you pay for the deluxe model
 is that the proof becomes much more complicated. I'll will state the fancier versions of L'H\^{o}pital's rule
 without proof.
-<% begin_sec("Multiple applications of the rule",nil,'lhospital-multiple') %>
+<% begin_sec("Multiple applications of the rule",nil,'lhospital-multiple') %>\index{L'H\^{o}pital's rule!multiple applications}
 In the following example, we have to use l'H\^{o}pital's rule twice before we get an answer.
 
 \begin{eg}{}\label{eg:lhospital-differentiating-twice}
@@ -215,7 +215,7 @@ the limit on the right-hand side can be evaluated simply by
 plugging in. We will prove this more general form of the rule later in the book.
 
 <% end_sec('lhospital-multiple') %>
-<% begin_sec("The indeterminate form $\\infty/\\infty$",nil,'lhospital-infty-over-infty') %>
+<% begin_sec("The indeterminate form $\\infty/\\infty$",nil,'lhospital-infty-over-infty') %>\index{L'H\^{o}pital's rule!$\infty/\infty$}
 Consider an example like this:
 \begin{equation*}
   \lim_{x\rightarrow 0} \frac{1+1/x}{1+2/x} \qquad .
@@ -244,7 +244,7 @@ multiplying both the top and the bottom of the original expression by $x$ in ord
 as $(x+1)/(x+2)$.
 \end{eg}
 <% end_sec('lhospital-infty-over-infty') %>
-<% begin_sec("Limits at infinity",nil,'lhospital-at-infty') %>
+<% begin_sec("Limits at infinity",nil,'lhospital-at-infty') %>\index{infinite and infinitesimal quantities!limits at infinity!l'H\^{o}pital's rule}
 <% end_sec('lhospital-at-infty') %>
 It is straightforward to prove a variant of l'H\^{o}pital's rule that allows us to
 do limits at infinity. We use a change of variable to change a limit like $\lim_{x\rightarrow\infty} u(x)/v(x)$

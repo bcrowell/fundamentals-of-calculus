@@ -36,7 +36,7 @@ feel was a little too sketchy.
 The number $\der x$ is supposed to be small, and when you square a small number you get an even smaller number.
 Since $\der x$ is supposed to be infinitely small, $\der x^2$ should be so small that it's utterly
 unimportant, even compared to $\der x^2$. Therefore we throw away the $\der x^2$ term and find that the slope
-of the tangent line is 2.
+of the tangent line is 2.\index{infinite and infinitesimal quantities!infinitesimals!discarding higher orders}
 
 <% begin_sec("The definition of the limit",nil,'limit') %>
 Starting in the 19th century, the real number system was formally defined, and it became clear that although
@@ -45,10 +45,11 @@ one could have a number system that obeyed the axioms given in section \ref{sec:
 be the same as the real numbers, and furthermore one would have a problem with the procedure of
 treating a $\der x^2$ as if it were zero; one can prove from those axioms that zero itself is the
 only number whose square is zero.\footnote{For more on this topic, see 
-section \ref{sec:safe-handling-of-dx} on p.~\pageref{sec:safe-handling-of-dx}.} For these reasons, mathematicians turned to a different way of
-defining the derivative, by using the new notion of a \emph{limit}.\index{limit}
+section \ref{sec:safe-handling-of-dx} on p.~\pageref{sec:safe-handling-of-dx}.} For these reasons,
+mathematicians turned to a different way of
+defining the derivative, by using the new notion of a \emph{limit}.
 
-<% begin_sec("An informal definition",nil,'limit-informal') %>
+<% begin_sec("An informal definition",nil,'limit-informal') %>\index{limit!informal definition}
 While it is easy to define precisely in a few words what a square root is
 ($\sqrt{a}$ is the positive number whose square is $a$) the definition of
 the limit of a function runs over several terse lines, and most people
@@ -140,7 +141,7 @@ values do you find that the limit is zero!
 
 <% end_sec('limit-informal') %>
 
-<% begin_sec("The formal, authoritative definition of the limit",nil,'limit-formal') %>
+<% begin_sec("The formal, authoritative definition of the limit",nil,'limit-formal') %>\index{limit!formal definition}
 The informal description of the limit
 uses phrases like ``closer and closer'' and ``really very small.'' In the
 end we don't really know what they mean, although they are suggestive.
@@ -284,9 +285,9 @@ that the derivative of $e^x$ is simply $e^x$. This is investigated further in se
 
 If the limit referred to in the definition of the derivative
 is undefined at a certain $x$, then the derivative is undefined there, and we
-say that $f$ is not \emph{differentiable} at $x$.\index{differentiability}\label{differentiability-brief}
+say that $f$ is not \emph{differentiable} at $x$.\label{differentiability-brief}
 Differentiability is discussed in more detail in section \ref{sec:continuity-and-differentiability},
-p.~\pageref{sec:continuity-and-differentiability}.
+p.~\pageref{sec:continuity-and-differentiability}.\index{differentiability}
 
 We seldom evaluate a derivative by directly applying its definition as a limit.
 Instead, we use a variety of other more convenient rules that follow from the
@@ -328,7 +329,7 @@ just as in example \ref{eg:x-squared-with-limits}. We then have
 \end{align*}
 We have the following extremely important and useful rule for differentiation:
 
-\begin{important}[Product rule]\index{product rule}
+\begin{important}[Product rule]\index{product rule}\index{derivative!of a product}
 Let $f=uv$, where $f$, $u$, and $v$ are all functions. Then at any point where
 $u$ and $v$ are both differentiable,
 \begin{equation*}
@@ -466,7 +467,7 @@ we need to show this:
 \end{equation}
 Rather than giving a formal proof, I've briefly sketched in Box \figref{chain-rule-technical}
 the technical issues involved. These work out as our intuition suggests, and
-we therefore have:\index{chain rule}\\*
+we therefore have:\index{chain rule}\index{derivative!chain rule}\\*
 \begin{important}[The chain rule]
 If $z$ is a function of $y$, and $y$ is a function of $x$, and if
 the derivatives $\der z/\der y$ and $\der y/\der x$ exist at a certain point,
@@ -563,7 +564,7 @@ $(g\circ h)'=(g'\circ h)h'$.
 
 <% end_sec('chain-rule') %>
 
-<% begin_sec("Review: exponents that aren't natural numbers",nil,'non-natural-exponents') %>
+<% begin_sec("Review: exponents that aren't natural numbers",nil,'non-natural-exponents') %>\index{exponent!that isn't a natural number}
 In section \ref{sec:power-rule-general} we will exploit the product and chain rules to
 prove the rule $(x^n)'=nx^{n-1}$ for all values of $n$ that are nonzero rational numbers.
 As preparation, we review in this section the basic idea of exponentiation, and then
@@ -595,7 +596,7 @@ An important special case is scientific notation, which uses powers of 10.
 For example, $(10^2)(10^7)=10^9$.
 <% end_sec('basic-ideas') %>
 
-<% begin_sec('Zero as an exponent',nil,'exponent-zero') %>
+<% begin_sec('Zero as an exponent',nil,'exponent-zero') %>\index{exponent!zero as an}
 Suppose we compute the list of decreasing powers of
 a given base, for example $2^3=8$, $2^2=4$, and $2^1=2$. Each result is half
 as big as the previous one. Therefore if we want to continue reducing the exponent,
@@ -603,13 +604,13 @@ we should clearly have $2^0=1$ in order to continue the pattern. In general,
 $b^0=1$ for any nonzero base $b$. (The special case $0^0$ is undefined.)
 <% end_sec('exponent-zero') %>
 
-<% begin_sec('Negative exponents',nil,'negative-exponents') %>
+<% begin_sec('Negative exponents',nil,'negative-exponents') %>\index{exponent!negative}
 Continuing this pattern, we must have $2^{-1}=1/2$.
 In general, negative exponents indicate the inverse of the corresponding positive
 exponent.
 <% end_sec('negative-exponents') %>
 
-<% begin_sec('Fractional exponents',nil,'fractional-exponents') %>
+<% begin_sec('Fractional exponents',nil,'fractional-exponents') %>\index{exponent!fractional}
 Our rules for zero and negative exponents were
 consistent with equation \eqref{eqn:add-exponents}. We can also define fractional
 exponents that obey this rule. For example, if $3^{1/2}$ is a number, then
@@ -617,7 +618,7 @@ equation \eqref{eqn:add-exponents} requires that $(3^{1/2})(3^{1/2})=3$, so
 an exponent $1/2$ must mean the same thing as a square root.
 <% end_sec('fractional-exponents') %>
 
-<% begin_sec('Irrational exponents',nil,'irrational-exponents') %>
+<% begin_sec('Irrational exponents',nil,'irrational-exponents') %>\index{exponent!irrational}
 If we want to define an expression such as $2^\pi$, we can take it to be
 the limit of the list of numbers
 $2^3$, $2^{3.1}$,  $2^{3.14}$,  $2^{3.141}$, \ldots
@@ -625,7 +626,7 @@ $2^3$, $2^{3.1}$,  $2^{3.14}$,  $2^{3.141}$, \ldots
 
 <% end_sec('non-natural-exponents') %>
 
-<% begin_sec("Proof of the power rule in general",nil,'power-rule-general') %>
+<% begin_sec("Proof of the power rule in general",nil,'power-rule-general') %>\index{derivative!of powers!proof}
 In section \ref{sec:deriv-polynomial}, p.~\pageref{sec:deriv-polynomial},
 I presented the rule $(x^n)'=nx^{n-1}$ for all natural numbers $n$,  but only explicitly proved it
 for $n=1$ and 2.
@@ -689,7 +690,7 @@ exponents is deferred until example \ref{eg:power-any-exponent} on p.~\pageref{e
 %>
 <% end_marg %>
 
-\begin{eg}{Economic order quantity}\label{eg:order-quantity}
+\begin{eg}{Economic order quantity}\label{eg:order-quantity}\index{order quantity}\index{economic order quantity}
 Here is an extremely common problem in the business world. A retailer knows that there is
 a steady yearly demand $D$ for the widgets it sells; every year, customers buy $D$ widgets.
 They need to maintain an inventory of the product, and when they run out,
@@ -732,7 +733,7 @@ jet), then we will order in smaller quantities.
 
 <% end_sec('power-rule-general') %>
 
-<% begin_sec("Quotients",nil,'quotients') %>
+<% begin_sec("Quotients",nil,'quotients') %>\index{derivative!of a quotient}
 Suppose that we want to differentiate the function
 \begin{equation*}
   \frac{1}{x} \qquad .
@@ -780,7 +781,7 @@ called a \emph{rational function}.\index{rational function}\label{rational-funct
 <% end_sec('quotients') %>
 
 <% begin_sec("Continuity and differentiability",nil,'continuity-and-differentiability') %>
-<% begin_sec("Continuity",nil,'continuity') %>
+<% begin_sec("Continuity",nil,'continuity') %>\index{continuity}
 Intuitively, a continuous function is one whose graph
 has no sudden jumps in it; the graph is all a single connected piece. 
 Such a function can be drawn without picking the pen up off of the paper.
@@ -971,7 +972,7 @@ condition for a local extremum.
 
 We can, however, make a more restricted statement of 1 that is true.
 
-\begin{theorem}
+\begin{theorem}\label{extrema!zero derivative at}
 If a function $f$ is continuous on an interval $[a,b]$ and differentiable on $(a,b)$, and if
 there is a point $c\in(a,b)$ for which $f(c)$ is a maximum or minimum in the interval,
 then $f'(c)=0$.
@@ -1007,6 +1008,7 @@ equal zero.\myqed
 <% end_sec('continuity-and-differentiability') %>
 
 <% begin_sec("Safe handling of $\\der y$ and $\\der x$",nil,'safe-handling-of-dx') %>
+\index{infinite and infinitesimal quantities!safe handling of}
 We've seen that although the real number system doesn't include infinitely big or infinitely small
 quantities, it can nevertheless be extremely useful to think of
 a notation like $\der y/\der x$ as the quotient of two infinitely small numbers.
@@ -1028,7 +1030,7 @@ progress by making an even larger number system called the hyperreal numbers,
 which includes infinitesimals.
 For a more detailed exposition 
 at the freshman-calculus level, see the excellent free online book by Keisler,
-\emph{Elementary Calculus: An Approach Using Infinitesimals}.
+\emph{Elementary Calculus: An Approach Using Infinitesimals}.\index{hyperreal numbers}
 
 We start with two preliminary definitions.
 

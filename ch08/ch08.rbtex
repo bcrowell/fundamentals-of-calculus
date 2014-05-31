@@ -156,7 +156,8 @@ areas yields
   R = \sum_{k=1}^n f(x_k)\Delta x \qquad .
 \end{equation}
 This is an example of what is called a \emph{Riemann sum}, meaning an approximation
-to the area under a curve using rectangles. This particular type of Riemann sum
+to the area under a curve using rectangles.\index{Riemann sum}
+This particular type of Riemann sum
 is one in which (a) the interval is subdivided into equal parts, and (b) the value
 of the function is sampled at the center of each subinterval.
 
@@ -173,11 +174,11 @@ under the graph.
   <% end_sec('riemann-sum') %>
 <% end_sec('accumulation') %>
 
-<% begin_sec("The definite integral",nil,'definite-integral') %>
+<% begin_sec("The definite integral",nil,'definite-integral') %>\index{integral!definite}
   <% begin_sec("Definition of the integral of a continuous function",nil,'integral') %>
 This suggests the following definition.
 
-\begin{important}[Definition of the integral of a continuous function]
+\begin{important}[Definition of the integral of a continuous function]\index{integral!definite!defined for a continuous function}
   If $f$ is a continuous function defined on an interval $[a, b]$, then
   the integral of $f(x)$ from $x=a$ to $b$ is defined as
   \begin{equation*}
@@ -274,7 +275,7 @@ as expected geometrically.
 \end{eg}
   <% end_sec('integral') %>
 
-  <% begin_sec("Leibniz notation",4,'integral-leibniz') %>
+  <% begin_sec("Leibniz notation",4,'integral-leibniz') %>\index{Leibniz notation!integral}\index{integral!definite!Leibniz notation}
 If we take equation \eqref{eqn:riemann-sum} that defines the Riemann sum $R$, and substitute it
 into the definition of the integral $\lim_{\Delta x\rightarrow 0} R$, the result looks
 like this:
@@ -383,7 +384,7 @@ from 0 to 4, and adding up all the little changes in $x$. Clearly the sum of all
 little changes will be the total change, which is 4.
 \end{eg}
 
-Another nice feature of the Leibniz notation is that it makes the units come out right.
+Another nice feature of the Leibniz notation is that it makes the units come out right.\index{Leibniz notation!units}
 Consider our earlier example of the town dump. Suppose that the rate of garbage
 production is given by a function $p(t)$, where $t$ is in units of years
 and $p$ in tons per year. Then the amount of garbage accumulated at the town dump
@@ -446,7 +447,7 @@ derivative of B.
   <% end_sec('connect-derivative-and-integral') %>
   <% begin_sec("What the fundamental theorem says",nil,'fundamental-theorem-statement') %>
 
-\begin{theorem}[The fundamental theorem of calculus]
+\begin{theorem}[The fundamental theorem of calculus]\index{fundamental theorem of calculus}
   Let $f$ be a function defined on the interval $[a,b]$, and let $f$ be differentiable
   on that interval. Then
   \begin{equation}
@@ -576,7 +577,7 @@ whose derivative was $x$? ---
 \end{equation*}
 The fundamental theorem would then immediately tell us the result of the integral.
     <% end_sec('avoiding-riemann-sum') %>
-    <% begin_sec("Antiderivatives",nil,'antiderivatives') %>
+    <% begin_sec("Antiderivatives",nil,'antiderivatives') %>\index{antiderivative|see{integral, indefinite}}\index{integral!indefinite}
 The function $f$ is called an \emph{antiderivative} of the function $f'$.
 Although there are various tricks and methods for finding antiderivatives, in general
 the only way to find them is to guess and check. One way to approach this one is to
@@ -618,7 +619,7 @@ f(b)-f(a) \stackrel{\text{def}}{=} \bigl. f(x)\bigr]_{x=a}^b =
   )  
 %>
 <% end_marg %>
-Any time we have an antiderivative, we can produce other antiderivatives by adding a constant.
+Any time we have an antiderivative, we can produce other antiderivatives by adding a constant.\index{constant of integration}
 For example, all of the following are antiderivatives of the constant function $1/7$ with respect to $x$:
 \begin{equation*}
   \frac{1}{7}x \qquad \frac{1}{7}x+1 \qquad \frac{1}{7}x-2
@@ -725,7 +726,7 @@ Judging from the graph, it looks plausible that the shaded area is about 0.7.
 <% end_sec('fundamental-theorem') %>
 
 <% begin_sec("Using the tool correctly",nil,'using-integral-correctly') %>
-  <% begin_sec("When do you need an integral?",nil,'integral-generalizes-multiplication') %>
+  <% begin_sec("When do you need an integral?",nil,'integral-generalizes-multiplication') %>\index{integral!when needed}
 In section \ref{subsec:when-derivative-is-needed}, p.~\pageref{subsec:when-derivative-is-needed},
 we asked the question, ``When do you need a derivative?'' It's natural to ask the same question
 about integrals. And since the derivative and integral are so closely linked by the fundamental
@@ -832,7 +833,7 @@ it a notation that indicates that:
 \end{eg}
   <% end_sec('integration-hangups') %>
 
-  <% begin_sec("Two ways of checking an integral",nil,'checking-an-integral') %>
+  <% begin_sec("Two ways of checking an integral",nil,'checking-an-integral') %>\index{integral!checking by differentiation}
 Every indefinite integral can be checked by taking its derivative to see if we can get back the
 original function. Furthermore, we can often check an integral by checking its units.
 
@@ -940,7 +941,7 @@ cases where the force varies.
 
 <% end_sec('using-integral-correctly') %>
 
-<% begin_sec("Linearity",nil,'linearity-of-integral') %>
+<% begin_sec("Linearity",nil,'linearity-of-integral') %>\index{integral!linearity}
 The most important and basic properties of the derivative (p.~\pageref{properties-of-derivative}) are that
 it adds, $(f+g)'=f'+g'$, and scales vertically, $(cf)'=cf'$, where $c$ is a constant. When an operation
 has these properties, we say that it is \emph{linear}.\index{linearity}
@@ -982,7 +983,7 @@ Figure \figref{square-plus-triangle} gives a geometrical interpretation.
 \vfill
 
 <% begin_sec("Some technical points",4,'integrals-technical') %>
-<% begin_sec("Riemann sums in general",nil,'riemann-sums-in-general') %>
+<% begin_sec("Riemann sums in general",nil,'riemann-sums-in-general') %>\index{Riemann sum!general}
 As a tree grows, its radius increases continuously. When a tree is cut down, as in
 figure \figref{tree-rings}, we can see that the growth in each year is not the same.
 For example, in most of California, where the weather tends to be dry, a tree will usually
@@ -1014,7 +1015,7 @@ even need to be chosen in a consistent way for all the subintervals of a particu
 sum.
 <% end_sec('riemann-sums-in-general') %>
 
-  <% begin_sec("Integrating discontinuous functions",nil,'integral-discontinuous') %>
+  <% begin_sec("Integrating discontinuous functions",nil,'integral-discontinuous') %>\index{integral!definite!defined for a discontinuous function}
 
 The definition of the integral given in section \ref{subsec:integral}, for continuous functions, has some
 technical shortcomings if we try to apply it to badly behaved discontinuous functions.
@@ -1085,7 +1086,7 @@ definition in section \ref{sec:definite-integral}, p.~\pageref{sec:definite-inte
 
   <% end_sec('integral-discontinuous') %>
 
-  <% begin_sec("Proof of the fundamental theorem",nil,'fundamental-theorem-proof') %>
+  <% begin_sec("Proof of the fundamental theorem",nil,'fundamental-theorem-proof') %>\index{fundamental theorem of calculus!proof}
 We now refine the pseudo-proof in section \ref{subsec:fundamental-theorem-pseudo-proof},
 p.~\pageref{subsec:fundamental-theorem-pseudo-proof}, into a real proof of the fundamental
 theorem of calculus.

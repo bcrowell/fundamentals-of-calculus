@@ -62,7 +62,7 @@ is that the slope of the $y'$ graph is large and positive at this moment. In thi
 of three graphs, the \emph{slope} on each graph corresponds to the \emph{value} of the
 one below at any given time.
 
-In modern terminology, $y''$ is referred to as the second derivative of $y$.
+In modern terminology, $y''$ is referred to as the second derivative of $y$.\index{derivative!second}
 
 <% end_sec('changing-change') %>
 
@@ -183,7 +183,7 @@ When both $f'=0$ and $f''=0$, the second derivative test is inconclusive. All th
 <% end_sec('second-deriv-geometrical') %>
 
 
-<% begin_sec("Leibniz notation",nil,'second-derivative-leibniz') %>
+<% begin_sec("Leibniz notation",nil,'second-derivative-leibniz') %>\index{Leibniz notation!second derivative}
 The Leibniz notation for $y''$ is
 \begin{equation*}
   \frac{\der^2 y}{\der x^2} \qquad .
@@ -205,7 +205,7 @@ by the Leibniz notation.
 When a function goes up and then smoothly turns around and comes back down again,
 it has zero slope at the top. A place where $y'=0$, then, could represent
 a place where $y$ was at a maximum. Or the function could be concave up,
-in which case we'd have a minimum.\index{extremum of a function}
+in which case we'd have a minimum.\index{extrema}
 Figure \figref{cases-of-extrema-reprise} reprises some of the possible types
 of extrema alluded to briefly in section \ref{subsec:optimization}, p.~\pageref{subsec:optimization}.
 By testing the second derivative, we can distinguish among cases B, D, and H, which
@@ -331,8 +331,8 @@ gives more insight. It's simply the function $y=x^3$, shifted 2 units to the rig
 \end{eg}
 
 <% end_sec('second-derivative-for-extrema') %>
-<% begin_sec("Newton's second law",4,'newton-second-law') %>
-The ancient Greek philosopher Aristotle claimed that force was required in order to create motion,
+<% begin_sec("Newton's second law",4,'newton-second-law') %>\index{Newton, Isaac!second law}
+The ancient Greek philosopher Aristotle\index{Aristotle} claimed that force was required in order to create motion,
 and this seemed reasonable to Europeans for a thousand years afterward, since it was in accord
 with everyday experience. Although Aristotle didn't use equations, we can imagine putting his theory
 into mathematical form like this:
@@ -374,7 +374,7 @@ the backward frictional force.
 %>
 <% end_marg %>
 
-<% begin_sec("Indifference curves",nil,'indifference-curves') %>
+<% begin_sec("Indifference curves",nil,'indifference-curves') %>\index{indifference curve!concavity of}
 The concept of an indifference curve was introduced in example
 \ref{eg:indifference-curve}, p.~\pageref{eg:indifference-curve}.
 To recapitulate briefly, the person whose indifference
@@ -415,7 +415,7 @@ equals zero at the top.
 %>
 <% end_marg %>
 
-<% begin_sec("Higher derivatives",nil,'higher-derivatives') %>
+<% begin_sec("Higher derivatives",nil,'higher-derivatives') %>\index{derivative!higher}
 When we take the derivative of a function $f$, the derivative $f'$ is itself a function,
 so it made sense to apply the same operation again and find the second derivative $f''$.
 We can continue in this way. The
@@ -430,9 +430,9 @@ f^{(3)}=f''',\ldots.
 Leibniz' notation for the $n$th derivative of $y=f(x)$ is
 \[
 \frac{\der^n y}{\der x^n}= f^{(n)}(x).
-\]
+\]\index{Leibniz notation!higher derivative}
 
-\begin{eg}{Jerk and damage}\label{eg:jerk}
+\begin{eg}{Jerk and damage}\label{eg:jerk}\index{jerk}
 Higher derivatives are often useful; for example, you will need them in your second-semester
 calculus course in order to compute Taylor series, which are often used in approximating functions.
 There are not many examples, however, in which $f^{(n)}$ has a direct, intuitive interpretation

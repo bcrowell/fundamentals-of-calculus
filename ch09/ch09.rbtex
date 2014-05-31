@@ -11,7 +11,7 @@
   )
 %>
 
-<% begin_sec("Doing integrals symbolically on a computer",nil,'cas-for-integration') %>
+<% begin_sec("Doing integrals symbolically on a computer",nil,'cas-for-integration') %>\index{integral!techniques for evaluating!computer algebra systems}
 The quaint little town of Carmel, California, has a touristy business district that specializes
 in quaint little shops. I once went into a yarn store there with my mother,
 who picked out two skeins of yarn for a sweater.
@@ -54,7 +54,7 @@ and the more easily remembered \url{integrals.com}.
 <% end_sec('cas-for-integration') %>
 
 
-<% begin_sec("Substitution",nil,'substitution') %>
+<% begin_sec("Substitution",nil,'substitution') %>\index{integral!techniques for evaluating!substitution}\index{substitution|see{integral, techniques for evaluating}}\index{$u$-substitution|see{integral, techniques for evaluating}}
 Here's an example of an integral that introduces a useful technique of integration, and that also
 demonstrates what can go wrong if you become completely dependent on computers to do integrals that
 you should be able to do by hand.
@@ -211,7 +211,7 @@ so that
 
 <% end_sec('substitution') %>
 
-  <% begin_sec("Integrals that can't be done in closed form",4,'impossible-integrals') %>
+  <% begin_sec("Integrals that can't be done in closed form",4,'impossible-integrals') %>\index{integral!techniques for evaluating!sometimes impossible in closed form}
 Integral calculus was invented in the age of powdered wigs and harpsichords, so the original emphasis
 was on expressing integrals in a form that would allow numbers to be plugged in for easy numerical evaluation
 by scribbling on scraps of parchment with a quill pen. This was an era when you might have to travel to a large
@@ -286,7 +286,7 @@ a proficient human to figure out how to attack it, but every computer program I'
 failed silently.
   <% end_sec('impossible-integrals') %>
 
-  <% begin_sec("Doing an integral using symmetry or geometry",4,'integral-cheats') %>
+  <% begin_sec("Doing an integral using symmetry or geometry",4,'integral-cheats') %>\index{integral!techniques for evaluating!symmetry}\index{integral!techniques for evaluating!geometry}
 Often we can figure out the value of an integral either by symmetry or by using simple geometry.
 
 %%graph%% impossible-zero-integral func=sin(x)/(1+exp(x*x)) format=eps xlo=-1 xhi=1 ylo=-0.3 yhi=0.3 with=lines xtic_spacing=1 ytic_spacing=0.6

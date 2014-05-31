@@ -11,7 +11,7 @@
   )
 %>
 
-<% begin_sec("Probability",nil,'probability') %>
+<% begin_sec("Probability",nil,'probability') %>\index{probability}
   <% begin_sec("Introduction to probability",nil,'probability-intro') %>
     <% begin_sec("Measurement of probabilities",nil,'probability-meas') %>
 Defining randomness is a difficult problem, tied up with classical philosophical
@@ -21,7 +21,7 @@ an event that can't happen, a probability of 1 an event than is guaranteed to ha
 In between we have things that might or might not happen. A
 flipped coin comes up heads with probability 1/2.
     <% end_sec('probability-meas') %>
-    <% begin_sec("Statistical independence",nil,'independence') %>
+    <% begin_sec("Statistical independence",nil,'independence') %>\index{independence, statistical}
 <% marg(30) %>
 <%
   fig(
@@ -63,7 +63,7 @@ might not be a forest fire. These events are both random, but they are not indep
 makes fire less likely.
 
     <% end_sec('independence') %>
-    <% begin_sec("Normalization",nil,'normalization') %>
+    <% begin_sec("Normalization",nil,'normalization') %>\index{normalization}
 
 Suppose that we are able to exhaustively list all of the possible outcomes A, B, C, \ldots of some
 situation, and that these outcomes are mutually exclusive. Then exactly one of these outcomes must
@@ -119,7 +119,8 @@ infinitely many possible results that are close to that value, such as
 the probability that $h$ will be \emph{less than} a certain value. The probability of
 $h<160\ \zu{cm}$ is about 0.5. In general, we define the \emph{cumulative probability distribution}
 $P(x)$ of a random variable to be the probability that the variable is less than or equal to $x$.
-We can then define the \emph{probability distribution} of the variable to be
+We can then define the \emph{probability distribution} of 
+the variable to be\index{cumulative probability distribution}\index{probability distribution}
 \begin{equation}
   D(x) = P'(x) \qquad .
 \end{equation}
@@ -144,7 +145,7 @@ variable, then normalization requires that
 
 The average $\bar{x}$ of a variable that takes on one of two discrete values with equal probability is
 $(x_1+x_2)/2$, which is the same as $x_1P_1+x_2P_2$. Generalizing this to a continuous random
-variable, we have
+variable, we have\index{average of a continuous variable}
 \begin{equation}\label{eqn:average-defined}
   \bar{x} = \int_L^U x D(x)\:\der x \qquad .
 \end{equation}
@@ -153,7 +154,7 @@ The average is also known as the \emph{mean}, \emph{expectation}, or the \emph{e
 The standard deviation $\sigma_x$ of a random variable $x$ is a measure of how much it varies around
 its average value. The symbol $\sigma$ is the lowercase Greek ``sigma.'' (Recall that uppercase
 sigma is $\Sigma$.) The standard deviation of a continuous random variable is defined by
-\begin{equation}
+\begin{equation}\index{standard deviation of a continuous variable}
   \sigma_x = \sqrt{\int_L^U (x-\bar{x})^2 D(x)\:\der x} \qquad .
 \end{equation}
 
@@ -185,7 +186,7 @@ allows us to find a function $y(x)$ that determines the strength of the goblin.
   <% end_sec('continuous-random-variables') %>
 <% end_sec('probability') %>
 
-<% begin_sec("Economics",4,'economics') %>
+<% begin_sec("Economics",4,'economics') %>\index{economics!applications of the integral}
 <% marginbox(0,'economics-applications','Applications to economics',{},
 %q~
 The following is an index of applications of calculus to economics
@@ -201,7 +202,8 @@ that occur throughout this book.
       ~
    )
 %>
-In 1882, at the age of 46, William Stanley Jevons went swimming in the ocean and drowned.
+In 1882, at the age of 46, William Stanley Jevons\index{Jevons!William Stanley}
+went swimming in the ocean and drowned.
 As a pioneer of classical economics,
 Jevons developed mathematical models that treated
 humans as rational actors seeking to maximize their happiness.
@@ -213,7 +215,9 @@ definitions of these ideas, but in the process the word ``happiness'' changed to
 and the concepts morphed into forms that were very different from their original meanings.
 They are central to modern economics.
 
-A 1947 paper by John von Neumann and Oskar Morgenstern (VNM) introduces four axioms defining
+A 1947 paper by John von Neumann\index{von Neumann!John}
+and Oskar Morgenstern\index{Morgenstern!Oskar}\index{rationality}
+(VNM) introduces four axioms defining
 rationality, which I'll describe here in English rather than equations:
 \begin{enumerate}\label{vnm-axioms}
 \item Preferences are consistent.
@@ -229,7 +233,8 @@ VNM prove that if these axioms hold, it is possible to assign
 a real number $u(x)$, called the utility function,
 to any outcome $x$ such that a rational actor always maximizes the expected
 value of $u$ as defined by equation \eqref{eqn:average-defined}, p.~\pageref{eqn:average-defined}.
-The utility function can be rescaled or have a constant added to it, but is otherwise unique.
+The utility function can be rescaled
+or have a constant added to it, but is otherwise unique.\index{utility function}
 
 Although I've described this in terms of human preferences, the axioms may fail for humans or hold
 for non-humans. It only matters if the actor behaves \emph{as if} it were acting rationally, as defined
@@ -243,7 +248,8 @@ I suggest the hypothesis that the leaves [on a tree] are positioned as if each l
  could move rapidly or instantaneously from any one position to any other desired and unoccupied position.
 \end{quote}
 
-\noindent Daniel Kahneman, on the other hand, won the Nobel prize for his work showing
+\noindent Daniel Kahneman,\index{Kahneman, Daniel}
+on the other hand, won the Nobel prize for his work showing
 that humans often violate the VNM definition of rationality, but
 in ways that can be described scientifically. For instance, he showed in experiments that subjects
 were willing to pay one price for a trinket such as a mug, but that if they were
@@ -303,7 +309,7 @@ he is willing to pay less than that; he is risk-averse.
 
 <% end_sec('economics') %>
 
-<% begin_sec("Physics",nil,'physics') %>
+<% begin_sec("Physics",nil,'physics') %>\index{physics!applications of the integral}
 A \emph{conservation law}\index{conservation law} is a physical law stating that the total amount of a certain quantity
 stays constant. (This usage of ``conservation'' doesn't have the usual connotation of not
 using something up. In this context, the word implies that you \emph{couldn't} use it up
@@ -351,7 +357,7 @@ define a name, symbol, and unit for its rate of transfer or transformation. We t
 two variables, which are related to one another as integral and derivative with
 respect to time. In the following
 table, the conserved quantity is given on top along with its symbol and SI unit.
-Its derivative is the variable below.
+Its derivative is the variable below.\index{mass}\index{energy}\index{momentum}\index{angular momentum}\index{charge}
 
 \noindent\begin{tabular}{lllll}
 \hline
