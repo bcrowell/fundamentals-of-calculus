@@ -383,8 +383,11 @@ me permission to use it, but that doesn't mean you have permission to use it.}
     %\hwtopboilerplate\par% not used in genrel
     \begingroup% so that setlength gets undone by endgroup
     % The following is so that spaces between problems fill up, rather than spaces around displayed equations.
-    \setlength{\abovedisplayskip}{0pt plus 0pt minus 0pt}
-    \setlength{\belowdisplayskip}{0pt plus 0pt minus 0pt}
+    % defaults for abovedisplayskip and belowdisplayskip are both:
+    %                  11.38109pt plus 2.84526pt minus 8.53581pt
+    \setlength{\abovedisplayskip}{5pt plus 0pt minus 2.5pt}
+    \setlength{\belowdisplayskip}{5pt plus 0pt minus 2.5pt}
+    % I think these change back after the \endgroup.
 }%
 {%
   \endgroup

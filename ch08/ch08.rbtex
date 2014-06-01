@@ -1123,9 +1123,61 @@ follows that the limit that defines the integral has the value claimed by the th
 
 \begin{hwsection}
 
+\emph{Problems \ref{hw:barometric-altimeter}-\ref{hw:electric-meter} don't require you to
+calculate anything. The point is to practice setting
+up and interpreting relationships between pairs of variables that are related as integral
+and derivative.}
+
 <% hw('barometric-altimeter',{'solution'=>true}) %>
-<% hw('present-value') %>
-<% hw('electric-meter') %>
+<% hw('present-value',{'solution'=>true}) %>
+<% hw('electric-meter',{'solution'=>true}) %>
+
+\pagebreak
+
+<% hw_block(2) %>
+
+%%graph%% hw-riemann-sinc-raw func=sin(x+0.000001)/(x+0.000001) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+%%graph%% hw-riemann-etan-raw func=exp(x-1)*tan(3.141592*x/4.0) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+%%graph%% hw-riemann-cos2-e-x-raw func=(cos(exp(x)))**2 format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+%%graph%% hw-riemann-x-to-x-raw func=(x+0.000001)**(x+0.000001) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+
+\emph{In each of problems \ref{hw:riemann-sinc}-\ref{hw:riemann-x-to-x},
+the goal is to approximate the area between the graph
+and the $x$ axis between $x=0$ and $x=1$, i.e., the value of
+$  \int_0^1 f(x)\: \der x $
+for the given function $f$. Each function was chosen so that its graph
+fits into a $1\times 1$ square, as shown in the figure.
+These happen to be functions for which it is not possible
+to find an antiderivative, hence the need for an approximation. Divide the interval up into
+5 equal subintervals, sample the function at the center of each interval,
+and find the resulting Riemann sum. Maintain four decimal places of
+precision throughout the calculation so that you are left with three
+decimal places at the end that are not likely to be way off simply because of rounding.
+}
+
+<% hw('riemann-sinc') %>
+<% hw('riemann-etan') %>
+<% hw('riemann-cos2-e-x') %>
+<% hw('riemann-x-to-x') %>
+
+<%
+  fig(
+    'hw-riemann',
+    %q{Problems \ref{hw:riemann-sinc}-\ref{hw:riemann-x-to-x}.
+    },
+    {
+      #'width'=>'fullpage'
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% hw_block(2) %>
+
+<% hw('find-incorrect-integral',{'solution'=>true}) %>
+
+
 
 \end{hwsection}
 
