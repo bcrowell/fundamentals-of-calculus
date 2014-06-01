@@ -1,0 +1,17 @@
+The two options proposed are:
+\begin{align*}
+  \zu{PV} &= \frac{\der}{\der t} \left(e^{-rT}f(t)\right) \\
+  \zu{PV} &= \int_0^T f(t)e^{-rt}\:\der t
+\end{align*}
+The units of the present value should be dollars.
+
+The first proposed equation is nonsense based on units,
+because $f$ has units of dollars/year, and its time derivative would therefore have units
+of $\zu{dollars}/\zu{year}^2$, not dollars.
+
+The units of the second equation do make sense. The Leibniz notation for the
+integral is designed so that if you analyze the units and treat the integral sign
+as a sum, the units are what they look like they are. On the right-hand side, the
+units are $(\zu{dollars}/\zu{year})\times\zu{years}=\zu{dollars}$, which matches
+the units on the left-hand side. This doesn't prove that this equation is right,
+but it doesn't prove it wrong, either.
