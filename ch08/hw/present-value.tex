@@ -1,0 +1,16 @@
+Suppose that a business investment today will yield a stream of income
+in the future $f(t)$, in units of dollars per year. The revenue starts today, at $t=0$,
+and will end in the future at $t=T$.
+The value of a dollar promised
+in the future is less than a dollar in hand today, because today's dollar could
+be put in the bank and draw interest, growing in value exponentially as $e^{rt}$, where $r$ is a constant
+that is proportional to the interest rate. 
+Consider the following two proposed expressions for the present value of the revenue
+stream, i.e., the amount that one should rationally be willing to pay today in order to receive it.
+\begin{align*}
+  \zu{PV} &= \frac{\der}{\der t} \left(e^{-rT}f(t)\right) \\
+  \zu{PV} &= \int_0^T f(t)e^{-rt}\:\der t
+\end{align*}
+As described in
+section \ref{subsec:to-differentiate-or-to-integrate}, p.~\pageref{subsec:to-differentiate-or-to-integrate},
+determine which of these is nonsense based on the units.

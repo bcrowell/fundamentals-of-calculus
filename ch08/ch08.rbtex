@@ -1124,6 +1124,8 @@ follows that the limit that defines the integral has the value claimed by the th
 \begin{hwsection}
 
 <% hw('barometric-altimeter',{'solution'=>true}) %>
+<% hw('present-value') %>
+<% hw('electric-meter') %>
 
 \end{hwsection}
 
