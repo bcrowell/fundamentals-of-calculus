@@ -53,7 +53,7 @@ defined as
 The slope measures how fast the function is changing. A positive slope says the function is increasing,
 negative decreasing. If the slope is zero, the function is not changing at all.
 
-It's often convenient to express this kind of thing with the notation $\Delta$,\index{delta notation}
+It's often convenient to express this kind of thing with the notation $\Delta$,\index{delta ($\Delta$) notation}
 the capital Greek
 letter delta, which is the equivalent of our Latin ``D'' and here stands for ``difference.'' In terms of this notation,
 we have

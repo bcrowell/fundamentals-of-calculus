@@ -77,7 +77,7 @@ years, the accumulated amount of garbage will be 5,050 tons. The pile of
 refuse grows more quickly every year.
     <% end_sec('discrete-accumulation') %>
 
-    <% begin_sec("Sigma notation",nil,'sigma-notation') %>
+    <% begin_sec("Sigma notation",nil,'sigma-notation') %>\index{sigma ($\Sigma$) notation}
 There is a convenient way of notating sums like the ones we've been doing,
 which involves $\Sigma$, called ``sigma,'' the capital Greek letter ``S.''
 Here the ``S'' stands for ``sum.'' The sigma notation looks like this:
@@ -402,7 +402,7 @@ The units of the terms in the sum are
 which makes sense.
 
 We can now see three independent reasons why an integral such as $\int_0^1 x^2\:\der x$
-can't be written like $\int_0^1 x^2$, without the $\der x$:
+can't be written like $\int_0^1 x^2$, without the $\der x$:\label{why-you-need-dx}
 \begin{enumerate}
   \item If $x$ has units, then the expression without the $\der x$ has the wrong units.
   \item It would be a sum of infinitely many numbers, each of them finite, so it would probably be infinite.
@@ -1136,6 +1136,12 @@ and derivative.}
 
 <% hw_block(2) %>
 
+% robbin
+<% hw('sigma-notation') %>
+
+<% hw('wrong-integral-notation',{'solution'=>true}) %>
+
+
 %%graph%% hw-riemann-sinc-raw func=sin(x+0.000001)/(x+0.000001) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
 %%graph%% hw-riemann-etan-raw func=exp(x-1)*tan(3.141592*x/4.0) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
 %%graph%% hw-riemann-cos2-e-x-raw func=(cos(exp(x)))**2 format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
@@ -1176,6 +1182,26 @@ decimal places at the end that are not likely to be way off simply because of ro
 <% hw_block(2) %>
 
 <% hw('find-incorrect-integral',{'solution'=>true}) %>
+
+% robbin
+
+\emph{Evaluate the indefinite integrals in problems \ref{hw:antiderivative-01}-\ref{hw:antiderivative-12}.
+  Finding indefinite integrals involves a fair amount of
+  guess work, but with experience it gets easier to guess
+  them.}
+
+<% hw('antiderivative-01') %>
+<% hw('antiderivative-02') %>
+<% hw('antiderivative-03') %>
+<% hw('antiderivative-04') %>
+<% hw('antiderivative-05') %>
+<% hw('antiderivative-06') %>
+<% hw('antiderivative-07') %>
+<% hw('antiderivative-08') %>
+<% hw('antiderivative-09') %>
+<% hw('antiderivative-10') %>
+<% hw('antiderivative-11') %>
+<% hw('antiderivative-12') %>
 
 
 
