@@ -31,7 +31,9 @@ integrals by hand.
 
 The computer programs used for doing integrals are called computer algebra systems (CAS).
 I recommend a free and open-source CAS called
-Maxima.\footnote{\url{maxima.sourceforge.net}} The following example shows how to use Maxima to do an
+Maxima.\footnote{To use it through a web browserm go to \url{maxima-online.org}.
+To download it to your computer, go to \url{maxima.sourceforge.net}.}
+The following example shows how to use Maxima to do an
 easy indefinite integral --- analogous to using the calculator to find $6\times 2$.
 The typewriter font shows what I typed in, and the italicized text is the answer printed out by the
 program. Note the mandatory semicolon at the end of the input line.
@@ -46,15 +48,10 @@ program. Note the mandatory semicolon at the end of the input line.
 \finishcodeeg
 \end{eg}
 
-It's also worth knowing about a browser-based system provided by a company called Wolfram
-as a come-on for its expensive, proprietary CAS, Mathematica.
-There are browser interfaces at \url{integrals.wolfram.com}
-and the more easily remembered \url{integrals.com}.
-
 <% end_sec('cas-for-integration') %>
 
 
-<% begin_sec("Substitution",nil,'substitution') %>\index{integral!techniques for evaluating!substitution}\index{substitution|see{integral, techniques for evaluating}}\index{$u$-substitution|see{integral, techniques for evaluating}}
+<% begin_sec("Substitution",4,'substitution') %>\index{integral!techniques for evaluating!substitution}\index{substitution|see{integral, techniques for evaluating}}\index{$u$-substitution|see{integral, techniques for evaluating}}
 Here's an example of an integral that introduces a useful technique of integration, and that also
 demonstrates what can go wrong if you become completely dependent on computers to do integrals that
 you should be able to do by hand.

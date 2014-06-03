@@ -1143,6 +1143,15 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 
 <% end_sec('safe-handling-of-dx') %>
 
+\begin{hwsection}[Review problems]
+
+<% hw('review-add-exponents') %>
+<% hw('review-fractional-exponents') %>
+
+  <% hw_block(2) %>
+
+\end{hwsection}
+
 \begin{hwsection}
 
 \emph{In example \ref{eg:x-squared-with-limits} on p.~\pageref{eg:x-squared-with-limits} we found

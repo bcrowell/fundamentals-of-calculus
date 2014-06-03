@@ -369,13 +369,13 @@ me permission to use it, but that doesn't mean you have permission to use it.}
   \noindent\formatlikesubsection{\langkey}\\*
   The notation \hwcheckmark indicates that a computerized answer check is available online.
 }
-\newenvironment{hwsection}{
+\newenvironment{hwsection}[1][Problems]{
     \vfill
     \setcounter{secnumdepth}{0}          % Don't number this section.
     \renewcommand{\printthesection}{}    % Footers should read ``Problems,'' not ``Section X.Y Problems''
     \hwcaptions                          % figures in hw section don't have a, b, c, labels
     \setcounter{figure}{0}               %
-    \mysection{\langproblems}                 % Has the side-effect of generating a page break.
+    \mysection{#1}                       % Has the side-effect of generating a page break.
     \setcounter{secnumdepth}{2}          % Start numbering sections again.
                                          % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
                                          % this. Using section* messes up footers & toc. 
@@ -392,6 +392,7 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 {%
   \endgroup
   \normalparafmt
+  \vskip 0pt plus 1filll
 }
 %
 \newcommand{\hwnote}[1]{\noindent\emph{#1}}

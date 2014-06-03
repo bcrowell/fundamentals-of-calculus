@@ -1111,6 +1111,42 @@ graph, and what real-world implications would this have?
 %>
 <% end_marg %>
 
+\begin{hwsection}[Review problems]
+
+<% hw('review-points-to-equation') %>
+<% hw('review-point-and-slope-to-equation') %>
+<% hw('review-equation-to-slope') %>
+<% hw('review-equation-and-dx-to-dy') %>
+<% hw('review-galileo-p-vs-t',{'solution'=>true}) %>
+
+<%
+  fig(
+    'hw-review-galileo-p-vs-t',
+    %q{Pressure (in millibars, mb) versus temperature (in degrees Kelvin, K) of the
+       atmosphere of Jupiter, problem
+      \ref{hw:review-galileo-p-vs-t}. For
+      comparison, the atmospheric pressure and temperature at the earth's surface are about 1000 mb
+      and 300 K.
+      Although Jupiter is in the outer solar system and is in general very cold, the temperatures
+      in its tenuous upper atmosphere are, counterintuitively, very hot; this feature of the graph
+      is what would be referred to on earth as an ``inversion layer.''
+      Seiff \emph{et al.}, J.~Geophys.~Research 103 (1998) 22,857.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% hw('review-when-is-a-line-a-function',{'solution'=>true}) %>
+<% hw('review-which-are-functions',{'solution'=>true}) %>
+<% hw('review-rewrite-description-of-set',{'solution'=>true}) %>
+
+
+  <% hw_block(2) %>
+
+\end{hwsection}
+
 \begin{hwsection}
 
 <% hw('diff-monomials',{'solution'=>true}) %>

@@ -1,0 +1,12 @@
+We have a set of points that are included in the set, which are those
+for which the given polynomial is negative. The set of points that are
+not included are those for which the polynomial is zero or positive.
+There is an edge or boundary between these two sets, consisting of
+any points at which the polynomial is zero, i.e., the roots of the polynomial.
+We could use the quadratic formula to find these roots. But since
+$u=0$ is clearly a root, it's simpler just to factor the polynomial
+into $u(u-2)$, which tells us that the other root is $2$.
+Clearly the set S must be either the interval $(0,2)$ or
+everything that lies \emph{outside} this interval. Checking
+$u=1$, we see that it's the former possibility that holds. Thus
+a simpler description is $\zu{S}=\{u|u>0\ \text{and}\ u<2\}$.

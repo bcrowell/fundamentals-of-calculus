@@ -643,6 +643,31 @@ Similarly, when we write
 \end{equation*}
 we could say that both sides of the equation represent the solution set $\{-2,2\}$ of the equation
 $x^2=4$.
+
+The following table summarizes the differences between definite and indefinite integrals.
+
+{\renewcommand{\arraystretch}{1.4}
+\noindent\begin{tabular}{p{53mm}p{53mm}}
+\emph{indefinite integral}       & \emph{definite integral} \\
+\hline
+$\int f(x) d x$ is a function of $x$.&
+    $\int_a^bf(x)d x$ is a number. \\
+\hline
+By definition $\int f(x)\:\der x$ is any function of $x$
+        whose derivative is $f (x)$. &
+$\int_a^b f(x)d x$ is defined in terms of Riemann sums and can
+      be interpreted as the area under the graph of $y=f(x)$.\\
+\hline
+The variable of integration is not a dummy variable. For example,
+      $\int 2x\:\der x=x^2+c$ and $\int 2t\:\der t=t^2+c$ are
+      expressed in terms of different variables,
+      so they are not the same.&
+The variable of integration is a dummy variable. For example,
+      $\int_0^1 2x\:\der x=1$, and $\int_0^1 2t\:\der t=1$,
+      so $\int_0^1 2x\:\der x=\int_0^1 2t\:\der t$.
+\end{tabular}
+}
+
     <% end_sec('indefinite-integral-leibniz') %>
 \begin{eg}{}\label{eg:integrate-x-to-6th}
 \egquestion Evaluate
@@ -1181,14 +1206,16 @@ decimal places at the end that are not likely to be way off simply because of ro
 
 <% hw_block(2) %>
 
+
+<% hw('three-antiderivatives-of-e-to-x',{'solution'=>true}) %>
 <% hw('find-incorrect-integral',{'solution'=>true}) %>
 
-% robbin
+\pagebreak
 
-\emph{Evaluate the indefinite integrals in problems \ref{hw:antiderivative-01}-\ref{hw:antiderivative-12}.
-  Finding indefinite integrals involves a fair amount of
-  guess work, but with experience it gets easier to guess
-  them.}
+% robbin
+\emph{Evaluate the antiderivatives in problems \ref{hw:antiderivative-01}-\ref{hw:antiderivative-12}.
+  If in doubt, guess and check as in problem \ref{hw:find-incorrect-integral}.
+  With experience it gets easier to guess correctly.}
 
 <% hw('antiderivative-01') %>
 <% hw('antiderivative-02') %>
@@ -1203,7 +1230,13 @@ decimal places at the end that are not likely to be way off simply because of ro
 <% hw('antiderivative-11') %>
 <% hw('antiderivative-12') %>
 
+\emph{Evaluate the antiderivatives in problems
+  \ref{hw:antiderivative-symbolic-const-01}-\ref{hw:antiderivative-symbolic-const-03}.
+  All letters other than the variable of integration are constants.}
 
+<% hw('antiderivative-symbolic-const-01') %>
+<% hw('antiderivative-symbolic-const-02') %>
+<% hw('antiderivative-symbolic-const-03') %>
 
 \end{hwsection}
 
