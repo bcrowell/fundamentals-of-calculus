@@ -739,6 +739,16 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 \end{tabular}
 <% end_sec('hyperbolic-functions') %>
 
+\begin{hwsection}[Review problems]
+
+<% hw('review-sin-and-cos-both-negative',{'solution'=>true}) %>
+<% hw('review-invert-random-function') %>
+<% hw('review-log-base-3') %>
+
+  <% hw_block(2) %>
+
+\end{hwsection}
+
 \begin{hwsection}
 
 <% hw('logarithmy',{'solution'=>true}) %>
