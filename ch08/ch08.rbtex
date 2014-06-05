@@ -1176,7 +1176,8 @@ and derivative.}
 the goal is to approximate the area between the graph
 and the $x$ axis between $x=0$ and $x=1$, i.e., the value of
 $  \int_0^1 f(x)\: \der x $
-for the given function $f$. Each function was chosen so that its graph
+for the given function $f$. Each function was chosen such that for $x\in[0,1]$, we have $y\in[0,1]$ as well,
+so that the graph
 fits into a $1\times 1$ square, as shown in the figure.
 These happen to be functions for which it is not possible
 to find an antiderivative, hence the need for an approximation. Divide the interval up into
@@ -1197,7 +1198,6 @@ decimal places at the end that are not likely to be way off simply because of ro
     %q{Problems \ref{hw:riemann-sinc}-\ref{hw:riemann-x-to-x}.
     },
     {
-      #'width'=>'fullpage'
       'width'=>'wide',
       'sidecaption'=>true
     }
@@ -1230,6 +1230,8 @@ decimal places at the end that are not likely to be way off simply because of ro
 <% hw('antiderivative-11') %>
 <% hw('antiderivative-12') %>
 
+<% hw_block(2) %>
+
 \emph{Evaluate the antiderivatives in problems
   \ref{hw:antiderivative-symbolic-const-01}-\ref{hw:antiderivative-symbolic-const-03}.
   All letters other than the variable of integration are constants.}
@@ -1237,6 +1239,100 @@ decimal places at the end that are not likely to be way off simply because of ro
 <% hw('antiderivative-symbolic-const-01') %>
 <% hw('antiderivative-symbolic-const-02') %>
 <% hw('antiderivative-symbolic-const-03') %>
+
+\pagebreak
+
+<% hw_block(2) %>
+
+\emph{In problems
+  \ref{hw:antiderivative-change-form-01}-\ref{hw:antiderivative-change-form-04},
+  find the antiderivatives. All letters other than the variable of integration are constants.
+  These problems can be done by first rewriting the given integrand in a
+  form that you know how to integrate.}
+
+<% hw('antiderivative-change-form-01',{'solution'=>true}) %>
+<% hw('antiderivative-change-form-02') %>
+<% hw('antiderivative-change-form-03') %>
+<% hw('antiderivative-change-form-04') %>
+
+<% hw_block(2) %>
+
+\emph{These instructions are for problems \ref{hw:riemann-and-exact-cos}-\ref{hw:riemann-and-exact-sqrt}.
+Each function $f$ was chosen such that for $x\in[0,1]$, we have $y\in[0,1]$ as well, so that
+the graph fits into a $1\times 1$ square, as shown in the figure.\\
+(a) Make an eyeball estimate of the area under the curve.\\
+(b) As in problems \ref{hw:riemann-sinc}-\ref{hw:riemann-x-to-x}, divide the interval up into
+5 equal subintervals, sample the function at the center of each interval,
+and find the resulting Riemann sum. Maintain four decimal places of
+precision throughout the calculation so that you are left with three
+decimal places at the end that are not likely to be way off simply because of rounding.
+Your result should be roughly consistent with your estimate from part a, and you can
+also check it online.\\
+(c) Find the antiderivative $\int f(x)\:\der x$, and check it online.\\
+(d) Evaluate the definite integral, $\int_0^1 f(x)\:\der x$, check it against the approximations
+in parts a and b, and check it online.
+}
+
+%%graph%% hw-riemann-and-exact-cos-raw func=cos(x) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+%%graph%% hw-riemann-and-exact-sin-raw func=sin(x) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+%%graph%% hw-riemann-and-exact-exp-raw func=exp(x)/3.0 format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+%%graph%% hw-riemann-and-exact-sqrt-raw func=sqrt(x) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
+
+<% 
+  fig(
+    'hw-riemann-and-exact',
+    %q{Problems \ref{hw:riemann-and-exact-cos}-\ref{hw:riemann-and-exact-sqrt}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% hw('riemann-and-exact-cos') %>
+<% hw('riemann-and-exact-sin') %>
+<% hw('riemann-and-exact-exp') %>
+<% hw('riemann-and-exact-sqrt') %>
+
+\pagebreak
+
+<% hw_block(2) %>
+
+\emph{Problems \ref{hw:longbow}-\ref{hw:jupiter-comet} all involve
+calculating the work done by a force, as described in example
+\ref{eg:tractor-doing-work}, p.~\pageref{eg:tractor-doing-work}.
+These problems also require you to check the units of your result. To do that, you will need to know
+the following. The SI unit of force is the newton (N). Work has units of
+$(\text{force})\times(\text{distance})$, or $\nunit\unitdot\munit$
+(newton-meters).}
+
+<% marg(100) %>
+<%
+  fig(
+    'hw-longbow',
+    %q{Problem \ref{hw:longbow}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-contracting-muscle',
+    %q{Problem \ref{hw:contracting-muscle}.}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-jupiter-comet',
+    %q{Problem \ref{hw:jupiter-comet}.}
+  )  
+%>
+<% end_marg %>
+
+<% hw('longbow',{'solution'=>true}) %>
+<% hw('contracting-muscle') %>
+<% hw('jupiter-comet') %>
 
 \end{hwsection}
 
