@@ -784,7 +784,7 @@ just one number and one other number. Applying the fundamental theorem of calcul
 \begin{equation}
   \Delta x = \int_{t_1}^{t_2} v\:\der t \qquad . \qquad \text{[always valid]}
 \end{equation}
-The we expect the integral to come up in applications as a generalization of multiplication that covers
+We expect the integral to come up in applications as a generalization of multiplication that covers
 the case where one of the factors is varying.
 
 <%
@@ -1333,6 +1333,29 @@ $(\text{force})\times(\text{distance})$, or $\nunit\unitdot\munit$
 <% hw('longbow',{'solution'=>true}) %>
 <% hw('contracting-muscle') %>
 <% hw('jupiter-comet') %>
+
+<% hw_block(2) %>
+
+<% hw('v-to-x-cruise-control') %>
+<% hw('v-to-x-piston') %>
+
+<% hw_block(2) %>
+
+\emph{In problems \ref{hw:definite-integral-practice-01}-\ref{hw:definite-integral-practice-12},
+compute the definite integrals.}
+
+<% hw('definite-integral-practice-01') %>
+<% hw('definite-integral-practice-02') %>
+<% hw('definite-integral-practice-03') %>
+<% hw('definite-integral-practice-04') %>
+<% hw('definite-integral-practice-05') %>
+<% hw('definite-integral-practice-06') %>
+<% hw('definite-integral-practice-07') %>
+<% hw('definite-integral-practice-08') %>
+<% hw('definite-integral-practice-09') %>
+<% hw('definite-integral-practice-10') %>
+<% hw('definite-integral-practice-11') %>
+<% hw('definite-integral-practice-12') %>
 
 \end{hwsection}
 
