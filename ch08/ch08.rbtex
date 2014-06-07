@@ -447,7 +447,7 @@ derivative of B.
   <% end_sec('connect-derivative-and-integral') %>
   <% begin_sec("What the fundamental theorem says",nil,'fundamental-theorem-statement') %>
 
-\begin{theorem}[The fundamental theorem of calculus]\index{fundamental theorem of calculus}
+\begin{theorem}[The fundamental theorem of calculus]\index{fundamental theorem of calculus!integral of a derivative}
   Let $f$ be a function defined on the interval $[a,b]$, and let $f$ be differentiable
   on that interval. Then
   \begin{equation}
@@ -1145,6 +1145,105 @@ follows that the limit that defines the integral has the value claimed by the th
 
 <% end_sec('integrals-technical') %>
 
+<% begin_sec("The definite integral as a function of its integration bounds",nil,'definite-integral-moving-bounds') %>
+  <% begin_sec("A function defined by an integral",nil,'function-defined-by-integral') %>
+Consider the expression
+\[
+I = \int_0^x t^2\, dt \qquad .
+\]
+What does $I$ depend on?  To find out, we calculate the integral
+\[
+I = \bigl[\tfrac13t^3\bigr]_0^x 
+= \tfrac13 x^3 - \tfrac13 0^3
+= \tfrac13 x^3 \qquad .
+\]
+So the integral depends on $x$.  It does not depend on $t$, since $t$
+is a ``dummy variable.''
+
+In this way we can use integrals to define new functions.  For
+instance, we could define
+\[
+I(x) = \int_0^x t^2 \:\der t \qquad ,
+\]
+which would be a roundabout way of defining the function $I(x) = x^3/3$.  Again,
+since $t$ is a dummy variable we can replace it by any other variable we like.
+Thus
+\[
+I(x) = \int_0^x \alpha^2\, \der\alpha
+\]
+defines the same function (namely, $I(x) = \frac13x^3$).
+
+<% marg(0) %>
+<%
+  fig(
+    'erf',
+    %q{The definition of the error function, $\operatorname{erf}(x)$.}
+  )  
+%>
+<% end_marg %>
+This example does not really define a new function, in the sense that
+we already had a much simpler way of defining the same function,
+by writing ``$I(x) = x^3/3$.''  An example of a \textit{new} function
+defined by an integral is the so called \emph{error function} from
+statistics:
+\begin{equation}\label{eq:08erf-defined}
+  \operatorname{erf}(x) =
+  \frac2{\sqrt\pi} \int _0 ^x e^{-t^2}\;\der t \qquad ,
+\end{equation}
+so that $\operatorname{erf}(x)$ is the area of the shaded region in figure \figref{erf}.
+
+The integral in \eqref{eq:08erf-defined} cannot be computed as a formula.\footnote{
+For more on what this means, see
+section \ref{sec:impossible-integrals}, p.~\pageref{sec:impossible-integrals}.}
+As described in more detail in section \ref{subsec:continuous-random-variables},
+p.~\pageref{subsec:continuous-random-variables},
+the integral in \eqref{eq:08erf-defined} occurs very often
+in statistics, so it has been
+given its own name, ``$\operatorname{erf}(x)$''.\index{normal distribution}\index{erf}\index{error function}
+  <% end_sec('function-defined-by-integral') %>
+  <% begin_sec("How do you differentiate a function defined by an integral?",nil,'diff-function-defined-by-integral') %>
+The answer is simple, for if $f(x) = F'(x)$ then the fundamental theorem says
+that
+\[
+\int_a^x f(t) \; \der t = F(x) - F(a) \qquad ,
+\]
+and therefore
+\[
+\frac d{dx} \int_a^x f(t) \; dt =\frac {\der}{\der x}\bigl( F(x) - F(a)\bigr) = F'(x) =
+f(x) \qquad ,
+\]
+i.e.
+\[
+\frac {\der}{\der x} \int_a^x f(t) \; \der t = f(x) \qquad .
+\]
+A similar calculation gives 
+\[
+\frac {\der}{\der x} \int_x^b f(t) \; \der t = -f(x) \qquad .
+\]
+So what is the derivative of the error function?
+It is
+\begin{align*}
+  \operatorname{erf}\, '(x) 
+  &= \frac {\der}{\der x} \left[ \frac2{\sqrt\pi} \int _0 ^x e^{-t^2}\;\der t\right] \\
+  &= \frac2{\sqrt\pi} \frac {\der}{\der x} \left[\int _0 ^x e^{-t^2}\;\der t\right] \\
+  &=  \frac2{\sqrt\pi} e^{-x^2} \qquad .
+\end{align*}
+  <% end_sec('diff-function-defined-by-integral') %>
+  <% begin_sec("A second version of the fundamental theorem",nil,'second-fund-thm') %>
+The way that we differentiated the $\operatorname{erf}$ function in 
+section \ref{subsec:diff-function-defined-by-integral} was an example of a more general
+idea, which can be considered as an alternative version of the fundamental theorem of calculus.
+The version of the fundamental theorem of calculus given in section
+\ref{sec:fundamental-theorem}, p.~\pageref{sec:fundamental-theorem}, says that if we differentiate
+and then integrate, we end up with the same function back again. This new second version says that
+something similar happens if we integrate and then 
+differentiate:\index{fundamental theorem of calculus!derivative of an integral}
+\begin{equation*}
+  \frac {\der}{\der x} \int_a^x f(t)\:\der t = f(x)
+\end{equation*}
+  <% end_sec('second-fund-thm') %>
+<% end_sec('definite-integral-moving-bounds') %>
+
 
 \begin{hwsection}
 
@@ -1299,7 +1398,7 @@ in parts a and b, and check it online.
 
 <% hw_block(2) %>
 
-\emph{Problems \ref{hw:longbow}-\ref{hw:jupiter-comet} all involve
+\emph{Problems \ref{hw:longbow}-\ref{hw:compression-ratio} all involve
 calculating the work done by a force, as described in example
 \ref{eg:tractor-doing-work}, p.~\pageref{eg:tractor-doing-work}.
 These problems also require you to check the units of your result. To do that, you will need to know
@@ -1333,16 +1432,30 @@ $(\text{force})\times(\text{distance})$, or $\nunit\unitdot\munit$
 <% hw('longbow',{'solution'=>true}) %>
 <% hw('contracting-muscle') %>
 <% hw('jupiter-comet') %>
+<% hw('compression-ratio') %>
+
+<% marg(100) %>
+<%
+  fig(
+    'hw-compression-ratio',
+    %q{Problem \ref{hw:compression-ratio}.}
+  )  
+%>
+<% end_marg %>
+
 
 <% hw_block(2) %>
 
 <% hw('v-to-x-cruise-control') %>
 <% hw('v-to-x-piston') %>
 
+\pagebreak
+
 <% hw_block(2) %>
 
 \emph{In problems \ref{hw:definite-integral-practice-01}-\ref{hw:definite-integral-practice-12},
-compute the definite integrals.}
+compute the definite integrals. These  are in groups of three similar problems, with the intention that a given
+student would do one from each group.}
 
 <% hw('definite-integral-practice-01') %>
 <% hw('definite-integral-practice-02') %>

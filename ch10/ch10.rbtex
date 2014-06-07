@@ -137,6 +137,14 @@ inverse of those units, e.g., $\zu{cm}^{-1}$ in our example. In this example, $D
 interpreted as the probability \emph{per centimeter}. A \emph{uniform} distribution is one
 for which $D$ is a constant throughout the range of possible values of $x$.
 
+An extremely common bell-shaped probability distribution is
+\begin{equation*}
+ D(x)=\frac{2}{\sqrt{\pi}} e^{-x^2} \qquad ,
+\end{equation*}
+called the ``normal'' or ``Gaussian'' distribution, which we encountered in
+section \ref{subsec:function-defined-by-integral}, 
+p.~\pageref{subsec:function-defined-by-integral}.\index{normal distribution}\index{erf}\index{error function}
+
 If there are definite lower and upper limits $L$ and $U$ for the possible values of the random
 variable, then normalization requires that
 \begin{equation}
