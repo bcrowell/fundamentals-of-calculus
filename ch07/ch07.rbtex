@@ -801,7 +801,9 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 \vfill
   <% hw_block(2) %>
 
-\emph{In problems \ref{hw:differential-01}-\ref{hw:differential-08}, evaluate the differentials.}
+\begin{hwinstructions}
+In problems \ref{hw:differential-01}-\ref{hw:differential-08}, evaluate the differentials.
+\end{hwinstructions}
 
 <% hw('differential-01',{'solution'=>true}) %>
 <% hw('differential-02',{'solution'=>true}) %>
@@ -816,10 +818,12 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 
 \pagebreak
 
-\emph{In problems \ref{hw:implicit-to-simplify-00}-\ref{hw:implicit-to-simplify-08},
+\begin{hwinstructions}
+In problems \ref{hw:implicit-to-simplify-00}-\ref{hw:implicit-to-simplify-08},
 a function $y(x)$ is defined explicitly. Find an implicit
 definition that does not involve taking roots.  Then use this description to
-find the derivative $\der y/\der x$.}
+find the derivative $\der y/\der x$.
+\end{hwinstructions}
 
 % mostly from Robbin...
 <% hw('implicit-to-simplify-00',{'solution'=>true}) %>
@@ -834,9 +838,12 @@ find the derivative $\der y/\der x$.}
 
   <% hw_block(2) %>
 
-\emph{In each of the problems \ref{hw:implicit-at-origin-01}-\ref{hw:implicit-at-origin-04}, an
+\begin{hwinstructions}
+In each of the problems \ref{hw:implicit-at-origin-01}-\ref{hw:implicit-at-origin-04}, an
 implicit relation is defined between $x$ and $y$, and the graph passes through the origin.
-Find the slope of the graph at the origin.}
+Find the slope of the graph at the origin.
+\end{hwinstructions}
+
 
 <% hw('implicit-at-origin-01',{'solution'=>true}) %>
 <% hw('implicit-at-origin-02') %>

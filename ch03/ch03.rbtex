@@ -3,6 +3,8 @@
   require "./scripts/eruby_util.rb"
 %>
 
+\addtocontents{toc}{\protect\newpage} % prevent it from being isolated from rest of chapter in toc
+
 <%
   chapter(
     '03',
@@ -522,8 +524,11 @@ derivative. Usually
   <% hw_block(2) %>
 
 % Robbin p. 71, #2-5:
-\emph{In problems \ref{hw:first-three-derivatives-1}-\ref{hw:first-three-derivatives-4},
-compute the first, second, and third derivatives of the given functions.}
+\begin{hwinstructions}
+In problems \ref{hw:first-three-derivatives-1}-\ref{hw:first-three-derivatives-4},
+compute the first, second, and third derivatives of the given functions.
+\end{hwinstructions}
+
 
 <% hw('first-three-derivatives-1') %>
 <% hw('first-three-derivatives-2') %>
@@ -533,12 +538,15 @@ compute the first, second, and third derivatives of the given functions.}
   <% hw_block(2) %>
 
 % Robbin p. 71, #3:
-\emph{In problems \ref{hw:tenth-derivative-1}-\ref{hw:tenth-derivative-6},
+\begin{hwinstructions}
+In problems \ref{hw:tenth-derivative-1}-\ref{hw:tenth-derivative-6},
 find the derivatives of $10^\text{th}$ order of the given
 function. (The problems have been chosen so that after doing the
 first few derivatives in each case, you should start seeing a pattern
 that will let you guess the $10^{\text{th}}$ derivative without
-actually computing $10$ derivatives.)}
+actually computing $10$ derivatives.)
+\end{hwinstructions}
+
 
 <% hw('tenth-derivative-1') %>
 <% hw('tenth-derivative-2') %>

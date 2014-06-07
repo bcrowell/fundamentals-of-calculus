@@ -3,6 +3,8 @@
   require "./scripts/eruby_util.rb"
 %>
 
+\addtocontents{toc}{\protect\newpage} % avoid awkward page break in toc
+
 <%
   chapter(
     '06',

@@ -1154,10 +1154,13 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 
 \begin{hwsection}
 
-\emph{In example \ref{eg:x-squared-with-limits} on p.~\pageref{eg:x-squared-with-limits} we found
+\begin{hwinstructions}
+In example \ref{eg:x-squared-with-limits} on p.~\pageref{eg:x-squared-with-limits} we found
 the derivative of the function $y(x)=x^2$ by directly applying the definition of the derivative     
 as a limit. In problems \ref{hw:apply-deriv-limit-def-x3}-\ref{hw:apply-deriv-limit-def-sqrt}, apply
-the same brute-force technique to the given functions.}
+the same brute-force technique to the given functions.
+\end{hwinstructions}
+
 
 <% hw('apply-deriv-limit-def-x3') %>
 <% hw('apply-deriv-limit-def-inv-x') %>
@@ -1184,10 +1187,12 @@ the same brute-force technique to the given functions.}
 
   <% hw_block(2) %>
 
-\emph{In problems \ref{hw:product-rule-two-methods}-\ref{hw:product-rule-two-methods-3},
+\begin{hwinstructions}
+In problems \ref{hw:product-rule-two-methods}-\ref{hw:product-rule-two-methods-3},
 compute each derivative by two different methods: (a) by multiplying out the given expression
 and then differentiating, and (b) by using the product rule. Make sure that you get the same
-answer by both methods.}
+answer by both methods.
+\end{hwinstructions}
 
 <% hw('product-rule-two-methods') %>
 <% hw('product-rule-two-methods-2') %>
@@ -1211,8 +1216,10 @@ answer by both methods.}
 
   <% hw_block(2) %>
 
-\emph{In problems \ref{hw:derivative-practice-1}-\ref{hw:derivative-practice-7}, differentiate the
-given function, and try to simplify your answer as much as possible.}
+\begin{hwinstructions}
+In problems \ref{hw:derivative-practice-1}-\ref{hw:derivative-practice-7}, differentiate the
+given function, and try to simplify your answer as much as possible.
+\end{hwinstructions}
 
 % Robbin p. 69, #4-10
 
@@ -1254,9 +1261,12 @@ given function, and try to simplify your answer as much as possible.}
 
   <% hw_block(2) %>
 
-\emph{Problems \ref{hw:differentiability-1}-\ref{hw:differentiability-3} can be done
+\begin{hwinstructions}
+Problems \ref{hw:differentiability-1}-\ref{hw:differentiability-3} can be done
 using methods \ref{differentiability-by-zooming}-\ref{differentiability-by-formula} 
-on p.~\pageref{differentiability-by-zooming}.}
+on p.~\pageref{differentiability-by-zooming}.
+\end{hwinstructions}
+
 
 <% hw('differentiability-1',{'solution'=>true}) %>
 <% hw('differentiability-2',{'solution'=>true}) %>

@@ -736,7 +736,7 @@ The derivatives are as follows:
 $(\sinh x)'=\cosh x$      &   $(\sinh^{-1} x)'=(x^2+1)^{-1/2}$ \\
 $(\cosh x)'=\sinh x$      &   $(\cosh^{-1} x)'=(x^2-1)^{-1/2}$ \\
 $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$ 
-\end{tabular}
+\end{tabular}\label{end-of-hyperbolic-functions}
 <% end_sec('hyperbolic-functions') %>
 
 \begin{hwsection}[Review problems]
@@ -763,7 +763,10 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 
 <% hw('find-ranges-of-functions') %> % Robbin, p. 20, # 18
 
-\emph{In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given functions.}
+\begin{hwinstructions}
+In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given functions.
+\end{hwinstructions}
+
 
 <% hw('sin-cos-tan') %>
 <% hw('ln-cos-ex') %>

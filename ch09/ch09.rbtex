@@ -3,6 +3,8 @@
   require "./scripts/eruby_util.rb"
 %>
 
+\addtocontents{toc}{\protect\newpage} % avoid awkward page break in toc
+
 <%
   chapter(
     '09',
@@ -335,3 +337,132 @@ The rectangle is exactly half filled by the area under the graph. Since the
 rectangle has area $2\pi$, the integral equals $\pi$.
 \end{eg}
   <% end_sec('integral-cheats') %>
+
+<% begin_sec("Some forms involving exponentials, rational functions, and roots",4,'misc-integrals') %>
+Here are some forms whose antiderivatives may not be obvious at first sight.
+<% begin_sec("Exponentials with the base not $e$",nil,'integrate-unnatural-exp') %>
+
+Since the derivative of $e^x$ with respect to $x$ is just $e^x$ again, we already know
+how to integrate $e^x$. What about exponentials with other bases?
+These can be converted into base $e$ using the identity $a^b=e^{b\ln a}$, then
+integrated using a change of variable.
+
+\begin{eg}{}
+\egquestion Evaluate $\int 3^x\:\der x$.
+
+\eganswer 
+\begin{align*}
+  \int 3^x\:\der x &= \int e^{x\ln 3}\:\der x \qquad \text{[using $a^b=e^{b\ln a}$]} \\
+                   &= \frac{1}{\ln 3} \int e^u\:\der u \qquad \text{[substituting $u=x\ln 3$]} \\
+                   &= \frac{e^u}{\ln 3} \\
+                   &= \frac{e^{x\ln 3}}{\ln 3} \\
+                   &= \frac{3^x}{\ln 3} \qquad \text{[$a^b=e^{b\ln a}$ again]} 
+\end{align*}
+\end{eg}
+<% end_sec('integrate-unnatural-exp') %>
+<% begin_sec("Some forms involving rational functions and roots",nil,'integrate-rational-and-roots') %>
+In sections \ref{sec:transcendental-summary}-\ref{sec:hyperbolic-functions}, 
+pp.~\pageref{sec:transcendental-summary}-\pageref{end-of-hyperbolic-functions}, we summarized
+the derivatives of various transcendental functions. Each of these potentially gives some
+way to integrate something, by applying the fundamental theorem.
+Some of these derivatives are not themselves
+transcendental functions, which makes it not at all obvious when looking at them that they should be
+attacked in this way:
+
+\noindent\begin{tabular}{ll}
+  \emph{derivative} & \emph{integral} \\
+  $(\tan^{-1} x)'=(1+x^2)^{-1}$    & $\int (1+x^2)^{-1}\:\der x = \tan^{-1} x+c$ \\
+  $(\tanh^{-1} x)'=(1-x^2)^{-1}$   & $\int (1-x^2)^{-1}\:\der x = \tanh^{-1} x+c$ \\
+  $(\sin^{-1} x)'=(1-x^2)^{-1/2}$  & $\int (1-x^2)^{-1/2}\:\der x = \sin^{-1} x+c$ \\
+  $(\sinh^{-1} x)'=(x^2+1)^{-1/2}$ & $\int (x^2+1)^{-1/2}\:\der x = \sinh^{-1} x+c$ \\
+  $(\cosh^{-1} x)'=(x^2-1)^{-1/2}$ & $\int (x^2-1)^{-1/2}\:\der x = \cosh^{-1} x+c$ 
+\end{tabular}
+<% end_sec('integrate-rational-and-roots') %>
+<% end_sec('misc-integrals') %>
+
+\begin{hwsection}
+
+\begin{hwinstructions}
+In problems \ref{hw:easy-integral-techniques-01}-\ref{hw:easy-integral-techniques-12},
+evaluate the indefinite integrals. Check your answer by differentiating it, and
+also check it online. All letters other than the variable of integration are constants.
+These  are in groups of three similar problems, with the intention being that a given
+student would do one from each group.
+\end{hwinstructions}
+
+<% hw('easy-integral-techniques-01') %>
+<% hw('easy-integral-techniques-02') %>
+<% hw('easy-integral-techniques-03') %>
+
+<% hw('easy-integral-techniques-04') %>
+<% hw('easy-integral-techniques-05') %>
+<% hw('easy-integral-techniques-06') %>
+
+<% hw('easy-integral-techniques-07') %>
+<% hw('easy-integral-techniques-08') %>
+<% hw('easy-integral-techniques-09') %>
+
+<% hw('easy-integral-techniques-10') %>
+<% hw('easy-integral-techniques-11') %>
+<% hw('easy-integral-techniques-12') %>
+
+\pagebreak
+
+<% hw_block(2) %>
+
+\begin{hwinstructions}
+In  \ref{hw:indefinite-integral-substitutions-01}-\ref{hw:indefinite-integral-substitutions-06},
+use a substitution to evaluate the indefinite integrals.
+\end{hwinstructions}
+
+<% hw('indefinite-integral-substitutions-01') %>
+<% hw('indefinite-integral-substitutions-02') %>
+<% hw('indefinite-integral-substitutions-03') %>
+<% hw('indefinite-integral-substitutions-04') %>
+<% hw('indefinite-integral-substitutions-05') %>
+<% hw('indefinite-integral-substitutions-06') %>
+
+<% hw_block(2) %>
+
+\begin{hwinstructions}
+In  \ref{hw:definite-integral-substitutions-01}-\ref{hw:definite-integral-substitutions-12},
+use a substitution to evaluate the definite integrals.
+\end{hwinstructions}
+
+<% hw('definite-integral-substitutions-01') %>
+<% hw('definite-integral-substitutions-02') %>
+<% hw('definite-integral-substitutions-03') %>
+<% hw('definite-integral-substitutions-04') %>
+<% hw('definite-integral-substitutions-05') %>
+<% hw('definite-integral-substitutions-06') %>
+<% hw('definite-integral-substitutions-07') %>
+<% hw('definite-integral-substitutions-08') %>
+<% hw('definite-integral-substitutions-09') %>
+<% hw('definite-integral-substitutions-10') %>
+<% hw('definite-integral-substitutions-11') %>
+<% hw('definite-integral-substitutions-12') %>
+
+\pagebreak
+
+<% hw_block(2) %>
+
+\begin{hwinstructions}
+In problems \ref{hw:impossible-or-not-1}-\ref{hw:impossible-or-not-2}, two indefinite integrals are given
+that involve functions which
+look similar to one of the following:
+\begin{equation*}
+  e^{-x^2} \qquad x^x \qquad \frac{\sin x}{x} \qquad e^x \tan x
+\end{equation*}
+As discussed in section \ref{sec:impossible-integrals}, these can't
+be integrated in closed form.
+In each pair, one can be integrated by doing a substitution, while
+the other can be made into one of the above forms by a substitution, proving that it's impossible
+to integrate. Determine which is
+which, integrate the one that can be done, and check your answer to that one online.
+\end{hwinstructions}
+
+<% hw('impossible-or-not-1') %>
+<% hw('impossible-or-not-2') %>
+
+
+\end{hwsection}

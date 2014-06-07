@@ -1247,10 +1247,13 @@ differentiate:\index{fundamental theorem of calculus!derivative of an integral}
 
 \begin{hwsection}
 
-\emph{Problems \ref{hw:barometric-altimeter}-\ref{hw:electric-meter} don't require you to
+\begin{hwinstructions}
+Problems \ref{hw:barometric-altimeter}-\ref{hw:electric-meter} don't require you to
 calculate anything. The point is to practice setting
 up and interpreting relationships between pairs of variables that are related as integral
-and derivative.}
+and derivative.
+\end{hwinstructions}
+
 
 <% hw('barometric-altimeter',{'solution'=>true}) %>
 <% hw('present-value',{'solution'=>true}) %>
@@ -1271,7 +1274,8 @@ and derivative.}
 %%graph%% hw-riemann-cos2-e-x-raw func=(cos(exp(x)))**2 format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
 %%graph%% hw-riemann-x-to-x-raw func=(x+0.000001)**(x+0.000001) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
 
-\emph{In each of problems \ref{hw:riemann-sinc}-\ref{hw:riemann-x-to-x},
+\begin{hwinstructions}
+In each of problems \ref{hw:riemann-sinc}-\ref{hw:riemann-x-to-x},
 the goal is to approximate the area between the graph
 and the $x$ axis between $x=0$ and $x=1$, i.e., the value of
 $  \int_0^1 f(x)\: \der x $
@@ -1284,7 +1288,7 @@ to find an antiderivative, hence the need for an approximation. Divide the inter
 and find the resulting Riemann sum. Maintain four decimal places of
 precision throughout the calculation so that you are left with three
 decimal places at the end that are not likely to be way off simply because of rounding.
-}
+\end{hwinstructions}
 
 <% hw('riemann-sinc') %>
 <% hw('riemann-etan') %>
@@ -1312,9 +1316,11 @@ decimal places at the end that are not likely to be way off simply because of ro
 \pagebreak
 
 % robbin
-\emph{Evaluate the antiderivatives in problems \ref{hw:antiderivative-01}-\ref{hw:antiderivative-12}.
+\begin{hwinstructions}
+Evaluate the antiderivatives in problems \ref{hw:antiderivative-01}-\ref{hw:antiderivative-12}.
   If in doubt, guess and check as in problem \ref{hw:find-incorrect-integral}.
-  With experience it gets easier to guess correctly.}
+  With experience it gets easier to guess correctly.
+\end{hwinstructions}
 
 <% hw('antiderivative-01') %>
 <% hw('antiderivative-02') %>
@@ -1331,9 +1337,12 @@ decimal places at the end that are not likely to be way off simply because of ro
 
 <% hw_block(2) %>
 
-\emph{Evaluate the antiderivatives in problems
+\begin{hwinstructions}
+Evaluate the antiderivatives in problems
   \ref{hw:antiderivative-symbolic-const-01}-\ref{hw:antiderivative-symbolic-const-03}.
-  All letters other than the variable of integration are constants.}
+  All letters other than the variable of integration are constants.
+\end{hwinstructions}
+
 
 <% hw('antiderivative-symbolic-const-01') %>
 <% hw('antiderivative-symbolic-const-02') %>
@@ -1343,11 +1352,14 @@ decimal places at the end that are not likely to be way off simply because of ro
 
 <% hw_block(2) %>
 
-\emph{In problems
+\begin{hwinstructions}
+In problems
   \ref{hw:antiderivative-change-form-01}-\ref{hw:antiderivative-change-form-04},
   find the antiderivatives. All letters other than the variable of integration are constants.
   These problems can be done by first rewriting the given integrand in a
-  form that you know how to integrate.}
+  form that you know how to integrate.
+\end{hwinstructions}
+
 
 <% hw('antiderivative-change-form-01',{'solution'=>true}) %>
 <% hw('antiderivative-change-form-02') %>
@@ -1356,7 +1368,8 @@ decimal places at the end that are not likely to be way off simply because of ro
 
 <% hw_block(2) %>
 
-\emph{These instructions are for problems \ref{hw:riemann-and-exact-cos}-\ref{hw:riemann-and-exact-sqrt}.
+\begin{hwinstructions}
+These instructions are for problems \ref{hw:riemann-and-exact-cos}-\ref{hw:riemann-and-exact-sqrt}.
 Each function $f$ was chosen such that for $x\in[0,1]$, we have $y\in[0,1]$ as well, so that
 the graph fits into a $1\times 1$ square, as shown in the figure.\\
 (a) Make an eyeball estimate of the area under the curve.\\
@@ -1370,7 +1383,8 @@ also check it online.\\
 (c) Find the antiderivative $\int f(x)\:\der x$, and check it online.\\
 (d) Evaluate the definite integral, $\int_0^1 f(x)\:\der x$, check it against the approximations
 in parts a and b, and check it online.
-}
+\end{hwinstructions}
+
 
 %%graph%% hw-riemann-and-exact-cos-raw func=cos(x) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
 %%graph%% hw-riemann-and-exact-sin-raw func=sin(x) format=svg xlo=0 xhi=1 ylo=0 yhi=1 with=lines
@@ -1398,13 +1412,16 @@ in parts a and b, and check it online.
 
 <% hw_block(2) %>
 
-\emph{Problems \ref{hw:longbow}-\ref{hw:compression-ratio} all involve
+\begin{hwinstructions}
+Problems \ref{hw:longbow}-\ref{hw:compression-ratio} all involve
 calculating the work done by a force, as described in example
 \ref{eg:tractor-doing-work}, p.~\pageref{eg:tractor-doing-work}.
 These problems also require you to check the units of your result. To do that, you will need to know
 the following. The SI unit of force is the newton (N). Work has units of
 $(\text{force})\times(\text{distance})$, or $\nunit\unitdot\munit$
-(newton-meters).}
+(newton-meters).
+\end{hwinstructions}
+
 
 <% marg(100) %>
 <%
@@ -1453,9 +1470,13 @@ $(\text{force})\times(\text{distance})$, or $\nunit\unitdot\munit$
 
 <% hw_block(2) %>
 
-\emph{In problems \ref{hw:definite-integral-practice-01}-\ref{hw:definite-integral-practice-12},
-compute the definite integrals. These  are in groups of three similar problems, with the intention that a given
-student would do one from each group.}
+\begin{hwinstructions}
+In problems \ref{hw:definite-integral-practice-01}-\ref{hw:definite-integral-practice-12},
+compute the definite integrals. These  are in groups of three similar problems, with 
+the intention being that a given
+student would do one from each group.
+\end{hwinstructions}
+
 
 <% hw('definite-integral-practice-01') %>
 <% hw('definite-integral-practice-02') %>

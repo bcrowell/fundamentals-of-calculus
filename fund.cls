@@ -89,6 +89,11 @@
           \par  \setlength{\leftskip}{\saveleftskip} \par%
         }
 \newcommand{\myqed}{$\square$}
+\newenvironment{hwinstructions}%      
+        {%
+          \itshape
+        }{%
+        }
 %============================= code listings ==================================================
 \newcounter{listingline}
 \setcounter{listingline}{1}

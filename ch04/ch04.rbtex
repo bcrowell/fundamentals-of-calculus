@@ -1394,8 +1394,10 @@ we find that there is some point where $f'(x)=\ell'(x)$, which is the desired re
 
   <% hw_block(2) %>
 
-\emph{Use the $\epsilon$-$\delta$ definition to prove the limits
-in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.}
+\begin{hwinstructions}
+Use the $\epsilon$-$\delta$ definition to prove the limits
+in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
+\end{hwinstructions}
 % Robbin, p. 35, #4-14
 
 <% hw('limit-prove-eps-delta-01') %>
