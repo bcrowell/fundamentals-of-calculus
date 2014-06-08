@@ -142,7 +142,8 @@ then
   \lim_{x\rightarrow a} \frac{u}{v} &= \frac{u'(a)}{v'(a)} \qquad .
 \end{align*}
 \end{theorem}
-\noindent We will generalize L'H\^{o}pital's rule later.
+\noindent We will generalize L'H\^{o}pital's rule in section \ref{sec:lhospital-fancy},
+p.~\pageref{sec:lhospital-fancy}.
 
 \begin{eg}{}
 \egquestion Evaluate
@@ -172,7 +173,7 @@ get
 
 <% end_sec('lhospital-simple') %>
 
-<% begin_sec("Fancier versions of L'H\\^{o}pital's rule",nil,'lhospital-fancy') %>
+<% begin_sec("Fancier versions of L'H\\^{o}pital's rule",4,'lhospital-fancy') %>
 Mathematical theorems are sometimes like cars. I own a Honda Fit that is about as bare-bones as you can get
 these days, but persuading a dealer to sell me that car was like pulling teeth. The salesman was absolutely
 certain that any sane customer would want to pay an extra \$1,800 for such crucial amenities as
@@ -214,7 +215,8 @@ then
 require $v'(a)\ne0$, and the right-hand side has a limit. In cases where $v'(a)\ne0$,
 the original form would have been good enough, but the general form also works, since
 the limit on the right-hand side can be evaluated simply by
-plugging in. We will prove this more general form of the rule later in the book.
+plugging in. We will prove this more general form of the rule in section
+\ref{subsec:lhospital-proofs}, p.~\pageref{subsec:lhospital-proofs}.
 
 <% end_sec('lhospital-multiple') %>
 <% begin_sec("The indeterminate form $\\infty/\\infty$",nil,'lhospital-infty-over-infty') %>\index{L'H\^{o}pital's rule!$\infty/\infty$}
@@ -247,7 +249,6 @@ as $(x+1)/(x+2)$.
 \end{eg}
 <% end_sec('lhospital-infty-over-infty') %>
 <% begin_sec("Limits at infinity",nil,'lhospital-at-infty') %>\index{infinite and infinitesimal quantities!limits at infinity!l'H\^{o}pital's rule}
-<% end_sec('lhospital-at-infty') %>
 It is straightforward to prove a variant of l'H\^{o}pital's rule that allows us to
 do limits at infinity. We use a change of variable to change a limit like $\lim_{x\rightarrow\infty} u(x)/v(x)$
 to a new limit stated in terms of a variable $X=1/x$.
@@ -267,7 +268,12 @@ Differentiation of the top and bottom produces
   \lim_{x\rightarrow \infty} \frac{2x+7}{x+8686} = \frac{2}{1} = 1 \qquad .
 \end{equation*}
 \end{eg}
-<% begin_sec("Proofs",nil,'lhospital-proofs') %>
+<% end_sec('lhospital-at-infty') %>
+<% begin_sec("Proofs",4,'lhospital-proofs') %>
+The simplest form of l'H\^{o}pital's rule was proved in section \ref{sec:lhospital-simple},
+p.~\pageref{sec:lhospital-simple}.
+In this section we prove the generalizations of l'H\^{o}pital's rule
+claimed in sections \ref{subsec:lhospital-multiple}-\ref{subsec:lhospital-at-infty}.
 <% begin_sec("Change of variable",nil,'lhospital-change-of-variable') %>
 As described briefly in sections \ref{subsec:lhospital-infty-over-infty} and
 \ref{subsec:lhospital-at-infty}, two of the added features of the generalized

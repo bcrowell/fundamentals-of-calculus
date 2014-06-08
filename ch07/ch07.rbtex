@@ -37,7 +37,8 @@ This model doesn't always relate well to reality.
     'slide-rule',
     %q{This archaic computing device is called a slide rule. Like the teacup in figure \figref{rotate-cusp},
        it's an analog computer, and it doesn't have inputs or outputs. Let $A$ be a number on the scale marked
-       ``A,'' and $B$ the number below it on the ``B'' scale. Then $A=4B$.}
+       ``A,'' and $B$ the number below it on the ``B'' scale. Then with the central sliding stick
+       in the position shown in the photo, $A=4B$.}
   )  
 %>
 <% end_marg %>
