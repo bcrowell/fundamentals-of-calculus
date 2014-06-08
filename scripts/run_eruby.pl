@@ -76,7 +76,7 @@ if ($web==1 && !$no_write && !$wiki) {
 }
 
 mkdir "temp" unless -d "temp";
-foreach (<ch*/*.rbtex>) {
+foreach (<*/*.rbtex>) {
   my $file = $_;
   $file =~ m/ch(\d+)/;
   my $ch = $1;

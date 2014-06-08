@@ -1,5 +1,11 @@
 %%chapter%% 99
-\chapter{Answers and solutions}
+%\chapter{Answers and solutions}
+
+
+<%
+  require "./scripts/eruby_util.rb"
+  print_general_answer_section_header("Answers and solutions")
+%>
 
 \hwanssection{Solutions to homework problems}\label{hwansappendix}
 

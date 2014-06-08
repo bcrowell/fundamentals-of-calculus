@@ -8,7 +8,7 @@
 
 \begin{document}
 
-%\include{cover/cover}
+\include{cover/cover}
 
 \cleardoublepage
 
@@ -53,7 +53,7 @@
 \mainmatter
 %-- I want the whole book numbered sequentially, arabic:
   \pagenumbering{arabic} 
-  \addtocounter{page}{8} 
+  \addtocounter{page}{10} 
 \parafmt
 \myeqnspacing % Do this early and often, since it gets reset by \normalsize
 %========================= chapters =========================
@@ -69,6 +69,7 @@
 	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
 	\renewcommand{\chapdir}{ch10}\include{ch10/ch10temp}
 
+
 %=================================================================================================================================
 
 \backmatter
@@ -78,40 +79,14 @@
     {\markboth{\textsf{\thechapter\hspace{\myfooterspace}#1}}{}}
 \blankchaptermarks
 
-%=================================================================================================================================
-
 \vfill\pagebreak
 
+\renewcommand{\chapdir}{ch99}\include{ch99/hwanstemp}
+
+\renewcommand{\chapdir}{end}
+\onecolumn\include{end/photocreditstemp}
 
 %=================================================================================================================================
-
-
-\noindent\formatlikesection{Photo Credits}\\
-\cred{leibniz-portrait}{Leibniz}{Contemporary, public domain} % http://commons.wikimedia.org/wiki/File:Gottfried_Wilhelm_Leibniz_c1700.jpg
-\cred{basketball}{Baseketball photo}{Wikimedia Commons user Reisio, public domain}
-\cred{dq-lead-fall}{Rock climber}{Line art by B.~Crowell, CC-BY-SA. Based on a photo by Jason McConnell-Leech, CC-BY-SA} % http://en.wikipedia.org/wiki/File:Lead_climb_indoor001.jpg
-\cred{dq-lead-fall}{Graph}{Redrawn by B.~Crowell from a student research paper by Casey Johnson and Charlie Klonowski, Cal Poly Pomona}
-\cred{hw-review-galileo-p-vs-t}{Graph of Galileo data}{Seiff \emph{et al.}, J.~Geophys.~Research 103 (1998) 22,857.}%http://onlinelibrary.wiley.com/doi/10.1029/98JE01766/abstract
-\cred{gear-ratio}{Gears}{Jared C. Benedict, CC-BY-SA}%http://en.wikipedia.org/wiki/File:Gears_large.jpg
-\cred{russian-dolls}{Russian dolls}{Wikimedia Commons users Fanghong and Gnomz007, CC-BY-SA}%http://commons.wikimedia.org/wiki/File:Russian-Matroshka_no_bg.jpg
-\cred{caustic}{Cusp (caustic) in a teacup}{Wikipedia user Paul Venter, CC-BY-SA}% http://en.wikipedia.org/wiki/File:Caustic00.jpg
-\cred{beer}{Beer photo}{Wikipedia user Fgeerts, public domain}%http://commons.wikimedia.org/wiki/File:Timmermans.jpg
-\cred{newton-portrait}{Isaac Newton}{Godfrey Kneller, 1702}
-\cred{hw-mercator}{Mercator projection}{Wikimedia Commons user Strebe, CC-BY-SA}%http://en.wikipedia.org/wiki/File:Mercator_projection_SW.jpg
-\cred{hw-gompertz}{Mortality graph}{Wikipedia user Uscitizenjason, CC-BY-SA}% http://en.wikipedia.org/wiki/File:USGompertzCurve.svg
-\cred{rotate-cusp}{Cusp (caustic) in a teacup}{Wikipedia user Paul Venter, CC-BY-SA}% http://en.wikipedia.org/wiki/File:Caustic00.jpg
-\cred{slide-rule}{Slide rule}{B.~Crowell, CC-BY-SA}% http://en.wikipedia.org/wiki/File:Pocket_slide_rule.jpg
-\cred{cams}{Photo of camshaft}{Wikipedia user Stahlkocher, CC-BY-SA}% http://en.wikipedia.org/wiki/File:Nockenwelle_2005.jpg
-\cred{hw-astroid}{Astroid}{Wikipedia user Joelholdsworth, CC-BY-SA}% http://en.wikipedia.org/wiki/File:Astroid.svg
-\cred{hw-sergels-torg}{Sergel's Square fountain}{German Wikipedia user Stern, CC-BY-SA}% http://en.wikipedia.org/wiki/File:Sergels_torg_2006-07-15.jpg
-\cred{gauss}{Gauss}{C.A. Jensen (1792-1870)}
-\cred{riemann-portrait}{Riemann}{Contemporary, public domain}% http://en.wikipedia.org/wiki/File:Georg_Friedrich_Bernhard_Riemann.jpeg
-\cred{tree-rings}{Tree rings}{Wikimedia commons user Arnoldius, CC-BY-SA}% http://commons.wikimedia.org/wiki/File:Tree_rings.jpg
-\cred{erf}{Error function}{Based on a drawing by J.~Kemp and P.~Strandmark, Wikipedia.} 
-\cred{jupiter-comet}{Jupiter}{Hubble Space Telescope, NASA, not copyrighted}
-
-\renewcommand{\chapdir}{ch99}\include{ch99/hwanstemp}%
-
 
 \printindex
 

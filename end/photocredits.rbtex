@@ -1,0 +1,39 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+\thispagestyle{plain}<% print_photo_credits_section_header("Photo credits") %>
+
+\footnotesize
+
+\begin{sloppypar}
+\noindent
+\textbf{Cover} Megyeri Bridge, (c) 2008, Tam\'as M\'esz\"oly, CC-BY-SA \\ % http://commons.wikimedia.org/wiki/File:Megyeri_h%C3%ADd.jpg 
+
+<% photo_credit("leibniz-portrait","Leibniz","Contemporary, public domain") %>% http://commons.wikimedia.org/wiki/File:Gottfried_Wilhelm_Leibniz_c1700.jpg
+<% photo_credit("basketball","Baseketball photo","Wikimedia Commons user Reisio, public domain") %> 
+<% photo_credit("dq-lead-fall","Rock climber","Line art by B.~Crowell, CC-BY-SA. Based on a photo by Jason McConnell-Leech, CC-BY-SA") %>  % http://en.wikipedia.org/wiki/File:Lead_climb_indoor001.jpg
+<% photo_credit("dq-lead-fall","Graph","Redrawn by B.~Crowell from a student research paper by Casey Johnson and Charlie Klonowski, Cal Poly Pomona") %> 
+<% photo_credit("hw-review-galileo-p-vs-t","Graph of Galileo data","Seiff \\emph{et al.}, J.~Geophys.~Research 103 (1998) 22,857.") %> %http://onlinelibrary.wiley.com/doi/10.1029/98JE01766/abstract
+<% photo_credit("gear-ratio","Gears","Jared C. Benedict, CC-BY-SA") %> %http://en.wikipedia.org/wiki/File:Gears_large.jpg
+<% photo_credit("russian-dolls","Russian dolls","Wikimedia Commons users Fanghong and Gnomz007, CC-BY-SA") %> %http://commons.wikimedia.org/wiki/File:Russian-Matroshka_no_bg.jpg
+<% photo_credit("caustic","Cusp (caustic) in a teacup","Wikipedia user Paul Venter, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:Caustic00.jpg
+<% photo_credit("beer","Beer photo","Wikipedia user Fgeerts, public domain") %> %http://commons.wikimedia.org/wiki/File:Timmermans.jpg
+<% photo_credit("newton-portrait","Isaac Newton","Godfrey Kneller, 1702") %> 
+<% photo_credit("hw-mercator","Mercator projection","Wikimedia Commons user Strebe, CC-BY-SA") %> %http://en.wikipedia.org/wiki/File:Mercator_projection_SW.jpg
+<% photo_credit("hw-gompertz","Mortality graph","Wikipedia user Uscitizenjason, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:USGompertzCurve.svg
+<% photo_credit("rotate-cusp","Cusp (caustic) in a teacup","Wikipedia user Paul Venter, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:Caustic00.jpg
+<% photo_credit("slide-rule","Slide rule","B.~Crowell, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:Pocket_slide_rule.jpg
+<% photo_credit("cams","Photo of camshaft","Wikipedia user Stahlkocher, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:Nockenwelle_2005.jpg
+<% photo_credit("hw-astroid","Astroid","Wikipedia user Joelholdsworth, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:Astroid.svg
+<% photo_credit("hw-sergels-torg","Sergel's Square fountain","German Wikipedia user Stern, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:Sergels_torg_2006-07-15.jpg
+<% photo_credit("gauss","Gauss","C.A. Jensen (1792-1870)") %> 
+<% photo_credit("riemann-portrait","Riemann","Contemporary, public domain") %> % http://en.wikipedia.org/wiki/File:Georg_Friedrich_Bernhard_Riemann.jpeg
+<% photo_credit("tree-rings","Tree rings","Wikimedia commons user Arnoldius, CC-BY-SA") %> % http://commons.wikimedia.org/wiki/File:Tree_rings.jpg
+<% photo_credit("erf","Error function","Based on a drawing by J.~Kemp and P.~Strandmark, Wikipedia.") %>  
+<% photo_credit("hw-jupiter-comet","Jupiter","Hubble Space Telescope, NASA, not copyrighted") %> 
+
+<% print_photo_credits() %>
+
+\end{sloppypar}\normalsize
+\thispagestyle{plain}

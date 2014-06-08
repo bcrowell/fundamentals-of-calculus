@@ -452,3 +452,4 @@ kinetic energy, rather than frictional heating.
 <% hw('cancer-lottery') %>
 
 \end{hwsection}
+\addtocontents{toc}{\protect\vspace{10mm}} % separate end-matter visually from ch 10
