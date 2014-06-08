@@ -453,9 +453,9 @@ look similar to one of the following:
 \begin{equation*}
   e^{-x^2} \qquad x^x \qquad \frac{\sin x}{x} \qquad e^x \tan x
 \end{equation*}
-As discussed in section \ref{sec:impossible-integrals}, these can't
+As discussed in section \ref{sec:impossible-integrals}, the four functions given above can't
 be integrated in closed form.
-In each pair, one can be integrated by doing a substitution, while
+In each pair below, one can be integrated, while
 the other can be made into one of the above forms by a substitution, proving that it's impossible
 to integrate. Determine which is
 which, integrate the one that can be done, and check your answer to that one online.

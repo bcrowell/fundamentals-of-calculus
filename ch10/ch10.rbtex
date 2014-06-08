@@ -372,13 +372,18 @@ Its derivative is the variable below.\index{mass}\index{energy}\index{momentum}\
      &        &          & angular & electric \\
 mass & energy & momentum & momentum & charge \\
 $m$  & $E$    & $p$      & $L$      & $q$ \\
-kg   & joule, J & $\kgunit\unitdot\munit/\sunit$ & $\nunit\unitdot\munit\unitdot\sunit$ & coulomb, C \\
+kg   & joule, J & $\nunit\unitdot\sunit$ & $\nunit\unitdot\munit\unitdot\sunit$ & coulomb, C \\
 \hline
      & power  & force    & torque   & current \\
      & $P$    & $F$      & $\tau$   & $I$ \\
 \kgunit/\sunit & watt, W & newton, N & $\nunit\unitdot\munit$ & ampere, A\\
 \hline
 \end{tabular}
+
+\noindent Since the SI unit of time is the second ($\sunit$), we have the following implied relationships between
+some of the units: W=J/s and A=C/s.
+
+\pagebreak
 
 \begin{eg}{Energy of an accelerating car}
 \egquestion A car of mass $m$ starts moving from rest with a constant acceleration $a$. If the speed
@@ -408,3 +413,42 @@ kinetic energy, rather than frictional heating.
 \end{eg}
 
 <% end_sec('physics') %>
+
+\begin{hwsection}
+
+<% hw('sd-of-uniform-variable') %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-spin-the-laser',
+    %q{
+      Problem \ref{hw:spin-the-laser}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% hw('spin-the-laser') %>
+<% hw('difference-of-uniform-variables') %>
+
+<% hw_block(2) %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-blimp-momentum',
+    %q{
+      Problem \ref{hw:blimp-momentum}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% hw('blimp-momentum') %>
+
+<% hw_block(2) %>
+
+<% hw('cancer-lottery') %>
+
+\end{hwsection}
