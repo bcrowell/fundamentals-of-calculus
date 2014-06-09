@@ -1203,24 +1203,7 @@ graph, and what real-world implications would this have?
 <% hw('rancher-rick',{'solution'=>true}) %>
 <% hw('prove-n-extrema',{'solution'=>true}) %>
 <% hw('overtime') %>
-<% hw('cactus') %>
 <% hw('immerse-sphere') %>
-
-\pagebreak
-
-<% hw('line-of-stability') %>
-<%
-  fig(
-    'hw-line-of-stability',
-    %q{Problem \ref{hw:line-of-stability}.},
-    {
-      'width'=>'fullpage'
-    }
-  )
-%>
-
-
-
 
   <% hw_block(1) %>
 
@@ -1232,8 +1215,6 @@ graph, and what real-world implications would this have?
 <% hw('chain-rule-triangle') %>
 
   <% hw_block(1) %>
-
-\pagebreak
 
 <% hw('tree') %>
 <% hw('tank') %>
@@ -1251,12 +1232,6 @@ graph, and what real-world implications would this have?
 <% hw('error-propagation-powers',{'solution'=>true}) %>
 <% hw('error-propagation-rocket-height',{'solution'=>true}) %>
 <% hw('error-propagation-paper-squares') %>
-
-  <% hw_block(1) %>
-
-<% hw('tangent-to-parabola-through-point') %>
-<% hw('tangent-to-x3-through-point') %>
-<% hw('tangent-x2-and-x4') %>
 
   <% hw_block(1) %>
 

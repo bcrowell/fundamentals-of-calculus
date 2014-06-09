@@ -415,12 +415,17 @@ In  \ref{hw:indefinite-integral-substitutions-01}-\ref{hw:indefinite-integral-su
 use a substitution to evaluate the indefinite integrals.
 \end{hwinstructions}
 
+\begin{multicols}{2}
+
 <% hw('indefinite-integral-substitutions-01') %>
 <% hw('indefinite-integral-substitutions-02') %>
 <% hw('indefinite-integral-substitutions-03') %>
 <% hw('indefinite-integral-substitutions-04') %>
 <% hw('indefinite-integral-substitutions-05') %>
 <% hw('indefinite-integral-substitutions-06') %>
+<% hw('indefinite-integral-substitutions-07') %>
+
+\end{multicols}
 
 <% hw_block(2) %>
 
@@ -428,6 +433,8 @@ use a substitution to evaluate the indefinite integrals.
 In  \ref{hw:definite-integral-substitutions-01}-\ref{hw:definite-integral-substitutions-12},
 use a substitution to evaluate the definite integrals.
 \end{hwinstructions}
+
+\begin{multicols}{2}
 
 <% hw('definite-integral-substitutions-01') %>
 <% hw('definite-integral-substitutions-02') %>
@@ -442,7 +449,7 @@ use a substitution to evaluate the definite integrals.
 <% hw('definite-integral-substitutions-11') %>
 <% hw('definite-integral-substitutions-12') %>
 
-\pagebreak
+\end{multicols}
 
 <% hw_block(2) %>
 

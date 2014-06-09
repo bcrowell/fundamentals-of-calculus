@@ -1237,6 +1237,20 @@ given function, and try to simplify your answer as much as possible.
 \pagebreak
 <% hw('doppler') %>
 
+  <% hw_block(1) %>
+
+<% hw('cactus') %>
+<% hw('line-of-stability') %>
+<%
+  fig(
+    'hw-line-of-stability',
+    %q{Problem \ref{hw:line-of-stability}.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
 <% hw('resonance',{'solution'=>true}) %>
 
 %%graph%% resonance func=1/sqrt(3*(x**2-1)**2+x**2) xlo=0 xhi=3 ylo=0 yhi=1.1 with=lines xtic_spacing=1 ytic_spacing=.5 format=eps
@@ -1252,7 +1266,6 @@ given function, and try to simplify your answer as much as possible.
   <% hw_block(2) %>
 
 <% hw('car-aims-for-collision') %>
-\pagebreak
 <% hw('cobb-douglas') %>
 <% hw('pie-minimize-perimeter') %>
 <% hw('lens-minimize-length') %>
@@ -1272,7 +1285,12 @@ on p.~\pageref{differentiability-by-zooming}.
 <% hw('differentiability-2',{'solution'=>true}) %>
 <% hw('differentiability-3',{'solution'=>true}) %>
 
-\vspace{10mm}
+  <% hw_block(1) %>
+
+<% hw('tangent-to-parabola-through-point') %>
+<% hw('tangent-to-x3-through-point') %>
+<% hw('tangent-x2-and-x4') %>
+
 
   <% hw_block(2) %>
 
