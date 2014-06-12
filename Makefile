@@ -18,6 +18,7 @@ DO_PDFLATEX = echo "$(DO_PDFLATEX_RAW)" ; perl -e 'if (system("$(DO_PDFLATEX_RAW
 HANDHELD_TEMP = handheld_temp
 BOOK = fund
 GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --title "Fundamentals of Calculus" --toc-filter="[0-9]\.[0-9]" --title="Fundamentals of Calculus"
+PROBLEMS_CSV = problems.csv
 
 default:
 	@make preflight
@@ -84,7 +85,7 @@ very_clean:
 	make clean
 
 preflight:
-	@perl -e 'if (-d "scripts/custom") {system("chmod +x scripts/custom/*"); foreach $$f(<scripts/custom/*.pl>) {system($$f)}}'
+	@perl -e 'if (-e "scripts/custom/enable") {system("chmod +x scripts/custom/*"); foreach $$f(<scripts/custom/*.pl>) {$$c="$$f $(BOOK) $(PROBLEMS_CSV)"; system($$c)}}'
 	@chmod +x scripts/*.pl scripts/*.rb mv_silent fruby process_geom_file.pl
 	@perl -e 'foreach $$f("scripts/run_eruby.pl","scripts/equation_to_image.pl","scripts/latex_table_to_html.pl","scripts/harvest_aux_files.rb","scripts/check_for_colliding_figures.rb","scripts/translate_to_html.rb","mv_silent") {die "file $$f is not executable; fix this with chmod +x $$f" unless -e $$f && -x $$f}'
 

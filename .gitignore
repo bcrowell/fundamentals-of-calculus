@@ -1,6 +1,6 @@
 NOTES
 instructor/
-scripts/custom
+scripts/custom/enable
 solns/
 
 *.pdf
@@ -19,6 +19,7 @@ solns/
 a.a
 
 *problems.csv
+spotter_labels
 save.ref
 temp
 temp.html

@@ -796,7 +796,7 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 
 % robbin, p. 85
 <% hw('crystal') %>
-<% hw('tank') %>
+<% hw('conical-tank') %>
 <% hw('tumor') %>
 
 \vfill
