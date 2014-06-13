@@ -716,6 +716,16 @@ p.~\pageref{subsec:second-derivative-for-extrema}}
 <% end_sec('optimization') %>
 <% end_sec('apps-of-derivative') %>
 
+<% marg(-30) %>
+<%
+  fig(
+    'vanishing-point',
+    %q{The railroad tracks stretch toward a vanishing point at infinity.
+       Are there infinitely big or infinitely small numbers?}
+  )  
+%>
+<% end_marg %>
+
 <% begin_sec("Review: elementary properties of the real numbers",nil,'elementary-reals') %>\index{real numbers!elementary properties}
 
 I began this chapter by defining calculus as the study of rates of change, but
@@ -726,11 +736,18 @@ straight until we've cranked up our microscope to an \emph{infinitely big} magni
 we'll be seeing values of $\Delta x$ and $\Delta y$ that are \emph{infinitely small} (but not zero).
 Calculus was invented by Isaac Newton\index{Newton, Isaac} and
 Gottfried Wilhelm von Leibniz\index{Leibniz, Gottfried Wilhelm von}
-back in the era of powdered wigs and silk stockings, and
-in those days the concept of number hadn't been formalized. Newton and Leibniz simply assumed
-that it was all right to have infinitely big and infinitely small numbers. But modern
-mathematicians approach this kind of thing differently. They think in terms of specific,
-well-defined sets of numbers, including:
+back in the era of powdered wigs and silk stockings, and in those days
+the concept of ``number'' was still in the process of being
+standardized and formalized.\footnote{For more on the
+history, see Blaszczyk, Katz, and Sherry, ``Ten misconceptions from the history of analysis and 
+their debunking,'' \url{arxiv.org/abs/1202.4153}.}
+Newton and Leibniz found it convenient to work with symbols representing
+infinitely big and infinitely small numbers, and a debate ensued about whether it was
+all right to call those things ``numbers.''
+
+Today we think about this kind of thing in a different way. Decisions about what to allow
+as a legal number are thought of not as matters of right and wrong but as definitions.
+We define certain sets of numbers, including:
 
 \begin{description}
 \item[the integers:] whole numbers such as $-1$, 0, and $1$                 \index{integers}
@@ -739,14 +756,32 @@ well-defined sets of numbers, including:
 \item[the complex numbers,] such as $\sqrt{-1}$                            \index{complex numbers}
 \end{description}
 
-Do these systems include infinitely big and infinitely small 
+<% marg(0) %>
+<%
+  fig(
+    'stevin-decimals',
+    %q{Simon Stevin (1548-1620) was a Flemish mathematician and engineer who
+       lived a century before the invention of the calculus. He wrote a book on decimals,
+       using a notation somewhat different from the modern one. (The figure shows the modern
+       notation and Stevin's notation for the decimal expansion of $\sqrt{2}$.) 
+       Stevin's decimals represent an alternative approach to defining what we mean by
+       a real number: rather than defining them by listing their properties,
+       we can define them by \emph{constructing} them out of simpler objects (decimal digits).
+       Stevin argued for allowing any arbitrary, infinite string of digits, which is equivalent
+       to including all the real numbers but forbidding infinitely big and infinitely small numbers.}
+  )  
+%>
+<% end_marg %>
+
+Do these systems contain infinitely big and infinitely small 
 numbers? Can they? 
 Should they?\index{infinite and infinitesimal quantities}
 \index{infinity|see{infinite and infinitesimal quantities}}
 \index{infinitesimal|see{infinite and infinitesimal quantities}}
 
 To answer these questions, we need to give a more definite account of how these number systems
-are defined. A good way to define them is with a list of their axioms.
+are defined. One good way to define them is with a list of their axioms. (For an alternative,
+constructive approach, see figure \figref{stevin-decimals}.)
 Here is a list of axioms for the system of real numbers. Except as otherwise stated,
 each of these properties holds for \emph{any} real-number values of the symbols $x$, $y$, \ldots
 
@@ -766,18 +801,22 @@ each of these properties holds for \emph{any} real-number values of the symbols 
 
 This list of axioms holds for the real numbers, but it fails for the integers, since for example
 the integer 2 doesn't have an inverse that is an integer. It also fails for the complex numbers,
-which don't have a well-defined ordering. The list seems complete and precise, so it may come
+which don't have a well-defined ordering. The list seems detailed and precise, so it may come
 as a surprise that it does \emph{not} suffice to prove anything about whether or not infinite
-numbers exist. The list of axioms is in fact incomplete as a characterization of the real numbers.
-Later in this book we will add another axiom, called the completeness axiom,\index{completeness axiom}
+numbers exist. The list of axioms is in fact not enough to characterize the real numbers.
+Later in this book we will add another axiom, called the completeness axiom
+(section \ref{sec:completeness},
+p.~\pageref{sec:completeness}),\index{completeness axiom}
 to the list. The completeness axiom holds for the reals but not the rationals, and it also
-rules out the existence of infinitely large or infinitely small real numbers.
+rules out the existence of infinitely large or infinitely small real numbers. It is possible
+to extend the real number system to a larger one that does include infinities (section
+\ref{sec:safe-handling-of-dx}, p.~\pageref{sec:safe-handling-of-dx}).
 
 <% end_sec('elementary-reals') %>
 
 <% begin_sec("The Leibniz notation",nil,'leibniz-notation') %>\index{Leibniz notation!derivative}
-For better or for worse, this kind of thing wasn't a concern in Leibniz's era.
-With what seems like kittenish na\"ivet\'e to a modern mathematician, he reasoned as follows.
+Lacking the more well-defined modern notion of a variety of number systems,
+Leibniz argued as follows.
 Let's just make $\Delta x$ and $\Delta y$ infinitely small (but not zero). In modern terminology,
 this means that they can't be real numbers. To make it clear that we're talking about infinitely small
 differences in $x$ and $y$, we change the notation to $\der x$ and $\der y$. Recall that $\Delta$
@@ -1113,8 +1152,8 @@ graph, and what real-world implications would this have?
 
 \begin{hwsection}[Review problems]
 
-<% hw('review-points-to-equation') %>
 <% hw('review-point-and-slope-to-equation') %>
+<% hw('review-points-to-equation') %>
 <% hw('review-equation-to-slope') %>
 <% hw('review-equation-and-dx-to-dy') %>
 <% hw('review-galileo-p-vs-t',{'solution'=>true}) %>
@@ -1158,6 +1197,11 @@ graph, and what real-world implications would this have?
 <% hw('perfectly-inelastic-demand') %>
 
   <% hw_block(2) %>
+
+\begin{hwinstructions}
+Problems \ref{hw:diff-polynomial-2}-\ref{hw:diff-polynomial-5} are each intended to be
+assigned randomly to one fourth of the students in a class.
+\end{hwinstructions}
 
 <% hw('diff-polynomial',{'solution'=>true}) %>
 <% hw('diff-polynomial-2') %>
