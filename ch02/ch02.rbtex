@@ -1106,8 +1106,16 @@ have the following calculation of the derivative of $y=x^2$ at $x=1$:
 \end{align*}
 Although this particular modern approach to calculus makes $\der y/\der x$ not
 a synonym for $y'$, the notational distinction is not assumed in a general context,
-since they were thought of as synonyms for hundreds of years, and the hyperreal
-number system is only one of several foundational approaches to the calculus.
+since they were thought of as synonyms for hundreds of years.
+
+Ideas very much like rules 1 and 3 were in fact originally proposed 
+by Leibniz,\footnote{Blaszczyk, Katz, and Sherry, ``Ten misconceptions from the history of analysis and
+their debunking,'' \url{arxiv.org/abs/1202.4153}.} but
+not until the 1960s were they restated precisely
+enough to satisfy the mathematical community. In the interim, there was considerable
+suspicion of infinitesimals (Georg Cantor famously referred to them as ``infect[ing]
+mathematics'' like a ``cholera-bacillus''), and today many mathematicians dislike
+them, despite their logical rehabilitation, as a matter of taste.
 
 \begin{eg}{A not-quite proof of the chain rule}\label{eg:chain-rule-not-quite-proof}
 The Leibniz notation for the chain rule
@@ -1166,7 +1174,6 @@ the same brute-force technique to the given functions.
 <% hw('apply-deriv-limit-def-inv-x') %>
 <% hw('apply-deriv-limit-def-inv-x2') %>
 <% hw('apply-deriv-limit-def-inv-x-offset') %>
-<% hw('apply-deriv-limit-def-sqrt') %>
 
   <% hw_block(2) %>
 
@@ -1188,7 +1195,7 @@ the same brute-force technique to the given functions.
   <% hw_block(2) %>
 
 \begin{hwinstructions}
-In problems \ref{hw:product-rule-two-methods}-\ref{hw:product-rule-two-methods-3},
+In problems \ref{hw:product-rule-two-methods} and \ref{hw:product-rule-two-methods-2},
 compute each derivative by two different methods: (a) by multiplying out the given expression
 and then differentiating, and (b) by using the product rule. Make sure that you get the same
 answer by both methods.
@@ -1196,7 +1203,6 @@ answer by both methods.
 
 <% hw('product-rule-two-methods') %>
 <% hw('product-rule-two-methods-2') %>
-<% hw('product-rule-two-methods-3') %> % also requires chain rule
 
 \vfill
 
@@ -1214,7 +1220,20 @@ answer by both methods.
 
 \pagebreak
 
-  <% hw_block(2) %>
+  <% hw_block(1) %>
+
+\begin{hwinstructions}
+Compute the derivative of each of the functions
+in problems \ref{hw:chain-rule-two-methods} and \ref{hw:chain-rule-two-methods-2}
+by two different methods: (a) by multiplying out the given expression
+and then differentiating, and (b) by using the chain rule. Make sure that you get the same
+answer by both methods.
+\end{hwinstructions}
+
+<% hw('chain-rule-two-methods') %>
+<% hw('chain-rule-two-methods-2') %>
+
+  <% hw_block(1) %>
 
 \begin{hwinstructions}
 In problems \ref{hw:derivative-practice-1}-\ref{hw:derivative-practice-7}, differentiate the

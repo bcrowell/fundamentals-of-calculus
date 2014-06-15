@@ -815,7 +815,7 @@ to extend the real number system to a larger one that does include infinities (s
 <% end_sec('elementary-reals') %>
 
 <% begin_sec("The Leibniz notation",nil,'leibniz-notation') %>\index{Leibniz notation!derivative}
-Lacking the more well-defined modern notion of a variety of number systems,
+Lacking the more precise modern ideas described in section \ref{sec:elementary-reals},
 Leibniz argued as follows.
 Let's just make $\Delta x$ and $\Delta y$ infinitely small (but not zero). In modern terminology,
 this means that they can't be real numbers. To make it clear that we're talking about infinitely small
@@ -830,7 +830,10 @@ derivative,
 Although the notation's original justification was not up to modern standards of
 rigor, it is one of the most expressive and well-designed mathematical notations ever devised,
 and has been the most commonly used notation for the derivative ever since Leibniz published it
-in 1686.
+in 1686. Around 1960, mathematicians clarified some of these issues and essentially
+justified and codified the centuries-old procedures for manipulating the $\der y$'s and $\der x$'s;
+section \ref{sec:safe-handling-of-dx} on p.~\pageref{sec:safe-handling-of-dx} boils these
+modern developments down to a simple set of practical rules.
 <% marg(80) %>
 <%
   fig(
@@ -888,6 +891,32 @@ result is proportional to $s^2$. This suggests that anything that could be
 done to reduce $s$ would be very helpful. For instance, a measure that cut
 $s$ in half would reduce $\der a/\der t$ by a factor of four.
 \end{eg}
+
+
+<% marginbox(300,'units','The SI',{},
+%q~
+The metric system is the system of units used universally in engineering and the sciences, as well
+as in daily life in every country except the United States. Formally known as the
+Syst\`eme International (SI),\index{metric system}\index{Syst\`eme International}
+it was invented during the French Revolution. For mechanical (as opposed to electrical)
+measurements, the SI uses three basic units:
+
+\textbf{meters} for length
+
+\textbf{kilograms} for mass
+
+\textbf{seconds} for time
+
+\noindent Other measurements are built from these, e.g., meters per second (m/s) for
+velocity.
+
+There is a system of prefixes that represent powers of ten in which the exponent is a multiple
+of three. The most common of these are $\zu{kilo-}=10^3$, and $\zu{milli-}=10^{-3}$. (The prefix
+$\zu{centi-}=10^{-2}$ is used only in the centimeter, and doesn't require memorization since we know
+that dollars and euros are subdivided into 100 cents.)
+      ~
+   )
+%>
 
 Sometimes the Leibniz notation gives an unwieldy, top-heavy tower of symbols:\index{Leibniz notation!derivative!operator interpretation}
 \begin{equation*}
@@ -1251,10 +1280,14 @@ assigned randomly to one fourth of the students in a class.
 
   <% hw_block(1) %>
 
+\pagebreak
+
+\begin{hwinstructions}
+Problems \ref{hw:chain-rule-circle}-\ref{hw:chain-rule-triangle} are each intended to be
+assigned randomly to one third of the students in a class.
+\end{hwinstructions}
+
 <% hw('chain-rule-circle') %>
-
-
-
 <% hw('chain-rule-sphere') %>
 <% hw('chain-rule-triangle') %>
 
