@@ -1154,6 +1154,7 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 \begin{hwsection}[Review problems]
 
 <% hw('review-add-exponents') %>
+<% hw('review-negative-exponents') %>
 <% hw('review-fractional-exponents') %>
 
   <% hw_block(2) %>
@@ -1165,7 +1166,7 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 \begin{hwinstructions}
 In example \ref{eg:x-squared-with-limits} on p.~\pageref{eg:x-squared-with-limits} we found
 the derivative of the function $y(x)=x^2$ by directly applying the definition of the derivative     
-as a limit. In problems \ref{hw:apply-deriv-limit-def-x3}-\ref{hw:apply-deriv-limit-def-sqrt}, apply
+as a limit. In problems \ref{hw:apply-deriv-limit-def-x3}-\ref{hw:apply-deriv-limit-def-inv-x-offset}, apply
 the same brute-force technique to the given functions.
 \end{hwinstructions}
 
