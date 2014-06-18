@@ -514,6 +514,14 @@ derivative. Usually
 <% hw('inflection',{'solution'=>true}) %>
 <% hw('max-min-of-sum',{'solution'=>true}) %>
 <% hw('exponents-with-2nd-deriv-smooth') %>
+<% marg(0) %>
+<%
+  fig(
+    'hw-blimp',
+    %q{Problem \ref{hw:blimp}.}
+  )  
+%>
+<% end_marg %>
 <% hw('blimp') %>
 <% hw('odd-even-2nd-deriv') %>
 <% hw('average-minimizes-sum-of-squares') %>
@@ -525,7 +533,7 @@ derivative. Usually
 
 % Robbin p. 71, #2-5:
 \begin{hwinstructions}
-In problems \ref{hw:first-three-derivatives-1}-\ref{hw:first-three-derivatives-4},
+In problems \ref{hw:first-three-derivatives-1}-\ref{hw:first-three-derivatives-3},
 compute the first, second, and third derivatives of the given functions.
 \end{hwinstructions}
 
@@ -533,7 +541,6 @@ compute the first, second, and third derivatives of the given functions.
 <% hw('first-three-derivatives-1') %>
 <% hw('first-three-derivatives-2') %>
 <% hw('first-three-derivatives-3') %>
-<% hw('first-three-derivatives-4') %>
 
   <% hw_block(2) %>
 

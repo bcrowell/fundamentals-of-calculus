@@ -383,7 +383,44 @@ kg   & joule, J & $\nunit\unitdot\sunit$ & $\nunit\unitdot\munit\unitdot\sunit$ 
 \noindent Since the SI unit of time is the second ($\sunit$), we have the following implied relationships between
 some of the units: W=J/s and A=C/s.
 
-\pagebreak
+The \emph{definitions} of the conserved quantities are ultimately operational definitions, meaning
+definitions that state the operations needed in order to \emph{measure} them. This may seem unsatisfactory,
+but history has shown that every attempt at a ``pure'' conceptual or mathematical definition has
+had to be revised. We can however give rough conceptual definitions that are valid
+within the field of mechanics, i.e., the study of material objects:
+\begin{description}
+  \item[Mass] is a measure of inertia. How hard is it to change the motion of a certain object?
+  \item[Momentum] is a measure of the motion of an object. Suppose our object hits another object,
+        the ``target.'' Knowing the momentum allows us to predict how
+        strongly a standard target will recoil. Momentum has a direction in space.
+  \item[Energy] comes in various forms such as kinetic energy (energy of motion), heat (which is
+        random motion at the atomic level), and electrical energy (such as the chemical energy in food).
+        Energy has no direction.
+\end{description}
+Box \figref{conserved-quantities} gives some examples of equations for conserved quantities.
+
+<% marginbox(0,'conserved-quantities','Examples of equations for conserved quantities',{},
+%q~
+Let a material object of mass $m$ be moving at a velocity $v$ that is small compared to the speed of
+light. Then experiments show that its momentum and kinetic energy are approximately $p=mv$ and $E=(1/2)mv^2$.
+
+If a ray of light has energy $E$, then its momentum is $p=E/c$, where $c$ is the speed of light.
+This momentum is too small to matter in everyday life.
+
+If a material object moves at a speed that is \emph{not} small compared to $c$, then
+it has $p=mv/\sqrt{1-v^2/c^2}$.
+
+Let a ring with mass $m$ and radius $r$
+rotate about its own axis so that each point on it moves at speed $v$. Then
+its angular momentum is $\pm mvr$, with the sign indicating the direction of rotation.
+
+Suppose we rub two balloons on a wool sweater in order to charge them up. The balloons are prepared
+identically. They will repel one another with some force $F$ when placed a distance $r$ away from each
+other. The charge $q$ of each balloon is implicitly defined by the equation $F=kq^2/r^2$, where
+$k$ is a constant with the value $9\times10^9\ \nunit\unitdot\munit^2/\zu{C}^2$.
+      ~
+   )
+%>
 
 \begin{eg}{Energy of an accelerating car}
 \egquestion A car of mass $m$ starts moving from rest with a constant acceleration $a$. If the speed
@@ -434,18 +471,18 @@ kinetic energy, rather than frictional heating.
 
 <% hw_block(2) %>
 
-<% marg(0) %>
+<% marg(-80) %>
 <%
   fig(
-    'hw-blimp-momentum',
+    'hw-running-momentum',
     %q{
-      Problem \ref{hw:blimp-momentum}.
+      Problem \ref{hw:running-momentum}.
     }
   )
 %>
 <% end_marg %>
 
-<% hw('blimp-momentum') %>
+<% hw('running-momentum') %>
 
 <% hw_block(2) %>
 
@@ -453,3 +490,5 @@ kinetic energy, rather than frictional heating.
 
 \end{hwsection}
 \addtocontents{toc}{\protect\vspace{10mm}} % separate end-matter visually from ch 10
+
+<% end_chapter %>

@@ -146,4 +146,4 @@ problems:
 	cat ch*_problems.csv | sort >temp.csv
 	scripts/sort_problems.pl <temp.csv >problems.csv
 	rm temp.csv
-	ssed -R -e "s/(\w*),(\d+),(\d+),(.*),\d/m4_define(__hw_\1_\2_\4,\3)m4_dnl/g" problems.csv >problems.m4
+	ssed -R -e "s/(\w*),(\d+),([a-z0-9]+),(.*),\d/m4_define(__hw_\1_\2_\4,\3)m4_dnl/g;s/\-/_/g" problems.csv >problems.m4

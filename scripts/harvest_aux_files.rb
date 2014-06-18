@@ -9,13 +9,21 @@
 files = Dir["ch*/*.aux"]
 
 if files.empty? then
-  $stderr.print "Error, no aux files found\n"
+  $stderr.print "Error in harvest_aux_files.rb, no aux files found\n"
   exit(-1)
 end
 
 File.open('save.ref','w') do |g|
   $stderr.print "Harvesting "
   files.each {|aux|
+    if aux =~ /ch(\d+)/ then
+      ch = $1
+      pos = "ch#{ch}.pos"
+      if ch.to_i<99 && !FileTest.exist?(pos) then
+        $stderr.print "Error in harvest_aux_files.rb, file #{aux} has no corresponding file #{pos}; probably this is because ch#{ch} needs an <% end_chapter %> at the end\n"
+        exit(-1)
+      end
+    end
     File.open(aux,'r') do |f|
       t = f.gets(nil) # nil means read whole file
       $stderr.print "#{aux} "

@@ -78,6 +78,26 @@ def save_complaint(message)
   }
 end
 
+# returns contents or nil on error; for more detailed error reporting, see slurp_file_with_detailed_error_reporting()
+def slurp_file(file)
+  x = slurp_file_with_detailed_error_reporting(file)
+  return x[0]
+end
+
+# returns [contents,nil] normally [nil,error message] otherwise
+def slurp_file_with_detailed_error_reporting(file)
+  begin
+    File.open(file,'r') { |f|
+      t = f.gets(nil) # nil means read whole file
+      if t.nil? then t='' end # gets returns nil at EOF, which means it returns nil if file is empty
+      return [t,nil]
+    }
+  rescue
+    return [nil,"Error opening file #{file} for input: #{$!}."]
+  end
+end
+
+
 #--------------------------------------------------------------------------
 config_file = 'book.config'
 if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
@@ -113,21 +133,19 @@ refs_file = 'save.ref'
 $ref = {}
 n_defs = {}
 if File.exist?(refs_file) then # It's not an error if the file doesn't exist yet; references are just not defined yet, and that's normal for the first time on a fresh file.
-  File.open(refs_file,'r') do |f|
-    # lines look like this:
-    #    fig:entropygraphb,h,255
-    t = f.gets(nil) # nil means read whole file
-    t.scan(/(.*),(.*),(.*)/) { |label,number,page|
-      if $ref[label]!=nil then
-        if $last_chapter==true && $ref[label][0]!=number && $ref[label][1]!=page.to_i && label=~/\Afig:/ then 
-          save_complaint("******* warning: figure #{label} defined both as figure #{$ref[label][0]} on p. #{$ref[label][1]} and as figure #{number} on p. #{page.to_i}, eruby_util.rb reading #{refs_file}")
-        end
+  # lines look like this:
+  #    fig:entropygraphb,h,255
+  t = slurp_file(refs_file)
+  t.scan(/(.*),(.*),(.*)/) { |label,number,page|
+    if $ref[label]!=nil then
+      if $last_chapter==true && $ref[label][0]!=number && $ref[label][1]!=page.to_i && label=~/\Afig:/ then 
+        save_complaint("******* warning: figure #{label} defined both as figure #{$ref[label][0]} on p. #{$ref[label][1]} and as figure #{number} on p. #{page.to_i}, eruby_util.rb reading #{refs_file}")
       end
-      $ref[label] = [number,page.to_i]
-      if n_defs[label]==nil then n_defs[label]=0 end
-      n_defs[label] = n_defs[label]+1
-    }
-  end
+    end
+    $ref[label] = [number,page.to_i]
+    if n_defs[label]==nil then n_defs[label]=0 end
+    n_defs[label] = n_defs[label]+1
+  }
 end
 avg = 0
 n = 0
@@ -1209,7 +1227,7 @@ def end_chapter
     book = ENV['BK']
     chnum = $ch.to_i
     if $ch=='002' then chnum=0 end
-    1.upto($hw_number) { |i|
+    1.upto($hw_number) { |i| # output doesn't always get sorted correctly; see fund/solns/prep_solutions for perl code that sorts it correctly
       name = $hw[i]
       f.print "#{book},#{chnum},#{$store_hw_label[i]},#{name},#{$hw_has_solution[i]?'1':'0'}\n"
     }

@@ -10,6 +10,7 @@
 \noindent
 \textbf{Cover} Megyeri Bridge, (c) 2008, Tam\'as M\'esz\"oly, CC-BY-SA \\ % http://commons.wikimedia.org/wiki/File:Megyeri_h%C3%ADd.jpg 
 
+<% photo_credit("hw-running-momentum","Runner","Wikimedia Commons user user Citizen59, CC-BY-SA") %>  % http://commons.wikimedia.org/wiki/File:Men%27s_10000m_Final_-_2012_Olympics_-_1.jpg
 <% photo_credit("vanishing-point","Vanishing point","Wikimedia Commons user Zorba the Geek, CC-BY-SA") %>  % http://commons.wikimedia.org/wiki/File:Vanishing_point_-_geograph.org.uk_-_793412.jpg
 <% photo_credit("stevin-decimals","Simon Stevin","Statue by Simonis, 19th century. Photo by Ad Meskens, attribution required") %>  % http://commons.wikimedia.org/wiki/File:Stevin.jpg
 <% photo_credit("leibniz-portrait","Leibniz","Contemporary, public domain") %>% http://commons.wikimedia.org/wiki/File:Gottfried_Wilhelm_Leibniz_c1700.jpg

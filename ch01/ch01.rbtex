@@ -256,14 +256,19 @@ of these properties are actually special cases of a more general rule called the
 
 As our first example of a derivative, let's use the function $y=x^2$. Its graph is a parabola.
 The simplest point at which
-to find its derivative is $x=0$. Based on the graph, figure \figref{x-squared}, it seems like
+to find its derivative is $x=0$, the central point of the graph. From figure \figref{x-squared}, it seems like
 zooming in more and more on this point would give something that looked more and more like a
 horizontal line, and this suggests that the derivative at this point is zero. We can confirm this
-by using the flip property. Flipping the graph horizontally doesn't change the graph. (Recall that
+by using the flip property. Flipping the graph horizontally across the $y$ axis
+doesn't change the graph. (Recall that
 a function with this symmetry is called an \emph{even} function.)\index{even function}
-Since the flip doesn't change the function, it can't change the derivative of the function, and
-yet the flip rule says that when we do this the derivative should flip its sign. Zero is the
-only number that remains the same when we flip its sign, so the derivative is zero.
+Since the flip doesn't change the function, it can't change the derivative of the function.
+But the flip rule says that when we flip a function, the derivative is negated at the
+corresponding point on the new graph. Here the point of interest is $x=0$, and that point
+doesn't move when we flip it, so its corresponding point on the new graph is the same point.
+Thus the derivative at $x=0$ must be the same as itself, but also equal to minus itself.
+Zero is the only number that remains the same when we reverse its sign, so the derivative at
+the center of the graph is zero.
 <% marg(200) %>
 <%
   fig(
