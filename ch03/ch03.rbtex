@@ -551,7 +551,12 @@ find the derivatives of $10^\text{th}$ order of the given
 function. (The problems have been chosen so that after doing the
 first few derivatives in each case, you should start seeing a pattern
 that will let you guess the $10^{\text{th}}$ derivative without
-actually computing $10$ derivatives.)
+actually computing $10$ derivatives.) 
+You will find it convenient in most of these problems
+to express your results in terms of the notation $n!=1\cdot2\ldots n$, called
+$n$ \emph{factorial}.\index{factorial}
+The problems are in increasing
+order of difficulty. 
 \end{hwinstructions}
 
 
