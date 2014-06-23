@@ -202,7 +202,7 @@ Then at any point in I, the derivatives of $f$ and $g$ are the same.
 The following properties of the derivative are intuitively reasonable
 based on our conceptual definition, and they will be enough to allow us to do quite a bit
 of interesting calculus before we come back and make a more rigorous definition.
-<% marg(0) %>
+<% marg(300) %>
 <%
   fig(
     'properties-of-derivative',
@@ -210,6 +210,19 @@ of interesting calculus before we come back and make a more rigorous definition.
   )  
 %>
 <% end_marg %>
+
+<% marginbox(-300,'proof-assumptions','Ideas about proof: stating your assumptions',{},
+%q~
+The properties listed here can be used to solve problems,
+as in section \ref{subsec:derivative-of-x-squared}, where we'll calculate the derivative
+of the function $y=x^2$. But math isn't just calculation.
+We also want to \emph{prove} general facts. A proof always requires certain starting assumptions,
+e.g., you can't prove to a friend that cap-and-trade is the best way to deal with global warming
+if your friend won't admit that global warming exists. This list of properties includes enough
+assumptions to prove quite a few general facts about derivatives.\index{proof!requires assumptions}
+      ~
+   )
+%>
 
 
 \begin{description}\label{properties-of-derivative}\index{derivative!properties}
@@ -418,6 +431,12 @@ credit card debt. The more credit card debt you have, the faster your debt grows
 constant of proportionality relates to the interest rate.
 \end{eg}
 <% end_sec('derivative-is-a-function') %>
+\startdq
+
+\begin{dq}
+What is wrong with the logic of the following argument? \emph{You should believe in God, because if
+you don't, when you die you'll go to Hell.}
+\end{dq}
 <% end_sec('derivative') %>
 
 <% begin_sec("Derivatives of powers and polynomials",4,'deriv-polynomial') %>\index{derivative!of powers}\index{derivative!of polynomials}
@@ -428,7 +447,20 @@ Straightforward application of the same technique to $x^3$ gives $3x^2$. We see 
 The derivative of $x^n$ equals $nx^{n-1}$, if $n$ is any integer greater than or equal to 1.
 \end{important}
 
-\noindent To prove this for all these values of $n$, rather than carrying out the proof for one value at
+<% marginbox(300,'proof-not-by-example',"Ideas about proof: examples don't prove a rule",{},
+%q@
+An example can't prove a general rule. French is the official language of C\^ote d'Ivoire, but
+that doesn't prove that it's the official language of all of Africa. In fact there are other
+countries in Africa, such as Egypt, that speak different languages, such as Arabic. In general,
+an example can never prove a general rule, but a \emph{counterexample} (Egyptians speaking Arabic)
+can \emph{disprove} a rule.\index{proof!examples can't accomplish}\index{proof!counterexamples}
+      @
+   )
+%>
+
+\noindent Observing the pattern or giving examples is not enough to prove this general rule
+(box \figref{proof-not-by-example}).
+To prove this for all these values of $n$, rather than carrying out the proof for one value at
 a time, it will be more convenient to use techniques developed later in the book
 (section \ref{sec:power-rule-general}, p.~\pageref{sec:power-rule-general}).
 
@@ -792,7 +824,7 @@ each of these properties holds for \emph{any} real-number values of the symbols 
 
 \index{commutativity}\index{identity}\index{associativity}\index{distributivity}\index{ordering property of the real numbers}
 
-\begin{description}
+\begin{description}\label{list-elementary-properties-of-reals}
 \item[commutativity] $x+y=y+x$ and $xy=yx$
 \item[identities] There exist numbers 0 and 1 such that for any $x$, $x+0=x$ and $1x=x$.
 \item[inverses] For any $x$, there exists a number $-x$ such that $x+(-x)=0$. For any nonzero $x$,
@@ -1318,6 +1350,8 @@ assigned randomly to one third of the students in a class.
   <% hw_block(1) %>
 
 <% hw('linear-approx-137th-power') %>
+<% hw('bogus-derivative-proof') %>
+<% hw('no-simple-product-rule') %>
 
 \end{hwsection}
 
