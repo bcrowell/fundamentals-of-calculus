@@ -49,7 +49,7 @@ assume the same list of properties that is now standard for the real number syst
 (section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}).
 
 Let's use those assumptions to prove that we can't have a nonzero $x$ such that $x^2=0$.
-To save space, we eliminate a preliminary proof of the facts $0=-0$ and $1\ne-1$.
+To save space, we skip a preliminary proof of the facts $0=-0$ and $1\ne-1$.
 Now suppose that such an $x$ \emph{did} exist.
 Then $(-x)x=0$ as well, since $0=-0$. Therefore $x^2=(-x)x$.
 Since $x$ is nonzero, we can cancel factors of $x$ from both sides (multiplicative inverse
@@ -977,8 +977,6 @@ we can tell immediately that it's differentiable everywhere
 except at $x=0$. At $x=0$, there is a kink, and no matter how far we zoom in, the kink will never look
 like a line.
 \end{eg}
-
-\pagebreak
 
 %%graph%% not-differentiable-at-pole func=1/(x-1) format=eps xlo=-1 xhi=3 xtic_spacing=1 ylo=-10 yhi=10 ytic_spacing=5 with=lines
 \begin{eg}{Not differentiable when dividing by zero}\label{eg:not-differentiable-at-pole}

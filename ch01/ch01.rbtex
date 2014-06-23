@@ -507,7 +507,7 @@ easily seen to be positive, zero, negative, zero, and positive.
 
 <% end_sec('deriv-polynomial') %>
 
-<% begin_sec("Two trivial hangups",nil,'hangups') %>
+<% begin_sec("Two trivial hangups",4,'hangups') %>
 <% begin_sec("Changing letters of the alphabet",nil,'changing-letters') %>
 The following point is relatively trivial, but nevertheless hangs up many students
 in applying calculus to real life. In a calculus
