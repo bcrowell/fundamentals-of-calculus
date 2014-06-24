@@ -49,15 +49,14 @@ assume the same list of properties that is now standard for the real number syst
 (section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}).
 
 Let's use those assumptions to prove that we can't have a nonzero $x$ such that $x^2=0$.
-To save space, we skip a preliminary proof of the facts $0=-0$ and $1\ne-1$.
-Now suppose that such an $x$ \emph{did} exist.
-Then $(-x)x=0$ as well, since $0=-0$. Therefore $x^2=(-x)x$.
-Since $x$ is nonzero, we can cancel factors of $x$ from both sides (multiplicative inverse
-property, p.~\pageref{list-elementary-properties-of-reals}), and $x=-x$. Again canceling
-factors of $x$, we have $1=-1$, which is a contradiction.
+Suppose that such an $x$ \emph{did} exist.
+Then since $x\ne0$, by the multiplicative inverse property there is a number $1/x$.
+Taking both sides of $x^2=0$ and multiplying by $1/x$ gives $x^2/x=0/x$, or $x=0$.
+But this contradicts the original claim that $x$ was nonzero.
 
-This is a \emph{proof by contradiction}. If we assume something is true, and can then prove
-that a certain statement is both true and not true, then something is wrong --- the initial assumption
+This is a \emph{proof by contradiction}. If we assume something is true, and can then,
+through valid reasoning, arrive at mutually contradictory results,
+then the initial assumption
 must have been false.\index{proof!by contradiction}
       @
    )
@@ -594,9 +593,30 @@ Plugging in $x=0$, we verify that the derivative is exactly equal to 1, in agree
 with the earlier numerical calculation.
 
 <% end_sec('chain-rule-varying-rates') %>
+
+<% marg(100) %>
+<%
+  fig(
+    'bucket-brigade',
+    %q{Composition of functions is like a bucket brigade. (The workers in the photo are salvaging
+       inventory from a warehouse after the 2010 earthquake in Haiti.)}
+  )  
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'composition-as-flowchart',
+    %q{The function $1/(1-x)$ can be viewed as a rule for a two-step computation in which the output of
+       the first computation is fed through as the input to the second stage.
+       }
+  )  
+%>
+<% end_marg %>
+
 <% begin_sec("Composition of functions",nil,'composition') %>
 A little more formally, we can view the chain rule as a rule for
-doing calculus on functions that are built by \emph{composition} of other functions.
+doing calculus on functions that are built by \emph{composition}\index{composition of functions}
+of other functions.
 The composition $g\circ h$ of functions $g$ and $h$ means the function that takes an input $x$
 and gives back an output $g(h(x))$. That is, we take the input $x$, stick it into $h$, take $h$'s output, put
 it in $g$, and finally take $g$'s output.
@@ -684,24 +704,6 @@ Only $n=0$ requires special treatment. Since $x^0=1$, its derivative should be z
 Our rule sort of, but not quite, works here, since it gives $0x^{-1}$, or $0/x$. This is certainly
 zero if $x\ne0$, but in the case where $x=0$ it gives $0/0$, which is undefined.
 
-<% marginbox(-300,'proof-by-induction','Ideas about proof: proof by induction',{},
-%q@
-Proof by induction is a technique for proving an infinite number of facts without using
-infinitely many words. Call these facts, or \emph{propositions}, $P_1$, $P_2$, and so on.
-For example $P_n$ could be the claim that if we kick over the first
-in an infinite chain of dominoes, then the $n$th domino will fall as well.
-Induction requires two steps.
-
-(1) We establish that $P_1$ is true. For example, if we kick over the first domino,
-then $P_1$ is clearly true, since kicking it over causes it to fall. This is called the
-\emph{base case}.
-
-(2) We show that if $P_{n-1}$ holds, then $P_n$ is true as well. For example, if domino
-$n-1$ falls, then it will cause domino $n$ to fall as well.\index{proof!by induction}
-      @
-   )
-%>
-
 <% begin_sec("Exponents that are natural numbers",4,'natural-powers') %>
 Example \ref{eg:derivative-of-x-cubed} on p.~\pageref{eg:derivative-of-x-cubed} showed that
 the product rule can be used
@@ -719,6 +721,24 @@ differentiate using the product rule, and find:
 By establishing the fact for $n=1$, and then proving that it must hold for $n$ if it
 holds for $n-1$, we establish that it holds for all natural numbers $n$. This is
 called \emph{proof by induction} (box \figref{proof-by-induction}).\index{induction}\index{proof!by induction}\label{induction}
+
+<% marginbox(300,'proof-by-induction','Ideas about proof: proof by induction',{},
+%q@
+Proof by induction is a technique for proving an infinite number of facts without using
+infinitely many words. Call these facts, or \emph{propositions}, $P_1$, $P_2$, and so on.
+For example $P_n$ could be the claim that if we kick over the first
+in an infinite chain of dominoes, then the $n$th domino will fall as well.
+Induction requires two steps.
+
+(1) We establish that $P_1$ is true. For example, if we kick over the first domino,
+then $P_1$ is clearly true, since kicking it over causes it to fall. This is called the
+\emph{base case}.
+
+(2) We show that if $P_{n-1}$ holds, then $P_n$ is true as well. For example, if domino
+$n-1$ falls, then it will cause domino $n$ to fall as well.\index{proof!by induction}
+      @
+   )
+%>
 <% end_sec('natural-powers') %>
 <% begin_sec("Negative exponents",nil,'negative-powers') %>
 If we write $1=(x)(1/x)$, then we can differentiate on both sides, and we find that
@@ -897,9 +917,7 @@ simpler functions as building blocks. For example, let's say we're already convi
 functions defined by $g(x)=3x$ and $h(x)=\sin x$ are both continuous.\footnote{The reader who
 has forgotten all of his/her trig is directed to the review in section \ref{sec:trig}.} Then if we encounter the
 function $f(x)=\sin(3x)$, we can tell that it's continuous because its definition corresponds
-to $f(x)=h(g(x))$. The functions $g$ and $h$ have been set up like a bucket brigade, so that
-$g$ takes the input, calculates the output, and then hands it off to $h$ for the final step
-of the calculation. This method of combining functions is called \emph{composition}.\index{composition}
+to $f(x)=h(g(x))$. 
 The composition of two continuous functions is also continuous. Just watch out for division.
 The function $f(x)=1/x$ is continuous everywhere except at $x=0$, so for example $1/\sin(x)$
 is continuous everywhere except at multiples of $\pi$, where the sine has zeroes.
@@ -1325,18 +1343,6 @@ given function, and try to simplify your answer as much as possible.
 
   <% hw_block(1) %>
 
-<% hw('cactus') %>
-<% hw('line-of-stability') %>
-<%
-  fig(
-    'hw-line-of-stability',
-    %q{Problem \ref{hw:line-of-stability}.},
-    {
-      'width'=>'fullpage'
-    }
-  )
-%>
-
 <% hw('resonance',{'solution'=>true}) %>
 
 %%graph%% resonance func=1/sqrt(3*(x**2-1)**2+x**2) xlo=0 xhi=3 ylo=0 yhi=1.1 with=lines xtic_spacing=1 ytic_spacing=.5 format=eps
@@ -1349,14 +1355,28 @@ given function, and try to simplify your answer as much as possible.
 %>
 <% end_marg %>
 
+<% hw('cactus') %>
+
+\pagebreak
+
+<% hw('line-of-stability') %>
+<%
+  fig(
+    'hw-line-of-stability',
+    %q{Problem \ref{hw:line-of-stability}.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+
   <% hw_block(2) %>
 
 <% hw('car-aims-for-collision') %>
 <% hw('cobb-douglas') %>
 <% hw('pie-minimize-perimeter') %>
 <% hw('lens-minimize-length') %>
-
-\pagebreak
 
   <% hw_block(2) %>
 
@@ -1377,6 +1397,25 @@ on p.~\pageref{differentiability-by-zooming}.
 <% hw('tangent-to-x3-through-point') %>
 <% hw('tangent-x2-and-x4') %>
 
+
+  <% hw_block(2) %>
+
+\begin{hwinstructions}
+Use the $\epsilon$-$\delta$ definition to prove the limits
+in problems \ref{hw:limit-prove-eps-delta-easy-01}-\ref{hw:limit-prove-eps-delta-easy-02}.
+The good news is that these limits were chosen to be the easiest possible examples
+to prove directly from the definition.
+The bad news is that these may feel like artificial exercises, since the functions are continuous
+and defined at the relevant points, so that the limits could have been more easily determined by
+simply plugging the number into the formula. The reason for doing them is that they will help you
+to understand the definition of the limit.
+\end{hwinstructions}
+% Robbin, p. 35, #4-14
+
+<% hw('limit-prove-eps-delta-easy-01') %>
+<% hw('limit-prove-eps-delta-easy-02') %>
+
+<% hw('limit-prove-eps-delta-x-sin-1-over-x') %>
 
   <% hw_block(2) %>
 

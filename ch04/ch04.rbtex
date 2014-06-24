@@ -11,97 +11,8 @@
   )
 %>
 
-<% begin_sec("Computing limits",nil,'computing-limits') %>
-In ch.~\ref{ch:limits} we did very few direct computations of limits. In this section we
-learn some techniques for doing such computations.
-
-<% begin_sec("The ``don't choose $\\delta$ to be too small'' trick",nil,'dont-choose') %>
-Say we want to prove that $\lim_{x\to 1}x^2 = 1$. This may not seem to require a fancy
-proof, since obviously plugging in $x=1$ gives $x^2=1$. But since functions can be
-discontinuous, plugging in does not always prove the value of a limit.
-Also, this example will be an excuse to develop a technique that can be useful in
-less trivial cases.
-
-We have $f(x) = x^2$, $a=1$, $L=1$, and as usual when computing a limit the question is, ``how small
-should $|x-1|$ be to guarantee $|x^2-1|<\varepsilon$?''
-
-We begin by estimating the difference $|x^2-1|$
-\[
-|x^2-1| = |(x-1)(x+1)| = |x+1|\cdot|x-1|.
-\]
-As $x$ approaches 1 the factor $|x-1|$ becomes small, and if the other
-factor $|x+1|$ were a constant (e.g.\ $2$ as in the previous example) then
-we could find $\delta$ as before, by dividing $\varepsilon$ by that
-constant.
-
-Here is a trick that allows you to replace the factor $|x+1|$ with a
-constant.  We hereby agree \textit{that we always choose our $\delta$ so
-that $\delta\leq 1$.}  If we do that, then we will always have
-\[
-|x-1|<\delta\leq 1, \text{i.e. }|x-1|<1,
-\]
-and $x$ will always be between $0$ and $2$. Therefore
-\[
-|x^2-1| = |x+1|\cdot|x-1|<3|x-1|.
-\]
-If we now want to be sure that $|x^2-1|<\varepsilon$, then this calculation
-shows that we should require $3|x-1|<\varepsilon$, i.e.\
-$|x-1|<\frac13\varepsilon$.  So we should choose $\delta\leq
-\frac13\varepsilon$.  We must also live up to our promise never to choose
-$\delta>1$, so if we are handed an $\varepsilon$ for which
-$\frac13\varepsilon>1$, then we choose $\delta=1$ instead of $\delta =
-\frac13\varepsilon$.  To summarize, we are going to choose
-\[
-\delta = \text{the smaller of }1\text{ and }\frac13\varepsilon.
-\]
-We have shown that if you choose $\delta$ this way, then $|x-1|<\delta$
-implies $|x^2-1|<\varepsilon$, no matter what $\varepsilon>0$ is.
-                                                                                                                 
-The expression ``the smaller of $a$ and $b$'' shows up often, and is
-abbreviated to $\min(a, b)$.  We could therefore say that in this problem
-we will choose $\delta$ to be
-\[
-\delta = \min \bigl(1, \tfrac13 \varepsilon\bigr).
-\]
-
-\begin{eg}{}
-\egquestion Show that $\lim_{x\to 4}1/x = 1/4$.
-
-\eganswer We apply the definition with $a=4$, $L=1/4$ and $f(x) = 1/x$.
-Thus, for any $\varepsilon>0$ we try to show that if $|x-4|$ is small
-enough then one has $|f(x)-1/4|<\varepsilon$.
-
-We begin by estimating $|f(x)-\frac14|$ in terms of $|x-4|$:
-\[
-|f(x)-1/4| = \left|\frac1x-\frac14\right| = \left| \frac{4-x}{4x}\right| =
-\frac{|x-4|}{|4x|} =\frac{1}{|4x|}\,|x-4|.
-\]
-As before, things would be easier if $1/|4x|$ were a constant.  To achieve
-that we again agree not to take $\delta>1$.  If we always have $\delta\leq
-1$, then we will always have $|x-4|<1$, and hence $3<x<5$.  How large can
-$1/|4x|$ be in this situation?  Answer: the quantity $1/|4x|$ increases as
-you decrease $x$, so if $3<x<5$ then it will never be larger than
-$1/|4\cdot 3| = \frac1{12}$.
-
-We see that if we never choose $\delta>1$, we will always have
-\[
-|f(x) - \tfrac14|\leq \tfrac1{12}|x-4| \quad\text{for}\quad |x-4|<\delta.
-\]
-To guarantee that $|f(x)-\frac14|<\varepsilon$ we could therefore require
-\[
-\tfrac1{12} |x-4|<\varepsilon, \quad\text{i.e.}\quad |x-4| <12\varepsilon.
-\]
-Hence if we choose $\delta=12\varepsilon$ or any smaller number, then
-$|x-4|<\delta$ implies $|f(x)-4|<\varepsilon$.  Of course we have to honor
-our agreement never to choose $\delta>1$, so our choice of $\delta$ is
-\[
-\delta = \text{the smaller of }1\text{ and }12\varepsilon = \min \bigl(1,
-12\varepsilon\bigr).
-\]
-\end{eg}
-
-<% end_sec('dont-choose') %>
 <% begin_sec("Properties of the limit",nil,'properties-of-the-limit') %>\index{limit!properties}
+In ch.~\ref{ch:limits} we did very few direct computations of limits using the epsilon-delta definition.
 Epsilon-delta proofs are hard work, and by building up a more sophisticated
 set of tools we can usually avoid having to apply the epsilon-delta definition directly.
 
@@ -180,8 +91,7 @@ because of $(P_6)$.  To apply $(P_6)$ we must check that the denominator
 \egquestion Find $\lim_{x\to 2}\sqrt x$.
 
 \eganswer Of course, you would think that $\lim_{x\to 2}\sqrt x = \sqrt 2$ and you
-can indeed prove this using $\delta$ \& $\varepsilon$ (See
-problem~\ref{ex:03limitofsqrt4}.) But is there an easier way?  There is
+can indeed prove this using $\delta$ \& $\varepsilon$. But is there an easier way?  There is
 nothing in the limit properties which tells us how to deal with a square
 root, and using them we can't even prove that there is a limit.  However,
 if you \emph{assume} that the limit exists then the limit properties allow
@@ -257,7 +167,7 @@ such $L$, i.e.\ there is no limit.
 \]
 
 In examples like this one, it is possible to define a one-sided limit; see
-section \ref{subsec:one-sided-limit}.
+section \ref{subsec:one-sided-limits}.
 \end{eg}
 
 %%graph%% backward-sine-raw func=sin(3.1416/x) format=svg xlo=0.02 xhi=3 ylo=-1 yhi=1 with=lines samples=1000
@@ -346,8 +256,6 @@ would also have to exist, and we know $\lim_{x\to 0}\frac1x$ doesn't exist.
 
 <% end_sec('props-to-show-no-limit') %>
 <% end_sec('when-limits-fail-to-exist') %>
-<% end_sec('computing-limits') %>
-
 
 <% begin_sec("Variations on the theme of the limit",nil,'limit-variations') %>
 
@@ -511,7 +419,7 @@ As with limits at finite $x$, it is usually more convenient to calculate limits
 by using these properties than by direct application of the definition.
 
 \begin{eg}{A rational function}\label{eg:rational-function-at-infinity}
-A rational function is the quotient of two polynomials:
+A rational function is the quotient of two polynomials:\index{rational function}
 \begin{equation}
   R(x) = \frac{a_nx^n+\cdots +a_1x+a_0}{b_mx^m+\cdots+b_1x+b_0}.
 \end{equation}
@@ -632,7 +540,7 @@ the meaning of \eqref{eqn:03limit-invx-is-infty} cannot be to say that
 ``the limit exists and its value is $\infty$.''
 
 %%graph%% limit-of-one-over-x-raw func=1/x format=svg xlo=0.1 xhi=10 ylo=0 yhi=10 with=lines samples=300
-<% marg(0) %>
+<% marg(300) %>
 <%
   fig(
     'limit-of-one-over-x',
@@ -658,10 +566,43 @@ limit we gave in section \ref{subsec:limit-informal}, p.~\pageref{subsec:limit-i
 usual suspect phrases such as ``larger and larger,'' or ``finite
 number'' (as if there were any other kind.)  A more precise definition
 involving epsilons can be given, but in this course we will not go
-into this much detail.  As a final comment on infinite limits, it is
-important to realize that, since \eqref{eqn:03limit-of-f-infty} is not
-a normal limit \emph{you cannot apply the limit rules to infinite
+into this much detail.
+
+When a function is going to blow up at a certain point, there are two common behaviors. The first is
+the one shown in figure \figref{limit-of-one-over-x} for $1/x$, where the limit is $+\infty$ on one
+side and $-\infty$ on the other. If a limit is to be more than a one-sided limit, we want it to have
+the same value on the left and right. In this example that doesn't happen, so only the one-sided limits
+can be described as being positive- or negative-infinite:
+\begin{align*}
+  & \lim_{x\searrow0} \frac{1}{x} = +\infty \\
+  & \lim_{x\nearrow0}  \frac{1}{x} = -\infty \\
+  & \lim_{x\rightarrow0}  \frac{1}{x} \text{ can't be described as $+\infty$ or $-\infty$} 
+\end{align*}
+The function $1/x^2$, figure \figref{limit-of-one-over-x-squared}, exhibits the other
+frequently encountered behavior. Here we have a positive blowup on both sides, so it isn't
+just the one-sided limits that can be described.
+\begin{align*}
+  & \lim_{x\searrow0} \frac{1}{x^2} = +\infty \\
+  & \lim_{x\nearrow0}  \frac{1}{x^2} = +\infty \\
+  & \lim_{x\rightarrow0}  \frac{1}{x^2} = +\infty
+\end{align*}
+
+
+As a final comment on infinite limits, it is
+important to realize that \eqref{eqn:03limit-of-f-infty} is not
+a normal limit, and \emph{you cannot apply the limit rules to infinite
   limits. }  Here is an example of what goes wrong if you try anyway.
+
+%%graph%% limit-of-one-over-x-squared-raw func=1/(x*x) format=svg xlo=0.1 xhi=10 ylo=0 yhi=10 with=lines samples=300
+<% marg(300) %>
+<%
+  fig(
+    'limit-of-one-over-x-squared',
+    %q{The function $1/x^2$ blows up near $x=0$, but in a different way than $1/x$; it approaches
+        \emph{positive} infinity on both sides.}
+  )  
+%>
+<% end_marg %>
 
 \begin{eg}{Trouble with infinite limits}
 If you apply the limit properties to $\lim_{x\searrow0} 1/x = \infty$,
@@ -756,7 +697,7 @@ he cut taxes on the theory that the US was already on the right-hand side of the
 so that, counterintuitively, the lower taxes would produce \emph{higher} revenue.
 The results were not as Laffer had promised; the average annual budget deficit during the Reagan
 administration was \$240 billion, compared to \$57 billion during the preceding Carter administration.
-<% marg(0) %>
+<% marg(300) %>
 <%
   fig(
     'laffer-curve',
@@ -882,8 +823,6 @@ We can also relate the properties of the $y''$ graph directly to those of the $y
 The second derivative is a measure of curvature, and its sign indicates concavity.
 The $y$ graph is concave up before C and concave down after. This matches up with the
 signs of $y''$.
-
-\pagebreak
 
 \startdq
 
@@ -1107,8 +1046,6 @@ The elementary axioms make statements such as ``for any number $x$, \ldots'' or
 ``for any numbers $x$ and $y$, \ldots'' The completeness axiom says ``for any \emph{sets}
 of numbers P and Q, \ldots''
 
-\pagebreak
-
 \begin{eg}{Every decimal is a real number}
 Consider the infinite decimal
 \begin{equation*}
@@ -1177,6 +1114,17 @@ If we wanted to find a better numerical approximation to the solution, we could 
 method, which is introduced in section \ref{sec:newtons-method}.
 \end{eg}
 
+%%graph%% x-minus-cos-x func=(x-cos(x)) format=eps xlo=-8 xhi=8 ylo=-8 yhi=8 xtic_spacing=4 ytic_spacing=4
+
+<% marg(0) %>
+<%
+  fig(
+    'x-minus-cos-x',
+    %q{The function $x-\cos x$ constructed in example \ref{eg:x-minus-cos-x}.}
+  )  
+%>
+<% end_marg %>
+
 \begin{eg}{}\label{eg:x-minus-cos-x}
 \egquestion Show that there is at least one solution to the equation $\cos x=x$, and give bounds on its location.
 
@@ -1191,23 +1139,7 @@ this, and shows that there is only one solution.
 \end{eg}
 
 
-%%graph%% x-minus-cos-x func=(x-cos(x)) format=eps xlo=-8 xhi=8 ylo=-8 yhi=8 xtic_spacing=4 ytic_spacing=4
 
-<% marg(0) %>
-<%
-  fig(
-    'x-minus-cos-x',
-    %q{The function $x-\cos x$ constructed in example \ref{eg:x-minus-cos-x}.}
-  )  
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'eg-supply-and-demand',
-    %q{Example \ref{eg:supply-and-demand}.}
-  )  
-%>
-<% end_marg %>
 
 \begin{eg}{Supply and demand}\label{eg:supply-and-demand}\index{supply and demand}\index{market equilibrium}
 Figure \figref{eg-supply-and-demand} shows two graphs representing the supply and demand of some good
@@ -1235,6 +1167,15 @@ now cross at a quantity that is greater than 0 and less than 1,
 which is not a possible free-market equilibrium because the planes can only be sold in whole numbers.
 \end{eg}
 
+
+<% marg(300) %>
+<%
+  fig(
+    'eg-supply-and-demand',
+    %q{Example \ref{eg:supply-and-demand}.}
+  )  
+%>
+<% end_marg %>
 
 \begin{eg}{}
 \egquestion Prove that every odd-order polynomial $P$ with real coefficients has at least one real root $x$, i.e., a
@@ -1385,6 +1326,135 @@ Define a new function $g(x)=f(x)-\ell(x)$, so that $g(a)=g(b)=0$. Applying Rolle
 we find that there is some point where $f'(x)=\ell'(x)$, which is the desired result.\myqed
 <% end_sec('rolle') %>
 <% end_sec('completeness') %>
+<% begin_sec("Two tricks with limits",nil,'limit-tricks') %>
+<% begin_sec("Rational functions that give $0/0$",nil,'rational-zero-over-zero') %>
+Suppose we want to compute the following limit:
+\begin{equation*}
+  \lim_{x\to 2} \frac{x^2-2x}{x^2-4}
+\end{equation*}
+We first use the limit
+properties to find
+\[
+\lim_{x\to2} x^2-2x = 0 \text{ and }\lim_{x\to 2}x^2 - 4 = 0.
+\]
+Now to complete the computation we would like to apply the property
+$(P_6)$ about quotients, but this would give us
+\[
+\lim_{x\to2} f(x) = \frac 00.
+\]
+The denominator is zero, so we were not allowed to use $(P_6)$ (and the
+result doesn't mean anything anyway).  We have to do something else.
+
+The function we are dealing with is a \emph{rational function}, which means, as mentioned
+in example \ref{eg:rational-function-at-infinity}, p.~\pageref{eg:rational-function-at-infinity},
+that it is the quotient of two polynomials.  For such functions there is an
+algebra trick that always allows you to compute the limit even if you
+first get $\frac 00$.  The thing to do is to divide numerator and
+denominator by $x-2$.  In our case we have
+\[
+x^2-2x = (x-2)\cdot x, \qquad x^2-4 = (x-2)\cdot (x+2)
+\]
+so that
+\[
+\lim_{x\to2} f(x) =\lim_{x\to2} \frac{(x-2)\cdot x } {(x-2)\cdot (x+2)} =
+\lim_{x\to2} \frac{x}{x+2}.
+\]
+After this simplification we \emph{can} use the properties $(P_{\ldots})$
+to compute
+\[
+\lim_{x\to2} f(x) = \frac{2}{2+2} = \frac12.
+\]
+
+<% end_sec('rational-zero-over-zero') %>
+<% begin_sec("The ``don't make $\\delta$ to too big'' trick",nil,'dont-choose') %>
+In this section we describe a trick, the ``don't make $\delta$ to too big'' trick,
+that is sometimes helpful when we want to evaluate a limit directly from the epsilon-delta definition.
+Say we want to prove that $\lim_{x\to 1}x^2 = 1$. This may not seem to require a fancy
+proof, since obviously plugging in $x=1$ gives $x^2=1$. But since functions can be
+discontinuous, plugging in does not always prove the value of a limit.
+Also, this example will be an excuse to develop a technique that can be useful in
+less trivial cases.
+
+We have $f(x) = x^2$, $a=1$, $L=1$, and as usual when computing a limit the question is, ``how small
+should $|x-1|$ be to guarantee $|x^2-1|<\varepsilon$?''
+
+We begin by estimating the difference $|x^2-1|$
+\[
+|x^2-1| = |(x-1)(x+1)| = |x+1|\cdot|x-1|.
+\]
+As $x$ approaches 1 the factor $|x-1|$ becomes small, and if the other
+factor $|x+1|$ were a constant (e.g.\ $2$ as in the previous example) then
+we could find $\delta$ as before, by dividing $\varepsilon$ by that
+constant.
+
+Here is a trick that allows you to replace the factor $|x+1|$ with a
+constant.  We hereby agree \textit{that we always choose our $\delta$ so
+that $\delta\leq 1$.}  If we do that, then we will always have
+\[
+|x-1|<\delta\leq 1, \text{i.e. }|x-1|<1,
+\]
+and $x$ will always be between $0$ and $2$. Therefore
+\[
+|x^2-1| = |x+1|\cdot|x-1|<3|x-1|.
+\]
+If we now want to be sure that $|x^2-1|<\varepsilon$, then this calculation
+shows that we should require $3|x-1|<\varepsilon$, i.e.\
+$|x-1|<\frac13\varepsilon$.  So we should choose $\delta\leq
+\frac13\varepsilon$.  We must also live up to our promise never to choose
+$\delta>1$, so if we are handed an $\varepsilon$ for which
+$\frac13\varepsilon>1$, then we choose $\delta=1$ instead of $\delta =
+\frac13\varepsilon$.  To summarize, we are going to choose
+\[
+\delta = \text{the smaller of }1\text{ and }\frac13\varepsilon.
+\]
+We have shown that if you choose $\delta$ this way, then $|x-1|<\delta$
+implies $|x^2-1|<\varepsilon$, no matter what $\varepsilon>0$ is.
+                                                                                                                 
+The expression ``the smaller of $a$ and $b$'' shows up often, and is
+abbreviated to $\min(a, b)$.  We could therefore say that in this problem
+we will choose $\delta$ to be
+\[
+\delta = \min \bigl(1, \tfrac13 \varepsilon\bigr).
+\]
+
+\begin{eg}{}
+\egquestion Show that $\lim_{x\to 4}1/x = 1/4$.
+
+\eganswer We apply the definition with $a=4$, $L=1/4$ and $f(x) = 1/x$.
+Thus, for any $\varepsilon>0$ we try to show that if $|x-4|$ is small
+enough then one has $|f(x)-1/4|<\varepsilon$.
+
+We begin by estimating $|f(x)-\frac14|$ in terms of $|x-4|$:
+\[
+|f(x)-1/4| = \left|\frac1x-\frac14\right| = \left| \frac{4-x}{4x}\right| =
+\frac{|x-4|}{|4x|} =\frac{1}{|4x|}\,|x-4|.
+\]
+As before, things would be easier if $1/|4x|$ were a constant.  To achieve
+that we again agree not to take $\delta>1$.  If we always have $\delta\leq
+1$, then we will always have $|x-4|<1$, and hence $3<x<5$.  How large can
+$1/|4x|$ be in this situation?  Answer: the quantity $1/|4x|$ increases as
+you decrease $x$, so if $3<x<5$ then it will never be larger than
+$1/|4\cdot 3| = \frac1{12}$.
+
+We see that if we never choose $\delta>1$, we will always have
+\[
+|f(x) - \tfrac14|\leq \tfrac1{12}|x-4| \quad\text{for}\quad |x-4|<\delta.
+\]
+To guarantee that $|f(x)-\frac14|<\varepsilon$ we could therefore require
+\[
+\tfrac1{12} |x-4|<\varepsilon, \quad\text{i.e.}\quad |x-4| <12\varepsilon.
+\]
+Hence if we choose $\delta=12\varepsilon$ or any smaller number, then
+$|x-4|<\delta$ implies $|f(x)-4|<\varepsilon$.  Of course we have to honor
+our agreement never to choose $\delta>1$, so our choice of $\delta$ is
+\[
+\delta = \text{the smaller of }1\text{ and }12\varepsilon = \min \bigl(1,
+12\varepsilon\bigr).
+\]
+\end{eg}
+
+<% end_sec('dont-choose') %>
+<% end_sec('limit-tricks') %>
 
 
 \begin{hwsection}
@@ -1394,30 +1464,9 @@ we find that there is some point where $f'(x)=\ell'(x)$, which is the desired re
 
   <% hw_block(2) %>
 
-\begin{hwinstructions}
-Use the $\epsilon$-$\delta$ definition to prove the limits
-in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
-\end{hwinstructions}
-% Robbin, p. 35, #4-14
-
-<% hw('limit-prove-eps-delta-01') %>
-<% hw('limit-prove-eps-delta-02') %>
-<% hw('limit-prove-eps-delta-03') %>
-<% hw('limit-prove-eps-delta-04') %>
-<% hw('limit-prove-eps-delta-05') %>
-<% hw('limit-prove-eps-delta-06') %>
-<% hw('limit-prove-eps-delta-07') %>
-<% hw('limit-prove-eps-delta-08') %>
-<% hw('limit-prove-eps-delta-09') %>
-<% hw('limit-prove-eps-delta-10') %>
-<% hw('limit-prove-eps-delta-11') %>
-
-  <% hw_block(2) %>
-
 <% hw('limits-of-e-to-minus-1-over-x',{'solution'=>true}) %>
 % most of the following are from Robbin, p. 50
 <% hw('big-powers') %>
-<% hw('cancel-factor') %>
 <% hw('limits-at-infinity') %>
 <% hw('infinity-from-the-northeast') %>
 <% hw('no-limit-from-above') %>
@@ -1435,6 +1484,8 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 
 <% hw('bounty-hunters',{'solution'=>true}) %>
 <% hw('pendulum') %>
+<% hw('rod-finger-string') %>
+
 <% marg(40) %>
 <%
   fig(
@@ -1450,7 +1501,6 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
   )  
 %>
 <% end_marg %>
-<% hw('rod-finger-string') %>
 
   <% hw_block(2) %>
 
@@ -1466,6 +1516,17 @@ in problems \ref{hw:limit-prove-eps-delta-01}-\ref{hw:limit-prove-eps-delta-11}.
 
 <% hw('prove-inflection-has-zero-2nd-deriv',{'solution'=>true}) %>
 
+  <% hw_block(2) %>
+
+% stupid limit tricks:
+
+<% hw('cancel-factor') %>
+
+% Robbin, p. 35, #4-14
+% There are problems limit-prove-eps-delta-03 through limit-prove-eps-delta-11 still in git,
+% but I wasn't enthusiastic enough to write up solutions for them.
+
+<% hw('limit-prove-eps-delta-using-trick') %>
 
 \end{hwsection}
 

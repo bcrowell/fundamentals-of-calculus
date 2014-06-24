@@ -10,6 +10,7 @@
 \noindent
 \textbf{Cover} Megyeri Bridge, (c) 2008, Tam\'as M\'esz\"oly, CC-BY-SA \\ % http://commons.wikimedia.org/wiki/File:Megyeri_h%C3%ADd.jpg 
 
+<% photo_credit("bucket-brigade","Bucket brigade","Ag\\^encia Brasil, CC-BY") %>  % http://commons.wikimedia.org/wiki/File:EscombrosBelAir2.jpg
 <% photo_credit("hw-running-momentum","Runner","Wikimedia Commons user user Citizen59, CC-BY-SA") %>  % http://commons.wikimedia.org/wiki/File:Men%27s_10000m_Final_-_2012_Olympics_-_1.jpg
 <% photo_credit("vanishing-point","Vanishing point","Wikimedia Commons user Zorba the Geek, CC-BY-SA") %>  % http://commons.wikimedia.org/wiki/File:Vanishing_point_-_geograph.org.uk_-_793412.jpg
 <% photo_credit("stevin-decimals","Simon Stevin","Statue by Simonis, 19th century. Photo by Ad Meskens, attribution required") %>  % http://commons.wikimedia.org/wiki/File:Stevin.jpg
@@ -17,7 +18,7 @@
 <% photo_credit("basketball","Baseketball photo","Wikimedia Commons user Reisio, public domain") %> 
 <% photo_credit("dq-lead-fall","Rock climber","Line art by B.~Crowell, CC-BY-SA. Based on a photo by Jason McConnell-Leech, CC-BY-SA") %>  % http://en.wikipedia.org/wiki/File:Lead_climb_indoor001.jpg
 <% photo_credit("dq-lead-fall","Graph","Redrawn by B.~Crowell from a student research paper by Casey Johnson and Charlie Klonowski, Cal Poly Pomona") %> 
-<% photo_credit("hw-review-galileo-p-vs-t","Graph of Galileo data","Seiff \\emph{et al.}, J.~Geophys.~Research 103 (1998) 22,857.") %> %http://onlinelibrary.wiley.com/doi/10.1029/98JE01766/abstract
+<% photo_credit("hw-review-galileo-p-vs-t","Graph of Galileo data","Seiff \\emph{et al.}, J.~Geophys.~Research 103 (1998) 22,857") %> %http://onlinelibrary.wiley.com/doi/10.1029/98JE01766/abstract
 <% photo_credit("gear-ratio","Gears","Jared C. Benedict, CC-BY-SA") %> %http://en.wikipedia.org/wiki/File:Gears_large.jpg
 <% photo_credit("russian-dolls","Russian dolls","Wikimedia Commons users Fanghong and Gnomz007, CC-BY-SA") %> %http://commons.wikimedia.org/wiki/File:Russian-Matroshka_no_bg.jpg
 <% photo_credit("caustic","Cusp (caustic) in a teacup","Wikipedia user Paul Venter, CC-BY-SA") %> % http://en.wikipedia.org/wiki/File:Caustic00.jpg
