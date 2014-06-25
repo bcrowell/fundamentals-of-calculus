@@ -761,8 +761,6 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 
   <% hw_block(2) %>
 
-<% hw('find-ranges-of-functions') %> % Robbin, p. 20, # 18
-
 \begin{hwinstructions}
 In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given functions.
 \end{hwinstructions}

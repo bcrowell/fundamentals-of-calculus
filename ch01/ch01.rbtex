@@ -160,7 +160,7 @@ Because S, T, and U have the same members, they are equal, $\zu{S}=\zu{T}=\zu{U}
 
 Often it is useful to define a set of all the real numbers that lie within a certain range, between
 numbers $a$ and $b$. This is called
-an interval.\label{interval-notation}\index{interval}
+an interval.\label{interval-notation}\index{interval}\index{interval!finite!notation for}
 We can define intervals that contain or don't contain their endpoints.
 
 \begin{lessimportant}[Definition]
@@ -171,6 +171,8 @@ open    & $\{x|x> a\ \text{and}\ x< b\}$  & $(a,b)$
 \end{tabular}
 \end{lessimportant}
 We can also have intervals like $[a,b)$ and $(a,b]$, which are defined in the obvious way.
+A similar notation for infinite intervals is introduced in problem \ref{hw:find-ranges-of-functions},
+p.~\pageref{hw:find-ranges-of-functions}.
 
 \begin{lessimportant}[Locality of the derivative]\index{derivative!locality}
 The derivative is \emph{local}, in the following sense. Suppose there is
@@ -1293,6 +1295,7 @@ assigned randomly to one fourth of the students in a class.
 
 <% hw('can-you-do-fractions-1') %>
 <% hw('can-you-do-fractions-2') %>
+<% hw('find-ranges-of-functions') %> % Robbin, p. 20, # 18
 
   <% hw_block(2) %>
 
@@ -1316,8 +1319,6 @@ assigned randomly to one fourth of the students in a class.
 <% hw('immerse-sphere') %>
 
   <% hw_block(1) %>
-
-\pagebreak
 
 \begin{hwinstructions}
 Problems \ref{hw:chain-rule-circle}-\ref{hw:chain-rule-triangle} are each intended to be
