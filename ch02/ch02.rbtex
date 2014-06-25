@@ -1419,6 +1419,7 @@ to understand the definition of the limit.
 
   <% hw_block(2) %>
 
+<% hw('limit-implies-continuity') %>
 <% hw('no-least-number') %>
 <% hw('product-rule-three-factors',{'solution'=>true}) %>
 <% hw('product-rule-n-factors') %>
