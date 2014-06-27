@@ -9,7 +9,7 @@
 >
 
 <title>Gnuplot</title>
-<desc>Produced by GNUPLOT 4.6 patchlevel 1 </desc>
+<desc>Produced by GNUPLOT 4.6 patchlevel 4 </desc>
 
 <g id="gnuplot_canvas">
 
@@ -36,39 +36,39 @@
 <g style="fill:none; color:white; stroke:currentColor; stroke-width:0.50; stroke-linecap:butt; stroke-linejoin:miter">
 </g>
 <g style="fill:none; color:black; stroke:currentColor; stroke-width:0.50; stroke-linecap:butt; stroke-linejoin:miter">
-	<path  d='M54.1,426.0 L63.1,426.0 M168.2,426.0 L159.2,426.0  h0.01'/>	<g transform="translate(45.8,430.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+	<path stroke='black'  d='M54.1,426.0 L63.1,426.0 M168.2,426.0 L159.2,426.0  h0.01'/>	<g transform="translate(45.8,430.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
 		<text>-1</text>
 	</g>
-	<path  d='M54.1,312.0 L63.1,312.0 M168.2,312.0 L159.2,312.0  h0.01'/>	<g transform="translate(45.8,316.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+	<path stroke='black'  d='M54.1,312.0 L63.1,312.0 M168.2,312.0 L159.2,312.0  h0.01'/>	<g transform="translate(45.8,316.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
 		<text> 1</text>
 	</g>
-	<path  d='M54.1,369.0 L54.1,378.0 M54.1,369.0 L54.1,360.0  h0.01'/>	<g transform="translate(54.1,400.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+	<path stroke='black'  d='M54.1,369.0 L54.1,378.0 M54.1,369.0 L54.1,360.0  h0.01'/>	<g transform="translate(54.1,400.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
 		<text> 0.02</text>
 	</g>
-	<path  d='M92.4,369.0 L92.4,378.0 M92.4,369.0 L92.4,360.0  h0.01'/>	<g transform="translate(92.4,400.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+	<path stroke='black'  d='M92.4,369.0 L92.4,378.0 M92.4,369.0 L92.4,360.0  h0.01'/>	<g transform="translate(92.4,400.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
 		<text> 1.02</text>
 	</g>
-	<path  d='M130.7,369.0 L130.7,378.0 M130.7,369.0 L130.7,360.0  h0.01'/>	<g transform="translate(130.7,400.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+	<path stroke='black'  d='M130.7,369.0 L130.7,378.0 M130.7,369.0 L130.7,360.0  h0.01'/>	<g transform="translate(130.7,400.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
 		<text> 2.02</text>
 	</g>
-	<path  d='M54.1,369.0 L168.2,369.0  h0.01'/>	<g transform="translate(173.9,373.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:start">
+	<path stroke='black'  d='M54.1,369.0 L168.2,369.0  h0.01'/>	<g transform="translate(173.9,373.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:start">
 		<text>x</text>
 	</g>
 	<g transform="translate(53.3,299.4)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:start">
 		<text>y</text>
 	</g>
 	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'currentColor' points = '162.2,369.0 162.2,365.6 171.6,369.0 162.2,372.4 162.2,369.0 '/>
+		<polygon fill = 'black' points = '162.2,369.0 162.2,365.6 171.6,369.0 162.2,372.4 162.2,369.0 '/>
 	</g>
-	<path  d='M162.2,369.0 L162.2,365.6 L171.6,369.0 L162.2,372.4 L162.2,369.0 M54.1,369.0 L162.2,369.0  h0.01'/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'currentColor' points = '53.3,315.7 49.9,315.7 53.3,306.3 56.7,315.7 53.3,315.7 '/>
+	<path stroke='black'  d='M162.2,369.0 L162.2,365.6 L171.6,369.0 L162.2,372.4 L162.2,369.0 M54.1,369.0 L162.2,369.0  h0.01'/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+		<polygon fill = 'black' points = '53.3,315.7 49.9,315.7 53.3,306.3 56.7,315.7 53.3,315.7 '/>
 	</g>
-	<path  d='M53.3,315.7 L49.9,315.7 L53.3,306.3 L56.7,315.7 L53.3,315.7 M53.3,426.0 L53.3,315.7  h0.01'/></g>
+	<path stroke='black'  d='M53.3,315.7 L49.9,315.7 L53.3,306.3 L56.7,315.7 L53.3,315.7 M53.3,426.0 L53.3,315.7  h0.01'/></g>
 	<g id="gnuplot_plot_1" ><title>gnuplot_plot_1</title>
-<g style="fill:none; color:white; stroke:currentColor; stroke-width:1.50; stroke-linecap:butt; stroke-linejoin:miter">
+<g style="fill:none; color:white; stroke:black; stroke-width:1.50; stroke-linecap:butt; stroke-linejoin:miter">
 </g>
 <g style="fill:none; color:black; stroke:currentColor; stroke-width:1.50; stroke-linecap:butt; stroke-linejoin:miter">
-	<path  d='M54.1,369.0 L54.2,426.0 L54.3,312.0 L54.4,312.5 L54.6,416.8 L54.7,317.5 L54.8,315.6 L54.9,312.4 
+	<path stroke='black'  d='M54.1,369.0 L54.2,426.0 L54.3,312.0 L54.4,312.5 L54.6,416.8 L54.7,317.5 L54.8,315.6 L54.9,312.4 
 		L55.0,335.2 L55.1,419.5 L55.2,356.9 L55.4,357.4 L55.5,382.7 L55.6,371.3 L55.7,336.8 L55.8,425.2 
 		L55.9,330.6 L56.0,344.4 L56.2,424.6 L56.3,376.5 L56.4,312.8 L56.5,351.3 L56.6,417.2 L56.7,413.6 
 		L56.8,354.5 L57.0,313.5 L57.1,328.6 L57.2,378.6 L57.3,419.0 L57.4,422.6 L57.5,392.2 L57.6,349.9 
@@ -195,7 +195,7 @@
 		L167.4,319.4 L167.5,319.5 L167.6,319.5 L167.7,319.5 L167.9,319.5 L168.0,319.6 L168.1,319.6 L168.2,319.6 
 		 h0.01'/></g>
 	</g>
-<g style="fill:none; color:white; stroke:currentColor; stroke-width:0.50; stroke-linecap:butt; stroke-linejoin:miter">
+<g style="fill:none; color:white; stroke:black; stroke-width:0.50; stroke-linecap:butt; stroke-linejoin:miter">
 </g>
 <g style="fill:none; color:black; stroke:currentColor; stroke-width:0.50; stroke-linecap:butt; stroke-linejoin:miter">
 </g>

@@ -1363,7 +1363,7 @@ given function, and try to simplify your answer as much as possible.
 <%
   fig(
     'hw-line-of-stability',
-    %q{Problem \ref{hw:line-of-stability}.},
+    %q{Problem }+ref_workaround('hw:line-of-stability')+".",
     {
       'width'=>'fullpage'
     }

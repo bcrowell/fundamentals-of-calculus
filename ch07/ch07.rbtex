@@ -267,7 +267,8 @@ Cam 2 is shaped according to
 \begin{equation*}
   h(\theta)= 1+\frac{1}{\pi}\left(|\theta|-\frac{1}{2}\sin(2|\theta|)\right)
 \end{equation*}
-for $\theta\in [-\pi,\pi]$. This is known as a cycloid cam. It has the desirable property that all of its
+for $\theta\in [-\pi,\pi]$. This is known as a cycloid cam.\index{cycloid}
+It has the desirable property that all of its
 derivatives up to the third, $\der^3 h/\der\theta^3$, are finite, and furthermore that
 the cycloidal segments of the graph can be joined smoothly onto constant (``dwell'') segments without
 losing these properties. For the reasons
@@ -790,6 +791,21 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 <% end_marg %>
 
 <% hw('spaghetti') %>
+<% hw('malthus') %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-cycloid',
+    %q{Problem \ref{hw:cycloid}.}
+  )  
+%>
+<% end_marg %>
+
+<% hw('cycloid') %>
+
+%%graph%% hw-cycloid-raw func=acos(1-x)-sqrt(x*(2-x)) format=svg xlo=0 xhi=2 ylo=0 yhi=3.14159265 with=lines xtic_spacing=1 ytic_spacing=3.1416
+
 
 \vfill
   <% hw_block(2) %>
@@ -816,8 +832,6 @@ In problems \ref{hw:differential-01}-\ref{hw:differential-08}, evaluate the diff
 <% hw('differential-08') %>
 
   <% hw_block(2) %>
-
-\pagebreak
 
 \begin{hwinstructions}
 In problems \ref{hw:implicit-to-simplify-00}-\ref{hw:implicit-to-simplify-08},
@@ -850,6 +864,8 @@ Find the slope of the graph at the origin.
 <% hw('implicit-at-origin-02') %>
 <% hw('implicit-at-origin-03') %>
 <% hw('implicit-at-origin-04') %>
+
+\pagebreak
 
   <% hw_block(2) %>
 

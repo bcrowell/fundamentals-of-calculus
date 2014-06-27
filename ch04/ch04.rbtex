@@ -175,7 +175,8 @@ section \ref{subsec:one-sided-limits}.
 <%
   fig(
     'backward-sine',
-    %q{Example \ref{eg:backward-sine}.},
+    %q{Example }+ref_workaround('eg:backward-sine')+".",
+    #%q{Example \ref{eg:backward-sine}.},
     {
       'width'=>'fullpage'
     }

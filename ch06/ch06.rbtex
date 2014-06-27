@@ -330,7 +330,7 @@ Differentiating and applying the chain rule, we have
   \lim \frac{u}{v} = \lim \frac{-v^{-2}v'}{-u^{-2}u'} \qquad .
 \end{equation*}
 Since $\lim ab=\lim a \lim b$ provided that $\lim a$ and $\lim b$ are both defined
-(property $\zu{P}_5$, p.~\pageref{subsubsec:limits-of-sum-prod-quot}), we can rearrange
+(property $\zu{P}_5$, p.~\pageref{subsec:limits-of-sum-prod-quot}), we can rearrange
 factors to produce the desired result.
 <% end_sec('lhospital-proofs-infty-over-infty') %>
 <% begin_sec("Limits at infinity",nil,'lhospital-proofs-at-infinity') %>
