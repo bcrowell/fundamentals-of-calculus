@@ -1492,6 +1492,11 @@ student would do one from each group.
 <% hw('definite-integral-practice-11') %>
 <% hw('definite-integral-practice-12') %>
 
+<% hw_block(2) %>
+
+<% hw('silly-constant') %>
+<% hw('log-abs-val-two-constants') %>
+
 \end{hwsection}
 
 <% end_chapter %>
