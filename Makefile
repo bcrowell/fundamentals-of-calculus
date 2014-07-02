@@ -29,7 +29,7 @@ default:
 	@scripts/translate_to_html.rb --util="learn_commands:$(BOOK).cmd"
 	@process_geom_file.pl <geom.pos >temp.pos
 	@mv temp.pos geom.pos
-	makeindex fund.idx >/dev/null
+	makeindex fund.idx 1>/dev/null 2>/dev/null
 
 book:
 	@make preflight

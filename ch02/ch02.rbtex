@@ -906,7 +906,7 @@ domain.
     %q{Reflected light forms a geometrical curve inside a teacup. The curve has a kink
        similar to the one at $x_1$ in figure \figref{not-differentiable}. This
        kink is of a special type called a \emph{cusp}, in which the two branches are parallel
-       where they meet.}
+       where they meet.\index{cusp}}
   )  
 %>
 <% end_marg %>

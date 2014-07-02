@@ -151,6 +151,15 @@ Testing it, we have $y=1.58$, which is correct to within rounding errors after o
 with precision better than about that level.)
 \end{eg}
 
+Usually the series of estimates
+$x_0$, $x_1$, $x_2$, \ldots provided by
+Newton's method \emph{converges}, meaning that $\lim_{n\rightarrow\infty} x_n$ exists.
+Furthermore, the convergence is often very rapid, so that only a few
+iterations are needed to get excellent precision.
+But as explored further in problem \ref{hw:prove-newtons-method-diverges},
+\pageref{hw:prove-newtons-method-diverges}, Newton's method sometimes
+fails to converge.\index{Newton's method!may not converge}
+
 <% end_sec('newtons-method') %>
 
 
@@ -806,20 +815,36 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 
 %%graph%% hw-cycloid-raw func=acos(1-x)-sqrt(x*(2-x)) format=svg xlo=0 xhi=2 ylo=0 yhi=3.14159265 with=lines xtic_spacing=1 ytic_spacing=3.1416
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If adding more problems on Newton's method, note that I have a script, newtons_method.rb,
+% that automatically generates solutions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \vfill
   <% hw_block(2) %>
 
 % robbin, p. 85
-<% hw('crystal') %>
+<% hw('sugar-cube') %>
 <% hw('conical-tank') %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-talus',
+    %q{Huge talus cones on the coast of Svalbard, problem \ref{hw:talus}.}
+  )  
+%>
+<% end_marg %>
+
+<% hw('talus') %>
 <% hw('tumor') %>
 
 \vfill
   <% hw_block(2) %>
 
 \begin{hwinstructions}
-In problems \ref{hw:differential-01}-\ref{hw:differential-08}, evaluate the differentials.
+In problems \ref{hw:differential-01}-\ref{hw:differential-09}, evaluate the differentials.
 \end{hwinstructions}
 
 <% hw('differential-01',{'solution'=>true}) %>
@@ -830,26 +855,27 @@ In problems \ref{hw:differential-01}-\ref{hw:differential-08}, evaluate the diff
 <% hw('differential-06') %>
 <% hw('differential-07') %>
 <% hw('differential-08') %>
+<% hw('differential-09') %>
+
+\pagebreak
 
   <% hw_block(2) %>
 
 \begin{hwinstructions}
-In problems \ref{hw:implicit-to-simplify-00}-\ref{hw:implicit-to-simplify-08},
+In problems \ref{hw:implicit-to-simplify-00}-\ref{hw:implicit-to-simplify-03},
 a function $y(x)$ is defined explicitly. Find an implicit
 definition that does not involve taking roots.  Then use this description to
-find the derivative $\der y/\der x$.
+find the derivative $\der y/\der x$ in terms of $x$.
 \end{hwinstructions}
 
 % mostly from Robbin...
+% Robbin has five more, which seemed messy and not interesting to me.
+% They're in files implicit-to-simplify-04 through implicit-to-simplify-08 ,
+% and I haven't written solutions to them.
 <% hw('implicit-to-simplify-00',{'solution'=>true}) %>
 <% hw('implicit-to-simplify-01') %>
 <% hw('implicit-to-simplify-02') %>
 <% hw('implicit-to-simplify-03') %>
-<% hw('implicit-to-simplify-04') %>
-<% hw('implicit-to-simplify-05') %>
-<% hw('implicit-to-simplify-06') %>
-<% hw('implicit-to-simplify-07') %>
-<% hw('implicit-to-simplify-08') %>
 
   <% hw_block(2) %>
 
@@ -864,8 +890,6 @@ Find the slope of the graph at the origin.
 <% hw('implicit-at-origin-02') %>
 <% hw('implicit-at-origin-03') %>
 <% hw('implicit-at-origin-04') %>
-
-\pagebreak
 
   <% hw_block(2) %>
 
@@ -887,6 +911,10 @@ Find the slope of the graph at the origin.
 <% hw('astroid') %>
 <% hw('sergels-torg') %>
 <% hw('implicit-x-to-the-y') %>
+
+  <% hw_block('z') %>
+
+<% hw('prove-newtons-method-diverges') %>
 
 
 \end{hwsection}

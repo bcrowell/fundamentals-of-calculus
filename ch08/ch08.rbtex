@@ -1347,6 +1347,7 @@ Evaluate the antiderivatives in problems
 <% hw('antiderivative-symbolic-const-01') %>
 <% hw('antiderivative-symbolic-const-02') %>
 <% hw('antiderivative-symbolic-const-03') %>
+<% hw('antiderivative-symbolic-const-04') %>
 
 \pagebreak
 

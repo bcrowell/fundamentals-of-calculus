@@ -10,6 +10,7 @@
 \noindent
 \textbf{Cover} Megyeri Bridge, (c) 2008, Tam\'as M\'esz\"oly, CC-BY-SA \\ % http://commons.wikimedia.org/wiki/File:Megyeri_h%C3%ADd.jpg 
 
+<% photo_credit("hw-talus","Talus cones","Mark A. Wilson, public domain") %>  % http://en.wikipedia.org/wiki/File:TalusConesIsfjorden.jpg
 <% photo_credit("bucket-brigade","Bucket brigade","Ag\\^encia Brasil, CC-BY") %>  % http://commons.wikimedia.org/wiki/File:EscombrosBelAir2.jpg
 <% photo_credit("hw-running-momentum","Runner","Wikimedia Commons user user Citizen59, CC-BY-SA") %>  % http://commons.wikimedia.org/wiki/File:Men%27s_10000m_Final_-_2012_Olympics_-_1.jpg
 <% photo_credit("vanishing-point","Vanishing point","Wikimedia Commons user Zorba the Geek, CC-BY-SA") %>  % http://commons.wikimedia.org/wiki/File:Vanishing_point_-_geograph.org.uk_-_793412.jpg
