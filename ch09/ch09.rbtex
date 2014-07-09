@@ -331,7 +331,7 @@ canceled by a matching positive contribution on the right.
 \end{equation*}
 
 \egquestion The hard way to do this integral is to dig up the appropriate
-trig identity, which allows $\sin^2\theta$ to be reexpressed in terms of $\sin\theta$.
+trig identity, which allows $\sin^2\theta$ to be reexpressed in terms of $\sin2\theta$.
 The easy way is to look at the graph, figure \figref{sin-squared-integral}.
 The rectangle is exactly half filled by the area under the graph. Since the
 rectangle has area $2\pi$, the integral equals $\pi$.
@@ -430,7 +430,7 @@ use a substitution to evaluate the indefinite integrals.
 <% hw_block(2) %>
 
 \begin{hwinstructions}
-In  \ref{hw:definite-integral-substitutions-01}-\ref{hw:definite-integral-substitutions-12},
+In  \ref{hw:definite-integral-substitutions-01}-\ref{hw:definite-integral-substitutions-09},
 use a substitution to evaluate the definite integrals.
 \end{hwinstructions}
 
@@ -445,9 +445,6 @@ use a substitution to evaluate the definite integrals.
 <% hw('definite-integral-substitutions-07') %>
 <% hw('definite-integral-substitutions-08') %>
 <% hw('definite-integral-substitutions-09') %>
-<% hw('definite-integral-substitutions-10') %>
-<% hw('definite-integral-substitutions-11') %>
-<% hw('definite-integral-substitutions-12') %>
 
 \end{multicols}
 
