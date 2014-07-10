@@ -413,11 +413,6 @@ it has $p=mv/\sqrt{1-v^2/c^2}$.
 Let a ring with mass $m$ and radius $r$
 rotate about its own axis so that each point on it moves at speed $v$. Then
 its angular momentum is $\pm mvr$, with the sign indicating the direction of rotation.
-
-Suppose we rub two balloons on a wool sweater in order to charge them up. The balloons are prepared
-identically. They will repel one another with some force $F$ when placed a distance $r$ away from each
-other. The charge $q$ of each balloon is implicitly defined by the equation $F=kq^2/r^2$, where
-$k$ is a constant with the value $9\times10^9\ \nunit\unitdot\munit^2/\zu{C}^2$.
       ~
    )
 %>
@@ -485,6 +480,8 @@ kinetic energy, rather than frictional heating.
 <% hw('running-momentum') %>
 
 <% hw_block(2) %>
+
+
 
 <% hw('cancer-lottery') %>
 
