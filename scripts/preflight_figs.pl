@@ -7,7 +7,7 @@ use strict;
 #   qpdf (ubuntu package qpdf)
 #   pdffonts (ubuntu package poppler-utils)
 
-my $expected_files = 120;
+my $expected_files = 100;
 my @files = <*/figs/*.svg>;
 
 my $count_svg = 0;
@@ -17,12 +17,14 @@ my $count_err = 0;
 -x "scripts/relativise_svg.pl" or die "couldn't find scripts/relativise_svg.pl -- are you running me from home dir?";
 
 foreach my $svg(@files) {
-  ++$count_svg;
-  system("scripts/relativise_svg.pl $svg");
-  my $err = `scripts/preflight_one_fig.pl $svg`;
-  if ($err) {
-    print "$err\n";
-    ++$count_err;
+  unless ($svg=~/-raw\.svg$/ || $svg=~/-raw-(.*)\.svg$/) {
+    ++$count_svg;
+    system("scripts/relativise_svg.pl $svg");
+    my $err = `scripts/preflight_one_fig.pl $svg`;
+    if ($err) {
+      print "$err\n";
+      ++$count_err;
+    }
   }
 }
 

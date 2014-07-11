@@ -549,7 +549,7 @@ If all three derivatives in equation \eqref{eg:chain-rule-limit-product} exist, 
 the equation essentially works because the limit of a product is the product of a limit (provided
 that the limits exist); this is property $P_5$ of the limit, to be discussed more formally
 in section
-\ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit}.
+\ref{sec:properties-of-the-limit}, p.~\pageref{sec:properties-of-the-limit}.
 There are two other technical issues to worry about.
 
 First, equation \eqref{eqn:chain-rule-deltas}

@@ -13,12 +13,17 @@ use Cwd 'abs_path';
 
 my $book = $ARGV[0];
 my $csv_file = $ARGV[1];
+
 my $xml_dir = "/home/bcrowell/Documents/programming/spotter/answers/";
 my $xml_fragment_file = "${xml_dir}$book.labels";
 my $xml_file = "${xml_dir}$book.xml";
 my $m4_file = "${xml_dir}$book.m4";
 
 my $whoami = basename($0); # http://stackoverflow.com/questions/4600192/how-to-get-the-name-of-perl-script-that-is-running
+
+unless ($book=~/\w/ && $csv_file=~/\w/) {barf("this script requires command-line arguments; you can run it by doing make preflight")}
+
+my $debug = 0;
 
 sub barf {
   my $message = shift;
@@ -29,6 +34,13 @@ sub barf {
 
 my @errors = ();
 
+sub debug {
+  my $message = shift;
+  if ($debug) {print STDERR "$message\n"}
+}
+
+debug("starting");
+
 # -------- read problems.csv --------------------------------------------
 
 if (!-e $csv_file) {
@@ -36,6 +48,8 @@ if (!-e $csv_file) {
   # directory, problems.csv won't exist. That's OK, just exit silently.
   exit(0);
 }
+
+debug("done reading csv file $csv_file");
 
 #   fields:
 #     book = mnemonic such as lm, fund, ...
@@ -67,5 +81,7 @@ close F;
 #======================================================================================================
 
 my $c = "m4 -P -I $xml_dir $m4_file >$xml_file";
+print STDERR "$c\n"; # qwe
 -e $m4_file or barf("file $m4_file doesn't exist");
 system($c)==0 or barf("error executing command $c");
+print STDERR "done\n"; # qwe
