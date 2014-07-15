@@ -41,7 +41,7 @@ Anyone who has watched this delightful process has
 seen the same story play itself out. A small population of dormant yeast cells is dumped into a
 delicious broth of malted barley. They find themselves in an ideal environment in
 which to raise children. At first the signs of fermentation are modest: a few bubbles as
-the small group of colonists start to convert sugars to alcohol and carbon dioxide.
+the small group of colonists starts to convert sugars to alcohol and carbon dioxide.
 But by the next morning the happy process is going like crazy. A flood of foam is gushing
 out of the fermentation vessel.
 
@@ -150,7 +150,7 @@ The second derivative is
 \end{equation*}
 
 Let's evaluate the second derivative at $x=0$. The result is $y''=-1/r$. The negative sign tells
-us that the graph is concave down. The absolute of the result is $1/r$, which is a measure
+us that the graph is concave down. The absolute value of the result is $1/r$, which is a measure
 of the curvature of the circle; a smaller radius indicates a stronger curvature.
 
 \end{eg}
