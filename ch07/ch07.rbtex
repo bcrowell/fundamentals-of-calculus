@@ -48,7 +48,7 @@ This doesn't work well in an example like figure \figref{rotate-cusp}. It should
 matter whether we take the photo from one angle or another, but if we insist on
 describing this shape as a function, then rotating it makes a huge difference --- the
 difference between being able to describe the shape and not being able to. In
-\subfigref{rotate-cusp}{2}, $y$ function of $x$. In \subfigref{rotate-cusp}{3},
+\subfigref{rotate-cusp}{2}, $y$ is a function of $x$. In \subfigref{rotate-cusp}{3},
 $y$ isn't a function of $x$; it fails the vertical line test. In
 \subfigref{rotate-cusp}{4}, $x$ is a function of $y$, but $y$ isn't a function of $x$.
 These distinctions are silly in this context. The $x$ and $y$ coordinates are arbitrary,
@@ -349,7 +349,7 @@ with the  equation
 \end{equation}
 
 In a typical application of a Watt linkage, the central point is attached to the chassis of
-a car, and the ends are attached to the wheels. The linkage is rotated so that the
+a car, and the ends are attached to the wheels. The linkage is reoriented so that the
 darkened segment of the curve is approximately vertical, and the car's chassis is
 then constrained so that its motion is nearly vertical. When the car goes around corners,
 the body can't move sideways.
@@ -366,7 +366,7 @@ implicit function \eqref{eqn:lemniscate-of-bernoulli}.
 We would like to be able to do calculus on implicit functions. As a typical application,
 consider example \ref{eg:watt-linkage}. If vertical motion is desired for small displacements
 from the center, then we want to rotate the linkage by the correct angle
-so that the dark portion of the lemniscate is vertical near its center. That is,
+so that the dark portion of the figure-eight curve is vertical near its center. That is,
 we want to know the slope of the tangent line at this point, so that we can rotate the
 tangent line and make it vertical. The slope of the tangent line is the derivative, so
 essentially we need to differentiate a graph that represents an implicit rather than explicit function.
