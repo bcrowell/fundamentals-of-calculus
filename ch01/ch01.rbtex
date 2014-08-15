@@ -479,7 +479,7 @@ If we combine this with the addition and stretch rules, we know enough to differ
 <% end_marg %>
 
 \begin{eg}{Differentiating a polynomial}\label{eg:derivative-of-a-polynomial}
-\egquestion Find the derivative of $y'=x^3-7x+1$.
+\egquestion Find the derivative of $y=x^3-7x+1$.
 
 \egquestion The addition property of the derivative
 tells us that we can break this problem down into three parts,
@@ -1264,7 +1264,22 @@ graph, and what real-world implications would this have?
 
 <% hw('perfectly-inelastic-demand') %>
 
-  <% hw_block(2) %>
+  <% hw_block(1) %>
+
+\begin{hwinstructions}
+In problems \ref{hw:diff-polynomial-simple}-\ref{hw:diff-polynomial-simple-4},
+a function is defined by giving an equation for $y$ in terms of $x$. Find the
+derivative of the function.
+\end{hwinstructions}
+
+<% hw('diff-polynomial-simple',{'solution'=>true}) %>
+<% hw('diff-polynomial-simple-1') %>
+<% hw('diff-polynomial-simple-2') %>
+<% hw('diff-polynomial-simple-3') %>
+<% hw('diff-polynomial-simple-4') %>
+
+\pagebreak
+  <% hw_block(1) %>
 
 \begin{hwinstructions}
 Problems \ref{hw:diff-polynomial-2}-\ref{hw:diff-polynomial-5} are each intended to be
@@ -1288,8 +1303,6 @@ assigned randomly to one fourth of the students in a class.
 <% hw('zoom-3') %>
 
   <% hw_block(2) %>
-
-\pagebreak
 
 <% hw('diff-symbolic-const',{'solution'=>true}) %>
 
