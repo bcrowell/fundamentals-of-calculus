@@ -250,6 +250,7 @@ For any positive value of $q$, the second derivative is positive.)
 \end{eg}
 
 %%graph%% order-quantity-concavity func=1+9.0/x+x format=eps xlo=0 xhi=10 xtic_spacing=5 ylo=0 yhi=20 ytic_spacing=10 x=q y=C with=lines
+%%graph%% one-max-one-min func=1.0/x+x format=eps xlo=-5 xhi=5 xtic_spacing=10 ylo=-10 yhi=10 ytic_spacing=20 with=lines
 <% marg(100) %>
 <%
   fig(
@@ -257,10 +258,7 @@ For any positive value of $q$, the second derivative is positive.)
     %q{Example \ref{eg:order-quantity-concavity}.}
   )  
 %>
-<% end_marg %>
-
-%%graph%% one-max-one-min func=1.0/x+x format=eps xlo=-5 xhi=5 xtic_spacing=10 ylo=-10 yhi=10 ytic_spacing=20 with=lines
-<% marg(-100) %>
+\spacebetweenfigs
 <%
   fig(
     'one-max-one-min',
