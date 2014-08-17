@@ -35,7 +35,7 @@ Now comes the crucial leap of faith, which mathematicians of later centuries beg
 feel was a little too sketchy.
 The number $\der x$ is supposed to be small, and when you square a small number you get an even smaller number.
 Since $\der x$ is supposed to be infinitely small, $\der x^2$ should be so small that it's utterly
-unimportant, even compared to $\der x^2$. Therefore we throw away the $\der x^2$ term and find that the slope
+unimportant, even compared to $\der x$. Therefore we throw away the $\der x^2$ term and find that the slope
 of the tangent line is 2.\index{infinite and infinitesimal quantities!infinitesimals!discarding higher orders}
 
 <% marginbox(-300,'proof-by-contradiction','Ideas about proof: proof by contradiction',{},
@@ -65,7 +65,7 @@ must have been false.\index{proof!by contradiction}
 <% begin_sec("The definition of the limit",nil,'limit') %>
 Starting in the 19th century, mathematicians became less and less satisfied with the logical justification
 for this style of doing calculus. The real number system had gradually become defined in
-a definite and standardized way. It became clear that although
+a standardized way. It became clear that although
 one could have a number system that obeyed the axioms given in section \ref{sec:elementary-reals}
 (p.~\pageref{sec:elementary-reals}) and that included infinitely small 
 numbers,\footnote{For more on this topic, see 
@@ -358,7 +358,7 @@ derivative to $f$ can be written in terms of the rectangular areas in figure
 \end{equation*}
 One can prove from the definition of the limit that the limit of a sum is equal to the sum
 of the limits, provided that the individual limits exist (see section
-\ref{subsec:properties-of-the-limit}, p.~\pageref{subsec:properties-of-the-limit},
+\ref{sec:properties-of-the-limit}, p.~\pageref{sec:properties-of-the-limit},
 property $P_3$), so:
 \begin{align*}
   f'(x) =&\quad \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})}{\Delta x} \\

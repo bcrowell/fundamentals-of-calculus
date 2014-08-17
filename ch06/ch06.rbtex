@@ -98,7 +98,7 @@ or
 \begin{equation*}
   \lim_{x\rightarrow a} \frac{\Delta u/\Delta x}{\Delta v/\Delta x} \qquad .
 \end{equation*}
-If $v'(a)\ne 0$, then by property $P_6$ of the limit, p.~\pageref{subsubsec:limits-of-sum-prod-quot},
+If $v'(a)\ne 0$, then by property $P_6$ of the limit, p.~\pageref{subsec:limits-of-sum-prod-quot},
 our limit becomes
 \begin{equation*}
   \frac{\lim_{x\rightarrow a} \Delta u/\Delta x}{\lim_{x\rightarrow a} \Delta v/\Delta x} \qquad ,
