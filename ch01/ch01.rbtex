@@ -438,6 +438,8 @@ constant of proportionality relates to the interest rate.
 \begin{dq}
 What is wrong with the logic of the following argument? \emph{You should believe in God, because if
 you don't, when you die you'll go to Hell.}
+Refer to box \ref{textbox:proof-assumptions} on
+p.~\pageref{textbox:proof-assumptions}.
 \end{dq}
 <% end_sec('derivative') %>
 
@@ -455,7 +457,7 @@ An example can't prove a general rule. French is the official language of C\^ote
 that doesn't prove that it's the official language of all of Africa. In fact there are other
 countries in Africa, such as Egypt, that speak different languages, such as Arabic. In general,
 an example can never prove a general rule, but a \emph{counterexample} (Egyptians speaking Arabic)
-can \emph{disprove} a rule.\index{proof!examples can't accomplish}\index{proof!counterexamples}
+can \emph{disprove} a rule (all of Africa speaking French).\index{proof!examples can't accomplish}\index{proof!counterexamples}
       @
    )
 %>
