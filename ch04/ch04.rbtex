@@ -1106,6 +1106,8 @@ and if $y$ takes on values $y_1$ and $y_2$ at certain points within this interva
 $y_2$, there is some real $x$ in the interval for which $y(x)=y_3$.
 \end{theorem}
 
+\pagebreak
+
 \begin{eg}{}
 \egquestion Show that there is a solution to the equation $10^x+x=1000$.
 
