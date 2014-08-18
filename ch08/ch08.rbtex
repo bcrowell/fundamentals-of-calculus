@@ -104,7 +104,6 @@ $g$ defined by $g(v)=v^2$ are the same function, $f=g$.
   <% end_sec('discrete-sums') %>
 
   <% begin_sec("The area under a graph",nil,'area-under-a-graph') %>
-    <% begin_sec("The geometrical problem",nil,'area-under-a-graph-geom') %>
 The examples in section \ref{subsec:discrete-sums} involved change that occurred in discrete
 steps. Calculus is concerned with \emph{continuous} change. The continuous analog of
 a discrete sum is the area under a graph.
@@ -114,7 +113,6 @@ and assume the value of $f$ is always positive (so that its graph lies above
 the $x$ axis). \emph{How large is the area of the region caught
   between the $x$ axis, the graph of $y=f(x)$ and the vertical lines
   $y=a$ and $y=b$?}
-    <% end_sec('area-under-a-graph-geom') %>
   <% end_sec('area-under-a-graph') %>
 <% marg(0) %>
 <%
@@ -339,7 +337,7 @@ knew that if they did their work according to certain methods, the Leibniz notat
 to the wrong result. This confusion was definitively cleared up around 1965, but many mathematicians
 have been influenced by the historical uneasiness about the Leibniz notation, so they prefer to think
 of $\int\ldots\der x$ purely as a shorthand notation for a limit. This is a matter of taste. Those who prefer
-to think of it only as a shorthand will consider the $\der x$ inside the integral to nothing
+to think of it only as a shorthand will consider the $\der x$ inside the integral to be nothing
 more than punctuation, like the period at the end of a sentence. From this point of view, its
 only job is to tell us what the dummy variable is, i.e., what we're integrating with respect to.
 
