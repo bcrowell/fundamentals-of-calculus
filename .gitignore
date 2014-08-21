@@ -2,6 +2,7 @@ NOTES
 instructor/
 scripts/custom/enable
 solns/
+quizzes/
 
 *.pdf
 !share/misc/blank_page.pdf
@@ -34,3 +35,10 @@ learned_commands.json
 figfeedback*
 *.pos
 *.postm4
+temp.config
+e
+err
+eruby_complaints
+fund.ind
+problems.m4
+answers.csv

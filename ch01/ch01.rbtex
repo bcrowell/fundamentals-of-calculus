@@ -10,7 +10,7 @@
     'ch:derivative'
   )
 %>
-
+ 
 <% begin_sec("Review: functions and the slope of a linear function",nil,'functions') %>
 Calculus\index{calculus!defined} is the study of rates of change, and of how change accumulates.
 For example, figure \figref{stock-market} shows the changes in the United States
