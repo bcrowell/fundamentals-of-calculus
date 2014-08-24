@@ -203,7 +203,7 @@ Then at any point in I, the derivatives of $f$ and $g$ are the same.
 <% begin_sec("Properties of the derivative",4,'properties-of-the-derivative') %>
 The following properties of the derivative are intuitively reasonable
 based on our conceptual definition, and they will be enough to allow us to do quite a bit
-of interesting calculus before we come back and make a more rigorous definition.
+of interesting calculus before we come back and make a more general definition.
 <% marg(300) %>
 <%
   fig(
@@ -436,8 +436,7 @@ constant of proportionality relates to the interest rate.
 \startdq
 
 \begin{dq}
-What is wrong with the logic of the following argument? \emph{You should believe in God, because if
-you don't, when you die you'll go to Hell.}
+m4_include(alr/ch01/dq/go-to-hell.tex)
 Refer to box \ref{textbox:proof-assumptions} on
 p.~\pageref{textbox:proof-assumptions}.
 \end{dq}

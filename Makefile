@@ -24,7 +24,6 @@ default:
 	@make preflight
 	BK=$(BOOK) $(RUN_ERUBY)
 	./fruby ch99/hwans.rbtex >ch99/hwanstemp.tex
-	# perl -e 'foreach $$f(<ch*>) {if (-d $$f) {$$f=~/ch(\d\d)/; $$n=$$1; $$c = "cd ch$$n && ../fruby ch$$n.rbtex >ch$${n}temp.tex && cd -"; print "$$c\n"; system $$c}}'
 	$(DO_PDFLATEX)
 	@scripts/translate_to_html.rb --util="learn_commands:$(BOOK).cmd"
 	@process_geom_file.pl <geom.pos >temp.pos

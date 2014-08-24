@@ -739,6 +739,17 @@ $n-1$ falls, then it will cause domino $n$ to fall as well.\index{proof!by induc
       @
    )
 %>
+
+<% marg(-300) %>
+<%
+  fig(
+    'dominoes',
+    %q{Proof by induction is like an infinite chain of dominoes. If we topple the first domino, then
+       eventually every domino will fall.}
+  )  
+%>
+<% end_marg %>
+
 <% end_sec('natural-powers') %>
 <% begin_sec("Negative exponents",nil,'negative-powers') %>
 If we write $1=(x)(1/x)$, then we can differentiate on both sides, and we find that
