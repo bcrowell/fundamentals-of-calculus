@@ -855,6 +855,7 @@ to extend the real number system to a larger one that does include infinities (s
 <% end_sec('elementary-reals') %>
 
 <% begin_sec("The Leibniz notation",nil,'leibniz-notation') %>\index{Leibniz notation!derivative}
+<% begin_sec("Motivation",nil,'leibniz-motivation') %>
 Lacking the more precise modern ideas described in section \ref{sec:elementary-reals},
 Leibniz argued as follows.
 Let's just make $\Delta x$ and $\Delta y$ infinitely small (but not zero). In modern terminology,
@@ -882,12 +883,16 @@ modern developments down to a simple set of practical rules.
   )  
 %>
 <% end_marg %>
+<% end_sec('leibniz-motivation') %>
 
+<% begin_sec("With respect to what?",nil,'leibniz-wrt-what') %>
 One of the good things about the Leibniz notation is that it states clearly what we're differentiating
 \emph{with respect to}. For example, $\der v/\der t$ could indicate how much a car was speeding up
 with each passing second of time, while $\der v/\der x$ would measure the speed gained with
 each meter that it moved down the road.
+<% end_sec('leibniz-wrt-what') %>
 
+<% begin_sec("Shows units",nil,'leibniz-shows-units') %>
 Another selling point of the notation is that it shows the units of the derivative.\index{Leibniz notation!units}
 For example,
 the definition of velocity, expressed in Leibniz notation, is
@@ -902,6 +907,43 @@ in time, which has units of seconds. In terms of units, then, the equation reads
 \end{equation*}
 which works out correctly. In more complicated examples, checking the units like this is a powerful
 method for checking your answer to a calculus problem.
+
+\begin{eg}{Burning gasoline}
+\egquestion Let $x$ be a car's odometer reading and $g$ the amount of gasoline burned since the odometer was zeroed.
+One can think of $x$ as a function of $g$.
+Many cars have a digital display that shows the function $x'(g)$ in real time. Express this using
+the Leibniz notation. What is the interpretation of this derivative, and what units
+does it have?
+
+\eganswer The Leibniz notation is $\der x/\der g$, which it clear that the units are kilometers per liter,
+km/L (or, in U.S.~units, miles per gallon). The interpretation is that this number gives a measure of
+how efficient the car is at using fuel to transport you a given distance.
+\end{eg}
+
+<% marginbox(300,'units','The SI',{},
+%q~
+The metric system is the system of units used universally in engineering and the sciences, as well
+as in daily life in every country except the United States. Formally known as the
+Syst\`eme International (SI),\index{metric system}\index{Syst\`eme International}
+it was invented during the French Revolution. For mechanical (as opposed to electrical)
+measurements, the SI uses three basic units:
+
+\textbf{meters} for length
+
+\textbf{kilograms} for mass
+
+\textbf{seconds} for time
+
+\noindent Other measurements are built from these, e.g., meters per second (m/s) for
+velocity.
+
+There is a system of prefixes that represent powers of ten in which the exponent is a multiple
+of three. The most common of these are $\zu{kilo-}=10^3$, and $\zu{milli-}=10^{-3}$. (The prefix
+$\zu{centi-}=10^{-2}$ is used only in the centimeter, and doesn't require memorization since we know
+that dollars and euros are subdivided into 100 cents.)
+      ~
+   )
+%>
 
 \begin{eg}{An insect pest}\label{eg:pest}
 \egquestion An insect pest from the United States is inadvertently released in
@@ -933,31 +975,9 @@ $s$ in half would reduce $\der a/\der t$ by a factor of four.
 \end{eg}
 
 
-<% marginbox(300,'units','The SI',{},
-%q~
-The metric system is the system of units used universally in engineering and the sciences, as well
-as in daily life in every country except the United States. Formally known as the
-Syst\`eme International (SI),\index{metric system}\index{Syst\`eme International}
-it was invented during the French Revolution. For mechanical (as opposed to electrical)
-measurements, the SI uses three basic units:
+<% end_sec('leibniz-shows-units') %>
 
-\textbf{meters} for length
-
-\textbf{kilograms} for mass
-
-\textbf{seconds} for time
-
-\noindent Other measurements are built from these, e.g., meters per second (m/s) for
-velocity.
-
-There is a system of prefixes that represent powers of ten in which the exponent is a multiple
-of three. The most common of these are $\zu{kilo-}=10^3$, and $\zu{milli-}=10^{-3}$. (The prefix
-$\zu{centi-}=10^{-2}$ is used only in the centimeter, and doesn't require memorization since we know
-that dollars and euros are subdivided into 100 cents.)
-      ~
-   )
-%>
-
+<% begin_sec("Operator interpretation",nil,'leibniz-operator') %>
 Sometimes the Leibniz notation gives an unwieldy, top-heavy tower of symbols:\index{Leibniz notation!derivative!operator interpretation}
 \begin{equation*}
   \frac{\der\left(\frac{x^2}{2}+\frac{1}{7}\right)}{\der x} = x
@@ -980,8 +1000,18 @@ connotations of the Leibniz notation in terms of infinitely small numbers
 will sometimes present the operator interpretation as the \emph{only} correct interpretation, but
 such a prescription robs the student of some of the utility of the notation,
 e.g., by making it impossible to do the kind of reasoning shown in example \ref{eg:pest}.
+<% end_sec('leibniz-operator') %>
 
 <% end_sec('leibniz-notation') %>
+
+<% marg(-300) %>
+<%
+  fig(
+    'approximating-tangent-line',
+    %q{The dotted line through P and Q is a good approximation to the tangent line through P.}
+  )  
+%>
+<% end_marg %>
 
 <% begin_sec("Approximations",nil,'approximations') %>\index{approximation!using the derivative}
 We saw in section \ref{subsec:when-derivative-is-needed} on p.~\pageref{subsec:when-derivative-is-needed}
@@ -997,14 +1027,6 @@ and the line through those points is a good approximation to the tangent line, a
   \frac{\der y}{\der x} \approx \frac{\Delta y}{\Delta x} \qquad .
 \end{equation*}
 It may be of interest to use either side of this as an approximation to the other.
-<% marg(0) %>
-<%
-  fig(
-    'approximating-tangent-line',
-    %q{The dotted line through P and Q is a good approximation to the tangent line through P.}
-  )  
-%>
-<% end_marg %>
 
 <% begin_sec("Approximating the derivative",nil,'approximating-deriv') %>\index{approximation!to derivative}
 Suppose you can't remember that the derivative of $x^2$ is $2x$, but you need to find the

@@ -1,0 +1,287 @@
+<% require "../alr.rb" %>
+<% begin_sec("1.1-2 The derivative") %>
+\begin{frame}{Don't build on shaky foundations}
+
+\includegraphics[width=9in]{ch01/figs/earthquake.jpg}
+
+{\footnotesize 
+  Apartment building after 1994 Northridge earthquake.
+  Gary B. Edstrom, public domain. % http://en.wikipedia.org/wiki/File:Collapsed_Apartment_After_Northridge_Earthquake.jpg
+}
+
+\end{frame}
+
+\begin{frame}{Stating your assumptions}
+
+Discussion question:
+
+m4_include(dq/go-to-hell.tex)
+
+\end{frame}
+
+\begin{frame}{Calculus had nontrivial foundational issues}
+
+{\large
+Mathematicians managed to confuse themselves about the foundational aspects of calculus
+for 300 years.
+}
+
+\begin{columns}
+
+  \begin{column}{.5\textwidth}
+
+    \noindent\includegraphics[width=3in]{ch01/figs/leibniz.jpg}
+
+    Newton and Leibniz, \\
+    1670.
+
+  \end{column}
+
+  \begin{column}{.5\textwidth}
+
+    \noindent\includegraphics[width=3in]{ch01/figs/robinson.jpg}
+
+    Abraham Robinson \\
+    and others, 1970.
+
+  \end{column}
+
+\end{columns}
+
+\vfill
+
+  {\footnotesize
+    Robinson photo by Konrad Jacobs, 1970, CC-BY-SA licensed.
+    % http://commons.wikimedia.org/wiki/File:Robinson_abraham_1970.jpg
+  }
+
+
+\end{frame}
+
+\begin{frame}{Foundations --- historical development}
+
+\noindent\includegraphics[width=8in]{ch01/figs/historical-foundations}
+
+\end{frame}
+
+\begin{frame}{Development of the derivative in this course}
+
+\noindent\includegraphics[width=8in]{ch01/figs/foundations-this-course}
+
+\end{frame}
+
+\begin{frame}{Applying the conceptual definition}
+
+\noindent\includegraphics[width=9in]{ch01/figs/dq-gym}
+
+Park is running slowly in gym class, but then he notices Jenna
+watching him, so he speeds up to try to impress her. Which
+of the graphs could represent his motion?
+
+\end{frame}
+
+\begin{frame}{Definitions: old school}
+
+  Definitions from Euclid (\emph{ca}.~300 BCE):
+
+  \begin{itemize}
+    \item A \emph{point} is that which can't be divided into smaller parts.
+    \item A \emph{line} is a length with no width.
+    \item A \emph{straight line} is a line which lies evenly with the points on itself.
+  \end{itemize}
+
+  Euclid's five postulates:
+
+  \begin{enumerate}
+    \item Two points determine a straight line.
+    \item A straight line can be extended as far as desired.
+    \item Given a line segment AB, a circle exists with center A and radius AB.
+    \item All right angles equal one another.
+    \item If a straight line falling on two straight lines makes the interior angles on the
+         same side less than two right angles, then the two straight lines, if extended far enough, meet on that
+         side on which are the angles less than the two right angles.
+  \end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Definitions: the modern style}
+
+  {\large
+
+  In any logical system, some basic notions must be left undefined.
+
+  \begin{itemize}
+  \item in Euclid: ``point''
+  \item in set theory: ``set''
+  \end{itemize}
+
+  These basic notions aren't defined in terms of others, but are characterized by their properties.
+
+  }
+\end{frame}
+
+\begin{frame}{Definitions: the modern style}
+
+\begin{columns}
+
+    \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/love_is.jpg}\end{column}
+
+  \begin{column}{.7\textwidth}
+    {\Large Don't try to define it. Just state its properties. }
+  \end{column}
+
+
+\end{columns}
+
+  {\footnotesize (c) LoveIsComix.com. Used under the U.S. fair use exception to copyright.}
+
+\end{frame}
+
+\begin{frame}{Properties of the derivative}
+
+  \includegraphics[width=8in]{ch01/figs/properties-of-derivative}
+
+  \begin{description}
+    \item[constant] The derivative of a constant function is zero.
+    \item[line] The derivative of a linear function is its slope.
+    \item[addition] The derivative of the sum of two functions is the sum of their derivatives.
+    \item[no-cut] Suppose that for a certain point P on the graph of a function, there is a unique linear function
+                   $\ell$ that passes through P but doesn't cut through the graph at P. Then the graph of $\ell$
+                   is the tangent line, and
+                   the derivative of the function at P equals
+                   the slope of the line.
+  \end{description}
+
+\end{frame}
+
+
+\begin{frame}{Income tax}
+
+  {\Large
+
+  Discussion question:
+
+  Your yearly income (deducting living expenses)
+  is approximately the same as the derivative of your net worth with respect to time:
+  it's the rate at which your net worth is increasing.
+  What does the vertical shift property of the derivative tell you about income taxes?
+
+  }
+
+\end{frame}
+
+
+\begin{frame}{Savor it}
+
+  {\Large
+
+  Discussion question:
+
+  1. When you drink beer, there is a rate at which the volume of beer in the bottle is decreasing over time.
+  At the same time, the beer in your belly is increasing. How are these two rates of change related by the
+  properties of the derivative?
+
+  2. What about a fast-motion video of someone drinking beer?
+
+  3. What about the same video played backwards?
+
+  }
+
+\end{frame}
+
+\begin{frame}{Monomials}
+
+  {\large
+
+  Group project:
+
+  An expression of the form $ax^n$ is called a \emph{monomial}.
+  Consider the following monomials:
+
+  \begin{equation*}
+    1 \quad x \quad x^2 \quad x^3
+  \end{equation*}
+
+  If we consider each of these as a function $f$ defined by $y=f(x)$, then the point
+  $(1,1)$ lies on each graph.
+  In each case, figure out which properties of the derivative allow the derivative to be
+  calculated at this point. There may be more than one property that could be used, or
+  there could be none that will work.
+
+  }
+
+\end{frame}
+
+\begin{frame}{Another look at $(x^2)'$}
+
+  {\large
+  
+
+Today's reading included a proof that the derivative of $x^2$ is $2x$, so that in
+particular, the derivative at the point $(1,1)$ equals 2. In this exercise we'll
+investigate the same idea from a different angle.
+
+The class will be divided into groups A, B, C, \ldots Group A's job is to calculate the
+slope of the line connecting the point $(1,1)$ to the point $(1.1,1.1^2)$. Group B
+does the same for $1.01$, and so on. We'll tabulate the results on the board and
+see what they tell us about the derivative.
+
+  }
+
+\end{frame}
+
+\begin{frame}{$(x^3)'$}
+
+  {\Large
+
+Repeat the preceding exercise for $x^3$.
+
+What combination of vertical and horizontal stretches would move the point $(1,1)$
+to the point $(2,8)$? What does this tell us about the derivative at this point?
+
+What would the general expression be for the derivative of $x^3$?
+
+  }
+
+\end{frame}
+
+
+\begin{frame}{Polynomials}
+
+  {\Large
+
+  Group project:
+
+  We've already found the derivatives of the monomials
+  $1$, $x$, $x^2$, and $x^3$. Based on these, use the properties of the
+  derivative to find the derivatives of the following functions. In each case,
+  state which property you used.
+
+  \begin{center}
+  \begin{tabular}{lp{12mm}l}
+     1. $-x^2$ &&       4. $7x^2$ \\
+     2. $x+1$     &&    5. $x^2/2$ \\
+     3. $7x$      &&    6. $x^3+x^2$
+  \end{tabular}
+  \end{center}
+
+  }
+
+\end{frame}
+
+\begin{frame}{Consistency?}
+
+  {\Large
+
+  Consider the function $f$ defined by $f(x)=(x-1)^2$.
+
+  1. Find its derivative using the horizontal shift property.
+
+  2. Find its derivative by multiplying out the square.
+
+  Are the two results consistent?
+
+  }
+
+\end{frame}
+<% end_sec() %> % "1.1-2 The derivative"

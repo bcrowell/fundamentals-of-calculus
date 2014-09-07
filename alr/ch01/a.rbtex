@@ -1,0 +1,184 @@
+<% require "../alr.rb" %>
+<% begin_sec("introduction") %>
+
+\begin{frame}{Reading questions}
+You can bring a question
+on something you didn't understand in the reading.
+I'll pick a few of the best questions to answer in class, and the people who
+asked those questions will get extra credit.
+ Your question \emph{should}:
+\begin{itemize}
+  \item be about math
+  \item show effort
+  \item be specific enough that  I can answer it
+  \item be written out in advance on a full-size sheet of paper
+\end{itemize}
+
+Your question \emph{should not}:
+\begin{itemize}
+  \item be about trivia
+  \item be something you could look up online
+  \item be a homework question
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Think-vote-debate}\label{think-vote-debate}
+  We're about to do an activity that works like this:
+
+  \begin{enumerate}
+    \item Students are assigned randomly to groups.
+    \item The instructor poses a multiple-choice question.
+    \item You think about it quietly for 1 minute.
+    \item You hold up a card to show your choice.
+    \item If there isn't a consensus, each group debates.
+    \item We vote again and see if a consensus has been reached.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Velocity from a graph}
+
+  \begin{columns}
+
+    \begin{column}{.4\textwidth}\includegraphics[width=4in]{ch01/figs/slow-dog.pdf}\end{column}
+
+    \begin{column}{.4\textwidth}
+
+    An aged Yorkshire terrier is taking a walk.
+    According to the graph, what is the dog's velocity?
+
+    A. 0.25 km/hr \\
+    B. 0.5 km/hr \\
+    C. 2 km/hr \\
+    D. 4 km/hr
+
+    \end{column}
+
+  \end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Review of functions}
+
+    A function is a graph that assigns a single output value of the
+    variable on the vertical axis to any input value in its domain, on the horizontal axis.
+
+    \includegraphics[width=4in]{ch01/figs/is-it-a-function.pdf}
+
+    In which graph or graphs is $y$ a function of $x$?
+
+    A. 1 but not 2 \\
+    B. 2 but not 1 \\
+    C. both \\
+    D. neither
+
+    \vfill
+    {\small Use the think-vote-debate process described on p.~\pageref{think-vote-debate}.}
+
+\end{frame}
+
+\begin{frame}{Think-talk-share}\label{think-talk-share}
+  Our next activity will use this method:
+
+  \begin{enumerate}
+    \item Students are assigned randomly to groups of 4, which are also subdivided into pairs.
+    \item The instructor poses an open-ended question.
+    \item You think about it quietly for 1 minute.
+    \item You and your partner discuss your ideas.
+    \item A student is randomly picked and can choose to share what they said, what their partner said,
+             a synthesis of their ideas, or something else. More students share until we've reached
+             a conclusion.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{A chair of protest}
+
+  \begin{columns}
+
+    \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/skyscraper.pdf}\end{column}
+
+    \begin{column}{.7\textwidth}
+
+      Office worker Jane Doe throws her rolling
+      chair out the window. At time $t$, the chair has fallen through a height
+      \begin{equation*}
+        h = t^2,
+      \end{equation*}
+      where $t$ is in units of seconds and $h$ is the number of stories.
+
+      Can $h$ be considered as a function of $t$? $t$ as a function of $h$?
+      What would the graphs look like?
+    \end{column}
+
+  \end{columns}
+
+  \vfill
+
+    \vfill
+    {\small Use the think-talk-share process described on p.~\pageref{think-talk-share}.}
+
+    {\tiny 
+      Skyscraper from a photo by Wikimedia Commons user Urban, CC-BY-SA licensed.
+                   % http://commons.wikimedia.org/wiki/File:Rockefeller_Center1021.jpg
+      Chair by Wikimedia Commons user Paul Robinson, CC-BY-SA licensed.
+                   % http://commons.wikimedia.org/wiki/File:Nuvola_armless_chair.svg
+      \par
+    }
+
+
+\end{frame}
+
+\begin{frame}{Speed of the chair}
+
+  \begin{columns}
+
+    \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/skyscraper.pdf}\end{column}
+
+    \begin{column}{.7\textwidth}
+      Consider again the falling chair, with $h=t^2$.
+
+      Given this equation, what can we say about the chair's \emph{speed}, or \emph{velocity} as time passes?
+
+      A. The velocity stays the same.\\
+      B. The velocity increases.\\
+      D. There is not enough information to say.\\
+      E. The velocity is undefined, because the graph isn't a line.
+
+    \vfill
+    {\small Use the think-vote-debate process described on p.~\pageref{think-vote-debate}.}
+
+    \end{column}
+
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Finding a number for the speed}
+
+  \begin{columns}
+
+    \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/skyscraper.pdf}\end{column}
+
+    \begin{column}{.7\textwidth}
+      The handout on the following page is a precise graph of the function $h=t^2$.
+
+      Suppose that we want to find the speed of the chair
+      at a certain time such as $t=2$ seconds.
+      Looking at the graph, try to think of a good way to define this intuitive idea.
+
+    \vfill
+    {\small Use the think-talk-share process described on p.~\pageref{think-talk-share}.}
+
+    \end{column}
+
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Graph of $h$ versus $t$}
+
+  \includegraphics[width=10in]{ch01/figs/chair-graph}
+
+\end{frame}
+<% end_sec() %> % "introduction"
