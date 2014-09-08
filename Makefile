@@ -22,6 +22,7 @@ PROBLEMS_CSV = problems.csv
 
 default:
 	@make preflight
+	@scripts/before_each.rb
 	BK=$(BOOK) $(RUN_ERUBY)
 	./fruby ch99/hwans.rbtex >ch99/hwanstemp.tex
 	$(DO_PDFLATEX)
@@ -82,6 +83,7 @@ clean:
 
 very_clean:
 	make clean
+	rm -f brief-toc.tex brief-toc-new.tex
 
 preflight:
 	@perl -e 'if (-e "scripts/custom/enable") {system("chmod +x scripts/custom/*"); foreach $$f(<scripts/custom/*.pl>) {$$c="$$f $(BOOK) $(PROBLEMS_CSV)"; system($$c)}}'
