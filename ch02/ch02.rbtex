@@ -274,7 +274,7 @@ The single most important application of the limit is that it gives us a
 way to formalize the idea of a derivative, which we have so far been using
 on an informal basis. We start from the Newton-Leibniz approach described on
 p.~\pageref{discard-dx-squared}, but modify it by using a limit to get rid of the questionable
-procedure of discarding the square of an infinitesimally small number.
+procedure of discarding the square of an infinitesimal number.
 
 \begin{important}[Definition of the derivative]\index{derivative!defined as a limit}
 The derivative of a function $f$ at a point $x$ is
@@ -1145,7 +1145,7 @@ Then we say that $r$ is the \emph{standard part} of $H$.
 \emph{Rule 1.} The hyperreal numbers obey all the same elementary axioms as the
       real numbers (section \ref{sec:elementary-reals}, p.~\pageref{sec:elementary-reals}).
 
-The hyperreals numbers include at least one infinitesimally small number, call it $d$.
+The hyperreals numbers include at least one infinitesimal number, call it $d$.
 By rule 1, we can apply the multiplicative inverse axiom to $d$, so
 $1/d$ is also a well-defined hyperreal
 number, and clearly $1/d$ is bigger than $1$, bigger than $1+1$, and so on, so the hyperreal
