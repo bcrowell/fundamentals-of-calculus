@@ -191,8 +191,8 @@ We say that $L$ is the limit of $f(x)$ as $x\to a$, if the following two conditi
       $|f(x) - L|<\varepsilon$ .
 \end{enumerate}
 \end{important}
-(The Greek letter ``$\delta$'' is lowercase delta, equivalent to the Latin ``d,''
-and ``$\epsilon'' is epsilon, which is like Latin ``e.'')
+\noindent (The Greek letter ``$\delta$'' is lowercase delta, equivalent to the Latin ``d,''
+and ``$\epsilon$'' is epsilon, which is like Latin ``e.'')
 
 \emph{Why the absolute values?} The quantity $|x-y|$ is the distance
 between the points $x$ and $y$ on the number line, and one can measure how
