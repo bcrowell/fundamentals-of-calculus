@@ -132,5 +132,27 @@ Let's see how this plays out in the $\epsilon$-$\delta$ definition.
 
 \end{frame}
 
+\begin{frame}{Computing derivatives using limits}
+
+Let $f(x)=x^2$. Then for the derivative $f'$ evaluated at $x=1$,
+
+\begin{align*}
+  f'(1) &= \lim_{\Delta x\rightarrow0} \frac{(1+\Delta x)^2-1^2}{\Delta x} \\
+        &= \lim_{\Delta x\rightarrow0} \frac{1+2\Delta x+\Delta x^2-1}{\Delta x} \\
+        &= \lim_{\Delta x\rightarrow0} \frac{2\Delta x+\Delta x^2}{\Delta x} \\
+        &= \lim_{\Delta x\rightarrow0} 2+\Delta x \\
+        &= 2
+\end{align*}
+
+Now let $g(x)=x^n$, where $n$ is the exponent assigned to your group.
+Calculate $g'(1)$ by the same method.
+
+\end{frame}
+
+\begin{frame}{Binomial coefficients}
+
+\noindent\includegraphics[width=10in]{ch02/figs/binomial-coefficients}
+
+\end{frame}
 
 <% end_sec() %> % 2.1-2 limits
