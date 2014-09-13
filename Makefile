@@ -94,6 +94,7 @@ post:
 	cp fund.pdf ~/Lightandmatter/fund
 
 prepress:
+	PREPRESS=1 make book
 	make preflight_figs
 	scripts/pdf_extract_pages.rb fund.pdf 3-end fund_lulu.pdf
 	# Filtering through gs used to be necessary to convince Lulu not to complain about missing fonts.

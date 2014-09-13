@@ -675,6 +675,16 @@ we first need to decide at which time we want to know the velocity, and then eva
 at that time.
 <% end_sec('when-derivative-is-needed') %>
 
+<% marg(-300) %>
+<%
+  fig(
+    'tram-fare-edited',
+    %q{Revenue from a tram as a function of the fare charged.}
+  )  
+%>
+<% end_marg %>
+%%graph%% tram-fare func=(100.0-x)*x x=f y=r format=svg xlo=0 xhi=100 ylo=0 yhi=2500 xtic_spacing=20 ytic_spacing=1000 with=lines
+
 <% begin_sec("Optimization",nil,'optimization') %>
 An extremely important use of the derivative is in optimization. For example, suppose that
 the operators of a privately owned mountain tram in Switzerland want to optimize
@@ -696,14 +706,6 @@ For insight into what's going on, figure \figref{tram-fare-edited} shows this fu
 $b=1$. When the fare is zero, we get plenty of customers every day, but they don't pay anything,
 so our revenue is zero. When the fare is 100 francs, the number of paying passengers goes down
 to zero, so again we have no revenue. 
-<% marg(0) %>
-<%
-  fig(
-    'tram-fare-edited',
-    %q{Revenue from a tram as a function of the fare charged.}
-  )  
-%>
-<% end_marg %>
 
 Somewhere in between these extremes  we have the fare that would optimize our
 revenue: the \emph{maximum} of the function $r$. At this point on the graph, the derivative is zero,
@@ -725,6 +727,7 @@ Setting $r'$ equal to zero, we have
 \end{align*} 
 With the particular numerical values used to construct the graph, this gives an optimal
 fare of 50 francs, which looks about right from the graph.
+
 
 By searching for points where the derivative is zero we can often, but not always, find
 the the points where a function takes on its maximum and minimum values. The term extremum
@@ -749,14 +752,7 @@ p.~\pageref{subsec:second-derivative-for-extrema}}
        undefined or nonzero derivative.}
   )  
 %>
-<% end_marg %>
-
-%%graph%% tram-fare func=(100.0-x)*x x=f y=r format=svg xlo=0 xhi=100 ylo=0 yhi=2500 xtic_spacing=20 ytic_spacing=1000 with=lines
-
-<% end_sec('optimization') %>
-<% end_sec('apps-of-derivative') %>
-
-<% marg(-30) %>
+\spacebetweenfigs
 <%
   fig(
     'vanishing-point',
@@ -765,6 +761,10 @@ p.~\pageref{subsec:second-derivative-for-extrema}}
   )  
 %>
 <% end_marg %>
+
+<% end_sec('optimization') %>
+<% end_sec('apps-of-derivative') %>
+
 
 <% begin_sec("Review: elementary properties of the real numbers",nil,'elementary-reals') %>\index{real numbers!elementary properties}
 

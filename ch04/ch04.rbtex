@@ -721,7 +721,7 @@ Early in the motion, soon after the person jumps out of the plane, the only sign
 force is gravity, and the person falls with constant acceleration (section \ref{subsec:velocity},
 p.~\pageref{subsec:velocity}). The drop relative to the initial position
 equals $(1/2)at^2$, which is the equation of a parabola. 
-<% marg(50) %>
+<% marg(300) %>
 <%
   fig(
     'skydiving',
@@ -730,7 +730,7 @@ equals $(1/2)at^2$, which is the equation of a parabola.
 %>
 <% end_marg %>
 
-<% marg(-100) %>
+<% marg(-300) %>
 <%
   fig(
     'anchor',
