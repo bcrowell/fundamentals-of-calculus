@@ -486,7 +486,9 @@ me permission to use it, but that doesn't mean you have permission to use it.}
   % tried to get underlining, but couldn't get it to work; \underline{#2} prevents line breaks; using package soul
   % with \ul{#2} produces errors; http://tex.stackexchange.com/questions/9550/why-does-underlined-text-not-get-wrapped-once-it-hits-the-end-of-a-line
 \newcommand{\brieftocentry}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
-            {\link{#2}{\ref{#2}} & \link{#2}{#3} #1 \link{#1}{\pageref{#2}}}
+            {\ref{#2} & #3 #1 \pageref{#2}}
+\newcommand{\brieftocentrywithlink}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
+            {\link{#2}{\ref{#2}} & \link{#2}{#3} #1 \link{#2}{\pageref{#2}}}
 \newcommand{\toclinewithlink}[4]% #1=subsection, etc., #2=label, #3=title, #4=\thesubsection, etc.
   {%
     \addcontentsline{toc}{#1}{\protect\numberline{#4}\link{#2}{#3}}%

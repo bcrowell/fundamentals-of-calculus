@@ -1373,7 +1373,12 @@ def chapter_print(number,title,label,caption,options)
   append = ''
   #append = "\\anchor{anchor-#{label}}" # navigator package
   File.open('brief-toc-new.tex','a') { |f|
-    f.print "\\brieftocentry{#{label}}{#{title}} \\\\\n" # LM and Me. don't use brief-toc-new.tex
+    # LM and Me. don't use brief-toc-new.tex
+    if is_prepress
+      f.print "\\brieftocentry{#{label}}{#{title}} \\\\\n" 
+    else
+      f.print "\\brieftocentrywithlink{#{label}}{#{title}} \\\\\n" 
+    end
   }
   if !has_opener then
     result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}#{append}"
