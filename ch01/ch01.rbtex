@@ -1241,7 +1241,7 @@ graph, and what real-world implications would this have?
 %>
 <% end_marg %>
 
-\begin{hwsection}[Review problems]
+<% begin_hw_sec("Review problems") %>
 
 <% hw('review-point-and-slope-to-equation') %>
 <% hw('review-points-to-equation') %>
@@ -1275,9 +1275,9 @@ graph, and what real-world implications would this have?
 
   <% hw_block(2) %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% hw('diff-monomials',{'solution'=>true}) %>
 
@@ -1390,6 +1390,6 @@ assigned randomly to one third of the students in a class.
 <% hw('bogus-derivative-proof') %>
 <% hw('no-simple-product-rule') %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

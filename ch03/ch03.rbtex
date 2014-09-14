@@ -499,7 +499,7 @@ derivative. Usually
 
 <% end_sec('higher-derivatives') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% hw('2nd-deriv-polynomial',{'solution'=>true}) %>
 <% hw('2nd-deriv-polynomial-2') %>
@@ -570,6 +570,6 @@ order of difficulty.
 <% hw('induction-nth-deriv-of-polynomial-vanishing') %>
 <% hw('induction-nth-deriv-harmonic') %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

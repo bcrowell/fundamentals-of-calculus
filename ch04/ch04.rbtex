@@ -1461,7 +1461,7 @@ our agreement never to choose $\delta>1$, so our choice of $\delta$ is
 <% end_sec('limit-tricks') %>
 
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% hw('difference-of-roots-at-infty',{'solution'=>true}) %>
 <% hw('parallel-resistance',{'solution'=>true}) %>
@@ -1531,6 +1531,6 @@ our agreement never to choose $\delta>1$, so our choice of $\delta$ is
 
 <% hw('limit-prove-eps-delta-using-trick') %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

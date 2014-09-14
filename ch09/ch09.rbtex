@@ -380,7 +380,7 @@ attacked in this way:
 <% end_sec('integrate-rational-and-roots') %>
 <% end_sec('misc-integrals') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 \begin{hwinstructions}
 In problems \ref{hw:easy-integral-techniques-01}-\ref{hw:easy-integral-techniques-12},
@@ -469,6 +469,6 @@ which, integrate the one that can be done, and check your answer to that one onl
 <% hw('impossible-or-not-2') %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

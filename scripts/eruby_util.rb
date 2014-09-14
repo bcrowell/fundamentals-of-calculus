@@ -1142,6 +1142,24 @@ def begin_sec(title,pagebreak=nil,label='',options={})
   #$stderr.print "in begin_sec(), eruby_util.rb: level=#{$section_level}, title=#{title}, macro=#{macro}\n"
 end
 
+def begin_hw_sec(title='Problems')
+  label = "hw-#{$ch}-#{title.downcase.gsub(/\s+/,'_')}"
+  t = <<-TEX
+    \\begin{hwsection}[#{title}]
+    \\anchor{anchor-#{label}}% navigator_package
+    TEX
+  if is_prepress then
+    t = t + "\\addcontentsline{toc}{section}{#{title}}"
+  else
+    t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{label}}{#{title}}}"
+  end
+  print t
+end
+
+def end_hw_sec
+  print '\end{hwsection}'
+end
+
 def sectioning_command_with_href(cmd,section_level,label,label_level,title)
   # http://tex.stackexchange.com/a/200940/6853
   name_level = {0=>'chapter',1=>'section',2=>'subsection',3=>'subsubsection',4=>'subsubsubsection'}[section_level]
@@ -1163,6 +1181,7 @@ def sectioning_command_with_href(cmd,section_level,label,label_level,title)
   anchor_command_2 = ''
   if section_level==0 then anchor_command_2=anchor_command else anchor_command_1=anchor_command end
   if is_prepress then toc_macro="toclinewithoutlink" else toc_macro="toclinewithlink" end
+  # similar code in begin_hw_sec
   t = <<-TEX
     \\begingroup
     \\renewcommand{\\addcontentsline}[3]{}% temporarily disable \\addcontentsline

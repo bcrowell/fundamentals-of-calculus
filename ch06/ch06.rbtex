@@ -341,7 +341,7 @@ The proof is left as an exercise (problem \ref{hw:lhospital-at-infty}, p.~\pager
 <% end_sec('lhospital-proofs') %>
 <% end_sec('lhospital-fancy') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% hw('granville-lhospital',{'solution'=>true}) %>
 <% hw('lhospital-cos-exp',{'solution'=>true}) %>
@@ -363,6 +363,6 @@ The proof is left as an exercise (problem \ref{hw:lhospital-at-infty}, p.~\pager
 
 <% hw('lhospital-at-infty') %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

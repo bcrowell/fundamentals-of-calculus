@@ -1248,7 +1248,7 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 
 <% end_sec('safe-handling-of-dx') %>
 
-\begin{hwsection}[Review problems]
+<% begin_hw_sec("Review problems") %>
 
 <% hw('review-add-exponents') %>
 <% hw('review-negative-exponents') %>
@@ -1256,9 +1256,9 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 
   <% hw_block(2) %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 \begin{hwinstructions}
 In example \ref{eg:x-squared-with-limits} on p.~\pageref{eg:x-squared-with-limits} we found
@@ -1440,6 +1440,6 @@ to understand the definition of the limit.
 
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

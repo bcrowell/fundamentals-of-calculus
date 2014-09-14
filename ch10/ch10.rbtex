@@ -446,7 +446,7 @@ kinetic energy, rather than frictional heating.
 
 <% end_sec('physics') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% hw('sd-of-uniform-variable') %>
 
@@ -485,7 +485,7 @@ kinetic energy, rather than frictional heating.
 
 <% hw('cancer-lottery') %>
 
-\end{hwsection}
+<% end_hw_sec %>
 \addtocontents{toc}{\protect\vspace{10mm}} % separate end-matter visually from ch 10
 
 <% end_chapter %>

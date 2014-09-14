@@ -1243,7 +1243,7 @@ differentiate:\index{fundamental theorem of calculus!derivative of an integral}
 <% end_sec('definite-integral-moving-bounds') %>
 
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 \begin{hwinstructions}
 Problems \ref{hw:barometric-altimeter}-\ref{hw:electric-meter} don't require you to
@@ -1495,6 +1495,6 @@ student would do one from each group.
 <% hw('silly-constant') %>
 <% hw('log-abs-val-two-constants') %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

@@ -739,7 +739,7 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 \end{tabular}\label{end-of-hyperbolic-functions}
 <% end_sec('hyperbolic-functions') %>
 
-\begin{hwsection}[Review problems]
+<% begin_hw_sec("Review problems") %>
 
 <% hw('review-sin-and-cos-both-negative',{'solution'=>true}) %>
 <% hw('review-invert-random-function') %>
@@ -747,9 +747,9 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 
   <% hw_block(2) %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% hw('logarithmy',{'solution'=>true}) %>
 <% hw('sinusoidal',{'solution'=>true}) %>
@@ -822,6 +822,6 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 
 <% hw('induction-nth-deriv-of-gaussian') %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

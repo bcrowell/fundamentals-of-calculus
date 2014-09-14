@@ -788,7 +788,7 @@ its central point to nearly vertical motion, we need to rotate it by 45 degrees.
 
 <% end_sec('implicit-differentiation') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% marg(300) %>
 <%
@@ -917,7 +917,7 @@ Find the slope of the graph at the origin.
 <% hw('prove-newtons-method-diverges') %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 
 <% end_chapter %>
