@@ -1410,6 +1410,8 @@ on p.~\pageref{differentiability-by-zooming}.
 <% hw('tangent-to-x3-through-point') %>
 <% hw('tangent-x2-and-x4') %>
 
+\pagebreak
+
 
   <% hw_block(2) %>
 
