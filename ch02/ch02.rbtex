@@ -294,7 +294,7 @@ We've already shown in example \ref{eg:limit-of-linear-function} on p.~\pageref{
 that this sort of limit of a linear function is just what you would expect by plugging in to the
 equation of the line, and therefore we have $f'(1)=2$.
 \end{eg}
-<% marg(0) %>
+<% marg(300) %>
 <%
   fig(
     'x-squared-geometrically',

@@ -1315,11 +1315,28 @@ assigned randomly to one fourth of the students in a class.
 <% hw('diff-polynomial-4') %>
 <% hw('diff-polynomial-5') %>
 
-\hfill
-
 <% hw('same-deriv',{'solution'=>true}) %>
 
-  <% hw_block(2) %>
+  <% hw_block(1) %>
+
+<% hw('diff-poly-symb-coeff-1') %>
+<% hw('diff-poly-symb-coeff-2') %>
+
+\pagebreak
+
+\begin{hwinstructions}
+In problems \ref{hw:diff-poly-rewrite-1}-\ref{hw:diff-poly-rewrite-3} you will need to
+start by rewriting the given expressions in a form that you know how to differentiate.
+(If you've had some previous exposure to calculus, you may already know the product rule or chain rule.
+Some of these problems can be done using those rules, but they can also be done without them.
+If you use them, explain that you're doing so.)
+\end{hwinstructions}
+
+<% hw('diff-poly-rewrite-1') %>
+<% hw('diff-poly-rewrite-2') %>
+<% hw('diff-poly-rewrite-3') %>
+
+  <% hw_block(1) %>
 
 <% hw('zoom-1') %>
 <% hw('zoom-2') %>
@@ -1331,6 +1348,9 @@ assigned randomly to one fourth of the students in a class.
 
 <% hw('can-you-do-fractions-1') %>
 <% hw('can-you-do-fractions-2') %>
+
+\pagebreak
+
 <% hw('find-ranges-of-functions') %> % Robbin, p. 20, # 18
 
   <% hw_block(2) %>
