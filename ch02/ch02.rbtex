@@ -408,6 +408,19 @@ rewrite it as the product $(x^2)\cdot(x)$. Applying the product rule then gives
 \end{align*}
 \end{eg}
 
+\begin{eg}{A dirty trick for finding the derivative of $1/x$}\label{eg:derivative-of-one-over-x}
+How do we differentiate $1/x$? We can guess the right result by recalling that
+this expression can also be written as $x^{-1}$. (Exponents, including negative ones, will be reviewed more
+systematically in section \ref{sec:non-natural-exponents}, p.~\pageref{sec:non-natural-exponents}).
+If we then assume that the power rule $(x^n)'=nx^{n-1}$ applies to $n=-1$, then the result should
+be that the derivative of $1/x$ is $-x^{-2}$, or $-1/x^2$.
+
+But that's only a reasonable guess, not a proof. We can prove it by the following dirty trick.
+Write $1=(x)(1/x)$, and then differentiate on both sides. The left-hand side is a constant, so its
+derivative is zero. Applying the product rule to the right-hand side, we get $(x)'(1/x)+(x)(1/x)'$,
+and equating this to zero shows that indeed, $(1/x)'=-1/x^2$.
+\end{eg}
+
 <% end_sec('product-rule') %>
 
 <% begin_sec("The chain rule",nil,'chain-rule') %>
@@ -525,26 +538,6 @@ then at that point,
 \end{equation*}
 \end{important}
 
-The chain rule is extremely useful in evaluating derivatives, because many of the
-expressions we want to differentiate have a structure in which a big formula is
-built out of smaller ones. For example, 
-in problem \ref{hw:numerical-deriv-geometric} on p.~\pageref{hw:numerical-deriv-geometric}, we found
-by numerical approximation that the derivative of the function
-\begin{equation*}
-  \frac{1}{1-x} \qquad ,
-\end{equation*}
-evaluated at $x=0$, was about 1.000. The chain rule gives us an easy way to get an exact result for any $x$.
-The structure of our formula is like this:
-
-\begin{center}
-\anonymousinlinefig{nested-expressions}
-\end{center}
-
-\noindent In silly notation, the chain rule says:
-
-\begin{center}
-\anonymousinlinefig{dbox-dbox}
-\end{center}
 <% marginbox(200,'chain-rule-technical',%q{A sketch of the technical issues behind the chain rule},{},
 %q@
 If all three derivatives in equation \eqref{eg:chain-rule-limit-product} exist, then
@@ -572,13 +565,39 @@ $\Delta y\rightarrow 0$.
    )
 %>
 
+The chain rule is extremely useful in evaluating derivatives, because many of the
+expressions we want to differentiate have a structure in which a big formula is
+built out of smaller ones. For example, 
+in problem \ref{hw:numerical-deriv-geometric} on p.~\pageref{hw:numerical-deriv-geometric}, we found
+by numerical approximation that the derivative of the function
+\begin{equation*}
+  \frac{1}{1-x} \qquad ,
+\end{equation*}
+evaluated at $x=0$, was about 1.000. The chain rule gives us an easy way to get an exact result for any $x$.
+The structure of our formula is like this:
+
+\begin{center}
+\anonymousinlinefig{nested-expressions}
+\end{center}
+
+\noindent In silly notation, the chain rule says:
+
+\begin{center}
+\anonymousinlinefig{dbox-dbox}
+\end{center}
+
 Writing the boxes inside the equations is cumbersome, so let's call the big box $z$ and the
 small one $y$. Then
 \begin{align*}
   z &= 1/y \qquad \text{and} \\
   y &= 1-x \qquad ,
 \end{align*}
-which are both equations we know how to differentiate. In life, sometimes 
+which are both functions we know how to differentiate:
+\begin{align*}
+  \frac{\der z}{\der y} &= -y^{-2} \qquad \text{[example \ref{eg:derivative-of-one-over-x}, p.~\pageref{eg:derivative-of-one-over-x}]} \\
+  \frac{\der y}{\der x} &= -1
+\end{align*}
+In life, sometimes 
 our big goals (get married and raise a family) break down into smaller sub-goals
 (buy a ring, find a priest, placate the mother of the bride). The chain rule
 lets us apply this divide-and-conquer strategy to differentiation. Since we
@@ -706,7 +725,7 @@ Only $n=0$ requires special treatment. Since $x^0=1$, its derivative should be z
 Our rule sort of, but not quite, works here, since it gives $0x^{-1}$, or $0/x$. This is certainly
 zero if $x\ne0$, but in the case where $x=0$ it gives $0/0$, which is undefined.
 
-<% begin_sec("Exponents that are natural numbers",4,'natural-powers') %>
+<% begin_sec("Exponents that are natural numbers",nil,'natural-powers') %>
 Example \ref{eg:derivative-of-x-cubed} on p.~\pageref{eg:derivative-of-x-cubed} showed that
 the product rule can be used
 to prove special cases of the power rule.
@@ -754,8 +773,8 @@ $n-1$ falls, then it will cause domino $n$ to fall as well.\index{proof!by induc
 
 <% end_sec('natural-powers') %>
 <% begin_sec("Negative exponents",nil,'negative-powers') %>
-If we write $1=(x)(1/x)$, then we can differentiate on both sides, and we find that
-$(1/x)'=-1/x^2$. This is exactly what we would have expected from applying the
+We saw in example \ref{eg:derivative-of-one-over-x} on p.~\pageref{eg:derivative-of-one-over-x} that
+$(1/x)'=-1/x^2$, which was exactly what we would have expected from applying the
 power rule to the exponent $-1$. It is then straightforward to extend the result
 to all negative integers by applying the chain rule to $(x^n)^{-1}$.
 <% end_sec('negative-powers') %>
@@ -778,8 +797,6 @@ example \ref{eg:power-law-frac-with-implicit-diff}, p.~\pageref{eg:power-law-fra
 The generalization to irrational
 exponents is deferred until example \ref{eg:power-any-exponent} on p.~\pageref{eg:power-any-exponent}.
 <% end_sec('fractional-powers') %>
-
-\pagebreak
 
 \begin{eg}{Economic order quantity}\label{eg:order-quantity}\index{order quantity}\index{economic order quantity}
 Here is an extremely common problem in the business world. A retailer knows that there is
