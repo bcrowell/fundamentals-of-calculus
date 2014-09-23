@@ -1,0 +1,108 @@
+<% require "../alr.rb" %>
+<% begin_sec("2.4 The chain rule") %>
+
+\begin{frame}{Composition of functions}
+
+Steps in a recipe are like functions, because they take an input (some food)
+and produce an output (the food in a different state). Consider the following
+functions:
+
+\begin{itemize}
+  \item $f$ = fry the food
+  \item $s$ = slice the food up into small pieces
+\end{itemize}
+
+Compare $f(s(\text{chicken}))$ with $s(f(\text{chicken}))$.
+
+\end{frame}
+
+\begin{frame}{From composition to a single expression}
+
+Let
+
+\begin{align*}
+  z &= y^8 \qquad \text{and} \\
+  y &= x^2+1 .
+\end{align*}
+
+Write $z$ as a function of $x$.
+
+\end{frame}
+
+\begin{frame}{From an expression to a composition}
+
+Let
+
+\begin{equation*}
+  z=\frac{1+\sin \frac{1}{x}}{1-\sqrt{\sin \frac{1}{x}}}.
+\end{equation*}
+
+
+Rewrite this as a composition of two functions so that it becomes simpler
+to describe and understand.
+
+\end{frame}
+
+\begin{frame}{Derivative of a composition}
+
+Consider these two functions.
+
+\begin{itemize}
+  \item $m(t)$ = the amount of money Bill Gates has at time $t$
+  \item $h(m)$ = a number that measures how happy Bill Gates is if he has bank balance $m$
+\end{itemize}
+
+Suppose that Bill finds \$20 on the sidewalk. This is positive cash flow,
+so $m'(t)>0$ around that time.
+
+\begin{enumerate}
+
+\item What would we mean by $h(m(t))$, which could also be notated as $(h\circ m)(t)$?
+
+\item What do the domains and ranges of the functions $m$, $h$, and $h\circ m$ represent?
+
+\item Describe the derivative of $h(m(t))$, which could be notated as
+$[h(m(t))]'$ or $(h\circ m)'$.
+
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Derivative of a composition}
+
+Jane is homeless.
+Consider the following variation on the preceding example.
+
+\begin{itemize}
+  \item $m(t)$ = the amount of money Jane has at time $t$
+  \item $h(m)$ = a number measuring how happy Jane would be with $m$ dollars in her pocket
+\end{itemize}
+
+Suppose that Jane panhandles all day but nobody gives her any money because she looks healthy and sane.
+
+Describe the derivative of $h(m(t))$.
+
+\end{frame}
+
+\begin{frame}{The chain rule}
+
+The equation
+
+\begin{equation*}
+  \frac{\der h}{\der t} = \frac{\der h}{\der m} \cdot \frac{\der m}{\der t}
+\end{equation*}
+
+looks true in terms of algebra, and it is true.
+
+Groups A and E:
+ Interpret the examples of
+ Bill Gates and Jane the homeless person in terms of this equation.
+
+Groups B and F:
+  Interpret the units of the equation. (The metric unit of happiness is the
+  squealie, abbreviated sq.)
+
+Groups C and D:
+  In terms of the ``prime'' notion, $'$, why does $\der h/\der m$ have to be
+  written as $h'(m(t))$, and not as $h'(t)$?
+\end{frame}
