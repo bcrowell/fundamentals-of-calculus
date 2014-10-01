@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3074"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   width="367"
+   height="388"
+   sodipodi:docname="not-differentiable-1.png">
+  <metadata
+     id="metadata3080">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3078" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1142"
+     inkscape:window-height="754"
+     id="namedview3076"
+     showgrid="false"
+     inkscape:zoom="0.60824742"
+     inkscape:cx="354.48305"
+     inkscape:cy="194"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3074" />
+  <image
+     width="367"
+     height="388"
+     xlink:href="file:///home/bcrowell/Documents/writing/books/fund/alr/ch02/figs/not-differentiable-1.png"
+     id="image3082"
+     x="-126.59322"
+     y="0" />
+  <image
+     y="-2.6670552e-06"
+     x="303.14404"
+     id="image3181"
+     xlink:href="file:///home/bcrowell/Documents/writing/books/fund/alr/ch02/figs/not-differentiable-2.png"
+     height="388"
+     width="367" />
+  <image
+     y="9.8644104"
+     x="733.88983"
+     id="image3246"
+     xlink:href="file:///home/bcrowell/Documents/writing/books/fund/alr/ch02/figs/not-differentiable-3.png"
+     height="388"
+     width="367" />
+</svg>

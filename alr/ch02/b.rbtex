@@ -106,3 +106,26 @@ Groups C and D:
   In terms of the ``prime'' notion, $'$, why does $\der h/\der m$ have to be
   written as $h'(m(t))$, and not as $h'(t)$?
 \end{frame}
+
+\begin{frame}{A bucket brigade of ``black boxes''}
+% f=g(h)
+Groups A, B, and C will be told a secret function $h$.
+
+D, E, and F get a secret function $g$.
+
+Let $f=g\circ h$, i.e., $f$ is the function defined by $f(x)=g(h(x))$.
+Our goal is to estimate $f'(2)$ numerically, without revealing the secret
+formulas. However, the class can ask for the outputs of the secret functions
+for a given input.
+\end{frame}
+
+\begin{frame}{A bucket brigade of ``black boxes''}
+
+The secret functions were:
+
+$h(x)=x^2-3$
+
+$g(y)=y^3$.
+
+Why did the results turn out as they did?
+\end{frame}
