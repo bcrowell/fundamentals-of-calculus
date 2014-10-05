@@ -55,7 +55,7 @@ $F_1(x)+F_2(x)$ should be close to $L_1+L_2$.
 In this example we compute several limits, building up from simple examples to
 more complicated ones.
 
-First let's  $\lim_{x\to2}x^2$.
+First let's evaluate  $\lim_{x\to2}x^2$.
 We have
 \begin{align*}
   \lim_{x\to2} x^2 &= \lim_{x\to2} x\cdot x \\
@@ -78,7 +78,7 @@ and, by $(P_4)$ again,
 \[
 \lim_{x\to2} x^3-1 = \lim_{x\to2} x^3 - \lim_{x\to2} 1 = 8-1 = 7,
 \]
-Putting all this together, we gets
+Putting all this together, we get
 \[
 \lim_{x\to 2}\frac{x^3-1}{x^2-1} = \frac{2^3-1}{2^2-1} = \frac{8-1}{4-1}=
 \frac{7}{3}
@@ -87,7 +87,7 @@ because of $(P_6)$.  To apply $(P_6)$ we must check that the denominator
 (``$L_2$'') is not zero.  Since the denominator is 3, this was all right.
 \end{eg}
 
-\begin{eg}{The limit of a square root}
+\begin{eg}{The limit of a square root}\label{eg:limit-of-sqrt}
 \egquestion Find $\lim_{x\to 2}\sqrt x$.
 
 \eganswer Of course, you would think that $\lim_{x\to 2}\sqrt x = \sqrt 2$ and you
@@ -123,7 +123,7 @@ close to $\sqrt 2$.
 
 <% end_sec('properties-of-the-limit') %>
 <% begin_sec("When limits fail to exist",nil,'when-limits-fail-to-exist') %>\index{limit!failure to exist}
-In the last couple of examples we worried about the possibility that a
+In example \ref{eg:limit-of-sqrt} we worried about the possibility that a
 limit $\lim_{x\to a}g(x)$ actually might not exist.  This can actually
 happen, and in this section we'll see a few examples of what failed limits
 look like.  First let's agree on what we will call a ``failed limit.''
