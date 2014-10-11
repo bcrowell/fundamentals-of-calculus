@@ -1037,6 +1037,19 @@ Then there exists some positive number $z$ such that $z$ is greater than or equa
 but less than or equal to any number in Q.
 \end{important}\index{completeness|see{real numbers}}
 
+<% marg(0) %>
+<%
+  fig(
+    'cannonball-completeness',
+    %q{1.~The sets P and Q are separated on the number line so that every point in P is to the left of every point in Q.
+          By the completeness axiom, a number like $z$ exists.
+       2.~By the completeness axiom, the curve $f(x)=2-x^2$ must intersect the axis. The point of intersection is
+          $z=\sqrt{2}$. The completeness axiom doesn't hold for the rational numbers, and we can see that here because
+          $z$ is an irrational number.}
+  )  
+%>
+<% end_marg %>
+
 As an example, let P be the set of all numbers $x$ such that $x^2<2$,
 and Q the set of $x$ such that $x^2\ge2$.
 Then the number $z$ would have to be $\sqrt{2}$,
@@ -1047,6 +1060,8 @@ The completeness axiom is of a fundamentally different character than the elemen
 The elementary axioms make statements such as ``for any number $x$, \ldots'' or
 ``for any numbers $x$ and $y$, \ldots'' The completeness axiom says ``for any \emph{sets}
 of numbers P and Q, \ldots''
+
+\pagebreak
 
 \begin{eg}{Every decimal is a real number}
 Consider the infinite decimal
@@ -1081,7 +1096,7 @@ assumed that it violated the Archimedean principle, which refers to a \emph{posi
 <% end_sec('completeness-axiom') %>
 <% begin_sec("The intermediate and extreme value theorems",nil,'intermediate-and-extreme') %>
 The following two theorems can be proved from the completeness property and
-the elementary properties of the reals, but we will not give the proof here.
+the elementary properties of the reals, but we will not give the proofs here.
 
 <% begin_sec("The intermediate value theorem",nil,'intermediate-value-theorem') %>
 Intuitively, the intermediate value theorem\index{intermediate value theorem}

@@ -1,11 +1,13 @@
 \documentclass{beamer}
 \usefonttheme{serif} % http://tex.stackexchange.com/questions/125093/switch-beamer-font-families-in-general
 \usepackage[size=custom,width=27.94,height=21.59]{beamerposter}
-\RequirePackage{shaddap}
+\RequirePackage{shaddap,tipa}
 \begin{document}
 
 \newcommand{\der}{\operatorname{d\!}{}}
 %       http://tex.stackexchange.com/questions/178946/better-automatic-spacing-of-differential-d
+
+\newcommand{\mygamma}{\textup{\textgamma}}
 
 \setbeamerfont{frametitle}{series=\bfseries}
 
@@ -31,5 +33,8 @@ to accompany Crowell, Robbin, and Angenent,\\
 
 \section{The second derivative}
 \include{ch03/a}
+
+\section{More about limits; curve sketching}
+\include{ch04/b}
 
 \end{document}

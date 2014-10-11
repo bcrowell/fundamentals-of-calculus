@@ -89,7 +89,9 @@ Describe the derivative of $h(m(t))$.
 The equation
 
 \begin{equation*}
-  \frac{\der h}{\der t} = \frac{\der h}{\der m} \cdot \frac{\der m}{\der t}
+%  \frac{\der h}{\der t} = \frac{\der h}{\der m} \cdot \frac{\der m}{\der t}
+%    ... causes error, why?
+  \frac{d h}{d t} = \frac{d h}{d m} \cdot \frac{d m}{d t}
 \end{equation*}
 
 looks true in terms of algebra, and it is true.
@@ -103,7 +105,8 @@ Groups B and F:
   squealie, abbreviated sq.)
 
 Groups C and D:
-  In terms of the ``prime'' notion, $'$, why does $\der h/\der m$ have to be
+  In terms of the ``prime'' notion, $'$, why does $d h/d m$ have to be
+%    ... \der causes error, why?
   written as $h'(m(t))$, and not as $h'(t)$?
 \end{frame}
 
