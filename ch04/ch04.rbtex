@@ -1032,8 +1032,8 @@ One possible way of stating such an axiom
 is the following. 
 
 \begin{important}[Completeness axiom]
-Let P and Q be sets of positive numbers such that every number in P is smaller than every number in Q.
-Then there exists some positive number $z$ such that $z$ is greater than or equal to every number in P,
+Let P and Q be sets of  numbers such that every number in P is smaller than every number in Q.
+Then there exists some  number $z$ such that $z$ is greater than or equal to every number in P,
 but less than or equal to any number in Q.
 \end{important}\index{completeness|see{real numbers}}
 
