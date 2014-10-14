@@ -1009,11 +1009,11 @@ coincide.
 
 But if we consider a set of numbers more restricted than the   
 real numbers, this may not happen. For example, suppose we take $f$ to be
-a rational function, i.e., a function whose inputs and outputs are rational
+a function whose inputs and outputs are rational
 numbers. Recall that a rational number is any number that can be expressed
 as an integer divided by another integer, e.g., the fraction 2/3. But the
 place where our cannonball crosses sea level has $x=\sqrt{2}$, which is 
-not a rational number. This example shows that the graphs of two rational
+not a rational number. This example shows that the graphs of two rational-number
 functions can cut across one another without ever touching! This offends
 our intuition about rates of change, since we expect that if we change
 a variable smoothly from one value to another, it should visit every value
@@ -1056,12 +1056,18 @@ Then the number $z$ would have to be $\sqrt{2}$,
 which shows that the rationals are not complete. The reals are complete, and the completeness
 axiom can serve as one of the fundamental axioms of the real numbers.
 
+\enlargethispage{-5\baselineskip}
+
+\pagebreak
+
+\enlargethispage{-5\baselineskip}
+
 The completeness axiom is of a fundamentally different character than the elementary axioms.
 The elementary axioms make statements such as ``for any number $x$, \ldots'' or
 ``for any numbers $x$ and $y$, \ldots'' The completeness axiom says ``for any \emph{sets}
 of numbers P and Q, \ldots''
 
-\pagebreak
+\vfill
 
 \begin{eg}{Every decimal is a real number}
 Consider the infinite decimal
@@ -1077,6 +1083,8 @@ shows that any decimal corresponds to some real number (which can be shown to be
 real number can have more than one decimal expansion. For example, the infinite repeating
 decimals $1.000\ldots$ and $0.999\ldots$ both equal 1.)
 \end{eg}
+
+\vfill
 
 \begin{eg}{The Archimedean property}\label{eg:archimedean}\index{real numbers!Archimedean property}
 The Archimedean principle states that there is no positive real number that is less than $1/1$, less than
@@ -1094,7 +1102,7 @@ assumed that it violated the Archimedean principle, which refers to a \emph{posi
 \end{eg}
 
 <% end_sec('completeness-axiom') %>
-<% begin_sec("The intermediate and extreme value theorems",nil,'intermediate-and-extreme') %>
+<% begin_sec("The intermediate and extreme value theorems",4,'intermediate-and-extreme') %>
 The following two theorems can be proved from the completeness property and
 the elementary properties of the reals, but we will not give the proofs here.
 
@@ -1121,8 +1129,6 @@ and if $y$ takes on values $y_1$ and $y_2$ at certain points within this interva
 $y_2$, there is some real $x$ in the interval for which $y(x)=y_3$.
 \end{theorem}
 
-\pagebreak
-
 \begin{eg}{}
 \egquestion Show that there is a solution to the equation $10^x+x=1000$.
 
@@ -1135,7 +1141,7 @@ method, which is introduced in section \ref{sec:newtons-method}.
 
 %%graph%% x-minus-cos-x func=(x-cos(x)) format=eps xlo=-8 xhi=8 ylo=-8 yhi=8 xtic_spacing=4 ytic_spacing=4
 
-<% marg(0) %>
+<% marg(-100) %>
 <%
   fig(
     'x-minus-cos-x',
@@ -1158,7 +1164,7 @@ this, and shows that there is only one solution.
 \end{eg}
 
 
-
+\pagebreak
 
 \begin{eg}{Supply and demand}\label{eg:supply-and-demand}\index{supply and demand}\index{market equilibrium}
 Figure \figref{eg-supply-and-demand} shows two graphs representing the supply and demand of some good
@@ -1286,7 +1292,7 @@ the maximum value on this interval is 156.
 <% end_sec('extreme-value-theorem') %>
 
 <% end_sec('intermediate-and-extreme') %>
-<% begin_sec("Rolle's theorem and the mean-value theorem",4,'rolle') %>
+<% begin_sec("Rolle's theorem and the mean-value theorem",nil,'rolle') %>
 On p.~\pageref{subsubsec:laffer-curve}, in the example of the Laffer curve from economics, we
 got a preview of the following intuitively appealing theorem.
 
