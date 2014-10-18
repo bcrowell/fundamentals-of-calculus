@@ -1094,7 +1094,7 @@ points are at their centers, the limit must come out to be the same.
 Suppose we have a number $I$ such that
 for every $\varepsilon >0$, there exists a $\delta>0$ such that
 $|R -I|<\varepsilon$ for \emph{every} Riemann sum all of whose intervals have width 
-$x_{k+1}-k_k \delta$, with any choice of sample points $s_1$, \dots , $s_n$.
+$x_{k+1}-x_k < \delta$, with any choice of sample points $s_1$, \dots , $s_n$.
 Then $I$ is the Riemann integral of the function.
 \end{important}
 

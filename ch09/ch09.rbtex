@@ -230,7 +230,7 @@ because they can be expressed in terms of logs and exponentials by using Euler's
 In theory, ``closed form'' doesn't mean anything unless we state the elementary functions that are allowed.
 In practice, when people refer to closed form, they usually have in mind the particular set of elementary functions described above.
 
-A traditional freshman calculus course spends such a vast amount of time teaching you how to do integrals
+A traditional freshman calculus course spends such a large amount of time teaching you how to do integrals
 in closed form that it may be easy to miss the fact that this is impossible for the vast majority of
 integrands that you might randomly write down. Here are some examples of impossible integrals:
 

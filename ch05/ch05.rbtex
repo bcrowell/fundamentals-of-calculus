@@ -141,7 +141,8 @@ equation \eqref{eqn:derivative-of-ex-is-ex} serves as a perfectly good definitio
 Box \figref{other-e-def} connects this to another popular definition.
 
 Adopting equation \eqref{eqn:derivative-of-ex-is-ex}
-as a definition, application of equation \eqref{eqn:convert-exponential-to-ex} and the chain
+as a definition, application of the identity $b^x = e^{(\ln b)x}$
+(see equation \eqref{eqn:convert-exponential-to-ex}, p.~\pageref{eqn:convert-exponential-to-ex}) and the chain
 rule gives the more general rule
 \begin{equation}\label{eqn:derivative-of-exponential-base-b}
   (b^x)' = (\ln b)b^x
@@ -306,7 +307,7 @@ and back up every summer. A sinusoidal wave is the most mathematically simple mo
 of such an oscillation, and if we want to know the rate of change, we need to know
 how to differentiate such a function.
 
-So would we find the derivative of a sine or cosine? Since
+So how would we find the derivative of a sine or cosine? Since
 they're transcendental, they can't be expressed in
 terms of simpler functions that we know how to differentiate. 
 

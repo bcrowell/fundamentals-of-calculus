@@ -460,12 +460,14 @@ This messy expression can be cleaned up in the case where $\Delta p$ and $\Delta
 The product of two small numbers is even smaller, and if we make them small enough, their product will
 always be negligibly small compared to them. (Cf.~p.~\pageref{discard-dx-squared}.)
 To show that we're now talking about very small numbers,
-we notate the changes as differentials $\der p$ and $\der v$. We then have:
+we notate the changes as $\der p$ and $\der v$. We then have:
 \begin{subequations}
 \begin{equation}\label{eqn:boyle-diff}
   p\der v + v \der p = 0 \qquad .
 \end{equation}
-This looks just like the product rule. The process of taking differentials is no different than
+This looks just like the product rule. In this context, symbols like
+$\der p$ and $\der v$ are referred to as differentials, and we talk about ``taking differentials''
+on both sides of \eqref{eqn:boyle} to get \eqref{eqn:boyle-diff}. The process of taking differentials is no different than
 the process of taking a derivative. As in the example of the pulley on p.~\pageref{subsubsec:implicit-differentiation-addition},
 there are multiple equivalent ways of expressing this statement:
 \begin{align}
@@ -607,7 +609,7 @@ and the case of the second power was discussed in detail above. We therefore fin
 \end{equation*}
 The numerical approximation is
 \begin{equation*}
-  \Delta(s^2+s) \approx = (2s+s)\Delta s = (3)(0.001) = 0.003\qquad .
+  \Delta(s^2+s) \approx  (2s+s)\Delta s = (3)(0.001) = 0.003\qquad .
 \end{equation*}
 \end{eg}
 % calc -e "q=1.000; dq=0.001; y1=q^2+q; q=q+dq; y2=q^2+q; y2-y1"
