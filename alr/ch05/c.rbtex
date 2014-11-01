@@ -1,0 +1,109 @@
+<% require "../alr.rb" %>
+<% begin_sec("5.1 Inverse functions; logarithms") %>
+\begin{frame}{A slide rule}
+    \noindent\includegraphics[width=9in]{ch05/figs/slide-rule}
+\end{frame}
+
+\begin{frame}{Logs turn multiplication into addition.}
+    \noindent\includegraphics[width=9in]{ch05/figs/slide-rule-2}
+
+    \vfill
+
+    {\footnotesize Diagram by Wikimedia Commons user Jakob.scholbach, CC-BY-SA.}
+\end{frame}
+
+\begin{frame}{Bunnies}
+    \noindent\includegraphics[width=6in]{ch05/figs/bunnies}
+\end{frame}
+
+\begin{frame}{Derivative of an exponential}
+    \noindent\includegraphics[width=6in]{ch05/figs/bunnies-derivative}
+\end{frame}
+
+\begin{frame}{The log base 2}
+    \noindent\includegraphics[width=6in]{ch05/figs/bunnies-log}
+\end{frame}
+
+\begin{frame}{Derivative of a logarithm}
+    \noindent\includegraphics[width=6in]{ch05/figs/bunnies-log-derivative}
+\end{frame}
+
+\begin{frame}{Derivatives from hell}
+
+\begin{tabular}{lll}
+  \emph{group A} &   \emph{group B} &   \emph{group C} \\
+  $\exp(\exp(\cos x))$ & $\ln \ln \cos x$ & $\sin \sin \ln x$ \\
+  \hline
+  \emph{group D} &   \emph{group E} &   \emph{group F} \\
+  $\cos(\sin^3 x)$ & $\ln \sin \tan x$  & $\cos \tan \ln x$
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{More derivatives from hell}
+
+Differentiate with respect to $t$. All letters other than $t$ are constants.
+
+\vspace{10mm}
+
+\begin{tabular}{|l|l|l|}
+  \hline
+  \emph{group A} &   \emph{group B} &   \emph{group C} \\
+  \hline
+  $a \cos\left[ b \exp ( -c \sin k t)\right]$ & $-a \exp( -2b \sqrt { c+k\sin \omega t})$
+          & $b \cos\left[\frac{(c t)^3}{\sin kt}\right]$ \\
+  \hline
+  \emph{group D} &   \emph{group E} &   \emph{group F} \\
+  $a \tan\left[\frac{bt}{\cos[(t/c)^2]}\right]$ & 
+     $\left[\frac{1}{a \sin(\frac{b}{\ln ct})}\right]^4$ &
+     $a \ln\left[b+c \tan (2^{kt})\right]$ \\
+  \hline
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Answer checks}
+
+% $f'(t)=a\,b\,c\,k\,e^ {- c\,\sin \left(k\,t\right) }\,\cos \left(k\,t\right)\,\sin \left(b\,e^ {- c\,\sin \left(k\,t\right) }\right)$ \\
+A: $f'(0)=abck\sin b$ \\
+\vspace{4mm}
+% $f'(t)={{a\,b\,k\,\omega\,e^ {- 2\,b\,\sqrt{k\,\sin \left(\omega t\right)+c} }\,\cos \left(\omega t\right)}\over{\sqrt{k\,\sin \left(\omega t\right)+c}}}$ \\
+B: $f'(0)={{abk\omega e^ {- 2\,b\,\sqrt{c} }}\over{\sqrt{c}}}$ \\
+\vspace{4mm}
+% $f'(t)=$ \\
+C: $f'(1)=-b\,\left(3\,c^3\,\left(\sin k\right)^ {- 1 }-c^3\,k\,\cos k\,\left(\sin k\right)^ {- 2 }\right)\,\sin \left(c^3\,\left(\sin k\right)^ {- 1 }\right)$ \\
+\vspace{4mm}
+% $f'(t)=$ \\
+D: $f'(0)=a\,b$ \\
+\vspace{4mm}
+% $f'(t)=$ \\
+E: $f'(1)=4\,a^ {- 4 }\,b\,\left(\ln c\right)^ {- 2 }\,\cos \left(\frac{b}{\ln c}\right)\,\left(\sin \left(\frac{b}{\ln c}\right)\right)^ {- 5 }$ \\
+\vspace{4mm}
+F: % $f'(t)=(\ln 2)ack\,2^{k\,t}\,\cos ^{-2}2^{k\,t}\,\left(c\,\tan 2^{k\,t}+b\right)^ {- 1 }$ \\
+$f'(0)=(\ln 2)ack\cos ^{-2}\,\left(\tan \,c+b\right)^ {- 1 }$ \\
+
+\end{frame}
+
+\begin{frame}{Answers}
+
+$f'(t)=a\,b\,c\,k\,e^ {- c\,\sin \left(k\,t\right) }\,\cos \left(k\,t\right)\,\sin \left(b\,e^ {- c\,\sin \left(k\,t\right) }\right)$ \\
+$f'(0)=abck\sin b$ \\
+\vspace{4mm}
+$f'(t)={{a\,b\,k\,\omega\,e^ {- 2\,b\,\sqrt{k\,\sin \left(\omega t\right)+c} }\,\cos \left(\omega t\right)}\over{\sqrt{k\,\sin \left(\omega t\right)+c}}}$ \\
+$f'(0)={{abk\omega e^ {- 2\,b\,\sqrt{c} }}\over{\sqrt{c}}}$ \\
+\vspace{4mm}
+$f'(t)=$ \\
+$f'(1)=-b\,\left(3\,c^3\,\left(\sin k\right)^ {- 1 }-c^3\,k\,\cos k\,\left(\sin k\right)^ {- 2 }\right)\,\sin \left(c^3\,\left(\sin k\right)^ {- 1 }\right)$ \\
+\vspace{4mm}
+$f'(t)=$ \\
+$f'(0)=a\,b$ \\
+\vspace{4mm}
+$f'(t)=$ \\
+$f'(1)=4\,a^ {- 4 }\,b\,\left(\ln c\right)^ {- 2 }\,\cos \left(\frac{b}{\ln c}\right)\,\left(\sin \left(\frac{b}{\ln c}\right)\right)^ {- 5 }$ \\
+\vspace{4mm}
+$f'(t)=(\ln 2)ack\,2^{k\,t}\,\cos ^{-2}2^{k\,t}\,\left(c\,\tan 2^{k\,t}+b\right)^ {- 1 }$ \\
+$f'(0)=(\ln 2)ack\cos ^{-2}\,\left(\tan \,c+b\right)^ {- 1 }$ \\
+
+\end{frame}
+
+<% end_sec() %>

@@ -792,16 +792,16 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 <% hw('equilibrating-temperature',{'solution'=>true}) %>
 <% hw('parachute') %>
 <% hw('damped') %>
-\pagebreak
 <% hw('door-closer') %>
+
+\pagebreak
 
   <% hw_block(1) %>
 
 <% hw('credit-card-fraud') %>
 
-\pagebreak
-
-<% marg(10) %>
+<% hw('gompertz') %>
+<% marg(300) %>
 <%
   fig(
     'hw-gompertz',
@@ -811,15 +811,12 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
   )  
 %>
 <% end_marg %>
-<% hw('gompertz') %>
 
 <% hw('transcendental-credit-card-fraud') %>
 
   <% hw_block(4) %>
 
 <% hw('induction-nth-deriv-of-exponential') %>
-
-\pagebreak
 
 <% hw('induction-nth-deriv-of-gaussian') %>
 

@@ -175,10 +175,10 @@ get
 Mathematical theorems are sometimes like cars. I own a Honda Fit that is about as bare-bones as you can get
 these days, but persuading a dealer to sell me that car was like pulling teeth. The salesman was absolutely
 certain that any sane customer would want to pay an extra \$1,800 for such crucial amenities as
-floor mats and a chrome tailpipe. L'H\^{o}pital's rule in its most general form is a much fancier piece of machinery
+upgraded floor mats and a chrome tailpipe. L'H\^{o}pital's rule in its most general form is a much fancier piece of machinery
 than the stripped-down model described in section \ref{sec:lhospital-simple}.
 The price you pay for the deluxe model
-is that the proof becomes much more complicated. I'll will state the fancier versions of L'H\^{o}pital's rule
+is that the proof becomes much more complicated. I'll state the fancier versions of L'H\^{o}pital's rule
 without proof.
 <% begin_sec("Multiple applications of the rule",nil,'lhospital-multiple') %>\index{L'H\^{o}pital's rule!multiple applications}
 In the following example, we have to use l'H\^{o}pital's rule twice before we get an answer.

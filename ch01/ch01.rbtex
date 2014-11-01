@@ -974,6 +974,45 @@ done to reduce $s$ would be very helpful. For instance, a measure that cut
 $s$ in half would reduce $\der a/\der t$ by a factor of four.
 \end{eg}
 
+\begin{eg}{A whirling bucket}\label{eg:whirling-bucket}
+\egquestion
+Figure \figref{whirling-bucket} shows a bucket full of water that is being whirled
+rapidly, so that the water spreads out from the center. The surface of the water
+forms a parabola with the equation
+\begin{equation*}
+  y = \frac{x^2}{c} \qquad ,
+\end{equation*}
+where $c$ is a constant. Infer the units of $c$, find the slope of the water's
+surface, and check the units of your answer.
+
+\eganswer
+Both $x$ and $y$ are measured in units of meters, so we have
+\begin{equation*}
+  \munit = \frac{\munit^2}{\text{units of $c$}} \qquad .
+\end{equation*}
+If the units of the left and right sides are to be equal, $c$ must have units of
+meters as well.
+
+Differentiation gives the slope of the water's surface as
+\begin{equation*}
+  \frac{\der y}{\der x} = \frac{2x}{c} \qquad ,
+\end{equation*}
+where the factor of $1/c$ ``comes along for the ride,'' as with any multiplicative constant.
+
+Checking the units of the result, we have
+\begin{equation*}
+  \frac{\munit}{\munit} = \frac{(\text{unitless})\cdot\munit}{\munit} \qquad ,
+\end{equation*}
+which checks out.
+\end{eg}
+<% marg(125) %>
+<%
+  fig(
+    'whirling-bucket',
+    %q{Example \ref{eg:whirling-bucket}.}
+  )  
+%>
+<% end_marg %>
 
 <% end_sec('leibniz-shows-units') %>
 
