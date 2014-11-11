@@ -151,7 +151,7 @@ The area of the $k^{\textrm{th}}$ rectangle is the product of its
 height and width, which is $f(x_k)\Delta x$.  Adding up all the rectangles'
 areas yields
 \begin{equation}\label{eqn:riemann-sum}
-  R = \sum_{k=1}^n f(x_k)\Delta x \qquad .
+  R = \sum_{k=1}^n (\text{height})(\text{width}) = \sum_{k=1}^n f(x_k)\Delta x \qquad .
 \end{equation}
 This is an example of what is called a \emph{Riemann sum}, meaning an approximation
 to the area under a curve using rectangles.\index{Riemann sum}
@@ -233,7 +233,7 @@ works in a case where we already know the answer.
 
 When we split up the interval $[0,1]$ into $n$ parts, we have $\Delta x=1/n$.
 The first subinterval is $[0,\Delta x$], and its center is
-the first sample point, $x_0=(1/2)\Delta k$. Continuing in this way, we have
+the first sample point, $x_0=(1/2)\Delta x$. Continuing in this way, we have
 $x_k=(k-1/2)\Delta x$, for $k$ running from 1 to $n$. Since our function is just
 $f(x)=x$, we also have $f(x_k)=(k-1/2)\Delta x$. 
 The Riemann sum $R$ is shown in figure \figref{riemann-triangle-area}. It looks

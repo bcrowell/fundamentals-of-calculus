@@ -699,7 +699,7 @@ option other than implicit differentiation.
     'keplerish',
     %q{Example \ref{eg:keplerish}. The graph of $x=2y+\sin y$
        contains the point $(2\pi,\pi)$.  What is the slope of the
-       tangent at that point?}
+       tangent line at that point?}
   )  
 %>
 <% end_marg %>
