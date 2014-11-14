@@ -1,0 +1,293 @@
+<% require "../alr.rb" %>
+<% begin_sec("8.3-5 The indefinite integral; the fundamental theorem") %>
+
+\begin{frame}{An electric bill}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  Let
+
+  $I$ = electric current = the flow of electric charge
+
+  $c$ = what you pay for the electicity you've consumed
+
+  $t$ = time in seconds
+
+  The  equation 
+
+  \begin{equation*}
+    \frac{\Delta c}{\Delta t} = kI \qquad ,
+  \end{equation*}
+
+  where $k$ is a constant, is sometimes true. If $I$ has units of amperes, A, and
+  $c$ has units of dollars, infer the units of the constant $k$.
+    
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/electric-meter}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Nellie Bly, CC-BY-SA license.} % http://commons.wikimedia.org/wiki/File:Electric_meter.jpg
+\end{frame}
+
+\begin{frame}{An electric bill}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  Under what conditions would the equation
+
+  \begin{equation*}
+    \frac{\Delta c}{\Delta t} = kI 
+  \end{equation*}
+
+  not make sense, and how
+  would we fix it?
+    
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/electric-meter}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Nellie Bly, CC-BY-SA license.} % http://commons.wikimedia.org/wiki/File:Electric_meter.jpg
+\end{frame}
+
+\begin{frame}{An electric bill}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  Suppose we know the function $I(t)$, and we want to find $c(t)$. The derivative of $c$ gives us $I$, so
+  what would we do to find $c$ based on $I$?
+
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/electric-meter}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Nellie Bly, CC-BY-SA license.} % http://commons.wikimedia.org/wiki/File:Electric_meter.jpg
+\end{frame}
+
+\begin{frame}{An electric bill}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  People's consumption of electricity usually varies cyclically, going up in the day and down at night.
+  Suppose that $I=I_m (1+\cos\omega t)/2$. Infer the units of $I_m$ and $\omega$, find $c(t)$, and
+  check the units of the result.
+    
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/electric-meter}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Nellie Bly, CC-BY-SA license.} % http://commons.wikimedia.org/wiki/File:Electric_meter.jpg
+\end{frame}
+
+\begin{frame}{An electric bill}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  Your electric bill is a number, not a function. How would it be calculation if we knew $I(t)$?
+  Interpret your result graphically in the special case where $I$ is a constant.
+    
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/electric-meter}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Nellie Bly, CC-BY-SA license.} % http://commons.wikimedia.org/wiki/File:Electric_meter.jpg
+\end{frame}
+
+
+\begin{frame}{Depletion of resources}
+
+\noindent\includegraphics[width=7in]{ch08/figs/strip-mine}
+
+Let
+
+$R$ = the rate at which a certain nonrenewable resource is consumed
+
+$\Delta D$ = the cumulative amount by which that resource is depleted
+
+$\Delta t$ = time
+
+In some examples it is true that $\Delta D=R\Delta t$. When would this equation be false, and how
+should it be fixed?
+
+\vfill
+
+{\footnotesize Photo by Raimond Spekking, CC-BY-SA license.} % http://commons.wikimedia.org/wiki/File:Tagebau_Garzweiler_Panorama_2005.jpg
+\end{frame}
+
+\begin{frame}{Depletion of resources}
+
+\noindent\includegraphics[width=7in]{ch08/figs/strip-mine}
+
+Suppose that consumption of copper grows exponentially,
+
+\begin{equation*}
+  R = R_0 e^{kt} \qquad ,
+\end{equation*}
+
+with $t$ in years and $R$ in tons/year.
+
+Infer the units of the constants $R_0$ and $k$. Find the depletion $\Delta D$ of the world's
+copper reserves from $t=0$ (now) to $t=100$ years.
+
+
+\vfill
+
+{\footnotesize Photo by Raimond Spekking, CC-BY-SA license.} % http://commons.wikimedia.org/wiki/File:Tagebau_Garzweiler_Panorama_2005.jpg
+\end{frame}
+
+\begin{frame}{Fields}
+
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+Empty space is pervaded by invisible fields of force.
+The compass shows the direction of the magnetic field.
+
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+\noindent\includegraphics[width=2in]{ch08/figs/compass}
+  \end{column}
+\end{columns}
+
+\noindent\includegraphics[width=6in]{ch08/figs/static-hair}
+
+The girl's body has picked up an electric charge by going down the plastic
+slide. The space around her head contains an electric field.
+
+{\footnotesize Photo of compass by Wikipedia user Shyamal, CC-BY-SA license.
+Photo of kids by Chris Darling, CC-BY license.} 
+% http://commons.wikimedia.org/wiki/File:Compass_align.jpg
+% http://commons.wikimedia.org/wiki/File:Static_on_the_playground_%2848616367%29.jpg
+
+
+
+\end{frame}
+
+
+\begin{frame}{Electric field and voltage}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  $V$ = voltage = a measure of electrical ``pressure''
+
+  $E$ = electric field
+
+  The following equations are true under certain conditions.
+
+  \begin{equation*}
+    E = \frac{\Delta V}{\Delta x}
+  \end{equation*}
+
+  \begin{equation*}
+    \Delta V = E \Delta x
+  \end{equation*}
+  
+  Example: A car's spark plug needs a large $E$ so that a spark will occur.
+  This is achieved by making the spark gap $\Delta x$ small.
+    
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/spark-plug}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Norris Wang and Tian Ran, CC-BY license.} % http://commons.wikimedia.org/wiki/File:Bougie3.jpg 
+\end{frame}
+
+
+
+\begin{frame}{Electric field and voltage}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  \begin{equation*}
+    E = \frac{\Delta V}{\Delta x}
+  \end{equation*}
+
+  \begin{equation*}
+    \Delta V = E \Delta x
+  \end{equation*}
+  
+  Under what conditions would we expect these equations to be \emph{false}, and how would we fix them?
+
+    
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/spark-plug}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Norris Wang and Tian Ran, CC-BY license.} % http://commons.wikimedia.org/wiki/File:Bougie3.jpg 
+\end{frame}
+
+\begin{frame}{Electric field and voltage}
+\begin{columns}
+
+  \begin{column}{.7\textwidth}
+
+  The electric field created by a charged object is
+  \begin{equation*}
+    E(x) = \frac{k}{x^2} \qquad,
+  \end{equation*}
+  where $x$ is the distance from the electron, and
+  $k$ is a constant related to a property of the particle called its electric charge.
+  
+  What does this equation tell us about the field close to the particle compared to the field farther away.
+
+  Find the voltage $V(x)$.
+    
+  \end{column}
+
+  \begin{column}{.3\textwidth}
+    \noindent\includegraphics[width=3in]{ch08/figs/static-hair}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo of kids by Chris Darling, CC-BY license.} 
+% http://commons.wikimedia.org/wiki/File:Static_on_the_playground_%2848616367%29.jpg
+\end{frame}
+
+
+
+<% end_sec() %>
