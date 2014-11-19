@@ -893,9 +893,13 @@ Find the slope of the graph at the origin.
 <% hw('implicit-at-origin-03') %>
 <% hw('implicit-at-origin-04') %>
 
+\pagebreak
   <% hw_block(2) %>
 
-<% marg(-10) %>
+
+<% hw('astroid') %>
+
+<% marg(300) %>
 <%
   fig(
     'hw-astroid',
@@ -910,8 +914,10 @@ Find the slope of the graph at the origin.
   )  
 %>
 <% end_marg %>
-<% hw('astroid') %>
+
 <% hw('sergels-torg') %>
+
+
 <% hw('implicit-x-to-the-y') %>
 
   <% hw_block('z') %>
