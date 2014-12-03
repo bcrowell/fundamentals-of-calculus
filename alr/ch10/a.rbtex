@@ -1,0 +1,137 @@
+<% require "../alr.rb" %>
+<% begin_sec("10.1 Applications to probability") %>
+
+\begin{frame}{A climbing anchor}
+\begin{columns}
+
+  \begin{column}{.4\textwidth}
+    The rock climbing anchor contains four carabiners (metal oval clips) with gates that
+    open and close so that the rope can be clipped into them. 
+    The anchor is redundant so that even if one part fails, the climbers don't fall to
+    their deaths.
+  \end{column}
+
+  \begin{column}{.6\textwidth}
+    \noindent\includegraphics[width=6in]{ch10/figs/redundant-anchor}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Kentucky Rock and Adventure Guides, kragky.com.} % http://www.kragky.com/?page_id=42
+\end{frame}
+
+\begin{frame}{A climbing anchor}
+\begin{columns}
+
+  \begin{column}{.4\textwidth}
+The carabiner on the left has
+    a screw lock, but the three on the right have no locking mechanism. Suppose that each
+    of the three has a $10^{-2}$ probability of being accidentally
+    opened. What is the probability that
+    the whole anchor will fail? Does it matter if the probabilities are independent, and if so, do you think
+    they would really be independent?
+  \end{column}
+
+  \begin{column}{.6\textwidth}
+    \noindent\includegraphics[width=6in]{ch10/figs/redundant-anchor}
+  \end{column}
+\end{columns}
+
+\vfill
+
+{\footnotesize Photo by Kentucky Rock and Adventure Guides, kragky.com.} % http://www.kragky.com/?page_id=42
+\end{frame}
+
+\begin{frame}{The difference of two dice}
+\begin{columns}
+
+  \begin{column}{.6\textwidth}
+    We roll two dice and define the random variable $x$ as the absolute value of the difference between them.
+    Each group is assigned a value of $x$, and is to count the number of ways of obtaining that value of $x$.
+    For example, rolling 3 and 5 is one way to get $x=2$, and rolling 5 and 3 is another.
+
+    \begin{tabular}{ll}
+      \emph{group} & $x$ \\
+      A & 0 \\
+      B & 1 \\
+      C & 2 \\
+      D & 3 \\
+      E & 4 \\
+      F & 5 
+    \end{tabular}
+  \end{column}
+
+  \begin{column}{.4\textwidth}
+    \noindent\includegraphics[width=3in]{ch10/figs/dice}
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{The difference of two dice}
+\begin{columns}
+
+  \begin{column}{.6\textwidth}
+    Use your results to find the probability distribution of $x$, and check your results by checking
+    their normalization.
+  \end{column}
+
+  \begin{column}{.4\textwidth}
+    \noindent\includegraphics[width=3in]{ch10/figs/dice}
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Cosmic Gall}
+
+\begin{columns}
+
+  \begin{column}{.5\textwidth}
+
+{\small
+
+Neutrinos, they are very small.\\
+They have no charge and have no mass\\
+And do not interact at all.\\
+The earth is just a silly ball\\
+To them, through which they simply pass,\\
+Like dustmaids through a drafty hall\\
+Or photons through a sheet of glass.\\
+They snub the most exquisite gas,\\
+Ignore the most substantial wall,\\
+Cold-shoulder steel and sounding brass,\\
+
+}
+
+  \end{column}
+
+  \begin{column}{.5\textwidth}
+
+{
+
+\small
+
+Insult the stallion in his stall,\\
+And scorning barriers of class,\\
+Infiltrate you and me! Like tall\\
+And painless guillotines, they fall\\
+Down through our heads into the grass.\\
+At night, they enter at Nepal\\
+And pierce the lover and his lass\\
+From underneath the bed --- you call\\
+It wonderful; I call it crass.\\
+\hfill --- John Updike
+
+}
+
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+
+
+<% end_sec() %>
