@@ -1,0 +1,136 @@
+<% require "../alr.rb" %>
+<% begin_sec("Review") %>
+
+\begin{frame}{Relations and functions}
+
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    Definition: A relation is a set of points in the plane.
+
+    Definition: A function is a relation that passes the vertical line test.
+
+    Although functions just sit there in the plane and don't move, they give us a way
+    of talking about variables and how they change. Similarly, a DVD doesn't change or move,
+    but the movie recorded on it represents change and motion.
+
+    Question: Is the graph on the right a function?
+  \end{column}
+
+  \begin{column}{.4\textwidth}
+    \noindent\includegraphics[width=4in]{ch98/figs/relation}
+  \end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Relations and functions}
+
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    Question: Could we just as well have defined a function as a formula or rule relating two variables?
+  \end{column}
+
+  \begin{column}{.4\textwidth}
+    \noindent\includegraphics[width=4in]{ch98/figs/relation}
+  \end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Relations and functions}
+
+\begin{columns}
+  \begin{column}{.4\textwidth}
+    Question: If a relation represents a cause and effect relationship between two variables, does it have to
+    be a function? Does it matter which variable is on which axis?
+  \end{column}
+
+  \begin{column}{.6\textwidth}
+    \noindent\includegraphics[width=6in]{ch98/figs/function}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Dummy variables}
+
+When we define $f$ as $f(x)=x^3$, $x$ is a dummy variable. The function
+$g(u)=u^3$ is the same function.
+
+\vspace{10mm}
+
+Question: Which of the following are the same, and which are different?
+
+\vspace{10mm}
+
+\begin{tabular}{lll}
+$\{a|\sin a=0\}$ & and & $\{b|\sin b=0\}$ \\
+$\sum_{k=1}^{10} k^2$ & and & $\sum_{j=1}^{10} j^2$ \\
+$\int x^2 \: dx$ & and & $\int u^2 \: du$ \\
+$\int_1^3 x^2 \: dx$ & and & $\int_1^3 u^2 \: du$ \\
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Inverse of a function}
+
+\begin{columns}
+  \begin{column}{.4\textwidth}
+    Definition: If a function $f$ passes both the vertical line test and the horizontal line test,
+    then it has an inverse $f^{-1}$, obtained by interchanging the $x$ and $y$ axes.
+
+    Example: If $f$ is defined by $f(x)=x^3$, then its inverse is the cube root, $f^{-1}(y)=\sqrt[3]{y}$.
+  \end{column}
+
+  \begin{column}{.6\textwidth}
+    \noindent\includegraphics[width=6in]{ch98/figs/cube-root}
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Inverse of a function}
+
+\begin{columns}
+  \begin{column}{.4\textwidth}
+    Question: Let $f$ be defined by $f(x)=x^p$, where $p$ is an integer. How can we tell whether $f$ has
+    an inverse?
+  \end{column}
+
+  \begin{column}{.6\textwidth}
+    \noindent\includegraphics[width=6in]{ch98/figs/cube-root}
+  \end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Derivatives and integrals}
+
+When something is changing at a constant rate, we have
+\begin{equation*}
+  \text{rate of change} = \frac{\text{amount of change}}{\text{how long it took to change}} \quad,
+\end{equation*}
+which can be written as
+\begin{equation*}
+  \text{rate of change} = \frac{\Delta y}{\Delta x}
+\end{equation*}
+or
+\begin{equation*}
+  \Delta y = (\text{rate of change})\Delta x \quad .
+\end{equation*}
+When the rate of change is \emph{not} constant, these become a derivative,
+\begin{equation*}
+  \text{rate of change} = \frac{dy}{dx}\quad,
+\end{equation*}
+or an integral,
+\begin{equation*}
+  \Delta y = \int_{x_1}^{x_2} (\text{rate of change})\:dx \quad .
+\end{equation*}
+
+\end{frame}
+
+
+
+<% end_sec() %>
