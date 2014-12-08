@@ -106,6 +106,83 @@ $\int_1^3 x^2 \: dx$ & and & $\int_1^3 u^2 \: du$ \\
 
 \end{frame}
 
+\begin{frame}{Curve sketching}
+
+\emph{Symmetry}
+
+\vspace{10}
+
+A function $f$ is even if $f(-x)=f(x)$, even if $f(-x)=-f(x)$.
+
+\vspace{10}
+
+Examples:
+
+$x^2$ is even.
+
+$x$ is odd.
+
+\end{frame}
+
+\begin{frame}{Curve sketching}
+
+Classify  the following functions as even, odd, or neither:
+
+\begin{enumerate}
+
+\item $e^x$
+
+\item $x+x^2$
+
+\item $\frac{1}{\sqrt{1-x^2}}$
+
+\item $\frac{x}{\sqrt{1-x^2}}$
+
+\item $\frac{1+x^2}{\cos(x^4)+\sin(x^6)}$
+
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Curve sketching}
+
+\emph{Asymptotes}
+
+\vspace{10mm}
+
+\emph{Horizontal asymptotes} can be found by taking the limit of a function as $x\rightarrow\pm\infty$.
+
+\emph{Vertical asymptotes} can be found by looking for places where the function blows up to
+infinity; this is typically at places where there is division by zero.
+
+\end{frame}
+
+\begin{frame}{Curve sketching}
+
+\emph{Asymptotes}
+
+
+Find any horizontal or vertical asymptotes of the following functions.
+
+\vspace{10mm}
+
+\begin{enumerate}
+
+\item $1/x$
+
+\item $e^x$
+
+\item $x+x^2$
+
+\item $\frac{1}{\sqrt{1-x^2}}$
+
+\item $\frac{x^2+x^4}{x^2+3x^4}$
+
+\end{enumerate}
+
+
+\end{frame}
+
 \begin{frame}{Derivatives and integrals}
 
 When something is changing at a constant rate, we have
@@ -131,6 +208,298 @@ or an integral,
 
 \end{frame}
 
+\begin{frame}{Derivatives and integrals}
+Geometrically, the derivative is the slope of the line you get if you zoom in on a point
+on a curve with an infinitely powerful microscope.
 
+\vspace{10mm}
+
+    \noindent\includegraphics[width=10in]{ch98/figs/reservoir}
+
+Question: Give an example where this fails.
+
+\end{frame}
+
+\begin{frame}{Derivatives and integrals}
+The derivative of the inverse of a function is one over the derivative of the function:
+\begin{equation*}
+  \frac{dx}{dy} = \frac{1}{dy/dx}
+\end{equation*}
+
+Question: Apply this to $y=x^2$.
+\end{frame}
+
+\begin{frame}{Derivatives and integrals}
+The integral comes in two flavors.
+
+\vspace{10mm}
+
+An \emph{indefinite integral} is an antiderivative. When we write
+\begin{equation*}
+  \int x dx = \frac{1}{2}x^2 +c \quad,
+\end{equation*}
+we mean that the derivative of $(1/2)x^2+c$ is $x$.
+
+\vspace{10mm}
+
+A \emph{definite integral} like
+\begin{equation*}
+  \int_0^1 x dx = \frac{1}{2}
+\end{equation*}
+is a Riemann sum, which geometrically means the area
+under the curve.
+\end{frame}
+
+\begin{frame}{Derivatives and integrals}
+
+\emph{Definite and indefinite integrals}
+
+\vspace{10mm}
+
+An \emph{indefinite integral} is a function, and it has a constant of integration.
+
+A \emph{definite integral} is a number, and it doesn't have a constant of integration.
+
+\vspace{10mm}
+
+Question: Explain why an indefinite integral has a constant of integration, but
+a definite integral doesn't.
+\end{frame}
+
+\begin{frame}{Derivatives and integrals}
+An indefinite integral can always be checked by differentiating.
+
+\vspace{10mm}
+
+Which of the following integrals are wrong?
+
+$\int \cos(3x) dx = \sin(3x)+c$
+
+$\int e^{x^2} dx = e^{x^2}+c$
+
+$\int x^{-1}dx = x^0+c$
+
+\end{frame}
+
+\begin{frame}{Derivatives and integrals}
+
+The derivative and integral are both \emph{linear}. This means two things:
+
+\vspace{10mm}
+
+(1) Multiplicative constants ``come along for the ride:''
+
+$(cf)'=cf'$ \qquad and \quad $\int cf \: dx = c\int f\:dx$
+
+\vspace{10mm}
+
+(2) Sums can be broken up:
+
+$(f+g)'=f'+g'$ \qquad and \quad $\int (f+g)\: dx=\int f\:dx+\int g\:dx$
+
+\vspace{10mm}
+
+Question: If linearity holds for the derivative, prove that it holds
+for the \emph{indefinite} integral as well.
+
+\end{frame}
+
+\begin{frame}{Derivatives and integrals}
+\emph{Fundamental theorem of calculus}
+
+  Let $f$ be a function defined on the interval $[a,b]$, and let $f$ be differentiable
+  on that interval. Then
+  \begin{equation*}
+    \int_a^b \frac{ d  f}{ d  x}  d  x = f(b) - f(a) \qquad .
+  \end{equation*}
+
+Interpretations:
+
+\begin{itemize}
+  \item Integrals and derivatives are inverse operations. An integral undoes a derivative.
+  \item If you can find the indefinite integral of a function, you can find its definite integral as well.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Differentiation}
+\emph{Chain rule}
+
+  Let $f(x)=g(h(x))$. Then $f'(x)=g'(h(x))h'(x)$. In other words, we differentiate
+  the outside function, then multiply by the derivative of the inside stuff.
+
+  \vspace{10mm}
+
+  Example: $(\sin(x^2))'=\cos(x^2)\cdot 2x$
+
+  \vspace{10mm}
+
+  Question: Suppose someone says there is a chain rule for integration, so that
+  $\int f(g(x))dx$ can be evaluated be integrating $f$, putting $g$ inside of $f$, and
+  then multiplying by the integral of $g$. Use a counterexample
+  to disprove this.
+
+\end{frame}
+
+\begin{frame}{Differentiation}
+\emph{Product rule}
+
+  Let $f(x)=g(x)h(x)$. Then $f'=g'h+gh'$.
+
+  \vspace{10mm}
+
+  Example: $(e^x\sin x)'= e^x\sin x+e^x\cos x$
+
+  \vspace{10mm}
+
+  Question: What happens if the function $g$ happens to be a constant?
+
+\end{frame}
+
+\begin{frame}{Related rates}
+
+The chain rule can be written as
+\begin{equation*}
+  \frac{dz}{dx} =   \frac{dz}{dy}\frac{dy}{dx}\qquad.
+\end{equation*}
+If we have expressions for $z$ as a function of $y$ and $y$ as a function of $x$,
+then we can find an expression for $dz/dx$.
+
+If one of the factors on the right is known only numerically at one point, then
+we can still find a numerical value of $dz/dx$. This is known as a related rates problem.
+\end{frame}
+
+\begin{frame}{Related rates}
+
+\emph{An example of related rates}
+
+The number of flesh-eating bacteria $N$ in Jane's body doubles with each generation,
+$N=2^g$, where $g$ is the number of generations that have passed. 
+At the moment when $g=20$, the rate at which the bacteria are reproducing
+is currently $dg/dt=7\ \text{hr}^{-1}$. Find the rate $dN/dt$ at which the
+bacterial population is increasing.
+
+\end{frame}
+
+\begin{frame}{Differentials}
+
+Taking the differential of an expression
+tells us how the expression changes when we change the variables by small amounts.
+
+Every rule for differentiation also applies to implicit differentiation. Examples:
+
+  \vspace{10mm}
+
+  Chain rule: $d(\sin(x^2))=\cos(x^2)\cdot 2x dx$
+
+  \vspace{10mm}
+
+  Product rule: $d(e^x\sin x)= e^x\sin x dx+e^x\cos x dx$
+
+  \vspace{10mm}
+
+
+\end{frame}
+
+\begin{frame}{Differentials}
+
+\emph{Leibniz notation}
+
+\begin{itemize}
+  \item $d$ means ``a little bit of'' or ``a tiny change in.''
+  \item $\int$ means ``adding up a whole bunch of.''
+\end{itemize}
+
+\vspace{10mm}
+
+Example: $\int_3^5 dx=2$
+
+Adding up a whole bunch of tiny changes in $x$, as $x$
+runs from 3 to 5, gives a total change of 2.
+
+\vspace{10mm}
+
+Example: The area of a triangle is $A=(1/2)bh$, where $b$ is the base and $h$ the height.
+
+$dA = (1/2)bdh+(1/2)hdb$
+
+If we make tiny changes in the base and height, this gives the resulting tiny change
+in the area.
+
+\end{frame}
+
+
+\begin{frame}{Grammar of differentials}
+
+Some mistakes in notation can be detected
+because differentials can be interpreted as very small numbers.
+
+\vspace{10mm}
+
+$f(x)=x^2$, so $f'(x)=2xdx$
+
+Wrong: $f'$ isn't very small, so it can't equal $2xdx$, which is very small.
+
+\vspace{10mm}
+
+$\int_0^1 x = 1/2$
+
+Wrong: $x$ isn't very small, so adding up a whole bunch of $x$ values will give something
+huge; but 1/2 isn't huge.
+
+\vspace{10mm}
+
+Question: How should we fix the examples above?
+
+\end{frame}
+
+\begin{frame}{Implicit functions}
+
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    If we randomly write down an equation such as
+    \begin{equation*}
+      \ln(x+y)\cos(xy)=1/10\quad,
+    \end{equation*}
+    it probably doesn't define a function.
+    By restricting to a small region, we can always make it into a function,
+    but we probably can't solve the equation for one variable in terms of the other.
+  \end{column}
+
+  \begin{column}{.4\textwidth}
+    \noindent\includegraphics[width=4in]{ch98/figs/implicit}
+    % made on http://www.cs.cornell.edu/w8/~andru/relplot/ , using 10ln(x+y)cos(xy)=1
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Implicit differentiation}
+
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    Suppose
+    \begin{equation*}
+      \ln(x+y)\cos(xy)=1/10\quad .
+    \end{equation*}
+    Taking differentials of both sides gives
+    \begin{multline*}
+      \frac{\cos(xy)(dx+dy)}{x+y}\\
+              -\ln(x+y)\sin(xy)(xdy+ydx)=0\quad.
+    \end{multline*}
+    This can be rearranged to give
+    \begin{equation*}
+      \frac{dy}{dx} = \frac{1-(\ldots)y}{(\ldots)x-1}\quad,
+    \end{equation*}
+    where $(\ldots)$ stands for $(x+y)\ln(x+y)\tan(xy)$.
+  \end{column}
+
+  \begin{column}{.4\textwidth}
+    \noindent\includegraphics[width=4in]{ch98/figs/implicit}
+    % made on http://www.cs.cornell.edu/w8/~andru/relplot/ , using 10ln(x+y)cos(xy)=1
+  \end{column}
+\end{columns}
+
+\end{frame}
 
 <% end_sec() %>
