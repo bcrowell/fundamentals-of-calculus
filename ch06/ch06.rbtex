@@ -254,17 +254,25 @@ The proof is left as an exercise (problem \ref{hw:lhospital-at-infty}, p.~\pager
 The result is that l'H\^{o}pital's rule is equally valid when the limit is at $\pm\infty$ rather than at some
 real number $a$.
 
-\begin{eg}{}
-\egquestion Evaluate
+\begin{eg}{Acme or Glutco?}
+\egquestion 
+You have some money, and two choices of what to invest it in. A share in Acme, Inc.,
+costs \$7, and returns a dividend of \$1 per year. A share of Glutco costs \$30 and gives
+a dividend of \$2 per year. If we want to compare the long-term value of the two investments,
+a natural way to do it is with the limit
 \begin{equation*}
-  \lim_{x\rightarrow \infty} \frac{2x+7}{x+8686} \qquad .
+ \lim_{t\rightarrow\infty}\frac{-7+t}{-30+2t} \qquad .
 \end{equation*}
+The top represents the net return on Acme, the bottom Glutco.
+If this limit is greater than 1, then Acme is the better long-term investment.
+What is the value of this limit?
 
 \eganswer
-Differentiation of the top and bottom produces
-\begin{equation*}
-  \lim_{x\rightarrow \infty} \frac{2x+7}{x+8686} = \frac{2}{1} = 1 \qquad .
-\end{equation*}
+Differentiation of the top gives $1$, and differentiation of the bottom gives $2$.
+The limit is therefore $1/2$, and you're wiser to invest in Glutco.
+The interpretation is that
+the constant terms are irrelevant, and in the long run the competition between the numerator and
+denominator is determined by which one \emph{grows} faster.
 \end{eg}
 <% end_sec('lhospital-at-infty') %>
 <% begin_sec("Proofs",4,'lhospital-proofs') %>

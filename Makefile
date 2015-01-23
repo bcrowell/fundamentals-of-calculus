@@ -94,6 +94,7 @@ post:
 	cp fund.pdf ~/Lightandmatter/fund
 
 prepress:
+	# Don't need to make book before doing make prepress.
 	PREPRESS=1 make book
 	make preflight_figs
 	scripts/pdf_extract_pages.rb fund.pdf 3-end fund_lulu.pdf
