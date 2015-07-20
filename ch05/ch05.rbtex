@@ -760,7 +760,12 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 <% hw('sin-sin-sin',{'solution'=>true}) %>
 <% hw('cosh-extrema',{'solution'=>true}) %>
 
-  <% hw_block(2) %>
+  <% hw_block(1) %>
+
+<% hw('linear-approx-log') %>
+<% hw('linear-approx-cos') %>
+
+  <% hw_block(1) %>
 
 \begin{hwinstructions}
 In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given functions.

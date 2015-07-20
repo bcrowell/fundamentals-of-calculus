@@ -1391,7 +1391,7 @@ to compute
 \]
 
 <% end_sec('rational-zero-over-zero') %>
-<% begin_sec("The ``don't make $\\delta$ to too big'' trick",nil,'dont-choose') %>
+<% begin_sec("The ``don't make $\\delta$ too big'' trick",nil,'dont-choose') %>
 In this section we describe a trick, the ``don't make $\delta$ to too big'' trick,
 that is sometimes helpful when we want to evaluate a limit directly from the epsilon-delta definition.
 Say we want to prove that $\lim_{x\to 1}x^2 = 1$. This may not seem to require a fancy

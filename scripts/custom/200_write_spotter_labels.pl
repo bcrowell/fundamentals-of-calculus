@@ -59,7 +59,7 @@ debug("done reading csv file $csv_file");
 #     soln = 0 or 1, boolean indicating whether the problem has a solution in the back of the book
 
 my %csv_info = ();
-my $xml_fragment = "<!-- labels output by $whoami to file $xml_fragment_file\n     labels are output for all problems, not just the ones that are actually online problems -->\n";
+my $xml_fragment = "<!-- labels output by $whoami to file $xml_fragment_file\n     labels are output for all problems, not just the ones that are actually online problems\n     do a \"make preflight\" to rebuild this file-->\n";
 open(F,"<$csv_file") or barf("error opening $csv_file for input, $!");
 while(my $line=<F>) {
   if ($line =~ /(.*),(.*),(.*),(.*),(.*)/) { 
@@ -74,14 +74,15 @@ while(my $line=<F>) {
   }
 }
 close F;
+debug("writing $xml_fragment_file based on $csv_file");
 open(F,">$xml_fragment_file") or barf("error opening $xml_fragment_file for output, $!");
 print F $xml_fragment;
 close F;
 
 #======================================================================================================
 
+debug("writing $xml_file based on $m4_file");
 my $c = "m4 -P -I $xml_dir $m4_file >$xml_file";
-print STDERR "$c\n"; # qwe
 -e $m4_file or barf("file $m4_file doesn't exist");
 system($c)==0 or barf("error executing command $c");
 print STDERR "done\n"; # qwe
