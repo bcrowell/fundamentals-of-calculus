@@ -6,6 +6,7 @@ use strict;
 #   preflight_one_fig.pl foo.svg
 # Checks whether there is no rendered version of foo.svg.
 # Checks whether it was rendered in more than one version.
+#   ... I'm no longer counting this as an error
 # Checks whether it was rendered to foo.png. If so, complains if it has transparency.
 # Checks whether there is also a foo.pdf. If there is, checks foo.svg and foo.pdf for problems:
 #   transparency (checked for in the svg)
@@ -38,7 +39,7 @@ foreach my $fmt('pdf','png','jpg') {
 if (@formats==0) {err("not rendered into pdf, png, or jpg")}
 if (@formats>1) {
   # foreach my $fmt(@formats) {  my $rendered = $svg;  $rendered =~ s/\.svg$/.$fmt/; unlink($rendered)}
-  err("rendered into more than one format: ".join(',',@formats));
+  #err("rendered into more than one format: ".join(',',@formats));
 }
 
 if (-e $pdf) {

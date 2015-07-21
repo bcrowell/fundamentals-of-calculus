@@ -114,8 +114,11 @@ graphs:
 all_figures:
 	# The following requires Inkscape 0.47 or later.
 	perl -e 'foreach my $$f(<ch*/figs/*.svg>) {system("scripts/render_one_figure.pl $$f")}'
+	# For better reliability in RIP, make png versions as well.
+	perl -e 'foreach my $$f(<ch*/figs/*.pdf>) {system("scripts/pdf_to_bitmap.pl $$f png $(FORCE)")}'
 	scripts/render_one_figure.pl cover/lmlogo.svg
 	scripts/svg_to_bitmap.pl cover/cover-for-pdf.svg cover/cover-for-pdf.png
+
 
 handheld:
 	# see meki/zzz_misc/publishing for notes on how far I've progressed with this
