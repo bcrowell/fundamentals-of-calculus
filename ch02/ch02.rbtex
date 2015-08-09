@@ -1270,11 +1270,23 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 <% hw('review-negative-exponents') %>
 <% hw('review-fractional-exponents') %>
 
-  <% hw_block(2) %>
+  <% hw_block(1) %>
 
 <% end_hw_sec %>
 
 <% begin_hw_sec %>
+
+\begin{hwinstructions}
+Example \ref{eg:limit-by-sub-good} on p.~\pageref{eg:limit-by-sub-good} demonstrates a way of
+guessing a limit by plugging in numbers and making a table of values. Do the same thing in problems
+\ref{hw:guess-limit-1}-\ref{hw:guess-limit-3}.
+\end{hwinstructions}
+
+<% hw('guess-limit-1') %>
+<% hw('guess-limit-2') %>
+<% hw('guess-limit-3') %>
+
+  <% hw_block(1) %>
 
 \begin{hwinstructions}
 In example \ref{eg:x-squared-with-limits} on p.~\pageref{eg:x-squared-with-limits} we found
@@ -1291,20 +1303,18 @@ the same brute-force technique to the given functions.
 
   <% hw_block(2) %>
 
-\vfill
-
 % fractional exponents
 
 <% hw('cube-root',{'solution'=>true}) %>
 <% hw('thompson-sqrts',{'solution'=>true}) %>
+
+\pagebreak
 
 <% hw('everest-temp') %>
 
 % product rule
 
 <% hw('product-rule-vertical-stretch',{'solution'=>true}) %>
-
-\pagebreak
 
   <% hw_block(2) %>
 
@@ -1318,7 +1328,7 @@ answer by both methods.
 <% hw('product-rule-two-methods') %>
 <% hw('product-rule-two-methods-2') %>
 
-\vfill
+\pagebreak
 
   <% hw_block(2) %>
 
@@ -1399,6 +1409,8 @@ given function, and try to simplify your answer as much as possible.
   )
 %>
 
+
+\pagebreak
 
   <% hw_block(2) %>
 
