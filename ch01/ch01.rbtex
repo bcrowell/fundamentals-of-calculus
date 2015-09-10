@@ -1397,6 +1397,8 @@ If you use them, explain that you're doing so.)
 <% hw('find-ranges-of-functions') %> % Robbin, p. 20, # 18
 <% hw('find-ranges-of-functions-2') %>
 
+\pagebreak
+
   <% hw_block(2) %>
 
 <% hw('human-cylinder') %>

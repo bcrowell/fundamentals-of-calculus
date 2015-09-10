@@ -385,7 +385,7 @@ $u$ and $v$ are both differentiable,
 \end{equation*}
 \end{important}
 
-<% marg(0) %>
+<% marg(150) %>
 <%
   fig(
     'product-rule-geometrically',
