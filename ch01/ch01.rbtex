@@ -871,7 +871,7 @@ derivative,
 Although the notation's original justification was not up to modern standards of
 rigor, it is one of the most expressive and well-designed mathematical notations ever devised,
 and has been the most commonly used notation for the derivative ever since Leibniz published it
-in 1686. Around 1960, mathematicians clarified some of these issues and essentially
+in 1686. Around 1970, mathematicians clarified some of these issues and essentially
 justified and codified the centuries-old procedures for manipulating the $\der y$'s and $\der x$'s;
 section \ref{sec:safe-handling-of-dx} on p.~\pageref{sec:safe-handling-of-dx} boils these
 modern developments down to a simple set of practical rules.
@@ -1395,6 +1395,7 @@ If you use them, explain that you're doing so.)
 \pagebreak
 
 <% hw('find-ranges-of-functions') %> % Robbin, p. 20, # 18
+<% hw('find-ranges-of-functions-2') %>
 
   <% hw_block(2) %>
 

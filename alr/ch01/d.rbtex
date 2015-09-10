@@ -1,0 +1,128 @@
+<% require "../alr.rb" %>
+
+\begin{frame}{Don't build on shaky foundations}
+
+\includegraphics[width=9in]{ch01/figs/earthquake.jpg}
+
+{\footnotesize 
+  Apartment building after 1994 Northridge earthquake.
+  Gary B. Edstrom, public domain. % http://en.wikipedia.org/wiki/File:Collapsed_Apartment_After_Northridge_Earthquake.jpg
+}
+
+\end{frame}
+
+\begin{frame}{Stating your assumptions}
+
+Discussion question:
+
+m4_include(dq/go-to-hell.tex)
+
+\end{frame}
+
+\begin{frame}{Calculus had nontrivial foundational issues}
+
+{\large
+Mathematicians managed to confuse themselves about the foundational aspects of calculus
+for 300 years.
+}
+
+\begin{columns}
+
+  \begin{column}{.5\textwidth}
+
+    \noindent\includegraphics[width=3in]{ch01/figs/leibniz.jpg}
+
+    Newton and Leibniz, \\
+    1670.
+
+  \end{column}
+
+  \begin{column}{.5\textwidth}
+
+    \noindent\includegraphics[width=3in]{ch01/figs/robinson.jpg}
+
+    Abraham Robinson \\
+    and others, 1970.
+
+  \end{column}
+
+\end{columns}
+
+\vfill
+
+  {\footnotesize
+    Robinson photo by Konrad Jacobs, 1970, CC-BY-SA licensed.
+    % http://commons.wikimedia.org/wiki/File:Robinson_abraham_1970.jpg
+  }
+
+
+\end{frame}
+
+\begin{frame}{Foundations --- historical development}
+
+\noindent\includegraphics[width=8in]{ch01/figs/historical-foundations}
+
+\end{frame}
+
+\begin{frame}{Development of the derivative in this course}
+
+\noindent\includegraphics[width=8in]{ch01/figs/foundations-this-course}
+
+\end{frame}
+
+\begin{frame}{Definitions: old school}
+
+  Definitions from Euclid (\emph{ca}.~300 BCE):
+
+  \begin{itemize}
+    \item A \emph{point} is that which can't be divided into smaller parts.
+    \item A \emph{line} is a length with no width.
+    \item A \emph{straight line} is a line which lies evenly with the points on itself.
+  \end{itemize}
+
+  Euclid's five postulates:
+
+  \begin{enumerate}
+    \item Two points determine a straight line.
+    \item A straight line can be extended as far as desired.
+    \item Given a line segment AB, a circle exists with center A and radius AB.
+    \item All right angles equal one another.
+    \item If a straight line falling on two straight lines makes the interior angles on the
+         same side less than two right angles, then the two straight lines, if extended far enough, meet on that
+         side on which are the angles less than the two right angles.
+  \end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Definitions: the modern style}
+
+  {\large
+
+  In any logical system, some basic notions must be left undefined.
+
+  \begin{itemize}
+  \item in Euclid: ``point''
+  \item in set theory: ``set''
+  \end{itemize}
+
+  These basic notions aren't defined in terms of others, but are characterized by their properties.
+
+  }
+\end{frame}
+
+\begin{frame}{Definitions: the modern style}
+
+\begin{columns}
+
+    \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/love_is.jpg}\end{column}
+
+  \begin{column}{.7\textwidth}
+    {\Large Don't try to define it. Just state its properties. }
+  \end{column}
+
+
+\end{columns}
+
+  {\footnotesize (c) LoveIsComix.com. Used under the U.S. fair use exception to copyright.}
+
+\end{frame}

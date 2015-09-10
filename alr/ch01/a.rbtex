@@ -1,27 +1,39 @@
 <% require "../alr.rb" %>
 <% begin_sec("introduction") %>
 
-\begin{frame}{Reading questions}
-You can bring a question
-on something you didn't understand in the reading.
-I'll pick a few of the best questions to answer in class, and the people who
-asked those questions will get extra credit.
- Your question \emph{should}:
-\begin{itemize}
-  \item be about math
-  \item show effort
-  \item be specific enough that  I can answer it
-  \item be written out in advance on a full-size sheet of paper
-\end{itemize}
+\begin{frame}{Can I have partial credit?}
+  \begin{columns}
 
-Your question \emph{should not}:
-\begin{itemize}
-  \item be about trivia
-  \item be something you could look up online
-  \item be a homework question
-\end{itemize}
+    \begin{column}{.4\textwidth}\includegraphics[width=4in]{ch01/figs/nose_gear.jpg}\end{column}
+    \begin{column}{.6\textwidth}In real life, it matters if you get it right.
+
+      \vspace{10mm}
+
+      {\footnotesize
+        Royal Robbins sorting gear for the second ascent of The Nose, El Capitan, 1960.
+      }
+
+      \vspace{50mm}
+
+      {\tiny
+        Photo by Tom Frost, CC-BY licensed.
+            % https://commons.wikimedia.org/wiki/File:Tom_Frost_-_One_cup_of_tea_-_1960.jpg
+      }
+    \end{column}
+  \end{columns}
 
 \end{frame}
+
+\begin{frame}{Can I have partial credit?}
+    \includegraphics[width=9in]{ch01/figs/nose_climbing.jpg}
+
+  {\tiny
+    Chuck Pratt and Royal Robbins on The Nose, day 6.
+    Photo by Tom Frost, CC-BY licensed.
+        % https://commons.wikimedia.org/wiki/File:Tom_Frost_-_One_cup_of_tea_-_1960.jpg
+  }
+\end{frame}
+
 
 \begin{frame}{Think-vote-debate}\label{think-vote-debate}
   We're about to do an activity that works like this:
@@ -82,10 +94,10 @@ Your question \emph{should not}:
   Our next activity will use this method:
 
   \begin{enumerate}
-    \item Students are assigned randomly to groups of 4, which are also subdivided into pairs.
+    \item Students are assigned randomly to groups.
     \item The instructor poses an open-ended question.
     \item You think about it quietly for 1 minute.
-    \item You and your partner discuss your ideas.
+    \item You and your partners discuss your ideas.
     \item A student is randomly picked and can choose to share what they said, what their partner said,
              a synthesis of their ideas, or something else. More students share until we've reached
              a conclusion.

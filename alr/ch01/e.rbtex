@@ -1,0 +1,39 @@
+<% require "../alr.rb" %>
+
+\begin{frame}{Inferring units}
+
+An example from trig:
+
+\begin{align*}
+  \sin\theta &= \frac{\text{opposite}}{\text{hypotenuse}} \\
+  \cos\theta &= \frac{\text{adjacent}}{\text{hypotenuse}} \\
+  \tan\theta &= \frac{\text{opposite}}{\text{adjacent}} \\
+\end{align*}
+
+From these definitions, infer the units of the sine, cosine, and tangent.
+
+\end{frame}
+
+\begin{frame}{Checking units}
+
+\begin{columns}
+
+    \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/triangle-formula.pdf}\end{column}
+
+  \begin{column}{.7\textwidth}
+A cute formula from trigonometry lets you find any angle of
+a triangle if you know the lengths of its sides. Using the
+notation shown in the figure, and letting $s=(a+b+c)/2$ be half the
+perimeter, we have
+\begin{equation*}
+  \tan A/2=\sqrt{\frac{(s-b)(s-c)}{s(s-a)}} \qquad .
+\end{equation*}
+Show that the units of this equation make sense. In other words, check that the
+units of the right-hand side are the same as your answer to part a of the question.
+  \end{column}
+
+
+\end{columns}
+
+
+\end{frame}
