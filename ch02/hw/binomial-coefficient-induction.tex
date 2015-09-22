@@ -1,0 +1,14 @@
+Let $f(x)=x^n$, where $n$ is an integer greater than or equal to 1,
+and suppose that we want to evaluate $f'(1)$ directly using the definition of the limit,
+i.e., using the brute-force technique of example \ref{eg:x-squared-with-limits},
+p.~\pageref{eg:x-squared-with-limits}. This will involve multiplying out the
+expression $(1+\Delta x)^n-1$, after which we end up throwing away everything except for the
+lowest-order nonvanishing term (i.e., the term with $\Delta x$ to the first power).
+All we really need is the coefficient of this term, which in example
+\ref{eg:x-squared-with-limits} was 2.
+For a particular value of $n$, we could just go ahead and multiply out this expression, but suppose we would rather
+prove the result for all $n$. This requires that we prove a general result for
+the coefficient of the linear term in the expression $(1+\Delta x)^n$. Such a coefficient is called
+a binomial coefficient. 
+Proof by induction was introduced in section \ref{subsec:natural-powers}, p.~\pageref{induction}.
+Use a proof by induction to show that the binomial coefficient we're talking about equals $n$.

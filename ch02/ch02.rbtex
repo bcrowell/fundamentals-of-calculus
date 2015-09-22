@@ -425,7 +425,7 @@ and equating this to zero shows that indeed, $(1/x)'=-1/x^2$.
 
 <% begin_sec("The chain rule",nil,'chain-rule') %>
 <% begin_sec("Constant rates of change",nil,'chain-rule-constant-rates') %>
-In addition to the chain rule, the other extremely important rule for differentiation is the chain
+In addition to the product rule, the other extremely important rule for differentiation is the chain
 rule. We start with three examples that illustrate the idea but don't require calculus.
 
 \begin{eg}{Burning calories}\label{eg:burning-calories}
@@ -438,7 +438,7 @@ does she burn calories?
 and $z$ the calories spent. Then
 \begin{align*}
   \frac{\Delta z}{\Delta x}
-          &= \frac{\Delta z}{\Delta y} \cdot \frac{\Delta z}{\Delta y} \\
+          &= \frac{\Delta z}{\Delta y} \cdot \frac{\Delta y}{\Delta x} \\
           &= \left(\frac{70\ \zu{cal}}{1\ \cancel{\zu{km}}}\right)
                                      \left(\frac{3\ \cancel{\zu{km}}}{1\ \zu{hr}}\right) \\
           &= 210\ \zu{cal}/\zu{hr} \qquad .
@@ -823,8 +823,8 @@ a reason not to make $q$ too big.
 We have the following model of the retailer's yearly costs:
 \begin{align*}
   C &= c_1 D \qquad \text{[wholesale cost of the widgets, including shipping]} \\
-    &= c_2\frac{D}{q} \qquad \text{[$D/q$=number of orders; $c_2$=fixed cost per order]} \\
-    &= c_3 q \qquad \text{[cost of storing an inventory of $q$ widgets]} 
+    &+ c_2\frac{D}{q} \qquad \text{[$D/q$=number of orders; $c_2$=fixed cost per order]} \\
+    &+ c_3 q \qquad \text{[cost of storing an inventory of $q$ widgets]} 
 \end{align*}
 We want to minimize the function $C(q)$, taking $D$, $c_1$, $c_2$, and $c_3$ as constants.
 If $q$ is too small, the second term dominates and becomes large, while the same happens
@@ -1467,6 +1467,7 @@ to understand the definition of the limit.
 <% hw('product-rule-three-factors',{'solution'=>true}) %>
 <% hw('product-rule-n-factors') %>
 <% hw('nastiness') %>
+<% hw('binomial-coefficient-induction') %>
 
 
 
