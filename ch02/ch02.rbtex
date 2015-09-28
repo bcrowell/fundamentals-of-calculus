@@ -892,7 +892,7 @@ $p$ and $q$ are both differentiable and $q\ne0$,
 \end{lessimportant}
 
 In the examples above, the functions $p$ and $q$ happened to be polynomials. A function
-formed in this way from the quotient of polynomials is 
+like $f$ that is formed in this way from the quotient of polynomials is 
 called a \emph{rational function}.\index{rational function}\label{rational-function-defined}
 
 <% end_sec('quotients') %>
