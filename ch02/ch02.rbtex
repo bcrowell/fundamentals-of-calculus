@@ -1422,7 +1422,7 @@ given function, and try to simplify your answer as much as possible.
   <% hw_block(2) %>
 
 \begin{hwinstructions}
-Problems \ref{hw:differentiability-1}-\ref{hw:differentiability-3} can be done
+Problems \ref{hw:differentiability-1}-\ref{hw:differentiability-7} can be done
 using methods \ref{differentiability-by-zooming}-\ref{differentiability-by-formula} 
 on p.~\pageref{differentiability-by-zooming}.
 \end{hwinstructions}
@@ -1431,6 +1431,11 @@ on p.~\pageref{differentiability-by-zooming}.
 <% hw('differentiability-1',{'solution'=>true}) %>
 <% hw('differentiability-2',{'solution'=>true}) %>
 <% hw('differentiability-3',{'solution'=>true}) %>
+
+<% hw('differentiability-4') %>
+<% hw('differentiability-5') %>
+<% hw('differentiability-6') %>
+<% hw('differentiability-7') %>
 
   <% hw_block(1) %>
 
