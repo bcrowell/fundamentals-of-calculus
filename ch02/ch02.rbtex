@@ -1374,7 +1374,24 @@ given function, and try to simplify your answer as much as possible.
 <% hw('derivative-practice-6') %>
 <% hw('derivative-practice-7') %>
 
-  <% hw_block(2) %>
+\pagebreak
+
+  <% hw_block(1) %>
+
+\begin{hwinstructions}
+In problems \ref{hw:chain-and-product-with-symbolic-constants-1}-\ref{hw:chain-and-product-with-symbolic-constants-1},
+$j$, $k$, $\ell$, and $m$, are constants.
+Calculate the given derivatives. Simplify answers where possible.
+\end{hwinstructions}
+
+
+<% hw('chain-and-product-with-symbolic-constants-1') %>
+<% hw('chain-and-product-with-symbolic-constants-2') %>
+<% hw('chain-and-product-with-symbolic-constants-3') %>
+<% hw('chain-and-product-with-symbolic-constants-4') %>
+
+
+  <% hw_block(1) %>
 
 <% hw('gamma-derivative') %>
 \pagebreak
