@@ -1264,6 +1264,142 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 
 <% end_sec('safe-handling-of-dx') %>
 
+<% begin_sec("Style",4,'style') %>
+
+\newcommand{\dictum}[1]{\noindent\begin{minipage}{170mm}#1\end{minipage}}
+\newenvironment{right-and-wrong}{%
+  \noindent\begin{tabular}{p{83mm}p{83mm}}
+}{%
+  \end{tabular}
+}
+\newenvironment{right-and-wrong-entry}{%
+  \begin{minipage}[t]{80mm}
+}{%
+  \end{minipage}
+}
+\newcommand{\rightwrongheader}{\emph{wrong} & \emph{right} \\}
+
+\dictum{Style is important. If you say true things in poor style, people
+will decide that you're stupid and ignore you.
+You now know enough calculus to be able to appreciate some examples of good and bad
+style.}
+
+\dictum{Use equals signs. State what it is that you're calculating.}
+
+\begin{right-and-wrong}
+  \rightwrongheader
+  \begin{right-and-wrong-entry}
+    $3x(x+4)$ \\
+    $3x^2+12x$ \\
+    $6x+12$
+  \end{right-and-wrong-entry}
+  &
+  \begin{right-and-wrong-entry}
+    $[3x(x+4)]'$ \\
+    $=[3x^2+12x]'$ \\
+    $=6x+12$
+  \end{right-and-wrong-entry}
+\end{right-and-wrong}
+
+\dictum{The Leibniz notations $\der$ and $\der/\der x$ are operations (like $\sqrt{\enspace}$), not numbers.}
+
+\begin{right-and-wrong}
+  \begin{right-and-wrong-entry}
+    Question: Differentiate $x^2$. \\
+    Wrong answer: $\der '=2x$ \\
+    Wrong answer: $\der/\der x=2x$
+  \end{right-and-wrong-entry}
+  &
+  \begin{right-and-wrong-entry}
+    Question: Differentiate $x^2$. \\
+    Right answer: $\der(x^2)/\der x=2x$ \\
+    Right answer: $\der(\ldots)/\der x=2x$
+  \end{right-and-wrong-entry}
+\end{right-and-wrong}
+
+\dictum{Immediately make obvious simplifications.}
+
+\begin{right-and-wrong}
+  \rightwrongheader
+  \begin{right-and-wrong-entry}
+    $(x^2+3)'$\\
+    $=2x^1+0$
+  \end{right-and-wrong-entry}
+  &
+  \begin{right-and-wrong-entry}
+    $(x^2+3)'$\\
+    $=2x^1+0$ \qquad [or don't write this at all]\\
+    $=2x$
+  \end{right-and-wrong-entry}
+\end{right-and-wrong}
+
+\dictum{Simplification should usually reduce the number of symbols.}
+
+\begin{right-and-wrong}
+  \rightwrongheader
+  \begin{right-and-wrong-entry}
+    $[(x^2+1)^3]'$\\
+    $=3(x^2+1)^2(2x)$ \\
+    $=3(x^4+2x^2+1)(2x)$ \qquad [uglification]
+  \end{right-and-wrong-entry}
+  &
+  \begin{right-and-wrong-entry}
+    $[(x^2+1)^3]'$\\
+    $=3(x^2+1)^2(2x)$ \\
+    $=6x(x^2+1)^2$ \qquad [simplification]
+  \end{right-and-wrong-entry}
+\end{right-and-wrong}
+
+\begin{right-and-wrong}
+  \rightwrongheader
+  \begin{right-and-wrong-entry}
+    $[1/\sqrt{1+x}]'$\\
+    $=[(1+x)^{-1/2}]'$ \\
+    $=-\frac{1}{2}(1+x)^{-3/2}$ \\
+    $=\frac{-1}{2(1+x)\sqrt{1+x}}$ \qquad [uglification]
+  \end{right-and-wrong-entry}
+  &
+  \begin{right-and-wrong-entry}
+    $[1/\sqrt{1+x}]'$\\
+    $=[(1+x)^{-1/2}]'$ \\
+    $=-\frac{1}{2}(1+x)^{-3/2}$ \qquad [Stop here.]
+  \end{right-and-wrong-entry}
+\end{right-and-wrong}
+
+\dictum{Don't use a complicated technique when a simple one will do.}
+
+\begin{right-and-wrong}
+  \rightwrongheader
+  \begin{right-and-wrong-entry}
+    $x'$ \\
+    $  = (x^1)'$ \\
+    $  = (1)x^0$ \\
+    $  = 1 $ \\
+  \end{right-and-wrong-entry}
+  &
+  \begin{right-and-wrong-entry}
+    $x'=1$ \qquad [known fact]
+  \end{right-and-wrong-entry}
+\end{right-and-wrong}
+
+\begin{right-and-wrong}
+  \rightwrongheader
+  \begin{right-and-wrong-entry}
+    $  \left(\frac{1}{x^2+1}\right)'$ \\
+    $  = \frac{(1)'(x^2+1)-(1)(x^2+1)'}{(x^2+1)^2}$ \qquad [quotient rule]\\
+    $  = \frac{(0)(x^2+1)-(2x)}{(x^2+1)^2}$ \\
+    $  = -\frac{2x}{(x^2+1)^2}$ \\
+  \end{right-and-wrong-entry}
+  &
+  \begin{right-and-wrong-entry}
+    $ \left(\frac{1}{x^2+1}\right)'$ \\
+    $ = [(x^2+1)^{-1}]'$ \\
+    $ = -2x(x^2+1)^{-2}$ \qquad [power and chain rules]
+  \end{right-and-wrong-entry}
+\end{right-and-wrong}
+
+<% end_sec('style') %>
+
 <% begin_hw_sec("Review problems") %>
 
 <% hw('review-add-exponents') %>
