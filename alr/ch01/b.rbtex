@@ -105,7 +105,7 @@ Repeat the preceding exercise for $x^3$.
 \end{frame}
 
 \begin{frame}{The derivative in more than one place}
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.4\textwidth}\includegraphics[width=4in]{ch01/figs/stop-sign.pdf}\end{column}
     \begin{column}{.6\textwidth}
@@ -118,7 +118,7 @@ Repeat the preceding exercise for $x^3$.
       \vspace{50mm}
 
       {\tiny
-          Based on art by Mediawiki Commons user Roulex_45, GFDL licensed.
+          Based on art by Mediawiki Commons user Roulex\_45, GFDL licensed.
                % https://commons.wikimedia.org/wiki/File:Vienna_Convention_road_sign_B2a.svg
       }
     \end{column}
@@ -127,7 +127,7 @@ Repeat the preceding exercise for $x^3$.
 \end{frame}
 
 \begin{frame}{The derivative in more than one place}
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.4\textwidth}\includegraphics[width=4in]{ch01/figs/stop-sign-2.pdf}\end{column}
     \begin{column}{.6\textwidth}
@@ -198,7 +198,7 @@ What would the general expression be for the derivative of $x^3$?
 
 \begin{frame}{Real-world motion}
 
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.4\textwidth}\includegraphics[width=4in]{ch01/figs/blank-graphs.pdf}\end{column}
     \begin{column}{.6\textwidth}

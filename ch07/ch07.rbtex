@@ -85,9 +85,8 @@ $4.3^3=79.5$. We want $y$ to get bigger by $7.5$, and we can use
 calculus to find approximately how much bigger $x$ needs to get
 in order to accomplish that:
 \begin{align*}
-  \Delta x &= \frac{\Delta x}{\Delta y} \Delta y \\
-           &\approx \frac{\der x}{\der y} \Delta y \\
-           &= \frac{\Delta y}{\der y/\der x} \\
+  \frac{\der y}{\der x} &\approx \frac{\Delta y}{\Delta x} \\
+  \Delta x &\approx \frac{\Delta y}{\der y/\der x} \\
            &= \frac{\Delta y}{3x^2} \\
            &= \frac{\Delta y}{3x^2} \\
            &= 0.14

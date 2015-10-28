@@ -1281,10 +1281,9 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 
 \dictum{Style is important. If you say true things in poor style, people
 will decide that you're stupid and ignore you.
-You now know enough calculus to be able to appreciate some examples of good and bad
-style.}
+You know enough calculus to appreciate some examples.}
 
-\dictum{Use equals signs. State what it is that you're calculating.}
+\dictum{1. Use equals signs. State what it is that you're calculating.}
 
 \begin{right-and-wrong}
   \rightwrongheader
@@ -1301,7 +1300,7 @@ style.}
   \end{right-and-wrong-entry}
 \end{right-and-wrong}
 
-\dictum{The Leibniz notations $\der$ and $\der/\der x$ are operations (like $\sqrt{\enspace}$), not numbers.}
+\dictum{2. The Leibniz notations $\der$ and $\der/\der x$ are operations (like $\sqrt{\enspace}$), not numbers.}
 
 \begin{right-and-wrong}
   \begin{right-and-wrong-entry}
@@ -1317,7 +1316,7 @@ style.}
   \end{right-and-wrong-entry}
 \end{right-and-wrong}
 
-\dictum{Immediately make obvious simplifications.}
+\dictum{3. Immediately make obvious simplifications.}
 
 \begin{right-and-wrong}
   \rightwrongheader
@@ -1333,7 +1332,7 @@ style.}
   \end{right-and-wrong-entry}
 \end{right-and-wrong}
 
-\dictum{Simplification should usually reduce the number of symbols.}
+\dictum{4. Simplification should usually reduce the number of symbols.}
 
 \begin{right-and-wrong}
   \rightwrongheader
@@ -1366,7 +1365,7 @@ style.}
   \end{right-and-wrong-entry}
 \end{right-and-wrong}
 
-\dictum{Don't use a complicated technique when a simple one will do.}
+\dictum{5. Don't use a complicated technique when a simple one will do.}
 
 \begin{right-and-wrong}
   \rightwrongheader

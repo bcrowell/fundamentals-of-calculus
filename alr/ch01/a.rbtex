@@ -2,7 +2,7 @@
 <% begin_sec("introduction") %>
 
 \begin{frame}{Can I have partial credit?}
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.4\textwidth}\includegraphics[width=4in]{ch01/figs/nose_gear.jpg}\end{column}
     \begin{column}{.6\textwidth}In real life, it matters if you get it right.
@@ -50,7 +50,7 @@
 
 \begin{frame}{Velocity from a graph}
 
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.4\textwidth}\includegraphics[width=4in]{ch01/figs/slow-dog.pdf}\end{column}
 
@@ -106,7 +106,7 @@
 
 \begin{frame}{A chair of protest}
 
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/skyscraper.pdf}\end{column}
 
@@ -143,7 +143,7 @@
 
 \begin{frame}{Speed of the chair}
 
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/skyscraper.pdf}\end{column}
 
@@ -168,7 +168,7 @@
 
 \begin{frame}{Finding a number for the speed}
 
-  \begin{columns}
+  \begin{columns}[T]
 
     \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/skyscraper.pdf}\end{column}
 

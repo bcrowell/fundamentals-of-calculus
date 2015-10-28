@@ -59,7 +59,7 @@ For every $x$, there exists $y$ such that $y=x/2$.
 
 \begin{frame}{Definition of the limit}
 
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.3\textwidth}
     \noindent\includegraphics[width=3in]{ch02/figs/epsilon-delta}
@@ -83,7 +83,7 @@ We say that $L$ is the limit of $f(x)$ as $x\to a$, if the following two conditi
 
 \begin{frame}{Not close enough}
 
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.3\textwidth}
     \noindent\includegraphics[width=3in]{ch02/figs/epsilon-delta}
@@ -107,7 +107,7 @@ Clearly
 \end{equation*}
 Let's see how this plays out in the $\epsilon$-$\delta$ definition.
 
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.3\textwidth}
     \noindent\includegraphics[width=3in]{ch02/figs/epsilon-delta-cube-root}

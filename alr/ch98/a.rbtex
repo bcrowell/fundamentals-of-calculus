@@ -3,7 +3,7 @@
 
 \begin{frame}{Relations and functions}
 
-\begin{columns}
+\begin{columns}[T][T]
   \begin{column}{.6\textwidth}
     Definition: A relation is a set of points in the plane.
 
@@ -26,7 +26,7 @@
 
 \begin{frame}{Relations and functions}
 
-\begin{columns}
+\begin{columns}[T][T]
   \begin{column}{.6\textwidth}
     Question: Could we just as well have defined a function as a formula or rule relating two variables?
   \end{column}
@@ -41,7 +41,7 @@
 
 \begin{frame}{Relations and functions}
 
-\begin{columns}
+\begin{columns}[T][T]
   \begin{column}{.4\textwidth}
     Question: If a relation represents a cause and effect relationship between two variables, does it have to
     be a function? Does it matter which variable is on which axis?
@@ -75,7 +75,7 @@ $\int_1^3 x^2 \: dx$ & and & $\int_1^3 u^2 \: du$ \\
 
 \begin{frame}{Inverse of a function}
 
-\begin{columns}
+\begin{columns}[T][T]
   \begin{column}{.4\textwidth}
     Definition: If a function $f$ passes both the vertical line test and the horizontal line test,
     then it has an inverse $f^{-1}$, obtained by interchanging the $x$ and $y$ axes.
@@ -92,7 +92,7 @@ $\int_1^3 x^2 \: dx$ & and & $\int_1^3 u^2 \: du$ \\
 
 \begin{frame}{Inverse of a function}
 
-\begin{columns}
+\begin{columns}[T][T]
   \begin{column}{.4\textwidth}
     Question: Let $f$ be defined by $f(x)=x^p$, where $p$ is an integer. How can we tell whether $f$ has
     an inverse?
@@ -455,7 +455,7 @@ Question: How should we fix the examples above?
 
 \begin{frame}{Implicit functions}
 
-\begin{columns}
+\begin{columns}[T][T]
   \begin{column}{.6\textwidth}
     If we randomly write down an equation such as
     \begin{equation*}
@@ -476,7 +476,7 @@ Question: How should we fix the examples above?
 
 \begin{frame}{Implicit differentiation}
 
-\begin{columns}
+\begin{columns}[T][T]
   \begin{column}{.6\textwidth}
     Suppose
     \begin{equation*}

@@ -16,7 +16,7 @@ From these definitions, infer the units of the sine, cosine, and tangent.
 
 \begin{frame}{Checking units}
 
-\begin{columns}
+\begin{columns}[T]
 
     \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/triangle-formula.pdf}\end{column}
 

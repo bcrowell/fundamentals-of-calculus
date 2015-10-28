@@ -2,7 +2,7 @@
 <% begin_sec("8.3-5 The indefinite integral; the fundamental theorem") %>
 
 \begin{frame}{An electric bill}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -36,7 +36,7 @@
 \end{frame}
 
 \begin{frame}{An electric bill}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -62,7 +62,7 @@
 \end{frame}
 
 \begin{frame}{An electric bill}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -82,7 +82,7 @@
 \end{frame}
 
 \begin{frame}{An electric bill}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -103,7 +103,7 @@
 \end{frame}
 
 \begin{frame}{An electric bill}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -166,7 +166,7 @@ copper reserves from $t=0$ (now) to $t=100$ years.
 
 \begin{frame}{Fields}
 
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -196,7 +196,7 @@ Photo of kids by Chris Darling, CC-BY license.}
 
 
 \begin{frame}{Electric field and voltage}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -232,7 +232,7 @@ Photo of kids by Chris Darling, CC-BY license.}
 
 
 \begin{frame}{Electric field and voltage}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 
@@ -260,7 +260,7 @@ Photo of kids by Chris Darling, CC-BY license.}
 \end{frame}
 
 \begin{frame}{Electric field and voltage}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.7\textwidth}
 

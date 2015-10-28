@@ -179,7 +179,7 @@ upgraded floor mats and a chrome tailpipe. L'H\^{o}pital's rule in its most gene
 than the stripped-down model described in section \ref{sec:lhospital-simple}.
 The price you pay for the deluxe model
 is that the proof becomes much more complicated. I'll state the fancier versions of L'H\^{o}pital's rule
-without proof.
+below and give examples, but relegate the proofs to a later section and, in one case, a homework problem.
 <% begin_sec("Multiple applications of the rule",nil,'lhospital-multiple') %>\index{L'H\^{o}pital's rule!multiple applications}
 In the following example, we have to use l'H\^{o}pital's rule twice before we get an answer.
 

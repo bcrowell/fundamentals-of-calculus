@@ -805,8 +805,8 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 
 <% hw('credit-card-fraud') %>
 
-<% hw('gompertz') %>
-<% marg(300) %>
+<% hw('gompertz') %>\index{Gompertz actuarial model}
+<% marg(-300) %>
 <%
   fig(
     'hw-gompertz',

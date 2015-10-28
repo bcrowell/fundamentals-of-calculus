@@ -2,7 +2,7 @@
 <% begin_sec("10.1 Applications to probability") %>
 
 \begin{frame}{A climbing anchor}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.4\textwidth}
     The rock climbing anchor contains four carabiners (metal oval clips) with gates that
@@ -22,7 +22,7 @@
 \end{frame}
 
 \begin{frame}{A climbing anchor}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.4\textwidth}
 The carabiner on the left has
@@ -44,7 +44,7 @@ The carabiner on the left has
 \end{frame}
 
 \begin{frame}{The difference of two dice}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.6\textwidth}
     We roll two dice and define the random variable $x$ as the absolute value of the difference between them.
@@ -70,7 +70,7 @@ The carabiner on the left has
 \end{frame}
 
 \begin{frame}{The difference of two dice}
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.6\textwidth}
     Use your results to find the probability distribution of $x$, and check your results by checking
@@ -87,7 +87,7 @@ The carabiner on the left has
 
 \begin{frame}{Cosmic Gall}
 
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.5\textwidth}
 

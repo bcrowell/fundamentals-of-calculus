@@ -26,7 +26,7 @@ Mathematicians managed to confuse themselves about the foundational aspects of c
 for 300 years.
 }
 
-\begin{columns}
+\begin{columns}[T]
 
   \begin{column}{.5\textwidth}
 
@@ -112,7 +112,7 @@ for 300 years.
 
 \begin{frame}{Definitions: the modern style}
 
-\begin{columns}
+\begin{columns}[T]
 
     \begin{column}{.3\textwidth}\includegraphics[width=6cm]{ch01/figs/love_is.jpg}\end{column}
 
