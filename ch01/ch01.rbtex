@@ -1242,6 +1242,45 @@ quite a good approximation for a range of speeds broad enough to encompass most 
 %>
 <% end_marg %>
 
+Looking back over the reasoning used to find this particular linear approximation, we
+see that the general procedure would be something like the following:
+
+\begin{enumerate}
+\item Pick some point on the graph that is near the center of the region for which we're interested in getting
+  a linear approximation.
+\item Differentiate the function to find the slope of the tangent line through this point.
+\item Given a point on a line and the line's slope, we can find the equation of the line. One way to
+  do this is to write down the definition of the slope as $\Delta y/\Delta x$.
+\end{enumerate}
+
+\begin{eg}{Ice cream}
+\egquestion Fred drives an ice cream truck in Deadhorse, Alaska, where the average temperature in the summer
+is about 10 degrees Celsius. During the long Arctic winter nights, Fred has developed a mathematical
+model showing that his daily revenue $y$ in dollars is related to the Celsius temperature $x$ by the equation
+\begin{equation*}
+  y = -800+100x-x^2.
+\end{equation*}
+Find a useful linear approximation to this equation.
+
+\eganswer Since the average temperature in summer is about $x=10$, let's find the best linear approximation
+near this point. Differentiation gives $y'=100-2x$, and plugging in $x=10$ gives a slope
+\begin{equation*}
+  \frac{\Delta y}{\Delta x} = 80.
+\end{equation*}
+If we plug in the value $x=10$ to the equation for $y$ itself, we find that the point
+\begin{equation*}
+  (10,100)
+\end{equation*}
+is the one that we're trying to find the tangent line through. We therefore have
+\begin{equation*}
+  \frac{y-100}{x-10} = 80
+\end{equation*}
+for the equation of the best linear approximation. Fred is interested in calculating his profits $y$, so he solves
+this for $y$ to find
+\begin{equation*}
+  y = -700 + 80 x.
+\end{equation*}
+\end{eg}
 
 <% end_sec('linear-approximation-to-a-curve') %>
 <% end_sec('approximations') %>
