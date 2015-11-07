@@ -59,7 +59,7 @@ debug("done reading csv file $csv_file");
 #     soln = 0 or 1, boolean indicating whether the problem has a solution in the back of the book
 
 my %csv_info = ();
-my $xml_fragment = "<!-- labels output by $whoami to file $xml_fragment_file\n     labels are output for all problems, not just the ones that are actually online problems\n     do a \"make preflight\" to rebuild this file-->\n";
+my $xml_fragment = "<!-- labels output by $whoami to file $xml_fragment_file\n     labels are output for all problems, not just the ones that are actually online problems\n     do a \"make problems && make preflight\" to rebuild this file-->\n";
 open(F,"<$csv_file") or barf("error opening $csv_file for input, $!");
 while(my $line=<F>) {
   if ($line =~ /(.*),(.*),(.*),(.*),(.*)/) { 

@@ -1276,9 +1276,9 @@ is the one that we're trying to find the tangent line through. We therefore have
   \frac{y-100}{x-10} = 80
 \end{equation*}
 for the equation of the best linear approximation. Fred is interested in calculating his profits $y$, so he solves
-this for $y$ to find
+this for $y$ to find $y = -700 + 80 x$. As an approximation to the true (nonlinear) function, this is
 \begin{equation*}
-  y = -700 + 80 x.
+  y \approx -700 + 80 x.
 \end{equation*}
 \end{eg}
 

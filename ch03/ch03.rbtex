@@ -509,8 +509,22 @@ derivative. Usually
 <% hw('2nd-deriv-polynomial-3') %>
 <% hw('2nd-deriv-polynomial-4') %>
 <% hw('2nd-deriv-polynomial-5') %>
+  <% hw_block(1) %>
 
-  <% hw_block(2) %>
+
+%%graph%% inflection-visual func=1/x+x**0.3333333 xlo=0 xhi=20 ylo=0 yhi=5 with=lines xtic_spacing=5 ytic_spacing=1 format=eps
+<% marg(0) %>
+<%
+  fig(
+    'inflection-visual',
+    %q{Problem \ref{hw:inflection-visual}.}
+  )  
+%>
+<% end_marg %>
+
+<% hw('inflection-visual') %>
+
+  <% hw_block(1) %>
 
 <% hw('inflection',{'solution'=>true}) %>
 <% hw('max-min-of-sum',{'solution'=>true}) %>

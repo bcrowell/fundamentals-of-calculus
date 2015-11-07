@@ -765,6 +765,17 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 <% hw('linear-approx-log') %>
 <% hw('linear-approx-cos') %>
 
+<% hw('inflection-visual-transcendental') %>
+%%graph%% inflection-visual-transcendental func=exp(x)-x**2 xlo=-3 xhi=3 ylo=-8 yhi=8 with=lines xtic_spacing=1 ytic_spacing=5 format=eps
+<% marg(-300) %>
+<%
+  fig(
+    'inflection-visual-transcendental',
+    %q{Problem \ref{hw:inflection-visual-transcendental}.}
+  )  
+%>
+<% end_marg %>
+
   <% hw_block(1) %>
 
 \begin{hwinstructions}
@@ -779,9 +790,9 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 
 <% hw('derivative-of-x-to-the-x') %>
 
-\pagebreak
 
-<% marg(100) %>
+<% hw('mercator') %>
+<% marg(0) %>
 <%
   fig(
     'hw-mercator',
@@ -790,7 +801,6 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 %>
 <% end_marg %>
 
-<% hw('mercator') %>
 
   <% hw_block(1) %>
 
@@ -799,14 +809,13 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 <% hw('damped') %>
 <% hw('door-closer') %>
 
-\pagebreak
-
   <% hw_block(1) %>
 
 <% hw('credit-card-fraud') %>
 
-<% hw('gompertz') %>\index{Gompertz actuarial model}
-<% marg(-300) %>
+\pagebreak
+
+<% marg(300) %>
 <%
   fig(
     'hw-gompertz',
@@ -817,11 +826,16 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 %>
 <% end_marg %>
 
+<% hw('gompertz') %>\index{Gompertz actuarial model}
+
+
 <% hw('transcendental-credit-card-fraud') %>
 
   <% hw_block(4) %>
 
 <% hw('induction-nth-deriv-of-exponential') %>
+
+\pagebreak
 
 <% hw('induction-nth-deriv-of-gaussian') %>
 
