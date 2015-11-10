@@ -188,7 +188,7 @@ Figure \figref{backward-sine} shows the  ``backward sine'' function
 $f(x)=\sin(\pi/x)$.
 Contemplate its limit as $x\to0$:
 \[
-\lim_{x\to 0}\sin \bigl(\frac\pi x\bigr) \qquad .
+\lim_{x\to 0}\sin \bigl(\frac\pi x\bigr)\eqquad.
 \]
 
 When $x=0$ the function $f(x)$ is not defined, because its
@@ -283,7 +283,7 @@ The precise definition of these ``one-sided'' limits goes like this:
 \begin{important}[Definition of right- and left-limits]
 Let $f$ be a function.  Then the right-limit notation
 \begin{equation}\label{eqn:one-sided-lim-formulation}
-  \lim_{x\searrow a} f(x) = L \qquad .
+  \lim_{x\searrow a} f(x) = L\eqquad.
 \end{equation}
 means that for every $\varepsilon>0$ one can find a $\delta>0$ such that
 \[
@@ -294,7 +294,7 @@ holds for all $x$ in the domain of $f$.
 The definition of a left-limit is exactly analogous.
 When we say
 \begin{equation}\label{eqn:left-sided-lim-formulation}
-  \lim_{x\nearrow a} f(x) = L \qquad ,
+  \lim_{x\nearrow a} f(x) = L\eqquad,
 \end{equation}
 we mean that for every $\varepsilon>0$ one can find a $\delta>0$ such that
 \[
@@ -491,7 +491,7 @@ sag at all.
 
 It can be shown that the function $T(h)$ is approximately given by the equation
 \begin{equation*}
-  T = \frac{k}{h} \qquad ,
+  T = \frac{k}{h}\eqquad,
 \end{equation*}
 where $k$ is a constant.\footnote{The value of $k$ is $WL/8$, where $W$ is the weight of the
 wire and $L$ is the horizontal length. The approximation is good if $h$ is small compared to $L$.}
@@ -870,7 +870,7 @@ $f(b)$,  you should instead compute $\lim_{x\to\pm\infty}f(x)$.
 
 As an example, let's sketch the graph of the rational function
 \[
-f(x) = \frac{x(3-4x)}{1+x^2} \qquad .
+f(x) = \frac{x(3-4x)}{1+x^2}\eqquad.
 \]
 By looking at the signs of numerator and denominator we see that
 \begin{center}
@@ -883,7 +883,7 @@ f'(x) = \frac{-3x^2-8x+3}{\left(1+x^2\right)^2}.
 \]
 Hence $f'(x) = 0$  if and only if
 \[
--3x^2-8x+3 = 0 \qquad ,
+-3x^2-8x+3 = 0\eqquad,
 \]
 and the solutions to this quadratic equation are $-3$ and $1/3$.
 % Checked:
@@ -893,13 +893,13 @@ These two
 roots will appear several times, and it will shorten our formulas if we
 abbreviate
 \[
-  A= -3 \text{ and } B= 1/3 \qquad .
+  A= -3 \text{ and } B= 1/3\eqquad.
 \]
 
 To see if the derivative changes sign we factor the numerator and denominator.
 The denominator is always positive, and the numerator is
 \[
--3x^2-8x+3 = -3\left(x^2+\frac{8}{3}x-1\right) =-3(x-A)(x-B) \qquad .
+-3x^2-8x+3 = -3\left(x^2+\frac{8}{3}x-1\right) =-3(x-A)(x-B)\eqquad.
 \]
 Therefore
 \[
@@ -1072,7 +1072,7 @@ of numbers P and Q, \ldots''
 \begin{eg}{Every decimal is a real number}
 Consider the infinite decimal
 \begin{equation*}
-  3.141592\ldots \qquad ,
+  3.141592\ldots\eqquad,
 \end{equation*}
 which is the decimal expansion of $\pi$. We can use the completeness axiom to prove that this is
 a real number. Let P be the list of rational numbers given by $\{3,\ 3.1,\ 3.14,\ 3.141,\ \ldots\}$.
@@ -1331,7 +1331,7 @@ Rolle's theorem can be straightforwardly generalized to the following.
 Let $f$ be a function that is continuous on the interval $[a,b]$ and differentiable on $(a,b)$.
 There there exists a point $x\in(a,b)$ such that
 \begin{equation*}
-  f'(x) = \frac{f(b)-f(a)}{b-a}   \qquad ,
+  f'(x) = \frac{f(b)-f(a)}{b-a}\eqquad,
 \end{equation*}
 meaning that the derivative equals the average (mean) rate of change of the function between the
 endpoints of the interval.
@@ -1344,7 +1344,7 @@ is at least one point where $\Delta y/\Delta x$ gives the right answer.
 
 Proof: Define the function
 \begin{equation*}
-  \ell(x)=a+\frac{f(b)-f(a)}{b-a}(x-a) \qquad ,
+  \ell(x)=a+\frac{f(b)-f(a)}{b-a}(x-a)\eqquad,
 \end{equation*}
 which is the point-slope form of the line passing through the endpoints of the graph of $f$.
 Define a new function $g(x)=f(x)-\ell(x)$, so that $g(a)=g(b)=0$. Applying Rolle's theorem to $g$,

@@ -151,7 +151,7 @@ The area of the $k^{\textrm{th}}$ rectangle is the product of its
 height and width, which is $f(x_k)\Delta x$.  Adding up all the rectangles'
 areas yields
 \begin{equation}\label{eqn:riemann-sum}
-  R = \sum_{k=1}^n (\text{height})(\text{width}) = \sum_{k=1}^n f(x_k)\Delta x \qquad .
+  R = \sum_{k=1}^n (\text{height})(\text{width}) = \sum_{k=1}^n f(x_k)\Delta x\eqquad.
 \end{equation}
 This is an example of what is called a \emph{Riemann sum}, meaning an approximation
 to the area under a curve using rectangles.\index{Riemann sum}
@@ -180,7 +180,7 @@ This suggests the following definition.
   If $f$ is a continuous function defined on an interval $[a, b]$, then
   the integral of $f(x)$ from $x=a$ to $b$ is defined as
   \begin{equation*}
-    \lim_{\Delta x\rightarrow 0} R \qquad ,
+    \lim_{\Delta x\rightarrow 0} R\eqquad,
   \end{equation*}
   where $R$ is the type of Riemann sum defined above, using equal subintervals
   sampled at their centers.
@@ -267,7 +267,7 @@ The sum over $k$ is the same one that we encountered in our previous study of th
 But $\Delta x=1/n$, so $R=1/2$ exactly for every $n$, and
 the integral equals
 \begin{equation*}
-  \lim_{n\rightarrow\infty} R = \frac{1}{2} \qquad ,
+  \lim_{n\rightarrow\infty} R = \frac{1}{2}\eqquad,
 \end{equation*}
 as expected geometrically.
 \end{eg}
@@ -310,7 +310,7 @@ It makes no difference if we notate this instead with $s$ as the variable of int
 \begin{eg}{A rectangle}\label{eg:riemann-rectangle-area}
 \egquestion Evaluate
 \begin{equation*}
-  \int_0^4 1\:\der x \qquad .
+  \int_0^4 1\:\der x\eqquad.
 \end{equation*}
 
 \eganswer The graph of this function is a rectangle with height 1 and width 4.
@@ -388,14 +388,14 @@ production is given by a function $p(t)$, where $t$ is in units of years
 and $p$ in tons per year. Then the amount of garbage accumulated at the town dump
 from year $a$ to year $b$ is given by
 \begin{equation*}
-  \int_a^b p(t)\:\der t \qquad .
+  \int_a^b p(t)\:\der t\eqquad.
 \end{equation*}
 The integral sign $\int$ is a kind of sum, and the units of a sum are the same
 as the units of each term. Since $\der$ means ``a little bit of \ldots,''
 $\der t$ stands for a little bit of time, and it therefore also has units of years.
 The units of the terms in the sum are
 \begin{equation*}
-  \frac{\text{tons}}{\text{year}} \times \text{years} = \text{tons} \qquad ,
+  \frac{\text{tons}}{\text{year}} \times \text{years} = \text{tons}\eqquad,
 \end{equation*}
 which makes sense.
 
@@ -450,7 +450,7 @@ derivative of B.
   on that interval. Then
   \begin{equation}
     \label{eqn:fundamental-theorem}
-    \int_a^b \frac{\der f}{\der x} \der x = f(b) - f(a) \qquad .
+    \int_a^b \frac{\der f}{\der x} \der x = f(b) - f(a)\eqquad.
   \end{equation}
 \end{theorem}
 
@@ -520,7 +520,7 @@ We will give a real proof of the fundamental theorem in section
 but let's warm up with the pseudo-proof, which is pretty simple. We start with a statement of the
 result,
 \begin{equation}
-    \int_a^b \frac{\der f}{\der x} \der x \stackrel{?}{=} f(b) - f(a) \qquad ,
+    \int_a^b \frac{\der f}{\der x} \der x \stackrel{?}{=} f(b) - f(a)\eqquad,
 \end{equation}
 with the question mark above the equals sign to show that this is what we are hoping to prove.
 For the same reasons as in example \ref{eg:chain-rule-not-quite-proof}
@@ -558,12 +558,12 @@ This pseudo-proof is refined into a real proof in section
     <% begin_sec("Avoiding the Riemann sum",nil,'avoiding-riemann-sum') %>
 The fundamental theorem says this:
 \begin{equation*}
-  \int_a^b f'(x) \der x = f(b) - f(a) \qquad .
+  \int_a^b f'(x) \der x = f(b) - f(a)\eqquad.
 \end{equation*}
 In some examples, this gives us a tricky way to evaluate an integral exactly without having to muck
 around with Riemann sums. Consider the integral
 \begin{equation*}
-  \int_0^1 x\:\der x \qquad ,
+  \int_0^1 x\:\der x\eqquad,
 \end{equation*}
 whose geometrical interpretation is the area of a triangle and whose value we showed to be
 $1/2$  using Riemann sums in
@@ -596,7 +596,7 @@ theorem we have\label{area-of-triangle-by-fundamental-theorem}
 \begin{align*}
   \int_0^1 x\: \der x &= f(1) - f(0) \\ 
          &= \frac{1}{2}1^2-\frac{1}{2}0^2 \\
-         &= \frac{1}{2} \qquad .
+         &= \frac{1}{2}\eqquad.
 \end{align*}
 This is the same result that we obtained earlier and with much more labor using Riemann sums.
 
@@ -605,7 +605,7 @@ expressions of the form $f(b)-f(a)$ are very common, and
 various abbreviations have been invented.  We will abbreviate
 \[
 f(b)-f(a) \stackrel{\text{def}}{=} \bigl. f(x)\bigr]_{x=a}^b =
-\bigl.f(x)\bigr]_a^b \qquad .
+\bigl.f(x)\bigr]_a^b\eqquad.
 \]
 
 <% marg(0) %>
@@ -631,13 +631,13 @@ of integral we've been talking about up until now, which is called a definite in
 The Leibniz notation for an indefinite integral is an integral sign without any upper or lower
 limits of integration. For example,
 \begin{equation*}
-  \int x\:\der x = \frac{1}{2}x^2 + c \qquad ,
+  \int x\:\der x = \frac{1}{2}x^2 + c\eqquad,
 \end{equation*}
 where $c$ is any constant. One way of understanding this notation is that both sides of this equals
 sign represent a certain \emph{solution set} --- the set of all functions whose derivative equals $x$.
 Similarly, when we write
 \begin{equation*}
-  \sqrt{4} = \pm 2 \qquad ,
+  \sqrt{4} = \pm 2\eqquad,
 \end{equation*}
 we could say that both sides of the equation represent the solution set $\{-2,2\}$ of the equation
 $x^2=4$.
@@ -677,7 +677,7 @@ The variable of integration is a dummy variable. For example,
 The derivative of $x^7$ would be $7x^6$, which is too big by a factor of $7$, so we want
 $x^7/7$. Including an arbitrary constant of integration, we have
 \begin{equation*}
-  \int x^6\:\der x = \frac{1}{7}x^7 + c \qquad .
+  \int x^6\:\der x = \frac{1}{7}x^7 + c\eqquad.
 \end{equation*}
 \end{eg}
 
@@ -696,7 +696,7 @@ $x^7/7$. Including an arbitrary constant of integration, we have
 \begin{eg}{Integral of $1/x$}\label{eg:integrate-1-over-x}
 \egquestion Evaluate the indefinite integral
 \begin{equation*}
-  \int \frac{\der x}{x} \qquad .
+  \int \frac{\der x}{x}\eqquad.
 \end{equation*}
 
 \eganswer As discussed in example \ref{eg:moving-the-dx}, p.~\pageref{eg:moving-the-dx}, this
@@ -707,14 +707,14 @@ But the derivative of $x^0$ is simply zero, so that doesn't work here. We recall
 the ladder of powers is interrupted at this place, figure \figref{power-ladder}.
 The indefinite integral we want is
 \begin{equation*}
-\ln x+c \qquad .
+\ln x+c\eqquad.
 \end{equation*}
 \end{eg}
 
 \begin{eg}{Area under the graph of $1/x$}\label{eg:hyperbola}
 \egquestion Interpret the definite integral
 \begin{equation*}
-  \int_{1}^{2} \frac{\der x}{x} \qquad .
+  \int_{1}^{2} \frac{\der x}{x}\eqquad.
 \end{equation*}
 graphically; then evaluate it .
 
@@ -771,7 +771,7 @@ gives the wrong answer. We need calculus.
 Now suppose we want $x$ in terms of $v$. If $v$ is constant, then we don't need calculus. 
 Simple algebraic manipulation of equation \eqref{eqn:no-derivative-needed} gives
 \begin{equation}\label{eqn:no-integral-needed}
-  \Delta x = v\:\Delta t \qquad . \qquad \text{[only if $v$ is constant]}
+  \Delta x = v\:\Delta t\eqquad. \qquad \text{[only if $v$ is constant]}
 \end{equation}
 But equation \eqref{eqn:no-integral-needed} clearly doesn't make sense if $v$ isn't constant.
 If you're in stop-and-go traffic, then your velocity isn't just one number. What would it even
@@ -780,7 +780,7 @@ happens when a mommy and a daddy love each other very much; it's something that 
 just one number and one other number. Applying the fundamental theorem of calculus to equation
 \eqref{eqn:derivative-needed}, we get
 \begin{equation}
-  \Delta x = \int_{t_1}^{t_2} v\:\der t \qquad . \qquad \text{[always valid]}
+  \Delta x = \int_{t_1}^{t_2} v\:\der t\eqquad. \qquad \text{[always valid]}
 \end{equation}
 We expect the integral to come up in applications as a generalization of multiplication that covers
 the case where one of the factors is varying.
@@ -842,11 +842,11 @@ The solution to the actual problem is found by simply shuffling letters of the a
 the constant $a$ the same way we treated the constant 7.
 The setup of the integral is
 \begin{equation*}
-  x = \int v\:\der t \qquad ,
+  x = \int v\:\der t\eqquad,
 \end{equation*}
 and the result is
 \begin{equation*}
-  x = \frac{1}{2}a t^2+c \qquad .
+  x = \frac{1}{2}a t^2+c\eqquad.
 \end{equation*}
 The constant of integration is interpreted as the initial position, so it's actually nicer to give
 it a notation that indicates that:
@@ -864,21 +864,21 @@ original function. Furthermore, we can often check an integral by checking its u
 Let's use these techniques to check the result of example \ref{eg:falling-rock-integral-symbolic}.
 We were given the function
 \begin{equation}\label{eqn:falling-rock-check-1}
-  v = at \qquad .
+  v = at\eqquad.
 \end{equation}
 We set up the integral as
 \begin{equation}\label{eqn:falling-rock-check-2}
-  x = \int v\:\der t \qquad ,
+  x = \int v\:\der t\eqquad,
 \end{equation}
 and the result was
 \begin{equation}\label{eqn:falling-rock-check-3}
-  x = \frac{1}{2}a t^2+x_\zu{o} \qquad .
+  x = \frac{1}{2}a t^2+x_\zu{o}\eqquad.
 \end{equation}
 
 First we take the derivative of both sides of equation \eqref{eqn:falling-rock-check-3}. Because
 $t$ is the independent variable here, these are derivatives with respect to $t$.
 \begin{equation}
-  \frac{\der x}{\der t} \stackrel{?}{=} \frac{\der}{\der t} \left( \frac{1}{2}a t^2+x_\zu{o}\right) \qquad .
+  \frac{\der x}{\der t} \stackrel{?}{=} \frac{\der}{\der t} \left( \frac{1}{2}a t^2+x_\zu{o}\right)\eqquad.
 \end{equation}
 The left-hand side is the definition of the velocity $v$. On the right-hand side, we have to
 differentiate a polynomial. The constant $a$ is treated like any other multiplicative constant:
@@ -996,7 +996,7 @@ and give a geometrical interpretation.
 
 \eganswer The linearity of the definite integral gives
 \begin{equation*}
-  \int_0^1 (1+x)\:\der x = \int_0^1 1\:\der x + \int_0^1 x\:\der x = 1+\frac{1}{2} = \frac{3}{2} \qquad .
+  \int_0^1 (1+x)\:\der x = \int_0^1 1\:\der x + \int_0^1 x\:\der x = 1+\frac{1}{2} = \frac{3}{2}\eqquad.
 \end{equation*}
 Figure \figref{square-plus-triangle} gives a geometrical interpretation.
 \end{eg}
@@ -1115,7 +1115,7 @@ p.~\pageref{subsec:fundamental-theorem-pseudo-proof}, into a real proof of the f
 theorem of calculus.
 We want to prove that
   \begin{equation}
-    \int_a^b f'(x) \der x = f(b) - f(a) \qquad .
+    \int_a^b f'(x) \der x = f(b) - f(a)\eqquad.
   \end{equation}
 We assume that $f'$ is Riemann integrable, so that we have the freedom to subdivide
 the interval $[a,b]$ and choose the sample points in any way that is convenient.
@@ -1124,16 +1124,16 @@ the interval $[a,b]$ into $n$ equal subintervals $[x_i,x_{i+1}]$, where $i=1$, 2
 However, rather than restricting ourselves to sampling at the center of each subinterval,
 we apply the mean value theorem to each subinterval, and choose $s_i$ to be the point for which
 \begin{equation*}
-  f'(s_i) = \frac{\Delta f_i}{\Delta x} \qquad ,
+  f'(s_i) = \frac{\Delta f_i}{\Delta x}\eqquad,
 \end{equation*}
 where $\Delta f_i=f(x_{i+1})-f(x_i)$ and $\Delta x=x_{i+1}-x_i$.
 This can be rearranged to give
 \begin{equation*}
-  \Delta f_i = f'(s_i)\Delta x \qquad .
+  \Delta f_i = f'(s_i)\Delta x\eqquad.
 \end{equation*}
 Adding these up, we have
 \begin{equation*}
-  f(b)-f(a) = \sum_{i=1}^n f'(s_i)\Delta x \qquad .
+  f(b)-f(a) = \sum_{i=1}^n f'(s_i)\Delta x\eqquad.
 \end{equation*}
 This tells us that by an appropriate choice of the sample points, we can make \emph{every} Riemann
 sum, for \emph{every} $n$ produce the result claimed by the fundamental theorem. It therefore
@@ -1147,13 +1147,13 @@ follows that the limit that defines the integral has the value claimed by the th
   <% begin_sec("A function defined by an integral",nil,'function-defined-by-integral') %>
 Consider the expression
 \[
-I = \int_0^x t^2\, dt \qquad .
+I = \int_0^x t^2\, dt\eqquad.
 \]
 What does $I$ depend on?  To find out, we calculate the integral
 \[
 I = \bigl[\tfrac13t^3\bigr]_0^x 
 = \tfrac13 x^3 - \tfrac13 0^3
-= \tfrac13 x^3 \qquad .
+= \tfrac13 x^3\eqquad.
 \]
 So the integral depends on $x$.  It does not depend on $t$, since $t$
 is a ``dummy variable.''
@@ -1161,7 +1161,7 @@ is a ``dummy variable.''
 In this way we can use integrals to define new functions.  For
 instance, we could define
 \[
-I(x) = \int_0^x t^2 \:\der t \qquad ,
+I(x) = \int_0^x t^2 \:\der t\eqquad,
 \]
 which would be a roundabout way of defining the function $I(x) = x^3/3$.  Again,
 since $t$ is a dummy variable we can replace it by any other variable we like.
@@ -1186,7 +1186,7 @@ defined by an integral is the so called \emph{error function} from
 statistics:
 \begin{equation}\label{eq:08erf-defined}
   \operatorname{erf}(x) =
-  \frac2{\sqrt\pi} \int _0 ^x e^{-t^2}\;\der t \qquad ,
+  \frac2{\sqrt\pi} \int _0 ^x e^{-t^2}\;\der t\eqquad,
 \end{equation}
 so that $\operatorname{erf}(x)$ is the area of the shaded region in figure \figref{erf}.
 
@@ -1203,20 +1203,20 @@ given its own name, ``$\operatorname{erf}(x)$''.\index{normal distribution}\inde
 The answer is simple, for if $f(x) = F'(x)$ then the fundamental theorem says
 that
 \[
-\int_a^x f(t) \; \der t = F(x) - F(a) \qquad ,
+\int_a^x f(t) \; \der t = F(x) - F(a)\eqquad,
 \]
 and therefore
 \[
 \frac d{dx} \int_a^x f(t) \; dt =\frac {\der}{\der x}\bigl( F(x) - F(a)\bigr) = F'(x) =
-f(x) \qquad ,
+f(x)\eqquad,
 \]
 i.e.
 \[
-\frac {\der}{\der x} \int_a^x f(t) \; \der t = f(x) \qquad .
+\frac {\der}{\der x} \int_a^x f(t) \; \der t = f(x)\eqquad.
 \]
 A similar calculation gives 
 \[
-\frac {\der}{\der x} \int_x^b f(t) \; \der t = -f(x) \qquad .
+\frac {\der}{\der x} \int_x^b f(t) \; \der t = -f(x)\eqquad.
 \]
 So what is the derivative of the error function?
 It is
@@ -1224,7 +1224,7 @@ It is
   \operatorname{erf}\, '(x) 
   &= \frac {\der}{\der x} \left[ \frac2{\sqrt\pi} \int _0 ^x e^{-t^2}\;\der t\right] \\
   &= \frac2{\sqrt\pi} \frac {\der}{\der x} \left[\int _0 ^x e^{-t^2}\;\der t\right] \\
-  &=  \frac2{\sqrt\pi} e^{-x^2} \qquad .
+  &=  \frac2{\sqrt\pi} e^{-x^2}\eqquad.
 \end{align*}
   <% end_sec('diff-function-defined-by-integral') %>
   <% begin_sec("A second version of the fundamental theorem",nil,'second-fund-thm') %>

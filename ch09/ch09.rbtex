@@ -126,7 +126,7 @@ where $t$ is in years. Bonds often pay dividends, and although the dividend paym
 at discrete time intervals, it can be convenient to model them mathematically as if they were paid
 continuously, so that the total dividend payment is
 \begin{equation*}
-  D = k \int_0^{10} e^{t/20}\:\der t \qquad ,
+  D = k \int_0^{10} e^{t/20}\:\der t\eqquad,
 \end{equation*}
 where $k$ is a constant. Let's evaluate this integral.
 
@@ -134,13 +134,13 @@ Since the derivative of $e^x$ is $e^x$,
 we know how to integrate $e^x$, and it's natural to look for a substitution that makes the integrand
 into this form. The substitution clearly has to be
 \begin{equation}\label{eqn:bond-dividends-1}
-  u = \frac{t}{20} \qquad .
+  u = \frac{t}{20}\eqquad.
 \end{equation}
 If we think of the time axis as a ``time-line'' like the ones in history books, then this substitution
 is like expanding the time-line's scale by a factor of 20. Solving for $t=20u$ and applying implicit
 differentiation gives
 \begin{equation}
-  \der t = 20\:\der u \qquad .
+  \der t = 20\:\der u\eqquad.
 \end{equation}
 The limits of integration change when expressed in terms of $u$.
 \begin{equation}
@@ -162,7 +162,7 @@ of the new variable $u$:
 \begin{eg}{A nonlinear substitution}\label{eg:nonlinear-substitution}
 \egquestion Evaluate
 \begin{equation*}
-  \int 2x \sin(x^2+3)\:\der x \qquad .
+  \int 2x \sin(x^2+3)\:\der x\eqquad.
 \end{equation*}
 
 \eganswer Here the only substitution that has any hope of working is $u=x^2+3$.
@@ -187,7 +187,7 @@ The chain rule says that
 \]
 so that
 \[
-\int F'(G(x))\cdot G'(x) \,\der x = F(G(x)) + c \qquad .
+\int F'(G(x))\cdot G'(x) \,\der x = F(G(x)) + c\eqquad.
 \]
 In example \ref{eg:nonlinear-substitution}, we had
 $2x =
@@ -204,7 +204,7 @@ and
 so that
 \begin{equation*}
   \label{eq:substitution-example1}
-  \int 2x\sin (x^2+3)\,\der  x = -\cos (x^2+3)+c \qquad .
+  \int 2x\sin (x^2+3)\,\der  x = -\cos (x^2+3)+c\eqquad.
 \end{equation*}
 
 
@@ -309,7 +309,7 @@ Often we can figure out the value of an integral either by symmetry or by using 
 \begin{eg}{An integral that vanishes by symmetry}\label{eg:impossible-zero-integral}
 \egquestion Evaluate
 \begin{equation*}
-  \int_{-1}^1 \frac{\sin x\der x}{1+e^{x^2}} \qquad .
+  \int_{-1}^1 \frac{\sin x\der x}{1+e^{x^2}}\eqquad.
 \end{equation*}
 
 \egquestion I doubt that this can be done by finding the indefinite integral and plugging in the
@@ -327,7 +327,7 @@ canceled by a matching positive contribution on the right.
 \begin{eg}{An integral that can be done by geometry}\label{eg:sin-squared-integral}
 \egquestion Evaluate
 \begin{equation*}
-  \int_0^{2\pi} \sin^2\theta\:\der\theta \qquad .
+  \int_0^{2\pi} \sin^2\theta\:\der\theta\eqquad.
 \end{equation*}
 
 \egquestion The hard way to do this integral is to dig up the appropriate

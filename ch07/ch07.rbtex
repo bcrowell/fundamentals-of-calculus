@@ -99,7 +99,7 @@ giving
   \Delta x &\approx \frac{\Delta y}{3x^2} \\
            &= 0.14 \\
   x &= 4.43 \\
-  x^3 &= 86.9 \qquad .
+  x^3 &= 86.9\eqquad.
 \end{align*}
 This second iteration gives an excellent approximation.
 
@@ -112,7 +112,7 @@ the sun. At $t=0$, the planet is at its closest approach to the sun, A. At some
 later time, the planet is at point B. The angle $x$ (measured in radians) is defined with reference
 to the imaginary circle encompassing the orbit. Kepler found the equation
 \begin{equation*}
-  2\pi \frac{t}{T} = x-e\sin x \qquad ,
+  2\pi \frac{t}{T} = x-e\sin x\eqquad,
 \end{equation*}
 where the period, $T$, is the time required for the planet to complete a full orbit, and
 the eccentricity of the ellipse, $e$, is a number that measures how much it
@@ -133,7 +133,7 @@ when Mercury has completed $1/4$ of a period.
 
 \eganswer We have
 \begin{equation*}
-  y = x-(0.206)\sin x \qquad ,
+  y = x-(0.206)\sin x\eqquad,
 \end{equation*}
 and we want to find $x$ when $y=2\pi/4=1.57$. As a first guess, we try $x=\pi/2$ (90 degrees), since the eccentricity of Mercury's
 orbit is actually much smaller than the example shown in the figure, and
@@ -172,7 +172,7 @@ actually be measured along circular arcs.} of the two ends relative to the fulcr
 the left and $B$ on the right.
 Then we have a \emph{constraint} of the form
 \begin{equation}\label{eqn:constraint-related-rates}
-  \frac{B}{A} = -k \qquad ,
+  \frac{B}{A} = -k\eqquad,
 \end{equation}
 where $k$ is the ratio of the lengths of the arms, and the minus sign is because if one end
 goes up, the other has to come down. In figure \figref{archimedes}, $k\approx 11$;
@@ -201,7 +201,7 @@ the lever. The position $A$
 of the load on the left side of the lever is a function of the position $B$ of the right end,
 while $B$ is in turn a function of time $t$. The chain rule therefore gives
 \begin{equation}\label{eqn:lever-related-rates}
-  \frac{\der A}{\der t} = \frac{\der A}{\der B}\cdot\frac{\der B}{\der t} \qquad .
+  \frac{\der A}{\der t} = \frac{\der A}{\der B}\cdot\frac{\der B}{\der t}\eqquad.
 \end{equation}
 We know $\der A/\der B$, which, based on the constraint, is simply $-1/k$. Next we write
 down a formula for the function $B(t)$, differentiate it, and plug the result in
@@ -261,7 +261,7 @@ open and close the valves, which perform functions such as letting fuel into the
 The velocity of the follower is given by
 \begin{equation*}
   \frac{\der h}{\der t} = \frac{\der h}{\der\theta}\cdot\frac{\der \theta}{\der\varphi}
-            \cdot\frac{\der \varphi}{\der t} \qquad ,
+            \cdot\frac{\der \varphi}{\der t}\eqquad,
 \end{equation*}
 where $\der \varphi/\der t$ is what we measure on a tachometer.
 
@@ -293,7 +293,7 @@ centered on the origin, with radius $r$. Physical forces constrain you to stay o
 rather than flying up into the sky or sinking down into the earth's core. The Pythagorean theorem
 allows us to write this constraint as the equation
 \begin{equation}\label{eqn:circle-implicit-function}
-  x^2 + y^2 = r^2 \qquad ,
+  x^2 + y^2 = r^2\eqquad,
 \end{equation}
 whose solutions are graphed in figure \figref{circle-implicit-function}. This graph fails the
 vertical line test, so $y$ isn't a function of $x$, and it also fails the horizontal line test,
@@ -303,7 +303,7 @@ similarly for $x$ as a function of $y$ in regions 1, 2, 3, and 4. The largest pi
 on which equation \eqref{eqn:circle-implicit-function} defines a function is a semicircle. For example,
 we could solve for $x$ and find the function
 \begin{equation}\label{eqn:circle-explicit-function}
-  x(y) = -\sqrt{r^2-y^2} \qquad ,
+  x(y) = -\sqrt{r^2-y^2}\eqquad,
 \end{equation}
 where the choice of the negative square root gives the left-hand half of the circle. Equation
 \eqref{eqn:circle-implicit-function} is said to define an \emph{implicit} function,\index{implicit function}
@@ -344,7 +344,7 @@ of the curve, they outline a square. This choice of proportions, along with an a
 choice of scale for the coordinates, can be shown to produce a curve
 with the  equation
 \begin{equation}\label{eqn:lemniscate-of-bernoulli}
-  (x^2+y^2)^2 = 2(x^2-y^2) \qquad .
+  (x^2+y^2)^2 = 2(x^2-y^2)\eqquad.
 \end{equation}
 
 In a typical application of a Watt linkage, the central point is attached to the chassis of
@@ -392,20 +392,20 @@ But let's start with a simpler example. In figure \figref{pulley},
 we want to find a proportion between the motion of the tractor and stump.
 With some arithmetic, we find
 \begin{equation}\label{eqn:pulley}
-  A+2B-2\ell_2 -\ell_1 = 0 \qquad ,
+  A+2B-2\ell_2 -\ell_1 = 0\eqquad,
 \end{equation}
 which is an implicit relation between $A$ and $B$. Any change $\Delta A$ in the
 position of the tractor will correspond to some change $\Delta B$ in the position of the stump.
 Setting the change in the left-hand side of equation \eqref{eqn:pulley} equal to 0, we have
 \begin{equation*}
-  \Delta(A+2B-2\ell_2 -\ell_1) = 0 \qquad .
+  \Delta(A+2B-2\ell_2 -\ell_1) = 0\eqquad.
 \end{equation*}
 The change in a sum is the same as the sum of the changes, so
 $\Delta A+2 \Delta B-2\Delta \ell_2-\Delta \ell_1 = 0$.
 But the constants don't change, so 
 \begin{subequations}
 \begin{gather}\label{eqn:tractor-finite-differences}
-  \Delta A+2 \Delta B = 0 \qquad .
+  \Delta A+2 \Delta B = 0\eqquad.
 \end{gather}
 The tractor moves twice as much as the stump, and the motion is such that as $A$ increases, $B$ decreases.
 All of the following are just different ways of expressing the same thought.
@@ -429,7 +429,7 @@ as \ref{eqn:eg-tractor-deriv-1}-\ref{eqn:eg-tractor-deriv-3}.
 Boyle's law states that at a fixed temperature, a sample of an ideal gas has its pressure and
 volume related by
 \begin{equation}\label{eqn:boyle}
-  pv = k \qquad ,
+  pv = k\eqquad,
 \end{equation}
 where $k$ is a constant. For example, compressing the gas to a smaller volume makes its pressure
 increase.
@@ -462,7 +462,7 @@ To show that we're now talking about very small numbers,
 we notate the changes as $\der p$ and $\der v$. We then have:
 \begin{subequations}
 \begin{equation}\label{eqn:boyle-diff}
-  p\der v + v \der p = 0 \qquad .
+  p\der v + v \der p = 0\eqquad.
 \end{equation}
 This looks just like the product rule. In this context, symbols like
 $\der p$ and $\der v$ are referred to as differentials, and we talk about ``taking differentials''
@@ -520,7 +520,7 @@ We have
 \end{equation}
 or, equivalently,
 \begin{equation}\label{eqn:circle-implicit-form-2}
-  \frac{\der y}{\der x} = -\frac{x}{y} \qquad .
+  \frac{\der y}{\der x} = -\frac{x}{y}\eqquad.
 \end{equation}
 The form \eqref{eqn:circle-implicit-form-1} has the advantage that it holds anywhere on the circle,
 whose graph isn't a function. Some people would prefer \eqref{eqn:circle-implicit-form-2} because
@@ -544,7 +544,7 @@ where $y=0$.
 \begin{eg}{An approximation on the circle}\label{eg:circle-approx}
 \egquestion The following are two nearby points on the unit circle:
 \begin{align*}
-  (0.400000,0.916515) \qquad , \qquad
+  (0.400000,0.916515)\eqquad, \qquad
   (0.401000,0.916078)
 \end{align*}
 % calc -e "x=0.4000; y=sqrt(1-x^2)"
@@ -582,13 +582,13 @@ so that $\der u$ is a little bit of a change in the length of the square's sides
 Now $u^2$ is the area of the square, and $\der(u^2)$ is a little bit of a change in its
 area. We have a power law that says
 \begin{equation*}
-  \der(u^k)=ku^{k-1}\der u \qquad .
+  \der(u^k)=ku^{k-1}\der u\eqquad.
 \end{equation*}
 This power law is exactly analogous to the one for a function $u(t)$, which, if we apply the chain rule, is
 \begin{equation*}
-  \frac{\der(u^k)}{\der t}=ku^{k-1}\frac{\der u}{\der t} \qquad .
+  \frac{\der(u^k)}{\der t}=ku^{k-1}\frac{\der u}{\der t}\eqquad.
 \end{equation*}
-Obviously neither these needs to be memorized separately from the other.
+Obviously neither of these needs to be memorized separately from the other.
 Expressions like $\der u$ and $\der(u^2)$ are known as \emph{differentials}.\index{differential}
 
 \begin{eg}{Differential of a polynomial}
@@ -599,16 +599,16 @@ expression as $s$ changes from $1.000$ to $1.001$.
 the sum of the derivatives. The analogous rule for differentials is that the differential of a sum
 is the sum of the differentials. Therefore
 \begin{equation*}
-  \der(s^2+s) = \der(s^2)+\der s \qquad .
+  \der(s^2+s) = \der(s^2)+\der s\eqquad.
 \end{equation*}
 Likewise we have a power rule for differentials that corresponds to the power rule for derivatives,
 and the case of the second power was discussed in detail above. We therefore find
 \begin{equation*}
-  \der(s^2+s) = 2s\der s+\der s \qquad .
+  \der(s^2+s) = 2s\der s+\der s\eqquad.
 \end{equation*}
 The numerical approximation is
 \begin{equation*}
-  \Delta(s^2+s) \approx  (2s+s)\Delta s = (3)(0.001) = 0.003\qquad .
+  \Delta(s^2+s) \approx  (2s+1)\Delta s = (3)(0.001) = 0.003\eqquad.
 \end{equation*}
 \end{eg}
 % calc -e "q=1.000; dq=0.001; y1=q^2+q; q=q+dq; y2=q^2+q; y2-y1"
@@ -626,16 +626,16 @@ example \ref{eg:power-any-exponent} on p.~\pageref{eg:power-any-exponent}.)
 
 Let $n=p/q$ where $p$ and $q$ are integers and let
 \begin{equation*}
-  y=x^{p/q} \qquad .
+  y=x^{p/q}\eqquad.
 \end{equation*}
 By raising both sides to the power $p$, we can make this into an implicit function that uses
 only integer exponents.
 \begin{equation*}
-  y^q=x^p \qquad .
+  y^q=x^p\eqquad.
 \end{equation*}
 Implicit differentiation gives
 \begin{equation*}
-  qy^{q-1}\der y=px^{p-1}\der x \qquad .
+  qy^{q-1}\der y=px^{p-1}\der x\eqquad.
 \end{equation*}
 We then have
 \begin{align*}
@@ -648,7 +648,7 @@ We then have
 \begin{eg}{}\label{eg:keplerish}
 Let $y=f(x)$ be a function defined by
 \[
-2y+\sin y - x=0 \qquad .
+2y+\sin y - x=0\eqquad.
 \]
 (We encountered a function of this form in a real-world application
 in example \ref{eg:keplerian}, p.~\pageref{eg:keplerian}.)
@@ -669,7 +669,7 @@ Taking differentials on both sides of the defining equation, we have
 \end{equation*}
 or
 \begin{equation*}
-  (2 + \cos y) \der y - \der x = 0 \qquad .
+  (2 + \cos y) \der y - \der x = 0\eqquad.
 \end{equation*}
 
 We were thinking of $y$ as a function of $x$. If we wish, we can now find
@@ -680,7 +680,7 @@ the derivative of this function.
 If we were asked to find $f'(2\pi)$ then, since we know $f(2\pi) = \pi$, we
 could answer
 \[
-f'(2\pi) = \frac1{2+\cos \pi} = \frac1{2-1} = 1 \qquad .
+f'(2\pi) = \frac1{2+\cos \pi} = \frac1{2-1} = 1\eqquad.
 \]
 
 Implicit differentiation was not strictly necessary here,
@@ -768,7 +768,7 @@ and $\der y/\der x\approx y/x$, so this becomes
 \begin{align*}
   & \frac{y}{x} \approx \frac{x}{y} \\
   & x^2 \approx y^2 \\
-  & y \approx \pm x \qquad .
+  & y \approx \pm x\eqquad.
 \end{align*}
 Therefore this curve has a slope of $\pm 1$ on its two segments crossing the origin.
 To make Watt's linkage (with arms in the proportions previously described) constrain

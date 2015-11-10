@@ -29,7 +29,7 @@ Briefly:
 
 Suppose that for some real number $x$, we had
 \begin{equation*}
-  \frac{0}{0} = x \qquad .
+  \frac{0}{0} = x\eqquad.
 \end{equation*}
 Multiplying by $0$ on both sides gives a condition
 \begin{equation*}
@@ -65,13 +65,13 @@ is an example of the indeterminate form $\infty-\infty$. It equals zero.
 When we try to evaluate a limit, usually our first attempt is simply to plug in and see if
 a number comes out. For example, if we want to evaluate
 \begin{equation*}
-  \lim_{x\rightarrow0}\frac{1+x}{3+x} \qquad ,
+  \lim_{x\rightarrow0}\frac{1+x}{3+x}\eqquad,
 \end{equation*}
 we will naturally try plugging in $x=0$, get the result $1/3$, and we're done. This is not an
 indeterminate form. But, for example, suppose that $f(x)=x^2$ and we want to evaluate $f'(1)$.
 The definition of the derivative in terms of a limit gives
 \begin{equation*}
-  \lim_{h\rightarrow0}\frac{(1+h)^2-1}{h} \qquad ,
+  \lim_{h\rightarrow0}\frac{(1+h)^2-1}{h}\eqquad,
 \end{equation*}
 and attempting to plug in $h=0$ results in the indeterminate form $0/0$. This limit is well
 defined; it equals 2. But the indeterminate form tells us that the brute-force technique was
@@ -87,25 +87,25 @@ Every derivative, if defined, can be seen as a case of the indeterminate form
 $0/0$. Conversely, we can often convert a $0/0$-type limit into a problem in evaluating
 derivatives. Suppose that we want to calculate a limit of the form
 \begin{equation*}
-  \lim_{x\rightarrow a} \frac{u(x)}{v(x)} \qquad ,
+  \lim_{x\rightarrow a} \frac{u(x)}{v(x)}\eqquad,
 \end{equation*}
 where $u(a)=0$ and $v(a)=0$. Then $\Delta u=u(x)-u(a)$ means the same thing as $u$, and
 similarly, $\Delta v$ equals $v$. So we can rewrite our limit as
 \begin{equation*}
-  \lim_{x\rightarrow a} \frac{\Delta u}{\Delta v} \qquad ,
+  \lim_{x\rightarrow a} \frac{\Delta u}{\Delta v}\eqquad,
 \end{equation*}
 or
 \begin{equation*}
-  \lim_{x\rightarrow a} \frac{\Delta u/\Delta x}{\Delta v/\Delta x} \qquad .
+  \lim_{x\rightarrow a} \frac{\Delta u/\Delta x}{\Delta v/\Delta x}\eqquad.
 \end{equation*}
 If $v'(a)\ne 0$, then by property $P_6$ of the limit, p.~\pageref{subsec:limits-of-sum-prod-quot},
 our limit becomes
 \begin{equation*}
-  \frac{\lim_{x\rightarrow a} \Delta u/\Delta x}{\lim_{x\rightarrow a} \Delta v/\Delta x} \qquad ,
+  \frac{\lim_{x\rightarrow a} \Delta u/\Delta x}{\lim_{x\rightarrow a} \Delta v/\Delta x}\eqquad,
 \end{equation*}
 which equals
 \begin{equation*}
-  \frac{u'(a)}{v'(a)} \qquad .
+  \frac{u'(a)}{v'(a)}\eqquad.
 \end{equation*}
 We have proved the following.
 
@@ -137,7 +137,7 @@ the derivatives $u'(a)$ and $v'(a)$ are defined,
 and the derivative $v'(a)\ne 0$,
 then
 \begin{align*}
-  \lim_{x\rightarrow a} \frac{u}{v} &= \frac{u'(a)}{v'(a)} \qquad .
+  \lim_{x\rightarrow a} \frac{u}{v} &= \frac{u'(a)}{v'(a)}\eqquad.
 \end{align*}
 \end{theorem}
 \noindent We will generalize L'H\^{o}pital's rule in section \ref{sec:lhospital-fancy},
@@ -191,11 +191,11 @@ In the following example, we have to use l'H\^{o}pital's rule twice before we ge
 
 \eganswer Applying  l'H\^{o}pital's rule gives
 \begin{equation*}
-  \frac{-\sin x}{2(x-\pi)} \qquad ,
+  \frac{-\sin x}{2(x-\pi)}\eqquad,
 \end{equation*}
 which still produces $0/0$ when we plug in $x=\pi$. Going again, we get
 \begin{equation*}
-  \frac{-\cos x}{2} = \frac{1}{2} \qquad .
+  \frac{-\cos x}{2} = \frac{1}{2}\eqquad.
 \end{equation*}
 \end{eg}
 
@@ -206,7 +206,7 @@ If $u$ and $v$ are functions with $u(a)=0$ and $v(a)=0$,
 and the derivatives $u'(a)$ and $v'(a)$ are defined,
 then
 \begin{align*}
-  \lim_{x\rightarrow a} \frac{u}{v} &= \lim_{x\rightarrow a} \frac{u'(x)}{v'(x)} \qquad .
+  \lim_{x\rightarrow a} \frac{u}{v} &= \lim_{x\rightarrow a} \frac{u'(x)}{v'(x)}\eqquad.
 \end{align*}
 \end{theorem}
 \noindent The difference from the original form of the theorem is that we no longer
@@ -220,7 +220,7 @@ plugging in. We will prove this more general form of the rule in section
 <% begin_sec("The indeterminate form $\\infty/\\infty$",nil,'lhospital-infty-over-infty') %>\index{L'H\^{o}pital's rule!$\infty/\infty$}
 Consider an example like this:
 \begin{equation*}
-  \lim_{x\rightarrow 0} \frac{1+1/x}{1+2/x} \qquad .
+  \lim_{x\rightarrow 0} \frac{1+1/x}{1+2/x}\eqquad.
 \end{equation*}
 This is an indeterminate form like $\infty/\infty$ rather than the $0/0$ form for which we've already
 proved l'H\^{o}pital's rule. L'H\^{o}pital's rule applies to examples like this as
@@ -232,7 +232,7 @@ p.~\pageref{subsec:lhospital-proofs}.
 \begin{eg}{}
 \egquestion Evaluate
 \begin{equation*}
-  \lim_{x\rightarrow 0} \frac{1+1/x}{1+2/x} \qquad .
+  \lim_{x\rightarrow 0} \frac{1+1/x}{1+2/x}\eqquad.
 \end{equation*}
 
 \eganswer Both the numerator and the denominator go to infinity. Differentiation of the top
@@ -261,7 +261,7 @@ costs \$7, and returns a dividend of \$1 per year. A share of Glutco costs \$30 
 a dividend of \$2 per year. If we want to compare the long-term value of the two investments,
 a natural way to do it is with the limit
 \begin{equation*}
- \lim_{t\rightarrow\infty}\frac{-7+t}{-30+2t} \qquad .
+ \lim_{t\rightarrow\infty}\frac{-7+t}{-30+2t}\eqquad.
 \end{equation*}
 The top represents the net return on Acme, the bottom Glutco.
 If this limit is greater than 1, then Acme is the better long-term investment.
@@ -305,7 +305,7 @@ to a form involving a limit at 0.
 Define $t=x-\pi$. Solving for $x$ gives $x=t+\pi$. We substitute into the above expression
 to find
 \begin{equation*}
-  \lim_{x\rightarrow \pi}\frac{\sin x}{x-\pi} =   \lim_{t\rightarrow 0}\frac{\sin (t+\pi)}{t} \qquad .
+  \lim_{x\rightarrow \pi}\frac{\sin x}{x-\pi} =   \lim_{t\rightarrow 0}\frac{\sin (t+\pi)}{t}\eqquad.
 \end{equation*}
 If all we knew was the $\rightarrow0$ form of l'H\^{o}pital's rule, then this would suffice
 to reduce the problem to one we knew how to solve. In fact, this kind of change of variable works in
@@ -320,12 +320,12 @@ To prove that l'H\^{o}pital's rule works in general for $\infty/\infty$ forms,
 we do a change of variable on the \emph{outputs} of the functions $u$ and $v$
 rather than their inputs. Suppose that our original problem is of the form
 \begin{equation*}
-  \lim \frac{u}{v} \qquad ,
+  \lim \frac{u}{v}\eqquad,
 \end{equation*}
 where both functions blow up.\footnote{Think about what happens when only $u$ blows up,
 or only $v$.} We then define $U=1/u$ and $V=1/v$. We now have
 \begin{equation*}
-  \lim \frac{u}{v} = \lim \frac{1/U}{1/V} =\lim \frac{V}{U} \qquad ,
+  \lim \frac{u}{v} = \lim \frac{1/U}{1/V} =\lim \frac{V}{U}\eqquad,
 \end{equation*}
 and since $U$ and $V$ both approach zero, we have reduced the problem to one that can be solved
 using the version of l'H\^{o}pital's rule already proved
@@ -335,7 +335,7 @@ for the indeterminate form $0/0$:
 \end{equation*}
 Differentiating and applying the chain rule, we have
 \begin{equation*}
-  \lim \frac{u}{v} = \lim \frac{-v^{-2}v'}{-u^{-2}u'} \qquad .
+  \lim \frac{u}{v} = \lim \frac{-v^{-2}v'}{-u^{-2}u'}\eqquad.
 \end{equation*}
 Since $\lim ab=\lim a \lim b$ provided that $\lim a$ and $\lim b$ are both defined
 (property $\zu{P}_5$, p.~\pageref{subsec:limits-of-sum-prod-quot}), we can rearrange

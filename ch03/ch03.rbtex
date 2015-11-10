@@ -135,18 +135,18 @@ for $y$, we get $y=\pm\sqrt{r^2-x^2}$, and since we have both a positive and a n
 square root, there are two possible values of $y$. But if we arbitrarily choose the positive root,
 we have the function
 \begin{equation*}
-  y = \sqrt{r^2-x^2} \qquad ,
+  y = \sqrt{r^2-x^2}\eqquad,
 \end{equation*}
 which is the equation of the semicircle lying above the $x$ axis, figure \figref{semicircle}.
 
 To find the derivative $y'$, we can rewrite $y$ as $(r^2-x^2)^{1/2}$ and apply the
 power rule and the chain rule. The result is
 \begin{equation*}
-  y' = -x(r^2-x^2)^{-1/2} \qquad .
+  y' = -x(r^2-x^2)^{-1/2}\eqquad.
 \end{equation*}
 The second derivative is
 \begin{equation*}
-  y'' = -(r^2-x^2)^{-1/2}-x^2(r^2-x^2)^{-3/2} \qquad .
+  y'' = -(r^2-x^2)^{-1/2}-x^2(r^2-x^2)^{-3/2}\eqquad.
 \end{equation*}
 
 Let's evaluate the second derivative at $x=0$. The result is $y''=-1/r$. The negative sign tells
@@ -192,13 +192,13 @@ changes sign from negative to positive at $x=0$, indicating a local minimum.
 <% begin_sec("Leibniz notation",4,'second-derivative-leibniz') %>\index{Leibniz notation!second derivative}
 The Leibniz notation for $y''$ is
 \begin{equation*}
-  \frac{\der^2 y}{\der x^2} \qquad .
+  \frac{\der^2 y}{\der x^2}\eqquad.
 \end{equation*}
 The seemingly inconsistent placement of the exponents on the top and bottom
 is actually exactly what we need if we want the units to make sense. To see this in a concrete
 example, consider the acceleration of an object expressed in terms of its position $x$:
 \begin{equation*}
-  a=\frac{\der^2 x}{\der t^2} \qquad .
+  a=\frac{\der^2 x}{\der t^2}\eqquad.
 \end{equation*}
 The units of $x$ are meters, and the units of $t$ are seconds. The velocity $\der x/\der t$
 has units of meters per second, m/s. The rate at which the velocity changes has units
@@ -244,7 +244,7 @@ in which a retailer, when it runs out of inventory, orders a quantity $q$ of wid
 wholesale supplier. The result was that the retailer's yearly cost was given by a function of
 a certain form, of which an example is
 \begin{equation*}
-  C = 1+\frac{9}{q}+q \qquad .
+  C = 1+\frac{9}{q}+q\eqquad.
 \end{equation*}
 By setting the first derivative
 \begin{equation*}
@@ -254,7 +254,7 @@ equal to zero and solving for $q$, we find $q=3$. This could be a minimum (good)
 or an inflection point. One way to tell is by applying the second derivative test.
 The second derivative is
 \begin{equation*}
-  \frac{\der^2 C}{\der q^2} = 18q^{-3} \qquad .
+  \frac{\der^2 C}{\der q^2} = 18q^{-3}\eqquad.
 \end{equation*}
 Plugging in $q=3$, we find $\der^2 C/\der q^2=18/27$, which is positive. Therefore the function
 is concave up at $q=3$, and this is indeed a minimum. (In fact, this particular function happens to be
@@ -266,7 +266,7 @@ For any positive value of $q$, the second derivative is positive.)
 \begin{eg}{One minimum and one maximum}\label{eg:one-max-one-min}
 \egquestion Locate all extrema of the function
 \begin{equation*}
-  y=x^{-1}+x \qquad .
+  y=x^{-1}+x\eqquad.
 \end{equation*}
 Use the second derivative test
 to determine which are maxima and which are minima, and check your result by graphing.
@@ -276,12 +276,12 @@ Are these global extrema, or only local ones?
 as $x$ approaches zero. However, if there are extrema that occur at $x\ne0$, where the function
 is smooth, we should be able to find them by looking for places where $y'=0$. We have
 \begin{equation*}
-  y' = -x^{-2}+1 \qquad ,  
+  y' = -x^{-2}+1\eqquad,  
 \end{equation*}
 which equals zero at $x=\pm1$. These points could be maxima, minima, or points of inflection.
 The second derivative is
 \begin{equation*}
-  y'' = 2x^{-3} \qquad .
+  y'' = 2x^{-3}\eqquad.
 \end{equation*}
 Plugging in $x=+1$ gives a positive result, so this is a minimum. Plugging in $x=-1$ gives
 a negative result, which means that it's a maximum.
@@ -317,7 +317,7 @@ global extrema.
 \begin{eg}{A fruitless search}\label{eg:fruitless}
 \egquestion Locate all local extrema of the function
 \begin{equation*}
-  y= x^3-6x^2+12 x \qquad .
+  y= x^3-6x^2+12 x\eqquad.
 \end{equation*}
 Use the second derivative test
 to determine which are maxima and which are minima.

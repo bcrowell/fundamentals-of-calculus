@@ -253,7 +253,7 @@ Figure \figref{sine-and-cosine} shows a right triangle. The sine and cosine of t
 are defined as the ratios
 \begin{align*}
   \sin\theta &= \frac{y}{r} \qquad \text{and}\\
-  \cos\theta &= \frac{x}{r} \qquad .
+  \cos\theta &= \frac{x}{r}\eqquad.
 \end{align*}
 Since these ratios are the same for any two similar triangles, the definitions
 depend only on $\theta$, not on the triangle.
@@ -336,13 +336,13 @@ What about $\sin'0$?
 The definition of the derivative gives
 \begin{align*}
   \sin'0 &= \lim_{\theta\rightarrow0} \frac{\sin\theta-\sin0}{\theta-0} \\
-         &= \lim_{\theta\rightarrow0} \frac{\sin\theta}{\theta} \qquad .
+         &= \lim_{\theta\rightarrow0} \frac{\sin\theta}{\theta}\eqquad.
 \end{align*}
 In figure
 \figref{limit-of-sin-over-x}, the definition of radian measure gives $\theta=s$, while the definition
 of the sine function tells us that $\sin\theta = y$. Thus the limit above becomes
 \begin{equation*}
-  \sin'0 = \lim_{\theta\rightarrow0} \frac{y}{s} \qquad .
+  \sin'0 = \lim_{\theta\rightarrow0} \frac{y}{s}\eqquad.
 \end{equation*}
 If $\theta$ is close to zero, then the lengths
 $y$ of the vertical line and $s$ of the arc should be nearly the same, so we have the small-angle
@@ -356,7 +356,7 @@ equal to 1, so we have $\sin'0=1$.
 As a check on our work, we can take a numerical approximation to the derivative at $\theta=0$,
 \begin{align*}
   \sin'0 &\approx \frac{\sin0.001-\sin0}{0.001} \qquad [\text{angle in radians}] \\
-         &= 0.99999983 \qquad ,
+         &= 0.99999983\eqquad,
 \end{align*}
 which is indeed close to 1.
 <% end_sec('derivatives-of-sin-cos-at-zero') %>
@@ -400,7 +400,7 @@ Making use of the identity $\sin(x+y) = \sin x\cos y + \cos x\sin y$
 (p.~\pageref{eqn:sin-sum-of-angles}), we find
 \begin{align*}
   \sin' x &= \lim_{h\rightarrow0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} \\
-        &= \cos x \lim_{h\rightarrow0} \frac{\sin h}{h} + \sin x \lim_{h\rightarrow0} \frac{\cos h-1}{h} \qquad .
+        &= \cos x \lim_{h\rightarrow0} \frac{\sin h}{h} + \sin x \lim_{h\rightarrow0} \frac{\cos h-1}{h}\eqquad.
 \end{align*}
 We have already determined these two limits: they are 1 and 0, respectively,
 so $\sin'x = \cos x$ as claimed. The similar calculation for the derivative of $\cos x$ is left
@@ -447,7 +447,7 @@ set of such $y$ values is its \emph{range}. That is, the domain is the set of al
 while the range is the set of possible outputs. Sometimes we define a particular function using a
 formula, and this may implicitly restrict its domain. For example, if we define
 \begin{equation*}
-  y = \frac{1}{x-1} \qquad ,
+  y = \frac{1}{x-1}\eqquad,
 \end{equation*}
 then by implication the domain is the whole real line except for $x=1$, which would produce division
 by zero.
@@ -490,20 +490,20 @@ Suppose that  $x$ is how many gallons of gas I buy,
 and $y$ is how much money I pay. Then $y$ is a function of $x$, and the rate at which this
 function changes, i.e., the price per gallon of gas, in my area is currently about
 \begin{equation*}
-  \frac{\Delta y}{\Delta x} = 4\ \frac{\$}{\text{gallon}} \qquad .
+  \frac{\Delta y}{\Delta x} = 4\ \frac{\$}{\text{gallon}}\eqquad.
 \end{equation*}
 It's valid to measure this rate of change with an expression of the form $\Delta\ldots/\Delta\ldots$,
 because the rate of change is constant. I might also want to know how much gas I can get for each
 additional dollar I'm willing to spend, and this is found by ordinary algebra to be
 \begin{equation*}
-  \frac{\Delta x}{\Delta y} = 0.25\ \frac{\text{gallon}}{\$} \qquad .
+  \frac{\Delta x}{\Delta y} = 0.25\ \frac{\text{gallon}}{\$}\eqquad.
 \end{equation*}
 
 If $y$ is a function of $x$, and the function is invertible, then the Leibniz notation suggests
 that this should hold even for non-constant rates of change, i.e., that
 the derivative of the inverse function is
 \begin{equation*}
-  \frac{\der x}{\der y} = \frac{1}{\left(\frac{\der y}{\der x}\right)} \qquad .
+  \frac{\der x}{\der y} = \frac{1}{\left(\frac{\der y}{\der x}\right)}\eqquad.
 \end{equation*}
 This is in fact correct, with the caveat that when $\der y/\der x=0$, $\der x/\der y$ is
 undefined because it blows up to infinity.
@@ -514,17 +514,17 @@ undefined because it blows up to infinity.
 \eganswer The function $y=x^3$, figure \figref{cube}, has a well-defined inverse $x=y^{1/3}$,
 which is the cube root, figure \figref{cube-root}. The derivative of the original function is
 \begin{equation*}
-  \frac{\der y}{\der x} = 3x^2 \qquad .
+  \frac{\der y}{\der x} = 3x^2\eqquad.
 \end{equation*}
 The derivative of the inverse function is
 \begin{align*}
   \frac{\der x}{\der y} &= \frac{1}{\left(\frac{\der y}{\der x}\right)} \\
                         &= \frac{1}{3x^2} \\
-                        &= \frac{1}{3}x^{-2} \qquad .
+                        &= \frac{1}{3}x^{-2}\eqquad.
 \end{align*}
 If we prefer to express this in terms of $y$, we can substitute to get
 \begin{equation*}
-  \frac{\der x}{\der y} = \frac{1}{3}y^{-2/3} \qquad ,
+  \frac{\der x}{\der y} = \frac{1}{3}y^{-2/3}\eqquad,
 \end{equation*}
 which agrees with the power rule (section \ref{sec:power-rule-general},
 p.~\pageref{sec:power-rule-general}).
@@ -558,11 +558,11 @@ This expression holds everywhere except $x=0$, $y=0$, where $\der x/\der y$ blow
 The inverse of exponentiation is the logarithm.
 If
 \begin{equation*}
-  b^p = z \qquad ,
+  b^p = z\eqquad,
 \end{equation*}
 then 
 \begin{equation*}
-  \log_b z = p \qquad .
+  \log_b z = p\eqquad.
 \end{equation*}
 For example, $\log_2 8=3$, because $2^3=8$.
 
@@ -599,7 +599,7 @@ A log in one base can be changed into a log in another base:
 For example, $\log_{10} 10^6=6$, whereas $\log_{100} 10^6=3$.
 It may be convenient to convert a logarithm to a natural log, with $c=e$:
 \begin{equation}\label{eqn:convert-log-to-ln}
-  \log_b x = \frac{\ln x}{\ln b} \qquad .
+  \log_b x = \frac{\ln x}{\ln b}\eqquad.
 \end{equation}
 Similarly, an exponential with an arbitrary base $b$ can be converted
 to an exponential with base $e$.
@@ -613,7 +613,7 @@ to an exponential with base $e$.
 We now know enough to differentiate a logarithm. The natural log has the
 nicest properties, so we'll start with it. Let
 \begin{equation*}
-  y = \ln x \qquad .
+  y = \ln x\eqquad.
 \end{equation*}
 Then
 \begin{align*}
@@ -668,7 +668,7 @@ any real, nonzero $n$.
 \intertext{By the chain rule,}
   \frac{\der y}{\der x} &= e^{n \ln x} \cdot \frac{n}{x} \\
                         &= x^n \cdot \frac{n}{x} \\
-                        &= nx^{n-1} \qquad .
+                        &= nx^{n-1}\eqquad.
 \end{align*}
 (For $n=0$, the result is zero.)
 
@@ -723,7 +723,7 @@ The hyperbolic trig functions are defined as follows.\label{def-hyperbolic}
 \begin{align*}
   \sinh x &= \frac{1}{2}\left(e^x-e^{-x}\right) \\
   \cosh x &= \frac{1}{2}\left(e^x+e^{-x}\right) \qquad \text{and} \\  
-  \tanh x &= \frac{\sinh x}{\cosh x} \qquad .
+  \tanh x &= \frac{\sinh x}{\cosh x}\eqquad.
 \end{align*}
 Their inverses can be calculated using the following relations:
 \begin{align*}
@@ -775,6 +775,8 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
   )  
 %>
 <% end_marg %>
+
+<% hw('inflection-powers-of-2-and-3') %>
 
   <% hw_block(1) %>
 

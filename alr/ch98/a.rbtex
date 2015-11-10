@@ -310,7 +310,7 @@ for the \emph{indefinite} integral as well.
   Let $f$ be a function defined on the interval $[a,b]$, and let $f$ be differentiable
   on that interval. Then
   \begin{equation*}
-    \int_a^b \frac{ d  f}{ d  x}  d  x = f(b) - f(a) \qquad .
+    \int_a^b \frac{ d  f}{ d  x}  d  x = f(b) - f(a)\eqquad.
   \end{equation*}
 
 Interpretations:
@@ -360,7 +360,7 @@ Interpretations:
 
 The chain rule can be written as
 \begin{equation*}
-  \frac{dz}{dx} =   \frac{dz}{dy}\frac{dy}{dx}\qquad.
+  \frac{dz}{dx} =   \frac{dz}{dy}\frac{dy}{dx}\eqquad.
 \end{equation*}
 If we have expressions for $z$ as a function of $y$ and $y$ as a function of $x$,
 then we can find an expression for $dz/dx$.

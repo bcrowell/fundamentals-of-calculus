@@ -279,7 +279,7 @@ procedure of discarding the square of an infinitesimal number.
 \begin{important}[Definition of the derivative]\index{derivative!defined as a limit}
 The derivative of a function $f$ at a point $x$ is
 \begin{equation*}
-  f'(x) = \lim_{\Delta x\rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} \qquad .
+  f'(x) = \lim_{\Delta x\rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}\eqquad.
 \end{equation*}
 \end{important}
 
@@ -309,7 +309,7 @@ equation of the line, and therefore we have $f'(1)=2$.
 In example \ref{eg:bunnies} on p.~\pageref{eg:bunnies}, we inferred using a simple geometrical trick
 that the derivative of an exponential function like $f(x)=2^x$ must be proportional to $f$ itself,
 \begin{equation*}
-  f' = k f \qquad ,
+  f' = k f\eqquad,
 \end{equation*}
 where the constant of proportionality $k$ depends on the base, such as 2. We can now prove the same
 fact using limits, and say something about the value of the constant. Since this fact is supposed
@@ -317,7 +317,7 @@ to hold for all values of $x$, and $k$ is to be the same
 for any $x$, we can pick any convenient value for $x$, say $x=0$. For the derivative we have
 \begin{align*}
   f'(0) &= \lim_{\Delta x\rightarrow 0} \frac{2^{0+\Delta x}-2^0}{\Delta x} \\
-        &= \lim_{\Delta x\rightarrow 0} \frac{2^{\Delta x}-1}{\Delta x} \qquad .
+        &= \lim_{\Delta x\rightarrow 0} \frac{2^{\Delta x}-1}{\Delta x}\eqquad.
 \end{align*}
 Since $f(0)=1$, we have
 \begin{equation*}
@@ -373,7 +373,7 @@ just as in example \ref{eg:x-squared-with-limits}. We then have
 \begin{align*}
   f'(x) &= \lim_{\Delta x\rightarrow0} \frac{(\text{right strip})}{\Delta x} 
            +\lim_{\Delta x\rightarrow0} \frac{(\text{top strip})}{\Delta x} \\
-     &= u'(x)v(x)+v'(x)u(x) \qquad .
+     &= u'(x)v(x)+v'(x)u(x)\eqquad.
 \end{align*}
 We have the following extremely important and useful rule for differentiation:
 
@@ -381,7 +381,7 @@ We have the following extremely important and useful rule for differentiation:
 Let $f=uv$, where $f$, $u$, and $v$ are all functions. Then at any point where
 $u$ and $v$ are both differentiable,
 \begin{equation*}
-  f' = u'v+v'u \qquad .
+  f' = u'v+v'u\eqquad.
 \end{equation*}
 \end{important}
 
@@ -404,7 +404,7 @@ rewrite it as the product $(x^2)\cdot(x)$. Applying the product rule then gives
   (x^3)' &= [(x^2)\cdot(x)]' \\
          &= (x^2)'\cdot(x) + (x^2)\cdot(x)' \\
          &= 2x\cdot x + x^2\cdot 1 \\
-         &= 3x^2 \qquad .
+         &= 3x^2\eqquad.
 \end{align*}
 \end{eg}
 
@@ -441,7 +441,7 @@ and $z$ the calories spent. Then
           &= \frac{\Delta z}{\Delta y} \cdot \frac{\Delta y}{\Delta x} \\
           &= \left(\frac{70\ \zu{cal}}{1\ \cancel{\zu{km}}}\right)
                                      \left(\frac{3\ \cancel{\zu{km}}}{1\ \zu{hr}}\right) \\
-          &= 210\ \zu{cal}/\zu{hr} \qquad .
+          &= 210\ \zu{cal}/\zu{hr}\eqquad.
 \end{align*}
 \end{eg}
 
@@ -454,7 +454,7 @@ $-2$. The result is
 \begin{align*}
   \frac{\Delta z}{\Delta x} &= \frac{\Delta z}{\Delta y}  \cdot \frac{\Delta y}{\Delta x} \\
                         &=  (-2)(-\frac{3}{2}) \\
-                        &= 3 \qquad .
+                        &= 3\eqquad.
 \end{align*}
 \end{eg}
 <%
@@ -478,7 +478,7 @@ Let $x$, $y$, and $z$ be the angular positions of the three gears. Then
 \begin{align*}
   \frac{\Delta z}{\Delta x} &= \frac{\Delta z}{\Delta y}  \cdot \frac{\Delta y}{\Delta x} \\
                         &= \frac{13}{21} \cdot \frac{21}{42} \\
-                        &= \frac{13}{42} \qquad .
+                        &= \frac{13}{42}\eqquad.
 \end{align*}
 \end{eg}
 
@@ -533,7 +533,7 @@ If $z$ is a function of $y$, and $y$ is a function of $x$, and if
 the derivatives $\der z/\der y$ and $\der y/\der x$ exist at a certain point,
 then at that point,
 \begin{equation*}
-  \frac{\der z}{\der x} = \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x}  \qquad .
+  \frac{\der z}{\der x} = \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x}\eqquad.
 \end{equation*}
 \end{important}
 
@@ -570,7 +570,7 @@ built out of smaller ones. For example,
 in problem \ref{hw:numerical-deriv-geometric} on p.~\pageref{hw:numerical-deriv-geometric}, we found
 by numerical approximation that the derivative of the function
 \begin{equation*}
-  \frac{1}{1-x} \qquad ,
+  \frac{1}{1-x}\eqquad,
 \end{equation*}
 evaluated at $x=0$, was about 1.000. The chain rule gives us an easy way to get an exact result for any $x$.
 The structure of our formula is like this:
@@ -589,7 +589,7 @@ Writing the boxes inside the equations is cumbersome, so let's call the big box 
 small one $y$. Then
 \begin{align*}
   z &= 1/y \qquad \text{and} \\
-  y &= 1-x \qquad ,
+  y &= 1-x\eqquad,
 \end{align*}
 which are both functions we know how to differentiate:
 \begin{align*}
@@ -607,7 +607,7 @@ respect to $x$:
   \frac{\der z}{\der x} &= \frac{\der z}{\der y}  \cdot \frac{\der y}{\der x} \\
            &= (-y^{-2})(-1) \\
            &= y^{-2} \\
-           &= (1-x)^{-2} \qquad .
+           &= (1-x)^{-2}\eqquad.
 \end{align*}
 Plugging in $x=0$, we verify that the derivative is exactly equal to 1, in agreement
 with the earlier numerical calculation.
@@ -660,11 +660,11 @@ the interpretation of exponents that aren't natural numbers.
 <% begin_sec("Basic ideas",nil,'basic-ideas') %>
 We can represent repeated multiplication
 \begin{equation*}
-  2\times2\times2 = 8 \qquad ,
+  2\times2\times2 = 8\eqquad,
 \end{equation*}
 using the notation for exponents,
 \begin{equation*}
-  2^3 = 8 \qquad .
+  2^3 = 8\eqquad.
 \end{equation*}
 Because multiplication is associative,
 \begin{equation*}
@@ -672,12 +672,12 @@ Because multiplication is associative,
 \end{equation*}
 is the same as
 \begin{equation*}
-  (2\times2\times2)(2\times2\times2\times2) \qquad ,
+  (2\times2\times2)(2\times2\times2\times2)\eqquad,
 \end{equation*}
 so $2^7$ is the same as $(2^3)(2^4)$. In other words, multiplication is the same
 as adding exponents,
 \begin{equation}\label{eqn:add-exponents}
-  b^ub^v=b^{u+v} \qquad .
+  b^ub^v=b^{u+v}\eqquad.
 \end{equation}
 An important special case is scientific notation, which uses powers of 10.
 For example, $(10^2)(10^7)=10^9$.
@@ -835,11 +835,11 @@ a point where the derivative $\der C/\der q$ is zero
 Writing $1/q$ as $q^{-1}$ and applying the power rule, the derivative is
 \begin{equation*}
   \frac{\der C}{\der q} = -c_2 D q^{-2} 
-       + c_3  \qquad ,
+       + c_3\eqquad,
 \end{equation*}
 and setting this equal to zero gives
 \begin{equation*}
-  q = \sqrt{\frac{c_2 D}{c_3}} \qquad ,
+  q = \sqrt{\frac{c_2 D}{c_3}}\eqquad,
 \end{equation*}
 where only the positive square root has real-world significance. This answer makes sense because
 we respond to greater demand $D$ by making bigger orders, and likewise if the fixed cost per
@@ -853,7 +853,7 @@ jet), then we will order in smaller quantities.
 <% begin_sec("Quotients",4,'quotients') %>\index{derivative!of a quotient}
 Suppose that we want to differentiate the function
 \begin{equation*}
-  \frac{1}{x} \qquad .
+  \frac{1}{x}\eqquad.
 \end{equation*}
 The product rule tells us how to differentiate an expression involving multiplication,
 but this one uses division. However, division by a certain number is the same as multiplication by its
@@ -887,7 +887,7 @@ above for a function $f=p/q$, where $p$ and $q$ can be any functions at all.
 Let $f=p/q$, where $f$, $p$, and $q$ are all functions. Then at any point where
 $p$ and $q$ are both differentiable and $q\ne0$,
 \begin{equation*}
-  f' = \frac{p'q-q'p}{q^2} \qquad .
+  f' = \frac{p'q-q'p}{q^2}\eqquad.
 \end{equation*}
 \end{lessimportant}
 
@@ -959,7 +959,7 @@ differentiable or nondifferentiable at a particular point
 depending on the existence of the limit referred to in the definition
 of the derivative,
 \begin{equation*}
-  f'(x) = \lim_{\Delta x\rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} \qquad .
+  f'(x) = \lim_{\Delta x\rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}\eqquad.
 \end{equation*}
 Figure
 \figref{not-differentiable} shows two common reasons why a function would not be differentiable
@@ -1105,7 +1105,7 @@ the same value regardless of whether we approach $c$ from the right or from the 
 Let's
 look at both of these limits. The limit from the left is
 \begin{equation*}
-  \lim_{h\nearrow0} \frac{f(c+h)-f(c)}{h} \qquad .
+  \lim_{h\nearrow0} \frac{f(c+h)-f(c)}{h}\eqquad.
 \end{equation*}
 But since we assumed $f(c)$ to be the greatest value on $[a,b]$, the quantity inside the limit
 is guaranteed to be greater than or equal to zero. The limit exists, since we assumed
@@ -1183,18 +1183,18 @@ Suppose that the universe is infinite, so that there are infinitely many animals
 that, like us, have two eyes. The number of left eyes is some infinite hyperreal number $H$, and $H$ is
 also the number of right eyes. The total number of eyes is then
 \begin{equation*}
-  H+H=2H \qquad .
+  H+H=2H\eqquad.
 \end{equation*}
 Everything is all right, and $2H$ is an infinite number that happens to be twice as big as $H$.
 
 But now suppose we break rule 2 and use the symbol $\infty$ indiscriminately for any positive, infinite
 quantity. Then we have
 \begin{equation*}
-  \infty+\infty=\infty \qquad .
+  \infty+\infty=\infty\eqquad.
 \end{equation*}
 Applying the additive inverse axiom, we can cancel an $\infty$ from each side, giving
 \begin{equation*}
-  \infty=0 \qquad ,
+  \infty=0\eqquad,
 \end{equation*}
 which is absurd.
 

@@ -17,7 +17,7 @@
   The  equation 
 
   \begin{equation*}
-    \frac{\Delta c}{\Delta t} = kI \qquad ,
+    \frac{\Delta c}{\Delta t} = kI\eqquad,
   \end{equation*}
 
   where $k$ is a constant, is sometimes true. If $I$ has units of amperes, A, and
@@ -150,7 +150,7 @@ should it be fixed?
 Suppose that consumption of copper grows exponentially,
 
 \begin{equation*}
-  R = R_0 e^{kt} \qquad ,
+  R = R_0 e^{kt}\eqquad,
 \end{equation*}
 
 with $t$ in years and $R$ in tons/year.
@@ -266,7 +266,7 @@ Photo of kids by Chris Darling, CC-BY license.}
 
   The electric field created by a charged object is
   \begin{equation*}
-    E(x) = \frac{k}{x^2} \qquad,
+    E(x) = \frac{k}{x^2}\eqquad,
   \end{equation*}
   where $x$ is the distance from the electron, and
   $k$ is a constant related to a property of the particle called its electric charge.

@@ -122,14 +122,14 @@ $P(x)$ of a random variable to be the probability that the variable is less than
 We can then define the \emph{probability distribution} of 
 the variable to be\index{cumulative probability distribution}\index{probability distribution}
 \begin{equation}
-  D(x) = P'(x) \qquad .
+  D(x) = P'(x)\eqquad.
 \end{equation}
 Figure \figref{human-height} shows an approximate probability distribution for human height.
 Suppose we want to know the probability that our random variable lies within the range from $a$ to
 $b$. This is $P(b)-P(a)$. By the fundamental theorem of calculus, this can be calculated from
 the definite integral of the distribution,
 \begin{equation}
-  P(b)-P(a) = \int_a^b D(x)\:\der x \qquad .
+  P(b)-P(a) = \int_a^b D(x)\:\der x\eqquad.
 \end{equation}
 That is, areas under the probability distribution correspond to probabilities. If the random
 variable has some units, say centimeters, then the units of the probability distribution $D$ are the
@@ -139,7 +139,7 @@ for which $D$ is a constant throughout the range of possible values of $x$.
 
 An extremely common bell-shaped probability distribution is
 \begin{equation*}
- D(x)=\frac{2}{\sqrt{\pi}} e^{-x^2} \qquad ,
+ D(x)=\frac{2}{\sqrt{\pi}} e^{-x^2}\eqquad,
 \end{equation*}
 called the ``normal'' or ``Gaussian'' distribution, which we encountered in
 section \ref{subsec:function-defined-by-integral}, 
@@ -148,14 +148,14 @@ p.~\pageref{subsec:function-defined-by-integral}.\index{normal distribution}\ind
 If there are definite lower and upper limits $L$ and $U$ for the possible values of the random
 variable, then normalization requires that
 \begin{equation}
-  1 = \int_L^U D(x)\:\der x \qquad .
+  1 = \int_L^U D(x)\:\der x\eqquad.
 \end{equation}
 
 The average $\bar{x}$ of a variable that takes on one of two discrete values with equal probability is
 $(x_1+x_2)/2$, which is the same as $x_1P_1+x_2P_2$. Generalizing this to a continuous random
 variable, we have\index{average of a continuous variable}
 \begin{equation}\label{eqn:average-defined}
-  \bar{x} = \int_L^U x D(x)\:\der x \qquad .
+  \bar{x} = \int_L^U x D(x)\:\der x\eqquad.
 \end{equation}
 The average is also known as the \emph{mean}, \emph{expectation}, or the \emph{expected value} of $x$.
 
@@ -163,7 +163,7 @@ The standard deviation $\sigma_x$ of a random variable $x$ is a measure of how m
 its average value. The symbol $\sigma$ is the lowercase Greek ``sigma.'' (Recall that uppercase
 sigma is $\Sigma$.) The standard deviation of a continuous random variable is defined by
 \begin{equation}\index{standard deviation of a continuous variable}
-  \sigma_x = \sqrt{\int_L^U (x-\bar{x})^2 D(x)\:\der x} \qquad .
+  \sigma_x = \sqrt{\int_L^U (x-\bar{x})^2 D(x)\:\der x}\eqquad.
 \end{equation}
 
 It often happens that one random variable $y$ is defined by some function of some other
@@ -283,7 +283,7 @@ Axiom 1 was implicitly assumed in the description of the indifference curve in e
 Joe is broke and homeless. He currently has an amount of money $x=0$. Joe's utility function is given
 by
 \begin{equation*}
-  1-e^{-x} \qquad ,
+  1-e^{-x}\eqquad,
 \end{equation*}
 where $x$ is in some appropriate units such as thousands of dollars. The shape of this function is
 shown in figure \figref{lottery}. It is concave down, which is a feature that is almost always
@@ -308,7 +308,7 @@ his expected utility.
 Joe's current utility function is $u(0)=0$, so it is rational for him to pay any amount $L$
 that gives him $\bar{u}>0$. The result is
 \begin{equation*}
-  L < -\ln\left(1-e^{-1}\right) \approx 0.46 \qquad .
+  L < -\ln\left(1-e^{-1}\right) \approx 0.46\eqquad.
 \end{equation*}
 If Joe's utility function had been $u(x)=x$, then he should have been willing to pay 0.5 units
 of money for a chance to win between 0 and 1 units. But because his utility function is nonlinear,
@@ -422,7 +422,7 @@ its angular momentum is $\pm mvr$, with the sign indicating the direction of rot
 is small enough, then air resistance is negligible, and the power required from the engine
 at time $t$ is
 \begin{equation*}
-  P = kma^2 t \qquad ,
+  P = kma^2 t\eqquad,
 \end{equation*}
 where the unitless fudge factor $k$ accounts for inefficiency of the engine and frictional heating in the tires,
 and is assumed to be constant. Find the energy expended by burning gas as a function of time.

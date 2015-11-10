@@ -109,8 +109,7 @@ preflight_figs:
 	@echo "...done"
 
 graphs:
-	@perl -e 'foreach $$f(<ch*/*tex>) {system("./scripts/gen_graph.rb $$f")==0 or print "error in gen_graph, $$!"}'
-	# error handling doesn't actually work
+	./scripts/make_all_graphs.rb
 
 all_figures:
 	# The following requires Inkscape 0.47 or later.

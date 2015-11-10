@@ -48,7 +48,7 @@ I drew figure \figref{stock-market} by graphing yearly data, so it's made of lin
 connect one year to the next. Each of these line segments has a \emph{slope},\index{slope}
 defined as
 \begin{equation}
-  \text{slope} = \frac{y_2-y_1}{x_2-x_1} \qquad .
+  \text{slope} = \frac{y_2-y_1}{x_2-x_1}\eqquad.
 \end{equation}
 The slope measures how fast the function is changing. A positive slope says the function is increasing,
 negative decreasing. If the slope is zero, the function is not changing at all.
@@ -58,7 +58,7 @@ the capital Greek
 letter delta, which is the equivalent of our Latin ``D'' and here stands for ``difference.'' In terms of this notation,
 we have
 \begin{equation}
-  \text{slope} = \frac{\Delta y}{\Delta x} \qquad .
+  \text{slope} = \frac{\Delta y}{\Delta x}\eqquad.
 \end{equation}
 A symbol like $\Delta y$ indicates the \emph{change} in $y$,
 $\Delta y=y_2-y_1$. It doesn't
@@ -138,7 +138,7 @@ are the members of the set $\{-1,1\}$. Often we deal with infinite sets such as 
 numbers, and it is then impossible to list all the elements. Instead, we can
 define a set using notation like this:
 \begin{equation*}
-  \zu{S} = \{x|x^2>0\} \qquad ,
+  \zu{S} = \{x|x^2>0\}\eqquad,
 \end{equation*}
 read as, ``the set of all $x$ such that $x$ squared is greater than zero.'' Often, as in this example,
 we don't explicitly say what to consider as the \emph{possible} values of $x$; since the focus of
@@ -333,7 +333,7 @@ is to take a function and construct a new function that gives the derivative of 
 function at each point. One way of notating this new function is $y'$, read ``$y$ prime.'' We have
 \begin{align*}
   y &= x^2 \\
-  y' &= 2x \qquad .
+  y' &= 2x\eqquad.
 \end{align*}
 The craft of finding this kind of derivative-function from the original function is called
 \emph{differentiation}.\index{differentiation|see{derivative}}
@@ -422,7 +422,7 @@ As a result, we find that after
 up by a factor of 8. That is, the derivative of an exponential function $y=b^x$ is proportional
 to $y$, or
 \begin{equation*}
-  y'=(\ldots)y \qquad ,
+  y'=(\ldots)y\eqquad,
 \end{equation*}
 where ``\ldots'' is a constant of proportionality that depends on the base $b$. What is the constant
 of proportionality? We'll return to this question in example \ref{eg:exponential-with-limits}
@@ -485,17 +485,17 @@ If we combine this with the addition and stretch rules, we know enough to differ
 \egquestion The addition property of the derivative
 tells us that we can break this problem down into three parts,
 \begin{equation*}
-  (x^3-7x+1)' = (x^3)'+(-7x)'+(1)' \qquad ,
+  (x^3-7x+1)' = (x^3)'+(-7x)'+(1)'\eqquad,
 \end{equation*}
 where the primes indicate ``derivative of \ldots'' The stretch property says that $(-7x)'$ is the same
 as $(-7)(x)'$, so the derivative of our polynomial becomes
 \begin{equation*}
-   (x^3)'+(-7)(x)'+(1)' \qquad .
+   (x^3)'+(-7)(x)'+(1)'\eqquad.
 \end{equation*}
 We know how to differentiate powers: $(x^3)'=3x^2$, $(x')=1$, and $(1)'=0$. (We could have found the
 second term from the line property, and the final one from the constant property.) The result is
 \begin{equation*}
-   y' = 3x^2-7 \qquad .
+   y' = 3x^2-7\eqquad.
 \end{equation*}
 
 The functions $y$ and $y'$ are graphed in figure \figref{derivative-of-a-polynomial}, and
@@ -547,14 +547,14 @@ with the letters changed,
 <% begin_sec("Symbolic constants",nil,'symbolic-constants') %>\index{constant!symbolic}
 The vertical stretch property of the derivative tells us that if we know a derivative such as
 \begin{equation*}
-  (x^2)'=2x \qquad ,
+  (x^2)'=2x\eqquad,
 \end{equation*}
 then we can differentiate a function like $5x^2$
 by simply letting the factor of 5 ``come along for the ride,'' 
 \begin{align*}
   (5x^2)' &= (5)(x^2)' \\
           &= (5)(2x) \\
-          &= 10x \qquad .
+          &= 10x\eqquad.
 \end{align*}
 Now suppose that we want to differentiate
 $bx^2$, where $b$ is a constant, i.e., $b$ doesn't depend on $x$. To many students this looks like a much
@@ -562,16 +562,16 @@ more difficult and abstract problem, but the procedure is the same:
 \begin{align*}
   (bx^2)' &= (b)(x^2)' \\
           &= (b)(2x) \\
-          &= 2bx \qquad .
+          &= 2bx\eqquad.
 \end{align*}
 The same goes for a vertical shift. If we aren't intimidated by computing
 \begin{equation*}
-  (x^2+5)' = (x^2)' = 2x \qquad ,
+  (x^2+5)' = (x^2)' = 2x\eqquad,
 \end{equation*}
 then there is no reason to be scared of the similar computation (again with
 $b$ being a constant) of
 \begin{equation*}
-  (x^2+b)' = (x^2)' = 2x \qquad .
+  (x^2+b)' = (x^2)' = 2x\eqquad.
 \end{equation*}
 <% end_sec('symbolic-constants') %>
 <% end_sec('hangups') %>
@@ -593,20 +593,20 @@ $x$; for example, if a car stops and backs up, then it can visit the same positi
 $x$ would fail the vertical line test for a function. In this notation, the velocity $v$ is defined as the
 derivative 
 \begin{equation*}
-  v(t) = x'(t) \qquad .
+  v(t) = x'(t)\eqquad.
 \end{equation*}
 <% end_sec('defining-velocity') %>
 <% begin_sec("Constant acceleration",nil,'constant-acceleration') %>\index{acceleration!constant}
 An important special case is the one in which the position function is of
 the form
 \begin{equation*}
-  x(t) = \frac{1}{2}at^2 \qquad ,
+  x(t) = \frac{1}{2}at^2\eqquad,
 \end{equation*}
 where $a$ is a constant, and the factor of $1/2$ is conventional, and convenient for
 reasons that will become more apparent in a moment. Differentiating with respect to
 $t$, we have the velocity function
 \begin{equation*}
-  v(t) = at \qquad ,
+  v(t) = at\eqquad,
 \end{equation*}
 where the symbolic constant $a$ has been treated like any other constant,
 and the $1/2$ in front has been canceled by the factor of 2 that comes down from the
@@ -632,12 +632,12 @@ The equations for constant acceleration were given above with the unstated assum
 both the position and the velocity would be zero at the time $t=0$. If we relax this assumption, then
 the position function can be of the more general form
 \begin{equation*}
-  x(t) = x_\zu{o}+\frac{1}{2}a(t-t_\zu{o})^2 \qquad ,
+  x(t) = x_\zu{o}+\frac{1}{2}a(t-t_\zu{o})^2\eqquad,
 \end{equation*}
 where $t_\zu{o}$ is some initial time, at which the position equals $x_\zu{o}$. By the shift property of the
 derivative (p.~\pageref{properties-of-derivative}), the velocity function is then
 \begin{equation*}
-  v(t) = a(t-t_\zu{o}) \qquad .
+  v(t) = a(t-t_\zu{o})\eqquad.
 \end{equation*}
 \end{eg}
 <% end_sec('constant-acceleration') %>
@@ -658,7 +658,7 @@ acceleration, not the greatest maximum speed (which is
 irrelevant to the average person). The winner was the Dodge
 Viper, with a time of 12.08 s. If we divide the distance by the time, we get
 \begin{equation*}
-  v = \frac{\Delta x}{\Delta t} = 33.3\ \munit/\sunit \qquad ,
+  v = \frac{\Delta x}{\Delta t} = 33.3\ \munit/\sunit\eqquad,
 \end{equation*}
 which is about 74 miles per hour or 120 kilometers per hour. Not a very impressive
 speed, is it? That's because it's wrong. During those twelve seconds of acceleration,
@@ -667,7 +667,7 @@ there. The top speed was nearly double the one calculated above
 ($53\ \munit/\sunit\approx 119\ \zu{mi}/\zu{hr}\approx 191\ \zu{km}/\zu{hr}$). The important
 point here is that when we measure a rate of change using an expression of the form
 \begin{equation*}
-  \frac{\Delta\ldots}{\Delta\ldots} \qquad ,
+  \frac{\Delta\ldots}{\Delta\ldots}\eqquad,
 \end{equation*}
 we only get the right answer if the rate of change is \emph{constant}. In this example
 the rate of change is the velocity, and the velocity is not constant. To find the correct velocity,
@@ -699,7 +699,7 @@ increase in the fare, $b$ people will decide not to go. The tram's daily revenue
 by multiplying the number of riders by the fare, which gives
 the function
 \begin{equation}\label{eqn:tram-revenue}
-  r(f) = (a-bf)f \qquad .
+  r(f) = (a-bf)f\eqquad.
 \end{equation}
 
 For insight into what's going on, figure \figref{tram-fare-edited} shows this function in the case where $a=100$ and
@@ -723,7 +723,7 @@ which is a form that we do know how to differentiate:
 Setting $r'$ equal to zero, we have
 \begin{align*}
   0 &= -2bf+a \\
-  f&=\frac{a}{2b} \qquad .
+  f&=\frac{a}{2b}\eqquad.
 \end{align*} 
 With the particular numerical values used to construct the graph, this gives an optimal
 fare of 50 francs, which looks about right from the graph.
@@ -866,7 +866,7 @@ to represent a change that is smaller (in fact, infinitely small). Dividing thes
 ``numbers'' (whatever mysterious species of number they may turn out to be), we get the
 derivative,
 \begin{equation*}
-  \frac{\der y}{\der x} \qquad .
+  \frac{\der y}{\der x}\eqquad.
 \end{equation*}
 Although the notation's original justification was not up to modern standards of
 rigor, it is one of the most expressive and well-designed mathematical notations ever devised,
@@ -897,13 +897,13 @@ Another selling point of the notation is that it shows the units of the derivati
 For example,
 the definition of velocity, expressed in Leibniz notation, is
 \begin{equation*}
-  v = \frac{\der x}{\der t} \qquad .
+  v = \frac{\der x}{\der t}\eqquad.
 \end{equation*}
 On the left-hand side we have velocity, whose units in the SI are meters per second. On the
 right we have a tiny change in position, which has units of meters, divided by a tiny change
 in time, which has units of seconds. In terms of units, then, the equation reads as
 \begin{equation*}
-  \zu{m/s} = \frac{\munit}{\sunit} \qquad ,
+  \zu{m/s} = \frac{\munit}{\sunit}\eqquad,
 \end{equation*}
 which works out correctly. In more complicated examples, checking the units like this is a powerful
 method for checking your answer to a calculus problem.
@@ -915,7 +915,7 @@ Many cars have a digital display that shows the function $x'(g)$ in real time. E
 the Leibniz notation. What is the interpretation of this derivative, and what units
 does it have?
 
-\eganswer The Leibniz notation is $\der x/\der g$, which it clear that the units are kilometers per liter,
+\eganswer The Leibniz notation is $\der x/\der g$, which makes it clear that the units are kilometers per liter,
 km/L (or, in U.S.~units, miles per gallon). The interpretation is that this number gives a measure of
 how efficient the car is at using fuel to transport you a given distance.
 \end{eg}
@@ -980,7 +980,7 @@ Figure \figref{whirling-bucket} shows a bucket full of water that is being whirl
 rapidly, so that the water spreads out from the center. The surface of the water
 forms a parabola with the equation
 \begin{equation*}
-  y = \frac{x^2}{c} \qquad ,
+  y = \frac{x^2}{c}\eqquad,
 \end{equation*}
 where $c$ is a constant. Infer the units of $c$, find the slope of the water's
 surface, and check the units of your answer.
@@ -988,20 +988,20 @@ surface, and check the units of your answer.
 \eganswer
 Both $x$ and $y$ are measured in units of meters, so we have
 \begin{equation*}
-  \munit = \frac{\munit^2}{\text{units of $c$}} \qquad .
+  \munit = \frac{\munit^2}{\text{units of $c$}}\eqquad.
 \end{equation*}
 If the units of the left and right sides are to be equal, $c$ must have units of
 meters as well.
 
 Differentiation gives the slope of the water's surface as
 \begin{equation*}
-  \frac{\der y}{\der x} = \frac{2x}{c} \qquad ,
+  \frac{\der y}{\der x} = \frac{2x}{c}\eqquad,
 \end{equation*}
 where the factor of $1/c$ ``comes along for the ride,'' as with any multiplicative constant.
 
 Checking the units of the result, we have
 \begin{equation*}
-  \frac{\munit}{\munit} = \frac{(\text{unitless})\cdot\munit}{\munit} \qquad ,
+  \frac{\munit}{\munit} = \frac{(\text{unitless})\cdot\munit}{\munit}\eqquad,
 \end{equation*}
 which checks out.
 \end{eg}
@@ -1057,13 +1057,13 @@ We saw in section \ref{subsec:when-derivative-is-needed} on p.~\pageref{subsec:w
 that the derivative can't be calculated as $\Delta y/\Delta x$ unless the derivative is constant, i.e., unless
 the function's graph is a line. In the Leibniz notation, this is
 \begin{equation*}
-  \frac{\der y}{\der x} \ne \frac{\Delta y}{\Delta x} \qquad .
+  \frac{\der y}{\der x} \ne \frac{\Delta y}{\Delta x}\eqquad.
 \end{equation*}
 But if we take two points very close together on a graph, then the curvature doesn't matter too much,
 and the line through those points is a good approximation to the tangent line, as in figure
 \figref{approximating-tangent-line}. When then have the approximation
 \begin{equation*}
-  \frac{\der y}{\der x} \approx \frac{\Delta y}{\Delta x} \qquad .
+  \frac{\der y}{\der x} \approx \frac{\Delta y}{\Delta x}\eqquad.
 \end{equation*}
 It may be of interest to use either side of this as an approximation to the other.
 
@@ -1072,11 +1072,11 @@ Suppose you can't remember that the derivative of $x^2$ is $2x$, but you need to
 value of the derivative at $x=1$. As in figure \figref{approximating-tangent-line}, let point P
 be
 \begin{equation*}
-  (1.0000,1.0000) \qquad ,
+  (1.0000,1.0000)\eqquad,
 \end{equation*}
 and let Q be the nearby point
 \begin{equation*}
-  (1.0100,1.0201) \qquad .
+  (1.0100,1.0201)\eqquad.
 \end{equation*}
 We then have:
 \begin{align*}
@@ -1105,12 +1105,12 @@ produced on the function's output $V$ if its input $r$ is changed by a certain s
 Since the amount by which $r$ can be changed is small compared to $r$, it's reasonable to
 apply the approximation
 \begin{equation*}
-  \frac{\Delta V}{\Delta r} \approx \frac{\der V}{\der r} \qquad ,
+  \frac{\Delta V}{\Delta r} \approx \frac{\der V}{\der r}\eqquad,
 \end{equation*}
 which gives
 \begin{align*}
   \Delta V & \approx \frac{\der V}{\der r}\Delta r \\
-           &= 4\pi r^2 \Delta r \qquad .
+           &= 4\pi r^2 \Delta r\eqquad.
 \end{align*}
 (Note that the factor of $4\pi r^2$ can be interpreted as the ball's surface area.)
 Plugging in numbers, we find that the volume could be off by
@@ -1209,7 +1209,7 @@ possible line to approximate a given function near a particular point. As an exa
 let's find the best linear approximation to the stopping distance, for speeds near 60 mi/hr.
 The tangent line has slope
 \begin{equation*}
-  \frac{\der x}{\der v} = 2kv \qquad ,
+  \frac{\der x}{\der v} = 2kv\eqquad,
 \end{equation*}
 and plugging in 60 mi/hr for $v$ produces a slope $m$ of 0.3, meaning that 
 \emph{according to the tangent line}, for every additional 1 mi/hr
@@ -1219,13 +1219,13 @@ true for the real stopping distance.
 % calc -e "k=.0044(1/4.8)(1.61^2); 2k*60"
 Writing down the definition of the slope of a line, we have
 \begin{equation}
-  \frac{x-x_\zu{0}}{v-v_\zu{0}} = m \qquad .
+  \frac{x-x_\zu{0}}{v-v_\zu{0}} = m\eqquad.
 \end{equation}
 where $(v_\zu{0},x_\zu{0})=(60,8.6)$ is the point at which we're taking the tangent line.
 This is the equation of the \emph{tangent line}, not the curve itself,
 which was equation \eqref{eqn:stopping-distance}. Solving this for $x$, we have
 \begin{equation}\label{eqn:stopping-distance-linear}
-  x = m(v-v_\zu{0})+x_\zu{0} \qquad .
+  x = m(v-v_\zu{0})+x_\zu{0}\eqquad.
 \end{equation}
 The result is shown in figure \figref{stopping-distance}, and we can see that it's
 quite a good approximation for a range of speeds broad enough to encompass most freeway driving.

@@ -79,7 +79,10 @@ IO.foreach(file_name) {
       shell = "cd ch#{chapter}/figs && mv ../../#{cmd_file} . && gnuplot #{cmd_file} >#{fig}.svg"
     end
     print '  '+shell+"\n"
-    system(shell)
+    unless system(shell) then
+      $stderr.print "gen_graph.rb failed on file #{fig}\n"
+      exit(-1)
+    end
     if (graph.format=='eps')
       temp_filename = 'temp_file_for_graph'
       temp = File.new(temp_filename,'w')
