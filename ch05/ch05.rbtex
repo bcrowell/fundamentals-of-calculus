@@ -553,7 +553,7 @@ This expression holds everywhere except $x=0$, $y=0$, where $\der x/\der y$ blow
 
 <% end_sec('deriv-of-inverse') %>
 
-<% begin_sec("Review: logarithms",nil,'exp-and-log') %>
+<% begin_sec("Review: logarithms",4,'exp-and-log') %>
 <% begin_sec("Logarithms",nil,'logs') %>\index{logarithm}
 The inverse of exponentiation is the logarithm.
 If
@@ -704,7 +704,7 @@ Then:
 A similar calculation shows that the derivative of $\cos^{-1} x$ is $-1/\sqrt{1-x^2}$.
 <% end_sec('deriv-of-inv-trig') %>
 
-<% begin_sec("Summary of derivatives of transcendental functions",nil,'transcendental-summary') %>
+<% begin_sec("Summary of derivatives of transcendental functions",4,'transcendental-summary') %>
 Given the derivatives of trig and inverse trig functions from sections 
 \ref{sec:derivatives-of-trig} and \ref{sec:deriv-of-inv-trig}, it is straightforward to extend the list
 of derivatives to include the other familiar trig functions.
