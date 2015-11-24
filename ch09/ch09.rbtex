@@ -33,7 +33,7 @@ integrals by hand.
 
 The computer programs used for doing integrals are called computer algebra systems (CAS).
 I recommend a free and open-source CAS called
-Maxima.\footnote{To use it through a web browserm go to \url{maxima-online.org}.
+Maxima.\footnote{To use it through a web browser go to \url{maxima-online.org}.
 To download it to your computer, go to \url{maxima.sourceforge.net}.}
 The following example shows how to use Maxima to do an
 easy indefinite integral --- analogous to using the calculator to find $6\times 2$.
@@ -248,7 +248,7 @@ impossible integrals aren't just obscure things that don't pop up in real life.
 People who are proficient at doing integrals in closed form generally seem to work by a process of pattern
 matching. They recognize certain integrals as being of a form that can't be done, so they know not to try.
 
-\begin{eg}
+\begin{eg}{Disobedience}
 \egquestion Students! Stand at attention! You will now evaluate $\int e^{-x^2+7x} \der x$ in closed form.
 
 \eganswer

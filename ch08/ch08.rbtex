@@ -796,7 +796,7 @@ the case where one of the factors is varying.
   )
 %>
 
-\begin{eg}{Work}\label{eg:tractor-doing-work}
+\begin{eg}{Work}\label{eg:tractor-doing-work}\index{work (physics)}
 \egquestion In each of the examples in
 figure \figref{tractor-doing-work}, the tractor exerts a force while traveling 
 from position $x_1$ to position $x_2$, a distance $\Delta x=x_2-x_1$.

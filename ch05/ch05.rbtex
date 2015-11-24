@@ -746,7 +746,17 @@ $(\tanh x)'=(\cosh x)^{-2}$      &   $(\tanh^{-1} x)'=(1-x^2)^{-1}$
 <% hw('review-invert-random-function') %>
 <% hw('review-log-base-3') %>
 
-  <% hw_block(2) %>
+  <% hw_block(1) %>
+
+\begin{hwinstructions}
+Problem \ref{hw:more-limits-at-infinity} does not require any of the new calculus learned in this
+chapter, but does require knowledge of the transcendental functions reviewed in it.
+\end{hwinstructions}
+
+<% hw('more-limits-at-infinity') %>
+
+  <% hw_block(1) %>
+
 
 <% end_hw_sec %>
 
@@ -840,6 +850,7 @@ In problems \ref{hw:sin-cos-tan}-\ref{hw:atan-sqrt-ln}, differentiate the given 
 \pagebreak
 
 <% hw('induction-nth-deriv-of-gaussian') %>
+
 
 <% end_hw_sec %>
 
