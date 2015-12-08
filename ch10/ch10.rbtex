@@ -165,7 +165,9 @@ sigma is $\Sigma$.) The standard deviation of a continuous random variable is de
 \begin{equation}\index{standard deviation of a continuous variable}
   \sigma_x = \sqrt{\int_L^U (x-\bar{x})^2 D(x)\:\der x}\eqquad.
 \end{equation}
+  <% end_sec('continuous-random-variables') %>
 
+  <% begin_sec("One variable related to another",nil,'probability-related-variables') %>
 It often happens that one random variable $y$ is defined by some function of some other
 random variable $x$. In an experiment, for example, one may measure $x$ directly, and the
 value of $x$ is a random variable because of the finite precision of the measurement. If one
@@ -191,7 +193,7 @@ from 0 to 1, so that $D_x=1$. We then have $y'(x)=1/D_y$. Integrating both sides
 allows us to find a function $y(x)$ that determines the strength of the goblin.
 \end{eg}
 
-  <% end_sec('continuous-random-variables') %>
+  <% end_sec('probability-related-variables') %>
 <% end_sec('probability') %>
 
 <% begin_sec("Economics",4,'economics') %>\index{economics!applications of the integral}
