@@ -1156,94 +1156,29 @@ and subtracting the two measurements?
 <% begin_sec("Linear approximation to a curve",nil,'linear-approximation-to-a-curve') %>\index{approximation!best linear}
 Many people who, like me, learned to drive in the United States
 were taught that when following another car, we should leave space equal to one car length for
-every 10 miles per hour of speed. For example, at a freeway speed of 60 mi/hr, we would follow no
-more closely than 6 car lengths. In a 2007 study, the Danish company Trafitec hired professional
-test drivers\footnote{Nonprofessional drivers were also
-tested, and took about 10-40\% more distance to stop, mainly because they didn't press as hard
-on the brake pedal.} and measured how much distance $x$ they needed in order to stop on a test track, starting
-from an initial velocity $v$. If we convert their speeds into U.S. units of mi/hr and the distances into units
-of car lengths,\footnote{I used the length of a Honda Accord, which is 4.8 meters.} some sample numbers
-are as follows:
-
-\begin{tabular}{ll}
-$v$ (mi/hr) & $x$ (car lengths) \\
-60          & \hspace{2mm}8.8 \\
-70          & 11.9
-\end{tabular}
-
-% calc -e "c=1000/3600; u=.0044; a=c^2/(2u)"
-% ... 8.77 m/s2
-% calc -e "v=96.6; .0044v^2+.0129v; ~/4.8"
-%    8.8135425
-% calc -e "v=112.7; .0044v^2+.0129v; ~/4.8"
-%    11.9457304166667
-
-The traditional rule does not allow enough distance to stop at either of these speeds.
-Furthermore, the stopping distance is increasing much faster with speed than the rule
-would have suggested: about 3 car lengths per 10 mi/hr.
-The study found that the stopping distances were well approximated by a function
-of the following form:\footnote{They also included a linear term, which relates to the
-drivers' reaction times. This turns out to be negligible for our present purposes.}
-\begin{equation}\label{eqn:stopping-distance}
-  x = k v^2
-\end{equation}
-
-The coefficient
-$k$ is related to the maximum acceleration (or in this case, deceleration) that the drivers
-could achieve, which is limited by the friction between the tires and the road. In the same
-units used in the table above, $k$ was about $2.4\times10^{-3}$.
-
-% calc -e ".0044(1/4.8)(1.61^2)"
-%    2.37609166666667*10^-3
-% calc -e "k=.0044(1/4.8)(1.61^2); k*60^2"
-%    8.6
-
-Realistically, drivers are not going to be able to calculate the result of equation \eqref{eqn:stopping-distance}
-in their heads while driving. The traditional rule, although not conservative enough
-at high speeds, had the advantage that it was easy to work out mentally.
-
+every 10 miles per hour of speed. This rule has the advantage of being easy to compute in your head
+while you're on the freeway, but figure \figref{stopping-distance-new} shows that it's a poor
+approximation.
 This is an example of a situation that occurs over and over again in real life, which is that
 we would like to approximate a complicated nonlinear function using a simple linear one.
 The derivative is the slope of the tangent line, and the tangent line is the \emph{best}
-possible line to approximate a given function near a particular point. As an example,
-let's find the best linear approximation to the stopping distance, for speeds near 60 mi/hr.
-The tangent line has slope
-\begin{equation*}
-  \frac{\der x}{\der v} = 2kv\eqquad,
-\end{equation*}
-and plugging in 60 mi/hr for $v$ produces a slope $m$ of 0.3, meaning that 
-\emph{according to the tangent line}, for every additional 1 mi/hr
-of speed, the stopping distance increases by about 0.3 car lengths. If the speed is close enough
-to 60 mi/hr so that the tangent line is a good approximation, then this is also approximately
-true for the real stopping distance.
-% calc -e "k=.0044(1/4.8)(1.61^2); 2k*60"
-Writing down the definition of the slope of a line, we have
-\begin{equation}
-  \frac{x-x_\zu{0}}{v-v_\zu{0}} = m\eqquad.
-\end{equation}
-where $(v_\zu{0},x_\zu{0})=(60,8.6)$ is the point at which we're taking the tangent line.
-This is the equation of the \emph{tangent line}, not the curve itself,
-which was equation \eqref{eqn:stopping-distance}. Solving this for $x$, we have
-\begin{equation}\label{eqn:stopping-distance-linear}
-  x = m(v-v_\zu{0})+x_\zu{0}\eqquad.
-\end{equation}
-The result is shown in figure \figref{stopping-distance}, and we can see that it's
-quite a good approximation for a range of speeds broad enough to encompass most freeway driving.
+possible line to approximate a given function near a particular point.
 
-
-%%graph%% stopping-distance func=0.00238*x*x format=eps xlo=0 xhi=90 xtic_spacing=20 ylo=0 yhi=20 with=lines x=v y=x samples=100 ytic_spacing=5 ; func=0.29*(x-60)+8.6
-<% marg(200) %>
+<% marg(-300) %>
 <%
   fig(
-    'stopping-distance',
-    %q{Stopping distance $x$, in car lengths, as a function of initial speed $v$, in mi/hr. The
-       linear approximation \eqref{eqn:stopping-distance-linear} is superimposed. }
+    'stopping-distance-new',
+    %q{Stopping distance in car lengths, as a function of initial speed in miles per hour.
+       The stopping distances were measured using professional drivers on a track. I've defined
+       a car length as 4.8 meters, which is the length of a Honda Accord.
+       The dotted line shows the traditional rule taught in schools in the US, one car length per 10 m.p.h. of speed.
+       The dashed line is the tangent at 60 miles per hour, which is the best linear approximation
+       for speeds near this one.}
   )  
 %>
 <% end_marg %>
 
-Looking back over the reasoning used to find this particular linear approximation, we
-see that the general procedure would be something like the following:
+Here is a general procedure for finding the best linear approximation to a nonlinear function:
 
 \begin{enumerate}
 \item Pick some point on the graph that is near the center of the region for which we're interested in getting
@@ -1265,61 +1200,152 @@ Find a useful linear approximation to this equation.
 \eganswer Since the average temperature in summer is about $x=10$, let's find the best linear approximation
 near this point. Differentiation gives $y'=100-2x$, and plugging in $x=10$ gives a slope
 \begin{equation*}
-  \frac{\Delta y}{\Delta x} = 80.
+  \frac{\Delta y}{\Delta x} = 80. \qquad \text{[slope of the tangent line]}
 \end{equation*}
 If we plug in the value $x=10$ to the equation for $y$ itself, we find that the point
 \begin{equation*}
-  (10,100)
+  (10,100) \qquad \text{[a point on the tangent line]}
 \end{equation*}
 is the one that we're trying to find the tangent line through. We therefore have
 \begin{equation*}
-  \frac{y-100}{x-10} = 80
+  \frac{y-100}{x-10} = 80 \qquad \text{[point-slope form of the line]}
 \end{equation*}
 for the equation of the best linear approximation. Fred is interested in calculating his profits $y$, so he solves
 this for $y$ to find $y = -700 + 80 x$. As an approximation to the true (nonlinear) function, this is
 \begin{equation*}
-  y \approx -700 + 80 x.
+  y \approx -700 + 80 x. \qquad \text{[slope-intercept form]}
 \end{equation*}
 \end{eg}
 
 <% end_sec('linear-approximation-to-a-curve') %>
-<% end_sec('approximations') %>
 
 \pagebreak
 
-\startdq
 
-\begin{dq}\label{dq:lead-fall}
-Figure \figref{dq-lead-fall} shows a rock climber. The rope is tied to the climber
-at the top and at the bottom to the  anchor, marked X. (There are provisions for
-the climber's partner to pay out rope so that the climber can move upward.)
-The rope is clipped into a removable anchor placed in the rock, and the climber
-is now a height $h$ above this protection. If she falls, we would imagine that
-she would fall a height equal to $2h$. However, the rope is intentionally designed
-to be stretchy, so that when it comes up taut, it will stop the climber gently.
-This causes the climber to fall a distance greater than $2h$, and we want this
-distance to be short enough so that she doesn't hit the ground. 
+<% end_sec('approximations') %>
 
-The bottom panel of the figure shows data from laboratory testing of a climbing
-rope.\footnote{Casey Johnson and Charlie Klonowski, student research paper, Cal Poly Pomona}
-The stretchiness of a climbing rope is normally described in terms of the percentage
-by which it stretches when a standard weight is hung from it, which is essentially
-a measure of the slope (actually the inverse slope) of the graph. Since the graph
-is only approximately linear, this quantity should really be measured by a derivative.
-What could we say about the derivative of this function at the point P marked on the
-graph, and what real-world implications would this have?
-\end{dq}
-
-<% marg(80) %>
+<% begin_sec("More about units",nil,'more-about-units') %>
+In section \ref{subsec:leibniz-shows-units} on p.~\pageref{subsec:leibniz-shows-units}, 
+we briefly discussed the idea of checking your calculus by
+analyzing the units of measurement.
+If you had a good high school chemistry or physics course, you may have already
+learned how to do this to check your algebra.
+If not, then you may find it helpful to study this section,
+which lays out the ideas in more detail.
+<% marg %>
 <%
   fig(
-    'dq-lead-fall',
-    %q{Discussion question \ref{dq:lead-fall}.}
+    'snake',
+    %q{A snake approximated as a box.}
   )  
 %>
 <% end_marg %>
 
+Figure \figref{snake} shows a cute snake, along with its even cuter geometrical
+idealization as a rectangular box. The snake has
+\begin{align*}
+  & \text{length $\ell$, in units of meters (m)} \\
+  & \text{width $w$, in units of meters (m),}\\
+  & \text{mass $M$, in units of kilograms (kg).}
+\end{align*}
+(Some people would say ``in units of length,'' and ``in units of mass,'' but to be more concrete
+I'm using the SI units listed in box \ref{textbox:units} on p.~\pageref{textbox:units}.)
+
+It makes sense to manipulate these quantities in certain ways:
+\begin{align*}
+   4w,& \qquad           \text{the snake's waistline,} \\
+   w^2\ell,& \qquad      \text{its volume in cubic meters ($\zu{m}^3$),} \\
+   \frac{M}{w^2\ell},&   \qquad \text{its density in $\zu{kg}/\zu{m}^3$,} 
+\end{align*}
+or
+\begin{equation*}
+   2w+\ell\le1.14\ \zu{m},\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+\end{equation*}
+which tells us whether this snake is legal as carry-on luggage,
+
+But some combinations don't make sense:
+\begin{align*}
+  \ell+M \qquad        &\text{can't add meters to kilograms}\\
+  w\ell=w^2\ell \qquad &\text{can't equate area to volume}\\
+  \cos M \qquad        &\text{can't take the cosine of a mass}
+\end{align*}
+
+Some quantities are unitless. I have two dogs, and the 2 is a unitless 2; in general, a count is unitless.
+When we form a ratio between two numbers that have the same units, the result is unitless. For example,
+the rectangular snake in the figure has $\ell/w=12.6$, which is unitless; one way to tell that it's unitless
+is that if we enlarge or reduce the drawing, the quantities that have units grow or shrink, but the proportions
+such as $\ell/w$ stay the same.
+
+The following rules apply:
+\begin{enumerate}
+  \item In addition, subtraction, and comparisons, all terms must have the same units.
+  \item When you multiply or divide numbers, multiply or divide their units as well.
+  \item All the functions on your calculator that go beyond grade-school arithmetic require a unitless
+        input and give a unitless output. These functions include logs, exponentials, and trig functions,
+        and are referred to collectively as transcendental functions (sec.~\ref{subsec:transcendental-functions},
+        p.~\pageref{subsec:transcendental-functions}).
+\end{enumerate}
+
+\begin{eg}{Radians aren't units}\label{eg:radians-not-units}
+Using the notation shown in figure \figref{radian-measure}, the radian measure
+of the angle $\theta$ is defined as $s/r$. The arc length $s$ and radius $r$ both
+have units of meters, so by rule 2 their ratio is unitless. Therefore radians are
+not really a unit. This is required by rule 3 so that we can use them as inputs to
+trig functions.
+\end{eg}
+<% marg(10) %>
+<%
+  fig(
+    'radian-measure',
+    %q{Example \ref{eg:radians-not-units}.}
+  )  
+%>
+<% end_marg %>
+
+\begin{eg}{Cosine is unitless}
+The cosine is $\text{adjacent}/\text{hypotenuse}$, so it's unitless, as required 
+by rule 3.
+\end{eg}
+
+\begin{eg}{Frequency}
+The period $T$ of a vibration is defined as time it takes to go through one cycle.
+The frequency is defined as $f=1/T$,
+and by rule 2 it has units of $1/\zu{seconds}$ or $\zu{s}^{-1}$ (also known as Hz).
+\end{eg}
+
+\begin{eg}{Area, or volume?}
+\egquestion You remember that $4\pi r^2$ is the formula either for the volume of a sphere or for its surface area,
+but you can't remember which it is. Which one does it have to be based on units?
+
+\eganswer The $4\pi$ is unitless. By rule 2, the expression $4\pi r^2$ thus has units of $\zu{m}^2$, i.e.,
+square meters, or area.
+\end{eg}
+
+\begin{eg}{Square roots}
+A square root is not a transcendental function, so rule 3 doesn't apply to it.
+For example, our snake has a cross-sectional area $A=w^2$. We then have
+$w=\sqrt{A}$, and it's OK to feed the square root function a unitful input: $\zu{m}=\sqrt{\zu{m}^2}$.
+\end{eg}
+
+\begin{eg}{No units in the exponent}
+\egquestion We can compute $w^2$, where $w$ has units. Does that mean we can also calculate $2^w$?
+
+\eganswer No, because then $2^w=e^{\ln(2^w)}=e^{w\ln 2}$, but then the input to the
+exponential would have units, violating rule 3. I.e., the base-2 exponential is transcendental,
+just like the base-$e$ flavor.
+\end{eg}
+
+\begin{eg}{Radioactivity}
+\egquestion As a radioactive substance decays, the fraction of it that remains after time $t$
+is given by $f=e^{-t/k}$, where $k$ is a constant. Infer the units of $k$.
+
+\eganswer By rule 3, $t/k$ must be unitless, so $k$ is in seconds.
+\end{eg}
+
+<% end_sec('more-about-units') %>
+
 <% begin_hw_sec("Review problems") %>
+
 
 <% hw('review-point-and-slope-to-equation') %>
 <% hw('review-points-to-equation') %>

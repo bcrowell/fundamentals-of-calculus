@@ -10,6 +10,7 @@
 \noindent
 \textbf{Cover} Megyeri Bridge, (c) 2008, Tam\'as M\'esz\"oly, CC-BY-SA \\ % http://commons.wikimedia.org/wiki/File:Megyeri_h%C3%ADd.jpg 
 
+<% photo_credit("snake","Snake","Wikipedia user DuSantos, CC-BY") %>  % https://en.wikipedia.org/wiki/File:Anilius_scytale.jpg
 <% photo_credit("dominoes","Dominoes","Jochen Burghardt, CC-BY-SA") %>  % http://commons.wikimedia.org/wiki/File:Domino_effect_visualizing_induction_axiom.jpg
 <% photo_credit("hw-talus","Talus cones","Mark A. Wilson, public domain") %>  % http://en.wikipedia.org/wiki/File:TalusConesIsfjorden.jpg
 <% photo_credit("bucket-brigade","Bucket brigade","Ag\\^encia Brasil, CC-BY") %>  % http://commons.wikimedia.org/wiki/File:EscombrosBelAir2.jpg
