@@ -435,7 +435,6 @@ The trick is to factor $x^2$ from top and bottom. You get
   \lim_{x\to\infty}\frac{3x^2+3}{5x^2+7x-39}
   &= \lim_{x\to\infty}\frac{x^2}{x^2} \; \frac{3+3/x^2}{5+7/x-39/x^2}
   & \text{(algebra)}\\
-  &= \lim_{x\to\infty}\frac{3+3/x^2}{5+7/x-39/x^2}& \text{(more algebra)}\\
   &= \frac{\lim_{x\to\infty}(3+3/x^2)}{\lim_{x\to\infty}(5+7/x-39/x^2)}
   &\text{(limit properties)}\\
   &= \frac35.

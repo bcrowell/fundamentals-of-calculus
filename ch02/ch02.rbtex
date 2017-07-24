@@ -1264,6 +1264,38 @@ p.~\pageref{definition-of-infinitesimal}. The following example shows some sampl
 
 <% end_sec('safe-handling-of-dx') %>
 
+<% begin_sec("The factorial",nil,'factorial') %>
+In a number of places in this course, it will be helpful to know about a function
+called the \emph{factorial}.\index{factorial}
+The factorial of $n$, notated $n!$, is defined as the product of all the
+integers from 1 to $n$,
+\begin{equation*}
+  n!=1\cdot2\ldots n.
+\end{equation*}
+For example, $3!$, read as ``three factorial,'' is $1\cdot2\cdot3=6$. 
+As a special case, we define $0!$ to be 1 (not zero), for the reasons given in
+Box \ref{textbox:zero-factorial-is-one}.
+
+<% marginbox(-300,'zero-factorial-is-one','Why $0!$ equals 1',{},
+%q@
+We define $0!=1$, both because it turns out to be more convenient in all of our applications,
+and for the following logical reason.
+
+In the more usual
+case where $n\ge1$, $n!$ is defined as a product containing $n$ factors. If we start with a rubber band, then stretch it
+successively by all of these factors, we end up stretching it by a factor of $n!$ over all.
+
+In the case of $n=0$, we have no factors in our list, so we have nothing on our list of things
+to do to the rubber band. It is left at its original length. It has
+been stretched by a factor of 1, i.e., left alone.
+
+Note that exactly the same logic applies to exponents, and that's why we also define, for example, $7^0=1$.
+      @
+   )
+%>
+
+<% end_sec('factorial') %>
+
 <% begin_sec("Style",4,'style') %>
 
 \newcommand{\dictum}[1]{\noindent\begin{minipage}{170mm}#1\end{minipage}}
@@ -1619,12 +1651,13 @@ to understand the definition of the limit.
 
   <% hw_block(2) %>
 
+<% hw('product-rule-three-factors',{'solution'=>true}) %>
 <% hw('limit-implies-continuity') %>
 <% hw('no-least-number') %>
-<% hw('product-rule-three-factors',{'solution'=>true}) %>
+<% hw('factorial-dominates-square') %>
+<% hw('binomial-coefficient-induction') %>
 <% hw('product-rule-n-factors') %>
 <% hw('nastiness') %>
-<% hw('binomial-coefficient-induction') %>
 
 
 
