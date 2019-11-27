@@ -316,8 +316,8 @@ $\rightarrow a$.
 \end{eg}
 <% end_sec('lhospital-change-of-variable') %>
 <% begin_sec("The form $\\infty/\\infty$",nil,'lhospital-proofs-infty-over-infty') %>
-To prove that l'H\^{o}pital's rule works in general for $\infty/\infty$ forms, 
-we do a change of variable on the \emph{outputs} of the functions $u$ and $v$
+To see why l'H\^{o}pital's rule works in general for $\infty/\infty$ forms, 
+let's try a change of variable on the \emph{outputs} of the functions $u$ and $v$
 rather than their inputs. Suppose that our original problem is of the form
 \begin{equation*}
   \lim \frac{u}{v}\eqquad,
@@ -339,7 +339,11 @@ Differentiating and applying the chain rule, we have
 \end{equation*}
 Since $\lim ab=\lim a \lim b$ provided that $\lim a$ and $\lim b$ are both defined
 (property $\zu{P}_5$, p.~\pageref{subsec:limits-of-sum-prod-quot}), we can rearrange
-factors to produce the desired result.
+factors to produce the desired result --- but this only works under the assumption that
+the limit the limits of the two factors on the right do both exist. Therefore the above proof
+works only when $\lim u/v\ne 0$. This restriction is in fact inessential, and the rule
+does hold even when $\lim u/v=0$. For some proofs that work in the more general case,
+see \url{math.stackexchange.com/questions/147356/proof-of-the-lh%c3%b4pital-rule-for-frac-infty-infty}.
 <% end_sec('lhospital-proofs-infty-over-infty') %>
 <% begin_sec("Limits at infinity",nil,'lhospital-proofs-at-infinity') %>
 As briefly outlined in section \ref{subsec:lhospital-at-infty}, this proof can be done
